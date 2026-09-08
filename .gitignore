@@ -1,0 +1,11 @@
+threejs/node_modules/
+threejs/dist/
+renders/flight_sequence_v02/
+renders/flight_sequence/
+__pycache__/
+*.pyc
+*.blend1
+
+renders/flight_sequence_v03/
+models/v04/
+previews/*.log

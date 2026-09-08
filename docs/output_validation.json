@@ -1,0 +1,21 @@
+{
+  "checks": {
+    "glb_header": true,
+    "glb_has_real_geometry": true,
+    "lift_pivots": true,
+    "cruise_pivots": true,
+    "embedded_textures": true,
+    "three_model_matches": true,
+    "all_review_views": true,
+    "versioned_blend_files": true,
+    "flight_sample_count": true,
+    "closed_loop": true,
+    "no_position_teleport": true,
+    "bank_is_gentle": true,
+    "all_states": true
+  },
+  "glb_bytes": 1046868,
+  "glb_triangles": 39232,
+  "sha256": "3bc56344c62cd0c95ec2b089e3a6971cfffa8725ccd033c8d15a54515313dc99",
+  "frame_count": 1801
+}

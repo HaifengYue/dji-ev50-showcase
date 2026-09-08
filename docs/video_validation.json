@@ -1,0 +1,12 @@
+{
+  "frames": 1500,
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "duration_seconds": 50,
+  "video_bytes": 8074586,
+  "sequence_bytes": 2600890138,
+  "sha256": "fcc339e4a87d56fc2a270fcf2893a01a91b185bbe43a62c4977c4bf0dc272756",
+  "encoding": "H.264 yuv420p CRF19",
+  "source_sequence": "C:\\Users\\admin\\Desktop\\DJI_VTOL\\renders\\flight_sequence_v02"
+}

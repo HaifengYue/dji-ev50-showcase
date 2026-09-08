@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "checks": [
+    "seek",
+    "pause",
+    "non-loop stop",
+    "loop wrap",
+    "200 deterministic seeks",
+    "unit quaternion",
+    "restart",
+    "static mode"
+  ]
+}
