@@ -33,6 +33,22 @@ node validate-glb.mjs
 
 官方参考页面：[DJI EV50](https://www.dji.com/cn/ev50)
 
+## 控制 API
+
+页面加载后可通过 `window.ev50API` 发送指令，所有指令都由统一的飞行控制器处理：
+
+```js
+ev50API.motor(0.85, 0.0);                 // 垂起/巡航电机功率 0–1
+ev50API.position([120, 26, -80]);         // 位置（米）
+ev50API.velocity([8, 0, 12]);              // 速度（米/秒）
+ev50API.attitude([0, 0, 0, 1]);             // 四元数姿态
+ev50API.setRoute('plateau');               // valley / plateau / ridge
+ev50API.play();
+ev50API.pause();
+```
+
+也可使用 `window.dispatchEvent(new CustomEvent('ev50-command', {detail:{type:'position', position:[120,26,-80]}}))` 发送同样的结构化指令。航线缩略信息和完成进度显示在飞行演示面板中。
+
 ## 当前交付版本（2026-09-09）
 
 网页已更新为 v05 模型及 60 秒飞行。固定翼巡航从 14 秒增加到 24 秒，航线扩大到约 96×150 m。新增针叶林、溪流、河岸、起伏地面和岩面远山，支持三档实例密度与 4096 高画质阴影。
