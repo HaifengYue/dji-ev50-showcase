@@ -21,6 +21,10 @@ rubber=mat('Rubber_Shoes',(.018,.023,.027),.84)
 metal=mat('Motor_Anodized_Aluminium',(.17,.20,.22),.3,.8)
 black=mat('Panel_Seams',(.016,.022,.026),.55)
 orange=mat('Propeller_Tip_Safety_Orange',(.95,.16,.035),.5)
+if V>=6:
+ paint.node_tree.nodes.get('Principled BSDF').inputs['Coat Weight'].default_value=.18
+ paint.node_tree.nodes.get('Principled BSDF').inputs['Coat Roughness'].default_value=.38
+ metal.node_tree.nodes.get('Principled BSDF').inputs['Roughness'].default_value=.38
 if V>=3:
  # Small original woven texture, embedded in GLB. No borrowed product pixels.
  import numpy as np
@@ -60,8 +64,9 @@ def ellipsoid(n,loc,dim,m,parent=root):
 def cylinder(n,loc,r,depth,m,parent=root,axis='Z'):
  bpy.ops.mesh.primitive_cylinder_add(vertices=24,radius=r,depth=depth,location=loc);o=setup(bpy.context.object,n,m,parent)
  if axis=='Y':o.rotation_euler[0]=math.pi/2
- for f in o.data.polygons:f.use_smooth=True
- b=o.modifiers.new('Rim_Radius','BEVEL');b.width=.006;b.segments=2
+ for f in o.data.polygons:f.use_smooth=abs(f.normal.z)<.5 if V>=6 else True
+ b=o.modifiers.new('Rim_Radius','BEVEL');b.width=min(.006,depth*.2);b.segments=2
+ if V>=6:b.harden_normals=True;o.modifiers.new('Motor_Weighted_Normals','WEIGHTED_NORMAL')
  return o
 def rod(n,a,b,r,m):
  a,b=Vector(a),Vector(b);o=cylinder(n,(a+b)/2,r,(a-b).length,m);o.rotation_euler=(b-a).to_track_quat('Z','Y').to_euler();return o
@@ -183,6 +188,23 @@ if V>=3:
  for s,lab in [(-1,'Left'),(1,'Right')]:
   o=wing(lab+'_Aileron',[(s*1.5,.127,.037,.891,.004),(s*2.65,.081,.037,.900,.004),(s*3.32,.058,.025,.926,.003)],carbon);o['part']='aileron'
   o=box(lab+'_Rudder',(s*.66,1.673,.965),(.039,.028,.34),paint,.004);o['part']='rudder'
+if V>=6:
+ # Surface-only refinements; retain the validated v05 silhouette and all spindle origins.
+ bpy.context.view_layer.update()
+ ev=hull.evaluated_get(bpy.context.evaluated_depsgraph_get())
+ for o in list(root.children_recursive):
+  if '_Cargo_Latch_' in o.name:
+   s=1 if o.location.x>0 else -1
+   hit,co,normal,idx=ev.ray_cast(Vector((s*2,o.location.y,o.location.z)),Vector((-s,0,0)))
+   if hit:o.location.x=co.x+s*.009
+ for x,y in stations:
+  for j,z in enumerate([.915,.625]):
+   for ring,dz in enumerate([-.018,0,.018]):
+    cylinder('Cooling_Ring_'+str(x)+'_'+str(y)+'_'+str(j)+'_'+str(ring),(x,y,z+dz),.088,.005,metal)
+ # Shallow hinge shoes on existing gear joints, not invented internal equipment.
+ for y,lab in [(-1.05,'Front'),(.63,'Rear')]:
+  for s,side in [(-1,'Left'),(1,'Right')]:
+   ellipsoid('Gear_'+lab+'_'+side+'_Joint',(s*.63,y,.105),(.04,.045,.027),metal)
 # Component rotor-only demo action: the root remains owned by the flight path.
 if V>=3:
  for o in root.children_recursive:

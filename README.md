@@ -58,3 +58,13 @@ ev50API.pause();
 重建当前模型时将上方命令的版本参数改为 `--version 5 --export`。`python scripts/generate_flight.py` 生成 60 秒共享航线。`blender/render_flight.py` 输出新版关键帧，添加 `--sequence` 输出完整 1800 帧。旧版 `EV50_flight_50s_1080p.mp4` 仍为上一轮成片，本轮只完成新版关键帧，尚未重新渲染完整视频。
 
 目标仓库：<https://github.com/HaifengYue/dji-ev50-showcase>。推送成功后仍需启用仓库 Settings → Pages → GitHub Actions，并以工作流成功和在线实际加载为发布完成依据。
+
+## v06：地形安全与细节更新
+
+当前网页采用 `models/v06` 模型；七视图在 `previews/v06`。运行 `blender -b --factory-startup --python blender/build_model.py -- --version 6 --export` 可重建该版本。
+
+三条航线都从原点停机坪起降，先爬升至 180 m 再巡航。浏览器演示为 240 秒（原始 `flight.json` 60 秒采样按四倍时长重定时），地图显示实际路线、已完成段与当前位置。已有离线视频保持原版，尚未同步此路线。
+
+进入 `threejs` 后运行 `npm run build`、`node test-flight.mjs` 和 `node validate-glb.mjs` 检查。净空测试涵盖每条路线完整 240 秒、60 Hz 采样以及重置/循环/指令控制。当前山体包围高度下界验证余量为 49 m；地形有改动时必须重新检查。
+
+控制指令仍通过 `window.ev50API` 调用。位置单位米、速度单位米/秒、姿态为 `[x,y,z,w]` 四元数，电机功率为 `[0,1]`。位置/速度指令有目标高度保护，演示路线为预规划避障；不用于真实飞控。`setRoute()` / 重新开始清除手动指令，`play()` 恢复航线播放。

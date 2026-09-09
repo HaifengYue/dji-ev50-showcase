@@ -1,0 +1,20 @@
+{
+  "version": "v06",
+  "blender": "5.2.1 LTS",
+  "dimensions_m": [
+    7.0,
+    3.70824134349823,
+    1.149999976158142
+  ],
+  "lift_rotors": 8,
+  "cruise_rotors": 3,
+  "mesh_objects": 136,
+  "lift_station_distance_m": 1.8399999999999999,
+  "rotor_diameter_m": 1.16,
+  "checks": {
+    "power_counts": true,
+    "lift_station_clearance": true,
+    "english_names": true,
+    "independent_spindles": true
+  }
+}

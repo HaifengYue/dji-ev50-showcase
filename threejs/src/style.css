@@ -2,3 +2,4 @@
 
 .headline,.flight-info{text-shadow:0 2px 12px #10212ed9}.headline p,.flight-info .state-code,.flight-info .metric span{color:#e0e9ee}.headline{padding:12px 16px;margin-left:-16px;background:linear-gradient(90deg,#15263085,transparent);border-radius:8px}
 .route-map{border-top:1px solid var(--line);padding-top:10px;font-size:12px;color:var(--muted)}.route-map span{display:flex;justify-content:space-between}.route-map b{color:var(--accent);font-weight:500}.route-map canvas{display:block;width:100%;height:auto;margin-top:5px;border-radius:5px;background:#0d1c2599}
+@media(max-width:760px),(max-height:620px){.right-tools{max-height:calc(100dvh - 290px);overflow-y:auto;overscroll-behavior:contain;}.route-map{flex-shrink:0}}

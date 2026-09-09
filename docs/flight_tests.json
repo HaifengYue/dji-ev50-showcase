@@ -1,13 +1,35 @@
 {
   "passed": true,
+  "mountainVertices": 52779,
+  "routes": [
+    {
+      "route": "valley",
+      "minClearance": 49,
+      "maxSpeed": 47.12362460531501,
+      "samples": 14401
+    },
+    {
+      "route": "plateau",
+      "minClearance": 49,
+      "maxSpeed": 62.83149947374996,
+      "samples": 14401
+    },
+    {
+      "route": "ridge",
+      "minClearance": 49,
+      "maxSpeed": 39.26968717110234,
+      "samples": 14401
+    }
+  ],
   "checks": [
-    "seek",
+    "terrain clearance at 60 Hz",
+    "route endpoints",
     "pause",
-    "non-loop stop",
-    "loop wrap",
-    "200 deterministic seeks",
-    "unit quaternion",
-    "restart",
-    "static mode"
+    "seek",
+    "loop",
+    "product origin",
+    "velocity integration",
+    "command clearance",
+    "invalid commands"
   ]
 }

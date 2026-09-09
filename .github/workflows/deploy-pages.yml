@@ -27,10 +27,14 @@ jobs:
         working-directory: threejs
       - run: npm run build
         working-directory: threejs
+      - name: Check flight clearance and model
+        run: |
+          node test-flight.mjs
+          node validate-glb.mjs
+        working-directory: threejs
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
           path: threejs/dist
       - id: deployment
         uses: actions/deploy-pages@v4
-
