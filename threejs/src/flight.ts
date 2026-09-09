@@ -6,14 +6,15 @@ export const routes={valley:{name:'山谷穿越 · 3 km',scale:12,offset:[0,0] a
 export const labels:Record<State,string>={IDLE:'地面待命',STARTING:'旋翼启动',TAKEOFF:'垂直起飞',HOVER:'空中悬停',TRANSITION_TO_CRUISE:'加速 · 转入巡航',CRUISE:'固定翼巡航',TRANSITION_TO_HOVER:'减速 · 转入悬停',LANDING:'垂直降落',SHUTDOWN:'旋翼停止'};
 /** Sole owner of time and aircraft pose; GLB spin clips are not played concurrently. */
 export class FlightController{
- time=0;playing=false;loop=true;mode:'product'|'flight'='product';state:State='IDLE';lift=0;cruise=0;liftAngle=0;cruiseAngle=0;route:keyof typeof routes='valley';routeProgress=0;private command:FlightCommand|null=null;private velocity=new Vector3();private liftAngles:number[]=[0];private cruiseAngles:number[]=[0];
+ time=0;playing=false;loop=true;mode:'product'|'flight'='product';state:State='IDLE';lift=0;cruise=0;liftAngle=0;cruiseAngle=0;route:keyof typeof routes='valley';routeProgress=0;private command:FlightCommand|null=null;private velocity=new Vector3();private velocityPosition:Vector3|null=null;private liftAngles:number[]=[0];private cruiseAngles:number[]=[0];
  position=new Vector3();quaternion=new Quaternion();private qa=new Quaternion();private qb=new Quaternion();private e=new Euler(0,0,0,'YXZ');
  constructor(readonly frames:Frame[],readonly duration=frames[frames.length-1].t){for(let i=1;i<frames.length;i++){this.liftAngles[i]=this.liftAngles[i-1]+(frames[i].lift+frames[i-1].lift)*.5*22/30;this.cruiseAngles[i]=this.cruiseAngles[i-1]+(frames[i].cruise+frames[i-1].cruise)*.5*22/30;}}
  seek(t:number){this.time=Math.max(0,Math.min(this.duration,Number.isFinite(t)?t:0));this.evaluate();}
  restart(){this.seek(0);}
- setRoute(route:keyof typeof routes){if(routes[route])this.route=route;this.restart();}
- applyCommand(command:FlightCommand){this.command=command;this.mode='flight';this.playing=false;if(command.type==='velocity'){const v=command.velocity as number[];if(v?.length===3)this.velocity.set(v[0],v[1],v[2]);}this.evaluate();}
- tick(dt:number){if(this.playing&&this.mode==='flight'){this.time+=Math.max(0,dt);if(this.time>=this.duration){if(this.loop)this.time%=this.duration;else{this.time=this.duration;this.playing=false;}}}this.evaluate();}
+ setRoute(route:keyof typeof routes){if(routes[route])this.route=route;this.clearCommand();this.restart();}
+ clearCommand(){this.command=null;this.velocityPosition=null;}
+ applyCommand(command:FlightCommand){this.command=command;this.mode='flight';this.playing=false;if(command.type==='velocity'){const v=command.velocity as number[];if(v?.length===3){this.velocity.set(v[0],v[1],v[2]);this.velocityPosition=this.position.clone();}}this.evaluate();}
+ tick(dt:number){if(this.playing&&this.mode==='flight'){this.time+=Math.max(0,dt);if(this.time>=this.duration){if(this.loop)this.time%=this.duration;else{this.time=this.duration;this.playing=false;}}}if(!this.playing&&this.command?.type==='velocity'&&this.velocityPosition)this.velocityPosition.addScaledVector(this.velocity,Math.max(0,dt));this.evaluate();}
  evaluate(){const t=this.mode==='product'?0:this.time,i=Math.min(this.frames.length-1,Math.floor(t*30)),a=this.frames[i],b=this.frames[Math.min(i+1,this.frames.length-1)],u=Math.max(0,Math.min(1,t*30-i));
  const rr=routes[this.route],baseX=a.position[0]+(b.position[0]-a.position[0])*u,baseY=a.position[1]+(b.position[1]-a.position[1])*u,baseZ=a.position[2]+(b.position[2]-a.position[2])*u;this.routeProgress=Math.min(1,t/this.duration);
  this.position.set(baseX*rr.scale+rr.offset[0],baseY,baseZ*rr.scale+rr.offset[1]);
