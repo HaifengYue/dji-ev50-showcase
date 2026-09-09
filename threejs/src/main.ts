@@ -2,13 +2,13 @@ import * as T from 'three';
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 import {RoomEnvironment} from 'three/addons/environments/RoomEnvironment.js';
-import {FlightController,labels,Frame} from './flight';import {environment} from './environment';import './style.css';
+import {FlightController,labels,Frame,routes,FlightCommand} from './flight';import {environment} from './environment';import './style.css';
 const $=<E extends HTMLElement>(s:string)=>document.querySelector<E>(s)!;
 const canvas=$<HTMLCanvasElement>('#scene');
 const renderer=new T.WebGLRenderer({canvas,antialias:true,powerPreference:'high-performance'});renderer.outputColorSpace=T.SRGBColorSpace;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=1.0;renderer.shadowMap.enabled=true;renderer.shadowMap.type=T.PCFSoftShadowMap;
-const scene=new T.Scene();scene.background=new T.Color(0xa4becb);scene.fog=new T.Fog(0xa4becb,260,1100);
-const camera=new T.PerspectiveCamera(42,1,.1,2000);camera.position.set(8,3.6,10);
-const controls=new OrbitControls(camera,canvas);controls.target.set(0,.65,0);controls.enableDamping=true;controls.minDistance=4;controls.maxDistance=150;controls.maxPolarAngle=Math.PI*.49;controls.update();
+const scene=new T.Scene();scene.background=new T.Color(0xa4becb);scene.fog=new T.Fog(0xa4becb,650,3200);
+const camera=new T.PerspectiveCamera(42,1,.1,5000);camera.position.set(8,3.6,10);
+const controls=new OrbitControls(camera,canvas);controls.target.set(0,.65,0);controls.enableDamping=true;controls.minDistance=4;controls.maxDistance=3000;controls.maxPolarAngle=Math.PI*.49;controls.update();
 scene.add(new T.HemisphereLight(0xd6e9ff,0x58624a,1.3));const sun=new T.DirectionalLight(0xffefd4,2.4);sun.position.set(-35,65,25);sun.castShadow=true;Object.assign(sun.shadow.camera,{left:-15,right:15,top:15,bottom:-15,near:1,far:150});sun.shadow.bias=-.0002;sun.shadow.normalBias=.02;scene.add(sun,sun.target);
 const pmrem=new T.PMREMGenerator(renderer),room=new RoomEnvironment(),envmap=pmrem.fromScene(room,.025);scene.environment=envmap.texture;scene.environmentIntensity=.45;room.dispose();pmrem.dispose();
 const terrain=environment(scene),aircraft=new T.Group();aircraft.name='Flight_Pose';scene.add(aircraft);
@@ -16,6 +16,7 @@ let flight:FlightController,ready=false,cameraMode='free',showLabels=false;
 type Rotor={pivot:T.Object3D;base:T.Quaternion;parts:T.Material[];disc:T.Mesh<T.CircleGeometry,T.MeshBasicMaterial>;lift:boolean;sign:number};
 const rotors:Rotor[]=[],axis=new T.Vector3(0,1,0),spin=new T.Quaternion();
 const labelData=[{name:'宽体货舱',pos:new T.Vector3(0,.75,1.15)},{name:'8 旋翼 · 共轴升力',pos:new T.Vector3(-1.24,1,.94)},{name:'7 m 复材主翼',pos:new T.Vector3(2.7,.96,0)},{name:'巡航尾推',pos:new T.Vector3(0,.92,-1.8)}];
+const routeSelect=document.createElement('select');routeSelect.id='route';routeSelect.setAttribute('aria-label','飞行航线');for(const [id,r] of Object.entries(routes)){const o=document.createElement('option');o.value=id;o.textContent=r.name;routeSelect.append(o);}const routeLabel=document.createElement('label');routeLabel.className='field';routeLabel.textContent='飞行航线';routeLabel.prepend(routeSelect);$('.right-tools')?.prepend(routeLabel);
 for(const d of labelData){const el=document.createElement('div');el.className='part-label';el.textContent=d.name;el.hidden=true;$('#labels').append(el);}const labelEls=Array.from(document.querySelectorAll<HTMLDivElement>('.part-label'));
 Promise.all([new GLTFLoader().loadAsync(new URL('ev50.glb',document.baseURI).href),fetch(new URL('flight.json',document.baseURI)).then(r=>{if(!r.ok)throw Error('飞行数据读取失败');return r.json();})]).then(([gltf,data])=>{
  aircraft.add(gltf.scene);flight=new FlightController(data.frames as Frame[]);
@@ -27,13 +28,16 @@ Promise.all([new GLTFLoader().loadAsync(new URL('ev50.glb',document.baseURI).hre
  ready=true;flight.evaluate();$<HTMLInputElement>('#timeline').max=String(flight.duration);$('#loading').hidden=true;$('#load-status').textContent='模型就绪';document.body.dataset.ready='true';for(const el of document.querySelectorAll<HTMLButtonElement|HTMLInputElement>('button,input'))el.disabled=false;$('#summary').textContent='7.00 m 翼展 / 8 + 3 动力系统';
 }).catch((e:Error)=>{$('#loading').textContent='加载失败：'+e.message+'。请通过本地服务打开，并检查模型文件。';console.error(e);});
 function setMode(mode:'product'|'flight'){if(!ready)return;flight.mode=mode;flight.restart();flight.playing=mode==='flight';terrain.group.visible=mode==='flight';cameraMode=mode==='flight'?'follow':'free';$<HTMLSelectElement>('#camera').value=cameraMode;controls.enabled=cameraMode==='free';
- if(mode==='product'){camera.position.set(8,3.6,10).multiplyScalar(Math.max(1,1.05/camera.aspect));controls.target.set(0,.65,0);scene.background=new T.Color(0x202c34);scene.fog=null;}else{scene.background=new T.Color(0xa4becb);scene.fog=new T.Fog(0xa4becb,260,1100);}
+ if(mode==='product'){camera.position.set(8,3.6,10).multiplyScalar(Math.max(1,1.05/camera.aspect));controls.target.set(0,.65,0);scene.background=new T.Color(0x202c34);scene.fog=null;}else{scene.background=new T.Color(0xa4becb);scene.fog=new T.Fog(0xa4becb,650,3200);}
  $('#product').classList.toggle('active',mode==='product');$('#flight').classList.toggle('active',mode==='flight');$('#mode-label').textContent=mode==='product'?'PRODUCT STUDY':'FLIGHT DEMONSTRATION';$('#play').textContent=flight.playing?'暂停':'播放';$('#timeline-wrap').classList.toggle('muted',mode==='product');}
 $('#product').onclick=()=>setMode('product');$('#flight').onclick=()=>setMode('flight');$('#play').onclick=()=>{if(!ready)return;if(flight.mode==='product'){setMode('flight');return;}if(flight.time>=flight.duration)flight.restart();flight.playing=!flight.playing;$('#play').textContent=flight.playing?'暂停':'播放';};$('#restart').onclick=()=>{if(ready)flight.restart();};
 $<HTMLInputElement>('#loop').onchange=e=>{if(ready)flight.loop=(e.target as HTMLInputElement).checked;};
 $<HTMLInputElement>('#timeline').oninput=e=>{if(!ready)return;const t=Number((e.target as HTMLInputElement).value);if(flight.mode==='product')setMode('flight');flight.seek(t);};
 $<HTMLSelectElement>('#camera').onchange=e=>{cameraMode=(e.target as HTMLSelectElement).value;controls.enabled=cameraMode==='free';if(cameraMode==='free'&&ready){controls.target.copy(flight.position);controls.target.y+=.65;controls.update();}};
 $<HTMLInputElement>('#annotations').onchange=e=>{showLabels=(e.target as HTMLInputElement).checked;};
+routeSelect.onchange=()=>{if(ready)flight.setRoute(routeSelect.value as keyof typeof routes);};
+const api={command:(c:FlightCommand)=>{if(ready)flight.applyCommand(c);},motor:(lift:number,cruise:number)=>api.command({type:'motor',lift,cruise}),position:(position:number[])=>api.command({type:'position',position}),velocity:(velocity:number[])=>api.command({type:'velocity',velocity}),attitude:(quaternion:number[])=>api.command({type:'attitude',quaternion}),setRoute:(route:keyof typeof routes)=>{routeSelect.value=route;if(ready)flight.setRoute(route);},play:()=>{if(ready){flight.mode='flight';flight.playing=true;}},pause:()=>{if(ready)flight.playing=false;}};
+Object.assign(window,{ev50API:api});window.addEventListener('ev50-command',(e)=>{const c=(e as CustomEvent<FlightCommand>).detail;if(c)api.command(c);});
 function quality(q:string){renderer.setPixelRatio(Math.min(devicePixelRatio,q==='Low'?1:q==='Medium'?1.5:2));renderer.shadowMap.enabled=q!=='Low';const size=q==='High'?4096:1024;sun.shadow.mapSize.set(size,size);sun.shadow.map?.dispose();sun.shadow.map=null;terrain.setQuality(q);$('#quality-readout').textContent=q.toUpperCase();resize();}
 $<HTMLSelectElement>('#quality').onchange=e=>quality((e.target as HTMLSelectElement).value);
 function resize(){const w=canvas.clientWidth,h=canvas.clientHeight;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();if(cameraMode==='free'){camera.position.set(8,3.6,10).multiplyScalar(Math.max(1,1.05/camera.aspect));if(ready)camera.position.add(flight.position);controls.update();}}window.addEventListener('resize',resize);

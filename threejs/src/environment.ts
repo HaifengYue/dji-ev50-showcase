@@ -10,7 +10,7 @@ export function environment(scene:T.Scene){
  const canvas=document.createElement('canvas');canvas.width=canvas.height=512;const ctx=canvas.getContext('2d')!,pixels=ctx.createImageData(512,512);
  for(let i=0;i<pixels.data.length;i+=4){const n=rand()*36;pixels.data[i]=95+n;pixels.data[i+1]=105+n;pixels.data[i+2]=77+n;pixels.data[i+3]=255;}
  ctx.putImageData(pixels,0,0);const detail=new T.CanvasTexture(canvas);detail.colorSpace=T.SRGBColorSpace;detail.wrapS=detail.wrapT=T.RepeatWrapping;detail.repeat.set(90,90);detail.anisotropy=8;
- const geo=new T.PlaneGeometry(1600,1600,256,256);geo.rotateX(-Math.PI/2);const gp=geo.attributes.position,colors=[];
+ const geo=new T.PlaneGeometry(6000,6000,256,256);geo.rotateX(-Math.PI/2);const gp=geo.attributes.position,colors=[];
  for(let i=0;i<gp.count;i++){const x=gp.getX(i),z=gp.getZ(i);gp.setY(i,height(x,z)-.07);const c=new T.Color(0x87906a);c.lerp(new T.Color(0xb5a885),.5+.5*Math.sin(x*.043+Math.sin(z*.034)*2));colors.push(c.r,c.g,c.b);}
  geo.setAttribute('color',new T.Float32BufferAttribute(colors,3));geo.computeVertexNormals();const ground=new T.Mesh(geo,new T.MeshStandardMaterial({map:detail,vertexColors:true,roughness:1}));ground.receiveShadow=true;group.add(ground);
  const pad=new T.Mesh(new T.CylinderGeometry(6,6,.08,96),mat(0x858b85));pad.position.y=-.025;pad.receiveShadow=true;group.add(pad);
