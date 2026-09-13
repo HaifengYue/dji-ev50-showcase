@@ -169,10 +169,16 @@ if V>=2:
 if V>=3:
  # Apply a subtle smooth union to the fuselage/wing shoulders only.
  bpy.ops.object.select_all(action='DESELECT')
- for o in [hull,bpy.data.objects['Left_Wing_Root'],bpy.data.objects['Right_Wing_Root']]:o.select_set(True)
+ if V>=8:
+  # Thin root lofts do not tolerate voxel remeshing. Extend the clean main airfoils into the shell.
+  for side in ['Left','Right']:
+   bpy.data.objects.remove(bpy.data.objects[side+'_Wing_Root'],do_unlink=True)
+   for vert in bpy.data.objects[side+'_Main_Wing'].data.vertices:
+    if abs(abs(vert.co.x)-.65)<.001:vert.co.x=math.copysign(.30,vert.co.x)
+ for o in ([hull] if V>=8 else [hull,bpy.data.objects['Left_Wing_Root'],bpy.data.objects['Right_Wing_Root']]):o.select_set(True)
  bpy.context.view_layer.objects.active=hull;bpy.ops.object.convert(target='MESH');bpy.ops.object.join()
- if V<5:
-  mod=hull.modifiers.new('Shoulder_Union','REMESH');mod.mode='VOXEL';mod.voxel_size=.018;bpy.ops.object.modifier_apply(modifier=mod.name)
+ if V<5 or V==7:
+  mod=hull.modifiers.new('Shoulder_Union','REMESH');mod.mode='VOXEL';mod.voxel_size=.010 if V>=7 else .018;bpy.ops.object.modifier_apply(modifier=mod.name)
   mod=hull.modifiers.new('Shoulder_Smoothing','SMOOTH');mod.factor=.55;mod.iterations=4;bpy.ops.object.modifier_apply(modifier=mod.name)
   mod=hull.modifiers.new('Shell_Optimization','DECIMATE');mod.ratio=.42;bpy.ops.object.modifier_apply(modifier=mod.name)
  for f in hull.data.polygons:f.use_smooth=True
@@ -205,6 +211,29 @@ if V>=6:
  for y,lab in [(-1.05,'Front'),(.63,'Rear')]:
   for s,side in [(-1,'Left'),(1,'Right')]:
    ellipsoid('Gear_'+lab+'_'+side+'_Joint',(s*.63,y,.105),(.04,.045,.027),metal)
+if V>=7:
+ # Remove raised decorative fairings and the separate tail cap, which interrupted the shell.
+ for o in list(root.children_recursive):
+  if '_Wing_Service_Fairing_' in o.name or o.name=='Tail_Service_Panel':bpy.data.objects.remove(o,do_unlink=True)
+ bpy.context.view_layer.update();ev=hull.evaluated_get(bpy.context.evaluated_depsgraph_get())
+ for o in list(root.children_recursive):
+  if '_Cargo_Latch_' in o.name:
+   s=1 if o.location.x>0 else -1
+   hit,co,normal,idx=ev.ray_cast(Vector((s*2,o.location.y,o.location.z)),Vector((-s,0,0)))
+   if hit:o.location.x=co.x;o.scale.x=.006;o.scale.y=.028;o.scale.z=.012
+  if o.name=='Cargo_Hatch_Outline':
+   o.data.bevel_depth=.0012
+   for p in o.data.splines[0].points:
+    hit,co,normal,idx=ev.ray_cast(Vector((p.co.x,p.co.y,2)),Vector((0,0,-1)))
+    if hit:p.co.z=co.z+.001
+  if o.name.startswith('Cooling_Ring_'):o.scale.x=.978;o.scale.y=.978
+ # Re-seat the thin aileron hinge traces on the actual wing surface.
+ for side in ['Left','Right']:
+  wingobj=bpy.data.objects[side+'_Main_Wing'].evaluated_get(bpy.context.evaluated_depsgraph_get())
+  hinge=bpy.data.objects[side+'_Aileron_Hinge'];hinge.data.bevel_depth=.001
+  for p in hinge.data.splines[0].points:
+   hit,co,normal,idx=wingobj.ray_cast(Vector((p.co.x,p.co.y,2)),Vector((0,0,-1)))
+   if hit:p.co.z=co.z+.001
 # Component rotor-only demo action: the root remains owned by the flight path.
 if V>=3:
  for o in root.children_recursive:

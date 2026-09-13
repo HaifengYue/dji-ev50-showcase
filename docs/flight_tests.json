@@ -5,20 +5,20 @@
     {
       "route": "valley",
       "minClearance": 49,
-      "maxSpeed": 47.12362460531501,
-      "samples": 14401
+      "maxSpeed": 47.123624605357875,
+      "samples": 10801
     },
     {
       "route": "plateau",
       "minClearance": 49,
-      "maxSpeed": 62.83149947374996,
-      "samples": 14401
+      "maxSpeed": 62.83149947381539,
+      "samples": 10801
     },
     {
       "route": "ridge",
       "minClearance": 49,
-      "maxSpeed": 39.26968717110234,
-      "samples": 14401
+      "maxSpeed": 39.26968717113618,
+      "samples": 10801
     }
   ],
   "checks": [
@@ -30,6 +30,9 @@
     "product origin",
     "velocity integration",
     "command clearance",
-    "invalid commands"
+    "invalid commands",
+    "independent manual channels",
+    "manual pause/resume",
+    "playback speed 2x and 4x"
   ]
 }

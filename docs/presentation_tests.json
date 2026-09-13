@@ -1,0 +1,14 @@
+{
+  "version": "v09",
+  "passed": [
+    "Product preset and aspect fitting",
+    "Orbit gating, manual drag cancellation, and lighting isolation",
+    "PNG request waits for completed render",
+    "Recording MIME fallback, visibility stop, download and stream cleanup",
+    "Recording limit and immersive stop control",
+    "Escape exits immersion and closes mobile tools; URLs released",
+    "Unsupported browser disables recording after model ready"
+  ],
+  "browser": false,
+  "scope": "Presentation logic with DOM and encoder test doubles; no real rendering or encoding verified."
+}

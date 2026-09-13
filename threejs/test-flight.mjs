@@ -2,9 +2,9 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import ts from 'typescript';
 const temporary=[];
-for(const name of ['terrain','flight']){
+for(const name of ['terrain','timing','flight']){
  const source=fs.readFileSync('src/'+name+'.ts','utf8');
- const js=ts.transpileModule(source,{compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.ES2022}}).outputText.replace("'./terrain'","'./.terrain-test-tmp.mjs'");
+ const js=ts.transpileModule(source,{compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.ES2022}}).outputText.replace("'./terrain'","'./.terrain-test-tmp.mjs'").replace("'./timing'","'./.timing-test-tmp.mjs'");
  const file='.'+name+'-test-tmp.mjs';temporary.push(file);fs.writeFileSync(file,js);
 }
 try{
@@ -12,10 +12,10 @@ try{
  const {obstacleCeiling,mountainHeight,AIRCRAFT_RADIUS,CLEARANCE}=await import('./.terrain-test-tmp.mjs');
  const frames=JSON.parse(fs.readFileSync('public/flight.json','utf8')).frames;
  const c=new FlightController(frames);c.mode='flight';c.loop=false;
- assert.equal(c.duration,240);c.seek(100);assert.equal(c.state,'CRUISE');
+ assert.equal(c.duration,180);c.seek(100);assert.equal(c.state,'CRUISE');
  const p=c.position.clone();c.playing=false;c.tick(5);assert(c.position.equals(p));
- c.playing=true;c.seek(239.9);c.tick(.2);assert.equal(c.time,240);assert.equal(c.playing,false);assert.equal(c.position.length(),0);
- c.loop=true;c.playing=true;c.seek(239.9);c.tick(.2);assert(Math.abs(c.time-.1)<1e-8);
+ c.playing=true;c.seek(179.9);c.tick(.2);assert.equal(c.time,180);assert.equal(c.playing,false);assert.equal(c.position.length(),0);
+ c.loop=true;c.playing=true;c.seek(179.9);c.tick(.2);assert(Math.abs(c.time-.1)<1e-8);
  let vertices=0;
  for(let k=0;k<3;k++)for(let j=0;j<=72;j++)for(let i=0;i<=240;i++){
   const a=i*2*Math.PI/240,r=235+k*170+j*3.8;
@@ -24,7 +24,7 @@ try{
  const report=[];
  for(const route of Object.keys(routes)){
   c.setRoute(route);let minClearance=Infinity,maxSpeed=0;let previous=null;
-  for(let i=0;i<=240*60;i++){
+  for(let i=0;i<=180*60;i++){
    c.seek(i/60);assert(c.position.toArray().every(Number.isFinite));assert(Math.abs(c.quaternion.length()-1)<1e-6);
    const {x,y,z}=c.position;
    if(Math.hypot(x,z)>14){const gap=y-AIRCRAFT_RADIUS-obstacleCeiling(x,z);assert(gap>=CLEARANCE,route+' collision at '+c.time);minClearance=Math.min(minClearance,gap);}
@@ -34,15 +34,20 @@ try{
   }
   assert.equal(c.position.length(),0);c.restart();assert.equal(c.position.length(),0);
   c.mode='product';c.seek(100);assert.equal(c.position.length(),0);c.mode='flight';
-  report.push({route,minClearance,maxSpeed,samples:14401});
+  report.push({route,minClearance,maxSpeed,samples:10801});
  }
  c.applyCommand({type:'position',position:[0,40,0]});assert.equal(c.position.y,40);
  c.applyCommand({type:'velocity',velocity:[2,0,0]});c.tick(2);assert.equal(c.position.x,4);
  c.applyCommand({type:'position',position:[300,-10,0]});assert(c.position.y>=131);
  c.applyCommand({type:'attitude',quaternion:[0,0,0,1]});assert.equal(c.quaternion.w,1);
  c.applyCommand({type:'motor',lift:.7,cruise:.3});assert.equal(c.lift,.7);
+ const manualPosition=c.position.clone();c.applyCommand({type:'attitude',quaternion:[0,.2,0,1]});assert(c.position.equals(manualPosition));assert.equal(c.lift,.7);
+ c.applyCommand({type:'velocity',velocity:[1,0,0]});c.applyCommand({type:'motor',lift:.5,cruise:.5});c.tick(2);assert.equal(c.position.x,manualPosition.x+2);
+ c.pause();const paused=c.position.clone();c.tick(2);assert(c.position.equals(paused));c.manualPaused=false;c.tick(1);assert.equal(c.position.x,paused.x+1);
+ c.clearCommand();c.setSpeed(2);c.playing=true;c.seek(10);c.tick(1);assert.equal(c.time,12);c.setSpeed(4);c.seek(10);c.tick(1);assert.equal(c.time,14);c.setSpeed(1);
+ assert.throws(()=>c.setSpeed(10));assert.throws(()=>c.applyCommand({type:'unknown',quaternion:[0,0,0,1]}));
  assert.throws(()=>c.applyCommand({type:'position',position:[NaN,0,0]}));
  c.setRoute('valley');assert.equal(c.position.length(),0);
- fs.writeFileSync('../docs/flight_tests.json',JSON.stringify({passed:true,mountainVertices:vertices,routes:report,checks:['terrain clearance at 60 Hz','route endpoints','pause','seek','loop','product origin','velocity integration','command clearance','invalid commands']},null,2));
+ fs.writeFileSync('../docs/flight_tests.json',JSON.stringify({passed:true,mountainVertices:vertices,routes:report,checks:['terrain clearance at 60 Hz','route endpoints','pause','seek','loop','product origin','velocity integration','command clearance','invalid commands','independent manual channels','manual pause/resume','playback speed 2x and 4x']},null,2));
  console.log('PASS',JSON.stringify(report));
 }finally{temporary.forEach(f=>fs.unlinkSync(f));}

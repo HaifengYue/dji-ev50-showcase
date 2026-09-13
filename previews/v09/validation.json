@@ -1,0 +1,20 @@
+{
+  "version": "v09",
+  "source": "models\\v08\\ev50_v08.blend",
+  "blender": "5.2.1 LTS",
+  "pass": "surface materials, original woven normal texture, studio lighting",
+  "views": [
+    "front",
+    "rear",
+    "left",
+    "right",
+    "top",
+    "bottom",
+    "perspective"
+  ],
+  "previews_regenerated": false,
+  "export_tangents": false,
+  "mesh_objects": 131,
+  "lift_rotors": 8,
+  "cruise_rotors": 3
+}

@@ -38,5 +38,7 @@ export function environment(scene:T.Scene){
  for(let i=0;i<1000;i++){let x:number,z:number;do{x=-200+rand()*420;z=-220+rand()*440;}while(Math.hypot(x,z)<28||Math.abs(x-streamX(z))<9);if(i>=480){const a=rand()*Math.PI*2,r=980+rand()*1350;x=Math.cos(a)*r;z=Math.sin(a)*r;}const s=.55+rand()*.6,y=height(x,z);dummy.rotation.set(0,rand()*6.28,0);dummy.scale.setScalar(s);dummy.position.set(x,y+2*s,z);dummy.updateMatrix();trunks.setMatrixAt(i,dummy.matrix);dummy.position.y=y+2.4*s;dummy.updateMatrix();crowns.setMatrixAt(i,dummy.matrix);crowns.setColorAt(i,new T.Color().setHSL(.28+rand()*.05,.18+rand()*.18,.18+rand()*.10));}
  trunks.castShadow=crowns.castShadow=true;trunks.receiveShadow=crowns.receiveShadow=true;group.add(trunks,crowns);
  const sky=new Sky();sky.scale.setScalar(6000);const u=sky.material.uniforms;u.turbidity.value=3.2;u.rayleigh.value=1.4;u.mieCoefficient.value=.004;u.mieDirectionalG.value=.82;u.sunPosition.value.set(-.42,.64,.34);group.add(sky);
- return{group,mountains,ground,setQuality(q:string){grass.count=q==='Low'?500:q==='Medium'?2600:6500;rocks.count=q==='Low'?150:q==='Medium'?450:900;trunks.count=crowns.count=q==='Low'?150:q==='Medium'?480:1000;mountains.children[2].visible=q!=='Low';detail.anisotropy=q==='High'?8:2;}};
+ return{group,mountains,ground,
+ setSky(golden:boolean){u.sunPosition.value.set(...(golden?[-65,30,25]:[-35,65,25]) as [number,number,number]).normalize();u.turbidity.value=golden?4.2:3.2;u.rayleigh.value=golden?1.8:1.4;},
+ setQuality(q:string){grass.count=q==='Low'?500:q==='Medium'?2600:6500;rocks.count=q==='Low'?150:q==='Medium'?450:900;trunks.count=crowns.count=q==='Low'?150:q==='Medium'?480:1000;mountains.children[2].visible=q!=='Low';detail.anisotropy=q==='High'?8:2;}};
 }

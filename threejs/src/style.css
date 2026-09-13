@@ -3,3 +3,46 @@
 .headline,.flight-info{text-shadow:0 2px 12px #10212ed9}.headline p,.flight-info .state-code,.flight-info .metric span{color:#e0e9ee}.headline{padding:12px 16px;margin-left:-16px;background:linear-gradient(90deg,#15263085,transparent);border-radius:8px}
 .route-map{border-top:1px solid var(--line);padding-top:10px;font-size:12px;color:var(--muted)}.route-map span{display:flex;justify-content:space-between}.route-map b{color:var(--accent);font-weight:500}.route-map canvas{display:block;width:100%;height:auto;margin-top:5px;border-radius:5px;background:#0d1c2599}
 @media(max-width:760px),(max-height:620px){.right-tools{max-height:calc(100dvh - 290px);overflow-y:auto;overscroll-behavior:contain;}.route-map{flex-shrink:0}}
+@media(max-width:760px){.metrics{gap:12px;flex-wrap:wrap;max-width:calc(100vw - 32px)}.metric strong{font-size:20px}.metric span{font-size:11px}.phase-labels{font-size:10px}.right-tools{max-height:calc(100dvh - 350px)}}
+
+/* Presentation controls stay scrollable above the timeline. */
+.right-tools{max-height:calc(100dvh - 300px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;z-index:3;gap:12px}
+.right-tools>*{flex-shrink:0}
+.tool-section{border-top:1px solid var(--line);padding-top:12px}
+.tool-section summary{cursor:pointer;font-size:13px;color:#eef3f5}
+.tool-section[open] summary{margin-bottom:12px}
+.tool-section .toggle{margin-top:12px}
+.capture-actions{display:grid;gap:8px;margin-top:12px}
+.capture-actions button{padding:9px 8px}
+#capture-status{display:block;font-size:12px;line-height:1.6;color:var(--muted);margin-top:10px;overflow-wrap:anywhere}
+#capture-download{display:block;font-size:12px;color:var(--accent);margin-top:8px;text-underline-offset:3px}
+#tools-toggle,.immersive-controls{display:none}
+.recording #record-video,.recording #stop-recording{border-color:#f5a894;color:#ffd7cb}
+body.immersive .topbar,body.immersive .headline,body.immersive .right-tools,body.immersive .flight-info,body.immersive .timeline-panel,body.immersive .footer-note,body.immersive #labels,body.immersive #tools-toggle{display:none}
+body.immersive .immersive-controls{display:flex;gap:8px;position:fixed;right:20px;top:20px;z-index:6}
+#stop-recording{display:none}
+body.recording #stop-recording{display:block}
+@media(max-width:760px){
+  #tools-toggle{display:block;position:absolute;right:16px;top:84px;z-index:4;padding:9px 12px;font-size:12px}
+  .right-tools{display:none;right:16px;top:128px;width:min(240px,calc(100vw - 32px));max-height:calc(100dvh - 320px);padding:14px;gap:12px;background:#172630f2}
+  body.tools-open:not(.immersive) .right-tools{display:flex}
+  .headline{top:125px;left:16px;padding-top:0}
+  .headline h1{font-size:28px}
+  .headline p{max-width:calc(100vw - 40px)}
+  .tool-section .field{font-size:13px}
+  .field select{min-height:36px}
+  body.immersive .immersive-controls{right:12px;top:12px}
+  .immersive-controls button{font-size:12px;padding:10px}
+}
+@media(max-height:620px){
+  .right-tools{top:76px;max-height:calc(100dvh - 235px)}
+  .tool-section{padding-top:8px}
+  .right-tools{gap:8px}
+}
+@media(max-width:760px) and (max-height:620px){
+  #tools-toggle{top:70px}
+  .right-tools{top:110px;max-height:calc(100dvh - 270px)}
+  .headline{top:78px}
+  .headline h1{font-size:24px}
+  .headline .eyebrow{display:none}
+}
