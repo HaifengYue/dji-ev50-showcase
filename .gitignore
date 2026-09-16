@@ -1,11 +1,39 @@
 threejs/node_modules/
 threejs/dist/
-renders/flight_sequence_v02/
-renders/flight_sequence/
+node_modules/
+coverage/
+.telemetry-simulation-test-tmp.mjs
+.session-simulation-test-tmp.mjs
+
+# Local exports and downloaded tools. Release archives are published separately,
+# not committed as ad-hoc workspace output.
+deliverables/*.zip
+ev50_page.html
+higgsfield_blender-*.zip
+
+# Local-only source assets and render output. The canonical runtime asset is
+# threejs/public/ev50.glb; versioned release assets already tracked remain so.
+renders/
+references/
+models/*.gltf
+models/*.blend
+models/*.blend1
+models/v01/
+models/v02/
+models/v03/
 __pycache__/
 *.pyc
 *.blend1
 
 renders/flight_sequence_v03/
 models/v04/
+models/v07/
+previews/flight_*.png
+previews/v01/
+previews/v02/
+previews/v03/
+previews/v04/
+previews/v07/
+previews/v08/
 previews/*.log
+previews/**/*.log

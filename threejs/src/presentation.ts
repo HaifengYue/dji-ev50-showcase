@@ -1,5 +1,5 @@
 import * as T from 'three';
-import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 type Options = {
   canvas: HTMLCanvasElement;
@@ -14,14 +14,14 @@ type Options = {
 
 const views = {
   hero: [8, 3.6, 10],
-  front: [0, .9, 13],
+  front: [0, 0.9, 13],
   side: [11, 1.3, 0],
-  top: [0, 13, .001],
+  top: [0, 13, 0.001],
 } satisfies Record<string, [number, number, number]>;
 
 /** Presentation controls are deliberately separate from the flight controller. */
 export function presentation(options: Options) {
-  const {canvas, camera, controls, scene, sun, hemisphere} = options;
+  const { canvas, camera, controls, scene, sun, hemisphere } = options;
   const element = <E extends HTMLElement>(id: string) => {
     const result = document.getElementById(id);
     if (!result) throw new Error(`Missing presentation element: ${id}`);
@@ -86,7 +86,7 @@ export function presentation(options: Options) {
     controls.update(0);
     aspectScale = Math.max(1, 1.05 / camera.aspect);
     camera.position.fromArray(views[name]).multiplyScalar(aspectScale);
-    controls.target.set(0, .65, 0);
+    controls.target.set(0, 0.65, 0);
     controls.update(0);
     controls.enableDamping = damping;
     view.value = name;
@@ -104,7 +104,7 @@ export function presentation(options: Options) {
     options.showProduct();
     orbit.checked = true;
   };
-  controls.autoRotateSpeed = .65;
+  controls.autoRotateSpeed = 0.65;
   controls.addEventListener('start', disableOrbit);
 
   function setImmersive(enabled: boolean) {
@@ -120,7 +120,7 @@ export function presentation(options: Options) {
     tools.setAttribute('aria-expanded', String(open));
     tools.textContent = open ? '收起设置' : '展示设置';
   };
-  document.addEventListener('keydown', event => {
+  document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
       document.body.classList.remove('tools-open');
       tools.setAttribute('aria-expanded', 'false');
@@ -136,10 +136,11 @@ export function presentation(options: Options) {
     report('正在生成当前画面…');
   };
 
-  const canRecord = typeof MediaRecorder !== 'undefined' && typeof canvas.captureStream === 'function';
+  const canRecord =
+    typeof MediaRecorder !== 'undefined' && typeof canvas.captureStream === 'function';
   function cleanupRecording(session: Recording) {
     window.clearTimeout(session.timer);
-    session.stream.getTracks().forEach(track => track.stop());
+    session.stream.getTracks().forEach((track) => track.stop());
     session.chunks.length = 0;
     if (activeRecording === session) activeRecording = undefined;
     document.body.classList.remove('recording');
@@ -167,18 +168,34 @@ export function presentation(options: Options) {
   }
 
   record.onclick = () => {
-    if (activeRecording) { stopRecording(); return; }
+    if (activeRecording) {
+      stopRecording();
+      return;
+    }
     if (!ready || !canRecord) return;
     let stream: MediaStream | undefined;
     try {
-      const mimeType = ['video/webm;codecs=vp9', 'video/webm;codecs=vp8', 'video/webm', 'video/mp4']
-        .find(type => MediaRecorder.isTypeSupported(type));
+      const mimeType = [
+        'video/webm;codecs=vp9',
+        'video/webm;codecs=vp8',
+        'video/webm',
+        'video/mp4',
+      ].find((type) => MediaRecorder.isTypeSupported(type));
       if (!mimeType) throw new Error('浏览器没有可用的视频编码器');
       stream = canvas.captureStream(30);
-      const recorder = new MediaRecorder(stream, {mimeType, videoBitsPerSecond:10_000_000});
-      const session: Recording = {recorder, stream, chunks:[], startedAt:performance.now(), reason:'', error:false};
+      const recorder = new MediaRecorder(stream, { mimeType, videoBitsPerSecond: 10_000_000 });
+      const session: Recording = {
+        recorder,
+        stream,
+        chunks: [],
+        startedAt: performance.now(),
+        reason: '',
+        error: false,
+      };
       activeRecording = session;
-      recorder.ondataavailable = event => { if (event.data.size) session.chunks.push(event.data); };
+      recorder.ondataavailable = (event) => {
+        if (event.data.size) session.chunks.push(event.data);
+      };
       recorder.onerror = () => {
         session.error = true;
         stopRecording('编码器发生错误');
@@ -189,11 +206,13 @@ export function presentation(options: Options) {
             if (session.error) report('视频编码失败，请降低画质后重试。');
             else if (!session.chunks.length) report('未生成视频帧，请重新录制。');
             else {
-              const blob = new Blob(session.chunks, {type:recorder.mimeType || mimeType});
+              const blob = new Blob(session.chunks, { type: recorder.mimeType || mimeType });
               const extension = blob.type.includes('mp4') ? 'mp4' : 'webm';
               download(blob, extension);
               const seconds = ((performance.now() - session.startedAt) / 1000).toFixed(1);
-              report(`${session.reason ? session.reason + '；' : ''}已生成 ${seconds} 秒 ${extension.toUpperCase()}，可再次下载。`);
+              report(
+                `${session.reason ? session.reason + '；' : ''}已生成 ${seconds} 秒 ${extension.toUpperCase()}，可再次下载。`,
+              );
             }
           }
         } catch (error) {
@@ -210,7 +229,7 @@ export function presentation(options: Options) {
       report('录制中 · 仅三维画面 / 无音频 · 最长 200 秒');
     } catch (error) {
       if (activeRecording) cleanupRecording(activeRecording);
-      else stream?.getTracks().forEach(track => track.stop());
+      else stream?.getTracks().forEach((track) => track.stop());
       report(`无法录制：${error instanceof Error ? error.message : String(error)}`);
     }
   };
@@ -228,7 +247,9 @@ export function presentation(options: Options) {
     stopRecording();
     if (lastDownloadUrl) URL.revokeObjectURL(lastDownloadUrl);
   });
-  window.addEventListener('pageshow', () => { leaving = false; });
+  window.addEventListener('pageshow', () => {
+    leaving = false;
+  });
 
   return {
     sunOffset,
@@ -237,21 +258,27 @@ export function presentation(options: Options) {
       record.disabled = !canRecord;
       if (!canRecord) report('当前浏览器不支持画面录制，仍可保存 PNG。');
     },
-    resetProductView() { placeView('hero'); },
+    resetProductView() {
+      placeView('hero');
+    },
     resizeProductView() {
       const next = Math.max(1, 1.05 / camera.aspect);
-      camera.position.sub(controls.target).multiplyScalar(next / aspectScale).add(controls.target);
+      camera.position
+        .sub(controls.target)
+        .multiplyScalar(next / aspectScale)
+        .add(controls.target);
       aspectScale = next;
       controls.update(0);
     },
     update(nextMode: 'product' | 'flight', freeCamera: boolean) {
       mode = nextMode;
-      controls.autoRotate = ready && mode === 'product' && freeCamera && orbit.checked && !document.hidden;
+      controls.autoRotate =
+        ready && mode === 'product' && freeCamera && orbit.checked && !document.hidden;
       const golden = mode === 'flight' && lighting.value === 'golden';
       const key = `${mode}:${golden}`;
       if (key !== appliedLighting) {
         appliedLighting = key;
-        sunOffset.set(...(golden ? [-65,30,25] : [-35,65,25]) as [number,number,number]);
+        sunOffset.set(...((golden ? [-65, 30, 25] : [-35, 65, 25]) as [number, number, number]));
         sun.color.setHex(golden ? 0xffd5a0 : 0xffefd4);
         sun.intensity = golden ? 2.25 : 2.4;
         hemisphere.color.setHex(golden ? 0xc6d5ec : 0xd6e9ff);
@@ -271,13 +298,18 @@ export function presentation(options: Options) {
       pendingImage = false;
       // Snapshot immediately after the render; preserveDrawingBuffer stays off.
       try {
-        canvas.toBlob(blob => {
+        canvas.toBlob((blob) => {
           try {
             if (!blob) throw new Error('浏览器未生成图像');
-            if (!leaving) { download(blob, 'png'); report(`已生成 ${canvas.width} × ${canvas.height} PNG，包含三维画面。`); }
+            if (!leaving) {
+              download(blob, 'png');
+              report(`已生成 ${canvas.width} × ${canvas.height} PNG，包含三维画面。`);
+            }
           } catch (error) {
             report(`截图失败：${error instanceof Error ? error.message : String(error)}`);
-          } finally { save.disabled = !ready; }
+          } finally {
+            save.disabled = !ready;
+          }
         }, 'image/png');
       } catch (error) {
         save.disabled = !ready;
@@ -285,8 +317,13 @@ export function presentation(options: Options) {
       }
     },
     getState() {
-      return {view:view.value, autoOrbit:controls.autoRotate, lighting:mode === 'product' ? 'studio' : lighting.value,
-        recording:activeRecording?.recorder.state ?? 'inactive', cameraPosition:camera.position.toArray()};
+      return {
+        view: view.value,
+        autoOrbit: controls.autoRotate,
+        lighting: mode === 'product' ? 'studio' : lighting.value,
+        recording: activeRecording?.recorder.state ?? 'inactive',
+        cameraPosition: camera.position.toArray(),
+      };
     },
   };
 }

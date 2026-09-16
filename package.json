@@ -1,0 +1,20 @@
+{
+  "name": "dji-ev50-vtol",
+  "private": true,
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "prepare": "husky",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "npm --prefix threejs run build",
+    "test": "npm --prefix threejs run test:api && npm --prefix threejs run test:presentation && npm --prefix threejs run test:flight && npm --prefix threejs run test:model",
+    "ci": "npm run format:check && npm run typecheck && npm run test"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "prettier": "^3.9.7"
+  }
+}

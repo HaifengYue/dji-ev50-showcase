@@ -41,19 +41,21 @@ python scripts/drone_control.py state
 
 ## HTTP 接口
 
-| 方法与路径 | 作用 | 请求体示例 |
-|---|---|---|
-| `GET /api/v1/health` | 控制桥就绪状态 | — |
-| `GET /api/v1/flight/state` | 页面实时飞行状态 | — |
-| `POST /api/v1/flight/commands` | 手动控制 | `{"type":"position","position":[42,190,-35]}` |
-| `POST /api/v1/flight/{play,pause,resume,reset}` | 播放控制 | `{}` |
-| `PUT /api/v1/flight/time` | 定位任务时间 | `{"seconds":30}` |
-| `PUT /api/v1/flight/speed` | 设置播放倍率 | `{"speed":2}` |
-| `GET /api/v1/missions` / `PUT /api/v1/missions/current` | 读取/切换航线 | `{"route":"ridge"}` |
-| `GET` / `PATCH /api/v1/settings` | 读取/更新页面设置 | `{"camera":"follow"}` |
-| `GET /api/v1/requests/{id}` | 查询异步指令执行结果 | — |
-| `GET /api/v1/telemetry` | SSE 实时状态流 | — |
+| 方法与路径                                              | 作用                 | 请求体示例                                    |
+| ------------------------------------------------------- | -------------------- | --------------------------------------------- |
+| `GET /api/v1/health`                                    | 控制桥就绪状态       | —                                             |
+| `GET /api/v1/flight/state`                              | 页面实时飞行状态     | —                                             |
+| `POST /api/v1/flight/commands`                          | 手动控制             | `{"type":"position","position":[42,190,-35]}` |
+| `POST /api/v1/flight/{play,pause,resume,reset}`         | 播放控制             | `{}`                                          |
+| `PUT /api/v1/flight/time`                               | 定位任务时间         | `{"seconds":30}`                              |
+| `PUT /api/v1/flight/speed`                              | 设置播放倍率         | `{"speed":2}`                                 |
+| `GET /api/v1/missions` / `PUT /api/v1/missions/current` | 读取/切换航线        | `{"route":"ridge"}`                           |
+| `GET` / `PATCH /api/v1/settings`                        | 读取/更新页面设置    | `{"camera":"follow"}`                         |
+| `GET /api/v1/requests/{id}`                             | 查询异步指令执行结果 | —                                             |
+| `GET /api/v1/telemetry`                                 | SSE 实时状态流       | —                                             |
 
-写入类接口先返回 `202` 和请求 ID；待页面执行后，使用 `GET /api/v1/requests/{id}` 获取统一 API 响应。页面端仍执行 API 3.0 的校验，例如电机功率、速度倍率、四元数和航线 ID 的无效值会在执行回执中返回 `VALIDATION_FAILED`。
+写入类接口先返回 `202` 和请求 ID；待页面执行后，使用 `GET /api/v1/requests/{id}` 获取统一 API 响应。页面端仍执行 API 3.1 的校验，例如电机功率、速度倍率、四元数和航线 ID 的无效值会在执行回执中返回 `VALIDATION_FAILED`。
+
+当前 HTTP 桥只公开上表中的飞行控制接口。`simulation.*`、`aircraft.describe`、`camera.describe` 与 `scene.*` 是浏览器页面内的视景接口，尚未映射为 HTTP 路由；请通过 `window.ev50API.request(...)` 调用，或在扩展 HTTP 桥、Python 客户端和测试后再公开路由。
 
 新增页面功能时，请同时在 `src/api/contracts.ts`、`src/api/gateway.ts`、`control-server.mjs`、Python 客户端及其测试中增加对应接口，避免 HTTP 和页面内 API 脱节。

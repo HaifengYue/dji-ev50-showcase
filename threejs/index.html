@@ -1,28 +1,136 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="EV50 复合翼运载无人机非官方三维外观研究与完整飞行演示"><title>EV50 — 3D Flight Study</title></head><body>
-<canvas id="scene" aria-label="EV50 三维展示，可用鼠标拖动观察"></canvas><div id="labels"></div>
-<header class="topbar"><div class="brand"><strong>EV50<span style="color:#d4fa79"> /</span></strong><small>3D FLIGHT STUDY</small></div><nav class="modes" aria-label="展示模式"><button id="product" class="active" disabled>产品展示</button><button id="flight" disabled>飞行演示</button></nav></header>
-<section class="headline"><div class="eyebrow" id="mode-label">PRODUCT STUDY</div><h1>跨越山海</h1><p id="summary">复合翼运载无人机 · 外观研究</p><p id="load-status">读取三维模型…</p></section>
-<button id="tools-toggle" aria-expanded="false" aria-controls="display-tools">展示设置</button>
-<aside id="display-tools" class="right-tools" aria-label="展示设置">
-  <label class="field">播放速度<select id="playback-speed" aria-label="播放速度"><option value=".25">0.25×</option><option value=".5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option><option value="2">2×</option><option value="4">4×</option></select></label>
-  <label class="field">观察视角<select id="camera"><option value="free">自由观察</option><option value="ground">地面展示</option><option value="follow">无人机跟随</option><option value="side">侧面电影</option><option value="wide">远景固定</option></select></label>
-  <label class="field">画面质量<select id="quality"><option>Low</option><option>Medium</option><option>High</option></select></label>
-  <label class="toggle"><input id="annotations" type="checkbox" disabled>部件说明</label>
-  <details class="tool-section" open>
-    <summary>产品视角</summary>
-    <label class="field">固定视角<select id="product-view" disabled><option value="hero">三分之四视角</option><option value="front">正面</option><option value="side">侧面</option><option value="top">俯视</option></select></label>
-    <label class="toggle"><input id="auto-orbit" type="checkbox" disabled>自动环绕</label>
-  </details>
-  <details class="tool-section" open>
-    <summary>光线与导出</summary>
-    <label class="field">户外光线<select id="lighting" title="在飞行演示中生效，产品模式使用摄影棚光线" disabled><option value="daylight">日光</option><option value="golden">金色时刻</option></select></label>
-    <div class="capture-actions"><button id="save-image" disabled>保存 PNG</button><button id="record-video" aria-pressed="false" disabled>录制视频</button><button id="immersive" aria-pressed="false" disabled>沉浸展示</button></div>
-    <output id="capture-status" role="status" aria-live="polite">导出仅包含三维画面，不含面板和声音。</output>
-    <a id="capture-download" hidden>下载文件</a>
-  </details>
-</aside>
-<div class="immersive-controls"><button id="exit-immersive">退出沉浸 · Esc</button><button id="stop-recording">停止并保存</button></div>
-<section class="flight-info"><div class="status-row"><span class="dot"></span><span id="state">地面待命</span></div><div id="state-code" class="state-code">IDLE</div><div class="metrics"><div class="metric"><span>飞行速度</span><strong id="speed">0.0</strong> <em>m/s</em></div><div class="metric"><span>相对高度</span><strong id="altitude">0.0</strong> <em>m</em></div><div class="metric"><span>垂起旋翼</span><strong id="lift-power">0%</strong></div><div class="metric"><span>巡航推进</span><strong id="cruise-power">0%</strong></div></div></section>
-<section class="timeline-panel" aria-label="飞行动画控制"><div class="playback"><button id="play" disabled>播放</button><button id="restart" disabled>重来</button></div><div id="timeline-wrap" class="muted"><div class="timeline-head"><span>完整飞行演示</span><span id="time">00.0 / 180.0 s</span></div><input id="timeline" aria-label="动画时间轴" type="range" min="0" max="180" step="0.01" value="0" disabled><div class="phase-labels"><span>启动</span><span>垂起</span><span>前向转换</span><span>巡航</span><span>后向转换</span><span>降落</span></div></div><div class="options"><label class="toggle"><input id="loop" type="checkbox" checked disabled>循环</label><span class="quality-label" id="quality-readout">HIGH</span></div></section>
-<div class="footer-note">非官方视觉研究 · 飞行动作为艺术演示</div><div id="loading" role="status">正在加载 EV50 模型…</div><script type="module" src="/src/main.ts"></script></body></html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="EV50 复合翼运载无人机非官方三维外观研究与完整飞行演示" />
+    <title>EV50 — 3D Flight Study</title>
+  </head>
+  <body>
+    <canvas id="scene" aria-label="EV50 三维展示，可用鼠标拖动观察"></canvas>
+    <div id="labels"></div>
+    <header class="topbar">
+      <div class="brand">
+        <strong>EV50<span style="color: #d4fa79"> /</span></strong
+        ><small>3D FLIGHT STUDY</small>
+      </div>
+      <nav class="modes" aria-label="展示模式">
+        <button id="product" class="active" disabled>产品展示</button
+        ><button id="flight" disabled>飞行演示</button>
+      </nav>
+    </header>
+    <section class="headline">
+      <div class="eyebrow" id="mode-label">PRODUCT STUDY</div>
+      <h1>跨越山海</h1>
+      <p id="summary">复合翼运载无人机 · 外观研究</p>
+      <p id="load-status">读取三维模型…</p>
+    </section>
+    <button id="tools-toggle" aria-expanded="false" aria-controls="display-tools">展示设置</button>
+    <aside id="display-tools" class="right-tools" aria-label="展示设置">
+      <label class="field"
+        >播放速度<select id="playback-speed" aria-label="播放速度">
+          <option value=".25">0.25×</option>
+          <option value=".5">0.5×</option>
+          <option value="1" selected>1×</option>
+          <option value="1.5">1.5×</option>
+          <option value="2">2×</option>
+          <option value="4">4×</option>
+        </select></label
+      >
+      <label class="field"
+        >观察视角<select id="camera">
+          <option value="free">自由观察</option>
+          <option value="ground">地面展示</option>
+          <option value="follow">无人机跟随</option>
+          <option value="side">侧面电影</option>
+          <option value="wide">远景固定</option>
+          <option value="fpv">机鼻相机</option>
+          <option value="down">下视相机</option>
+        </select></label
+      >
+      <label class="field"
+        >画面质量<select id="quality">
+          <option>Low</option>
+          <option>Medium</option>
+          <option>High</option>
+        </select></label
+      >
+      <label class="toggle"><input id="annotations" type="checkbox" disabled />部件说明</label>
+      <details class="tool-section" open>
+        <summary>产品视角</summary>
+        <label class="field"
+          >固定视角<select id="product-view" disabled>
+            <option value="hero">三分之四视角</option>
+            <option value="front">正面</option>
+            <option value="side">侧面</option>
+            <option value="top">俯视</option>
+          </select></label
+        >
+        <label class="toggle"><input id="auto-orbit" type="checkbox" disabled />自动环绕</label>
+      </details>
+      <details class="tool-section" open>
+        <summary>光线与导出</summary>
+        <label class="field"
+          >户外光线<select id="lighting" title="在飞行演示中生效，产品模式使用摄影棚光线" disabled>
+            <option value="daylight">日光</option>
+            <option value="golden">金色时刻</option>
+          </select></label
+        >
+        <div class="capture-actions">
+          <button id="save-image" disabled>保存 PNG</button
+          ><button id="record-video" aria-pressed="false" disabled>录制视频</button
+          ><button id="immersive" aria-pressed="false" disabled>沉浸展示</button>
+        </div>
+        <output id="capture-status" role="status" aria-live="polite"
+          >导出仅包含三维画面，不含面板和声音。</output
+        >
+        <a id="capture-download" hidden>下载文件</a>
+      </details>
+    </aside>
+    <div class="immersive-controls">
+      <button id="exit-immersive">退出沉浸 · Esc</button
+      ><button id="stop-recording">停止并保存</button>
+    </div>
+    <section class="flight-info">
+      <div class="status-row"><span class="dot"></span><span id="state">地面待命</span></div>
+      <div id="state-code" class="state-code">IDLE</div>
+      <div class="metrics">
+        <div class="metric"><span>飞行速度</span><strong id="speed">0.0</strong> <em>m/s</em></div>
+        <div class="metric"><span>相对高度</span><strong id="altitude">0.0</strong> <em>m</em></div>
+        <div class="metric"><span>垂起旋翼</span><strong id="lift-power">0%</strong></div>
+        <div class="metric"><span>巡航推进</span><strong id="cruise-power">0%</strong></div>
+      </div>
+    </section>
+    <section class="timeline-panel" aria-label="飞行动画控制">
+      <div class="playback">
+        <button id="play" disabled>播放</button><button id="restart" disabled>重来</button>
+      </div>
+      <div id="timeline-wrap" class="muted">
+        <div class="timeline-head">
+          <span>完整飞行演示</span><span id="time">00.0 / 180.0 s</span>
+        </div>
+        <input
+          id="timeline"
+          aria-label="动画时间轴"
+          type="range"
+          min="0"
+          max="180"
+          step="0.01"
+          value="0"
+          disabled
+        />
+        <div class="phase-labels">
+          <span>启动</span><span>垂起</span><span>前向转换</span><span>巡航</span
+          ><span>后向转换</span><span>降落</span>
+        </div>
+      </div>
+      <div class="options">
+        <label class="toggle"><input id="loop" type="checkbox" checked disabled />循环</label
+        ><span class="quality-label" id="quality-readout">HIGH</span>
+      </div>
+    </section>
+    <div class="footer-note">非官方视觉研究 · 飞行动作为艺术演示</div>
+    <div id="loading" role="status">正在加载 EV50 模型…</div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

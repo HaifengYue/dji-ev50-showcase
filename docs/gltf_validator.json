@@ -2,7 +2,7 @@
   "uri": "ev50.glb",
   "mimeType": "model/gltf-binary",
   "validatorVersion": "2.0.0-dev.3.10",
-  "validatedAt": "2026-09-13T09:02:20.912Z",
+  "validatedAt": "2026-09-16T14:02:36.797Z",
   "issues": {
     "numErrors": 0,
     "numWarnings": 39,
@@ -819,10 +819,7 @@
   "info": {
     "version": "2.0",
     "generator": "Khronos glTF Blender I/O v5.2.40",
-    "extensionsUsed": [
-      "KHR_materials_clearcoat",
-      "KHR_materials_emissive_strength"
-    ],
+    "extensionsUsed": ["KHR_materials_clearcoat", "KHR_materials_emissive_strength"],
     "resources": [
       {
         "pointer": "/buffers/0",

@@ -1,0 +1,9 @@
+.git/
+node_modules/
+threejs/node_modules/
+threejs/dist/
+deliverables/
+models/
+previews/
+references/
+renders/

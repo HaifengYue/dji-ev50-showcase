@@ -1,6 +1,6 @@
-# EV50 浏览器 API（v3）
+# EV50 浏览器 API（v3.1）
 
-EV50 是部署到 GitHub Pages 的静态 Three.js 应用，没有常驻服务端。因此 API 在当前页面上下文执行：入口为 `window.ev50API`，而不是一个可从其他设备访问的 HTTP 服务。所有操作有稳定的版本化名称，并映射到 `/api/v1/...` 资源路径；未来接入 HTTP、WebSocket 或桌面壳时可复用同一契约，不必改动调用方。
+EV50 是部署到 GitHub Pages 的静态 Three.js 应用，没有常驻服务端。因此 API 在当前页面上下文执行：入口为 `window.ev50API`，而不是一个可从其他设备访问的 HTTP 服务。基础控制操作映射到 `/api/v1/...` 资源路径；视景仿真操作仅在页面内公开，并在能力响应的 `browserOperations` 字段列出，不能假定存在同名 HTTP 路由。
 
 ## 快速开始
 
@@ -26,7 +26,7 @@ API 2.x 的 `motor`、`position`、`velocity`、`attitude`、`euler`、`setRoute
 const result = ev50.request({
   id: 'mission-001',
   operation: 'mission.select',
-  payload: { route: 'ridge' }
+  payload: { route: 'ridge' },
 });
 
 if (!result.ok) console.error(result.error.code, result.error.message);
@@ -35,45 +35,92 @@ else console.log(result.data);
 
 成功结果为 `{ id?, operation, ok: true, data }`；失败结果为 `{ id?, operation, ok: false, error: { code, message } }`。常见错误代码包括 `NOT_READY`、`VALIDATION_FAILED` 和 `OPERATION_UNSUPPORTED`。
 
-| 操作名 | 对应资源路径 | 负载 | 返回 |
-|---|---|---|---|
-| `system.health` | `GET /api/v1/health` | — | 就绪状态、API 版本 |
-| `system.capabilities` | `GET /api/v1/capabilities` | — | 已实现接口、预留命名空间 |
-| `flight.state` | `GET /api/v1/flight/state` | — | 飞行状态快照 |
-| `flight.command` | `POST /api/v1/flight/commands` | `motor`、`position`、`velocity` 或 `attitude` 指令 | 更新后状态 |
-| `flight.play` / `pause` / `resume` / `reset` | `POST /api/v1/flight/{action}` | — | 更新后状态 |
-| `flight.seek` | `PUT /api/v1/flight/time` | `{ seconds }` | 更新后状态 |
-| `flight.speed` | `PUT /api/v1/flight/speed` | `{ speed }`，范围 0.25–4 | 更新后状态 |
-| `mission.list` | `GET /api/v1/missions` | — | 可用航线 |
-| `mission.select` | `PUT /api/v1/missions/current` | `{ route }` | 更新后状态 |
-| `settings.get` | `GET /api/v1/settings` | — | 当前展示设置 |
-| `settings.update` | `PATCH /api/v1/settings` | 设置的局部对象 | 更新后的设置 |
+| 操作名                                       | 对应资源路径                   | 负载                                               | 返回                     |
+| -------------------------------------------- | ------------------------------ | -------------------------------------------------- | ------------------------ |
+| `system.health`                              | `GET /api/v1/health`           | —                                                  | 就绪状态、API 版本       |
+| `system.capabilities`                        | `GET /api/v1/capabilities`     | —                                                  | 已实现接口、预留命名空间 |
+| `flight.state`                               | `GET /api/v1/flight/state`     | —                                                  | 飞行状态快照             |
+| `flight.command`                             | `POST /api/v1/flight/commands` | `motor`、`position`、`velocity` 或 `attitude` 指令 | 更新后状态               |
+| `flight.play` / `pause` / `resume` / `reset` | `POST /api/v1/flight/{action}` | —                                                  | 更新后状态               |
+| `flight.seek`                                | `PUT /api/v1/flight/time`      | `{ seconds }`                                      | 更新后状态               |
+| `flight.speed`                               | `PUT /api/v1/flight/speed`     | `{ speed }`，范围 0.25–4                           | 更新后状态               |
+| `mission.list`                               | `GET /api/v1/missions`         | —                                                  | 可用航线                 |
+| `mission.select`                             | `PUT /api/v1/missions/current` | `{ route }`                                        | 更新后状态               |
+| `settings.get`                               | `GET /api/v1/settings`         | —                                                  | 当前展示设置             |
+| `settings.update`                            | `PATCH /api/v1/settings`       | 设置的局部对象                                     | 更新后的设置             |
 
 `flight.command` 的例子：
 
 ```js
-ev50.request({ operation: 'flight.command', payload: {
-  type: 'velocity', velocity: [8, 0, 6]
-}});
+ev50.request({
+  operation: 'flight.command',
+  payload: {
+    type: 'velocity',
+    velocity: [8, 0, 6],
+  },
+});
 
-ev50.request({ operation: 'settings.update', payload: {
-  camera: 'follow', quality: 'Medium', annotations: true
-}});
+ev50.request({
+  operation: 'settings.update',
+  payload: {
+    camera: 'follow',
+    quality: 'Medium',
+    annotations: true,
+  },
+});
 ```
 
-`settings.update` 支持 `loop`、`playbackSpeed`、`camera`（`free`、`ground`、`follow`、`side`、`wide`）、`quality`（`Low`、`Medium`、`High`）和 `annotations`。页面控件与 API 同步更新。
+`settings.update` 支持 `loop`、`playbackSpeed`、`camera`（`free`、`ground`、`follow`、`side`、`wide`、`fpv`、`down`）、`quality`（`Low`、`Medium`、`High`）和 `annotations`。页面控件与 API 同步更新。
+
+## 实时视景与记录回放（仅浏览器）
+
+这些操作只更新 Three.js 视景，**不会向无人机发送控制指令**。遥测帧为 JSON，必须包含 `version: 1`、单调递增的 `sequence` 与 `time`、`frame`（`SCENE`、`NED` 或 `ENU`）、位置/速度/四元数、11 路 `rotorRpm` 及 `aileron`、`elevator`、`rudder`。
+
+| 操作名                                        | 负载                      | 返回                            |
+| --------------------------------------------- | ------------------------- | ------------------------------- |
+| `simulation.state`                            | —                         | 来源、传输、丢帧与记录状态      |
+| `simulation.frame`                            | 一个遥测帧                | 校验后的实时视景状态            |
+| `simulation.connect` / `disconnect`           | `{ url }` / —             | WebSocket 连接状态              |
+| `simulation.replay.load` / `sample` / `seek`  | 记录对象 / — / `{ time }` | 回放状态                        |
+| `simulation.pause` / `resume`                 | —                         | 回放或实时视景状态              |
+| `simulation.record.start` / `stop` / `export` | —                         | 记录状态或标准化记录            |
+| `aircraft.describe` / `camera.describe`       | —                         | 机体挂点、相机内外参            |
+| `scene.describe` / `configure` / `query`      | — / 局部设置 / `{ x, z }` | 场景元数据、设置或地面/障碍查询 |
+
+```js
+ev50.request({
+  operation: 'simulation.frame',
+  payload: {
+    version: 1,
+    sequence: 42,
+    time: 12.3,
+    frame: 'SCENE',
+    position: [40, 120, -18],
+    quaternion: [0, 0, 0, 1],
+    velocity: [12, 0, 0],
+    rotorRpm: [1300, 1300, 1300, 1300, 1300, 1300, 1300, 1300, 1800, 1800, 1800],
+    surfaces: { aileron: 0, elevator: 0, rudder: 0 },
+  },
+});
+```
 
 ## 事件与遥测
 
 为兼容 iframe、嵌入脚本和简单消息桥，可以派发 `ev50-command`。事件既接受旧的指令对象，也接受新请求格式；每次都会在 `window` 上派发 `ev50-result`，其 `detail` 即统一结果对象。
 
 ```js
-window.addEventListener('ev50-result', event => console.log(event.detail));
-window.dispatchEvent(new CustomEvent('ev50-command', { detail: {
-  id: 'speed-001', operation: 'flight.speed', payload: { speed: 2 }
-}}));
+window.addEventListener('ev50-result', (event) => console.log(event.detail));
+window.dispatchEvent(
+  new CustomEvent('ev50-command', {
+    detail: {
+      id: 'speed-001',
+      operation: 'flight.speed',
+      payload: { speed: 2 },
+    },
+  }),
+);
 
-const unsubscribe = ev50.subscribe(state => {
+const unsubscribe = ev50.subscribe((state) => {
   // 约每 100 ms 一次；完成后必须取消，防止重复监听。
   console.log(state.position, state.speedMps);
 });
@@ -84,7 +131,7 @@ unsubscribe();
 
 新增功能必须先在 `threejs/src/api/contracts.ts` 定义操作名、对应 `/api/v1` 路径和负载/返回类型，再在 `gateway.ts` 的运行时边界实现验证和分发，并为它增加 `test-api.mjs` 回归用例。不要直接从外部脚本改 Three.js 场景或 DOM。
 
-当前为后续功能保留 `aircraft`、`assets`、`camera`、`scene`、`telemetry` 五个命名空间。只有在行为实现、输入校验和测试到位后，才可将其中的具体操作公开到 `system.capabilities`；未实现操作必须返回 `OPERATION_UNSUPPORTED`。这样不会把尚不可用的接口误报为可用。
+`aircraft`、`camera`、`scene` 与 `simulation` 已有浏览器端实现；`assets`、`telemetry` 仍为预留命名空间。新增操作必须同时更新本文件、`contracts.ts`、`gateway.ts` 以及回归测试；若要通过本机 HTTP 桥调用，也必须新增明确的路由和 Python 客户端支持，避免把仅页面内的操作误报为 HTTP 能力。
 
 若以后部署一个真实服务端，可让 HTTP 路由按上表把请求转换为 `{ id, operation, payload }` 并复用相同的响应结构。不要将浏览器 API 用作真实飞控或安全关键控制系统。
 

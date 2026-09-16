@@ -4,15 +4,15 @@
 
 ## 已完成
 
-| 检查 | 结果 | 证据 |
-| --- | --- | --- |
-| TypeScript 与 Vite 生产构建 | 通过；Three.js 分块有超过 500 kB 的体积提示 | `npm run build` |
-| 三条任务回归 | 通过，每条 10,801 个 60 Hz 样本，共 32,403 个 | `flight_tests.json` |
-| API 网关、HTTP 服务 | 通过 | `npm run test:api` |
-| 展示逻辑 | 7 组通过，使用 DOM 与编码器替身 | `presentation_tests.json` |
-| GLB 完整校验 | 0 错误、39 警告、95 条信息；未截断 | `gltf_validator.json` |
-| 网页模型与 v09 输出 | SHA-256 一致 | 下方资产标识 |
-| 本地静态服务 | 首页 HTTP 200；不代表浏览器成功渲染 | `npm run dev` |
+| 检查                        | 结果                                          | 证据                      |
+| --------------------------- | --------------------------------------------- | ------------------------- |
+| TypeScript 与 Vite 生产构建 | 通过；Three.js 分块有超过 500 kB 的体积提示   | `npm run build`           |
+| 三条任务回归                | 通过，每条 10,801 个 60 Hz 样本，共 32,403 个 | `flight_tests.json`       |
+| API 网关、HTTP 服务         | 通过                                          | `npm run test:api`        |
+| 展示逻辑                    | 7 组通过，使用 DOM 与编码器替身               | `presentation_tests.json` |
+| GLB 完整校验                | 0 错误、39 警告、95 条信息；未截断            | `gltf_validator.json`     |
+| 网页模型与 v09 输出         | SHA-256 一致                                  | 下方资产标识              |
+| 本地静态服务                | 首页 HTTP 200；不代表浏览器成功渲染           | `npm run dev`             |
 
 模型文件与页面资源共同 SHA-256：
 

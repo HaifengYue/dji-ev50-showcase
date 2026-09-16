@@ -42,22 +42,22 @@ High 在原有阴影、色调映射上增加低强度高光泛光与输出处理
 
 首条控制指令会进入 manual 状态并保存当时姿态、电机和位置。后续电机与姿态指令不会清除位置或正在执行的速度。位置指令会终止速度积分；发送零速度可悬停。电机功率只驱动视觉旋转，不计算升力，因此将功率置零不会导致自由落体。
 
-| 方法 | 参数 / 返回 | 行为 |
-|---|---|---|
-| `command(c)` | 指令对象；返回状态快照 | 与下面四种简写相同 |
-| `position([x,y,z])` | 3 个有限数值 | 定位并终止速度积分 |
-| `velocity([vx,vy,vz])` | 3 个有限数值 | 按每帧实际时间积分 |
-| `attitude([x,y,z,w])` | 非零四元数 | 修改姿态，保留其他通道 |
-| `euler(roll,pitch,yaw)` | 弧度 | 欧拉角转换为四元数 |
-| `motor(lift,cruise)` | 两组 `[0,1]` 功率 | 分别控制垂起与巡航组，非 11 路独立电机 |
-| `pause()` / `resume()` | 无 | 冻结/恢复当前控制模式，含手动速度 |
-| `play()` | 无 | 清除手动控制，恢复预设航线 |
-| `reset()` | 无 | 清除手动控制并暂停在起点 |
-| `seek(seconds)` | `0..180` | 清除手动控制并定位时间轴；在飞行模式使用 |
-| `setRoute(id)` | `valley`、`plateau`、`ridge` | 切换路线并重置 |
-| `setSpeed(value)` | `0.25..4` | 预设航线倍率，手动速度不受影响 |
-| `getState()` | 独立状态快照 | 位置、姿态、功率、模式、暂停标志、时间、路线、进度 |
-| `subscribe(fn)` | 返回取消订阅函数 | 约 10 Hz 推送状态；后台页面可能降低频率 |
+| 方法                    | 参数 / 返回                  | 行为                                               |
+| ----------------------- | ---------------------------- | -------------------------------------------------- |
+| `command(c)`            | 指令对象；返回状态快照       | 与下面四种简写相同                                 |
+| `position([x,y,z])`     | 3 个有限数值                 | 定位并终止速度积分                                 |
+| `velocity([vx,vy,vz])`  | 3 个有限数值                 | 按每帧实际时间积分                                 |
+| `attitude([x,y,z,w])`   | 非零四元数                   | 修改姿态，保留其他通道                             |
+| `euler(roll,pitch,yaw)` | 弧度                         | 欧拉角转换为四元数                                 |
+| `motor(lift,cruise)`    | 两组 `[0,1]` 功率            | 分别控制垂起与巡航组，非 11 路独立电机             |
+| `pause()` / `resume()`  | 无                           | 冻结/恢复当前控制模式，含手动速度                  |
+| `play()`                | 无                           | 清除手动控制，恢复预设航线                         |
+| `reset()`               | 无                           | 清除手动控制并暂停在起点                           |
+| `seek(seconds)`         | `0..180`                     | 清除手动控制并定位时间轴；在飞行模式使用           |
+| `setRoute(id)`          | `valley`、`plateau`、`ridge` | 切换路线并重置                                     |
+| `setSpeed(value)`       | `0.25..4`                    | 预设航线倍率，手动速度不受影响                     |
+| `getState()`            | 独立状态快照                 | 位置、姿态、功率、模式、暂停标志、时间、路线、进度 |
+| `subscribe(fn)`         | 返回取消订阅函数             | 约 10 Hz 推送状态；后台页面可能降低频率            |
 
 非法向量、非有限数值、零四元数、未知类型、越界功率或倍率均抛出错误。当前仅做数值格式校验，不限制外部位置的空间范围；请在场景边界内操作。自动路线保持既有地形净空，手动目标位置有保守高度钳制，可能被上移。它不是任意高速指令的连续碰撞检测或平滑航路规划器。
 
@@ -74,7 +74,7 @@ drone.euler(0, 0, Math.PI / 4);
 drone.velocity([8, 0, 6]);
 // 电机与姿态指令不会取消上述速度。
 drone.motor(0.2, 0.85);
-const unsubscribe = drone.subscribe(state => console.log(state));
+const unsubscribe = drone.subscribe((state) => console.log(state));
 drone.pause();
 drone.resume();
 // 用完监听时调用，避免重复订阅。
@@ -90,14 +90,16 @@ drone.play();
 支持原有裸指令，也支持带请求编号的封装。每个事件产生 `ev50-result` 回执；直接方法调用失败会抛出异常。事件只在当前页面传播，不接受网络数据。
 
 ```js
-const listener = event => {
+const listener = (event) => {
   const { id, ok, state, data, error } = event.detail;
   console.log(id, ok ? (state ?? data) : error.message);
 };
 window.addEventListener('ev50-result', listener);
-window.dispatchEvent(new CustomEvent('ev50-command', {
-  detail: { id: 'move-001', command: { type: 'position', position: [0,180,0] } }
-}));
+window.dispatchEvent(
+  new CustomEvent('ev50-command', {
+    detail: { id: 'move-001', command: { type: 'position', position: [0, 180, 0] } },
+  }),
+);
 window.removeEventListener('ev50-result', listener);
 ```
 

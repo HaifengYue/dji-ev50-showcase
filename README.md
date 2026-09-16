@@ -1,16 +1,24 @@
 # DJI EV50 VTOL 3D 展示与飞行演示
 
-本项目包含 Blender 建模工程、GLB 模型，以及 Vite + TypeScript + Three.js 交互式展示页面。当前为 **v09 / API 3.0**，浏览器预设任务为 **180 秒**。这是非官方视觉演示，模型细节为参考图像基础上的独立设计，不是工程 CAD 或真实飞行控制软件。
+本项目包含 Blender 建模工程、GLB 模型，以及 Vite + TypeScript + Three.js 交互式展示页面。当前为 **v09 / API 3.1**，浏览器预设任务为 **180 秒**。这是非官方视觉演示，模型细节为参考图像基础上的独立设计，不是工程 CAD 或真实飞行控制软件。
 
 ## 当前版本 v09（2026-09-13）
 
 网页已接入 `models/v09/ev50_v09.glb`，增加机壳涂层、复材法线细节与金属材质调整，沿用 v08 的外形和 8+3 动力部件层级。新增三分之四/正面/侧面/俯视预设、自动环绕、日光/金色时刻、沉浸展示、PNG 保存和浏览器录屏。小屏通过“展示设置”展开控制面板。
 
-录屏只包含三维画面，无 HTML 面板或声音，最长 200 秒；输出格式由浏览器支持决定。按 Escape 可退出沉浸展示，录制期间沉浸视图保留停止按钮。这些展示操作不改变 API 3.0 契约；切换产品模式仍采用原有任务重置语义。
+录屏只包含三维画面，无 HTML 面板或声音，最长 200 秒；输出格式由浏览器支持决定。按 Escape 可退出沉浸展示，录制期间沉浸视图保留停止按钮。API 3.1 新增实时遥测视景、WebSocket 接入、记录回放、机体/相机描述与场景查询；它们仅驱动浏览器内的可视化，不向真实飞行器发送指令。
 
 构建、飞行/API 回归、7 组展示逻辑测试已通过。完整 GLB 校验为 **0 错误、39 警告**，没有截断报告。**本轮浏览器自动验收被安全检查拦截，尚未验证实际渲染、真实文件编码或移动端布局。** 详情见 [v09 验证记录](docs/VALIDATION_V09.md)；操作见 [使用说明](docs/USER_GUIDE.md)。以下历史章节不代表当前版本。
 
 ## 本地运行
+
+```powershell
+npm ci
+npm --prefix threejs ci
+npm --prefix threejs run dev
+```
+
+或只运行网页应用：
 
 ```powershell
 cd threejs
@@ -23,13 +31,10 @@ npm run dev
 ## 构建与验证
 
 ```powershell
-cd threejs
-npm run build
-node test-flight.mjs
-npm run test:api
-npm run test:presentation
-node validate-glb.mjs
+npm run ci
 ```
+
+`npm run ci` 会进行格式检查、TypeScript 构建、API/视景/展示回归、飞行净空和 GLB 校验。提交时会自动运行同一套构建与测试门禁；协作、目录和发布规则见 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
 当前交付包为 `deliverables/EV50_project_v09.zip`，包含源码、构建文件、v08 重建依赖、v09 模型、七视图与验证说明；包内 `MANIFEST.json` 记录逐文件 SHA-256。可运行 `python scripts/package_v09.py` 重新打包；它会核对模型版本、校验报告和 ZIP 完整性。
 
@@ -51,16 +56,16 @@ node validate-glb.mjs
 
 完整、版本化的接口契约和后续功能接入约定见 [docs/API.md](docs/API.md)。页面内 API 可配合已有的本机 HTTP 桥使用。
 
-本地实时 HTTP 控制桥与 Python 示例脚本见 [docs/HTTP_CONTROL.md](docs/HTTP_CONTROL.md)。它通过 HTTP 指令实时驱动浏览器内的 Three.js 模型，不播放离线视频。
+本地实时 HTTP 控制桥与 Python 示例脚本见 [docs/HTTP_CONTROL.md](docs/HTTP_CONTROL.md)。它通过 HTTP 指令实时驱动浏览器内的 Three.js 模型，不播放离线视频。遥测视景和回放 API 的可用范围与数据契约见 [docs/API.md](docs/API.md)：浏览器 API 与 HTTP 桥路由明确区分，避免将页面内能力误用为远程飞控。
 
 页面加载后可通过 `window.ev50API` 发送指令，所有指令都由统一的飞行控制器处理：
 
 ```js
-ev50API.motor(0.85, 0.0);                 // 垂起/巡航电机功率 0–1
-ev50API.position([120, 26, -80]);         // 位置（米）
-ev50API.velocity([8, 0, 12]);              // 速度（米/秒）
-ev50API.attitude([0, 0, 0, 1]);             // 四元数姿态
-ev50API.setRoute('plateau');               // valley / plateau / ridge
+ev50API.motor(0.85, 0.0); // 垂起/巡航电机功率 0–1
+ev50API.position([120, 26, -80]); // 位置（米）
+ev50API.velocity([8, 0, 12]); // 速度（米/秒）
+ev50API.attitude([0, 0, 0, 1]); // 四元数姿态
+ev50API.setRoute('plateau'); // valley / plateau / ridge
 ev50API.play();
 ev50API.pause();
 ```
