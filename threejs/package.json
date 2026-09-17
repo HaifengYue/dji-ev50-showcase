@@ -7,7 +7,8 @@
     "build": "tsc && vite build",
     "preview": "vite preview --host 127.0.0.1",
     "control-server": "node control-server.mjs",
-    "test:api": "node test-api.mjs && node test-simulation.mjs && node test-control-server.mjs",
+    "mavlink-server": "node mavlink-visual-server.mjs",
+    "test:api": "node test-api.mjs && node test-simulation.mjs && node test-control-server.mjs && node test-mavlink-server.mjs",
     "test:presentation": "node test-presentation.mjs",
     "test:flight": "node test-flight.mjs",
     "test:model": "node validate-glb.mjs"

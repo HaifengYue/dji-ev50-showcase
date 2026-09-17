@@ -30,15 +30,15 @@ export function environment(scene: T.Scene) {
   detail.wrapS = detail.wrapT = T.RepeatWrapping;
   detail.repeat.set(90, 90);
   detail.anisotropy = 8;
-  const geo = new T.PlaneGeometry(6000, 6000, 256, 256);
+  const geo = new T.PlaneGeometry(8000, 8000, 320, 320);
   geo.rotateX(-Math.PI / 2);
   const gp = geo.attributes.position,
     colors = [];
   for (let i = 0; i < gp.count; i++) {
     const gx = gp.getX(i),
       gz = gp.getZ(i),
-      x = Math.sign(gx) * 3000 * (Math.abs(gx) / 3000) ** 2,
-      z = Math.sign(gz) * 3000 * (Math.abs(gz) / 3000) ** 2;
+      x = Math.sign(gx) * 4000 * (Math.abs(gx) / 4000) ** 2,
+      z = Math.sign(gz) * 4000 * (Math.abs(gz) / 4000) ** 2;
     gp.setX(i, x);
     gp.setZ(i, z);
     gp.setY(i, height(x, z) - 0.07);
@@ -154,16 +154,16 @@ export function environment(scene: T.Scene) {
     mountains.add(new T.Mesh(g, rock));
   }
   for (const [width, color, water] of [
-    [5.5, 0x9a9984, false],
-    [3.2, 0x537c80, true],
+    [8.5, 0x9a9984, false],
+    [5.2, 0x356f86, true],
   ] as const) {
     const v: number[] = [],
       ix: number[] = [];
-    for (let i = 0; i <= 240; i++) {
-      const z = -360 + i * 3,
+    for (let i = 0; i <= 360; i++) {
+      const z = -1620 + i * 9,
         x = streamX(z);
       for (const side of [-1, 1]) v.push(x + side * width, height(x + side * width, z) + 0.025, z);
-      if (i < 240) {
+      if (i < 360) {
         const a = i * 2;
         ix.push(a, a + 2, a + 1, a + 1, a + 2, a + 3);
       }
@@ -177,8 +177,10 @@ export function environment(scene: T.Scene) {
         g,
         new T.MeshStandardMaterial({
           color,
-          roughness: water ? 0.22 : 1,
-          metalness: water ? 0.28 : 0,
+          roughness: water ? 0.16 : 1,
+          metalness: water ? 0.42 : 0,
+          emissive: water ? 0x071b25 : 0,
+          emissiveIntensity: water ? 0.12 : 0,
           side: T.DoubleSide,
         }),
       ),
@@ -253,7 +255,7 @@ export function environment(scene: T.Scene) {
   trunks.receiveShadow = crowns.receiveShadow = true;
   group.add(trunks, crowns);
   const sky = new Sky();
-  sky.scale.setScalar(6000);
+  sky.scale.setScalar(9000);
   const u = sky.material.uniforms;
   u.turbidity.value = 3.2;
   u.rayleigh.value = 1.4;

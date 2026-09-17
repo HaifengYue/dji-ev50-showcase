@@ -26,7 +26,7 @@ export function sceneDetails(parent: T.Group) {
   group.name = 'Simulation_Site';
   parent.add(group);
   let settings: SceneSettings = {
-    visibility: 3200,
+    visibility: 7200,
     windSpeed: 4,
     windFromDegrees: 30,
     references: false,
@@ -146,7 +146,7 @@ export function sceneDetails(parent: T.Group) {
         'YXZ',
       );
       if (fog) {
-        fog.near = Math.min(650, settings.visibility * 0.2);
+        fog.near = Math.min(1800, settings.visibility * 0.3);
         fog.far = settings.visibility;
       }
       elapsed += dt;
@@ -184,7 +184,7 @@ export function sceneDetails(parent: T.Group) {
         } else {
           const k = key as 'visibility' | 'windSpeed' | 'windFromDegrees';
           const [min, max] =
-            k === 'visibility' ? [150, 5000] : k === 'windSpeed' ? [0, 15] : [0, 360];
+            k === 'visibility' ? [150, 7500] : k === 'windSpeed' ? [0, 15] : [0, 360];
           if (typeof value !== 'number' || !Number.isFinite(value) || value < min || value > max)
             throw new Error(`${key} must be within [${min}, ${max}]`);
           next[k] = value;

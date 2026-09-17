@@ -46,8 +46,8 @@ renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = T.PCFSoftShadowMap;
 const scene = new T.Scene();
 scene.background = new T.Color(0xa4becb);
-scene.fog = new T.Fog(0xa4becb, 650, 3200);
-const camera = new T.PerspectiveCamera(42, 1, 0.1, 5000);
+scene.fog = new T.Fog(0xa4becb, 1800, 7200);
+const camera = new T.PerspectiveCamera(42, 1, 0.1, 9000);
 camera.position.set(8, 3.6, 10);
 const composer = new EffectComposer(renderer);
 composer.renderTarget1.samples = 4;
@@ -61,7 +61,7 @@ const controls = new OrbitControls(camera, canvas);
 controls.target.set(0, 0.65, 0);
 controls.enableDamping = true;
 controls.minDistance = 4;
-controls.maxDistance = 3000;
+controls.maxDistance = 5200;
 controls.maxPolarAngle = Math.PI * 0.49;
 controls.update();
 const hemisphere = new T.HemisphereLight(0xd6e9ff, 0x58624a, 1.3);
@@ -258,7 +258,7 @@ function setMode(mode: 'product' | 'flight') {
     scene.fog = null;
   } else {
     scene.background = new T.Color(0xa4becb);
-    scene.fog = new T.Fog(0xa4becb, 650, 3200);
+    scene.fog = new T.Fog(0xa4becb, 1800, 7200);
   }
   $('#product').classList.toggle('active', mode === 'product');
   $('#flight').classList.toggle('active', mode === 'flight');
@@ -281,7 +281,7 @@ function sourceChanged(source: SimulationSource) {
   terrain.group.visible = true;
   mapWrap.hidden = true;
   scene.background = new T.Color(0xa4becb);
-  scene.fog = new T.Fog(0xa4becb, 650, 3200);
+  scene.fog = new T.Fog(0xa4becb, 1800, 7200);
   if (cameraMode === 'free') cameraMode = 'follow';
   controls.enabled = false;
   $<HTMLSelectElement>('#camera').value = cameraMode;
@@ -443,7 +443,7 @@ const apiGateway = new Ev50ApiGateway({
       terrain.group.visible = true;
       mapWrap.hidden = false;
       scene.background = new T.Color(0xa4becb);
-      scene.fog = new T.Fog(0xa4becb, 650, 3200);
+      scene.fog = new T.Fog(0xa4becb, 1800, 7200);
       cameraMode = 'follow';
       controls.enabled = false;
       $<HTMLSelectElement>('#camera').value = 'follow';
@@ -650,6 +650,23 @@ function animate() {
     } else {
       visual.speedMps = visual.lift = visual.cruise = 0;
     }
+    if (!simulated && simState.recording.active)
+      simulation.capture(
+        {
+          version: 1,
+          sequence: 0,
+          time: visual.time,
+          frame: 'SCENE',
+          position: visual.position.toArray(),
+          quaternion: visual.quaternion.toArray(),
+          velocity: [visual.speedMps, 0, 0],
+          rotorRpm: ROTOR_NAMES.map((_, index) =>
+            Math.round((index < 8 ? visual.lift : visual.cruise) * 1800),
+          ),
+          surfaces: neutralSurfaces,
+        },
+        now,
+      );
     aircraft.position.copy(visual.position);
     aircraft.quaternion.copy(visual.quaternion);
     for (const r of rotors) {
@@ -692,7 +709,7 @@ function animate() {
       placeSensorCamera(cameraMode, aircraft, camera);
     else if (cameraMode !== 'free') {
       if (cameraMode === 'ground') desired.set(12, 2.8, 14);
-      else if (cameraMode === 'wide') desired.set(1050, 480, 1400);
+      else if (cameraMode === 'wide') desired.set(1400, 680, 1900);
       else {
         v.set(
           cameraMode === 'side' ? 13 : 8,

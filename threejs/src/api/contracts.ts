@@ -6,7 +6,7 @@
  * REST resource paths, which keeps a future HTTP/WebSocket adapter compatible
  * without changing consumer code.
  */
-export const API_VERSION = '3.1.0';
+export const API_VERSION = '3.3.0';
 
 export type CameraMode = 'free' | 'ground' | 'follow' | 'side' | 'wide' | 'fpv' | 'down';
 export type RenderQuality = 'Low' | 'Medium' | 'High';

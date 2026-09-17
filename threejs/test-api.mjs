@@ -47,7 +47,7 @@ try {
     id: 'health',
     operation: 'system.health',
     ok: true,
-    data: { ready: false, version: '3.1.0' },
+    data: { ready: false, version: '3.3.0' },
   });
   assert.equal(api.request({ operation: 'flight.state' }).error.code, 'NOT_READY');
   runtime.ready = true;

@@ -1,6 +1,9 @@
 import {
+  exportMavlinkJsonl,
   MAX_LOG_FRAMES,
+  MavlinkLiveDecoder,
   normalizeFrame,
+  RecordingFormat,
   sampleRecording,
   TelemetryBuffer,
   TelemetryFrame,
@@ -22,6 +25,9 @@ export class VisualSession {
   private recording: TelemetryFrame[] = [];
   private recordingActive = false;
   private recordingFull = false;
+  private recordingStartedAt: number | null = null;
+  private recordingLastAt = -Infinity;
+  private readonly mavlink = new MavlinkLiveDecoder();
   private lastError = '';
   constructor(private readonly changed: (source: SimulationSource) => void) {}
 
@@ -33,6 +39,7 @@ export class VisualSession {
     this.paused = false;
     this.buffer.reset();
     this.frame = null;
+    this.mavlink.reset();
     this.recordingActive = false;
     this.lastError = '';
     this.changed(source);
@@ -42,13 +49,7 @@ export class VisualSession {
     const validated = normalizeFrame(input);
     if (this.source !== 'external') this.select('external');
     const accepted = this.buffer.push(validated, now);
-    if (this.recordingActive) {
-      this.recording.push(accepted);
-      if (this.recording.length >= MAX_LOG_FRAMES) {
-        this.recordingActive = false;
-        this.recordingFull = true;
-      }
-    }
+    this.capture(accepted, now);
     this.lastError = '';
     return this.state(now);
   }
@@ -71,7 +72,8 @@ export class VisualSession {
       try {
         if (typeof event.data !== 'string' || event.data.length > 65536)
           throw new Error('Expected a JSON text frame under 64 KiB');
-        this.ingest(JSON.parse(event.data));
+        const frame = this.mavlink.push(JSON.parse(event.data));
+        if (frame) this.ingest(frame);
       } catch (error) {
         this.lastError = error instanceof Error ? error.message : String(error);
       }
@@ -122,21 +124,43 @@ export class VisualSession {
       this.replay.playing = !value && this.replay.time < this.replay.duration;
   }
   startRecording() {
-    if (this.source !== 'external')
-      throw new Error('Recording requires an external telemetry session');
     this.recording = [];
     this.recordingActive = true;
     this.recordingFull = false;
+    this.recordingStartedAt = null;
+    this.recordingLastAt = -Infinity;
     return this.state();
   }
   stopRecording() {
     this.recordingActive = false;
     return this.state();
   }
-  exportRecording() {
+  /** Captures either local demo or received telemetry at a bounded 20 Hz. */
+  capture(input: unknown, now = nowSeconds()) {
+    if (!this.recordingActive || this.recordingFull) return;
+    if (now - this.recordingLastAt < 1 / 20) return;
+    const source = normalizeFrame(input);
+    if (this.recordingStartedAt === null) this.recordingStartedAt = now;
+    const frame: TelemetryFrame = {
+      ...source,
+      sequence: this.recording.length,
+      time: now - this.recordingStartedAt,
+    };
+    this.recording.push(frame);
+    this.recordingLastAt = now;
+    if (this.recording.length >= MAX_LOG_FRAMES) {
+      this.recordingActive = false;
+      this.recordingFull = true;
+    }
+  }
+  exportRecording(input?: unknown) {
+    const format = (input as { format?: unknown } | undefined)?.format ?? 'ev50-json';
+    if (format === 'mavlink-jsonl') return exportMavlinkJsonl(this.recording);
+    if (format !== 'ev50-json') throw new Error('Unsupported recording format');
     return {
       version: 1,
       frame: 'SCENE',
+      format: 'ev50-json',
       description: 'Normalized visual states, not a physics model',
       frames: structuredClone(this.recording),
     };
@@ -193,7 +217,7 @@ export class VisualSession {
       case 'simulation.record.stop':
         return this.stopRecording();
       case 'simulation.record.export':
-        return this.exportRecording();
+        return this.exportRecording(payload as { format?: RecordingFormat } | undefined);
       default:
         throw new Error(`Unsupported simulation operation: ${operation}`);
     }

@@ -1,4 +1,4 @@
-# EV50 浏览器 API（v3.1）
+# EV50 浏览器 API（v3.3）
 
 EV50 是部署到 GitHub Pages 的静态 Three.js 应用，没有常驻服务端。因此 API 在当前页面上下文执行：入口为 `window.ev50API`，而不是一个可从其他设备访问的 HTTP 服务。基础控制操作映射到 `/api/v1/...` 资源路径；视景仿真操作仅在页面内公开，并在能力响应的 `browserOperations` 字段列出，不能假定存在同名 HTTP 路由。
 
@@ -83,7 +83,7 @@ ev50.request({
 | `simulation.connect` / `disconnect`           | `{ url }` / —             | WebSocket 连接状态              |
 | `simulation.replay.load` / `sample` / `seek`  | 记录对象 / — / `{ time }` | 回放状态                        |
 | `simulation.pause` / `resume`                 | —                         | 回放或实时视景状态              |
-| `simulation.record.start` / `stop` / `export` | —                         | 记录状态或标准化记录            |
+| `simulation.record.start` / `stop` / `export` | 导出可选 `{ format }`     | 记录状态或标准化记录            |
 | `aircraft.describe` / `camera.describe`       | —                         | 机体挂点、相机内外参            |
 | `scene.describe` / `configure` / `query`      | — / 局部设置 / `{ x, z }` | 场景元数据、设置或地面/障碍查询 |
 
@@ -103,6 +103,12 @@ ev50.request({
   },
 });
 ```
+
+### 日志交换
+
+记录默认导出为 `ev50-json`：无损保存页面所使用的 `SCENE` 视觉帧。导出时传入 `{ format: 'mavlink-jsonl' }`，或在面板选择 **MAVLink JSONL（交换）**，可生成每行一个 JSON 消息的日志，其中包含 `HEARTBEAT`、`LOCAL_POSITION_NED`、`ATTITUDE_QUATERNION` 和 `ACTUATOR_OUTPUT_STATUS`。它还写入 `EV50_VISUAL_FRAME` 用于无损回放。
+
+该格式是面向无人机/机器人工具链的**可读交换格式**，不是 MAVLink 二进制 `.tlog`，也不代表与任意地面站直接互通。导入器能读取这种 JSONL，并能回放由常规 NED 位置、姿态和执行器消息组成的 JSONL（至少两组完整位置和姿态样本）。
 
 ## 事件与遥测
 
@@ -135,4 +141,4 @@ unsubscribe();
 
 若以后部署一个真实服务端，可让 HTTP 路由按上表把请求转换为 `{ id, operation, payload }` 并复用相同的响应结构。不要将浏览器 API 用作真实飞控或安全关键控制系统。
 
-仓库现已提供用于本机开发的 HTTP 轮询桥和 Python 控制脚本，启动与端点说明见 [HTTP_CONTROL.md](HTTP_CONTROL.md)。它保持浏览器页面为渲染与控制所有者；生产级跨设备控制仍需补充认证、授权、加密传输、限流和 WebSocket 等能力。
+仓库现已提供用于本机开发的 HTTP 轮询桥和 Python 控制脚本，启动与端点说明见 [HTTP_CONTROL.md](HTTP_CONTROL.md)。另提供统一的 MAVLink 风格 WebSocket 状态通道和本机控制脚本，见 [MAVLINK_LOCAL.md](MAVLINK_LOCAL.md)。它们保持浏览器页面为渲染与控制所有者；生产级跨设备控制仍需补充认证、授权、加密传输、限流和 WebSocket 等能力。

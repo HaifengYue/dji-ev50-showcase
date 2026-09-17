@@ -29,14 +29,62 @@ fs.writeFileSync(
   ),
 );
 try {
-  const { normalizeFrame, TelemetryBuffer, TelemetryReplay } =
-    await import('./.telemetry-simulation-test-tmp.mjs');
+  const {
+    normalizeFrame,
+    TelemetryBuffer,
+    TelemetryReplay,
+    MavlinkLiveDecoder,
+    exportMavlinkJsonl,
+    parseRecording,
+  } = await import('./.telemetry-simulation-test-tmp.mjs');
   const { VisualSession } = await import('./.session-simulation-test-tmp.mjs');
 
   assert.deepEqual(normalizeFrame(frame(1, 0)).position, [1, 12, -4]);
   assert.throws(
     () => normalizeFrame(frame(1, 0, { rotorRpm: [1] })),
     /rotorRpm requires 11 values/,
+  );
+  const mavlink = exportMavlinkJsonl([frame(1, 0), frame(2, 0.2)]);
+  assert.match(mavlink, /"LOCAL_POSITION_NED"/);
+  assert.deepEqual(
+    parseRecording(mavlink).map((item) => item.sequence),
+    [1, 2],
+  );
+  const standardMavlink = [0, 200000]
+    .flatMap((time_usec, index) => [
+      {
+        time_usec,
+        type: 'LOCAL_POSITION_NED',
+        x: index,
+        y: 2,
+        z: -12,
+        vx: 4,
+        vy: 0,
+        vz: 0,
+      },
+      { time_usec, type: 'ATTITUDE_QUATERNION', q1: 1, q2: 0, q3: 0, q4: 0 },
+      { time_usec, type: 'ACTUATOR_OUTPUT_STATUS', actuator: Array(11).fill(1200) },
+    ])
+    .map(JSON.stringify)
+    .join('\n');
+  assert.equal(parseRecording(standardMavlink).length, 2);
+  const live = new MavlinkLiveDecoder();
+  assert.equal(
+    live.push({ time_usec: 500000, type: 'LOCAL_POSITION_NED', x: 3, y: 4, z: -12 }),
+    null,
+  );
+  assert.equal(
+    live.push({
+      time_usec: 500000,
+      type: 'ACTUATOR_OUTPUT_STATUS',
+      actuator: Array(11).fill(1000),
+    }),
+    null,
+  );
+  assert.deepEqual(
+    live.push({ time_usec: 500000, type: 'ATTITUDE_QUATERNION', q1: 1, q2: 0, q3: 0, q4: 0 })
+      .position,
+    [4, 12, -3],
   );
   assert.throws(
     () => normalizeFrame(frame(1, 0, { quaternion: [0, 0, 0, 0] })),
@@ -70,6 +118,15 @@ try {
     'replay',
   );
   assert.deepEqual(sources, ['external', 'replay']);
+  const localRecording = new VisualSession(() => {});
+  localRecording.request('simulation.record.start');
+  localRecording.capture(frame(1, 0), 10);
+  localRecording.capture(frame(2, 0.2), 10.2);
+  assert.equal(localRecording.state().recording.count, 2);
+  assert.match(
+    localRecording.request('simulation.record.export', { format: 'mavlink-jsonl' }),
+    /HEARTBEAT/,
+  );
   console.log('PASS simulation protocol');
 } finally {
   temporary.forEach((file) => fs.rmSync(file, { force: true }));

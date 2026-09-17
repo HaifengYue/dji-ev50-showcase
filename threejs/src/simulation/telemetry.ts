@@ -32,6 +32,81 @@ export const ROTOR_NAMES = [
 export const MAX_LOG_FRAMES = 12000;
 export const STALE_SECONDS = 0.75;
 export const INTERPOLATION_DELAY = 0.08;
+export type RecordingFormat = 'ev50-json' | 'mavlink-jsonl';
+
+/**
+ * Incrementally turns the MAVLink-shaped JSON messages used on a WebSocket
+ * into the page's complete visual frame.  This deliberately handles only
+ * state messages: command messages belong to the local test broker and are
+ * never forwarded to an aircraft from this browser.
+ */
+export class MavlinkLiveDecoder {
+  private sequence = 0;
+  private position: Record<string, unknown> | undefined;
+  private attitude: Record<string, unknown> | undefined;
+  private actuator: Record<string, unknown> | undefined;
+  private positionTime: number | undefined;
+  private attitudeTime: number | undefined;
+  private actuatorTime: number | undefined;
+  private emittedTime: number | undefined;
+
+  reset() {
+    this.sequence = 0;
+    this.position = this.attitude = this.actuator = undefined;
+    this.positionTime = this.attitudeTime = this.actuatorTime = this.emittedTime = undefined;
+  }
+
+  push(input: unknown): TelemetryFrame | null {
+    const message = object(input);
+    if (message.type === 'EV50_VISUAL_FRAME') return normalizeFrame(message.frame);
+    if (message.version === 1 && 'frame' in message && 'position' in message)
+      return normalizeFrame(message);
+    if (
+      !['LOCAL_POSITION_NED', 'ATTITUDE_QUATERNION', 'ACTUATOR_OUTPUT_STATUS'].includes(
+        String(message.type),
+      )
+    )
+      return null;
+    const time = mavlinkTime(message);
+    if (message.type === 'LOCAL_POSITION_NED') {
+      this.position = message;
+      this.positionTime = time;
+    }
+    if (message.type === 'ACTUATOR_OUTPUT_STATUS') {
+      this.actuator = message;
+      this.actuatorTime = time;
+    }
+    if (message.type === 'ATTITUDE_QUATERNION') {
+      this.attitude = message;
+      this.attitudeTime = time;
+    }
+    if (
+      !this.position ||
+      !this.attitude ||
+      this.positionTime !== this.attitudeTime ||
+      this.emittedTime === this.positionTime
+    )
+      return null;
+    const outputs = Array.isArray(this.actuator?.actuator) ? this.actuator.actuator : [];
+    const controls = Array.isArray(this.actuator?.controls) ? this.actuator.controls : [];
+    this.emittedTime = this.positionTime;
+    return normalizeFrame({
+      version: 1,
+      sequence: this.sequence++,
+      time: this.positionTime,
+      frame: 'NED',
+      position: [this.position.x, this.position.y, this.position.z],
+      velocity: [this.position.vx ?? 0, this.position.vy ?? 0, this.position.vz ?? 0],
+      quaternion: fromMavlinkQuaternion(this.attitude),
+      rotorRpm: Array.from({ length: ROTOR_NAMES.length }, (_, i) => outputs[i] ?? 0),
+      surfaces: {
+        aileron: controls[0] ?? 0,
+        elevator: controls[1] ?? 0,
+        rudder: controls[2] ?? 0,
+      },
+    });
+  }
+}
 
 const number = (v: unknown, label: string, min: number, max: number): number => {
   if (typeof v !== 'number' || !Number.isFinite(v) || v < min || v > max)
@@ -193,7 +268,16 @@ export class TelemetryBuffer {
 }
 
 export function parseRecording(input: unknown): TelemetryFrame[] {
-  const log = object(input);
+  let source = input;
+  if (typeof source === 'string') {
+    const text = source;
+    try {
+      source = JSON.parse(text) as unknown;
+    } catch {
+      return validateRecording(parseMavlinkJsonl(text));
+    }
+  }
+  const log = object(source);
   if (
     log.version !== 1 ||
     !Array.isArray(log.frames) ||
@@ -201,12 +285,134 @@ export function parseRecording(input: unknown): TelemetryFrame[] {
     log.frames.length > MAX_LOG_FRAMES
   )
     throw new Error(`Recording requires version 1 and 2–${MAX_LOG_FRAMES} frames`);
-  const frames = log.frames.map(normalizeFrame);
+  return validateRecording(log.frames.map(normalizeFrame));
+}
+
+function validateRecording(frames: TelemetryFrame[]) {
   for (let i = 1; i < frames.length; i++)
     if (frames[i].sequence <= frames[i - 1].sequence || frames[i].time < frames[i - 1].time)
       throw new Error('Recording sequence/time must be monotonic');
   if (frames.at(-1)!.time <= frames[0].time)
     throw new Error('Recording must have a positive duration');
+  return frames;
+}
+
+const toNed = ([x, y, z]: Vec3): Vec3 => [-z, x, -y];
+const fromMavlinkQuaternion = (message: Record<string, unknown>): Quat => [
+  number(message.q2, 'ATTITUDE_QUATERNION.q2', -1e6, 1e6),
+  number(message.q3, 'ATTITUDE_QUATERNION.q3', -1e6, 1e6),
+  number(message.q4, 'ATTITUDE_QUATERNION.q4', -1e6, 1e6),
+  number(message.q1, 'ATTITUDE_QUATERNION.q1', -1e6, 1e6),
+];
+const mavlinkTime = (message: Record<string, unknown>) => {
+  const raw = message.time_usec ?? message.timestamp_us ?? message.timestamp;
+  if (typeof raw !== 'number' || !Number.isFinite(raw) || raw < 0)
+    throw new Error('MAVLink JSONL message requires nonnegative time_usec or timestamp_us');
+  return raw / 1e6;
+};
+
+/**
+ * Exchanges readable MAVLink-shaped JSONL, not binary MAVLink .tlog bytes.
+ * The EV50_VISUAL_FRAME message preserves the exact visual packet; standard
+ * envelopes make the log legible to robotics tooling that consumes JSONL.
+ */
+export function exportMavlinkJsonl(frames: TelemetryFrame[]) {
+  return frames
+    .flatMap((frame) => {
+      const time_usec = Math.round(frame.time * 1e6);
+      const position = toNed(frame.position),
+        velocity = toNed(frame.velocity);
+      const attitude = new Quaternion()
+        .fromArray(frame.quaternion)
+        .premultiply(nedToScene.clone().invert())
+        .multiply(modelToFrd.clone().invert())
+        .normalize();
+      const [qx, qy, qz, qw] = attitude.toArray();
+      return [
+        { time_usec, type: 'HEARTBEAT', vehicle_type: 'VTOL', autopilot: 'EV50_VISUAL' },
+        {
+          time_usec,
+          type: 'LOCAL_POSITION_NED',
+          x: position[0],
+          y: position[1],
+          z: position[2],
+          vx: velocity[0],
+          vy: velocity[1],
+          vz: velocity[2],
+        },
+        { time_usec, type: 'ATTITUDE_QUATERNION', q1: qw, q2: qx, q3: qy, q4: qz },
+        {
+          time_usec,
+          type: 'ACTUATOR_OUTPUT_STATUS',
+          actuator: frame.rotorRpm,
+          controls: [frame.surfaces.aileron, frame.surfaces.elevator, frame.surfaces.rudder],
+        },
+        { time_usec, type: 'EV50_VISUAL_FRAME', frame },
+      ];
+    })
+    .map((message) => JSON.stringify(message))
+    .join('\n')
+    .concat('\n');
+}
+
+/** Reads our lossless MAVLink-shaped JSONL and common position/attitude packets. */
+export function parseMavlinkJsonl(text: string): TelemetryFrame[] {
+  const grouped = new Map<
+    number,
+    {
+      position?: Record<string, unknown>;
+      attitude?: Record<string, unknown>;
+      actuator?: Record<string, unknown>;
+    }
+  >();
+  const exact: TelemetryFrame[] = [];
+  for (const [lineNumber, line] of text.split(/\r?\n/).entries()) {
+    if (!line.trim()) continue;
+    let message: Record<string, unknown>;
+    try {
+      message = object(JSON.parse(line));
+    } catch {
+      throw new Error(`Invalid MAVLink JSONL on line ${lineNumber + 1}`);
+    }
+    if (message.type === 'EV50_VISUAL_FRAME') {
+      exact.push(normalizeFrame(message.frame));
+      continue;
+    }
+    const time = mavlinkTime(message);
+    const group = grouped.get(time) ?? {};
+    if (message.type === 'LOCAL_POSITION_NED') group.position = message;
+    if (message.type === 'ATTITUDE_QUATERNION') group.attitude = message;
+    if (message.type === 'ACTUATOR_OUTPUT_STATUS') group.actuator = message;
+    grouped.set(time, group);
+  }
+  if (exact.length) return exact;
+  const frames: TelemetryFrame[] = [];
+  for (const [time, messages] of [...grouped.entries()].sort(([a], [b]) => a - b)) {
+    if (!messages.position || !messages.attitude) continue;
+    const position = messages.position,
+      actuator = messages.actuator ?? {},
+      outputs = Array.isArray(actuator.actuator) ? actuator.actuator : [],
+      controls = Array.isArray(actuator.controls) ? actuator.controls : [];
+    frames.push(
+      normalizeFrame({
+        version: 1,
+        sequence: frames.length,
+        time,
+        frame: 'NED',
+        position: [position.x, position.y, position.z],
+        velocity: [position.vx ?? 0, position.vy ?? 0, position.vz ?? 0],
+        quaternion: fromMavlinkQuaternion(messages.attitude),
+        rotorRpm: Array.from({ length: ROTOR_NAMES.length }, (_, i) => outputs[i] ?? 0),
+        surfaces: {
+          aileron: controls[0] ?? 0,
+          elevator: controls[1] ?? 0,
+          rudder: controls[2] ?? 0,
+        },
+      }),
+    );
+  }
+  if (frames.length < 2)
+    throw new Error('MAVLink JSONL requires two complete position and attitude samples');
   return frames;
 }
 

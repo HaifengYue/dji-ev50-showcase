@@ -54,7 +54,7 @@ python scripts/drone_control.py state
 | `GET /api/v1/requests/{id}`                             | 查询异步指令执行结果 | —                                             |
 | `GET /api/v1/telemetry`                                 | SSE 实时状态流       | —                                             |
 
-写入类接口先返回 `202` 和请求 ID；待页面执行后，使用 `GET /api/v1/requests/{id}` 获取统一 API 响应。页面端仍执行 API 3.1 的校验，例如电机功率、速度倍率、四元数和航线 ID 的无效值会在执行回执中返回 `VALIDATION_FAILED`。
+写入类接口先返回 `202` 和请求 ID；待页面执行后，使用 `GET /api/v1/requests/{id}` 获取统一 API 响应。页面端仍执行 API 3.3 的校验，例如电机功率、速度倍率、四元数和航线 ID 的无效值会在执行回执中返回 `VALIDATION_FAILED`。MAVLink 风格的本地 WebSocket 联调和控制脚本见 [MAVLINK_LOCAL.md](MAVLINK_LOCAL.md)。
 
 当前 HTTP 桥只公开上表中的飞行控制接口。`simulation.*`、`aircraft.describe`、`camera.describe` 与 `scene.*` 是浏览器页面内的视景接口，尚未映射为 HTTP 路由；请通过 `window.ev50API.request(...)` 调用，或在扩展 HTTP 桥、Python 客户端和测试后再公开路由。
 

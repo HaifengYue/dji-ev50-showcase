@@ -509,6 +509,19 @@ input[type='checkbox'] {
   margin-top: 10px;
   font-variant-numeric: tabular-nums;
 }
+.sim-diagnostics {
+  margin-top: 10px;
+  border-top: 1px solid var(--line);
+  padding-top: 9px;
+}
+.sim-diagnostics summary {
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 11px;
+}
+.sim-diagnostics[open] summary {
+  margin-bottom: 6px;
+}
 .sim-status {
   color: #c6d6df;
 }
