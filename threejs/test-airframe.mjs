@@ -6,7 +6,7 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 // Load the real exported hierarchy and geometry without browser-only image decoding.
 globalThis.ProgressEvent ??= class ProgressEvent {};
-const bytes = fs.readFileSync('public/ev50.glb');
+const bytes = fs.readFileSync('public/ev50_v13.glb');
 const jsonLength = bytes.readUInt32LE(12);
 const data = JSON.parse(bytes.subarray(20, 20 + jsonLength).toString());
 const binOffset = 20 + jsonLength;
@@ -49,8 +49,23 @@ try {
   const rig = aircraftRig(aircraft);
   assert.equal(rig.describe().landingGear.length, 3);
   assert.ok(rig.describe().rotors.every((rotor) => rotor.present));
+  assert.deepEqual(
+    rig
+      .describe()
+      .surfaces.filter((surface) => surface.channel === 'elevator')
+      .map((surface) => surface.name)
+      .sort(),
+    ['Left_Elevator_VisualHinge', 'Right_Elevator_VisualHinge'],
+    'Pitch control must use the authored trailing elevators',
+  );
   aircraft.traverse((object) =>
     assert.ok(!object.name.endsWith('_VisualWheel'), 'Do not duplicate authored wheels'),
+  );
+  aircraft.traverse((object) =>
+    assert.ok(
+      !/(?:_VisualHingeLine|^Visual_Elevator_)/.test(object.name),
+      'Do not add detached visual hinge rods or elevator strips',
+    ),
   );
   rig.update({ aileron: 0, elevator: 0, rudder: 0 }, 0, true);
   console.log(

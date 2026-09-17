@@ -164,7 +164,7 @@ for (const d of labelData) {
 }
 const labelEls = Array.from(document.querySelectorAll<HTMLDivElement>('.part-label'));
 Promise.all([
-  new GLTFLoader().loadAsync(new URL('ev50.glb', document.baseURI).href),
+  new GLTFLoader().loadAsync(new URL('ev50_v13.glb', document.baseURI).href),
   fetch(new URL('flight.json', document.baseURI)).then((r) => {
     if (!r.ok) throw Error('飞行数据读取失败');
     return r.json();

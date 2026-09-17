@@ -38,39 +38,23 @@ export function aircraftRig(aircraft: T.Group) {
     pivot.updateMatrixWorld(true);
     pivot.attach(part);
     surfaces.push({ pivot, channel, gain, axis });
-    const size = bounds.getSize(new T.Vector3());
-    const hinge = new T.Mesh(
-      new T.CylinderGeometry(0.009, 0.009, Math.max(0.08, size.x * 0.88), 10),
-      graphite,
-    );
-    hinge.name = `${name}_VisualHingeLine`;
-    hinge.rotation.z = Math.PI / 2;
-    hinge.position.copy(pivot.position);
-    aircraft.add(hinge);
   };
   for (const side of ['Left', 'Right']) {
     bind(`${side}_Aileron`, 'aileron', side === 'Left' ? -0.35 : 0.35, 'x');
     bind(`${side}_Rudder`, 'rudder', -0.4, 'y');
+    // v13 supplies an authored trailing elevator. Keep the tailplane fallback
+    // for archived assets without fabricating a detached rear-edge panel.
+    bind(
+      objects.has(`${side}_Elevator`) ? `${side}_Elevator` : `${side}_Tailplane`,
+      'elevator',
+      0.3,
+      'x',
+    );
   }
-  for (const sign of [-1, 1]) {
-    const pivot = new T.Group();
-    pivot.name = `Visual_Elevator_${sign < 0 ? 'Left' : 'Right'}`;
-    pivot.position.set(sign * 0.36, 0.825, -1.57);
-    pivot.rotation.z = sign * 0.1;
-    const geometry = new T.BoxGeometry(0.47, 0.008, 0.045);
-    const panel = new T.Mesh(geometry, graphite);
-    panel.position.z = -0.0225;
-    panel.castShadow = true;
-    panel.receiveShadow = true;
-    pivot.add(panel);
-    aircraft.add(pivot);
-    // The elevator strips are illustrative visual additions, not OEM geometry.
-    const hinge = new T.Group();
-    hinge.name = `${pivot.name}_Hinge`;
-    pivot.add(hinge);
-    hinge.attach(panel);
-    surfaces.push({ pivot: hinge, channel: 'elevator', gain: 0.3, axis: 'x' });
-  }
+  // Only animate control surfaces authored by the source asset. In particular,
+  // do not add standalone hinge rods or speculative elevator strips: the
+  // reference aircraft has continuous wing and tail surfaces, and unconnected
+  // runtime geometry reads as debris when viewed from a distance.
   const wheelMaterial = new T.MeshStandardMaterial({
     color: 0x151b1f,
     roughness: 0.78,
@@ -213,7 +197,7 @@ export function aircraftRig(aircraft: T.Group) {
         sensorMounts: CAMERA_MOUNTS,
         modelAxes: { forward: '+Z', right: '-X', up: '+Y' },
         geometry: authoredWheels.every((wheel) => wheel?.userData.part === 'landing_wheel')
-          ? 'authored three-point taildragger with runtime control surfaces and lighting'
+          ? 'authored three-point taildragger with source control surfaces and runtime lighting'
           : 'legacy asset with runtime tailwheel and lighting details',
       };
     },
