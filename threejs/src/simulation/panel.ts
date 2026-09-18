@@ -27,7 +27,7 @@ export function simulationPanel(
     <label class="field">遥测端点<select id="sim-endpoint" disabled><option value="local">本地 MAVLink 测试服务</option><option value="external">外部 MAVLink WebSocket</option></select></label>
     <div class="sim-connection"><label class="field">MAVLink 风格 WebSocket<input id="sim-url" type="url" placeholder="ws://127.0.0.1:8765" value="ws://127.0.0.1:8765" spellcheck="false" readonly disabled></label>
     <div class="sim-buttons"><button id="sim-connect" disabled>连接</button><button id="sim-disconnect" disabled>断开</button></div></div>
-    <div class="sim-buttons"><button id="sim-sample" disabled>示例日志回放</button><button id="sim-import" disabled>导入记录</button><button id="sim-record" disabled>开始记录</button><button id="sim-export" disabled>导出记录</button></div>
+    <div class="sim-buttons"><button id="sim-ulog" disabled>本地 ULog 回放</button><button id="sim-sample" disabled>示例日志回放</button><button id="sim-import" disabled>导入记录</button><button id="sim-record" disabled>开始记录</button><button id="sim-export" disabled>导出记录</button></div>
     <label class="field">日志格式<select id="sim-log-format" disabled><option value="ev50-json">EV50 JSON（无损回放）</option><option value="mavlink-jsonl">MAVLink JSONL（交换）</option></select></label>
     <input id="sim-file" type="file" accept="application/json,.json,.jsonl" hidden>
     <details class="sim-diagnostics"><summary>链路诊断</summary><output id="sim-status" class="sim-status" role="status" aria-live="polite">等待模型加载</output><output id="sim-message" class="sim-message" role="status" aria-live="polite"></output></details>
@@ -80,6 +80,16 @@ export function simulationPanel(
     action(() => {
       request('simulation.replay.sample');
     });
+  element('sim-ulog').onclick = async () => {
+    try {
+      const response = await fetch(new URL('flight-replay.json', document.baseURI));
+      if (!response.ok) throw new Error('本地 ULog 回放文件不可用');
+      request('simulation.replay.load', await response.text());
+      message('已通过视景回放接口加载本地 ULog');
+    } catch (error) {
+      message(error instanceof Error ? error.message : String(error));
+    }
+  };
   element('sim-import').onclick = () => element<HTMLInputElement>('sim-file').click();
   element<HTMLInputElement>('sim-file').onchange = async (e) => {
     const input = e.target as HTMLInputElement,

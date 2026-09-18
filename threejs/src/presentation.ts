@@ -67,7 +67,7 @@ export function presentation(options: Options) {
     const stamp = new Date().toISOString().replace(/[:.]/g, '-');
     lastDownloadUrl = URL.createObjectURL(blob);
     captureDownload.href = lastDownloadUrl;
-    captureDownload.download = `EV50_v09_${stamp}.${extension}`;
+    captureDownload.download = `EV50_${stamp}.${extension}`;
     captureDownload.hidden = false;
     captureDownload.textContent = `下载 ${extension.toUpperCase()} 文件`;
     captureDownload.click();

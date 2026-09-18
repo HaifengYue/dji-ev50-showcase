@@ -11,29 +11,15 @@ deliverables/*.zip
 ev50_page.html
 higgsfield_blender-*.zip
 
-# Local-only source assets and render output. The canonical runtime asset is
-# threejs/public/ev50.glb; versioned release assets already tracked remain so.
+# Local-only render output. Canonical model source and runtime assets are tracked.
 renders/
 references/
 models/*.gltf
-models/*.blend
 models/*.blend1
-models/v01/
-models/v02/
-models/v03/
+models/*.ulg
 __pycache__/
 *.pyc
 *.blend1
 
-renders/flight_sequence_v03/
-models/v04/
-models/v07/
-previews/flight_*.png
-previews/v01/
-previews/v02/
-previews/v03/
-previews/v04/
-previews/v07/
-previews/v08/
 previews/*.log
 previews/**/*.log

@@ -6,7 +6,7 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 // Load the real exported hierarchy and geometry without browser-only image decoding.
 globalThis.ProgressEvent ??= class ProgressEvent {};
-const bytes = fs.readFileSync('public/ev50_v13.glb');
+const bytes = fs.readFileSync('public/ev50.glb');
 const jsonLength = bytes.readUInt32LE(12);
 const data = JSON.parse(bytes.subarray(20, 20 + jsonLength).toString());
 const binOffset = 20 + jsonLength;

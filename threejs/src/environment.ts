@@ -12,7 +12,9 @@ export function environment(scene: T.Scene) {
   };
   const mat = (color: number) => new T.MeshStandardMaterial({ color, roughness: 0.94 });
   const height = groundHeight;
-  const streamX = (z: number) => -42 + 12 * Math.sin(z * 0.018) + 5 * Math.sin(z * 0.042);
+  // A single valley spine anchors every district so the scene reads as one
+  // continuous landscape instead of a collection of isolated set pieces.
+  const streamX = (z: number) => -42 + 38 * Math.sin(z * 0.0032) + 13 * Math.sin(z * 0.012);
   const canvas = document.createElement('canvas');
   canvas.width = canvas.height = 512;
   const ctx = canvas.getContext('2d')!,
@@ -101,7 +103,7 @@ export function environment(scene: T.Scene) {
   }
   const mountains = new T.Group();
   group.add(mountains);
-  for (let k = 0; k < 3; k++) {
+  for (let k = 0; k < 5; k++) {
     const positions: number[] = [],
       cols: number[] = [],
       indices: number[] = [],
@@ -110,7 +112,7 @@ export function environment(scene: T.Scene) {
     for (let j = 0; j <= M; j++)
       for (let i = 0; i <= N; i++) {
         const a = (i * 2 * Math.PI) / N,
-          r = 235 + k * 170 + j * 3.8,
+          r = 235 + k * 185 + j * 4.4,
           h = mountainHeight(a, r, k) + 2;
         positions.push(r * Math.cos(a), h - 2, r * Math.sin(a));
         const c = new T.Color(k === 0 ? 0x535c49 : k === 1 ? 0x62695d : 0x7d8b88);
@@ -154,16 +156,16 @@ export function environment(scene: T.Scene) {
     mountains.add(new T.Mesh(g, rock));
   }
   for (const [width, color, water] of [
-    [8.5, 0x9a9984, false],
-    [5.2, 0x356f86, true],
+    [13, 0xb3a889, false],
+    [8.4, 0x356f86, true],
   ] as const) {
     const v: number[] = [],
       ix: number[] = [];
-    for (let i = 0; i <= 360; i++) {
-      const z = -1620 + i * 9,
+    for (let i = 0; i <= 760; i++) {
+      const z = -3420 + i * 9,
         x = streamX(z);
       for (const side of [-1, 1]) v.push(x + side * width, height(x + side * width, z) + 0.025, z);
-      if (i < 360) {
+      if (i < 760) {
         const a = i * 2;
         ix.push(a, a + 2, a + 1, a + 1, a + 2, a + 3);
       }
@@ -186,8 +188,81 @@ export function environment(scene: T.Scene) {
       ),
     );
   }
-  const dummy = new T.Object3D(),
-    rocks = new T.InstancedMesh(new T.IcosahedronGeometry(1, 1), mat(0x85847a), 900);
+  const dummy = new T.Object3D();
+  const valley = new T.Group();
+  valley.name = 'Valley_Settlements';
+  group.add(valley);
+  const houseWalls = new T.InstancedMesh(new T.BoxGeometry(1, 1, 1), mat(0xb7a488), 540);
+  const houseRoofs = new T.InstancedMesh(new T.ConeGeometry(0.92, 0.72, 4), mat(0x6d4f42), 540);
+  const townBlocks = new T.InstancedMesh(new T.BoxGeometry(1, 1, 1), mat(0x8b9191), 160);
+  const roads = new T.InstancedMesh(new T.BoxGeometry(1, 0.025, 1), mat(0x6d675c), 210);
+  const settlements = [
+    [-1, -2680, 40, 'village'],
+    [1, -1840, 70, 'town'],
+    [-1, -980, 48, 'village'],
+    [1, -330, 88, 'town'],
+    [-1, 470, 54, 'village'],
+    [1, 1250, 104, 'town'],
+    [-1, 2180, 58, 'village'],
+    [1, 2940, 78, 'town'],
+  ] as const;
+  let houses = 0,
+    blocks = 0,
+    roadsUsed = 0;
+  for (const [side, z0, count, kind] of settlements) {
+    const x0 = streamX(z0) + side * (kind === 'town' ? 106 : 74);
+    const district = new T.Group();
+    district.name = `${kind === 'town' ? 'Town' : 'Village'}_${Math.abs(z0)}`;
+    valley.add(district);
+    for (let i = 0; i < count; i++) {
+      const row = Math.floor(i / 9),
+        col = (i % 9) - 4;
+      const x = x0 + col * 12 + (rand() - 0.5) * 4;
+      const z = z0 + (row - Math.floor(count / 18)) * 16 + (rand() - 0.5) * 5;
+      const y = height(x, z);
+      if (kind === 'town' && i % 3 === 0 && blocks < 160) {
+        const sx = 7 + rand() * 7,
+          sz = 7 + rand() * 8,
+          sy = 5 + rand() * 18;
+        dummy.position.set(x, y + sy / 2, z);
+        dummy.scale.set(sx, sy, sz);
+        dummy.rotation.set(0, (rand() - 0.5) * 0.16, 0);
+        dummy.updateMatrix();
+        townBlocks.setMatrixAt(blocks++, dummy.matrix);
+      } else if (houses < 540) {
+        const sx = 4 + rand() * 3,
+          sz = 4 + rand() * 3,
+          sy = 2.6 + rand() * 2.6;
+        dummy.position.set(x, y + sy / 2, z);
+        dummy.scale.set(sx, sy, sz);
+        dummy.rotation.set(0, (rand() - 0.5) * 0.22, 0);
+        dummy.updateMatrix();
+        houseWalls.setMatrixAt(houses, dummy.matrix);
+        dummy.position.y = y + sy + 0.36;
+        dummy.scale.set(sx * 0.86, 1, sz * 0.86);
+        dummy.updateMatrix();
+        houseRoofs.setMatrixAt(houses++, dummy.matrix);
+      }
+    }
+    for (let i = 0; i < 20 && roadsUsed < 210; i++) {
+      const z = z0 + (i - 10) * 15,
+        x = x0 + (rand() - 0.5) * 48;
+      dummy.position.set(x, height(x, z) + 0.012, z);
+      dummy.scale.set(18, 1, 2.1);
+      dummy.rotation.set(0, (rand() - 0.5) * 0.12, 0);
+      dummy.updateMatrix();
+      roads.setMatrixAt(roadsUsed++, dummy.matrix);
+    }
+  }
+  houseWalls.count = houseRoofs.count = houses;
+  townBlocks.count = blocks;
+  roads.count = roadsUsed;
+  for (const object of [houseWalls, houseRoofs, townBlocks, roads]) {
+    object.castShadow = object !== roads;
+    object.receiveShadow = true;
+    valley.add(object);
+  }
+  const rocks = new T.InstancedMesh(new T.IcosahedronGeometry(1, 1), mat(0x85847a), 900);
   for (let i = 0; i < 900; i++) {
     const a = rand() * Math.PI * 2,
       r = 8 + rand() * 200,
@@ -278,7 +353,17 @@ export function environment(scene: T.Scene) {
       grass.count = q === 'Low' ? 500 : q === 'Medium' ? 2600 : 6500;
       rocks.count = q === 'Low' ? 150 : q === 'Medium' ? 450 : 900;
       trunks.count = crowns.count = q === 'Low' ? 150 : q === 'Medium' ? 480 : 1000;
-      mountains.children[2].visible = q !== 'Low';
+      mountains.children.slice(2).forEach((mountain) => (mountain.visible = q !== 'Low'));
+      houseWalls.count = houseRoofs.count =
+        q === 'Low' ? Math.min(110, houses) : q === 'Medium' ? Math.min(280, houses) : houses;
+      townBlocks.count =
+        q === 'Low' ? Math.min(25, blocks) : q === 'Medium' ? Math.min(78, blocks) : blocks;
+      roads.count =
+        q === 'Low'
+          ? Math.min(45, roadsUsed)
+          : q === 'Medium'
+            ? Math.min(120, roadsUsed)
+            : roadsUsed;
       detail.anisotropy = q === 'High' ? 8 : 2;
     },
   };

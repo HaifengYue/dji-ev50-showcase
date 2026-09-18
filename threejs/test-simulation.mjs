@@ -104,6 +104,9 @@ try {
   assert.equal(replay.duration, 0.5);
   assert.equal(replay.tick(0.25).position[0], 1.5);
   assert.throws(() => replay.load({ version: 1, frames: [frame(2, 1), frame(1, 2)] }), /monotonic/);
+  const ulogReplay = parseRecording(fs.readFileSync('public/flight-replay.json', 'utf8'));
+  assert.ok(ulogReplay.length > 2, 'The packaged ULog replay must contain visual frames');
+  assert.ok(ulogReplay.at(-1).time > ulogReplay[0].time, 'The packaged ULog replay needs duration');
 
   const sources = [],
     session = new VisualSession((source) => sources.push(source));

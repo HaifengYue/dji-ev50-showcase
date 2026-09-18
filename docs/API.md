@@ -1,4 +1,4 @@
-# EV50 浏览器 API（v3.3）
+# EV50 浏览器 API
 
 EV50 是部署到 GitHub Pages 的静态 Three.js 应用，没有常驻服务端。因此 API 在当前页面上下文执行：入口为 `window.ev50API`，而不是一个可从其他设备访问的 HTTP 服务。基础控制操作映射到 `/api/v1/...` 资源路径；视景仿真操作仅在页面内公开，并在能力响应的 `browserOperations` 字段列出，不能假定存在同名 HTTP 路由。
 
@@ -16,7 +16,7 @@ ev50.setRoute('plateau');
 ev50.play();
 ```
 
-API 2.x 的 `motor`、`position`、`velocity`、`attitude`、`euler`、`setRoute`、`play`、`pause`、`resume`、`reset`、`seek`、`setSpeed`、`getState` 和 `subscribe` 均保留。直接方法验证失败时会抛出 `Error`。
+直接方法 `motor`、`position`、`velocity`、`attitude`、`euler`、`setRoute`、`play`、`pause`、`resume`、`reset`、`seek`、`setSpeed`、`getState` 和 `subscribe` 均保留。验证失败时会抛出 `Error`。
 
 ## 统一请求接口
 

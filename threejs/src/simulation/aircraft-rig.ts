@@ -42,7 +42,7 @@ export function aircraftRig(aircraft: T.Group) {
   for (const side of ['Left', 'Right']) {
     bind(`${side}_Aileron`, 'aileron', side === 'Left' ? -0.35 : 0.35, 'x');
     bind(`${side}_Rudder`, 'rudder', -0.4, 'y');
-    // v13 supplies an authored trailing elevator. Keep the tailplane fallback
+    // The authored trailing elevator is preferred; keep the tailplane fallback
     // for archived assets without fabricating a detached rear-edge panel.
     bind(
       objects.has(`${side}_Elevator`) ? `${side}_Elevator` : `${side}_Tailplane`,

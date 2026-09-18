@@ -22,7 +22,7 @@ export function terrainNoise(x: number, z: number) {
   );
 }
 export function mountainHeight(a: number, r: number, k: number) {
-  const u = (r - 235 - k * 170) / (72 * 3.8);
+  const u = (r - 235 - k * 185) / (72 * 4.4);
   if (u < 0 || u > 1) return -2;
   const ridge =
     0.62 +
@@ -54,7 +54,7 @@ export const VISUAL_OBSTACLES = [
 ];
 export function obstacleCeiling(x: number, z: number) {
   const r = Math.hypot(x, z);
-  let ceiling = r < 18 ? 0 : r >= 217 && r <= 868 ? 127 : 10;
+  let ceiling = r < 18 ? 0 : r >= 217 && r <= 1450 ? 127 : 10;
   for (const obstacle of VISUAL_OBSTACLES)
     if (Math.hypot(x - obstacle.x, z - obstacle.z) <= obstacle.radius)
       ceiling = Math.max(ceiling, obstacle.height);

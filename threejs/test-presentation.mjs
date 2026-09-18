@@ -289,7 +289,7 @@ try {
       '../docs/presentation_tests.json',
       JSON.stringify(
         {
-          version: 'v09',
+          asset: 'EV50',
           passed,
           browser: false,
           scope:

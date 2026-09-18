@@ -1,112 +1,34 @@
-# EV50 展示与控制说明（v09 / API 3.0）
+# EV50 使用说明
 
-## 项目定位与运行
+## 页面模式
 
-这是基于 Blender、TypeScript 与 Three.js 的非官方工业无人机视觉展示。模型比例为 7 m 翼展，具有独立的 8 个垂起旋翼和 3 个巡航推进器。它不是 DJI 官方飞控、物理动力学或工程 CAD 产品。API 3.0 的完整契约、统一请求方式和后续功能接入约定见 [API.md](API.md)；本页保留 API 2.0 兼容调用说明。
+“产品展示”用于自由观察机体、自动环绕、截图与录制；“飞行演示”显示连续河谷、山地、村镇与飞行轨迹。右侧分组默认收起，按需展开“视景仿真”或“场景与传感器”。
 
-进入 `threejs` 目录，执行 `npm ci`、`npm run dev`，打开终端显示的网址。生产构建用 `npm run build`。下面的 API 在页面内运行；可选的本机 HTTP 桥见 [HTTP_CONTROL.md](HTTP_CONTROL.md)。本轮未验证线上部署状态。
+页面内的 `window.ev50API` 提供任务、手动视觉控制、状态订阅与视景仿真操作。它仅更新浏览器中的模型，不会向真实航空器发出飞控指令。
 
-## 外观与画质
+## ULog 回放
 
-v09 沿用 v08 的平滑机壳、主翼连接、浅嵌锁扣与接缝，调整机壳涂层、金属和橡胶材质，并加入自制复材法线纹理。当前模型、Blender 源文件及七视图分别在 `models/v09` 和 `previews/v09`，网页加载 `threejs/public/ev50.glb`。这些细节是视觉设计，不表示官方内部结构。
+仓库的运行时回放文件为 `threejs/public/flight-replay.json`。在页面加载后，展开“视景仿真”并点击“本地 ULog 回放”；页面会读取该文件并将内容交给 `simulation.replay.load`。播放、暂停、重新开始和时间轴都直接作用于该回放。
 
-High 在原有阴影、色调映射上增加低强度高光泛光与输出处理；Medium、Low 使用直接渲染，以降低显存与填充开销。画质切换会同步调整像素比、阴影和植被数量。新增后处理不会更改航线或避障条件。
+要替换为自己的本地 PX4 ULog：
 
-## 页面操作
-
-- 产品展示：拖动自由观察机体，可打开部件说明。
-- 飞行演示：三条航线统一从停机坪起降，先爬升至 180 m，再水平巡航；完整周期 180 秒。垂起 12 秒，起飞后与降落前的悬停各 2 秒；前、后向转换各 24 秒，巡航保持 96 秒。页面可选 0.25×、0.5×、1×、1.5×、2×、4×。速度读数为该时刻 1× 任务速度（m/s），暂停保留读数，倍速只改变播放节奏；手动模式显示指令速度。
-- 时间轴：拖动定位任意阶段；重新开始清除外部指令并回到起点。
-- 相机：自由、地面、跟随、侧面、远景；小地图显示实际预设航迹与时间进度。
-- 手动控制时，小地图白点表示当前位置，已完成段仍对应预设任务时间，不是外部指令任务的完成率。
-
-## v09 展示与导出
-
-“产品视角”提供三分之四、正面、侧面和俯视。选用预设或打开自动环绕会进入产品展示；产品模式切换沿用原有任务重置行为。自动环绕只在产品自由相机中生效，手动拖动会关闭环绕。调整窗口比例时保留观察方向。
-
-“户外光线”提供日光与金色时刻，只在飞行模式中生效；产品模式使用摄影棚光线。该设置不写入飞行控制通道。小屏默认收起右侧面板，点击“展示设置”展开，面板内容可滚动。
-
-“保存 PNG”在下一帧绘制完成后导出 WebGL 画面，分辨率取决于窗口大小和画质像素比，不含 HTML 面板或部件文字标签。“录制视频”请求 30 FPS、10 Mbps，优先选择浏览器支持的 WebM 编码，也可使用支持的 MP4；这不是对实际帧率、码率或输出格式的保证。不采集麦克风、摄像头或屏幕其他区域。
-
-录制开始后再次点击按钮停止，单段最长 200 秒。转入后台会请求停止录制；应在关闭页面前停止并下载。生成文件后会保留下载链接，浏览器未自动保存时可点击该链接。低帧率或低倍率播放可能导致在上限内无法覆盖完整任务。浏览器不支持录制时，对应按钮会禁用，仍可使用 PNG 功能。
-
-“沉浸展示”隐藏页面面板，不改变浏览器全屏状态。右上角保留退出按钮；录制时还保留“停止并保存”。Escape 同样可以退出。
-
-**验收状态：上述交互已实现并通过逻辑测试；本轮自动浏览器检查被安全检查拦截，尚未验证真实截图、编码文件、桌面/移动端布局和实际帧率。** 完整记录见 [VALIDATION_V09.md](VALIDATION_V09.md)。
-
-## API 坐标与语义
-
-入口是 `window.ev50API`。加载完成后 `ev50API.ready === true`。未就绪时调用控制方法会抛出错误，不会静默丢失指令。
-
-世界坐标为右手系，Y 向上，位置单位米、速度米/秒。机体零姿态机头沿 +Z。姿态四元数顺序 `[x,y,z,w]`，输入自动归一化。`euler(roll,pitch,yaw)` 使用弧度，在 Three.js `YXZ` 次序中分别映射 Z、X、Y 旋转；不是航空 NED 坐标。
-
-首条控制指令会进入 manual 状态并保存当时姿态、电机和位置。后续电机与姿态指令不会清除位置或正在执行的速度。位置指令会终止速度积分；发送零速度可悬停。电机功率只驱动视觉旋转，不计算升力，因此将功率置零不会导致自由落体。
-
-| 方法                    | 参数 / 返回                  | 行为                                               |
-| ----------------------- | ---------------------------- | -------------------------------------------------- |
-| `command(c)`            | 指令对象；返回状态快照       | 与下面四种简写相同                                 |
-| `position([x,y,z])`     | 3 个有限数值                 | 定位并终止速度积分                                 |
-| `velocity([vx,vy,vz])`  | 3 个有限数值                 | 按每帧实际时间积分                                 |
-| `attitude([x,y,z,w])`   | 非零四元数                   | 修改姿态，保留其他通道                             |
-| `euler(roll,pitch,yaw)` | 弧度                         | 欧拉角转换为四元数                                 |
-| `motor(lift,cruise)`    | 两组 `[0,1]` 功率            | 分别控制垂起与巡航组，非 11 路独立电机             |
-| `pause()` / `resume()`  | 无                           | 冻结/恢复当前控制模式，含手动速度                  |
-| `play()`                | 无                           | 清除手动控制，恢复预设航线                         |
-| `reset()`               | 无                           | 清除手动控制并暂停在起点                           |
-| `seek(seconds)`         | `0..180`                     | 清除手动控制并定位时间轴；在飞行模式使用           |
-| `setRoute(id)`          | `valley`、`plateau`、`ridge` | 切换路线并重置                                     |
-| `setSpeed(value)`       | `0.25..4`                    | 预设航线倍率，手动速度不受影响                     |
-| `getState()`            | 独立状态快照                 | 位置、姿态、功率、模式、暂停标志、时间、路线、进度 |
-| `subscribe(fn)`         | 返回取消订阅函数             | 约 10 Hz 推送状态；后台页面可能降低频率            |
-
-非法向量、非有限数值、零四元数、未知类型、越界功率或倍率均抛出错误。当前仅做数值格式校验，不限制外部位置的空间范围；请在场景边界内操作。自动路线保持既有地形净空，手动目标位置有保守高度钳制，可能被上移。它不是任意高速指令的连续碰撞检测或平滑航路规划器。
-
-## 示例：组合控制
-
-在页面加载完成后，通过开发者控制台或同页面集成脚本调用：
-
-```js
-const drone = window.ev50API;
-if (!drone.ready) throw new Error('请等待模型加载完成');
-drone.position([0, 180, 0]);
-drone.motor(0.8, 0.3);
-drone.euler(0, 0, Math.PI / 4);
-drone.velocity([8, 0, 6]);
-// 电机与姿态指令不会取消上述速度。
-drone.motor(0.2, 0.85);
-const unsubscribe = drone.subscribe((state) => console.log(state));
-drone.pause();
-drone.resume();
-// 用完监听时调用，避免重复订阅。
-unsubscribe();
-drone.velocity([0, 0, 0]);
-drone.setRoute('plateau');
-drone.setSpeed(0.5);
-drone.play();
+```powershell
+python scripts/replay_log.py path\to\flight.ulg --inspect
+python scripts/replay_log.py path\to\flight.ulg threejs/public/flight-replay.json
 ```
 
-## 事件指令及回执
+转换器只读取 ULog，并保留位置、速度、姿态以及可用的执行器通道。NED 轨迹相对首帧重置，并以固定视觉高度偏移放在地形上方；它不是重算飞行动力学。
 
-支持原有裸指令，也支持带请求编号的封装。每个事件产生 `ev50-result` 回执；直接方法调用失败会抛出异常。事件只在当前页面传播，不接受网络数据。
+## 模型维护
 
-```js
-const listener = (event) => {
-  const { id, ok, state, data, error } = event.detail;
-  console.log(id, ok ? (state ?? data) : error.message);
-};
-window.addEventListener('ev50-result', listener);
-window.dispatchEvent(
-  new CustomEvent('ev50-command', {
-    detail: { id: 'move-001', command: { type: 'position', position: [0, 180, 0] } },
-  }),
-);
-window.removeEventListener('ev50-result', listener);
+编辑 `models/ev50.blend` 后运行：
+
+```powershell
+D:\blender\blender.exe -b --python blender/export_aircraft.py
 ```
 
-## 验证和文件
+该导出器会更新模型元数据、写出 `models/ev50.glb`，并复制到网页运行时位置。预览图位于 `previews/aircraft/`；如需刷新它们，可在 Blender 中按固定视角渲染后覆盖同名文件。
 
-在 `threejs` 运行 `npm run test:api`、`node test-flight.mjs`、`npm run test:presentation`、`node validate-glb.mjs`、`npm run build`。回归包括 API 网关和 HTTP 服务、三条完整航线 60 Hz 净空检查、独立控制通道、速度积分、暂停恢复、调速和非法输入。展示测试使用 DOM/编码器替身，检查视角、截图时机、录制停止和资源回收，不代替真实浏览器验收。地形变化后需要重新检查净空。
+## 验证
 
-模型重建：`blender -b --python blender/polish_visuals.py`，依赖 `models/v08/ev50_v08.blend`。生成后将 `models/v09/ev50_v09.glb` 复制至 `threejs/public/ev50.glb`。追加 `-- --export-only` 跳过七视图渲染。完整 GLB 校验当前为 0 错误、39 警告；报告见 `docs/gltf_validator.json`。为避免源 UV 生成零长度显式切线，当前由渲染器生成法线贴图切线空间，跨渲染器表现尚待实测。
-
-旧模型、预览和离线视频保留。已有 50 秒电影不是 v09 的重新渲染；`blender/render_flight.py` 仍为旧版场景脚本，不能用于核验当前外观或 180 秒任务。
+在仓库根目录运行 `npm run ci`，并运行 `node threejs/test-airframe.mjs` 检查三点式起落架、旋翼、舵面和运行时绑定。运行 `npm --prefix threejs run dev` 后使用本机地址验收实际画面。

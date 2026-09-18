@@ -88,7 +88,7 @@ let flight: FlightController,
   ready = false,
   cameraMode: CameraMode = 'free',
   showLabels = false;
-let assetVersion = 'unknown';
+let assetVersion = 'EV50';
 const site = sceneDetails(terrain.group);
 let rig: ReturnType<typeof aircraftRig> | undefined;
 const visual = {
@@ -164,7 +164,7 @@ for (const d of labelData) {
 }
 const labelEls = Array.from(document.querySelectorAll<HTMLDivElement>('.part-label'));
 Promise.all([
-  new GLTFLoader().loadAsync(new URL('ev50_v13.glb', document.baseURI).href),
+  new GLTFLoader().loadAsync(new URL('ev50.glb', document.baseURI).href),
   fetch(new URL('flight.json', document.baseURI)).then((r) => {
     if (!r.ok) throw Error('飞行数据读取失败');
     return r.json();
@@ -175,7 +175,7 @@ Promise.all([
     flight = new FlightController(data.frames as Frame[]);
     const pivots: T.Object3D[] = [];
     gltf.scene.traverse((o) => {
-      if (o.userData.visual_asset_version) assetVersion = String(o.userData.visual_asset_version);
+      if (o.userData.visual_asset_name) assetVersion = String(o.userData.visual_asset_name);
       if (o instanceof T.Mesh) {
         o.castShadow = true;
         o.receiveShadow = true;
@@ -226,7 +226,7 @@ Promise.all([
     missionMap.setPath(flight.getPath());
     $<HTMLInputElement>('#timeline').max = String(flight.duration);
     $('#loading').hidden = true;
-    $('#load-status').textContent = `模型就绪 · ${assetVersion} / 视景 1.0`;
+    $('#load-status').textContent = `模型就绪 · ${assetVersion} / 连续视景`;
     document.body.dataset.ready = 'true';
     document.body.dataset.assetVersion = assetVersion;
     for (const el of document.querySelectorAll<
@@ -623,6 +623,10 @@ const clock = new T.Clock(),
 let projectionMode = '',
   panelElapsed = 0;
 const neutralSurfaces: Surfaces = { aileron: 0, elevator: 0, rudder: 0 };
+// ULog conversion maps normalized actuator magnitude to these visual maxima.
+// Replays intentionally report throttle, not a claim about measured RPM.
+const replayThrottle = (rpm: number, maximum: number) =>
+  `${Math.round(T.MathUtils.clamp(rpm / maximum, 0, 1) * 100)}%`;
 function animate() {
   const dt = Math.min(clock.getDelta(), 0.1),
     activeDt = document.hidden ? 0 : dt,
@@ -763,12 +767,18 @@ function animate() {
     $('#state-code').textContent = stateCode;
     $('#speed').textContent = visual.speedMps.toFixed(1);
     $('#altitude').textContent = visual.position.y.toFixed(1);
-    $('#lift-power').textContent = simulated
-      ? `${Math.round(visual.lift)} rpm`
-      : `${Math.round(visual.lift * 100)}%`;
-    $('#cruise-power').textContent = simulated
-      ? `${Math.round(visual.cruise)} rpm`
-      : `${Math.round(visual.cruise * 100)}%`;
+    $('#lift-power').textContent =
+      simulation.source === 'replay'
+        ? replayThrottle(visual.lift, 2600)
+        : simulated
+          ? `${Math.round(visual.lift)} rpm`
+          : `${Math.round(visual.lift * 100)}%`;
+    $('#cruise-power').textContent =
+      simulation.source === 'replay'
+        ? replayThrottle(visual.cruise, 2800)
+        : simulated
+          ? `${Math.round(visual.cruise)} rpm`
+          : `${Math.round(visual.cruise * 100)}%`;
     const time =
       simulation.source === 'replay'
         ? simulation.replay.time

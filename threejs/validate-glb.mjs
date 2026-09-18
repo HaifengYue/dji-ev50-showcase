@@ -1,8 +1,8 @@
 import fs from 'node:fs';
 import validator from 'gltf-validator';
-const modelPath = 'public/ev50_v13.glb';
+const modelPath = 'public/ev50.glb';
 const result = await validator.validateBytes(new Uint8Array(fs.readFileSync(modelPath)), {
-  uri: 'ev50_v13.glb',
+  uri: 'ev50.glb',
   maxIssues: 10000,
 });
 if (process.env.WRITE_VALIDATION_REPORTS) {

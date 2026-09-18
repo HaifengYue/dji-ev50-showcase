@@ -9,7 +9,9 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "typecheck": "npm --prefix threejs run build",
-    "test": "npm --prefix threejs run test:api && npm --prefix threejs run test:presentation && npm --prefix threejs run test:flight && npm --prefix threejs run test:model",
+    "replay:inspect": "python scripts/replay_log.py models/SITL_optimal.ulg --inspect",
+    "replay:build": "python scripts/replay_log.py models/SITL_optimal.ulg threejs/public/flight-replay.json",
+    "test": "npm --prefix threejs run test:api && npm --prefix threejs run test:presentation && npm --prefix threejs run test:flight && npm --prefix threejs run test:model && npm --prefix threejs run test:airframe",
     "ci": "npm run format:check && npm run typecheck && npm run test"
   },
   "devDependencies": {
