@@ -10,20 +10,20 @@
     "scripts/test_package_project.py": "f8e0d5edc870cdb1fd2baa30ac251133f238b71e5f4317a4b869d56c649c8535"
   },
   "lockedInputs": 211,
-  "frontendLockedInputs": 88,
-  "combinedLockedInputs": 274,
+  "frontendLockedInputs": 89,
+  "combinedLockedInputs": 275,
   "inputLockPath": "qa/current/results/input-lock.json",
   "inputLockSha256": "ecad91762e6b598b9e7b8a97d2847c7d4f539aba86e9b8c0ea89e5003686c25a",
   "verificationSummaryPath": "qa/current/results/summary.json",
   "verificationSummarySha256": "78b136c86298d1106910cde5cc85cac50449c11cc13028d691be052ce345af7b",
   "frontendInputLockPath": "qa/frontend/input-lock.json",
-  "frontendInputLockSha256": "3348c2cd9b2cead8b5b61d43b169d0b67ade112c965f17929b885d843f330cec",
+  "frontendInputLockSha256": "94a1804a242d794aafe10bb963f2b9d6f33ad1d56abc3387c7224e2279e6b54b",
   "frontendSummaryPath": "qa/frontend/summary.json",
-  "frontendSummarySha256": "933e43dc2906aa40d9fd1b2a49663fa830771535d3b27a8174dc30167d9f9cb9",
+  "frontendSummarySha256": "4191a60db15bf46a0485d54cfbbb53395909075e67bf69e33f781b0e259bee7e",
   "buildPreservationPath": "qa/frontend/build-preservation.json",
-  "buildPreservationSha256": "dcd08925aebd52bf2c9984cab72f18b066bffbf3d7116d1707e81d50311d72cf",
+  "buildPreservationSha256": "dafa6a08d89428151d7717ecb8754e7d1c74739c74c3863592162c17108aea0e",
   "projectMetadataPath": "项目信息.json",
-  "projectMetadataSha256": "7090e266edbb6b89dc72f4f0a145d34b51114e94c9db4c5803884703f0076d96",
+  "projectMetadataSha256": "6d0de13ffb6510efc0ab0b178997854001bdb955c27b1b7688375a988466e203",
   "files": [
     {
       "path": ".gitignore",
@@ -34,9 +34,9 @@
     },
     {
       "path": "README.md",
-      "bytes": 4731,
-      "sha256": "4746d44a3288256d1ef2c3b9e0de2210a83f4dd774eafba53a23577fd6e83de3",
-      "crc32": "34422f1a",
+      "bytes": 4737,
+      "sha256": "551e3a41f4c312e45b6996fc0f55f8d63518e68be9f9ed7f03fc7f989e54c789",
+      "crc32": "d6192944",
       "mode": "0644"
     },
     {
@@ -68,14 +68,14 @@
       "mode": "0644"
     },
     {
-      "path": "dist/assets/index-DI61ifvZ.css",
-      "bytes": 24147,
-      "sha256": "8aa45b2c5764b26519c26c8aa7ef2a56808a9528d46935acb8bcb4904274f1d0",
-      "crc32": "abd7cdb6",
+      "path": "dist/assets/index-D1B7vCse.css",
+      "bytes": 25272,
+      "sha256": "e84fda884b7408512b167fc6aaa596a57c3d1ce5df62b5b5cb383f547501877b",
+      "crc32": "53880456",
       "mode": "0644"
     },
     {
-      "path": "dist/assets/index-alPU3kaS.js",
+      "path": "dist/assets/index-rGvhun1F.js",
       "bytes": 195017,
       "sha256": "f249750d5a0cfb7575473e59a73fa7a67a46e464de8717b7b533ad7d3a48b044",
       "crc32": "aa52a6a5",
@@ -105,8 +105,8 @@
     {
       "path": "dist/index.html",
       "bytes": 834,
-      "sha256": "0575240102c9e1db5268a5249970af28398c52aec5aa330d4b6fd30fdbb9e9b4",
-      "crc32": "b4efffec",
+      "sha256": "60d2ac88eb4a2eb1f40be7fda67af96e35b1494522594e0439d9e043b37387c5",
+      "crc32": "26ab2fa7",
       "mode": "0644"
     },
     {
@@ -139,9 +139,9 @@
     },
     {
       "path": "docs/DELIVERY.md",
-      "bytes": 5399,
-      "sha256": "751998363cadf8748abca695f582dc527336ed78c8b35adfa2ba9ba96257c632",
-      "crc32": "23362850",
+      "bytes": 5405,
+      "sha256": "87f26818769a7ca376000db46e128a863d0dd13b0d8e24177c7294822d713d77",
+      "crc32": "55b69f41",
       "mode": "0644"
     },
     {
@@ -181,16 +181,16 @@
     },
     {
       "path": "docs/UI_REDESIGN.md",
-      "bytes": 2941,
-      "sha256": "f7cfeb238796b859ff336c006ba827c3195095747b9735417e18db76e0194a29",
-      "crc32": "6c572aa1",
+      "bytes": 5135,
+      "sha256": "bb4ddf34715fcf49cee828b27e0714f7a60d57bb839f6fad4d07b59a04aab5b2",
+      "crc32": "54d0b9db",
       "mode": "0644"
     },
     {
       "path": "docs/VERIFICATION.md",
-      "bytes": 11137,
-      "sha256": "a5f58a1429a0db37736c064e243237dc744be6f5a202ddb7fdb29892751c742e",
-      "crc32": "7a4c6e52",
+      "bytes": 11613,
+      "sha256": "686200b6da244b734057ac499006355a4ca7204bf7bb3b30f6d89b2ebad328e3",
+      "crc32": "c1d8f535",
       "mode": "0644"
     },
     {
@@ -1427,23 +1427,23 @@
     },
     {
       "path": "qa/frontend/build-preservation.json",
-      "bytes": 739,
-      "sha256": "dcd08925aebd52bf2c9984cab72f18b066bffbf3d7116d1707e81d50311d72cf",
-      "crc32": "2459f873",
+      "bytes": 702,
+      "sha256": "dafa6a08d89428151d7717ecb8754e7d1c74739c74c3863592162c17108aea0e",
+      "crc32": "7cbf831e",
       "mode": "0644"
     },
     {
       "path": "qa/frontend/build.log",
       "bytes": 859,
-      "sha256": "0053f01862fc1bc21de21810ffd65f31d1bfb7c5d267e9fb2776d23419bb8335",
-      "crc32": "c9a57deb",
+      "sha256": "ec5e6c179f78688bea8b3ec7a532cb110681450697c3c475656bce1c785622b4",
+      "crc32": "eade1e9b",
       "mode": "0644"
     },
     {
       "path": "qa/frontend/flight-loader.log",
-      "bytes": 1461,
-      "sha256": "2dfac18bd990cad9d41070b601e0131f406d0dcdf97c6441cf87f7a8ee23fec7",
-      "crc32": "ac203212",
+      "bytes": 1460,
+      "sha256": "1fb4203687be355b2cac6d8e7947be7583b7d5382291afdccc97ca0034d1258e",
+      "crc32": "10a646fc",
       "mode": "0644"
     },
     {
@@ -1462,23 +1462,23 @@
     },
     {
       "path": "qa/frontend/input-lock.json",
-      "bytes": 12211,
-      "sha256": "3348c2cd9b2cead8b5b61d43b169d0b67ade112c965f17929b885d843f330cec",
-      "crc32": "4de0936a",
+      "bytes": 12351,
+      "sha256": "94a1804a242d794aafe10bb963f2b9d6f33ad1d56abc3387c7224e2279e6b54b",
+      "crc32": "36fe011d",
       "mode": "0644"
     },
     {
       "path": "qa/frontend/physical-evidence-reuse.json",
-      "bytes": 14611,
-      "sha256": "80a783b007fbbd5aafeb482a03ccb9248fc9b0067dfc4d3191501f0d95802074",
-      "crc32": "efc67775",
+      "bytes": 14741,
+      "sha256": "a168eb87dbbe469545755700afb91c68b26d7bb96377e079a7c7dde324aacf54",
+      "crc32": "cf7dcbfb",
       "mode": "0644"
     },
     {
       "path": "qa/frontend/python.log",
       "bytes": 2993,
-      "sha256": "2f5f4ac967956b2a025714911d8ec26470784deb3d764d097c33cb6212243576",
-      "crc32": "0d794ab0",
+      "sha256": "db150e536259b64deac1a5ea25a743ac39d3a378b90faca070ef36d3dd431eb3",
+      "crc32": "c818a4a2",
       "mode": "0644"
     },
     {
@@ -1491,29 +1491,43 @@
     {
       "path": "qa/frontend/summary.json",
       "bytes": 763,
-      "sha256": "933e43dc2906aa40d9fd1b2a49663fa830771535d3b27a8174dc30167d9f9cb9",
-      "crc32": "d46a1485",
+      "sha256": "4191a60db15bf46a0485d54cfbbb53395909075e67bf69e33f781b0e259bee7e",
+      "crc32": "20a4b063",
       "mode": "0644"
     },
     {
       "path": "qa/frontend/ui-change-provenance.json",
-      "bytes": 4037,
-      "sha256": "b3a280ab9b45c1b0b78c18fe4960f378c8b658654d6b7c8e7cd5aee10ac392ac",
-      "crc32": "23682a79",
+      "bytes": 4466,
+      "sha256": "83d2a1e92e6d09369b62c04d32522a17584413dd2da650800a22090adfee3641",
+      "crc32": "c5298e21",
       "mode": "0644"
     },
     {
       "path": "qa/frontend/ui-source-report.json",
-      "bytes": 4588,
-      "sha256": "65809b9c8d2ebfbb1001743ee9d22fd4efb231a72ce6c0746db22a46af7baf7d",
-      "crc32": "0d9cd752",
+      "bytes": 10598,
+      "sha256": "3eabf90a29cfbe5cad7eddccffe87427132d9f99c4f4076f005f0c2d003edae8",
+      "crc32": "baa31340",
       "mode": "0644"
     },
     {
       "path": "qa/frontend/unit.log",
-      "bytes": 16575,
-      "sha256": "cf4e4fdaa4c3faab0a878eab7628922757e25f305972b9bfa4e4f6d4fe320502",
-      "crc32": "16ebfe29",
+      "bytes": 16904,
+      "sha256": "8c1b6c08013c041a93137534094835006f0cc7f342c3b0282eaebb69b403ff77",
+      "crc32": "286777cd",
+      "mode": "0644"
+    },
+    {
+      "path": "qa/frontend/viewport-change-provenance.json",
+      "bytes": 2538,
+      "sha256": "b9df2d0a316927f3cc244e5e496dcecb73dd7e06f57dec4fdcc88443f632a55e",
+      "crc32": "3b889791",
+      "mode": "0644"
+    },
+    {
+      "path": "qa/frontend/viewport-framing-report.json",
+      "bytes": 4288,
+      "sha256": "5f6824d9f7fcb74f5638cf3e2fee4971170dd000ab380751f99940cabf3c0740",
+      "crc32": "7282a04c",
       "mode": "0644"
     },
     {
@@ -1609,9 +1623,9 @@
     },
     {
       "path": "qa/lib/runtime-ui-source-check.mts",
-      "bytes": 18544,
-      "sha256": "954c0a5396f9d4c8eac2b99208cb817049b66ed57ccd84f2189bf3dcc66dabb3",
-      "crc32": "35b57529",
+      "bytes": 22761,
+      "sha256": "f68a6f4b4eceda7879ba2c1f016e2ea88dcc5ea21bbade0cc27c9775a4bb23d0",
+      "crc32": "0e07a5d0",
       "mode": "0644"
     },
     {
@@ -2841,9 +2855,9 @@
     },
     {
       "path": "src/style.css",
-      "bytes": 30692,
-      "sha256": "1504ba34728897205a0c461e2d1d83500b122c7d48e18aeeaef4c408488ef07a",
-      "crc32": "3a67da40",
+      "bytes": 32278,
+      "sha256": "7c0da5f0f423f43d69a17e12cf269e32ac16f4c50c7e3ae86ba9dca15a31b66d",
+      "crc32": "f48c5084",
       "mode": "0644"
     },
     {
@@ -2875,6 +2889,13 @@
       "mode": "0644"
     },
     {
+      "path": "src/viewportLayout.test.ts",
+      "bytes": 6511,
+      "sha256": "2f2242e413d91f2ef94a9b919a806e480b00eae7bbaa3de1e238575470c252b6",
+      "crc32": "d6e5eb66",
+      "mode": "0644"
+    },
+    {
       "path": "tsconfig.json",
       "bytes": 371,
       "sha256": "713b3d770d95aa35bbd97ac64dca82b0d6f6c7b9cf1ae5c11808051a8762ba1a",
@@ -2890,16 +2911,16 @@
     },
     {
       "path": "下载说明.txt",
-      "bytes": 2227,
-      "sha256": "0a87b82d83536a1f77179a15d4f4c42c0a3eade23475fe60de95f362de4ded51",
-      "crc32": "e3032efc",
+      "bytes": 2233,
+      "sha256": "9d3e78d0ddd68c3f227418a753f6ad3b176db66bec7fd33720c4201ae55db08d",
+      "crc32": "d31eaa1b",
       "mode": "0644"
     },
     {
       "path": "项目信息.json",
-      "bytes": 4267,
-      "sha256": "7090e266edbb6b89dc72f4f0a145d34b51114e94c9db4c5803884703f0076d96",
-      "crc32": "0ff62da6",
+      "bytes": 4827,
+      "sha256": "6d0de13ffb6510efc0ab0b178997854001bdb955c27b1b7688375a988466e203",
+      "crc32": "ac8e9ea4",
       "mode": "0644"
     }
   ]

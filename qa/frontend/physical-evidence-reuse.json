@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "scope": "本轮仅UI重构；未重跑物理44阶段，复核原211项实际输入和整套物理结果与已交付初始化快照逐字节相同后保留原结论",
+  "scope": "本轮仅画布比例与响应式容器调整；未重跑物理44阶段，复核原211项实际输入和88份物理结果与已发布UI快照逐字节相同后保留原结论",
   "physicsRerun": false,
   "baselineInputLockSha256": "ecad91762e6b598b9e7b8a97d2847c7d4f539aba86e9b8c0ea89e5003686c25a",
   "currentInputLockSha256": "ecad91762e6b598b9e7b8a97d2847c7d4f539aba86e9b8c0ea89e5003686c25a",
@@ -363,5 +363,7 @@
       "sha256": "888d857ca3e0385957f509356fb6d34ce044ee8017b7aa8f11771862fcddebd0"
     }
   ],
-  "limitations": "原有限姿态、明确继承与制造/设备验收限制继续有效；UI五阶段、源码/SSR检查另行实际运行"
+  "limitations": "原有限姿态、明确继承与制造/设备验收限制继续有效；UI五阶段、源码/SSR检查另行实际运行",
+  "baselineKind": "published UI snapshot",
+  "baselineGitCommit": "c12b288f45ecf72c5036d5e9fad42e00de4683c8"
 }

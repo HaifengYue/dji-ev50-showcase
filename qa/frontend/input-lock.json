@@ -9,11 +9,11 @@
       "sha256": "14deba2a8cb20fb13c6cc05f8c4c09d441285b9754b014499942ad39992f7ce4"
     },
     {
-      "path": "dist/assets/index-DI61ifvZ.css",
-      "sha256": "8aa45b2c5764b26519c26c8aa7ef2a56808a9528d46935acb8bcb4904274f1d0"
+      "path": "dist/assets/index-D1B7vCse.css",
+      "sha256": "e84fda884b7408512b167fc6aaa596a57c3d1ce5df62b5b5cb383f547501877b"
     },
     {
-      "path": "dist/assets/index-alPU3kaS.js",
+      "path": "dist/assets/index-rGvhun1F.js",
       "sha256": "f249750d5a0cfb7575473e59a73fa7a67a46e464de8717b7b533ad7d3a48b044"
     },
     {
@@ -30,7 +30,7 @@
     },
     {
       "path": "dist/index.html",
-      "sha256": "0575240102c9e1db5268a5249970af28398c52aec5aa330d4b6fd30fdbb9e9b4"
+      "sha256": "60d2ac88eb4a2eb1f40be7fda67af96e35b1494522594e0439d9e043b37387c5"
     },
     {
       "path": "dist/models/manifest.json",
@@ -170,7 +170,7 @@
     },
     {
       "path": "qa/lib/runtime-ui-source-check.mts",
-      "sha256": "954c0a5396f9d4c8eac2b99208cb817049b66ed57ccd84f2189bf3dcc66dabb3"
+      "sha256": "f68a6f4b4eceda7879ba2c1f016e2ea88dcc5ea21bbade0cc27c9775a4bb23d0"
     },
     {
       "path": "qa/lib/solid-contact.mjs",
@@ -326,7 +326,7 @@
     },
     {
       "path": "src/style.css",
-      "sha256": "1504ba34728897205a0c461e2d1d83500b122c7d48e18aeeaef4c408488ef07a"
+      "sha256": "7c0da5f0f423f43d69a17e12cf269e32ac16f4c50c7e3ae86ba9dca15a31b66d"
     },
     {
       "path": "src/tilt.test.ts",
@@ -343,6 +343,10 @@
     {
       "path": "src/uiControl.ts",
       "sha256": "c5f7e26476a632fef02b8de5fd41e0e4affa71b4b9f451f00b0df444788ae493"
+    },
+    {
+      "path": "src/viewportLayout.test.ts",
+      "sha256": "2f2242e413d91f2ef94a9b919a806e480b00eae7bbaa3de1e238575470c252b6"
     },
     {
       "path": "tsconfig.json",

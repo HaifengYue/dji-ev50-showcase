@@ -1,7 +1,7 @@
 {
   "formatVersion": 1,
   "passed": true,
-  "scope": "初始化后的单独UI修改；当前真实前端结果绑定当前文件",
+  "scope": "初始化后的界面重构与后续画布比例调整；当前真实前端结果绑定当前文件",
   "baselineProjectManifestSha256": "52402b74ce519a399b6eebadd39deea651e42d7f4b256bb366011cb888385ae0",
   "initialCodeMigrationSha256": "737ed854be7fe7a3f375b16b8b664e996f6216eb2101cca09f7330577efeb865",
   "initialMigrationRecordKeptUnchanged": true,
@@ -21,7 +21,7 @@
     {
       "path": "src/style.css",
       "baselineSha256": "051ad2a8260e947686b0fd46f0cc3d9cabbd3fe64f0cb51978769635038275be",
-      "currentSha256": "1504ba34728897205a0c461e2d1d83500b122c7d48e18aeeaef4c408488ef07a",
+      "currentSha256": "7c0da5f0f423f43d69a17e12cf269e32ac16f4c50c7e3ae86ba9dca15a31b66d",
       "change": "修改"
     },
     {
@@ -39,15 +39,21 @@
     {
       "path": "qa/lib/runtime-ui-source-check.mts",
       "baselineSha256": "17ad58939975ae0dc5795f8102cffec07ec5473365f495b6de0a1b3bc83b6b46",
-      "currentSha256": "954c0a5396f9d4c8eac2b99208cb817049b66ed57ccd84f2189bf3dcc66dabb3",
+      "currentSha256": "f68a6f4b4eceda7879ba2c1f016e2ea88dcc5ea21bbade0cc27c9775a4bb23d0",
       "change": "修改"
+    },
+    {
+      "path": "src/viewportLayout.test.ts",
+      "baselineSha256": null,
+      "currentSha256": "2f2242e413d91f2ef94a9b919a806e480b00eae7bbaa3de1e238575470c252b6",
+      "change": "新增画布比例与GLB取景测试"
     }
   ],
   "supersededPathOnlyClaims": [
     {
       "path": "qa/lib/runtime-ui-source-check.mts",
       "initialMigrationDestinationSha256": "17ad58939975ae0dc5795f8102cffec07ec5473365f495b6de0a1b3bc83b6b46",
-      "currentSha256": "954c0a5396f9d4c8eac2b99208cb817049b66ed57ccd84f2189bf3dcc66dabb3",
+      "currentSha256": "f68a6f4b4eceda7879ba2c1f016e2ea88dcc5ea21bbade0cc27c9775a4bb23d0",
       "claim": "后续UI改动；不再把此文件当前内容声明为初始化纯路径迁移"
     },
     {
@@ -65,25 +71,29 @@
     {
       "path": "src/style.css",
       "initialMigrationDestinationSha256": "051ad2a8260e947686b0fd46f0cc3d9cabbd3fe64f0cb51978769635038275be",
-      "currentSha256": "1504ba34728897205a0c461e2d1d83500b122c7d48e18aeeaef4c408488ef07a",
+      "currentSha256": "7c0da5f0f423f43d69a17e12cf269e32ac16f4c50c7e3ae86ba9dca15a31b66d",
       "claim": "后续UI改动；不再把此文件当前内容声明为初始化纯路径迁移"
     }
   ],
   "physicalEvidenceReuse": {
     "path": "qa/frontend/physical-evidence-reuse.json",
-    "sha256": "80a783b007fbbd5aafeb482a03ccb9248fc9b0067dfc4d3191501f0d95802074"
+    "sha256": "a168eb87dbbe469545755700afb91c68b26d7bb96377e079a7c7dde324aacf54"
   },
   "frontendSummary": {
     "path": "qa/frontend/summary.json",
-    "sha256": "933e43dc2906aa40d9fd1b2a49663fa830771535d3b27a8174dc30167d9f9cb9"
+    "sha256": "4191a60db15bf46a0485d54cfbbb53395909075e67bf69e33f781b0e259bee7e"
   },
   "frontendInputLock": {
     "path": "qa/frontend/input-lock.json",
-    "sha256": "3348c2cd9b2cead8b5b61d43b169d0b67ade112c965f17929b885d843f330cec"
+    "sha256": "94a1804a242d794aafe10bb963f2b9d6f33ad1d56abc3387c7224e2279e6b54b"
   },
   "uiSourceReport": {
     "path": "qa/frontend/ui-source-report.json",
-    "sha256": "65809b9c8d2ebfbb1001743ee9d22fd4efb231a72ce6c0746db22a46af7baf7d"
+    "sha256": "3eabf90a29cfbe5cad7eddccffe87427132d9f99c4f4076f005f0c2d003edae8"
   },
-  "limitations": "CSS/AST/SSR和状态机测试不代替真实浏览器点击、焦点、触屏、截图或设备GPU验收"
+  "limitations": "CSS/AST/SSR和状态机测试不代替真实浏览器点击、焦点、触屏、截图或设备GPU验收",
+  "viewportAdjustment": {
+    "path": "qa/frontend/viewport-change-provenance.json",
+    "sha256": "b9df2d0a316927f3cc244e5e496dcecb73dd7e06f57dec4fdcc88443f632a55e"
+  }
 }

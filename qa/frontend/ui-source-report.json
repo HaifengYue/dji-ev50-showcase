@@ -11,7 +11,7 @@
       "bytes": 84352
     }
   },
-  "sourceSha256": "fa6f2ab821ec85548635a448ad865b5e0415a6d7f44b8133d3c7f8d4d6ef9bf1",
+  "sourceSha256": "8cd56c282e0c433e488cf7f5a1731a04d8061d84ec5e8213e1538204b630b25b",
   "workbench": {
     "viewportHasOwnToolbar": true,
     "mechanismTitleIsIndependent": true,
@@ -32,8 +32,27 @@
         "viewportHeight": 568,
         "canvasWidthWithoutInspector": 295.6,
         "canvasWidthWithInspector": 295.6,
-        "canvasHeight": 340,
+        "canvasHeight": 260,
+        "canvasHeightWithInspector": 260,
         "inspectorPlacement": "after-canvas",
+        "layouts": [
+          {
+            "inspector": false,
+            "viewportWidth": 295.6,
+            "canvasWidth": 295.6,
+            "canvasHeight": 260,
+            "aspect": 1.136923076923077,
+            "sideWidth": 0
+          },
+          {
+            "inspector": true,
+            "viewportWidth": 295.6,
+            "canvasWidth": 295.6,
+            "canvasHeight": 260,
+            "aspect": 1.136923076923077,
+            "sideWidth": 0
+          }
+        ],
         "panelWidth": 295.6,
         "innerWidth": 259.6,
         "columns": 3,
@@ -46,8 +65,27 @@
         "viewportHeight": 844,
         "canvasWidthWithoutInspector": 360.7,
         "canvasWidthWithInspector": 360.7,
-        "canvasHeight": 455.76,
+        "canvasHeight": 300.5833333333333,
+        "canvasHeightWithInspector": 300.5833333333333,
         "inspectorPlacement": "after-canvas",
+        "layouts": [
+          {
+            "inspector": false,
+            "viewportWidth": 360.7,
+            "canvasWidth": 360.7,
+            "canvasHeight": 300.5833333333333,
+            "aspect": 1.2,
+            "sideWidth": 0
+          },
+          {
+            "inspector": true,
+            "viewportWidth": 360.7,
+            "canvasWidth": 360.7,
+            "canvasHeight": 300.5833333333333,
+            "aspect": 1.2,
+            "sideWidth": 0
+          }
+        ],
         "panelWidth": 360.7,
         "innerWidth": 324.7,
         "columns": 3,
@@ -59,23 +97,127 @@
         "viewportWidth": 768,
         "viewportHeight": 1024,
         "canvasWidthWithoutInspector": 719.92,
-        "canvasWidthWithInspector": 469.91999999999996,
-        "canvasHeight": 604.16,
-        "inspectorPlacement": "side-column",
-        "panelWidth": 250,
-        "innerWidth": 217,
+        "canvasWidthWithInspector": 719.92,
+        "canvasHeight": 449.94999999999993,
+        "canvasHeightWithInspector": 449.94999999999993,
+        "inspectorPlacement": "after-canvas",
+        "layouts": [
+          {
+            "inspector": false,
+            "viewportWidth": 719.92,
+            "canvasWidth": 719.92,
+            "canvasHeight": 449.94999999999993,
+            "aspect": 1.6,
+            "sideWidth": 0
+          },
+          {
+            "inspector": true,
+            "viewportWidth": 719.92,
+            "canvasWidth": 719.92,
+            "canvasHeight": 449.94999999999993,
+            "aspect": 1.6,
+            "sideWidth": 0
+          }
+        ],
+        "panelWidth": 719.92,
+        "innerWidth": 687.92,
         "columns": 2,
         "rows": 3,
-        "tabWidth": 106,
+        "tabWidth": 341.46,
+        "largestTabTextWidth": 66
+      },
+      {
+        "viewportWidth": 844,
+        "viewportHeight": 390,
+        "canvasWidthWithoutInspector": 532,
+        "canvasWidthWithInspector": 532,
+        "canvasHeight": 280,
+        "canvasHeightWithInspector": 280,
+        "inspectorPlacement": "after-canvas",
+        "layouts": [
+          {
+            "inspector": false,
+            "viewportWidth": 532,
+            "canvasWidth": 532,
+            "canvasHeight": 280,
+            "aspect": 1.9,
+            "sideWidth": 0
+          },
+          {
+            "inspector": true,
+            "viewportWidth": 532,
+            "canvasWidth": 532,
+            "canvasHeight": 280,
+            "aspect": 1.9,
+            "sideWidth": 0
+          }
+        ],
+        "panelWidth": 532,
+        "innerWidth": 500,
+        "columns": 2,
+        "rows": 3,
+        "tabWidth": 247.5,
+        "largestTabTextWidth": 66
+      },
+      {
+        "viewportWidth": 1366,
+        "viewportHeight": 768,
+        "canvasWidthWithoutInspector": 1102.2,
+        "canvasWidthWithInspector": 1002.04,
+        "canvasHeight": 668,
+        "canvasHeightWithInspector": 626.275,
+        "inspectorPlacement": "side-column",
+        "layouts": [
+          {
+            "inspector": false,
+            "viewportWidth": 1102.2,
+            "canvasWidth": 1102.2,
+            "canvasHeight": 668,
+            "aspect": 1.6500000000000001,
+            "sideWidth": 0
+          },
+          {
+            "inspector": true,
+            "viewportWidth": 1282.04,
+            "canvasWidth": 1002.04,
+            "canvasHeight": 626.275,
+            "aspect": 1.6,
+            "sideWidth": 280
+          }
+        ],
+        "panelWidth": 280,
+        "innerWidth": 239,
+        "columns": 2,
+        "rows": 3,
+        "tabWidth": 117,
         "largestTabTextWidth": 66
       },
       {
         "viewportWidth": 1440,
         "viewportHeight": 900,
-        "canvasWidthWithoutInspector": 1351.6,
+        "canvasWidthWithoutInspector": 1320,
         "canvasWidthWithInspector": 1071.6,
-        "canvasHeight": 531,
+        "canvasHeight": 800,
+        "canvasHeightWithInspector": 669.7499999999999,
         "inspectorPlacement": "side-column",
+        "layouts": [
+          {
+            "inspector": false,
+            "viewportWidth": 1320,
+            "canvasWidth": 1320,
+            "canvasHeight": 800,
+            "aspect": 1.65,
+            "sideWidth": 0
+          },
+          {
+            "inspector": true,
+            "viewportWidth": 1351.6,
+            "canvasWidth": 1071.6,
+            "canvasHeight": 669.7499999999999,
+            "aspect": 1.6,
+            "sideWidth": 280
+          }
+        ],
         "panelWidth": 280,
         "innerWidth": 239,
         "columns": 2,
@@ -86,10 +228,62 @@
       {
         "viewportWidth": 1920,
         "viewportHeight": 1080,
-        "canvasWidthWithoutInspector": 1802.8,
+        "canvasWidthWithoutInspector": 1584,
         "canvasWidthWithInspector": 1522.8,
-        "canvasHeight": 669.6,
+        "canvasHeight": 960,
+        "canvasHeightWithInspector": 951.7499999999999,
         "inspectorPlacement": "side-column",
+        "layouts": [
+          {
+            "inspector": false,
+            "viewportWidth": 1584,
+            "canvasWidth": 1584,
+            "canvasHeight": 960,
+            "aspect": 1.65,
+            "sideWidth": 0
+          },
+          {
+            "inspector": true,
+            "viewportWidth": 1802.8,
+            "canvasWidth": 1522.8,
+            "canvasHeight": 951.7499999999999,
+            "aspect": 1.6,
+            "sideWidth": 280
+          }
+        ],
+        "panelWidth": 280,
+        "innerWidth": 239,
+        "columns": 2,
+        "rows": 3,
+        "tabWidth": 117,
+        "largestTabTextWidth": 66
+      },
+      {
+        "viewportWidth": 2560,
+        "viewportHeight": 1440,
+        "canvasWidthWithoutInspector": 1584,
+        "canvasWidthWithInspector": 1522.8,
+        "canvasHeight": 960,
+        "canvasHeightWithInspector": 951.7499999999999,
+        "inspectorPlacement": "side-column",
+        "layouts": [
+          {
+            "inspector": false,
+            "viewportWidth": 1584,
+            "canvasWidth": 1584,
+            "canvasHeight": 960,
+            "aspect": 1.65,
+            "sideWidth": 0
+          },
+          {
+            "inspector": true,
+            "viewportWidth": 1802.8,
+            "canvasWidth": 1522.8,
+            "canvasHeight": 951.7499999999999,
+            "aspect": 1.6,
+            "sideWidth": 280
+          }
+        ],
         "panelWidth": 280,
         "innerWidth": 239,
         "columns": 2,
@@ -98,15 +292,34 @@
         "largestTabTextWidth": 66
       }
     ],
-    "evidence": "Exact-selector CSS declarations and source dimensions (non-space glyph=1em, space=0.5em); excludes font rendering, browser cascade, actual viewport units, overflow, touch and pixels"
+    "evidence": "Actual CSS declarations, custom properties, width/height media conditions and container-width formulas; source-level layout model only. Text estimates assume non-space glyph=1em, space=0.5em. Not browser cascade, final pixels, actual viewport units, scrollbar widths, focus, touch or GPU validation."
   },
   "mobileSourceEstimate": {
     "viewportWidth": 320,
     "viewportHeight": 568,
     "canvasWidthWithoutInspector": 295.6,
     "canvasWidthWithInspector": 295.6,
-    "canvasHeight": 340,
+    "canvasHeight": 260,
+    "canvasHeightWithInspector": 260,
     "inspectorPlacement": "after-canvas",
+    "layouts": [
+      {
+        "inspector": false,
+        "viewportWidth": 295.6,
+        "canvasWidth": 295.6,
+        "canvasHeight": 260,
+        "aspect": 1.136923076923077,
+        "sideWidth": 0
+      },
+      {
+        "inspector": true,
+        "viewportWidth": 295.6,
+        "canvasWidth": 295.6,
+        "canvasHeight": 260,
+        "aspect": 1.136923076923077,
+        "sideWidth": 0
+      }
+    ],
     "panelWidth": 295.6,
     "innerWidth": 259.6,
     "columns": 3,

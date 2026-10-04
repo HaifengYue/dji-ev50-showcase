@@ -211,20 +211,29 @@ function cssRules(source: string, media: string[] = []): CssRule[] {
   }
   return rules;
 }
-function sourceStyle(rules: CssRule[], selector: string, width: number) {
+function sourceStyle(
+  rules: CssRule[],
+  selector: string,
+  width: number,
+  height = 900,
+) {
   const result: Record<string, string> = {};
   for (const rule of rules) {
     if (!rule.selectors.includes(selector)) continue;
     const applies = rule.media.every((query) =>
       query.split(",").some((part) => {
-        // 非视窗宽度条件不在本静态尺寸估计中作未经验证的假设。
-        if (/prefers-|hover|pointer|orientation|height|print/.test(part))
-          return false;
-        const bounds = [...part.matchAll(/(min|max)-width:\s*([\d.]+)px/g)];
+        // 非尺寸条件不在本静态估计中作未经验证的假设。
+        if (/prefers-|hover|pointer|orientation|print/.test(part)) return false;
+        const bounds = [
+          ...part.matchAll(/(min|max)-(width|height):\s*([\d.]+)px/g),
+        ];
         assert.ok(bounds.length, `未支持的尺寸条件：${part}`);
-        return bounds.every(([, kind, value]) =>
-          kind === "min" ? width >= Number(value) : width <= Number(value),
-        );
+        return bounds.every(([, kind, dimension, value]) => {
+          const actual = dimension === "width" ? width : height;
+          return kind === "min"
+            ? actual >= Number(value)
+            : actual <= Number(value);
+        });
       }),
     );
     if (applies) Object.assign(result, rule.declarations);
@@ -245,35 +254,114 @@ function horizontalPadding(value: string, basis: number) {
     pixels(parts[3] ?? parts[1] ?? parts[0], basis)
   );
 }
-function sceneHeight(value: string, viewportHeight: number) {
-  if (/^[\d.]+px$/.test(value)) return pixels(value);
-  const clamp = /^clamp\(([\d.]+)px,\s*([\d.]+)(?:s?vh),\s*([\d.]+)px\)$/.exec(
-    value,
+function cssLength(
+  source: string,
+  variables: Record<string, string>,
+  viewportHeight: number,
+  containerWidth: number,
+): number {
+  const expanded = source
+    .replace(/var\((--[\w-]+)\)/g, (_, name) => {
+      assert.ok(variables[name], `缺失尺寸变量 ${name}`);
+      return `(${cssLength(variables[name], variables, viewportHeight, containerWidth)})`;
+    })
+    .replace(/([\d.]+)(px|svh|cqw)/g, (_, value, unit) =>
+      String(
+        Number(value) *
+          (unit === "svh"
+            ? viewportHeight / 100
+            : unit === "cqw"
+              ? containerWidth / 100
+              : 1),
+      ),
+    );
+  const tokens =
+    expanded.match(/\d*\.?\d+(?:e[+-]?\d+)?|[a-z]+|[()+*/,\-]/gi) ?? [];
+  assert.equal(
+    tokens.join(""),
+    expanded.replace(/\s+/g, ""),
+    `不支持尺寸表达式 ${source}`,
   );
-  assert.ok(clamp, `画布尺寸估计不支持：${value}`);
-  return Math.max(
-    Number(clamp[1]),
-    Math.min((Number(clamp[2]) * viewportHeight) / 100, Number(clamp[3])),
-  );
+  let index = 0;
+  const take = (token: string) => {
+    assert.equal(tokens[index++], token, `尺寸表达式不完整 ${source}`);
+  };
+  const atom = (): number => {
+    const token = tokens[index++];
+    if (token === "(") {
+      const value = sum();
+      take(")");
+      return value;
+    }
+    if (["calc", "clamp", "min", "max"].includes(token)) {
+      take("(");
+      const args = [sum()];
+      while (tokens[index] === ",") {
+        index++;
+        args.push(sum());
+      }
+      take(")");
+      if (token === "calc") {
+        assert.equal(args.length, 1);
+        return args[0];
+      }
+      if (token === "clamp") {
+        assert.equal(args.length, 3);
+        return Math.max(args[0], Math.min(args[1], args[2]));
+      }
+      return token === "min" ? Math.min(...args) : Math.max(...args);
+    }
+    const value = Number(token);
+    assert.ok(Number.isFinite(value), `无效尺寸 ${token}`);
+    return value;
+  };
+  const product = (): number => {
+    let value = atom();
+    while (tokens[index] === "*" || tokens[index] === "/") {
+      const operation = tokens[index++],
+        right = atom();
+      value = operation === "*" ? value * right : value / right;
+    }
+    return value;
+  };
+  const sum = (): number => {
+    let value = product();
+    while (tokens[index] === "+" || tokens[index] === "-") {
+      const operation = tokens[index++],
+        right = product();
+      value = operation === "+" ? value + right : value - right;
+    }
+    return value;
+  };
+  const value = sum();
+  assert.equal(index, tokens.length);
+  return value;
 }
 
-function checkResponsiveSource(css: string) {
+export function checkResponsiveSource(css: string) {
   const rules = cssRules(css);
   const dimensions = [
     [320, 568],
     [390, 844],
     [768, 1024],
+    [844, 390],
+    [1366, 768],
     [1440, 900],
     [1920, 1080],
+    [2560, 1440],
   ];
   const samples = dimensions.map(([width, height]) => {
-    const style = (selector: string) => sourceStyle(rules, selector, width);
+    const style = (selector: string) =>
+      sourceStyle(rules, selector, width, height);
     assert.equal(style("[hidden]").display, "none !important");
     assert.equal(style(".experience").display, "grid");
     assert.equal(
       style(".experience")["grid-template-columns"],
       "minmax(0, 1fr)",
     );
+    assert.equal(style(".viewport-shell")["container-type"], "inline-size");
+    assert.equal(style(".viewport-shell")["margin-inline"], "auto");
+    assert.equal(style(".scene").height, "var(--scene-height)");
     assert.equal(style(".scene").position, "relative");
     assert.equal(style(".scene")["min-width"], "0");
     for (const property of ["left", "right", "top", "bottom", "inset"])
@@ -290,16 +378,67 @@ function checkResponsiveSource(css: string) {
     assert.equal(style(".info-modal").overflow, "auto");
     assert.match(style(".info-modal")["max-height"], /100dvh/);
     assert.equal(style(".viewport-toolbar")["flex-wrap"], "wrap");
+    assert.equal(style(".scene-tools")["flex-wrap"], "wrap");
     const appWidth = Math.min(width, pixels(style(".app-shell")["max-width"]));
-    const viewportWidth =
-      appWidth - horizontalPadding(style("main").padding, appWidth) - 2;
-    const canvasHeight = sceneHeight(style(".scene").height, height);
-    const inspectionColumns = style(".experience.has-inspector")[
-      "grid-template-columns"
-    ];
-    const sideWidth = /\s(\d+)px$/.exec(inspectionColumns);
+    const availableWidth =
+      appWidth - horizontalPadding(style("main").padding, appWidth);
+    const layouts = [false, true].map((inspector) => {
+      const variables = {
+        ...style(".viewport-shell"),
+        ...(inspector
+          ? style(".viewport-shell:has(.experience.has-inspector)")
+          : {}),
+      };
+      const calculate = (value: string, containerWidth = 0) =>
+        cssLength(value, variables, height, containerWidth);
+      const viewportWidth =
+        Math.min(availableWidth, calculate(variables["max-width"])) - 2;
+      const sideWidth = calculate(variables["--inspector-width"]);
+      const canvasWidth = viewportWidth - sideWidth;
+      const canvasHeight = calculate(style(".scene").height, viewportWidth);
+      const aspect = canvasWidth / canvasHeight;
+      assert.ok(canvasWidth > 0 && canvasHeight >= 260);
+      assert.ok(viewportWidth + 2 <= availableWidth + 1e-6);
+      assert.ok(
+        aspect >= (width <= 760 ? 1 : 1.6 - 1e-6) &&
+          aspect <=
+            (height <= 520 && width >= 600
+              ? 1.9
+              : width <= 760
+                ? 4 / 3
+                : 1.65) +
+              1e-6,
+        `${width}×${height}: 不应出现过宽或过窄画布 ${aspect}`,
+      );
+      if (sideWidth) {
+        assert.equal(
+          style(".experience.has-inspector")["grid-template-columns"],
+          "minmax(0, 1fr) var(--inspector-width)",
+        );
+        assert.equal(
+          style(".inspection-context")["max-height"],
+          "var(--scene-height)",
+        );
+        assert.equal(style(".inspection-context").overflow, "auto");
+      } else if (inspector) {
+        assert.equal(
+          style(".experience.has-inspector")["grid-template-columns"],
+          "minmax(0, 1fr)",
+        );
+        assert.equal(style(".inspection-context")["max-height"], "none");
+        assert.equal(style(".inspection-context").overflow, "visible");
+      }
+      return {
+        inspector,
+        viewportWidth,
+        canvasWidth,
+        canvasHeight,
+        aspect,
+        sideWidth,
+      };
+    });
+    const inspected = layouts[1];
     if (width <= 760) {
-      assert.equal(inspectionColumns, "minmax(0, 1fr)");
       assert.equal(style(".workspace-tabs")["flex-wrap"], "wrap");
       assert.equal(style(".workspace-tabs > button")["min-width"], "0");
       assert.ok(pixels(style(".source-selector button")["min-height"]) >= 44);
@@ -309,14 +448,12 @@ function checkResponsiveSource(css: string) {
       assert.ok(
         pixels(style(".simulation-panel .play-button")["min-height"]) >= 44,
       );
-    } else assert.ok(sideWidth, "宽屏检查说明须位于独立侧列");
-    assert.ok(canvasHeight >= 340, "小视窗仍须为画布保留可用高度");
-    const panelWidth = sideWidth ? Number(sideWidth[1]) : viewportWidth;
-    const border = width <= 760 ? 0 : 1;
+    }
+    const panelWidth = inspected.sideWidth || inspected.viewportWidth;
     const innerWidth =
       panelWidth -
       horizontalPadding(style(".inspection-context").padding, panelWidth) -
-      border;
+      (inspected.sideWidth ? 1 : 0);
     const columns = Number(
       /repeat\((\d+),/.exec(
         style(".detail-tabs")["grid-template-columns"],
@@ -340,16 +477,17 @@ function checkResponsiveSource(css: string) {
     );
     assert.ok(
       largestTabTextWidth + tabPadding + 2 < tabWidth,
-      `${width}px: 标签估计 ${largestTabTextWidth + tabPadding + 2}px 不得超过按钮 ${tabWidth}px`,
+      `${width}px: 检查标签估计不得超过按钮`,
     );
     return {
       viewportWidth: width,
       viewportHeight: height,
-      canvasWidthWithoutInspector: viewportWidth,
-      canvasWidthWithInspector:
-        viewportWidth - (sideWidth ? Number(sideWidth[1]) : 0),
-      canvasHeight,
-      inspectorPlacement: sideWidth ? "side-column" : "after-canvas",
+      canvasWidthWithoutInspector: layouts[0].canvasWidth,
+      canvasWidthWithInspector: inspected.canvasWidth,
+      canvasHeight: layouts[0].canvasHeight,
+      canvasHeightWithInspector: inspected.canvasHeight,
+      inspectorPlacement: inspected.sideWidth ? "side-column" : "after-canvas",
+      layouts,
       panelWidth,
       innerWidth,
       columns,
@@ -365,7 +503,7 @@ function checkResponsiveSource(css: string) {
   return {
     samples,
     evidence:
-      "Exact-selector CSS declarations and source dimensions (non-space glyph=1em, space=0.5em); excludes font rendering, browser cascade, actual viewport units, overflow, touch and pixels",
+      "Actual CSS declarations, custom properties, width/height media conditions and container-width formulas; source-level layout model only. Text estimates assume non-space glyph=1em, space=0.5em. Not browser cascade, final pixels, actual viewport units, scrollbar widths, focus, touch or GPU validation.",
   };
 }
 

@@ -1,6 +1,6 @@
 {
   "项目名称": "Transwing 飞行展示工作室",
-  "验收状态": "本轮UI前端五阶段与源码/SSR检查通过；原211项物理输入及整套物理结果逐字节未变，沿用既有44阶段通过结论而未重扫；浏览器与真实设备未验收",
+  "验收状态": "本轮画布比例调整五阶段、源码布局模型与真实GLB数学取景检查通过；原211项物理输入及88份原结果逐字节未变，沿用既有44阶段结论而未重扫；真实浏览器与设备未验收",
   "参考构型数量": 1,
   "唯一源码仓库": "https://github.com/HaifengYue/dji-ev50-showcase",
   "源码分支目标": "Transwing",
@@ -19,7 +19,7 @@
   "实际网格数": 283,
   "实际节点数": 348,
   "复用网格资源数": 217,
-  "合并冻结输入数": 274,
+  "合并冻结输入数": 275,
   "最终验收": {
     "路径": "qa/current/results/summary.json",
     "SHA256": "78b136c86298d1106910cde5cc85cac50449c11cc13028d691be052ce345af7b",
@@ -32,12 +32,12 @@
   },
   "前端验收": {
     "路径": "qa/frontend/summary.json",
-    "SHA256": "933e43dc2906aa40d9fd1b2a49663fa830771535d3b27a8174dc30167d9f9cb9",
+    "SHA256": "4191a60db15bf46a0485d54cfbbb53395909075e67bf69e33f781b0e259bee7e",
     "阶段数": 5,
     "全部通过": true,
     "输入锁路径": "qa/frontend/input-lock.json",
-    "输入锁SHA256": "3348c2cd9b2cead8b5b61d43b169d0b67ade112c965f17929b885d843f330cec",
-    "冻结输入数": 88,
+    "输入锁SHA256": "94a1804a242d794aafe10bb963f2b9d6f33ad1d56abc3387c7224e2279e6b54b",
+    "冻结输入数": 89,
     "输入稳定": true
   },
   "非删除式构建": "构建使用--emptyOutDir false；不清空dist，当前发行仅纳入实际入口引用及静态资源副本。",
@@ -55,19 +55,28 @@
     "重跑网格数": 72,
     "严格继承网格数": 211,
     "源与运行SAT总次数": 113905968,
-    "前端单元测试数": 167,
+    "前端单元测试数": 170,
     "飞行回归数": 5,
     "Python测试数": 26,
     "当前构建文件数": 9
   },
   "界面修改验收": {
     "源码与SSR报告": "qa/frontend/ui-source-report.json",
-    "源码与SSR报告SHA256": "65809b9c8d2ebfbb1001743ee9d22fd4efb231a72ce6c0746db22a46af7baf7d",
+    "源码与SSR报告SHA256": "3eabf90a29cfbe5cad7eddccffe87427132d9f99c4f4076f005f0c2d003edae8",
     "变更来源报告": "qa/frontend/ui-change-provenance.json",
-    "变更来源报告SHA256": "b3a280ab9b45c1b0b78c18fe4960f378c8b658654d6b7c8e7cd5aee10ac392ac",
+    "变更来源报告SHA256": "83d2a1e92e6d09369b62c04d32522a17584413dd2da650800a22090adfee3641",
     "物理结果复用检查": "qa/frontend/physical-evidence-reuse.json",
-    "物理结果复用检查SHA256": "80a783b007fbbd5aafeb482a03ccb9248fc9b0067dfc4d3191501f0d95802074",
+    "物理结果复用检查SHA256": "a168eb87dbbe469545755700afb91c68b26d7bb96377e079a7c7dde324aacf54",
     "物理重扫": false,
     "说明": "初始化迁移映射保留原字节；4项被后续UI修改的纯路径迁移声明已在新来源报告中明确区分，不把后续修改说成旧代码恒等"
+  },
+  "画布比例验收": {
+    "源码布局尺寸数": 8,
+    "检查面板开关布局数": 16,
+    "取景报告": "qa/frontend/viewport-framing-report.json",
+    "取景报告SHA256": "5f6824d9f7fcb74f5638cf3e2fee4971170dd000ab380751f99940cabf3c0740",
+    "变更来源报告": "qa/frontend/viewport-change-provenance.json",
+    "变更来源报告SHA256": "b9df2d0a316927f3cc244e5e496dcecb73dd7e06f57dec4fdcc88443f632a55e",
+    "范围": "CSS源码公式与真实GLB投影；没有浏览器截图或实际像素验收"
   }
 }

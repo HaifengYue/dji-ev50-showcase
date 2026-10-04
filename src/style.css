@@ -204,12 +204,33 @@ h1 > span {
   line-height: 1.7;
   margin: 0 0 3px;
 }
+/* 高度预算限制整张视景卡宽度，避免横向留白随显示器无限拉长。 */
 .viewport-shell {
+  --scene-ratio: 1.6;
+  --scene-ratio-limit: 1.65;
+  --scene-min-height: 260px;
+  --scene-height-limit: clamp(380px, calc(100svh - 100px), 960px);
+  --inspector-width: 0px;
+  --scene-height: clamp(
+    var(--scene-min-height),
+    calc((100cqw - var(--inspector-width)) / var(--scene-ratio)),
+    var(--scene-height-limit)
+  );
+  width: 100%;
+  max-width: calc(
+    var(--scene-height-limit) * var(--scene-ratio-limit) +
+      var(--inspector-width) + 2px
+  );
+  margin-inline: auto;
+  container-type: inline-size;
   background: var(--surface);
   border: 1px solid #c5d3e1;
   border-radius: 14px;
   overflow: hidden;
   box-shadow: var(--shadow-panel);
+}
+.viewport-shell:has(.experience.has-inspector) {
+  --inspector-width: 280px;
 }
 .viewport-header {
   display: flex;
@@ -259,19 +280,19 @@ h1 > span {
   color: var(--accent-dark);
   box-shadow: 0 1px 5px #25446710;
 }
-/* 画布始终占主区；检查说明使用独立列，不覆盖、不压缩画布高度。 */
+/* 画布按实际主区宽度取景；说明列独立计宽，不挤占已确定的高度。 */
 .experience {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   background: var(--canvas);
 }
 .experience.has-inspector {
-  grid-template-columns: minmax(0, 1fr) 280px;
+  grid-template-columns: minmax(0, 1fr) var(--inspector-width);
 }
 .scene {
   position: relative;
   min-width: 0;
-  height: clamp(400px, 59vh, 760px);
+  height: var(--scene-height);
   isolation: isolate;
   overflow: hidden;
 }
@@ -900,6 +921,9 @@ select {
 }
 /* 检查面板只在需要时出现，手机上位于画布后方。 */
 .inspection-context {
+  max-height: var(--scene-height);
+  overflow: auto;
+  overscroll-behavior: contain;
   min-width: 0;
   padding: 22px 20px;
   background: #f7fafd;
@@ -1258,11 +1282,6 @@ footer button {
     transform: rotate(360deg);
   }
 }
-@media (min-width: 1600px) {
-  .scene {
-    height: clamp(520px, 62vh, 860px);
-  }
-}
 @media (max-width: 1100px) {
   .topbar {
     gap: 24px;
@@ -1276,8 +1295,8 @@ footer button {
   .workspace-heading > p {
     max-width: 240px;
   }
-  .experience.has-inspector {
-    grid-template-columns: minmax(0, 1fr) 250px;
+  .viewport-shell:has(.experience.has-inspector) {
+    --inspector-width: 250px;
   }
   .inspection-context {
     padding: 18px 16px;
@@ -1304,6 +1323,21 @@ footer button {
   }
   .motor-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+/* 平板及矮横屏把检查说明移到画布后，主区不被挤成竖条。 */
+@media (max-width: 1000px), (max-height: 520px) {
+  .viewport-shell:has(.experience.has-inspector) {
+    --inspector-width: 0px;
+  }
+  .experience.has-inspector {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .inspection-context {
+    max-height: none;
+    overflow: visible;
+    border-left: 0;
+    border-top: 1px solid var(--line);
   }
 }
 @media (max-width: 760px) {
@@ -1379,11 +1413,10 @@ footer button {
   .viewport-title > span:last-child {
     display: none;
   }
-  .experience.has-inspector {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .scene {
-    height: clamp(350px, 54svh, 570px);
+  .viewport-shell {
+    --scene-ratio: 1.2;
+    --scene-ratio-limit: 1.3333333333;
+    --scene-height-limit: clamp(260px, calc(100svh - 360px), 440px);
   }
   .inspection-context {
     border-left: 0;
@@ -1607,9 +1640,6 @@ footer button {
   .workspace-tabs > button > svg {
     width: 16px;
   }
-  .scene {
-    height: 340px;
-  }
   .scene-tools {
     gap: 4px;
   }
@@ -1658,6 +1688,26 @@ footer button {
   }
   .property-details > div {
     grid-template-columns: 65px minmax(0, 1fr);
+  }
+}
+/* 横持手机保留至少 280px 画布；精简上方留白，允许必要的纵向滚动。 */
+@media (max-height: 520px) and (min-width: 600px) {
+  .viewport-shell {
+    --scene-ratio: 1.6;
+    --scene-ratio-limit: 1.9;
+    --scene-height-limit: clamp(280px, calc(100svh - 120px), 420px);
+  }
+  .topbar {
+    min-height: 60px;
+  }
+  main {
+    padding-top: 12px;
+  }
+  .workspace-heading {
+    display: none;
+  }
+  .viewport-header {
+    min-height: 50px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
