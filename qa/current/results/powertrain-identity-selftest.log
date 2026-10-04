@@ -1,0 +1,20 @@
+✔ all four complete own-wing translations pass 123 distinct actual rig states (172.59311ms)
+✔ moving only propellers rejects omitted nacelles and shaft hardware (9.324203ms)
+✔ moving descendant blades a second time rejects double displacement (129.167124ms)
+✔ world-space downward substitution rejects own-wing direction (132.602572ms)
+✔ omitted axis marker and wrong-parent powertrain are rejected (9.070492ms)
+✔ approved hinge raise and compensating own-wing rebase preserve complete 123-state relation (133.336459ms)
+✔ missing hinge rebase compensation cannot be passed as the same nacelle move (156.153859ms)
+✔ ignoring the approved hinge raise rejects a physically compensated assembly (136.819867ms)
+✔ explicit height dependency metadata permits only the approved rebase, stroke and front stop (6.808378ms)
+✔ axis position, body anchor, rear stop, low drive, bore and unbound stroke changes reject (49.065328ms)
+✔ complete non-target accessory surface regressions retain every raw face and reject mutations (293.891315ms)
+✔ four host decoration exact mapping and unchanged thresholds reject missing or excessive repair (192.863962ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1875.657029

@@ -1,11 +1,11 @@
 {
   "modelVersion": 24,
   "passed": true,
-  "blendSha256": "869458bd88bdf1a60ae07f28d565187ed6d164bd11a49589e6beae90c5ad3ac1",
+  "blendSha256": "93b87989cf4b19cd55236d13da99fa592b482429e77c9adf52ad9b36b0d6551d",
   "clip": "TRANSWING_Motors_Start_Stop",
   "durationSeconds": 7,
   "sampleCount": 673,
-  "maxRotorAxisError": 3.713667743023008e-07,
+  "maxRotorAxisError": 4.2445713617177486e-07,
   "maxPhaseStepWhileBladeFolded": 0.0,
   "minimumPhaseStep": 0.0,
   "finalPhases": {

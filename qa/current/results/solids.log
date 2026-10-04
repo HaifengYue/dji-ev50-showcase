@@ -3,7 +3,7 @@
   "reports": [
     {
       "source": "assets/blender/xp4-source.glb",
-      "sha256": "82ca7f6f9e98cb11737da6f1cb8b1507f71baf0ffcb57734b9beb7bb23e70126",
+      "sha256": "801b02ca6b12c326a04e0a1fe7741a99f168c629384ae836f490f7779428570e",
       "changedMeshes": [
         "ActuatorSideSlot_L",
         "ActuatorSideSlot_R",
@@ -226,6 +226,8 @@
         "RootHingeEndcap_R0148",
         "RootHingeShaft_L",
         "RootHingeShaft_R",
+        "Root_access_cover_L",
+        "Root_access_cover_R",
         "Spinner_L_Front",
         "Spinner_L_Rear",
         "Spinner_R_Front",
@@ -748,6 +750,12 @@
             ]
           },
           {
+            "ancestor": "BladeFold_R_Front_B",
+            "meshDescendants": [
+              "Blade_R_Front_B"
+            ]
+          },
+          {
             "ancestor": "BladeFold_R_Rear_B",
             "meshDescendants": [
               "Blade_R_Rear_B"
@@ -781,6 +789,12 @@
             "ancestor": "Blade_hinge_pin_R_Front_A",
             "meshDescendants": [
               "Blade_hinge_pin_R_Front_A"
+            ]
+          },
+          {
+            "ancestor": "Blade_hinge_pin_R_Front_B",
+            "meshDescendants": [
+              "Blade_hinge_pin_R_Front_B"
             ]
           },
           {
@@ -1276,6 +1290,30 @@
             ]
           },
           {
+            "ancestor": "Landing_wear_tip_L_Front",
+            "meshDescendants": [
+              "Landing_wear_tip_L_Front"
+            ]
+          },
+          {
+            "ancestor": "Landing_wear_tip_L_Rear",
+            "meshDescendants": [
+              "Landing_wear_tip_L_Rear"
+            ]
+          },
+          {
+            "ancestor": "Landing_wear_tip_R_Front",
+            "meshDescendants": [
+              "Landing_wear_tip_R_Front"
+            ]
+          },
+          {
+            "ancestor": "Landing_wear_tip_R_Rear",
+            "meshDescendants": [
+              "Landing_wear_tip_R_Rear"
+            ]
+          },
+          {
             "ancestor": "Lower_fuselage_join",
             "meshDescendants": [
               "Lower_fuselage_join"
@@ -1353,6 +1391,30 @@
             "ancestor": "MotorFrontBearing_R_Rear",
             "meshDescendants": [
               "MotorFrontBearing_R_Rear"
+            ]
+          },
+          {
+            "ancestor": "Motor_cowl_L_Front",
+            "meshDescendants": [
+              "Motor_cowl_L_Front"
+            ]
+          },
+          {
+            "ancestor": "Motor_cowl_L_Rear",
+            "meshDescendants": [
+              "Motor_cowl_L_Rear"
+            ]
+          },
+          {
+            "ancestor": "Motor_cowl_R_Front",
+            "meshDescendants": [
+              "Motor_cowl_R_Front"
+            ]
+          },
+          {
+            "ancestor": "Motor_cowl_R_Rear",
+            "meshDescendants": [
+              "Motor_cowl_R_Rear"
             ]
           },
           {
@@ -1658,6 +1720,12 @@
             ]
           },
           {
+            "ancestor": "RootCarrierBridge_R",
+            "meshDescendants": [
+              "RootCarrierBridge_R"
+            ]
+          },
+          {
             "ancestor": "RootFixedBearingPedestal_L",
             "meshDescendants": [
               "RootFixedBearingPedestal_L"
@@ -1703,6 +1771,18 @@
             "ancestor": "RootHingeShaft_R",
             "meshDescendants": [
               "RootHingeShaft_R"
+            ]
+          },
+          {
+            "ancestor": "Root_access_cover_L",
+            "meshDescendants": [
+              "Root_access_cover_L"
+            ]
+          },
+          {
+            "ancestor": "Root_access_cover_R",
+            "meshDescendants": [
+              "Root_access_cover_R"
             ]
           },
           {
@@ -2112,6 +2192,8 @@
           "RootHingeEndcap_R0148",
           "RootHingeShaft_L",
           "RootHingeShaft_R",
+          "Root_access_cover_L",
+          "Root_access_cover_R",
           "Spinner_L_Front",
           "Spinner_L_Rear",
           "Spinner_R_Front",
@@ -2161,8 +2243,6 @@
           "Pitot_probe_foot",
           "Pitot_probe_mount",
           "Pitot_probe_tube",
-          "Root_access_cover_L",
-          "Root_access_cover_R",
           "Tail_receiver",
           "Tail_root_fastener_L",
           "Tail_root_fastener_L001",
@@ -2187,7 +2267,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 9.124645483638005e-14,
-          "volume": 0.718569000016839,
+          "volume": 0.7164398547617354,
           "passed": true
         },
         {
@@ -2209,7 +2289,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.00000926373674877179,
-          "volume": 0.00002289990321927337,
+          "volume": 0.00002289990321927484,
           "passed": true
         },
         {
@@ -2220,7 +2300,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.00000926373674877179,
-          "volume": 0.00002289990321927444,
+          "volume": 0.00002289990321927564,
           "passed": true
         },
         {
@@ -2231,7 +2311,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 5.147443484409096e-7,
-          "volume": 0.0000031511369099399967,
+          "volume": 0.0000031511369099398323,
           "passed": true
         },
         {
@@ -2242,7 +2322,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 5.14744328948506e-7,
-          "volume": 0.0000031511369106981475,
+          "volume": 0.000003151136910697764,
           "passed": true
         },
         {
@@ -2252,8 +2332,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 3.165728600144837e-7,
-          "volume": 0.00000769404873023609,
+          "minArea": 3.165728600144427e-7,
+          "volume": 0.000007694048730236683,
           "passed": true
         },
         {
@@ -2263,8 +2343,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 3.165728600144836e-7,
-          "volume": 0.00000769404873023689,
+          "minArea": 3.1657286001444274e-7,
+          "volume": 0.00000769404873023572,
           "passed": true
         },
         {
@@ -2275,7 +2355,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 3.6064298864521387e-7,
-          "volume": 0.000036515453489423014,
+          "volume": 0.00003651545348941949,
           "passed": true
         },
         {
@@ -2286,7 +2366,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 2.3027087470112356e-7,
-          "volume": 0.000014295682739102686,
+          "volume": 0.0000142956827391029,
           "passed": true
         },
         {
@@ -2297,7 +2377,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 2.3027087470112356e-7,
-          "volume": 0.000014295682739102673,
+          "volume": 0.000014295682739103008,
           "passed": true
         },
         {
@@ -2308,7 +2388,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.000003940937154112145,
-          "volume": 0.000017522242492218653,
+          "volume": 0.00001752224249221922,
           "passed": true
         },
         {
@@ -2319,7 +2399,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.000003940937154112145,
-          "volume": 0.00001752224249221869,
+          "volume": 0.000017522242492218016,
           "passed": true
         },
         {
@@ -2330,7 +2410,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.000013544541243113578,
-          "volume": 0.00008719986202060875,
+          "volume": 0.00008719986202060864,
           "passed": true
         },
         {
@@ -2340,8 +2420,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.000005012196839769411,
-          "volume": 0.0000017747573375055792,
+          "minArea": 0.000005012195033290054,
+          "volume": 0.0000017747576026581813,
           "passed": true
         },
         {
@@ -2352,7 +2432,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 2.3027056853669623e-7,
-          "volume": 0.000010840285582360617,
+          "volume": 0.000010840285582360533,
           "passed": true
         },
         {
@@ -2384,8 +2464,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 1.3710713345701405e-12,
-          "volume": 0.035060656124652534,
+          "minArea": 1.0517970594964538e-9,
+          "volume": 0.035060655671636964,
           "passed": true
         },
         {
@@ -2396,7 +2476,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.000009263739999927825,
-          "volume": 0.0000228999155035764,
+          "volume": 0.000022899915503754226,
           "passed": true
         },
         {
@@ -2406,8 +2486,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 5.147448540172632e-7,
-          "volume": 0.0000027258883754981544,
+          "minArea": 5.147448867419586e-7,
+          "volume": 0.0000027258883756265218,
           "passed": true
         },
         {
@@ -2418,7 +2498,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 7.145153515086621e-8,
-          "volume": 0.0000098375179038953,
+          "volume": 0.000009837503104265084,
           "passed": true
         },
         {
@@ -2428,8 +2508,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 5.6580276545092685e-14,
-          "volume": 0.17166272529273466,
+          "minArea": 9.252005364856259e-12,
+          "volume": 0.1717143155875224,
           "passed": true
         },
         {
@@ -2439,8 +2519,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 1.1096411918547036e-9,
-          "volume": 0.0000053966677884745315,
+          "minArea": 1.10960847870199e-9,
+          "volume": 0.000005396667351516549,
           "passed": true
         },
         {
@@ -2450,8 +2530,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 1.1095168058584677e-9,
-          "volume": 0.000004722085466932926,
+          "minArea": 1.1094431859415334e-9,
+          "volume": 0.0000047220883054932666,
           "passed": true
         },
         {
@@ -2461,8 +2541,8 @@
           "nonmanifold": 0,
           "components": 2,
           "zeroAreaTriangles": 0,
-          "minArea": 2.3424374067771565e-8,
-          "volume": 3.840655264173035e-7,
+          "minArea": 2.3424351690445776e-8,
+          "volume": 3.840655460240048e-7,
           "passed": true
         },
         {
@@ -2472,8 +2552,8 @@
           "nonmanifold": 0,
           "components": 2,
           "zeroAreaTriangles": 0,
-          "minArea": 2.342060942137764e-8,
-          "volume": 3.8407222388735594e-7,
+          "minArea": 2.3420824558665006e-8,
+          "volume": 3.84072349997927e-7,
           "passed": true
         },
         {
@@ -2483,8 +2563,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 1.110353058818531e-9,
-          "volume": 0.000005394462229105254,
+          "minArea": 1.1103534109692306e-9,
+          "volume": 0.000005394462420902383,
           "passed": true
         },
         {
@@ -2494,8 +2574,8 @@
           "nonmanifold": 0,
           "components": 2,
           "zeroAreaTriangles": 0,
-          "minArea": 1.3370883504364169e-7,
-          "volume": 1.6090923406753982e-7,
+          "minArea": 1.3370883628290928e-7,
+          "volume": 1.609092447051658e-7,
           "passed": true
         },
         {
@@ -2506,7 +2586,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.0000011417837119183295,
-          "volume": 0.00000610129427008381,
+          "volume": 0.000006101375352868165,
           "passed": true
         },
         {
@@ -2516,8 +2596,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 9.239572577652634e-9,
-          "volume": 0.003903538639759141,
+          "minArea": 9.239572577635706e-9,
+          "volume": 0.003903538639759131,
           "passed": true
         },
         {
@@ -2528,7 +2608,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 1.1103623779755045e-9,
-          "volume": 0.000004719889405798344,
+          "volume": 0.000004719889405468228,
           "passed": true
         },
         {
@@ -2539,7 +2619,7 @@
           "components": 2,
           "zeroAreaTriangles": 0,
           "minArea": 1.3370806398891828e-7,
-          "volume": 1.6090923226833167e-7,
+          "volume": 1.6090923177688744e-7,
           "passed": true
         },
         {
@@ -2550,7 +2630,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.0000011417674553608553,
-          "volume": 0.000006064836403218613,
+          "volume": 0.000006064919334514934,
           "passed": true
         },
         {
@@ -2561,7 +2641,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 4.817271115096964e-8,
-          "volume": 0.002227144286730114,
+          "volume": 0.002227144286729753,
           "passed": true
         },
         {
@@ -2572,7 +2652,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 1.9219483994336843e-9,
-          "volume": 0.00001943691974324826,
+          "volume": 0.000019436919744499723,
           "passed": true
         },
         {
@@ -2583,7 +2663,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 1.885797082332516e-9,
-          "volume": 0.000019436768348811738,
+          "volume": 0.000019436768351009707,
           "passed": true
         },
         {
@@ -2593,8 +2673,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 1.560573092822881e-9,
-          "volume": 0.02106047023090122,
+          "minArea": 1.5605730919942564e-9,
+          "volume": 0.021060470230900127,
           "passed": true
         },
         {
@@ -2605,7 +2685,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 1.7832080273143596e-9,
-          "volume": 0.021060472733971828,
+          "volume": 0.021060472733972723,
           "passed": true
         },
         {
@@ -2616,7 +2696,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.0000034622368626661357,
-          "volume": 0.00009270877462128195,
+          "volume": 0.00009270877462174229,
           "passed": true
         },
         {
@@ -2627,7 +2707,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.0000034622368626661357,
-          "volume": 0.00009270877462137377,
+          "volume": 0.00009270877462110347,
           "passed": true
         },
         {
@@ -2637,8 +2717,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.000015259178178156925,
-          "volume": 0.000024853607067116513,
+          "minArea": 0.00001525917817815643,
+          "volume": 0.000024853607066339588,
           "passed": true
         },
         {
@@ -2649,7 +2729,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.00001525837673395885,
-          "volume": 0.00002485353282052973,
+          "volume": 0.00002485353282085501,
           "passed": true
         },
         {
@@ -2660,7 +2740,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 7.625811844711783e-7,
-          "volume": 0.22392162715150613,
+          "volume": 0.22392162715150926,
           "passed": true
         },
         {
@@ -2671,7 +2751,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 7.624731717214893e-7,
-          "volume": 0.22392162181419745,
+          "volume": 0.22392162181419645,
           "passed": true
         },
         {
@@ -2681,8 +2761,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.00005742206467690518,
-          "volume": 0.0003628918649822862,
+          "minArea": 0.00005742206467690498,
+          "volume": 0.00036289186498214066,
           "passed": true
         },
         {
@@ -2693,7 +2773,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.00005742260176123252,
-          "volume": 0.0003628932337933978,
+          "volume": 0.0003628932337932944,
           "passed": true
         },
         {
@@ -2703,8 +2783,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 6.885701794790359e-12,
-          "volume": 0.00007881454013430784,
+          "minArea": 6.885701794617802e-12,
+          "volume": 0.00007881454013573193,
           "passed": true
         },
         {
@@ -2714,8 +2794,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 6.885702231072973e-12,
-          "volume": 0.00007881454013500604,
+          "minArea": 6.885702231245531e-12,
+          "volume": 0.00007881454013421151,
           "passed": true
         },
         {
@@ -2725,8 +2805,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 2.4716224440653853e-7,
-          "volume": 0.000010946846399380603,
+          "minArea": 2.471622444063778e-7,
+          "volume": 0.0000109468463992189,
           "passed": true
         },
         {
@@ -2737,7 +2817,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 2.471622444063778e-7,
-          "volume": 0.000010946846398859454,
+          "volume": 0.000010946846399601143,
           "passed": true
         },
         {
@@ -2748,7 +2828,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 1.2268865526467069e-9,
-          "volume": 0.0003639040481718873,
+          "volume": 0.00036390404817304554,
           "passed": true
         },
         {
@@ -2759,7 +2839,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 1.2268865907466525e-9,
-          "volume": 0.00036390404817219016,
+          "volume": 0.0003639040481737896,
           "passed": true
         },
         {
@@ -2770,7 +2850,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.000008664183449284928,
-          "volume": 0.0016652976158616124,
+          "volume": 0.0016652976158581761,
           "passed": true
         },
         {
@@ -2781,7 +2861,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 6.885701794790359e-12,
-          "volume": 0.00007881454013504096,
+          "volume": 0.00007881454013608908,
           "passed": true
         },
         {
@@ -2792,7 +2872,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 6.885702231072973e-12,
-          "volume": 0.00007881454013579893,
+          "volume": 0.00007881454013674892,
           "passed": true
         },
         {
@@ -2803,7 +2883,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 2.4716224440653853e-7,
-          "volume": 0.000010946846399187034,
+          "volume": 0.00001094684639934254,
           "passed": true
         },
         {
@@ -2814,7 +2894,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 2.4716224440653853e-7,
-          "volume": 0.000010946846399461848,
+          "volume": 0.000010946846399327331,
           "passed": true
         },
         {
@@ -2825,7 +2905,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 3.897676419757096e-10,
-          "volume": 0.00036390404816397386,
+          "volume": 0.0003639040481641412,
           "passed": true
         },
         {
@@ -2836,7 +2916,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 3.8976760712817144e-10,
-          "volume": 0.00036390404816430416,
+          "volume": 0.0003639040481631956,
           "passed": true
         },
         {
@@ -2847,7 +2927,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.000008664183449284928,
-          "volume": 0.001665297615859403,
+          "volume": 0.001665297615860464,
           "passed": true
         },
         {
@@ -2858,7 +2938,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 5.930173226468298e-10,
-          "volume": 0.000043320064127822896,
+          "volume": 0.00004332006412790951,
           "passed": true
         },
         {
@@ -2869,7 +2949,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.00002344250285571278,
-          "volume": 0.00009122890322997961,
+          "volume": 0.00009122890323003585,
           "passed": true
         },
         {
@@ -2879,8 +2959,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.000023442501910235968,
-          "volume": 0.000017469363702042287,
+          "minArea": 0.00002344250191023603,
+          "volume": 0.000017469363702205053,
           "passed": true
         },
         {
@@ -2891,7 +2971,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 4.638912342444666e-7,
-          "volume": 0.00004559644552688001,
+          "volume": 0.00004559644552705498,
           "passed": true
         },
         {
@@ -2902,7 +2982,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 3.020053806631735e-7,
-          "volume": 0.00010651333367904487,
+          "volume": 0.00010651333367893058,
           "passed": true
         },
         {
@@ -2913,7 +2993,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.000016235722961949014,
-          "volume": 0.00003403861384309644,
+          "volume": 0.00003403861384310623,
           "passed": true
         },
         {
@@ -2924,7 +3004,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.000013891520353075645,
-          "volume": 0.000034132301029641235,
+          "volume": 0.000034132301029638755,
           "passed": true
         },
         {
@@ -2935,7 +3015,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.000016235785844225043,
-          "volume": 0.000034038629261045054,
+          "volume": 0.00003403862926105076,
           "passed": true
         },
         {
@@ -2946,7 +3026,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.000013891520353075645,
-          "volume": 0.00003413229122489751,
+          "volume": 0.00003413229122489525,
           "passed": true
         },
         {
@@ -2957,7 +3037,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 7.321863190593586e-7,
-          "volume": 0.000058880720168492886,
+          "volume": 0.00005888072016857713,
           "passed": true
         },
         {
@@ -2967,8 +3047,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 2.0918179993760505e-12,
-          "volume": 0.0000067185135664012,
+          "minArea": 2.09181792739035e-12,
+          "volume": 0.000006718513566249049,
           "passed": true
         },
         {
@@ -2979,7 +3059,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 1.0784658475692463e-12,
-          "volume": 0.000006718517727415364,
+          "volume": 0.000006718517727372252,
           "passed": true
         },
         {
@@ -2989,8 +3069,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.0000024787388060975943,
-          "volume": 0.0013025724087161721,
+          "minArea": 0.000002478738806098007,
+          "volume": 0.0013025724087160357,
           "passed": true
         },
         {
@@ -3000,8 +3080,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.000003962997395301635,
-          "volume": 0.00001772721498769395,
+          "minArea": 0.000003962997395301619,
+          "volume": 0.00001772721498769557,
           "passed": true
         },
         {
@@ -3011,8 +3091,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.000003962833847365798,
-          "volume": 0.000017727192481856783,
+          "minArea": 0.00000396283384736592,
+          "volume": 0.000017727192481367462,
           "passed": true
         },
         {
@@ -3022,8 +3102,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.00000646450708026436,
-          "volume": 0.000014284936650666947,
+          "minArea": 0.000006464507080264274,
+          "volume": 0.000014284936650668262,
           "passed": true
         },
         {
@@ -3033,8 +3113,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.000006464507080263972,
-          "volume": 0.0000142849391654785,
+          "minArea": 0.000006464507080264069,
+          "volume": 0.000014284939165247281,
           "passed": true
         },
         {
@@ -3044,8 +3124,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.000004126515409938336,
-          "volume": 0.00003926810837989377,
+          "minArea": 0.000004126515409938284,
+          "volume": 0.000039268108379895794,
           "passed": true
         },
         {
@@ -3055,8 +3135,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.000004126515409938373,
-          "volume": 0.00003926811497227923,
+          "minArea": 0.000004126515409937738,
+          "volume": 0.0000392681149722204,
           "passed": true
         },
         {
@@ -3066,8 +3146,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 7.565625409881255e-12,
-          "volume": 0.03506065616664999,
+          "minArea": 1.0517970594964538e-9,
+          "volume": 0.035060655663932294,
           "passed": true
         },
         {
@@ -3078,7 +3158,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.000009263736748771788,
-          "volume": 0.000022899903219568533,
+          "volume": 0.000022899903218766695,
           "passed": true
         },
         {
@@ -3089,7 +3169,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 5.147445849854746e-7,
-          "volume": 0.0000027258869127964354,
+          "volume": 0.0000027258869126259175,
           "passed": true
         },
         {
@@ -3100,7 +3180,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 7.145150959786406e-8,
-          "volume": 0.000009838033628704757,
+          "volume": 0.000009838050216236296,
           "passed": true
         },
         {
@@ -3110,8 +3190,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 2.946179069164049e-13,
-          "volume": 0.17166234130271982,
+          "minArea": 9.252002049669056e-12,
+          "volume": 0.17171393297470586,
           "passed": true
         },
         {
@@ -3121,8 +3201,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 1.1098322673880687e-9,
-          "volume": 0.00000539666207927209,
+          "minArea": 1.1098664724550801e-9,
+          "volume": 0.00000539666468311134,
           "passed": true
         },
         {
@@ -3132,8 +3212,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 1.1098064168480176e-9,
-          "volume": 0.000004722076589905712,
+          "minArea": 1.1098362762040278e-9,
+          "volume": 0.000004722074794386338,
           "passed": true
         },
         {
@@ -3143,8 +3223,8 @@
           "nonmanifold": 0,
           "components": 2,
           "zeroAreaTriangles": 0,
-          "minArea": 2.342436564831233e-8,
-          "volume": 3.8406509265268225e-7,
+          "minArea": 2.3424343298688052e-8,
+          "volume": 3.840651004803656e-7,
           "passed": true
         },
         {
@@ -3155,7 +3235,7 @@
           "components": 2,
           "zeroAreaTriangles": 0,
           "minArea": 2.3420601125094147e-8,
-          "volume": 3.840719756753554e-7,
+          "volume": 3.8407231748761983e-7,
           "passed": true
         },
         {
@@ -3166,7 +3246,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 1.1103427503501271e-9,
-          "volume": 0.0000053944599271443435,
+          "volume": 0.000005394460067063463,
           "passed": true
         },
         {
@@ -3176,8 +3256,8 @@
           "nonmanifold": 0,
           "components": 2,
           "zeroAreaTriangles": 0,
-          "minArea": 1.3370878713261295e-7,
-          "volume": 1.6090914819821792e-7,
+          "minArea": 1.3370878836895955e-7,
+          "volume": 1.6090915338204246e-7,
           "passed": true
         },
         {
@@ -3188,7 +3268,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.0000011417833035848313,
-          "volume": 0.0000061013071096120065,
+          "volume": 0.000006101307109622995,
           "passed": true
         },
         {
@@ -3199,7 +3279,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 1.1274756492775127e-8,
-          "volume": 0.0039026916831656597,
+          "volume": 0.003902691683165725,
           "passed": true
         },
         {
@@ -3210,7 +3290,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 1.110310525958808e-9,
-          "volume": 0.000004719886805047098,
+          "volume": 0.0000047198868050728675,
           "passed": true
         },
         {
@@ -3221,7 +3301,7 @@
           "components": 2,
           "zeroAreaTriangles": 0,
           "minArea": 1.3370801661027684e-7,
-          "volume": 1.6090914842448194e-7,
+          "volume": 1.6090914821034418e-7,
           "passed": true
         },
         {
@@ -3232,7 +3312,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.0000011418012615532769,
-          "volume": 0.000006064864209088921,
+          "volume": 0.0000060648642093989926,
           "passed": true
         },
         {
@@ -3243,7 +3323,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 8.130754733816265e-9,
-          "volume": 0.002223439269761097,
+          "volume": 0.002223439269761585,
           "passed": true
         },
         {
@@ -3254,7 +3334,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 1.9219477120913098e-9,
-          "volume": 0.00001943711538208453,
+          "volume": 0.00001943711538731128,
           "passed": true
         },
         {
@@ -3265,7 +3345,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 1.9250592231401242e-9,
-          "volume": 0.000019437259368733126,
+          "volume": 0.00001943725936683045,
           "passed": true
         },
         {
@@ -3276,7 +3356,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 3.101873583583286e-9,
-          "volume": 0.021060459030886138,
+          "volume": 0.021060459030886446,
           "passed": true
         },
         {
@@ -3287,7 +3367,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 3.0769485748287027e-9,
-          "volume": 0.021060461679573882,
+          "volume": 0.02106046167957361,
           "passed": true
         },
         {
@@ -3297,8 +3377,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.0000034622356244737812,
-          "volume": 0.00009270872488814493,
+          "minArea": 0.0000034622356244734543,
+          "volume": 0.00009270872488896062,
           "passed": true
         },
         {
@@ -3309,7 +3389,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.0000034622356244737812,
-          "volume": 0.00009270872488837627,
+          "volume": 0.00009270872488822694,
           "passed": true
         },
         {
@@ -3320,7 +3400,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.000015259172721049374,
-          "volume": 0.000024853593734584783,
+          "volume": 0.00002485359373458801,
           "passed": true
         },
         {
@@ -3331,7 +3411,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.000015258371277138139,
-          "volume": 0.000024853519488239153,
+          "volume": 0.000024853519488234613,
           "passed": true
         },
         {
@@ -3342,7 +3422,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 7.625809117506321e-7,
-          "volume": 0.22392150703059693,
+          "volume": 0.22392150703059657,
           "passed": true
         },
         {
@@ -3353,7 +3433,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 7.624728990407448e-7,
-          "volume": 0.2239215016932884,
+          "volume": 0.22392150169328787,
           "passed": true
         },
         {
@@ -3364,7 +3444,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.000057433242464099976,
-          "volume": 0.0003629496905233169,
+          "volume": 0.0003629496905233211,
           "passed": true
         },
         {
@@ -3375,7 +3455,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.00005743355846021814,
-          "volume": 0.0003629508703089976,
+          "volume": 0.0003629508703089951,
           "passed": true
         },
         {
@@ -3386,7 +3466,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 6.8856995537791125e-12,
-          "volume": 0.00007881449785657387,
+          "volume": 0.00007881449785714102,
           "passed": true
         },
         {
@@ -3397,7 +3477,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 6.8856995537791125e-12,
-          "volume": 0.00007881449785649927,
+          "volume": 0.00007881449785704668,
           "passed": true
         },
         {
@@ -3408,7 +3488,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 2.4716215601423675e-7,
-          "volume": 0.00001094684052650052,
+          "volume": 0.000010946840526987954,
           "passed": true
         },
         {
@@ -3418,8 +3498,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 2.4716215601442945e-7,
-          "volume": 0.000010946840527119473,
+          "minArea": 2.4716215601423675e-7,
+          "volume": 0.000010946840526635799,
           "passed": true
         },
         {
@@ -3430,7 +3510,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 3.897674851670856e-10,
-          "volume": 0.00036390385295068307,
+          "volume": 0.00036390385295294385,
           "passed": true
         },
         {
@@ -3441,7 +3521,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 3.897674851670856e-10,
-          "volume": 0.00036390385295103825,
+          "volume": 0.0003639038529513166,
           "passed": true
         },
         {
@@ -3452,7 +3532,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.00000866418048047224,
-          "volume": 0.00166529672252329,
+          "volume": 0.0016652967225284936,
           "passed": true
         },
         {
@@ -3463,7 +3543,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 6.8856995537791125e-12,
-          "volume": 0.00007881449751417138,
+          "volume": 0.00007881449751456205,
           "passed": true
         },
         {
@@ -3474,7 +3554,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 6.8856995537791125e-12,
-          "volume": 0.00007881449751415622,
+          "volume": 0.0000788144975139163,
           "passed": true
         },
         {
@@ -3485,7 +3565,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 2.4716215601442945e-7,
-          "volume": 0.000010946840526732576,
+          "volume": 0.000010946840527415782,
           "passed": true
         },
         {
@@ -3496,7 +3576,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 2.4716215601442945e-7,
-          "volume": 0.000010946840527290848,
+          "volume": 0.000010946840527392248,
           "passed": true
         },
         {
@@ -3507,7 +3587,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 1.2268861329303306e-9,
-          "volume": 0.00036390385295905723,
+          "volume": 0.0003639038529582956,
           "passed": true
         },
         {
@@ -3518,7 +3598,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 1.2268861329303306e-9,
-          "volume": 0.0003639038529583798,
+          "volume": 0.00036390385295889893,
           "passed": true
         },
         {
@@ -3529,7 +3609,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.00000866418048047224,
-          "volume": 0.0016652967225243513,
+          "volume": 0.0016652967225243684,
           "passed": true
         },
         {
@@ -3540,7 +3620,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 4.997876199611244e-10,
-          "volume": 0.000043320111020453666,
+          "volume": 0.000043320111020445047,
           "passed": true
         },
         {
@@ -3551,7 +3631,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.000023442490280175264,
-          "volume": 0.00009122885429110315,
+          "volume": 0.0000912288542911844,
           "passed": true
         },
         {
@@ -3562,7 +3642,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.000023442489334698704,
-          "volume": 0.00001746935433112679,
+          "volume": 0.000017469354330840356,
           "passed": true
         },
         {
@@ -3573,7 +3653,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 4.6389098640509937e-7,
-          "volume": 0.0000455964210663192,
+          "volume": 0.00004559642106713583,
           "passed": true
         },
         {
@@ -3584,7 +3664,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 3.0200538066321453e-7,
-          "volume": 0.00010651333367903445,
+          "volume": 0.00010651333367917529,
           "passed": true
         },
         {
@@ -3595,7 +3675,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.000016235722961949014,
-          "volume": 0.00003403861384310316,
+          "volume": 0.0000340386138430962,
           "passed": true
         },
         {
@@ -3606,7 +3686,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.000013891520353075645,
-          "volume": 0.000034132301029643105,
+          "volume": 0.000034132301029650505,
           "passed": true
         },
         {
@@ -3617,7 +3697,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.000016235785844225043,
-          "volume": 0.00003403862926104948,
+          "volume": 0.0000340386292610445,
           "passed": true
         },
         {
@@ -3628,7 +3708,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.000013891520353075645,
-          "volume": 0.00003413229122489925,
+          "volume": 0.000034132291224892466,
           "passed": true
         },
         {
@@ -3639,7 +3719,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 7.321863190593588e-7,
-          "volume": 0.00005888072016872132,
+          "volume": 0.00005888072016835285,
           "passed": true
         },
         {
@@ -3649,8 +3729,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 2.091817999504472e-12,
-          "volume": 0.000006718513566578267,
+          "minArea": 2.0918179270712553e-12,
+          "volume": 0.000006718513566495213,
           "passed": true
         },
         {
@@ -3661,7 +3741,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 1.0784658475686813e-12,
-          "volume": 0.000006718517727281931,
+          "volume": 0.000006718517727283869,
           "passed": true
         },
         {
@@ -3671,8 +3751,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.000002478738806097784,
-          "volume": 0.0013025724087162229,
+          "minArea": 0.000002478738806098007,
+          "volume": 0.0013025724087160954,
           "passed": true
         },
         {
@@ -3682,8 +3762,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.0000039629973953016555,
-          "volume": 0.000017727214987696846,
+          "minArea": 0.000003962997395301612,
+          "volume": 0.000017727214987695128,
           "passed": true
         },
         {
@@ -3693,8 +3773,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.000003962833847365778,
-          "volume": 0.00001772719248102906,
+          "minArea": 0.00000396283384736571,
+          "volume": 0.000017727192481154938,
           "passed": true
         },
         {
@@ -3704,8 +3784,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.000006464507080264276,
-          "volume": 0.000014284936650665924,
+          "minArea": 0.000006464507080264362,
+          "volume": 0.000014284936650667597,
           "passed": true
         },
         {
@@ -3715,8 +3795,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.00000646450708026401,
-          "volume": 0.000014284939165221111,
+          "minArea": 0.000006464507080264033,
+          "volume": 0.000014284939165079799,
           "passed": true
         },
         {
@@ -3726,8 +3806,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.000004126515409938305,
-          "volume": 0.000039268108379895286,
+          "minArea": 0.0000041265154099383165,
+          "volume": 0.000039268108379896174,
           "passed": true
         },
         {
@@ -3737,8 +3817,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.000004126515409937956,
-          "volume": 0.00003926811497155916,
+          "minArea": 0.000004126515409938246,
+          "volume": 0.00003926811497186493,
           "passed": true
         },
         {
@@ -3902,8 +3982,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 2.8518917456893306e-8,
-          "volume": 2.9787283133762316e-7,
+          "minArea": 2.8518917456893452e-8,
+          "volume": 2.9787283133725364e-7,
           "passed": true
         },
         {
@@ -3913,8 +3993,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 3.022997686027488e-7,
-          "volume": 0.0002778801982064456,
+          "minArea": 3.022997686027506e-7,
+          "volume": 0.0002778801982064453,
           "passed": true
         },
         {
@@ -3924,8 +4004,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.000004042701759189195,
-          "volume": 0.000030108678019661795,
+          "minArea": 0.000004042701759189215,
+          "volume": 0.000030108678019661754,
           "passed": true
         },
         {
@@ -3935,8 +4015,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.000005553267254883199,
-          "volume": 0.000014640156566866314,
+          "minArea": 0.000005553267254883191,
+          "volume": 0.00001464015656686612,
           "passed": true
         },
         {
@@ -3946,8 +4026,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.000001218352588308623,
-          "volume": 0.000017447348508735946,
+          "minArea": 0.0000012183525883086256,
+          "volume": 0.000017447348508735296,
           "passed": true
         },
         {
@@ -3957,8 +4037,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 1.6041880766817267e-8,
-          "volume": 3.283201722270145e-7,
+          "minArea": 1.6041880766816115e-8,
+          "volume": 3.2832017222727763e-7,
           "passed": true
         },
         {
@@ -3968,8 +4048,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 1.6041880766817505e-8,
-          "volume": 3.2832017222741856e-7,
+          "minArea": 1.6041880766816115e-8,
+          "volume": 3.2832017222741284e-7,
           "passed": true
         },
         {
@@ -3979,8 +4059,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 1.6041880766817505e-8,
-          "volume": 3.2832017222738415e-7,
+          "minArea": 1.6041880766816115e-8,
+          "volume": 3.283201722272859e-7,
           "passed": true
         },
         {
@@ -3990,8 +4070,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 1.9448558837778493e-7,
-          "volume": 4.400882316699533e-8,
+          "minArea": 1.9448558837778916e-7,
+          "volume": 4.4008823167305386e-8,
           "passed": true
         },
         {
@@ -4001,8 +4081,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 1.9448558837778493e-7,
-          "volume": 4.400882316741795e-8,
+          "minArea": 1.9448558837778916e-7,
+          "volume": 4.400882316734749e-8,
           "passed": true
         },
         {
@@ -4012,8 +4092,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 1.9448551095111673e-7,
-          "volume": 4.400882367983418e-8,
+          "minArea": 1.9448551095112076e-7,
+          "volume": 4.4008823679863074e-8,
           "passed": true
         },
         {
@@ -4023,8 +4103,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 1.9448551095111673e-7,
-          "volume": 4.400882367979258e-8,
+          "minArea": 1.9448551095112076e-7,
+          "volume": 4.4008823679803187e-8,
           "passed": true
         },
         {
@@ -4034,8 +4114,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 1.9448551095111938e-7,
-          "volume": 4.400882367975466e-8,
+          "minArea": 1.9448551095112118e-7,
+          "volume": 4.400882367973696e-8,
           "passed": true
         },
         {
@@ -4045,8 +4125,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 1.9448551095111938e-7,
-          "volume": 4.400882367970738e-8,
+          "minArea": 1.9448551095112118e-7,
+          "volume": 4.4008823679762344e-8,
           "passed": true
         },
         {
@@ -4056,8 +4136,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 3.6022047329148934e-7,
-          "volume": 0.0000014791482862539233,
+          "minArea": 3.6022047329148775e-7,
+          "volume": 0.0000014791482862540269,
           "passed": true
         },
         {
@@ -4067,8 +4147,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 3.6022047329148934e-7,
-          "volume": 0.0000014791482862539898,
+          "minArea": 3.6022047329148775e-7,
+          "volume": 0.0000014791482862540487,
           "passed": true
         },
         {
@@ -4078,8 +4158,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 3.602204732914904e-7,
-          "volume": 0.0000014791482862540633,
+          "minArea": 3.6022047329148775e-7,
+          "volume": 0.0000014791482862542382,
           "passed": true
         },
         {
@@ -4089,8 +4169,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.0000017544219966354279,
-          "volume": 0.00004468429608576064,
+          "minArea": 0.00000175442199663545,
+          "volume": 0.00004468429608576018,
           "passed": true
         },
         {
@@ -4100,8 +4180,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 3.0227084101086923e-7,
-          "volume": 0.000045713134079473524,
+          "minArea": 3.022708410108648e-7,
+          "volume": 0.000045713134079473504,
           "passed": true
         },
         {
@@ -4111,8 +4191,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 2.851891745689267e-8,
-          "volume": 2.3575554097936057e-7,
+          "minArea": 2.8518917456894947e-8,
+          "volume": 2.3575554097961976e-7,
           "passed": true
         },
         {
@@ -4122,8 +4202,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 4.832395232728981e-7,
-          "volume": 0.000002748513276991333,
+          "minArea": 4.832395232728999e-7,
+          "volume": 0.0000027485132769912834,
           "passed": true
         },
         {
@@ -4453,7 +4533,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.0000033869992052265596,
-          "volume": 0.00000250329001854742,
+          "volume": 0.00000250329001854741,
           "passed": true
         },
         {
@@ -4464,7 +4544,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.0000033869992052265596,
-          "volume": 0.0000025032900185474063,
+          "volume": 0.0000025032900185474364,
           "passed": true
         },
         {
@@ -4496,8 +4576,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.000004255901648410931,
-          "volume": 0.00004193907575369666,
+          "minArea": 0.000004255912509432106,
+          "volume": 0.00004193906963755012,
           "passed": true
         },
         {
@@ -4507,8 +4587,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.000004255901648410931,
-          "volume": 0.000041939079876348224,
+          "minArea": 0.000004255912509432106,
+          "volume": 0.00004193906974329078,
           "passed": true
         },
         {
@@ -4585,7 +4665,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 4.650204326261893e-7,
-          "volume": 0.00007238630139305992,
+          "volume": 0.00007238630397717296,
           "passed": true
         },
         {
@@ -4596,7 +4676,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 4.650204326261893e-7,
-          "volume": 0.00007238630538607778,
+          "volume": 0.00007238630776723342,
           "passed": true
         }
       ],
@@ -4663,7 +4743,7 @@
             "zeroArea": 0,
             "minimumArea": 6.446465541760186e-7,
             "skippedDegenerate": 0,
-            "triangles": 104
+            "triangles": 2680
           },
           "meaning": "保留原开/闭合形式和边界环数，细分可增加边数；没有把开放装饰强制封成结构实体"
         },
@@ -4729,7 +4809,7 @@
             "zeroArea": 0,
             "minimumArea": 5.885420286137886e-7,
             "skippedDegenerate": 0,
-            "triangles": 104
+            "triangles": 2680
           },
           "meaning": "保留原开/闭合形式和边界环数，细分可增加边数；没有把开放装饰强制封成结构实体"
         },
@@ -4793,7 +4873,7 @@
             "nonmanifoldEdges": 0,
             "inconsistentInteriorEdges": 0,
             "zeroArea": 0,
-            "minimumArea": 1.9186714623799424e-9,
+            "minimumArea": 1.9182766836869043e-9,
             "skippedDegenerate": 0,
             "triangles": 714
           },
@@ -4826,7 +4906,7 @@
             "nonmanifoldEdges": 0,
             "inconsistentInteriorEdges": 0,
             "zeroArea": 0,
-            "minimumArea": 0.000036832833635243846,
+            "minimumArea": 0.000036832833635243805,
             "skippedDegenerate": 0,
             "triangles": 384
           },
@@ -4958,7 +5038,7 @@
             "nonmanifoldEdges": 0,
             "inconsistentInteriorEdges": 0,
             "zeroArea": 0,
-            "minimumArea": 0.00008553605298110358,
+            "minimumArea": 0.00008553605298110354,
             "skippedDegenerate": 0,
             "triangles": 64
           },
@@ -5024,7 +5104,7 @@
             "nonmanifoldEdges": 0,
             "inconsistentInteriorEdges": 0,
             "zeroArea": 0,
-            "minimumArea": 0.000006675169825407981,
+            "minimumArea": 0.000006675169825408069,
             "skippedDegenerate": 0,
             "triangles": 1200
           },
@@ -5057,7 +5137,7 @@
             "nonmanifoldEdges": 0,
             "inconsistentInteriorEdges": 0,
             "zeroArea": 0,
-            "minimumArea": 0.000006412788020052102,
+            "minimumArea": 0.0000064127880200522,
             "skippedDegenerate": 0,
             "triangles": 1200
           },
@@ -5090,7 +5170,7 @@
             "nonmanifoldEdges": 0,
             "inconsistentInteriorEdges": 0,
             "zeroArea": 0,
-            "minimumArea": 0.0000066751369847924105,
+            "minimumArea": 0.000006675136984792323,
             "skippedDegenerate": 0,
             "triangles": 1200
           },
@@ -5123,7 +5203,7 @@
             "nonmanifoldEdges": 0,
             "inconsistentInteriorEdges": 0,
             "zeroArea": 0,
-            "minimumArea": 0.000006413086503944112,
+            "minimumArea": 0.000006413086503944171,
             "skippedDegenerate": 0,
             "triangles": 1200
           },
@@ -5156,7 +5236,7 @@
             "nonmanifoldEdges": 0,
             "inconsistentInteriorEdges": 0,
             "zeroArea": 0,
-            "minimumArea": 0.0013673611553833163,
+            "minimumArea": 0.0013673611553833157,
             "skippedDegenerate": 0,
             "triangles": 600
           },
@@ -5189,7 +5269,7 @@
             "nonmanifoldEdges": 0,
             "inconsistentInteriorEdges": 0,
             "zeroArea": 0,
-            "minimumArea": 3.299618827114463e-7,
+            "minimumArea": 3.299618827115059e-7,
             "skippedDegenerate": 0,
             "triangles": 4208
           },
@@ -5222,7 +5302,7 @@
             "nonmanifoldEdges": 0,
             "inconsistentInteriorEdges": 0,
             "zeroArea": 0,
-            "minimumArea": 0.00002349276347569583,
+            "minimumArea": 0.00002349274727089454,
             "skippedDegenerate": 0,
             "triangles": 160
           },
@@ -5255,9 +5335,42 @@
             "nonmanifoldEdges": 0,
             "inconsistentInteriorEdges": 0,
             "zeroArea": 0,
-            "minimumArea": 0.000020796244996779434,
+            "minimumArea": 0.0000207962374428208,
             "skippedDegenerate": 0,
             "triangles": 160
+          },
+          "meaning": "保留原开/闭合形式和边界环数，细分可增加边数；没有把开放装饰强制封成结构实体"
+        },
+        {
+          "name": "Root_access_cover_L",
+          "passed": true,
+          "original": {
+            "weldEpsilon": 1e-12,
+            "closed": true,
+            "components": 1,
+            "boundaryEdges": 0,
+            "boundaryLoops": 0,
+            "boundaryVerticesWithWrongDegree": 0,
+            "nonmanifoldEdges": 0,
+            "inconsistentInteriorEdges": 0,
+            "zeroArea": 0,
+            "minimumArea": 0.000015081922742788491,
+            "skippedDegenerate": 0,
+            "triangles": 280
+          },
+          "current": {
+            "weldEpsilon": 1e-12,
+            "closed": true,
+            "components": 1,
+            "boundaryEdges": 0,
+            "boundaryLoops": 0,
+            "boundaryVerticesWithWrongDegree": 0,
+            "nonmanifoldEdges": 0,
+            "inconsistentInteriorEdges": 0,
+            "zeroArea": 0,
+            "minimumArea": 0.000015081922742788491,
+            "skippedDegenerate": 0,
+            "triangles": 280
           },
           "meaning": "保留原开/闭合形式和边界环数，细分可增加边数；没有把开放装饰强制封成结构实体"
         },
@@ -5288,7 +5401,7 @@
             "nonmanifoldEdges": 0,
             "inconsistentInteriorEdges": 0,
             "zeroArea": 0,
-            "minimumArea": 1.9186714623799424e-9,
+            "minimumArea": 1.9182766836869043e-9,
             "skippedDegenerate": 0,
             "triangles": 714
           },
@@ -5717,7 +5830,7 @@
             "nonmanifoldEdges": 0,
             "inconsistentInteriorEdges": 0,
             "zeroArea": 0,
-            "minimumArea": 0.000023429196901142223,
+            "minimumArea": 0.000023429204728822554,
             "skippedDegenerate": 0,
             "triangles": 160
           },
@@ -5750,9 +5863,42 @@
             "nonmanifoldEdges": 0,
             "inconsistentInteriorEdges": 0,
             "zeroArea": 0,
-            "minimumArea": 0.00002069334577331279,
+            "minimumArea": 0.000020693352858693653,
             "skippedDegenerate": 0,
             "triangles": 160
+          },
+          "meaning": "保留原开/闭合形式和边界环数，细分可增加边数；没有把开放装饰强制封成结构实体"
+        },
+        {
+          "name": "Root_access_cover_R",
+          "passed": true,
+          "original": {
+            "weldEpsilon": 1e-12,
+            "closed": true,
+            "components": 1,
+            "boundaryEdges": 0,
+            "boundaryLoops": 0,
+            "boundaryVerticesWithWrongDegree": 0,
+            "nonmanifoldEdges": 0,
+            "inconsistentInteriorEdges": 0,
+            "zeroArea": 0,
+            "minimumArea": 0.00001507957517422951,
+            "skippedDegenerate": 0,
+            "triangles": 280
+          },
+          "current": {
+            "weldEpsilon": 1e-12,
+            "closed": true,
+            "components": 1,
+            "boundaryEdges": 0,
+            "boundaryLoops": 0,
+            "boundaryVerticesWithWrongDegree": 0,
+            "nonmanifoldEdges": 0,
+            "inconsistentInteriorEdges": 0,
+            "zeroArea": 0,
+            "minimumArea": 0.00001507957517422951,
+            "skippedDegenerate": 0,
+            "triangles": 280
           },
           "meaning": "保留原开/闭合形式和边界环数，细分可增加边数；没有把开放装饰强制封成结构实体"
         }
@@ -5761,7 +5907,7 @@
     },
     {
       "source": "public/models/xp4.glb",
-      "sha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "sha256": "062fd09dee64984221316ede5ba684f6c1b6ff4f7b7ee2a0bd818a8888fd6f43",
       "changedMeshes": [
         "ActuatorSideSlot_L",
         "ActuatorSideSlot_R",
@@ -5984,6 +6130,8 @@
         "RootHingeEndcap_R0148",
         "RootHingeShaft_L",
         "RootHingeShaft_R",
+        "Root_access_cover_L",
+        "Root_access_cover_R",
         "Spinner_L_Front",
         "Spinner_L_Rear",
         "Spinner_R_Front",
@@ -6506,6 +6654,12 @@
             ]
           },
           {
+            "ancestor": "BladeFold_R_Front_B",
+            "meshDescendants": [
+              "Blade_R_Front_B"
+            ]
+          },
+          {
             "ancestor": "BladeFold_R_Rear_B",
             "meshDescendants": [
               "Blade_R_Rear_B"
@@ -6539,6 +6693,12 @@
             "ancestor": "Blade_hinge_pin_R_Front_A",
             "meshDescendants": [
               "Blade_hinge_pin_R_Front_A"
+            ]
+          },
+          {
+            "ancestor": "Blade_hinge_pin_R_Front_B",
+            "meshDescendants": [
+              "Blade_hinge_pin_R_Front_B"
             ]
           },
           {
@@ -7034,6 +7194,30 @@
             ]
           },
           {
+            "ancestor": "Landing_wear_tip_L_Front",
+            "meshDescendants": [
+              "Landing_wear_tip_L_Front"
+            ]
+          },
+          {
+            "ancestor": "Landing_wear_tip_L_Rear",
+            "meshDescendants": [
+              "Landing_wear_tip_L_Rear"
+            ]
+          },
+          {
+            "ancestor": "Landing_wear_tip_R_Front",
+            "meshDescendants": [
+              "Landing_wear_tip_R_Front"
+            ]
+          },
+          {
+            "ancestor": "Landing_wear_tip_R_Rear",
+            "meshDescendants": [
+              "Landing_wear_tip_R_Rear"
+            ]
+          },
+          {
             "ancestor": "Lower_fuselage_join",
             "meshDescendants": [
               "Lower_fuselage_join"
@@ -7111,6 +7295,30 @@
             "ancestor": "MotorFrontBearing_R_Rear",
             "meshDescendants": [
               "MotorFrontBearing_R_Rear"
+            ]
+          },
+          {
+            "ancestor": "Motor_cowl_L_Front",
+            "meshDescendants": [
+              "Motor_cowl_L_Front"
+            ]
+          },
+          {
+            "ancestor": "Motor_cowl_L_Rear",
+            "meshDescendants": [
+              "Motor_cowl_L_Rear"
+            ]
+          },
+          {
+            "ancestor": "Motor_cowl_R_Front",
+            "meshDescendants": [
+              "Motor_cowl_R_Front"
+            ]
+          },
+          {
+            "ancestor": "Motor_cowl_R_Rear",
+            "meshDescendants": [
+              "Motor_cowl_R_Rear"
             ]
           },
           {
@@ -7416,6 +7624,12 @@
             ]
           },
           {
+            "ancestor": "RootCarrierBridge_R",
+            "meshDescendants": [
+              "RootCarrierBridge_R"
+            ]
+          },
+          {
             "ancestor": "RootFixedBearingPedestal_L",
             "meshDescendants": [
               "RootFixedBearingPedestal_L"
@@ -7461,6 +7675,18 @@
             "ancestor": "RootHingeShaft_R",
             "meshDescendants": [
               "RootHingeShaft_R"
+            ]
+          },
+          {
+            "ancestor": "Root_access_cover_L",
+            "meshDescendants": [
+              "Root_access_cover_L"
+            ]
+          },
+          {
+            "ancestor": "Root_access_cover_R",
+            "meshDescendants": [
+              "Root_access_cover_R"
             ]
           },
           {
@@ -7870,6 +8096,8 @@
           "RootHingeEndcap_R0148",
           "RootHingeShaft_L",
           "RootHingeShaft_R",
+          "Root_access_cover_L",
+          "Root_access_cover_R",
           "Spinner_L_Front",
           "Spinner_L_Rear",
           "Spinner_R_Front",
@@ -7919,8 +8147,6 @@
           "Pitot_probe_foot",
           "Pitot_probe_mount",
           "Pitot_probe_tube",
-          "Root_access_cover_L",
-          "Root_access_cover_R",
           "Tail_receiver",
           "Tail_root_fastener_L",
           "Tail_root_fastener_L001",
@@ -7945,7 +8171,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 9.124645483638005e-14,
-          "volume": 0.7185690000168397,
+          "volume": 0.7164398547617351,
           "passed": true
         },
         {
@@ -7967,7 +8193,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.000009263664727861407,
-          "volume": 0.000022899956626696358,
+          "volume": 0.000022899956626696714,
           "passed": true
         },
         {
@@ -7978,7 +8204,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.000009263664727861407,
-          "volume": 0.000022899956626696798,
+          "volume": 0.000022899956626695236,
           "passed": true
         },
         {
@@ -7989,7 +8215,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 5.145498513269198e-7,
-          "volume": 0.0000031509534877689945,
+          "volume": 0.0000031509534877681622,
           "passed": true
         },
         {
@@ -8000,7 +8226,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 5.145498513269191e-7,
-          "volume": 0.0000031509534035281602,
+          "volume": 0.0000031509534035294918,
           "passed": true
         },
         {
@@ -8010,8 +8236,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 3.1569524278825357e-7,
-          "volume": 0.000007694100632310927,
+          "minArea": 3.1569524278820143e-7,
+          "volume": 0.00000769410063231247,
           "passed": true
         },
         {
@@ -8021,8 +8247,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 3.1569524278825357e-7,
-          "volume": 0.000007694100632311259,
+          "minArea": 3.1569524278820143e-7,
+          "volume": 0.000007694100632312951,
           "passed": true
         },
         {
@@ -8033,7 +8259,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 3.6064298864521387e-7,
-          "volume": 0.00003651545348942203,
+          "volume": 0.000036515453489422445,
           "passed": true
         },
         {
@@ -8044,7 +8270,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 2.3027087470112356e-7,
-          "volume": 0.00001429568273910274,
+          "volume": 0.000014295682739102873,
           "passed": true
         },
         {
@@ -8055,7 +8281,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 2.3027087470112356e-7,
-          "volume": 0.000014295682739102727,
+          "volume": 0.000014295682739103008,
           "passed": true
         },
         {
@@ -8066,7 +8292,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.000003940937154112145,
-          "volume": 0.00001752224249221865,
+          "volume": 0.000017522242492218508,
           "passed": true
         },
         {
@@ -8077,7 +8303,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.000003940937154112145,
-          "volume": 0.000017522242492218674,
+          "volume": 0.000017522242492218772,
           "passed": true
         },
         {
@@ -8088,7 +8314,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.000013544541243113578,
-          "volume": 0.00008719986202060873,
+          "volume": 0.00008719986202060888,
           "passed": true
         },
         {
@@ -8098,8 +8324,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.000005012196839769411,
-          "volume": 0.0000017747573375055657,
+          "minArea": 0.000005012195033290054,
+          "volume": 0.0000017747576026581813,
           "passed": true
         },
         {
@@ -8110,7 +8336,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 2.3027056853669623e-7,
-          "volume": 0.000010840285582360617,
+          "volume": 0.000010840285582360533,
           "passed": true
         },
         {
@@ -8142,8 +8368,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 1.3710713345701405e-12,
-          "volume": 0.03506065612465244,
+          "minArea": 1.0517970594964538e-9,
+          "volume": 0.03506065567163699,
           "passed": true
         },
         {
@@ -8154,7 +8380,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.000009263667623519383,
-          "volume": 0.000022899968911413723,
+          "volume": 0.000022899968911519463,
           "passed": true
         },
         {
@@ -8164,8 +8390,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 5.150034887828457e-7,
-          "volume": 0.000002725664986789154,
+          "minArea": 5.150034887828458e-7,
+          "volume": 0.000002725664981737677,
           "passed": true
         },
         {
@@ -8176,7 +8402,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 7.107178117845122e-8,
-          "volume": 0.000009837073476949052,
+          "volume": 0.000009837161441751836,
           "passed": true
         },
         {
@@ -8186,8 +8412,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 5.658027654519831e-14,
-          "volume": 0.17166272529273768,
+          "minArea": 9.252005364856259e-12,
+          "volume": 0.1717143155875159,
           "passed": true
         },
         {
@@ -8197,8 +8423,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 1.1096411918547036e-9,
-          "volume": 0.000005396667788478053,
+          "minArea": 1.10960847870199e-9,
+          "volume": 0.000005396667351474283,
           "passed": true
         },
         {
@@ -8208,8 +8434,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 1.1095168058584677e-9,
-          "volume": 0.000004722085467265165,
+          "minArea": 1.1094431859415334e-9,
+          "volume": 0.000004722088305192771,
           "passed": true
         },
         {
@@ -8219,8 +8445,8 @@
           "nonmanifold": 0,
           "components": 2,
           "zeroAreaTriangles": 0,
-          "minArea": 2.3424374067771568e-8,
-          "volume": 3.8406552618874673e-7,
+          "minArea": 2.342435169044578e-8,
+          "volume": 3.840655459462608e-7,
           "passed": true
         },
         {
@@ -8230,8 +8456,8 @@
           "nonmanifold": 0,
           "components": 2,
           "zeroAreaTriangles": 0,
-          "minArea": 2.342060942137764e-8,
-          "volume": 3.84072223378291e-7,
+          "minArea": 2.3420824558664993e-8,
+          "volume": 3.8407235108312895e-7,
           "passed": true
         },
         {
@@ -8241,8 +8467,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 1.110353058818531e-9,
-          "volume": 0.000005394462229120051,
+          "minArea": 1.1103534109692306e-9,
+          "volume": 0.000005394462420757281,
           "passed": true
         },
         {
@@ -8252,8 +8478,8 @@
           "nonmanifold": 0,
           "components": 2,
           "zeroAreaTriangles": 0,
-          "minArea": 1.3370883504364169e-7,
-          "volume": 1.609092342235052e-7,
+          "minArea": 1.3370883628290928e-7,
+          "volume": 1.6090924472340474e-7,
           "passed": true
         },
         {
@@ -8263,8 +8489,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.0000011417837119183297,
-          "volume": 0.000006101294269908525,
+          "minArea": 0.0000011417837119183295,
+          "volume": 0.000006101375352919335,
           "passed": true
         },
         {
@@ -8274,8 +8500,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 9.239572577652422e-9,
-          "volume": 0.0039035386397595784,
+          "minArea": 9.239572577635494e-9,
+          "volume": 0.0039035386397593156,
           "passed": true
         },
         {
@@ -8286,7 +8512,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 1.1103623779755045e-9,
-          "volume": 0.000004719889405633281,
+          "volume": 0.000004719889405962196,
           "passed": true
         },
         {
@@ -8297,7 +8523,7 @@
           "components": 2,
           "zeroAreaTriangles": 0,
           "minArea": 1.3370806398891828e-7,
-          "volume": 1.6090923290065304e-7,
+          "volume": 1.609092321344236e-7,
           "passed": true
         },
         {
@@ -8308,7 +8534,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.0000011417674553608553,
-          "volume": 0.000006064836403452117,
+          "volume": 0.000006064919334320637,
           "passed": true
         },
         {
@@ -8319,7 +8545,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 4.8172711150968794e-8,
-          "volume": 0.0022271442867306222,
+          "volume": 0.0022271442867299795,
           "passed": true
         },
         {
@@ -8330,7 +8556,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 1.9219483994336843e-9,
-          "volume": 0.000019436919741653896,
+          "volume": 0.000019436919742979102,
           "passed": true
         },
         {
@@ -8341,7 +8567,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 1.885797082332515e-9,
-          "volume": 0.000019436768350300534,
+          "volume": 0.000019436768348708698,
           "passed": true
         },
         {
@@ -8351,8 +8577,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 1.560573092822881e-9,
-          "volume": 0.02106047023090125,
+          "minArea": 1.5605730919942564e-9,
+          "volume": 0.021060470230900533,
           "passed": true
         },
         {
@@ -8363,7 +8589,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 1.7832080273143596e-9,
-          "volume": 0.021060472733972338,
+          "volume": 0.021060472733972508,
           "passed": true
         },
         {
@@ -8374,7 +8600,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.0000034600424348462985,
-          "volume": 0.00009271496360503017,
+          "volume": 0.0000927149636057052,
           "passed": true
         },
         {
@@ -8385,7 +8611,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.0000034600424348462985,
-          "volume": 0.00009271496360517733,
+          "volume": 0.00009271496360497935,
           "passed": true
         },
         {
@@ -8395,8 +8621,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.000015256434213138421,
-          "volume": 0.000024852708514179335,
+          "minArea": 0.000015256434213137943,
+          "volume": 0.000024852708514705888,
           "passed": true
         },
         {
@@ -8407,7 +8633,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.000015256560061538945,
-          "volume": 0.000024853021401304185,
+          "volume": 0.000024853021401271452,
           "passed": true
         },
         {
@@ -8418,7 +8644,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 7.17745325994858e-7,
-          "volume": 0.2239228119928312,
+          "volume": 0.2239228119928294,
           "passed": true
         },
         {
@@ -8429,7 +8655,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 7.17745325994858e-7,
-          "volume": 0.22392274009095886,
+          "volume": 0.22392274009095836,
           "passed": true
         },
         {
@@ -8440,7 +8666,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.00005731487724860601,
-          "volume": 0.00036292325608010647,
+          "volume": 0.00036292325608007774,
           "passed": true
         },
         {
@@ -8451,7 +8677,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.000057314877248610824,
-          "volume": 0.00036293659116923147,
+          "volume": 0.00036293659116960536,
           "passed": true
         },
         {
@@ -8461,8 +8687,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 4.539079827525019e-12,
-          "volume": 0.00007881272210378729,
+          "minArea": 4.539079827621584e-12,
+          "volume": 0.00007881272210227639,
           "passed": true
         },
         {
@@ -8472,8 +8698,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 4.5390798280078436e-12,
-          "volume": 0.00007881272210176088,
+          "minArea": 4.539079827621584e-12,
+          "volume": 0.0000788127221018658,
           "passed": true
         },
         {
@@ -8483,8 +8709,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 2.4580778142770315e-7,
-          "volume": 0.000010947258145461747,
+          "minArea": 2.4580778142775826e-7,
+          "volume": 0.000010947258145098136,
           "passed": true
         },
         {
@@ -8495,7 +8721,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 2.4580778142775826e-7,
-          "volume": 0.000010947258145957178,
+          "volume": 0.00001094725814596965,
           "passed": true
         },
         {
@@ -8506,7 +8732,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 1.2268865526467069e-9,
-          "volume": 0.0003639040481716736,
+          "volume": 0.0003639040481726898,
           "passed": true
         },
         {
@@ -8517,7 +8743,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 1.2268865907466525e-9,
-          "volume": 0.0003639040481721087,
+          "volume": 0.0003639040481722683,
           "passed": true
         },
         {
@@ -8527,8 +8753,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.000008653158597046301,
-          "volume": 0.0016652965013231671,
+          "minArea": 0.000008653158597046696,
+          "volume": 0.0016652965013220602,
           "passed": true
         },
         {
@@ -8539,7 +8765,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 4.539079827525019e-12,
-          "volume": 0.00007881272210297573,
+          "volume": 0.00007881272210112145,
           "passed": true
         },
         {
@@ -8550,7 +8776,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 4.5390798280078436e-12,
-          "volume": 0.00007881272210226415,
+          "volume": 0.00007881272210155148,
           "passed": true
         },
         {
@@ -8561,7 +8787,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 2.4580778142770315e-7,
-          "volume": 0.000010947258145680754,
+          "volume": 0.000010947258145415387,
           "passed": true
         },
         {
@@ -8572,7 +8798,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 2.4580778142770315e-7,
-          "volume": 0.000010947258146055032,
+          "volume": 0.000010947258145337087,
           "passed": true
         },
         {
@@ -8583,7 +8809,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 3.8976764197570515e-10,
-          "volume": 0.00036390404816438835,
+          "volume": 0.0003639040481644858,
           "passed": true
         },
         {
@@ -8594,7 +8820,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 3.89767607128169e-10,
-          "volume": 0.00036390404816364675,
+          "volume": 0.00036390404816459185,
           "passed": true
         },
         {
@@ -8605,7 +8831,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.000008653158597046301,
-          "volume": 0.0016652965013226014,
+          "volume": 0.0016652965013228046,
           "passed": true
         },
         {
@@ -8616,7 +8842,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 8.757507697393499e-10,
-          "volume": 0.000043320011847188465,
+          "volume": 0.00004332001184693199,
           "passed": true
         },
         {
@@ -8626,8 +8852,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.00002343751171017022,
-          "volume": 0.00009122470605583867,
+          "minArea": 0.000023437511710170157,
+          "volume": 0.00009122470605589903,
           "passed": true
         },
         {
@@ -8638,7 +8864,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.000023438036001102695,
-          "volume": 0.000017468850849445908,
+          "volume": 0.000017468850849442927,
           "passed": true
         },
         {
@@ -8649,7 +8875,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 4.6389123424446666e-7,
-          "volume": 0.00004559644552680598,
+          "volume": 0.000045596445525661036,
           "passed": true
         },
         {
@@ -8659,8 +8885,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 2.992513925322902e-7,
-          "volume": 0.00010651088152555696,
+          "minArea": 2.9925139253227757e-7,
+          "volume": 0.0001065108815254479,
           "passed": true
         },
         {
@@ -8671,7 +8897,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.00001623289833756268,
-          "volume": 0.000034037823116169204,
+          "volume": 0.0000340378231162969,
           "passed": true
         },
         {
@@ -8682,7 +8908,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.000013889185628788372,
-          "volume": 0.00003413195220801885,
+          "volume": 0.00003413195220814945,
           "passed": true
         },
         {
@@ -8693,7 +8919,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.00001623289833756268,
-          "volume": 0.000034037906685362375,
+          "volume": 0.000034037906685371876,
           "passed": true
         },
         {
@@ -8704,7 +8930,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.000013889402196516518,
-          "volume": 0.000034132221475806964,
+          "volume": 0.000034132221476011966,
           "passed": true
         },
         {
@@ -8715,7 +8941,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 7.316157138954912e-7,
-          "volume": 0.00005888181902804072,
+          "volume": 0.00005888181902805124,
           "passed": true
         },
         {
@@ -8725,8 +8951,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 2.091817867638466e-12,
-          "volume": 0.000006718513177770919,
+          "minArea": 2.0918179036313195e-12,
+          "volume": 0.000006718513177757687,
           "passed": true
         },
         {
@@ -8737,7 +8963,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 1.0784657587506798e-12,
-          "volume": 0.000006718517260835359,
+          "volume": 0.00000671851726078843,
           "passed": true
         },
         {
@@ -8747,8 +8973,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.0000025224154024295634,
-          "volume": 0.001304162314049067,
+          "minArea": 0.000002522415402429609,
+          "volume": 0.0013041623140487674,
           "passed": true
         },
         {
@@ -8758,8 +8984,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.000003961732781752388,
-          "volume": 0.000017726576280764685,
+          "minArea": 0.000003961732781752261,
+          "volume": 0.00001772657628076489,
           "passed": true
         },
         {
@@ -8769,8 +8995,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.000003961601772793684,
-          "volume": 0.000017726650740136072,
+          "minArea": 0.000003961601772793757,
+          "volume": 0.00001772665074029961,
           "passed": true
         },
         {
@@ -8780,8 +9006,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.000006464221465857632,
-          "volume": 0.000014284868600269832,
+          "minArea": 0.000006464221465857725,
+          "volume": 0.00001428486860026922,
           "passed": true
         },
         {
@@ -8791,8 +9017,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.0000064642214658574075,
-          "volume": 0.000014284868600297219,
+          "minArea": 0.000006464221465857326,
+          "volume": 0.000014284868600147866,
           "passed": true
         },
         {
@@ -8802,8 +9028,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.000004124295036926459,
-          "volume": 0.00003926814203967515,
+          "minArea": 0.000004124295036926492,
+          "volume": 0.000039268142039675,
           "passed": true
         },
         {
@@ -8813,8 +9039,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.000004124296372943671,
-          "volume": 0.00003926816112059175,
+          "minArea": 0.000004124296372943664,
+          "volume": 0.00003926816112020344,
           "passed": true
         },
         {
@@ -8824,8 +9050,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 7.565625409881255e-12,
-          "volume": 0.0350606561666501,
+          "minArea": 1.0517970594964538e-9,
+          "volume": 0.035060655663932294,
           "passed": true
         },
         {
@@ -8836,7 +9062,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.000009263664727861157,
-          "volume": 0.0000228999566269008,
+          "volume": 0.000022899956627059318,
           "passed": true
         },
         {
@@ -8847,7 +9073,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 5.15003344335714e-7,
-          "volume": 0.0000027256636627734445,
+          "volume": 0.000002725663622057315,
           "passed": true
         },
         {
@@ -8858,7 +9084,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 7.107175576128976e-8,
-          "volume": 0.000009837585582385115,
+          "volume": 0.000009837587403780553,
           "passed": true
         },
         {
@@ -8868,8 +9094,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 2.946179069164049e-13,
-          "volume": 0.17166234130272104,
+          "minArea": 9.252002049669056e-12,
+          "volume": 0.17171393297470897,
           "passed": true
         },
         {
@@ -8879,8 +9105,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 1.1098322673880687e-9,
-          "volume": 0.000005396662079289786,
+          "minArea": 1.1098664724550801e-9,
+          "volume": 0.0000053966646831855555,
           "passed": true
         },
         {
@@ -8890,8 +9116,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 1.1098064168480176e-9,
-          "volume": 0.000004722076589906792,
+          "minArea": 1.1098362762040278e-9,
+          "volume": 0.000004722074794270046,
           "passed": true
         },
         {
@@ -8901,8 +9127,8 @@
           "nonmanifold": 0,
           "components": 2,
           "zeroAreaTriangles": 0,
-          "minArea": 2.342436564831233e-8,
-          "volume": 3.8406509280299783e-7,
+          "minArea": 2.3424343298688052e-8,
+          "volume": 3.840651005326001e-7,
           "passed": true
         },
         {
@@ -8913,7 +9139,7 @@
           "components": 2,
           "zeroAreaTriangles": 0,
           "minArea": 2.3420601125094147e-8,
-          "volume": 3.840719758332954e-7,
+          "volume": 3.8407231721322684e-7,
           "passed": true
         },
         {
@@ -8924,7 +9150,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 1.1103427503501271e-9,
-          "volume": 0.00000539445992705457,
+          "volume": 0.000005394460066919267,
           "passed": true
         },
         {
@@ -8934,8 +9160,8 @@
           "nonmanifold": 0,
           "components": 2,
           "zeroAreaTriangles": 0,
-          "minArea": 1.3370878713261295e-7,
-          "volume": 1.6090914822157266e-7,
+          "minArea": 1.3370878836895955e-7,
+          "volume": 1.6090915343490054e-7,
           "passed": true
         },
         {
@@ -8946,7 +9172,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.0000011417833035848313,
-          "volume": 0.000006101307109776617,
+          "volume": 0.000006101307109513869,
           "passed": true
         },
         {
@@ -8957,7 +9183,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 1.1274756492775127e-8,
-          "volume": 0.0039026916831660027,
+          "volume": 0.003902691683165902,
           "passed": true
         },
         {
@@ -8968,7 +9194,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 1.110310525958808e-9,
-          "volume": 0.000004719886804414322,
+          "volume": 0.000004719886804638014,
           "passed": true
         },
         {
@@ -8979,7 +9205,7 @@
           "components": 2,
           "zeroAreaTriangles": 0,
           "minArea": 1.3370801661027684e-7,
-          "volume": 1.6090914942812175e-7,
+          "volume": 1.6090914992266575e-7,
           "passed": true
         },
         {
@@ -8990,7 +9216,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.0000011418012615532769,
-          "volume": 0.000006064864209016652,
+          "volume": 0.000006064864209369807,
           "passed": true
         },
         {
@@ -9001,7 +9227,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 8.130754733816265e-9,
-          "volume": 0.002223439269761103,
+          "volume": 0.0022234392697613957,
           "passed": true
         },
         {
@@ -9012,7 +9238,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 1.9219477120913098e-9,
-          "volume": 0.000019437115383129185,
+          "volume": 0.000019437115380313102,
           "passed": true
         },
         {
@@ -9023,7 +9249,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 1.9250592231401242e-9,
-          "volume": 0.0000194372593689917,
+          "volume": 0.00001943725936891583,
           "passed": true
         },
         {
@@ -9034,7 +9260,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 3.101873583583286e-9,
-          "volume": 0.021060459030887036,
+          "volume": 0.02106045903088646,
           "passed": true
         },
         {
@@ -9045,7 +9271,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 3.0769485748287027e-9,
-          "volume": 0.021060461679573438,
+          "volume": 0.021060461679573754,
           "passed": true
         },
         {
@@ -9055,8 +9281,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.00000346004119743858,
-          "volume": 0.00009271491386896575,
+          "minArea": 0.00000346004119743844,
+          "volume": 0.00009271491386897613,
           "passed": true
         },
         {
@@ -9067,7 +9293,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.00000346004119743858,
-          "volume": 0.00009271491386919166,
+          "volume": 0.00009271491386903162,
           "passed": true
         },
         {
@@ -9077,8 +9303,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.000015256428757011981,
-          "volume": 0.000024852695182809354,
+          "minArea": 0.000015256428757011837,
+          "volume": 0.000024852695182188133,
           "passed": true
         },
         {
@@ -9089,7 +9315,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.000015256554605368033,
-          "volume": 0.000024853008069021956,
+          "volume": 0.000024853008068404767,
           "passed": true
         },
         {
@@ -9100,7 +9326,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 7.177450693087134e-7,
-          "volume": 0.22392269187128472,
+          "volume": 0.2239226918712816,
           "passed": true
         },
         {
@@ -9111,7 +9337,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 7.177450693087134e-7,
-          "volume": 0.22392261996003363,
+          "volume": 0.2239226199600331,
           "passed": true
         },
         {
@@ -9122,7 +9348,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.00005731484898704584,
-          "volume": 0.00036297248306085654,
+          "volume": 0.0003629724830608161,
           "passed": true
         },
         {
@@ -9133,7 +9359,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.00005731484898704584,
-          "volume": 0.0003629884851562813,
+          "volume": 0.0003629884851562418,
           "passed": true
         },
         {
@@ -9144,7 +9370,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 4.539078204754346e-12,
-          "volume": 0.00007881267982150554,
+          "volume": 0.00007881267982635183,
           "passed": true
         },
         {
@@ -9155,7 +9381,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 4.539078204754346e-12,
-          "volume": 0.00007881267982406906,
+          "volume": 0.00007881267982546455,
           "passed": true
         },
         {
@@ -9166,7 +9392,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 2.4580769351985705e-7,
-          "volume": 0.00001094725227326213,
+          "volume": 0.000010947252273648982,
           "passed": true
         },
         {
@@ -9176,8 +9402,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 2.4580769352006425e-7,
-          "volume": 0.000010947252273237992,
+          "minArea": 2.4580769351985705e-7,
+          "volume": 0.000010947252273116199,
           "passed": true
         },
         {
@@ -9188,7 +9414,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 3.897674851670856e-10,
-          "volume": 0.000363903852949762,
+          "volume": 0.000363903852950528,
           "passed": true
         },
         {
@@ -9199,7 +9425,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 3.897674851670856e-10,
-          "volume": 0.00036390385295200644,
+          "volume": 0.00036390385295006296,
           "passed": true
         },
         {
@@ -9209,8 +9435,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.000008653155633823432,
-          "volume": 0.0016652956079856807,
+          "minArea": 0.000008653155633822983,
+          "volume": 0.0016652956079884391,
           "passed": true
         },
         {
@@ -9221,7 +9447,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 4.539078204754346e-12,
-          "volume": 0.00007881282692979481,
+          "volume": 0.00007881282692960962,
           "passed": true
         },
         {
@@ -9232,7 +9458,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 4.539078204754346e-12,
-          "volume": 0.00007881282693262057,
+          "volume": 0.00007881282692896366,
           "passed": true
         },
         {
@@ -9243,7 +9469,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 2.4580769352006425e-7,
-          "volume": 0.00001094725227272697,
+          "volume": 0.000010947252272850447,
           "passed": true
         },
         {
@@ -9254,7 +9480,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 2.4580769352006425e-7,
-          "volume": 0.000010947252272922869,
+          "volume": 0.000010947252272488608,
           "passed": true
         },
         {
@@ -9265,7 +9491,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 1.2268861329303306e-9,
-          "volume": 0.0003639038529590372,
+          "volume": 0.00036390385295888614,
           "passed": true
         },
         {
@@ -9276,7 +9502,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 1.2268861329303306e-9,
-          "volume": 0.0003639038529579918,
+          "volume": 0.00036390385295800295,
           "passed": true
         },
         {
@@ -9287,7 +9513,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.000008653155633823432,
-          "volume": 0.001665295607989247,
+          "volume": 0.0016652956079872224,
           "passed": true
         },
         {
@@ -9298,7 +9524,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 7.487369604994906e-10,
-          "volume": 0.000043320219650567685,
+          "volume": 0.00004332021965029075,
           "passed": true
         },
         {
@@ -9309,7 +9535,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.000023437499137310117,
-          "volume": 0.00009122465711916638,
+          "volume": 0.00009122465711932112,
           "passed": true
         },
         {
@@ -9320,7 +9546,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.00002343802342796263,
-          "volume": 0.000017468841478327156,
+          "volume": 0.000017468841478296517,
           "passed": true
         },
         {
@@ -9331,7 +9557,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 4.6389098640509937e-7,
-          "volume": 0.00004559642106782222,
+          "volume": 0.00004559642106680501,
           "passed": true
         },
         {
@@ -9341,8 +9567,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 2.992513925322904e-7,
-          "volume": 0.00010651088152547891,
+          "minArea": 2.992513925322777e-7,
+          "volume": 0.00010651088152533229,
           "passed": true
         },
         {
@@ -9353,7 +9579,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.00001623289833756268,
-          "volume": 0.000034037823115903954,
+          "volume": 0.0000340378231160435,
           "passed": true
         },
         {
@@ -9364,7 +9590,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.000013889185628788372,
-          "volume": 0.000034131952208243883,
+          "volume": 0.000034131952208326554,
           "passed": true
         },
         {
@@ -9375,7 +9601,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.00001623289833756268,
-          "volume": 0.00003403790668516216,
+          "volume": 0.000034037906685413556,
           "passed": true
         },
         {
@@ -9386,7 +9612,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.000013889402196516518,
-          "volume": 0.00003413222147611685,
+          "volume": 0.00003413222147617567,
           "passed": true
         },
         {
@@ -9397,7 +9623,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 7.316157138954912e-7,
-          "volume": 0.00005888181902789476,
+          "volume": 0.00005888181902777638,
           "passed": true
         },
         {
@@ -9407,8 +9633,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 2.091817867638503e-12,
-          "volume": 0.0000067185131778303345,
+          "minArea": 2.0918179036313458e-12,
+          "volume": 0.000006718513177796669,
           "passed": true
         },
         {
@@ -9419,7 +9645,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 1.0784657587506798e-12,
-          "volume": 0.0000067185172608680636,
+          "volume": 0.000006718517260906662,
           "passed": true
         },
         {
@@ -9429,8 +9655,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.0000025224154024297578,
-          "volume": 0.0013041623140488182,
+          "minArea": 0.0000025224154024296142,
+          "volume": 0.0013041623140488108,
           "passed": true
         },
         {
@@ -9440,8 +9666,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.00000396173278175233,
-          "volume": 0.00001772657628076272,
+          "minArea": 0.00000396173278175231,
+          "volume": 0.00001772657628076388,
           "passed": true
         },
         {
@@ -9451,8 +9677,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.000003961601772793715,
-          "volume": 0.00001772665074009902,
+          "minArea": 0.0000039616017727939295,
+          "volume": 0.000017726650740584454,
           "passed": true
         },
         {
@@ -9462,8 +9688,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.000006464221465857697,
-          "volume": 0.00001428486860026922,
+          "minArea": 0.000006464221465857728,
+          "volume": 0.000014284868600267637,
           "passed": true
         },
         {
@@ -9473,8 +9699,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.000006464221465857474,
-          "volume": 0.000014284868600335,
+          "minArea": 0.0000064642214658573855,
+          "volume": 0.0000142848686002619,
           "passed": true
         },
         {
@@ -9484,8 +9710,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.000004124295036926446,
-          "volume": 0.00003926814203967518,
+          "minArea": 0.000004124295036926481,
+          "volume": 0.00003926814203967762,
           "passed": true
         },
         {
@@ -9495,8 +9721,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.000004124296372943564,
-          "volume": 0.000039268161120293625,
+          "minArea": 0.000004124296372943425,
+          "volume": 0.000039268161120577774,
           "passed": true
         },
         {
@@ -9660,8 +9886,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 2.8518905961588335e-8,
-          "volume": 2.978726712499171e-7,
+          "minArea": 2.851890596158733e-8,
+          "volume": 2.978726712502677e-7,
           "passed": true
         },
         {
@@ -9671,8 +9897,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 3.0229967427396845e-7,
-          "volume": 0.00027788004886383143,
+          "minArea": 3.022996742739693e-7,
+          "volume": 0.0002778800488638321,
           "passed": true
         },
         {
@@ -9682,8 +9908,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.000004042701759189195,
-          "volume": 0.000030108678019661795,
+          "minArea": 0.000004042701759189215,
+          "volume": 0.000030108678019661754,
           "passed": true
         },
         {
@@ -9693,8 +9919,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.000005553267254883201,
-          "volume": 0.000014640156566866328,
+          "minArea": 0.000005553267254883191,
+          "volume": 0.000014640156566866128,
           "passed": true
         },
         {
@@ -9704,8 +9930,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.000001218352198336008,
-          "volume": 0.000017447339131915574,
+          "minArea": 0.0000012183521983360128,
+          "volume": 0.00001744733913191569,
           "passed": true
         },
         {
@@ -9715,8 +9941,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 1.604187430071065e-8,
-          "volume": 3.283199957769145e-7,
+          "minArea": 1.604187430071173e-8,
+          "volume": 3.283199957764022e-7,
           "passed": true
         },
         {
@@ -9726,8 +9952,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 1.6041874300710227e-8,
-          "volume": 3.283199957763413e-7,
+          "minArea": 1.604187430071173e-8,
+          "volume": 3.2831999577639495e-7,
           "passed": true
         },
         {
@@ -9737,8 +9963,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 1.6041874300710227e-8,
-          "volume": 3.2831999577653376e-7,
+          "minArea": 1.604187430071173e-8,
+          "volume": 3.2831999577660136e-7,
           "passed": true
         },
         {
@@ -9748,8 +9974,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 1.944855883777849e-7,
-          "volume": 4.400882316723462e-8,
+          "minArea": 1.9448558837778921e-7,
+          "volume": 4.4008823167293593e-8,
           "passed": true
         },
         {
@@ -9759,8 +9985,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 1.944855883777849e-7,
-          "volume": 4.4008823166991e-8,
+          "minArea": 1.9448558837778921e-7,
+          "volume": 4.400882316726021e-8,
           "passed": true
         },
         {
@@ -9770,8 +9996,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 1.9448551095111673e-7,
-          "volume": 4.4008823679916345e-8,
+          "minArea": 1.9448551095112076e-7,
+          "volume": 4.4008823679760074e-8,
           "passed": true
         },
         {
@@ -9781,8 +10007,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 1.9448551095111673e-7,
-          "volume": 4.400882367989346e-8,
+          "minArea": 1.9448551095112076e-7,
+          "volume": 4.40088236796065e-8,
           "passed": true
         },
         {
@@ -9792,8 +10018,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 1.9448551095111938e-7,
-          "volume": 4.40088236797791e-8,
+          "minArea": 1.9448551095112118e-7,
+          "volume": 4.400882367957072e-8,
           "passed": true
         },
         {
@@ -9803,8 +10029,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 1.9448551095111938e-7,
-          "volume": 4.4008823679984875e-8,
+          "minArea": 1.9448551095112118e-7,
+          "volume": 4.400882367974828e-8,
           "passed": true
         },
         {
@@ -9814,8 +10040,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 3.6022047329148934e-7,
-          "volume": 0.0000014791482862539007,
+          "minArea": 3.6022047329148775e-7,
+          "volume": 0.0000014791482862541963,
           "passed": true
         },
         {
@@ -9825,8 +10051,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 3.6022047329148934e-7,
-          "volume": 0.0000014791482862539608,
+          "minArea": 3.6022047329148775e-7,
+          "volume": 0.000001479148286254157,
           "passed": true
         },
         {
@@ -9836,8 +10062,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 3.602204732914904e-7,
-          "volume": 0.0000014791482862541077,
+          "minArea": 3.6022047329148775e-7,
+          "volume": 0.0000014791482862541653,
           "passed": true
         },
         {
@@ -9847,8 +10073,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.000001754421449106096,
-          "volume": 0.00004468427207084473,
+          "minArea": 0.0000017544214491060895,
+          "volume": 0.00004468427207084487,
           "passed": true
         },
         {
@@ -9858,8 +10084,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 3.022708786092663e-7,
-          "volume": 0.00004571314033824835,
+          "minArea": 3.0227087860927204e-7,
+          "volume": 0.0000457131403382483,
           "passed": true
         },
         {
@@ -9869,8 +10095,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 2.851890596158848e-8,
-          "volume": 2.357554142767157e-7,
+          "minArea": 2.8518905961587038e-8,
+          "volume": 2.3575541427651637e-7,
           "passed": true
         },
         {
@@ -9880,8 +10106,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 4.832395232728981e-7,
-          "volume": 0.000002748513276991344,
+          "minArea": 4.832395232728999e-7,
+          "volume": 0.000002748513276991246,
           "passed": true
         },
         {
@@ -10211,7 +10437,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.0000033869992052265596,
-          "volume": 0.000002503290018547402,
+          "volume": 0.000002503290018547386,
           "passed": true
         },
         {
@@ -10222,7 +10448,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 0.0000033869992052265596,
-          "volume": 0.0000025032900185473733,
+          "volume": 0.0000025032900185474385,
           "passed": true
         },
         {
@@ -10254,8 +10480,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.000004255901648410931,
-          "volume": 0.000041939075753708536,
+          "minArea": 0.000004255912509432106,
+          "volume": 0.000041939069637593577,
           "passed": true
         },
         {
@@ -10265,8 +10491,8 @@
           "nonmanifold": 0,
           "components": 1,
           "zeroAreaTriangles": 0,
-          "minArea": 0.000004255901648410931,
-          "volume": 0.00004193907987635048,
+          "minArea": 0.000004255912509432106,
+          "volume": 0.000041939069743303797,
           "passed": true
         },
         {
@@ -10343,7 +10569,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 4.650204326261893e-7,
-          "volume": 0.00007238630139304843,
+          "volume": 0.00007238630397715095,
           "passed": true
         },
         {
@@ -10354,7 +10580,7 @@
           "components": 1,
           "zeroAreaTriangles": 0,
           "minArea": 4.650204326261893e-7,
-          "volume": 0.00007238630538606838,
+          "volume": 0.00007238630776722663,
           "passed": true
         }
       ],
@@ -10419,9 +10645,9 @@
             "nonmanifoldEdges": 0,
             "inconsistentInteriorEdges": 0,
             "zeroArea": 0,
-            "minimumArea": 5.910269037233762e-7,
+            "minimumArea": 5.912379960626361e-7,
             "skippedDegenerate": 0,
-            "triangles": 104
+            "triangles": 2680
           },
           "meaning": "保留原开/闭合形式和边界环数，细分可增加边数；没有把开放装饰强制封成结构实体"
         },
@@ -10485,9 +10711,9 @@
             "nonmanifoldEdges": 0,
             "inconsistentInteriorEdges": 0,
             "zeroArea": 0,
-            "minimumArea": 5.388928636555156e-7,
+            "minimumArea": 5.38793958374429e-7,
             "skippedDegenerate": 0,
-            "triangles": 104
+            "triangles": 2680
           },
           "meaning": "保留原开/闭合形式和边界环数，细分可增加边数；没有把开放装饰强制封成结构实体"
         },
@@ -10551,7 +10777,7 @@
             "nonmanifoldEdges": 0,
             "inconsistentInteriorEdges": 0,
             "zeroArea": 0,
-            "minimumArea": 1.9186714623799424e-9,
+            "minimumArea": 1.9182766836869043e-9,
             "skippedDegenerate": 0,
             "triangles": 714
           },
@@ -10650,7 +10876,7 @@
             "nonmanifoldEdges": 0,
             "inconsistentInteriorEdges": 0,
             "zeroArea": 0,
-            "minimumArea": 0.0000855211559721557,
+            "minimumArea": 0.00008552115597215351,
             "skippedDegenerate": 0,
             "triangles": 64
           },
@@ -10683,7 +10909,7 @@
             "nonmanifoldEdges": 0,
             "inconsistentInteriorEdges": 0,
             "zeroArea": 0,
-            "minimumArea": 0.0000855211559721557,
+            "minimumArea": 0.00008552115597215351,
             "skippedDegenerate": 0,
             "triangles": 64
           },
@@ -10716,7 +10942,7 @@
             "nonmanifoldEdges": 0,
             "inconsistentInteriorEdges": 0,
             "zeroArea": 0,
-            "minimumArea": 0.00008552115597215562,
+            "minimumArea": 0.00008552115597215568,
             "skippedDegenerate": 0,
             "triangles": 64
           },
@@ -10749,7 +10975,7 @@
             "nonmanifoldEdges": 0,
             "inconsistentInteriorEdges": 0,
             "zeroArea": 0,
-            "minimumArea": 0.0000855211559721557,
+            "minimumArea": 0.00008552115597215568,
             "skippedDegenerate": 0,
             "triangles": 64
           },
@@ -10782,7 +11008,7 @@
             "nonmanifoldEdges": 0,
             "inconsistentInteriorEdges": 0,
             "zeroArea": 0,
-            "minimumArea": 0.000006681773606331208,
+            "minimumArea": 0.000006681773606330809,
             "skippedDegenerate": 0,
             "triangles": 1200
           },
@@ -10815,7 +11041,7 @@
             "nonmanifoldEdges": 0,
             "inconsistentInteriorEdges": 0,
             "zeroArea": 0,
-            "minimumArea": 0.000006402586536251012,
+            "minimumArea": 0.000006402586536251629,
             "skippedDegenerate": 0,
             "triangles": 1200
           },
@@ -10848,7 +11074,7 @@
             "nonmanifoldEdges": 0,
             "inconsistentInteriorEdges": 0,
             "zeroArea": 0,
-            "minimumArea": 0.000006681773606330995,
+            "minimumArea": 0.000006681773606331208,
             "skippedDegenerate": 0,
             "triangles": 1200
           },
@@ -10881,7 +11107,7 @@
             "nonmanifoldEdges": 0,
             "inconsistentInteriorEdges": 0,
             "zeroArea": 0,
-            "minimumArea": 0.000006402586536250752,
+            "minimumArea": 0.000006402586536251138,
             "skippedDegenerate": 0,
             "triangles": 1200
           },
@@ -10947,7 +11173,7 @@
             "nonmanifoldEdges": 0,
             "inconsistentInteriorEdges": 0,
             "zeroArea": 0,
-            "minimumArea": 3.2996188271144634e-7,
+            "minimumArea": 3.2996188271150595e-7,
             "skippedDegenerate": 0,
             "triangles": 4208
           },
@@ -10980,7 +11206,7 @@
             "nonmanifoldEdges": 0,
             "inconsistentInteriorEdges": 0,
             "zeroArea": 0,
-            "minimumArea": 0.00002349236564427496,
+            "minimumArea": 0.00002349236564427551,
             "skippedDegenerate": 0,
             "triangles": 160
           },
@@ -11013,9 +11239,42 @@
             "nonmanifoldEdges": 0,
             "inconsistentInteriorEdges": 0,
             "zeroArea": 0,
-            "minimumArea": 0.00002080226354451387,
+            "minimumArea": 0.0000208022635445138,
             "skippedDegenerate": 0,
             "triangles": 160
+          },
+          "meaning": "保留原开/闭合形式和边界环数，细分可增加边数；没有把开放装饰强制封成结构实体"
+        },
+        {
+          "name": "Root_access_cover_L",
+          "passed": true,
+          "original": {
+            "weldEpsilon": 1e-12,
+            "closed": true,
+            "components": 1,
+            "boundaryEdges": 0,
+            "boundaryLoops": 0,
+            "boundaryVerticesWithWrongDegree": 0,
+            "nonmanifoldEdges": 0,
+            "inconsistentInteriorEdges": 0,
+            "zeroArea": 0,
+            "minimumArea": 0.000015085382169148135,
+            "skippedDegenerate": 0,
+            "triangles": 280
+          },
+          "current": {
+            "weldEpsilon": 1e-12,
+            "closed": true,
+            "components": 1,
+            "boundaryEdges": 0,
+            "boundaryLoops": 0,
+            "boundaryVerticesWithWrongDegree": 0,
+            "nonmanifoldEdges": 0,
+            "inconsistentInteriorEdges": 0,
+            "zeroArea": 0,
+            "minimumArea": 0.000015085382169148135,
+            "skippedDegenerate": 0,
+            "triangles": 280
           },
           "meaning": "保留原开/闭合形式和边界环数，细分可增加边数；没有把开放装饰强制封成结构实体"
         },
@@ -11046,7 +11305,7 @@
             "nonmanifoldEdges": 0,
             "inconsistentInteriorEdges": 0,
             "zeroArea": 0,
-            "minimumArea": 1.9186714623799424e-9,
+            "minimumArea": 1.9182766836869043e-9,
             "skippedDegenerate": 0,
             "triangles": 714
           },
@@ -11310,7 +11569,7 @@
             "nonmanifoldEdges": 0,
             "inconsistentInteriorEdges": 0,
             "zeroArea": 0,
-            "minimumArea": 0.000006402583581630654,
+            "minimumArea": 0.0000064025835816304584,
             "skippedDegenerate": 0,
             "triangles": 1200
           },
@@ -11508,9 +11767,42 @@
             "nonmanifoldEdges": 0,
             "inconsistentInteriorEdges": 0,
             "zeroArea": 0,
-            "minimumArea": 0.000020697004052542236,
+            "minimumArea": 0.000020697004052542277,
             "skippedDegenerate": 0,
             "triangles": 160
+          },
+          "meaning": "保留原开/闭合形式和边界环数，细分可增加边数；没有把开放装饰强制封成结构实体"
+        },
+        {
+          "name": "Root_access_cover_R",
+          "passed": true,
+          "original": {
+            "weldEpsilon": 1e-12,
+            "closed": true,
+            "components": 1,
+            "boundaryEdges": 0,
+            "boundaryLoops": 0,
+            "boundaryVerticesWithWrongDegree": 0,
+            "nonmanifoldEdges": 0,
+            "inconsistentInteriorEdges": 0,
+            "zeroArea": 0,
+            "minimumArea": 0.000015071877136858318,
+            "skippedDegenerate": 0,
+            "triangles": 280
+          },
+          "current": {
+            "weldEpsilon": 1e-12,
+            "closed": true,
+            "components": 1,
+            "boundaryEdges": 0,
+            "boundaryLoops": 0,
+            "boundaryVerticesWithWrongDegree": 0,
+            "nonmanifoldEdges": 0,
+            "inconsistentInteriorEdges": 0,
+            "zeroArea": 0,
+            "minimumArea": 0.000015071877136858318,
+            "skippedDegenerate": 0,
+            "triangles": 280
           },
           "meaning": "保留原开/闭合形式和边界环数，细分可增加边数；没有把开放装饰强制封成结构实体"
         }

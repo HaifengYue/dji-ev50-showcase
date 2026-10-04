@@ -13,6 +13,7 @@ export function runFullPanSchemaSelftests(){
  let checks=0;const test=fn=>{fn();checks++;},explicit=()=>{const d=syntheticFullPanDesign();d.layerScanBlender.wrapStrips=[fullPanStripFromDesign(d)];return d;};
  test(()=>{const d=syntheticFullPanDesign(),before=JSON.stringify(d),s=resolveFullPanStrip(d);assert.equal(s.id,'full-pan');assert.deepEqual(s.yRange,[-1.78,-1.05]);assert.equal(s.knots.length,5);assert(s.knots.every(p=>p.xInner===.653));assert.equal(JSON.stringify(d),before);});
  test(()=>{const d=explicit();assert.deepEqual(resolveFullPanStrip(d),d.layerScanBlender.wrapStrips[0]);});
+ test(()=>{const d=syntheticFullPanDesign();d.nominalCruiseVerticalGap=.019;const result=resolveFullPanStrip(d);for(const[k,v]of Object.entries(FULL_PAN_LIMITS))assert.equal(result[k],v,'Current design must not relax any physical bound');});
  for(const mutate of [
   d=>d.panDomainBlender.y[0]= -1.7,d=>d.panDomainBlender.y[1]= -1.1,
   d=>d.panDomainBlender.innerAbsX=.7,d=>d.panDomainBlender.outerInsetFromCurve=.03,
@@ -22,7 +23,7 @@ export function runFullPanSchemaSelftests(){
  for(const mutate of [
   s=>s.knots.forEach(p=>p.xInner=p.xOuter-.01),s=>s.knots.forEach(p=>p.xOuter=p.xInner+.01),
   s=>s.yRange[0]= -1.6,s=>s.yRange[1]= -1.1,s=>s.knots.splice(1,1),
-  s=>s.knots[2].xOuter-=.01,s=>s.id='front',s=>s.maximumGap=.021,s=>s.minimumSkinThickness=.005,s=>s.maximumSkinThickness=.1
+  s=>s.knots[2].xOuter-=.01,s=>s.id='front',s=>s.minimumGap=.002,s=>s.maximumGap=.021,s=>s.minimumSkinThickness=.005,s=>s.maximumSkinThickness=.1
  ])test(()=>{const d=explicit();mutate(d.layerScanBlender.wrapStrips[0]);assert.throws(()=>resolveFullPanStrip(d));});
  test(()=>{const d=explicit();d.layerScanBlender.wrapStrips.push(clone(d.layerScanBlender.wrapStrips[0]));assert.throws(()=>resolveFullPanStrip(d));});
  test(()=>assert.throws(()=>resolveFullPanStrip(undefined,explicit().layerScanBlender)));

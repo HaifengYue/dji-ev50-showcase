@@ -24,6 +24,24 @@ LOCK = 'qa/current/results/input-lock.json'
 SUMMARY = 'qa/current/results/summary.json'
 GEOMETRY_STAGES_PATH = 'qa/current/stages.json'
 STATUS = 'qa/current/results/status.log'
+SUPPLEMENT_DIR = 'qa/current/host-protection-supplement'
+SUPPLEMENT_LOCK = SUPPLEMENT_DIR + '/input-lock.json'
+SUPPLEMENT_SUMMARY = SUPPLEMENT_DIR + '/summary.json'
+ORIGINAL_INPUT_DIR = 'qa/current/full-chain-original-inputs'
+ORIGINAL_OVERLAY = ORIGINAL_INPUT_DIR + '/OVERLAY.json'
+HARDENED_INPUTS = {
+    'qa/current/summarize.mjs', 'qa/nacelle/host-decoration-preservation.mts',
+    'qa/nacelle/powertrain-identity.selftest.mts', 'qa/reference/code-migration.json'}
+SUPPLEMENT_STAGES = ['powertrain-identity-selftest', 'nacelle-placement',
+                     'indexed-host-material', 'unused-points-regression', 'input-stability']
+SUPPLEMENT_DEPENDENCIES = {
+    'qa/current/verify-host-hardening-supplement.mjs',
+    'qa/current/run-host-hardening-supplement.sh',
+    'qa/nacelle/audit-host-indexed-exactness.mts',
+    'qa/nacelle/host-unused-points-regression.mts',
+    'qa/nacelle/host-indexed-exactness.mjs',
+    'qa/nacelle/host-indexed-exactness.selftest.mjs',
+    'qa/nacelle/verify-nacelle-placement.mts'}
 FRONTEND_LOCK = 'qa/frontend/input-lock.json'
 FRONTEND_SUMMARY = 'qa/frontend/summary.json'
 BUILD_PRESERVATION = 'qa/frontend/build-preservation.json'
@@ -40,6 +58,7 @@ SELFTEST = 'docs/PACKAGING_SELFTEST.json'
 PACKAGING_TOOLS = ['scripts/package_project.py', 'scripts/test_package_project.py']
 SURFACE_INPUTS = {'scripts/data/preserved-front-surfaces.blend',
                   'scripts/data/preserved-front-surfaces.json'}
+VERSIONED_REFERENCE_INPUTS = {'qa/reference/nacelle-oriented-repair-corrections-v2.json'}
 CORE_MODELS = {'assets/blender/xp4.blend', 'assets/blender/xp4-source.glb',
                'assets/blender/nacelle-system-concept-source.glb',
                'public/models/xp4.glb', 'public/models/nacelle-system-concept.glb',
@@ -106,7 +125,9 @@ def forbidden(relative):
     if any(re.search(r'(^|[-_])(candidate|preflight|diagnostic|probe)([-_]|$)', part)
            for part in parts):
         return True
-    if any(re.search(r'(^|[-_.])v\d+($|[-_.])', part) for part in parts):
+    # 这份已冻结纠正夹具的v2属于来源格式身份；只豁免该精确路径的版本命名规则。
+    if (relative not in VERSIONED_REFERENCE_INPUTS
+            and any(re.search(r'(^|[-_.])v\d+($|[-_.])', part) for part in parts)):
         return True
     if path.suffix.lower() in {'.pyc', '.pyo', '.blend1', '.blend2', '.tsbuildinfo',
                               '.pem', '.key', '.p12', '.pfx', '.zip', '.7z', '.tar', '.gz', '.npy', '.npz'}:
@@ -232,6 +253,174 @@ def validate_stage_evidence(read_once, stages):
         read_once('qa/frontend/' + name + '.log')
 
 
+def validate_checksum_list(data, locked, label):
+    """保留并核对原始逐文件校验清单，不能用后来重写的摘要替代。"""
+    expected = ''.join(sha + '  ' + relative + '\n' for relative, sha in locked.items())
+    if data.decode('utf-8').replace('\r\n', '\n') != expected:
+        raise ValueError(label + '逐文件校验清单与输入锁不一致')
+
+
+def supplement_module_closure(root, read_once, entries):
+    """独立追踪修订入口的静态本地模块边，拒绝删锁后仅重写计数蒙混过关。"""
+    extensions = ['.ts', '.tsx', '.mts', '.mjs', '.js', '.jsx', '.cts', '.cjs', '.json']
+    expected, queue = set(entries), sorted(entries)
+    while queue:
+        relative = queue.pop()
+        if PurePosixPath(relative).suffix not in set(extensions) - {'.json'}:
+            continue
+        source = read_once(relative).decode('utf-8')
+        references = re.findall(
+            r'''(?:\bfrom\s*|\b(?:import|require|tsImport)\s*\(\s*|\bimport\s*)["'](\.{1,2}(?:/[^"'\n]*)?)["']''',
+            source)
+        candidates = [posixpath.normpath(posixpath.join(posixpath.dirname(relative), name))
+                      for name in references]
+        # 两份独立补充审计以明确的工程根变量动态加载本地模块。
+        candidates += re.findall(r'''\bimport\s*\(\s*project\s*\+\s*["']/([^"'\n]+)["']''', source)
+        for candidate in candidates:
+            safe_relative(candidate)
+            suffix = PurePosixPath(candidate).suffix
+            choices = [candidate]
+            if not suffix:
+                choices += [candidate + ext for ext in extensions]
+                choices += [candidate + '/index' + ext for ext in extensions]
+            else:
+                typed = {'.js': ['.ts', '.tsx'], '.jsx': ['.tsx'], '.mjs': ['.mts'], '.cjs': ['.cts']}
+                choices += [str(PurePosixPath(candidate).with_suffix(ext)) for ext in typed.get(suffix, [])]
+            child = next((name for name in choices if (root / name).is_file() or (root / name).is_symlink()), None)
+            if child is None:
+                raise ValueError('補充本地模块缺失：' + relative + ' -> ' + candidate)
+            read_once(child)
+            if child not in expected:
+                expected.add(child)
+                queue.append(child)
+    return expected
+
+
+def validate_hardening_supplement(root, read_once, physics):
+    """原65阶段只按四份旧字节还原；当前硬化代码必须另有定向通过证据。"""
+    supplement_data = read_once(SUPPLEMENT_LOCK)
+    supplement = locked_inputs(supplement_data)
+    overlay = json.loads(read_once(ORIGINAL_OVERLAY))
+    original = json.loads(read_once(SUMMARY))
+    summary = json.loads(read_once(SUPPLEMENT_SUMMARY))
+    stages = stage_names(read_once(GEOMETRY_STAGES_PATH))
+    if len(physics) != 290 or len(stages) != 65:
+        raise ValueError('硬化补充只能关联原65阶段、290项冻结输入')
+    if not isinstance(overlay, dict) or not isinstance(summary, dict) or not isinstance(original, dict):
+        raise ValueError('硬化补充或原始输入覆盖层格式错误')
+    bindings = {'sourceSha256': 'assets/blender/xp4-source.glb',
+                'runtimeSha256': 'public/models/xp4.glb',
+                'sourceBlendSha256': 'assets/blender/xp4.blend'}
+    for key, relative in bindings.items():
+        sha = digest(read_once(relative))
+        if original.get(key) != sha or summary.get(key) != sha:
+            raise ValueError('硬化补充与原65阶段模型哈希不一致：' + relative)
+        if key != 'sourceBlendSha256' and overlay.get(key) != sha:
+            raise ValueError('原始输入覆盖层模型哈希不一致：' + relative)
+    if (overlay.get('fullRunSummaryPath') != SUMMARY
+            or overlay.get('fullRunInputLockPath') != LOCK
+            or overlay.get('fullRunSummarySha256') != digest(read_once(SUMMARY))
+            or overlay.get('fullRunInputLockSha256') != digest(read_once(LOCK))):
+        raise ValueError('原始输入覆盖层未绑定原65阶段证据')
+    rows = overlay.get('overlays')
+    if (not isinstance(rows, list) or len(rows) != len(HARDENED_INPUTS)
+            or any(not isinstance(row, dict) or not isinstance(row.get('path'), str) for row in rows)
+            or {row['path'] for row in rows} != HARDENED_INPUTS):
+        raise ValueError('原始输入覆盖层只能包含明确批准的四项硬化输入')
+    stored, current, differences = set(), dict(physics), []
+    for row in sorted(rows, key=lambda item: item['path']):
+        relative = row['path']
+        expected = ORIGINAL_INPUT_DIR + '/' + relative
+        if (row.get('storedPath') != expected or relative not in physics
+                or row.get('sha256') != physics[relative]
+                or digest(read_once(expected)) != physics[relative]):
+            raise ValueError('原始输入覆盖层旧字节、路径或SHA256不一致：' + relative)
+        sha = digest(read_once(relative))
+        if sha == physics[relative]:
+            raise ValueError('声明硬化的输入未发生修订：' + relative)
+        stored.add(expected)
+        current[relative] = sha
+        differences.append({'path': relative, 'originalSha256': physics[relative],
+                            'currentSha256': sha, 'originalBytes': expected})
+    for relative, sha in physics.items():
+        if relative not in HARDENED_INPUTS and digest(read_once(relative)) != sha:
+            raise ValueError('原65阶段出现未批准的输入漂移：' + relative)
+    required = set(physics) | stored | SUPPLEMENT_DEPENDENCIES | {ORIGINAL_OVERLAY}
+    required |= supplement_module_closure(root, read_once, HARDENED_INPUTS | SUPPLEMENT_DEPENDENCIES)
+    for path in (root / 'qa/current/results').iterdir():
+        if path.is_file() or path.is_symlink():
+            required.add(path.relative_to(root).as_posix())
+    missing = required - set(supplement)
+    if missing:
+        raise ValueError('补充输入锁缺少原始证据或当前必要依赖：' + ', '.join(sorted(missing)))
+    # 新锁冻结当前路径与历史覆盖层两套字节；不允许以新锁任意豁免原始漂移。
+    for relative, sha in supplement.items():
+        if relative in current and current[relative] != sha:
+            raise ValueError('补充输入锁与原始重建证据互相冲突：' + relative)
+        if digest(read_once(relative)) != sha:
+            raise ValueError('补充冻结输入已变化：' + relative)
+    lock_info = json.loads(supplement_data)
+    if (lock_info.get('fullRunSummarySha256') != digest(read_once(SUMMARY))
+            or any(lock_info.get(key) != summary[key] for key in ['sourceSha256', 'runtimeSha256'])):
+        raise ValueError('补充输入锁未绑定原始汇总和同一模型')
+    full = summary.get('originalFullRun')
+    targeted = summary.get('currentTargetedValidation')
+    if (summary.get('passed') is not True or summary.get('fullChainRerunAfterHardening') is not False
+            or not isinstance(full, dict) or full.get('summaryPath') != SUMMARY
+            or full.get('summarySha256') != digest(read_once(SUMMARY))
+            or full.get('inputLockPath') != LOCK or full.get('inputLockSha256') != digest(read_once(LOCK))
+            or type(full.get('stages')) is not int or full['stages'] != 65
+            or type(full.get('inputFiles')) is not int or full['inputFiles'] != 290
+            or full.get('allStagesPassed') is not True or full.get('overlayPath') != ORIGINAL_OVERLAY
+            or not isinstance(targeted, dict) or targeted.get('inputStability') is not True
+            or targeted.get('inputLockPath') != SUPPLEMENT_LOCK
+            or targeted.get('inputLockSha256') != digest(supplement_data)
+            or type(targeted.get('inputFiles')) is not int or targeted['inputFiles'] != len(supplement)):
+        raise ValueError('补充汇总没有严格区分原65阶段与修后定向验证')
+    changed = summary.get('changedOriginalInputs')
+    if (not isinstance(changed, list) or any(not isinstance(row, dict) for row in changed)
+            or sorted(changed, key=lambda row: str(row.get('path'))) != differences):
+        raise ValueError('补充汇总的四项输入变更与原字节覆盖层不一致')
+    targeted_stages = targeted.get('stages')
+    if (not isinstance(targeted_stages, list)
+            or any(not isinstance(row, dict) for row in targeted_stages)
+            or [row.get('name') for row in targeted_stages] != SUPPLEMENT_STAGES
+            or any(type(row.get('exitCode')) is not int or row['exitCode'] != 0
+                   for row in targeted_stages)):
+        raise ValueError('补充汇总的定向阶段顺序、数量或结果错误')
+    expected_status = ''.join(name + ' 0\n' for name in SUPPLEMENT_STAGES)
+    if read_once(SUPPLEMENT_DIR + '/status.log').decode('utf-8').replace('\r\n', '\n') != expected_status:
+        raise ValueError('补充阶段记录与定向阶段约定不一致')
+    reports = targeted.get('reports')
+    if not isinstance(reports, dict) or set(reports) != set(SUPPLEMENT_STAGES[:-1]):
+        raise ValueError('补充汇总缺少定向原始报告绑定')
+    for name in SUPPLEMENT_STAGES:
+        read_once(SUPPLEMENT_DIR + '/' + name + '.log')
+        if name == 'input-stability':
+            continue
+        relative = SUPPLEMENT_DIR + '/' + name + '-report.json'
+        data = read_once(relative)
+        report, binding = json.loads(data), reports[name]
+        if (not isinstance(binding, dict) or binding.get('path') != relative
+                or binding.get('sha256') != digest(data)
+                or not isinstance(report, dict) or report.get('passed') is not True):
+            raise ValueError('补充原始报告未通过或字节绑定失效：' + name)
+        if name in {'indexed-host-material', 'unused-points-regression'}:
+            if report.get('sourceSha256') != summary['sourceSha256']:
+                raise ValueError('补充原始报告未绑定当前源模型：' + name)
+        if name == 'nacelle-placement':
+            variants = report.get('reports')
+            if (not isinstance(variants, list) or len(variants) != 2
+                    or any(not isinstance(row, dict) for row in variants)
+                    or [row.get('encoding') for row in variants] != ['source', 'runtime']
+                    or any(row.get('passed') is not True or row.get('failures') != []
+                           or row.get('sha256') != summary[row['encoding'] + 'Sha256'] for row in variants)):
+                raise ValueError('补充布局报告缺少源和运行模型通过证据')
+    validate_checksum_list(read_once('qa/current/results/input-sha256.txt'), physics, '原65阶段')
+    validate_checksum_list(read_once(SUPPLEMENT_DIR + '/input-sha256.txt'), supplement, '定向补充')
+    return current, supplement, summary
+
+
 def glb_counts(data):
     """只读运行GLB的JSON块，计数不依赖外部模型库。"""
     if len(data) < 20:
@@ -249,7 +438,7 @@ def glb_counts(data):
     return {'实际网格数': len(used), '实际节点数': len(nodes), '复用网格资源数': len(meshes)}
 
 
-def validate_project_metadata(contents, summaries, locks):
+def validate_project_metadata(contents, summaries, locks, supplement_summary=None):
     """项目元数据必须绑定本次真实文件与验收；待验收空值不能进入最终工程包。"""
     info = json.loads(contents[METADATA])
     if not isinstance(info, dict) or not isinstance(info.get('项目名称'), str) or not info['项目名称'].strip():
@@ -269,7 +458,7 @@ def validate_project_metadata(contents, summaries, locks):
     for key, count in glb_counts(contents['public/models/xp4.glb']).items():
         if type(info.get(key)) is not int or info[key] != count:
             raise ValueError('项目信息的模型计数未冻结：' + key)
-    union_count = len(set(locks[0]) | set(locks[1]))
+    union_count = len(set().union(*locks))
     if type(info.get('合并冻结输入数')) is not int or info['合并冻结输入数'] != union_count:
         raise ValueError('项目信息的合并冻结输入数不一致')
     for index, (label, summary_path, lock_path) in enumerate([
@@ -282,6 +471,19 @@ def validate_project_metadata(contents, summaries, locks):
                 or type(row.get('阶段数')) is not int or row['阶段数'] != len(summaries[index]['stages'])
                 or type(row.get('冻结输入数')) is not int or row['冻结输入数'] != len(locks[index])):
             raise ValueError('项目信息尚未绑定最终通过汇总和冻结锁：' + label)
+    if supplement_summary is not None:
+        row = info.get('定向补充验收')
+        if (not isinstance(row, dict) or row.get('全部通过') is not True
+                or row.get('输入稳定') is not True or row.get('路径') != SUPPLEMENT_SUMMARY
+                or row.get('SHA256') != digest(contents[SUPPLEMENT_SUMMARY])
+                or row.get('输入锁路径') != SUPPLEMENT_LOCK
+                or row.get('输入锁SHA256') != digest(contents[SUPPLEMENT_LOCK])
+                or type(row.get('阶段数')) is not int or row['阶段数'] != len(SUPPLEMENT_STAGES)
+                or type(row.get('冻结输入数')) is not int or row['冻结输入数'] != len(locks[2])
+                or info.get('修后完整65阶段重跑') is not False
+                or info.get('原始输入覆盖层路径') != ORIGINAL_OVERLAY
+                or info.get('原始输入覆盖层SHA256') != digest(contents[ORIGINAL_OVERLAY])):
+            raise ValueError('项目信息尚未绑定定向补充验收和原始输入覆盖层')
     return info
 
 
@@ -499,7 +701,15 @@ def prepare_package(root):
 
     physics = locked_inputs(read_once(LOCK))
     frontend = locked_inputs(read_once(FRONTEND_LOCK))
-    required = dict(physics)
+    supplement, supplement_summary = {}, None
+    # 任一证据目录存在即要求整套补充证据，缺失文件不能静默退回旧验收口径。
+    has_supplement = any(os.path.lexists(root / relative)
+                         for relative in [SUPPLEMENT_DIR, ORIGINAL_INPUT_DIR])
+    if has_supplement:
+        required, supplement, supplement_summary = validate_hardening_supplement(root, read_once, physics)
+        required.update(supplement)
+    else:
+        required = dict(physics)
     for relative, sha in frontend.items():
         if relative in required and required[relative] != sha:
             raise ValueError('独立物理与前端冻结输入互相冲突：' + relative)
@@ -531,7 +741,7 @@ def prepare_package(root):
     validate_stage_evidence(read_once, stages)
     locked_dist = validate_frontend_preservation(contents, frontend)
     validate_distribution(contents, locked_dist)
-    validate_project_metadata(contents, summaries, [physics, frontend])
+    validate_project_metadata(contents, summaries, [physics, frontend, supplement], supplement_summary)
     packaging_tools = validate_packaging_selftest(contents)
     entries = [{'path': relative, 'bytes': len(data), 'sha256': digest(data),
                 'crc32': f'{zlib.crc32(data):08x}', 'mode': f'{modes[relative]:04o}'}
@@ -552,6 +762,18 @@ def prepare_package(root):
         'projectMetadataPath': METADATA, 'projectMetadataSha256': digest(contents[METADATA]),
         'files': entries,
     }
+    if has_supplement:
+        manifest.update({
+            'validationMode': 'original-full-chain-with-targeted-hardening',
+            'fullChainRerunAfterHardening': False,
+            'supplementLockedInputs': len(supplement),
+            'supplementInputLockPath': SUPPLEMENT_LOCK,
+            'supplementInputLockSha256': digest(contents[SUPPLEMENT_LOCK]),
+            'supplementSummaryPath': SUPPLEMENT_SUMMARY,
+            'supplementSummarySha256': digest(contents[SUPPLEMENT_SUMMARY]),
+            'originalInputOverlayPath': ORIGINAL_OVERLAY,
+            'originalInputOverlaySha256': digest(contents[ORIGINAL_OVERLAY]),
+        })
     manifest_bytes = encoded(manifest)
     buffer = BytesIO()
     with zipfile.ZipFile(buffer, 'w', compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
@@ -566,13 +788,17 @@ def prepare_package(root):
     for relative, data in contents.items():
         if input_path(relative, root).read_bytes() != data:
             raise ValueError('打包期间输入已变化：' + relative)
-    return payload, manifest_bytes, {
+    result = {
         'bytes': len(payload), 'mib': round(len(payload) / (1024 * 1024), 3),
         'sha256': digest(payload), 'files': len(entries), 'archiveEntries': len(entries) + 1,
         'manifestSha256': digest(manifest_bytes), 'manifestCrc32': f'{zlib.crc32(manifest_bytes):08x}',
         'lockedInputs': len(physics), 'frontendLockedInputs': len(frontend),
         'combinedLockedInputs': len(required), 'largestCompressed': largest,
     }
+    if has_supplement:
+        result.update({'supplementLockedInputs': len(supplement),
+                       'fullChainRerunAfterHardening': False})
+    return payload, manifest_bytes, result
 
 
 def write_package(root, output, overwrite=False):

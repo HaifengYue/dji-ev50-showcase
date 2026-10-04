@@ -3,11 +3,11 @@ npm warn Unknown env config "http-proxy". This will stop working in the next maj
 > transwing-studio@1.0.0 test:qa
 > node --import tsx --test qa/flight-regression.test.ts && node qa/glb-loader-check.mjs
 
-✔ 八个飞行阶段及最终待命均可到达 (1.565559ms)
-✔ 阶段边界的高度、位置、展开程度与旋翼转速连续 (0.464883ms)
-✔ 全部时间轴状态有限且展开程度与旋翼转速有界 (12.563292ms)
-✔ 十轮自动循环保持完整阶段顺序并在终点重复 (16.124778ms)
-✔ 非循环模式限制终点时间、停止旋翼并返回原点待命 (0.145804ms)
+✔ 八个飞行阶段及最终待命均可到达 (2.607631ms)
+✔ 阶段边界的高度、位置、展开程度与旋翼转速连续 (0.68323ms)
+✔ 全部时间轴状态有限且展开程度与旋翼转速有界 (18.674501ms)
+✔ 十轮自动循环保持完整阶段顺序并在终点重复 (27.468635ms)
+✔ 非循环模式限制终点时间、停止旋翼并返回原点待命 (0.239363ms)
 ℹ tests 5
 ℹ suites 0
 ℹ pass 5
@@ -15,33 +15,33 @@ npm warn Unknown env config "http-proxy". This will stop working in the next maj
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 208.514678
+ℹ duration_ms 269.851138
 {
   "passed": true,
-  "runtimeBytes": 2779796,
+  "runtimeBytes": 2511508,
   "renderedMeshes": 283,
-  "renderedTriangles": 262042,
+  "renderedTriangles": 226404,
   "hoverBounds": {
     "min": [
-      -1.7183677315913348,
-      -1.4620004633387318,
+      -1.9673677651487447,
+      -1.4330003751239133,
       -3.049999952316284
     ],
     "max": [
-      1.718367609638434,
+      1.9673675629083924,
       1.4937527118307061,
       2.7200000286102295
     ],
     "size": [
-      3.4367353412297685,
-      2.9557531751694377,
+      3.934735328057137,
+      2.926753086954619,
       5.769999980926514
     ]
   },
   "cruiseBounds": {
     "min": [
-      -5.300000224371679,
-      -0.5848504359263688,
+      -5.300000225091221,
+      -0.6583676871521202,
       -3.049999952316284
     ],
     "max": [
@@ -50,8 +50,8 @@ npm warn Unknown env config "http-proxy". This will stop working in the next maj
       2.7200000286102295
     ],
     "size": [
-      10.600000415106543,
-      2.0786031477570748,
+      10.600000415826084,
+      2.1521203989828264,
       5.769999980926514
     ]
   }

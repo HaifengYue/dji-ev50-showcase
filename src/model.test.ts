@@ -132,7 +132,7 @@ test("新翼端球铰真实内移且所有支承有实际节点与有限接口",
   ] as const) {
     const anchor = scene.getObjectByName(`BraceWing_${side}`)!;
     assert.ok(Math.abs(anchor.position.x + sign * 0.38) < 1e-6);
-    assert.ok(Math.abs(anchor.position.y - 0.05454436791055261) < 1e-6);
+    assert.ok(Math.abs(anchor.position.y - 0.02554436791055261) < 1e-6);
     assert.ok(Math.abs(anchor.position.z + 0.33) < 1e-6);
     assert.equal(anchor.parent?.name, `WingPivot_${side}`);
     assert.ok(scene.getObjectByName(`RootBearingHousing_${side}`));
@@ -268,7 +268,7 @@ test("新球心、刚杆闭合、实际槽轮廓和低置布局均有可复算�
     manifest.wingAttachmentReference.exactImagePixelRegistrationClaimed,
     false,
   );
-  const pivot = new THREE.Vector3(1.5, -0.22, 1.47);
+  const pivot = new THREE.Vector3(1.5, -0.191, 1.47);
   const anchor = new THREE.Vector3(1.12, -0.16545563208944739, 1.14);
   const body = new THREE.Vector3(0.16, -0.02, -1.9);
   const length = anchor.distanceTo(body);
@@ -286,6 +286,13 @@ test("新球心、刚杆闭合、实际槽轮廓和低置布局均有可复算�
     );
   assert.ok(Math.abs(manifest.mechanism.sides.R.braceLength - length) < 1e-6);
   assert.ok(Math.abs(manifest.mechanism.sliderTravel[0] - hoverSlider) < 1e-6);
+  assert.ok(
+    Math.abs(
+      manifest.internalDrive.travelStopCentersBlenderY[0] -
+        (hoverSlider - 0.041),
+    ) < 1e-6,
+  );
+  assert.equal(manifest.internalDrive.travelStopCentersBlenderY[1], 1.947);
   assert.ok(manifest.mechanism.sliderTravel[0] >= 0.9104609710668883);
   assert.ok(Math.abs(manifest.mechanism.sliderTravel[1] - 1.9) < 1e-6);
   assert.ok(
@@ -345,7 +352,7 @@ test("新分层翼根有可复算移轴和闭合材料契约；实际净空由�
   ] as const) {
     const pivot = scene.getObjectByName(`WingPivot_${side}`)!;
     assert.ok(
-      pivot.position.distanceTo(new THREE.Vector3(sign * 1.5, -0.22, 1.47)) <
+      pivot.position.distanceTo(new THREE.Vector3(sign * 1.5, -0.191, 1.47)) <
         1e-6,
     );
   }

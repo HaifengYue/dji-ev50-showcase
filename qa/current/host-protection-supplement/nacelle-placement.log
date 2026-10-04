@@ -1,0 +1,8 @@
+{
+  passed: true,
+  failures: [],
+  models: [
+    { encoding: 'source', assemblies: 4, motionStates: 123 },
+    { encoding: 'runtime', assemblies: 4, motionStates: 123 }
+  ]
+}

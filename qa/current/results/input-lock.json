@@ -1,5 +1,5 @@
 {
-  "lockedAt": "2026-10-04T13:16:06.726Z",
+  "lockedAt": "2026-10-04T19:34:17.529Z",
   "scope": "当前实际生产、源/重建资产、精简参考、严格未变配对继承与独立物理检查依赖；不包含发行脚本、私有原图或候选预检",
   "files": [
     {
@@ -8,11 +8,11 @@
     },
     {
       "path": "assets/blender/xp4-source.glb",
-      "sha256": "82ca7f6f9e98cb11737da6f1cb8b1507f71baf0ffcb57734b9beb7bb23e70126"
+      "sha256": "801b02ca6b12c326a04e0a1fe7741a99f168c629384ae836f490f7779428570e"
     },
     {
       "path": "assets/blender/xp4.blend",
-      "sha256": "869458bd88bdf1a60ae07f28d565187ed6d164bd11a49589e6beae90c5ad3ac1"
+      "sha256": "93b87989cf4b19cd55236d13da99fa592b482429e77c9adf52ad9b36b0d6551d"
     },
     {
       "path": "package-lock.json",
@@ -24,7 +24,7 @@
     },
     {
       "path": "public/models/manifest.json",
-      "sha256": "5151d3ed1013e3aeb1035308245f32635aff97be33a6b670c34243b05d3d7df1"
+      "sha256": "b311aa5bfb7dab0923a0b95d83e42d48aa0ba34ea064f78162f6e81863ce33d8"
     },
     {
       "path": "public/models/nacelle-system-concept.glb",
@@ -32,7 +32,7 @@
     },
     {
       "path": "public/models/xp4.glb",
-      "sha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d"
+      "sha256": "062fd09dee64984221316ede5ba684f6c1b6ff4f7b7ee2a0bd818a8888fd6f43"
     },
     {
       "path": "python/transwing_sim/__init__.py",
@@ -64,11 +64,15 @@
     },
     {
       "path": "qa/contracts/layered-wing-refinement.json",
-      "sha256": "ed3dd660843d5e8ff61ea554c17217630dbf0b50524ce94c1647a65dc3d54e5c"
+      "sha256": "0f798b15e036e21c1b2f574a75cecbda699fe8c65553f46520b5f57940442167"
     },
     {
       "path": "qa/contracts/model-refinement.json",
-      "sha256": "b7a96cebc32dbc7ed7622e032e42da80b9bb5b4ee1b1d5f7f502e418207eaac0"
+      "sha256": "550b01295b5c2e69a489966da74ec4e80ca7829a4590babfdbe384386ed81e43"
+    },
+    {
+      "path": "qa/contracts/nacelle-wing-refinement.json",
+      "sha256": "00f9ad5d913ae1a5953049acdeba964d4df4d822b52fa75a9546556f19d89c49"
     },
     {
       "path": "qa/contracts/reference-supports.json",
@@ -76,7 +80,7 @@
     },
     {
       "path": "qa/contracts/supports.json",
-      "sha256": "05ebaa25e8d45f6c785bf851245db07cc1882cdc6f1e9f6cbeeadca2497bb4d6"
+      "sha256": "02884612c37a713c41d54fb66a3b4b58309a4515c8bab0af94bcdba16d1c25b4"
     },
     {
       "path": "qa/current/affected-scope.mts",
@@ -92,39 +96,39 @@
     },
     {
       "path": "qa/current/author/generator-reproducibility.json",
-      "sha256": "bf8df98816ab6a4b4caa47cf6c465e1e848176e147570e8bd9364883842ab803"
+      "sha256": "32fe1000f61c83319c0211972ff5b3746ed866deb807082fbe7f117b02bb5f0a"
     },
     {
       "path": "qa/current/author/regenerated-runtime-geometry.json",
-      "sha256": "23e491af483f4ea2b972564916312dc4c623f43d0fc24c22c58115af92bc3ebd"
+      "sha256": "6cf6228907665dcf2b74f80878cbaa08ef39a08695134aba51968d278f8eebf3"
     },
     {
       "path": "qa/current/author/regeneration-exact.json",
-      "sha256": "e2ed986c163bfd201e8a4bf5a67bf87f599e6fc22902c0a23fdf9270977870c4"
+      "sha256": "a4c665d298c307cd13a6487de1dd47b165678c74fcbf28d7ebd0da553e3e4f03"
     },
     {
       "path": "qa/current/author/source-kinematics.json",
-      "sha256": "36e6a8af72d1313ce140b74e53328d218109fb9cce521acf2927b1238acdefa7"
+      "sha256": "2a23628592e75690b034ac4b240b92a5a048b88e41d3ddfc093b1a07781df433"
     },
     {
       "path": "qa/current/author/source-motor-animation.json",
-      "sha256": "1ffdc8ccff491d5791bdf21317af8646d4e32258b5cc7f70fdb0e2470125e476"
+      "sha256": "c25d28d43c6fea4ca818efbe9b57f935ec2ecc7c29970119ff335935e4eb4a88"
     },
     {
       "path": "qa/current/author/source-native-drive.json",
-      "sha256": "afbb9ac84a03747f2667987d629373fa0f4e482246af0789e446c2446afe6ca6"
+      "sha256": "69f72037995250d7804604c2d89e8814dfb2702a53d203ad0b71f9f695126807"
     },
     {
       "path": "qa/current/author/source-reexport.glb",
-      "sha256": "82ca7f6f9e98cb11737da6f1cb8b1507f71baf0ffcb57734b9beb7bb23e70126"
+      "sha256": "801b02ca6b12c326a04e0a1fe7741a99f168c629384ae836f490f7779428570e"
     },
     {
       "path": "qa/current/author/source-runtime-geometry.json",
-      "sha256": "1e5cfb155e51b7783e08c0789f933aee6db1a629be47c60e9eae1c620cdfc174"
+      "sha256": "b199c9aa08579f5269130c316333a3a0dc446326ca1d739e0dcbf2a97349470a"
     },
     {
       "path": "qa/current/author/source-solids.json",
-      "sha256": "cc15ce17125f1e56bd380513a43b6c81cea08690eafd0b26920f5ac3af0cbf73"
+      "sha256": "cd081f6a335117cb80dbaf0cadc51d45a05e33a5f56f4b106af130a599993e8e"
     },
     {
       "path": "qa/current/broadphase.mts",
@@ -164,7 +168,7 @@
     },
     {
       "path": "qa/current/fairing-support-roles.mjs",
-      "sha256": "425ca8046ef434b1dcf23a59549633ede01db8062e8d3bdbc127b025baa9c36d"
+      "sha256": "2ad858c2826fa12a64cd14f4b4b2b6412a0060c44147b514f6290142b9e5cbd5"
     },
     {
       "path": "qa/current/fairing-support-roles.selftest.mjs",
@@ -172,7 +176,7 @@
     },
     {
       "path": "qa/current/freeze-inputs.mjs",
-      "sha256": "789fc992cf08b352d97f96ca624dc9c04cffe42f09b150e6ae098dea005680a5"
+      "sha256": "97528d1ff91f8683053480dab5f744465d80d00d1623276213917baecf2b8b80"
     },
     {
       "path": "qa/current/hinge-identity-baseline.mts",
@@ -183,28 +187,32 @@
       "sha256": "300e40f2859582004d73d2b09de188973d835afc356ce5a514682aa8853926e9"
     },
     {
+      "path": "qa/current/hinge-identity.selftest.mts",
+      "sha256": "07d57fe609f69b327f6bc0b05990fd26d629af6a261cc11a56f672dae2d01ad3"
+    },
+    {
       "path": "qa/current/input-lock-integrity.mjs",
       "sha256": "cd95254932ca4dbe72f3a51d2c0fedd582cee34a55a4f0c13c833524da0be1fa"
     },
     {
       "path": "qa/current/layered-contract-logic.mjs",
-      "sha256": "fda06b2c8ee00f3b9f76296af0981708dc33e319b6e1b23138cc09b1382775c2"
+      "sha256": "d9496d571986e4c99daa92a32bf1ac1bfbb378d8ba7bce5f07977ae3dc441cc5"
     },
     {
       "path": "qa/current/layered-domain-schema.mjs",
-      "sha256": "5899c0c4cccae54ab6357a0daa7017645675b660934559d68f28325600eeb75d"
+      "sha256": "404e33036a6446e796c1b394344c2ee86a1af126c8b3fc3a3a1dcc6a408b17c6"
     },
     {
       "path": "qa/current/layered-domain-schema.selftest.mjs",
-      "sha256": "7075c933fdf29e0ca6597b4239acb20b8f0a6b61d0e597568082d96ce188e86a"
+      "sha256": "5fe0ba0a772332468af6019ad8af44b9643de71bdbe28e4fefc42cab972f3a77"
     },
     {
       "path": "qa/current/layered-sections.mts",
-      "sha256": "04227231484aaa3339dd7c9fa7d8647b3d44829bdb6042cf61a5ba8881d114e5"
+      "sha256": "fdb556ccb702d9803b0ae452fc15b0fe90663b893b1c5a0328532bf42fd11890"
     },
     {
       "path": "qa/current/layered-sections.selftest.mts",
-      "sha256": "a15f3385b2ba4e29747d5db9c289819a26aa562f300bc178004af21d632947f2"
+      "sha256": "542b7f42359d44f051fd7cd0ab1b74c277283ae14a674c326f6371628e54883a"
     },
     {
       "path": "qa/current/local-module-dependencies.mjs",
@@ -235,6 +243,14 @@
       "sha256": "6add0f51d772d4b27bcf8bcfe073923d56bbdcb66024362cd360c41307951ba5"
     },
     {
+      "path": "qa/current/nacelle-support-additions.mjs",
+      "sha256": "60738d92f54a1a6430d192110621841f7bb44740e678b7d982c1889da30866bf"
+    },
+    {
+      "path": "qa/current/nacelle-support-additions.selftest.mjs",
+      "sha256": "330e33d530badaf6d424f34d17015c93b20563709cdbac613435c3901863fb34"
+    },
+    {
       "path": "qa/current/node-inventory.mjs",
       "sha256": "37f5cec27e3edc652867e6de826a8b4648963f4dd14ce3b19c7c8a8169f27480"
     },
@@ -244,11 +260,11 @@
     },
     {
       "path": "qa/current/patch-coverage.mts",
-      "sha256": "975478e5d81ddc3600bd9f29ffa363370dab368dbbf4e1b74ae9401008905034"
+      "sha256": "8bc0df511708422312c10e952f8ab272f7f80872716a6bb30fcd8a4617c7df17"
     },
     {
       "path": "qa/current/patch-coverage.selftest.mts",
-      "sha256": "87716292c75bd00aa69a8ed161530c79b8ec148b9532644439516f3bf6046712"
+      "sha256": "ec175f676d096769749bdeb065bc4f0cb17b58f0b0f4b583d032e4299ba42438"
     },
     {
       "path": "qa/current/reference-data.mts",
@@ -272,7 +288,7 @@
     },
     {
       "path": "qa/current/run-safety.sh",
-      "sha256": "ba1ce42ffc4c3557a19a0c1ec835d92fa4dbe31a98746d1f0b18d5adc65ed4b5"
+      "sha256": "71949aa0a7321cf94510b1b8c2230f5bfdc8f0d77e169cdaccafeb010457a051"
     },
     {
       "path": "qa/current/slot-boundary-vertices.mts",
@@ -292,7 +308,7 @@
     },
     {
       "path": "qa/current/stages.json",
-      "sha256": "7086a88b6ffd3c09d5e5f1babd80d2f387e8c6f19cc1d8c2cee25c32966b5ec5"
+      "sha256": "e9d2b2f377dcdb2aa0a8ce183b4cd1ead08ebcc465f0b0f6e58822e5574b7b7c"
     },
     {
       "path": "qa/current/straight-output-geometry.mts",
@@ -304,15 +320,15 @@
     },
     {
       "path": "qa/current/summarize.mjs",
-      "sha256": "5f59256755695aa84f9403318ab6ef0bb6b5230ba9ed5351843c11878ddfee73"
+      "sha256": "c519ee497ca6d33a835f680d80008468961a7a01bb3f121f87a076679e7a39f4"
     },
     {
       "path": "qa/current/support-coordinate-review.mjs",
-      "sha256": "7732c551226425bda616d8af230a7df3024f5cf02fd8af55d9a4b79b1f1de3cc"
+      "sha256": "a53566a04a962176f7873319307a51f5c8069e5358f695316c065421605dd305"
     },
     {
       "path": "qa/current/support-coordinate-review.selftest.mjs",
-      "sha256": "74967b3bed2c32235845cd3d4b568a69d5f9cd40eb7da66c50c1e3ff2d7d7a99"
+      "sha256": "4b697c3a34ed444c38db5dc9c3b98922abcf8537de59447944a7944e6471e0f7"
     },
     {
       "path": "qa/current/verify-fairing-clearance.mts",
@@ -328,7 +344,7 @@
     },
     {
       "path": "qa/current/verify-layered-geometry.mts",
-      "sha256": "013ff17d2a0697e1311c020cb94c9ef18136ab053e64320cfa4241fe575421ad"
+      "sha256": "b2096b1ddc5a8b507ab83cc936543f2319701461e0902871c0f7964baa43eb8d"
     },
     {
       "path": "qa/current/verify-layered-motion-impact.mts",
@@ -344,7 +360,7 @@
     },
     {
       "path": "qa/current/verify-local-scope.mts",
-      "sha256": "2127748419dc32098a6beff58a9bc071facff9cf1ed8540ff5bbc9bd3fbdc151"
+      "sha256": "4d08a8dc523efde5b88b1cfab82fe5697fd33c58b1b8b98ecb1e14e7d28e55c8"
     },
     {
       "path": "qa/current/verify-preservation.mts",
@@ -463,6 +479,118 @@
       "sha256": "8317e384d649b6daf6772c9e5a07fbd58b7f1ee4b2922c63467ac2047d0db70f"
     },
     {
+      "path": "qa/nacelle/accessory-preservation.mts",
+      "sha256": "2bd785c3cc77ddd53d9896f2c202477a16dd587eb0b000118d8636485bd01d6a"
+    },
+    {
+      "path": "qa/nacelle/accessory-preservation.selftest.mts",
+      "sha256": "66a4f0f018c9e08e1e74312bbb97e2226a2063f6b4c59198b742b2dac8bda866"
+    },
+    {
+      "path": "qa/nacelle/adaptive-patch-coverage.mts",
+      "sha256": "28ba0afc3a012d35bb396a631783b43550e128cd52015d02e3800ed00bed62e6"
+    },
+    {
+      "path": "qa/nacelle/exact-self-geometry.mjs",
+      "sha256": "5a02a819a25a5b70b080baf470703df86d48d0010558c4210c51be2cc143c0f2"
+    },
+    {
+      "path": "qa/nacelle/exact-self-geometry.selftest.mjs",
+      "sha256": "4dba2a3dc84c14497436b1e0f0fced3c03d5d430cb6c49af54e926a4a252dcf9"
+    },
+    {
+      "path": "qa/nacelle/exact-self-load.mts",
+      "sha256": "5d517080b469fa40c0328fdc5c7415c9e8b9b4557d539eca47bb8a3cd62ecf8c"
+    },
+    {
+      "path": "qa/nacelle/exact-self-regressions.json",
+      "sha256": "ace7778c93e83b79d99b941bbb46c22a002d612e5c6a8b53be906f3d0fdd6d4b"
+    },
+    {
+      "path": "qa/nacelle/exact-self-verify.mts",
+      "sha256": "28d2ff7af1e7de8e194478429d46d834751bdfa3e36aa95f3932e9329d8be2f4"
+    },
+    {
+      "path": "qa/nacelle/fixed-wing-surface-translation.mts",
+      "sha256": "457d5057a428f24ea4e7a85e25033318473eb2e9d08b03cdb23ea0ff030f2128"
+    },
+    {
+      "path": "qa/nacelle/hinge-dependency-review.mjs",
+      "sha256": "a3063835302c8dcf9a415d2c89c8143e575168c1d24e22beac67e39a5f1bb064"
+    },
+    {
+      "path": "qa/nacelle/host-decoration-preservation.mts",
+      "sha256": "f9f2132983120f2c32f5d65ff17ce3bd98c6f70e2ef38baa2ec1cf78e1958281"
+    },
+    {
+      "path": "qa/nacelle/host-decoration-preservation.selftest.mts",
+      "sha256": "d574221ae14980bcb64ab9c29f5216de08b3e623ecdd39e4f463ac8bf73a5f77"
+    },
+    {
+      "path": "qa/nacelle/host-decoration-subdivision.mts",
+      "sha256": "65cbf65a11e7919f7aea2d8745a060eb6d275f26b72a5966c2d546f83fa5640d"
+    },
+    {
+      "path": "qa/nacelle/oriented-microfold-corrections.mts",
+      "sha256": "166d84ce01348c9536dbc573727cbe6304e33bbb8da437e8088ac480c52048b9"
+    },
+    {
+      "path": "qa/nacelle/oriented-microfold-regressions.json",
+      "sha256": "c76bf9fadd9071d2241fb4c35256dbc43104a6f9b6d7c453f6bc5eb5dd3fec93"
+    },
+    {
+      "path": "qa/nacelle/powertrain-identity.mts",
+      "sha256": "19484a04151a0028c033818e26ed719723ff533717e83b7ea3c6c4cf33f528b4"
+    },
+    {
+      "path": "qa/nacelle/powertrain-identity.selftest.mts",
+      "sha256": "aa6a91370a0c630ba7ac61531b59edaca5e2c8439836c5d83d728d92959c2099"
+    },
+    {
+      "path": "qa/nacelle/repair-solid-orientation.mts",
+      "sha256": "d8ea6ba557f5440d9476f32b772c87fca8209fcdcf9df097fc47c26328c9c329"
+    },
+    {
+      "path": "qa/nacelle/underside-continuity.mts",
+      "sha256": "b15032293645e67c80dc984d0ce650c627bf040912ddff1c6a938d3c72f9997f"
+    },
+    {
+      "path": "qa/nacelle/verify-fuselage-scope.mts",
+      "sha256": "f39c31fd453325e485b2ec4a0e6291dfc62f6afc80b399034929b22bdd6a1fdd"
+    },
+    {
+      "path": "qa/nacelle/verify-mesh-precision.mjs",
+      "sha256": "5e823c6e70cec2e566f45c244e4d2a1bd54d2e3d9a992e201b7e64463f80dfba"
+    },
+    {
+      "path": "qa/nacelle/verify-nacelle-motion-impact.mts",
+      "sha256": "29d34d153cdbdac25fa4b2196b6c0b44b677fa3f83aa73b420ec496a200f0242"
+    },
+    {
+      "path": "qa/nacelle/verify-nacelle-placement.mts",
+      "sha256": "65ae1187bb177f8773511a9d3d5b2ad62c0ba148ab6fae8c981e1435f19a7c1c"
+    },
+    {
+      "path": "qa/nacelle/verify-nacelle-review.mjs",
+      "sha256": "14d22b9f7756ef413f1f05cac41ff9442ba2c732d0ca8f74f83b1e02d7d27345"
+    },
+    {
+      "path": "qa/nacelle/verify-wing-shape.mts",
+      "sha256": "b2be8bd228fca7c9c62b217ad951a04d0af626894ba7f913d4159b6de808e722"
+    },
+    {
+      "path": "qa/nacelle/wing-shape-logic.mts",
+      "sha256": "534d784356a5a2d2e5c97fcbae7427f4ca4efc299d85dacfc62ab5c9e3269b78"
+    },
+    {
+      "path": "qa/nacelle/wing-shape-regressions.json",
+      "sha256": "4c7cf989952215be3a72f8ec62c0c0e12773c158e4da2eb98e66f2e7d605fb31"
+    },
+    {
+      "path": "qa/nacelle/wing-shape.selftest.mts",
+      "sha256": "1d7b27f3e4fdeaaf81c1dc4c82fec27cae76f693ada77c3d5d5ce004d7b40ce3"
+    },
+    {
       "path": "qa/reference/accepted-motion-grid-origin.json",
       "sha256": "15b71f3be182a2e38f6738d9b2727088235100bb598f73416f2393d55b8fa795"
     },
@@ -476,7 +604,7 @@
     },
     {
       "path": "qa/reference/code-migration.json",
-      "sha256": "737ed854be7fe7a3f375b16b8b664e996f6216eb2101cca09f7330577efeb865"
+      "sha256": "0493c38dc5c892213289ed1f5ed556462ac5b2e5a0162a24e55de5a9fa2efa65"
     },
     {
       "path": "qa/reference/evidence-map.json",
@@ -591,8 +719,60 @@
       "sha256": "2cc39b4afe4c6a1328fe1d8585586511a9085892de8e41703292d64635875a79"
     },
     {
+      "path": "qa/reference/exact-self-fuselage-reference.json",
+      "sha256": "ce6d62a73b28eb1ce67196d0ba00b58987f67aa2a0eef7addd94a1cb3af5c195"
+    },
+    {
       "path": "qa/reference/motion-method-origin.json",
       "sha256": "ed04822c5a89200a719e79bb44a1cc66cbdd57cd3a6eb90430d0c4e6aad6de19"
+    },
+    {
+      "path": "qa/reference/nacelle-host-decoration-subdivision-reference.json",
+      "sha256": "7c9b35fba54bf7abb80867e4f2955cb2959a6b12fc5e2c5e8fa03e24baa5a88d"
+    },
+    {
+      "path": "qa/reference/nacelle-oriented-repair-corrections-v2.json",
+      "sha256": "2ebe5e631de56c16c81caf0a407126e2ae95e78a2d824cf556a2b1b26733d7d4"
+    },
+    {
+      "path": "qa/reference/nacelle-oriented-repair-corrections.json",
+      "sha256": "c5260fe320f2ff457e2ee2e0faa26d0df7a5e8c5d29275b3aff592e2e34a4309"
+    },
+    {
+      "path": "qa/reference/nacelle-pre-repair-wing-reference.json",
+      "sha256": "2f2750782f9384c39ab83c76799b062a33c88b7130897669f135034251da8b9d"
+    },
+    {
+      "path": "qa/reference/nacelle-previous-accessory-surfaces.json",
+      "sha256": "cbdc724658c3a92976bd42eab8b82eb21c86361c92488464f5914243a88b42d7"
+    },
+    {
+      "path": "qa/reference/nacelle-previous-fixed-wing.json",
+      "sha256": "0b6ec3fc16f62eddce73ccae9ce4df65a15ef503a534ad74c68786dde857fe14"
+    },
+    {
+      "path": "qa/reference/nacelle-previous-fuselage.json",
+      "sha256": "85535d86587aed302ff6892175c4b430c2db55ee85a8023d2eb76fad2ba6ad48"
+    },
+    {
+      "path": "qa/reference/nacelle-previous-host-decorations.json",
+      "sha256": "152134fbdd0b276b43cdaf6a38e5bce094e1e4dd09612a173712c23c4b7c6184"
+    },
+    {
+      "path": "qa/reference/nacelle-previous-motion.json",
+      "sha256": "83927880e9697e8ee2eb497cb92ae58800d1ea4500e82e61f8853a01c80e798e"
+    },
+    {
+      "path": "qa/reference/nacelle-previous-moving-root.json",
+      "sha256": "817e6ce0395cae35f89fc3de202c1e487b4dc59d0adc52b94bf19771a4c4a1eb"
+    },
+    {
+      "path": "qa/reference/nacelle-previous-reference.json",
+      "sha256": "417f7e24af6d8d523dafd90de5c824d5feaa9165b4506b111cc0d06419045d54"
+    },
+    {
+      "path": "qa/reference/nacelle-previous-summary.json",
+      "sha256": "475931954be31763db409dd96055d64a0d58edbb71f427e29fbfd07119d32fb4"
     },
     {
       "path": "qa/reference/previous-accepted-motion.json",
@@ -616,7 +796,7 @@
     },
     {
       "path": "qa/reference/reference-manifest.json",
-      "sha256": "e33134892df62045c2cb396871fbf048924ca314e52890c2f8574034bfb38ced"
+      "sha256": "4bc804ce26aea3f33d1307f51739228b400c721175c347dc0351f40c4eba1e4a"
     },
     {
       "path": "qa/reference/source-protected-surfaces.json",
@@ -624,15 +804,15 @@
     },
     {
       "path": "qa/regenerated/assets/blender/xp4-source.glb",
-      "sha256": "dda50afb4487d68ae7af7528bcb173bbc07692bce80709cd8d0b9647e029430f"
+      "sha256": "90b3ff42fe5cc807bc0383feccded8522346d29a24559ec67dcbdb8e98e30786"
     },
     {
       "path": "qa/regenerated/public/models/nacelle-system-concept.glb",
-      "sha256": "e19dab612efc023e91d0f32152bb146ed5644d27a3fff45e2aeaaeb9103f51ce"
+      "sha256": "55f0d778657593e8745ecd0711f5720c3d6f98abb91b9ffab0875eeef8d08996"
     },
     {
       "path": "qa/regenerated/public/models/xp4.glb",
-      "sha256": "f3aed2257ef3ff118fb3344c76da4196422743913af10be04e4fbfe627e40175"
+      "sha256": "565f5bb8b0cc5382dcf9157d634115faa3021b3c7d42f9cdcccdf6072eedf286"
     },
     {
       "path": "qa/regenerated/scripts/airframe_accessories.py",
@@ -680,7 +860,7 @@
     },
     {
       "path": "qa/regenerated/scripts/generate_transwing.py",
-      "sha256": "15143d25b906b75c0699c1c3eb344652cb0f7219707fb46302cc8f521436cc53"
+      "sha256": "d410d07e1f44691234180586c5ae926d5018561c70b8bba1fa96aac3bbc6575e"
     },
     {
       "path": "qa/regenerated/scripts/hinge_supports.py",
@@ -700,15 +880,23 @@
     },
     {
       "path": "qa/regenerated/scripts/kinematics.py",
-      "sha256": "73339f62a1e7bbfe2073aa7c0e65e26af69cfd46bf3a69d7d9ffcedae66a0ad5"
+      "sha256": "c729167c9cd1ccc7c4b879885e61090a9233fe6b6d5096d08652867096129896"
     },
     {
       "path": "qa/regenerated/scripts/layered_wing_joint.py",
-      "sha256": "1e77e7ca77b30366f3f019c33e33746f0a9088b0f4a6251e7015e1a3398829f9"
+      "sha256": "93a6d24c32f47974a57aaa2733ae8fcce3d6698e4b55dae9c6efabb0acda7b76"
     },
     {
       "path": "qa/regenerated/scripts/linkage_geometry.py",
       "sha256": "dc69500e86a0afbee4ce8d6a7f76cb7824052d25222309d25e0c42f8e42d00c5"
+    },
+    {
+      "path": "qa/regenerated/scripts/mesh_precision.py",
+      "sha256": "8e39c57a9fddb666b6e0bf55fd6e3343d2838f91f22e08f270875aed6b76712b"
+    },
+    {
+      "path": "qa/regenerated/scripts/nacelle_wing_layout.py",
+      "sha256": "72551901a17d9da9a44ff3c935ccc20c6048aef8080e340a78434896b5948a6e"
     },
     {
       "path": "qa/regenerated/scripts/output_slot_geometry.py",
@@ -740,11 +928,15 @@
     },
     {
       "path": "qa/regenerated/scripts/surface_supports.py",
-      "sha256": "905a56f30e75b821a63a2edd15ee9b88d14409e626a4d15e28b9bf89e4f537a5"
+      "sha256": "05a6d563f71306aaff858ac24878d0574874033a4ca8c9ee0557a91f4927b291"
     },
     {
       "path": "qa/regenerated/scripts/wing_seam.py",
-      "sha256": "a952e838ded95bdac45401d4ffc9f61632c13d71197f5b2f8eb7984418361a58"
+      "sha256": "4228da9c2983aa252b34bd059d9a5335bedcaac181319c16f824787aafb758fc"
+    },
+    {
+      "path": "qa/regenerated/scripts/wing_surface_repair.py",
+      "sha256": "f9c82250b63b01ea190094fa906c17ca629234c4f7b1c51b772573b6f9bbac43"
     },
     {
       "path": "qa/regenerated/scripts/wing_surfaces.py",
@@ -783,6 +975,10 @@
       "sha256": "50af15b925da72edc69bcb8fb3fb138d0c21aba95705053bb29a7da5d30dbc9c"
     },
     {
+      "path": "scripts/data/wing-post-triangulation-regression.json",
+      "sha256": "9d4ba4a909d94b4b2a08206a6fd6a585232a55cbad3f87a70dd826ab75175d9b"
+    },
+    {
       "path": "scripts/drive_layout.py",
       "sha256": "53efe7cadef9f79d87d884f5b1981b9eca775f3de80c58eee98ee3d803e57d69"
     },
@@ -796,7 +992,7 @@
     },
     {
       "path": "scripts/generate_transwing.py",
-      "sha256": "15143d25b906b75c0699c1c3eb344652cb0f7219707fb46302cc8f521436cc53"
+      "sha256": "d410d07e1f44691234180586c5ae926d5018561c70b8bba1fa96aac3bbc6575e"
     },
     {
       "path": "scripts/hinge_supports.py",
@@ -816,15 +1012,23 @@
     },
     {
       "path": "scripts/kinematics.py",
-      "sha256": "73339f62a1e7bbfe2073aa7c0e65e26af69cfd46bf3a69d7d9ffcedae66a0ad5"
+      "sha256": "c729167c9cd1ccc7c4b879885e61090a9233fe6b6d5096d08652867096129896"
     },
     {
       "path": "scripts/layered_wing_joint.py",
-      "sha256": "1e77e7ca77b30366f3f019c33e33746f0a9088b0f4a6251e7015e1a3398829f9"
+      "sha256": "93a6d24c32f47974a57aaa2733ae8fcce3d6698e4b55dae9c6efabb0acda7b76"
     },
     {
       "path": "scripts/linkage_geometry.py",
       "sha256": "dc69500e86a0afbee4ce8d6a7f76cb7824052d25222309d25e0c42f8e42d00c5"
+    },
+    {
+      "path": "scripts/mesh_precision.py",
+      "sha256": "8e39c57a9fddb666b6e0bf55fd6e3343d2838f91f22e08f270875aed6b76712b"
+    },
+    {
+      "path": "scripts/nacelle_wing_layout.py",
+      "sha256": "72551901a17d9da9a44ff3c935ccc20c6048aef8080e340a78434896b5948a6e"
     },
     {
       "path": "scripts/output_slot_geometry.py",
@@ -868,7 +1072,15 @@
     },
     {
       "path": "scripts/surface_supports.py",
-      "sha256": "905a56f30e75b821a63a2edd15ee9b88d14409e626a4d15e28b9bf89e4f537a5"
+      "sha256": "05a6d563f71306aaff858ac24878d0574874033a4ca8c9ee0557a91f4927b291"
+    },
+    {
+      "path": "scripts/test_mesh_precision.py",
+      "sha256": "212c2938021d9f1cea93a44043dcba0e8790ea158d8f9c0dfd588492c2c4df61"
+    },
+    {
+      "path": "scripts/test_wing_surface_repair.py",
+      "sha256": "3f1e15929ddb7054b876f6fd60ffba9cee5f8ddffc13001afb867b54be366bb0"
     },
     {
       "path": "scripts/verify-motor-animation.py",
@@ -884,11 +1096,11 @@
     },
     {
       "path": "scripts/verify-regeneration.mjs",
-      "sha256": "b4c5e1f3a5cae2ee39ad996e1ed4786091046dc3e0c00a0d78b47667315a8d4f"
+      "sha256": "5b36d7cad2e97c4896ddbf83b71a94ca0a5b8a1e0a44dc612bb156145dfddd35"
     },
     {
       "path": "scripts/verify-solids.py",
-      "sha256": "9a5d26c83b4f6ddf906d88df27ea6d5af295d9edca76b9988f67efeea43cdd56"
+      "sha256": "18cac73510964d58cd7b0c60735a79724fae2aad0791295123b309c9c42f6673"
     },
     {
       "path": "scripts/verify-source-runtime.mjs",
@@ -900,7 +1112,11 @@
     },
     {
       "path": "scripts/wing_seam.py",
-      "sha256": "a952e838ded95bdac45401d4ffc9f61632c13d71197f5b2f8eb7984418361a58"
+      "sha256": "4228da9c2983aa252b34bd059d9a5335bedcaac181319c16f824787aafb758fc"
+    },
+    {
+      "path": "scripts/wing_surface_repair.py",
+      "sha256": "f9c82250b63b01ea190094fa906c17ca629234c4f7b1c51b772573b6f9bbac43"
     },
     {
       "path": "scripts/wing_surfaces.py",

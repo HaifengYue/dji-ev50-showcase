@@ -1,0 +1,3723 @@
+{
+  "formatVersion": 1,
+  "purpose": "仅证明列明的功能改名和路径映射可精确逆向恢复原始文本；不替代实际运行或几何验收",
+  "editIndexUnit": "utf16-code-units",
+  "sourcePathMeaning": "原始路径仅作来源定位；当前运行使用功能化目标路径",
+  "files": [
+    {
+      "source": "THIRD_PARTY_NOTICES.txt",
+      "destination": "THIRD_PARTY_NOTICES.txt",
+      "sourceSha256": "fea1cc9b6d7233dcee7e596759da4dd3ca49bb30ee08054e89a89c7d03be8c9b",
+      "destinationSha256": "fea1cc9b6d7233dcee7e596759da4dd3ca49bb30ee08054e89a89c7d03be8c9b",
+      "bytes": 6064,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "examples/python/drive_trajectory.py",
+      "destination": "examples/python/drive_trajectory.py",
+      "sourceSha256": "2b3c357fe1049980fd563b33b56856d04016990e6676a2ac525be9497a87721a",
+      "destinationSha256": "2b3c357fe1049980fd563b33b56856d04016990e6676a2ac525be9497a87721a",
+      "bytes": 1382,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "examples/python/full_flow.json",
+      "destination": "examples/python/full_flow.json",
+      "sourceSha256": "cf8e29405e950e9ec15c7744908040eed2bc62b4d7dc1bd198f2b6abd4deaf13",
+      "destinationSha256": "cf8e29405e950e9ec15c7744908040eed2bc62b4d7dc1bd198f2b6abd4deaf13",
+      "bytes": 41446,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "examples/python/full_flow.py",
+      "destination": "examples/python/full_flow.py",
+      "sourceSha256": "e7ac339f326543fde64dbae8c3b7c106d184fe8afccfb343eefcb4bf4ea07579",
+      "destinationSha256": "e7ac339f326543fde64dbae8c3b7c106d184fe8afccfb343eefcb4bf4ea07579",
+      "bytes": 3352,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "examples/python/independent_motors.py",
+      "destination": "examples/python/independent_motors.py",
+      "sourceSha256": "cb08605ba7bbc151684c6874ac8fa8d81562d2ca736e931e4471cae65425b2f5",
+      "destinationSha256": "cb08605ba7bbc151684c6874ac8fa8d81562d2ca736e931e4471cae65425b2f5",
+      "bytes": 1035,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "index.html",
+      "destination": "index.html",
+      "sourceSha256": "363abb6025fd0a264e4e469e17a1b62c426615601cb86926a6ff0e9aeee37bb1",
+      "destinationSha256": "363abb6025fd0a264e4e469e17a1b62c426615601cb86926a6ff0e9aeee37bb1",
+      "bytes": 584,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "package-lock.json",
+      "destination": "package-lock.json",
+      "sourceSha256": "8ca282ddba0bc23d4de0e6db5888de6b3b855a0597ac9c8296c4ddef78ce1ff4",
+      "destinationSha256": "8ca282ddba0bc23d4de0e6db5888de6b3b855a0597ac9c8296c4ddef78ce1ff4",
+      "bytes": 90179,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "package.json",
+      "destination": "package.json",
+      "sourceSha256": "fbe6744094bcd133ce0e77df6c80bebe050803faff65366f62fd47bafdf0c827",
+      "destinationSha256": "fbe6744094bcd133ce0e77df6c80bebe050803faff65366f62fd47bafdf0c827",
+      "bytes": 1119,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "python/install.py",
+      "destination": "python/install.py",
+      "sourceSha256": "af2d3123ca423ee5fcb253acfff8cf850806cc33a88e7829e5d68d71580b15e1",
+      "destinationSha256": "af2d3123ca423ee5fcb253acfff8cf850806cc33a88e7829e5d68d71580b15e1",
+      "bytes": 953,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "python/protocol.schema.json",
+      "destination": "python/protocol.schema.json",
+      "sourceSha256": "f358573076fdee2fb98360a0db1a370b6428e56057fe069fe80be576a193b193",
+      "destinationSha256": "cd2e6b5ace55a88aee9f35c8565257197afca4a952265a9ed0ad95614848f86b",
+      "bytes": 11953,
+      "edits": [
+        {
+          "destinationStart": 84,
+          "destinationEnd": 84,
+          "originalText": " V14",
+          "replacementText": ""
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "python/requirements.lock",
+      "destination": "python/requirements.lock",
+      "sourceSha256": "cc1e4a33fe5d0b992fa2f1b372eca402ac6e6f17b44ced2b17e782bd418d1872",
+      "destinationSha256": "cc1e4a33fe5d0b992fa2f1b372eca402ac6e6f17b44ced2b17e782bd418d1872",
+      "bytes": 207,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "python/run_server.py",
+      "destination": "python/run_server.py",
+      "sourceSha256": "31faff7795c254cfaab6f7a4b38e7a9cdb6b0995bfc6727442c87d7dfefba505",
+      "destinationSha256": "31faff7795c254cfaab6f7a4b38e7a9cdb6b0995bfc6727442c87d7dfefba505",
+      "bytes": 161,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "python/tests/protocol_events.json",
+      "destination": "python/tests/protocol_events.json",
+      "sourceSha256": "3fc7abfd1574ff2f55dec6947ce2635dbc94528172d3f97129c11f69856a9441",
+      "destinationSha256": "3fc7abfd1574ff2f55dec6947ce2635dbc94528172d3f97129c11f69856a9441",
+      "bytes": 8052,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "python/tests/test_bridge.py",
+      "destination": "python/tests/test_bridge.py",
+      "sourceSha256": "a65e17bb90d9f4f5dab421d25e01d2f088d5b9c574b5780a7a73d6b81b68aa99",
+      "destinationSha256": "a65e17bb90d9f4f5dab421d25e01d2f088d5b9c574b5780a7a73d6b81b68aa99",
+      "bytes": 6617,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "python/tests/test_http.py",
+      "destination": "python/tests/test_http.py",
+      "sourceSha256": "888c4b1b723dcd079e975e8d9852af427ac98df0cd4877e56668811843b83cfb",
+      "destinationSha256": "888c4b1b723dcd079e975e8d9852af427ac98df0cd4877e56668811843b83cfb",
+      "bytes": 9668,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "python/tests/test_protocol.py",
+      "destination": "python/tests/test_protocol.py",
+      "sourceSha256": "b9bd662913227e6e2c38c49aac879430acf546733ada92fcb94315e13195b054",
+      "destinationSha256": "b9bd662913227e6e2c38c49aac879430acf546733ada92fcb94315e13195b054",
+      "bytes": 5228,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "python/transwing_sim/__init__.py",
+      "destination": "python/transwing_sim/__init__.py",
+      "sourceSha256": "bdd3c58cb2cf935ffa54b8bc195769549ebbe1b5a274011127a653f9e0765c84",
+      "destinationSha256": "bdd3c58cb2cf935ffa54b8bc195769549ebbe1b5a274011127a653f9e0765c84",
+      "bytes": 416,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "python/transwing_sim/client.py",
+      "destination": "python/transwing_sim/client.py",
+      "sourceSha256": "355b5f7418afa4cbaa87d915d92b466426a27c438bc780df981cf44ed0061afa",
+      "destinationSha256": "355b5f7418afa4cbaa87d915d92b466426a27c438bc780df981cf44ed0061afa",
+      "bytes": 13473,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "python/transwing_sim/protocol.py",
+      "destination": "python/transwing_sim/protocol.py",
+      "sourceSha256": "a177aa5239f1d25237e7e1687a7de675f7fe34bb2bf78df50bc897389508d62e",
+      "destinationSha256": "a177aa5239f1d25237e7e1687a7de675f7fe34bb2bf78df50bc897389508d62e",
+      "bytes": 8229,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "python/transwing_sim/recording.py",
+      "destination": "python/transwing_sim/recording.py",
+      "sourceSha256": "930f6fcfe6054ffe4c33118ed5c2c1eb057427ed1dbc82f2da56c25101f1430a",
+      "destinationSha256": "930f6fcfe6054ffe4c33118ed5c2c1eb057427ed1dbc82f2da56c25101f1430a",
+      "bytes": 2157,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "python/transwing_sim/server.py",
+      "destination": "python/transwing_sim/server.py",
+      "sourceSha256": "55ad32a30638c87f1db04bcee8c6ccfec4297685208a14943f38575bd0d008ed",
+      "destinationSha256": "55ad32a30638c87f1db04bcee8c6ccfec4297685208a14943f38575bd0d008ed",
+      "bytes": 26593,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/flight-regression.test.ts",
+      "destination": "qa/flight-regression.test.ts",
+      "sourceSha256": "7cea2cb247f2220b7c8dd635e791efbcc71b949ad50fb4042785f2f2826d5f24",
+      "destinationSha256": "7cea2cb247f2220b7c8dd635e791efbcc71b949ad50fb4042785f2f2826d5f24",
+      "bytes": 1833,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/glb-loader-check.mjs",
+      "destination": "qa/glb-loader-check.mjs",
+      "sourceSha256": "9bf5f5e43fd6627ba912a21b46a7604228b51964a7951e40d169f63f71a6da28",
+      "destinationSha256": "3e614d0dc7fe40e45dd1e4181a06a72a7e3fa2ff79066f93fff038dd8c4e1819",
+      "bytes": 1797,
+      "edits": [
+        {
+          "destinationStart": 1657,
+          "destinationEnd": 1665,
+          "originalText": "evidence",
+          "replacementText": "frontend"
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v11/rotor-envelope-geometry.mjs",
+      "destination": "qa/lib/rotor-envelope-geometry.mjs",
+      "sourceSha256": "7a653b45fc9e2e178c3c424dda7dfb803a2bba56912bc930a897f2bbab3ac64e",
+      "destinationSha256": "7a653b45fc9e2e178c3c424dda7dfb803a2bba56912bc930a897f2bbab3ac64e",
+      "bytes": 2842,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v12/compact-geometry.mjs",
+      "destination": "qa/lib/compact-geometry.mjs",
+      "sourceSha256": "8a0a4e88115d15bc3e94faa8b2215e61f9e9a2ff29bc0e8afa49bd58ad86c94d",
+      "destinationSha256": "2f018a4c4546aae1371e8f4a8de0498446a5cfccb10c5c0aa7233003cd3032a5",
+      "bytes": 6004,
+      "edits": [
+        {
+          "destinationStart": 178,
+          "destinationEnd": 178,
+          "originalText": "./v7",
+          "replacementText": ""
+        },
+        {
+          "destinationStart": 276,
+          "destinationEnd": 276,
+          "originalText": "./v9",
+          "replacementText": ""
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v13/runtime-concept-compression-check.mts",
+      "destination": "qa/lib/runtime-concept-compression-check.mts",
+      "sourceSha256": "3cc2d192dc19185ad52112e8428ef24f5b56747f508c5c44fcbd6f29f6befefb",
+      "destinationSha256": "3cc2d192dc19185ad52112e8428ef24f5b56747f508c5c44fcbd6f29f6befefb",
+      "bytes": 6183,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v14/runtime-detail-controls.mts",
+      "destination": "qa/lib/runtime-detail-controls.mts",
+      "sourceSha256": "dd890e20d93b0f7b5a576c31716066ccfec0ef60f4b2e3b95017b2408a4a9dab",
+      "destinationSha256": "f9d34ad29c00eb31e3bcee9d405473d60c4ecb6aee254abe539e3fa3cf842728",
+      "bytes": 8832,
+      "edits": [
+        {
+          "destinationStart": 299,
+          "destinationEnd": 305,
+          "originalText": "",
+          "replacementText": "or-mot"
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v14/runtime-motion.mts",
+      "destination": "qa/lib/runtime-motor-motion.mts",
+      "sourceSha256": "57a872a1cef221de8af0989d0565f40daaffa8d975bd7f08fdaef18af5997ad4",
+      "destinationSha256": "c188a447acf2281e86fa13d888fd26b9a37065244d91b31ab13205955bfe2eee",
+      "bytes": 9794,
+      "edits": [
+        {
+          "destinationStart": 8782,
+          "destinationEnd": 8789,
+          "originalText": "v14",
+          "replacementText": "current"
+        },
+        {
+          "destinationStart": 8791,
+          "destinationEnd": 8811,
+          "originalText": "untime",
+          "replacementText": "esults/runtime-motor"
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v15/verification/audit-scene.mts",
+      "destination": "qa/lib/pose-audit.mts",
+      "sourceSha256": "1b297fc895974e516fae7481ef8ef290da03ce72f79557a61665c4e2bbb350b8",
+      "destinationSha256": "6e5325f19d431d2d122ed2a6bffa130e26aef1f32157cda306c032e6029c5daf",
+      "bytes": 3635,
+      "edits": [
+        {
+          "destinationStart": 427,
+          "destinationEnd": 427,
+          "originalText": "../",
+          "replacementText": ""
+        },
+        {
+          "destinationStart": 486,
+          "destinationEnd": 489,
+          "originalText": "..",
+          "replacementText": "src"
+        },
+        {
+          "destinationStart": 490,
+          "destinationEnd": 520,
+          "originalText": "src",
+          "replacementText": "motors.ts';\nconst triModule='."
+        },
+        {
+          "destinationStart": 521,
+          "destinationEnd": 548,
+          "originalText": "motors.ts';\nconst tri",
+          "replacementText": "triangle-contact.mjs',solid"
+        },
+        {
+          "destinationStart": 557,
+          "destinationEnd": 557,
+          "originalText": "./../v7/triangle-contact.mjs',solidModule='../../v9",
+          "replacementText": ""
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v15/verification/runtime-motion.mts",
+      "destination": "qa/lib/runtime-rotor-motion.mts",
+      "sourceSha256": "17341fa75323ad753df61fcab1a2f0a4a2d0dde30c6738a041d15e01f584ab31",
+      "destinationSha256": "6a11997a0329c82e8463fa9c1517756a8699eed19d05489ab580bed6053ec91e",
+      "bytes": 9908,
+      "edits": [
+        {
+          "destinationStart": 487,
+          "destinationEnd": 487,
+          "originalText": "../",
+          "replacementText": ""
+        },
+        {
+          "destinationStart": 617,
+          "destinationEnd": 617,
+          "originalText": "../",
+          "replacementText": ""
+        },
+        {
+          "destinationStart": 967,
+          "destinationEnd": 967,
+          "originalText": "../",
+          "replacementText": ""
+        },
+        {
+          "destinationStart": 8896,
+          "destinationEnd": 8903,
+          "originalText": "v15",
+          "replacementText": "current"
+        },
+        {
+          "destinationStart": 8904,
+          "destinationEnd": 8911,
+          "originalText": "verification",
+          "replacementText": "results"
+        },
+        {
+          "destinationStart": 8919,
+          "destinationEnd": 8925,
+          "originalText": "",
+          "replacementText": "-rotor"
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v15/verification/runtime-self-clearance.mts",
+      "destination": "qa/lib/runtime-self-clearance.mts",
+      "sourceSha256": "dc0464fd7ae876aaf29b5ee555952d1a50701bd3923a902eebddd82e075cf19b",
+      "destinationSha256": "4fc6b4d9350e8d0d98e676c48d422f634ddfe6fc4fed02352de398ca0840dda8",
+      "bytes": 3646,
+      "edits": [
+        {
+          "destinationStart": 238,
+          "destinationEnd": 241,
+          "originalText": "..",
+          "replacementText": "src"
+        },
+        {
+          "destinationStart": 242,
+          "destinationEnd": 298,
+          "originalText": "src",
+          "replacementText": "rig.ts';\nimport {loadRuntimeRig,setMotorSamples} from '."
+        },
+        {
+          "destinationStart": 300,
+          "destinationEnd": 312,
+          "originalText": "ig.ts';\nimport {loadRuntimeRig,setMotorSamples} from './runtime",
+          "replacementText": "untime-rotor"
+        },
+        {
+          "destinationStart": 357,
+          "destinationEnd": 360,
+          "originalText": "..",
+          "replacementText": "src"
+        },
+        {
+          "destinationStart": 361,
+          "destinationEnd": 361,
+          "originalText": "src/",
+          "replacementText": ""
+        },
+        {
+          "destinationStart": 395,
+          "destinationEnd": 395,
+          "originalText": "./../v12",
+          "replacementText": ""
+        },
+        {
+          "destinationStart": 3178,
+          "destinationEnd": 3185,
+          "originalText": "v15",
+          "replacementText": "current"
+        },
+        {
+          "destinationStart": 3186,
+          "destinationEnd": 3193,
+          "originalText": "verification",
+          "replacementText": "results"
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v15/verification/runtime-shaft-clearance.mts",
+      "destination": "qa/lib/runtime-shaft-clearance.mts",
+      "sourceSha256": "7e68ac8ef4454a3873e9222160e1df8b0c6a8df6d56eb0da06cf890301487c75",
+      "destinationSha256": "7191718c010a9b73ebb91bab47eb742d3fa102dc5e3039f3efe6283a4e5853cb",
+      "bytes": 5070,
+      "edits": [
+        {
+          "destinationStart": 255,
+          "destinationEnd": 258,
+          "originalText": "..",
+          "replacementText": "src"
+        },
+        {
+          "destinationStart": 259,
+          "destinationEnd": 318,
+          "originalText": "src",
+          "replacementText": "rig.ts\";\nimport { loadRuntimeRig, setMotorSamples } from \"."
+        },
+        {
+          "destinationStart": 320,
+          "destinationEnd": 341,
+          "originalText": "ig.",
+          "replacementText": "untime-rotor-motion.m"
+        },
+        {
+          "destinationStart": 346,
+          "destinationEnd": 360,
+          "originalText": "import { loadRuntimeRig, set",
+          "replacementText": "const triangle"
+        },
+        {
+          "destinationStart": 362,
+          "destinationEnd": 368,
+          "originalText": "torSamples } from",
+          "replacementText": "dule ="
+        },
+        {
+          "destinationStart": 372,
+          "destinationEnd": 379,
+          "originalText": "runtim",
+          "replacementText": "triangl"
+        },
+        {
+          "destinationStart": 381,
+          "destinationEnd": 391,
+          "originalText": "motion.mt",
+          "replacementText": "contact.mj"
+        },
+        {
+          "destinationStart": 401,
+          "destinationEnd": 406,
+          "originalText": "triangle",
+          "replacementText": "solid"
+        },
+        {
+          "destinationStart": 417,
+          "destinationEnd": 417,
+          "originalText": "./../v7/triangle-contact.mjs\";\nconst solidModule = \"../../v9",
+          "replacementText": ""
+        },
+        {
+          "destinationStart": 4345,
+          "destinationEnd": 4352,
+          "originalText": "v15",
+          "replacementText": "current"
+        },
+        {
+          "destinationStart": 4353,
+          "destinationEnd": 4360,
+          "originalText": "verification",
+          "replacementText": "results"
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v15/verification/sdk-driver.py",
+      "destination": "qa/lib/sdk-driver.py",
+      "sourceSha256": "07e0903504c2ee414e7f8958cfa6399bc1a26be65e267d5f3fe8f7beeeeb1d90",
+      "destinationSha256": "07e0903504c2ee414e7f8958cfa6399bc1a26be65e267d5f3fe8f7beeeeb1d90",
+      "bytes": 1245,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v15/verification/verify-exported-motor-clip.mts",
+      "destination": "qa/lib/verify-exported-motor-clip.mts",
+      "sourceSha256": "88361fb6acc07c865dc181d1bb5ad15a3df2f67e098190e7dd552f73a413a2f2",
+      "destinationSha256": "dd2a678be7d0e8029755d4da1460c20e88f2529e9defe7172765b45a50fd1397",
+      "bytes": 3311,
+      "edits": [
+        {
+          "destinationStart": 183,
+          "destinationEnd": 187,
+          "originalText": "audit",
+          "replacementText": "pose"
+        },
+        {
+          "destinationStart": 188,
+          "destinationEnd": 193,
+          "originalText": "scene",
+          "replacementText": "audit"
+        },
+        {
+          "destinationStart": 225,
+          "destinationEnd": 225,
+          "originalText": "../",
+          "replacementText": ""
+        },
+        {
+          "destinationStart": 2903,
+          "destinationEnd": 2910,
+          "originalText": "v15",
+          "replacementText": "current"
+        },
+        {
+          "destinationStart": 2911,
+          "destinationEnd": 2918,
+          "originalText": "verification",
+          "replacementText": "results"
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v19/verification/drive-contract.mts",
+      "destination": "qa/lib/drive-contract.mts",
+      "sourceSha256": "54ed9a96b2824a429c117c688e85f1d5b94902b03d0ca4dc4d6edeb180cbf05f",
+      "destinationSha256": "eef9c605f4881e1498ac890751228034f04270ba97d773d7d84e3f86ce1a8216",
+      "bytes": 3830,
+      "edits": [
+        {
+          "destinationStart": 227,
+          "destinationEnd": 250,
+          "originalText": "",
+          "replacementText": "contracts/reference-dri"
+        },
+        {
+          "destinationStart": 251,
+          "destinationEnd": 251,
+          "originalText": "19/verification/driv",
+          "replacementText": ""
+        },
+        {
+          "destinationStart": 259,
+          "destinationEnd": 259,
+          "originalText": "-contract",
+          "replacementText": ""
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v19/verification/drive-motion-contract.json",
+      "destination": "qa/contracts/reference-drive-motion.json",
+      "sourceSha256": "8ae2e14559ab0894d2cfb1c6d106d3d0bc725c61bcf9661ac1b37209e6604b2d",
+      "destinationSha256": "8ae2e14559ab0894d2cfb1c6d106d3d0bc725c61bcf9661ac1b37209e6604b2d",
+      "bytes": 2623,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v22/verification/drive-contact-contracts.json",
+      "destination": "qa/contracts/drive-contact-contracts.json",
+      "sourceSha256": "10fc5860f709b11025acdf3c1ded9b234907d686ec8797b0f5a693ebfb8628bb",
+      "destinationSha256": "10fc5860f709b11025acdf3c1ded9b234907d686ec8797b0f5a693ebfb8628bb",
+      "bytes": 19147,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v22/verification/drive-motion-contract.json",
+      "destination": "qa/contracts/drive-motion.json",
+      "sourceSha256": "6f5ac374e7512b877440ce84f77368347f05232dfe9701d4a1e3e086ef16d763",
+      "destinationSha256": "6f5ac374e7512b877440ce84f77368347f05232dfe9701d4a1e3e086ef16d763",
+      "bytes": 2462,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v22/verification/numeric-drift.mts",
+      "destination": "qa/lib/numeric-drift.mts",
+      "sourceSha256": "209186c1e8c9a9a6dd772ea09015a30c20825f61a10051c5bdd76c79402505d4",
+      "destinationSha256": "209186c1e8c9a9a6dd772ea09015a30c20825f61a10051c5bdd76c79402505d4",
+      "bytes": 2548,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v22/verification/support-geometry.mts",
+      "destination": "qa/lib/support-geometry.mts",
+      "sourceSha256": "f03e7becf95bea23ad901b37ba7189ff2f77ac64cb2f7685e2f52d301601311e",
+      "destinationSha256": "f64d208497747da4bf41867654d7121d6efaec05f62c6f5f2a69971281bb3cb2",
+      "bytes": 13270,
+      "edits": [
+        {
+          "destinationStart": 175,
+          "destinationEnd": 175,
+          "originalText": "./../v9",
+          "replacementText": ""
+        },
+        {
+          "destinationStart": 249,
+          "destinationEnd": 249,
+          "originalText": "./../v7",
+          "replacementText": ""
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v22/verification/support-geometry.selftest.mts",
+      "destination": "qa/lib/support-geometry.selftest.mts",
+      "sourceSha256": "341e81b7a8c16328b2033b1b747272fab6b68fc6b9ff9c315f0334123c4934b3",
+      "destinationSha256": "0a97a84fdfdcd346e4ed04223704f8cdaa46b3f088618b85bd78832eb737c14e",
+      "bytes": 1909,
+      "edits": [
+        {
+          "destinationStart": 220,
+          "destinationEnd": 220,
+          "originalText": "./../v7",
+          "replacementText": ""
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v22/verification/verify-baked-winding.mts",
+      "destination": "qa/lib/verify-baked-winding.mts",
+      "sourceSha256": "714e2de8391287141e89240b831e89874ac53f4e93e97a89bdff0319f96b3a64",
+      "destinationSha256": "b6287f8b2ab9b794a430a9e73bc4b70ac3a0b5611ecf3e93f63c4cb6d20bc4de",
+      "bytes": 9630,
+      "edits": [
+        {
+          "destinationStart": 454,
+          "destinationEnd": 454,
+          "originalText": "../",
+          "replacementText": ""
+        },
+        {
+          "destinationStart": 535,
+          "destinationEnd": 535,
+          "originalText": "./../v19/verification",
+          "replacementText": ""
+        },
+        {
+          "destinationStart": 9502,
+          "destinationEnd": 9509,
+          "originalText": "v22",
+          "replacementText": "current"
+        },
+        {
+          "destinationStart": 9510,
+          "destinationEnd": 9517,
+          "originalText": "verification",
+          "replacementText": "results"
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v22/verification/verify-drive-motion.mts",
+      "destination": "qa/lib/verify-drive-motion.mts",
+      "sourceSha256": "e86fed602aca3326aef4fa5a317312eac1d8b4fbcd08e471188a8aa7fbf77f92",
+      "destinationSha256": "363bf10cc17d5794673aa85fc30867e5a91ddf45c642ad880d9f9e1085b705b0",
+      "bytes": 7182,
+      "edits": [
+        {
+          "destinationStart": 486,
+          "destinationEnd": 486,
+          "originalText": "../",
+          "replacementText": ""
+        },
+        {
+          "destinationStart": 537,
+          "destinationEnd": 540,
+          "originalText": "..",
+          "replacementText": "src"
+        },
+        {
+          "destinationStart": 541,
+          "destinationEnd": 541,
+          "originalText": "src/",
+          "replacementText": ""
+        },
+        {
+          "destinationStart": 621,
+          "destinationEnd": 621,
+          "originalText": "./../v19/verification",
+          "replacementText": ""
+        },
+        {
+          "destinationStart": 7055,
+          "destinationEnd": 7062,
+          "originalText": "v22",
+          "replacementText": "current"
+        },
+        {
+          "destinationStart": 7063,
+          "destinationEnd": 7070,
+          "originalText": "verification",
+          "replacementText": "results"
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v22/verification/verify-local-parity.mts",
+      "destination": "qa/lib/verify-local-parity.mts",
+      "sourceSha256": "2f2a4e500aff8ef2b7d29741be8af22f5a079e06df13eebc9955c06234225d4d",
+      "destinationSha256": "60fb8f536ddf18379078f25e6540635930ccf5d26fa4310d220adc6d86ddaa8a",
+      "bytes": 5762,
+      "edits": [
+        {
+          "destinationStart": 419,
+          "destinationEnd": 419,
+          "originalText": "../",
+          "replacementText": ""
+        },
+        {
+          "destinationStart": 5635,
+          "destinationEnd": 5642,
+          "originalText": "v22",
+          "replacementText": "current"
+        },
+        {
+          "destinationStart": 5643,
+          "destinationEnd": 5650,
+          "originalText": "verification",
+          "replacementText": "results"
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v22/verify-python-render.mts",
+      "destination": "qa/lib/verify-python-render.mts",
+      "sourceSha256": "4812bc934c7f3403282d0c6aa27bc5aac2771521c5ae7da171aab9b424842b06",
+      "destinationSha256": "8317e384d649b6daf6772c9e5a07fbd58b7f1ee4b2922c63467ac2047d0db70f",
+      "bytes": 19720,
+      "edits": [
+        {
+          "destinationStart": 597,
+          "destinationEnd": 597,
+          "originalText": ".",
+          "replacementText": ""
+        },
+        {
+          "destinationStart": 598,
+          "destinationEnd": 611,
+          "originalText": "v15/verification/runtime",
+          "replacementText": "runtime-rotor"
+        },
+        {
+          "destinationStart": 805,
+          "destinationEnd": 805,
+          "originalText": "./v19/verification",
+          "replacementText": ""
+        },
+        {
+          "destinationStart": 1721,
+          "destinationEnd": 1724,
+          "originalText": "v15/verification",
+          "replacementText": "lib"
+        },
+        {
+          "destinationStart": 18822,
+          "destinationEnd": 18829,
+          "originalText": "v22",
+          "replacementText": "current"
+        },
+        {
+          "destinationStart": 18830,
+          "destinationEnd": 18837,
+          "originalText": "verification",
+          "replacementText": "results"
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v23/verification/audit-scene.mts",
+      "destination": "qa/lib/snapshot-audit.mts",
+      "sourceSha256": "8210c0072db319eee29fc7ccbc091d7f98a454b7743bd4ef2635dd2ef75c3c0e",
+      "destinationSha256": "d4a334e7966bd8ff2e2cc5af12036ff3fce345016c0f5785ec9561f1f93b9eb4",
+      "bytes": 1988,
+      "edits": [
+        {
+          "destinationStart": 135,
+          "destinationEnd": 135,
+          "originalText": ".",
+          "replacementText": ""
+        },
+        {
+          "destinationStart": 136,
+          "destinationEnd": 176,
+          "originalText": "../v15/veri",
+          "replacementText": "pose-audit.mts';\nimport {solidTopology} "
+        },
+        {
+          "destinationStart": 177,
+          "destinationEnd": 181,
+          "originalText": "ication/audit-scene.mts",
+          "replacementText": "rom "
+        },
+        {
+          "destinationStart": 182,
+          "destinationEnd": 183,
+          "originalText": ";\nimport {solidTopology} from '../../v9",
+          "replacementText": "."
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v23/verification/support-contracts.json",
+      "destination": "qa/contracts/reference-supports.json",
+      "sourceSha256": "c7c99a123ceafdcca14256b97c9438f76a2b65a7047688bee31ff3383ca5b27d",
+      "destinationSha256": "c7c99a123ceafdcca14256b97c9438f76a2b65a7047688bee31ff3383ca5b27d",
+      "bytes": 464502,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v23/verification/verify-linkage.mts",
+      "destination": "qa/lib/verify-linkage.mts",
+      "sourceSha256": "4347f9ecd996fddf2ed8dda19ad07f5551b66d9805413b05eba4661ef5ea3416",
+      "destinationSha256": "b437f739b24f378cf4b28b6d41f3cc32acec356123c92fe37ebbefbf15d33966",
+      "bytes": 9425,
+      "edits": [
+        {
+          "destinationStart": 467,
+          "destinationEnd": 467,
+          "originalText": "../",
+          "replacementText": ""
+        },
+        {
+          "destinationStart": 535,
+          "destinationEnd": 535,
+          "originalText": "../",
+          "replacementText": ""
+        },
+        {
+          "destinationStart": 589,
+          "destinationEnd": 596,
+          "originalText": "v23",
+          "replacementText": "current"
+        },
+        {
+          "destinationStart": 597,
+          "destinationEnd": 604,
+          "originalText": "verification",
+          "replacementText": "results"
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v24/frontend/run.py",
+      "destination": "qa/frontend/run.py",
+      "sourceSha256": "471444f89c222533ebb36ab8a89514af4b649a3b2a594d214d810a563495652d",
+      "destinationSha256": "8f7fee89da5de28d7b09f68c6196ea5bc52cce2bd1e63a54202ddc2e37327bc4",
+      "bytes": 10296,
+      "edits": [
+        {
+          "destinationStart": 287,
+          "destinationEnd": 288,
+          "originalText": "3",
+          "replacementText": "2"
+        },
+        {
+          "destinationStart": 306,
+          "destinationEnd": 306,
+          "originalText": "/v24",
+          "replacementText": ""
+        },
+        {
+          "destinationStart": 1880,
+          "destinationEnd": 1880,
+          "originalText": "/v24",
+          "replacementText": ""
+        },
+        {
+          "destinationStart": 9119,
+          "destinationEnd": 9119,
+          "originalText": "v24/",
+          "replacementText": ""
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v24/verification/audit-scene.mts",
+      "destination": "qa/current/audit-scene.mts",
+      "sourceSha256": "1aeca164d7d2aa786094e2037b72e6c0a01f712381521baf00758d0d8fe45128",
+      "destinationSha256": "3e1d6c6ace8c91ab639194a9497bf5dcd3bfa4202aadad6c2bba8b9d78ded9d5",
+      "bytes": 587,
+      "edits": [
+        {
+          "destinationStart": 95,
+          "destinationEnd": 106,
+          "originalText": "../v23/verification/audi",
+          "replacementText": "lib/snapsho"
+        },
+        {
+          "destinationStart": 108,
+          "destinationEnd": 113,
+          "originalText": "scene",
+          "replacementText": "audit"
+        },
+        {
+          "destinationStart": 227,
+          "destinationEnd": 235,
+          "originalText": "../v15/verification/audit",
+          "replacementText": "lib/pose"
+        },
+        {
+          "destinationStart": 236,
+          "destinationEnd": 241,
+          "originalText": "scene",
+          "replacementText": "audit"
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v24/verification/broadphase.mts",
+      "destination": "qa/current/broadphase.mts",
+      "sourceSha256": "cb0cc9d91f50fb7d2648fc3755cdfaaee37f33610b370758afc682b83d4507b2",
+      "destinationSha256": "cb0cc9d91f50fb7d2648fc3755cdfaaee37f33610b370758afc682b83d4507b2",
+      "bytes": 248,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v24/verification/broadphase.selftest.mts",
+      "destination": "qa/current/broadphase.selftest.mts",
+      "sourceSha256": "f1a699a0e6eb167ba4254367294a36e6c675836ba6b429f10bcfbdeab6121241",
+      "destinationSha256": "80faf055dabfe3f81a4df4d7f16b2e3c6c3f56572af680dd480475220eced3a9",
+      "bytes": 1010,
+      "edits": [
+        {
+          "destinationStart": 212,
+          "destinationEnd": 215,
+          "originalText": "../v7",
+          "replacementText": "lib"
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v24/verification/decoration-topology.selftest.mts",
+      "destination": "qa/current/decoration-topology.selftest.mts",
+      "sourceSha256": "05282cb05993885e396abec5ee487f244defa6f7c07671bf5f2d90d9e3158314",
+      "destinationSha256": "05282cb05993885e396abec5ee487f244defa6f7c07671bf5f2d90d9e3158314",
+      "bytes": 1089,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v24/verification/exact-pair-cache.mts",
+      "destination": "qa/current/exact-pair-cache.mts",
+      "sourceSha256": "6d5a1b2b815f60931164571ba1a755945e9b46f045af5a49f3e6ef7184f7119f",
+      "destinationSha256": "6d5a1b2b815f60931164571ba1a755945e9b46f045af5a49f3e6ef7184f7119f",
+      "bytes": 1697,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v24/verification/exact-pair-cache.selftest.mts",
+      "destination": "qa/current/exact-pair-cache.selftest.mts",
+      "sourceSha256": "1eae34a872ffe44c74818833112ec9cc3c67c4761c3752f9a3b0cbfe2ebb50a5",
+      "destinationSha256": "1eae34a872ffe44c74818833112ec9cc3c67c4761c3752f9a3b0cbfe2ebb50a5",
+      "bytes": 1624,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v24/verification/motion-reference.mts",
+      "destination": "qa/current/motion-reference.mts",
+      "sourceSha256": "eea8807678a19fed203ce990265a5ab1541e838d8de59b6acc5c755b606b244f",
+      "destinationSha256": "eea8807678a19fed203ce990265a5ab1541e838d8de59b6acc5c755b606b244f",
+      "bytes": 23484,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v24/verification/slot-boundary-vertices.mts",
+      "destination": "qa/current/slot-boundary-vertices.mts",
+      "sourceSha256": "5f319ab1f7029f928b588bff8b90dc2f2ef0343a86676be503f0758d01b8098c",
+      "destinationSha256": "5f319ab1f7029f928b588bff8b90dc2f2ef0343a86676be503f0758d01b8098c",
+      "bytes": 22608,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v24/verification/slot-boundary-vertices.selftest.mts",
+      "destination": "qa/current/slot-boundary-vertices.selftest.mts",
+      "sourceSha256": "1e69788e67db359b0bc9e293208c2ce701875de18dad15f86fb1770339d8941e",
+      "destinationSha256": "1e69788e67db359b0bc9e293208c2ce701875de18dad15f86fb1770339d8941e",
+      "bytes": 12654,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v24/verification/slot-section.mts",
+      "destination": "qa/current/slot-section.mts",
+      "sourceSha256": "254fcff85a8ea4fa840aea0ad41e6888722ceccc5ac0843e155eebf818aa34b0",
+      "destinationSha256": "254fcff85a8ea4fa840aea0ad41e6888722ceccc5ac0843e155eebf818aa34b0",
+      "bytes": 3482,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v24/verification/slot-section.selftest.mts",
+      "destination": "qa/current/slot-section.selftest.mts",
+      "sourceSha256": "d5ae290374763a52f07b3c6fcf743ee3796c6b2197d43586f57e1bfd80825e9d",
+      "destinationSha256": "d5ae290374763a52f07b3c6fcf743ee3796c6b2197d43586f57e1bfd80825e9d",
+      "bytes": 2354,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v24/verification/straight-output-geometry.mts",
+      "destination": "qa/current/straight-output-geometry.mts",
+      "sourceSha256": "c50afa6c8a937db527c3a793a3c24606a07e3c3c86d2c7186ff9e7c74caab960",
+      "destinationSha256": "5fb5cdc51d9ce5c76915e1205431985d0a3a99dae4f9a8e1cf276c18263fe7cb",
+      "bytes": 14970,
+      "edits": [
+        {
+          "destinationStart": 76,
+          "destinationEnd": 79,
+          "originalText": "../v9",
+          "replacementText": "lib"
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v24/verification/straight-output-geometry.selftest.mts",
+      "destination": "qa/current/straight-output-geometry.selftest.mts",
+      "sourceSha256": "a019993a126a585c532768fc51e4d9b62ee302347b0a4569ab8e8e6c9454a629",
+      "destinationSha256": "a019993a126a585c532768fc51e4d9b62ee302347b0a4569ab8e8e6c9454a629",
+      "bytes": 5589,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v24/verification/verify-regenerated-contract.mjs",
+      "destination": "qa/current/verify-regenerated-contract.mjs",
+      "sourceSha256": "821a17c28ef715199ee8bd1375cf891d47f5e1d85fe550baa8cf3e82164764ab",
+      "destinationSha256": "3ecb86240fb437d7d8cf40ebbf0e14c2b20f8e7ac9bfbf714fd9b86d156b3ab3",
+      "bytes": 1743,
+      "edits": [
+        {
+          "destinationStart": 300,
+          "destinationEnd": 317,
+          "originalText": "assets",
+          "replacementText": "qa/current/author"
+        },
+        {
+          "destinationStart": 343,
+          "destinationEnd": 343,
+          "originalText": "-v24",
+          "replacementText": ""
+        },
+        {
+          "destinationStart": 1616,
+          "destinationEnd": 1623,
+          "originalText": "v24/verification",
+          "replacementText": "current"
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v24/verification/verify-straight-output.mts",
+      "destination": "qa/current/verify-straight-output.mts",
+      "sourceSha256": "9dd6c4930b0414b7745325edbde5a9e22ef4df5f9157deab9963ac24fa2e9a86",
+      "destinationSha256": "05d4fbfad2d955f6a10b2bc4b655643ad682fc91b2c3d03c31a4d684907d50d6",
+      "bytes": 5748,
+      "edits": [
+        {
+          "destinationStart": 964,
+          "destinationEnd": 971,
+          "originalText": "v24/verification",
+          "replacementText": "current"
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v7/triangle-contact.mjs",
+      "destination": "qa/lib/triangle-contact.mjs",
+      "sourceSha256": "c8c8bc4f141aff261dbb0bac493fb9e7b4066cae9e1eb95f41cdd9b7718700bb",
+      "destinationSha256": "c8c8bc4f141aff261dbb0bac493fb9e7b4066cae9e1eb95f41cdd9b7718700bb",
+      "bytes": 13195,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v7/triangle-contact.selftest.mjs",
+      "destination": "qa/lib/triangle-contact.selftest.mjs",
+      "sourceSha256": "907c42c7b0983d43b9bde2ddc3e3fb5474494c5d55b810ddf130ecdab0b820c7",
+      "destinationSha256": "907c42c7b0983d43b9bde2ddc3e3fb5474494c5d55b810ddf130ecdab0b820c7",
+      "bytes": 10527,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v9/runtime-geometry.mts",
+      "destination": "qa/lib/runtime-geometry.mts",
+      "sourceSha256": "3f464fb9f2a8b4b97d033b372aa0254a75e76dbc61c0c15ed102edec1f81e704",
+      "destinationSha256": "3f464fb9f2a8b4b97d033b372aa0254a75e76dbc61c0c15ed102edec1f81e704",
+      "bytes": 4364,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v9/solid-contact.mjs",
+      "destination": "qa/lib/solid-contact.mjs",
+      "sourceSha256": "a9f5e45e51adbd938f2656777ebdef213c8bce77f569651449d42bf574432308",
+      "destinationSha256": "ce7e6268a2b923be64a714716989206c325d283936f28cb7a72d98d2433f023d",
+      "bytes": 6360,
+      "edits": [
+        {
+          "destinationStart": 79,
+          "destinationEnd": 79,
+          "originalText": "./v7",
+          "replacementText": ""
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "qa/v9/solid-contact.selftest.mjs",
+      "destination": "qa/lib/solid-contact.selftest.mjs",
+      "sourceSha256": "786c545dd32ef25560658b0566ff1c6097a373c41134bbaf04be3f2d330de8b6",
+      "destinationSha256": "81046dbf715a7243f118b0419e1e8dc8ba77d3f7b3897714974bca44bce83cd0",
+      "bytes": 3013,
+      "edits": [
+        {
+          "destinationStart": 160,
+          "destinationEnd": 160,
+          "originalText": "./v7",
+          "replacementText": ""
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "scripts/airframe_details_v10.py",
+      "destination": "scripts/airframe_accessories.py",
+      "sourceSha256": "d730864a644b729eb47fe11f81cdb7122df4b654b4cf8409432723ed35f3ca17",
+      "destinationSha256": "d730864a644b729eb47fe11f81cdb7122df4b654b4cf8409432723ed35f3ca17",
+      "bytes": 19391,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "scripts/airframe_details_v11.py",
+      "destination": "scripts/airframe_refinements.py",
+      "sourceSha256": "9904ff1896b61584990962827b2a4c43d9a4ca84baa5095b0c4b02a9886aa6fb",
+      "destinationSha256": "9904ff1896b61584990962827b2a4c43d9a4ca84baa5095b0c4b02a9886aa6fb",
+      "bytes": 6616,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "scripts/airframe_details_v12.py",
+      "destination": "scripts/wing_surfaces.py",
+      "sourceSha256": "4be94d46d7ba231537e84cfdf61a72d1c6d0313c5fec1f30c0deb7004ef4ab54",
+      "destinationSha256": "4be94d46d7ba231537e84cfdf61a72d1c6d0313c5fec1f30c0deb7004ef4ab54",
+      "bytes": 12664,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "scripts/airframe_details_v13.py",
+      "destination": "scripts/central_wing_attachment.py",
+      "sourceSha256": "37c8c2a9f55958fd5708910e61257bc01188874b202bc8a61bd0f590e1ddd4b8",
+      "destinationSha256": "2503291ec4f7d785bab4d93e19b9d3a54605d572aa89b85cedfdedd1448a3979",
+      "bytes": 13165,
+      "edits": [
+        {
+          "destinationStart": 169,
+          "destinationEnd": 182,
+          "originalText": "airframe_details_v12",
+          "replacementText": "wing_surfaces"
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "scripts/airframe_details_v14.py",
+      "destination": "scripts/embedded_joint_surfaces.py",
+      "sourceSha256": "bfa1e6d506b50f97f6a8230c4340c1dd94a777e7497a61691f9687a3f848c8b4",
+      "destinationSha256": "bfa1e6d506b50f97f6a8230c4340c1dd94a777e7497a61691f9687a3f848c8b4",
+      "bytes": 3809,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "scripts/compress-concept-v10.mjs",
+      "destination": "scripts/compress-concept.mjs",
+      "sourceSha256": "b1da5746b96a5627ca9b4dba95b2d5ed3ec708c8a0e9928b64d899c658cdc153",
+      "destinationSha256": "b1da5746b96a5627ca9b4dba95b2d5ed3ec708c8a0e9928b64d899c658cdc153",
+      "bytes": 4273,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "scripts/control_supports_v21.py",
+      "destination": "scripts/control_supports.py",
+      "sourceSha256": "28505aee0d5eb2b8f36afef2a63a8bbf4a15cfa209212eb948d8718f7a2109de",
+      "destinationSha256": "28505aee0d5eb2b8f36afef2a63a8bbf4a15cfa209212eb948d8718f7a2109de",
+      "bytes": 6596,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "scripts/data/fixed-root-paint-encoding-v13.json",
+      "destination": "scripts/data/fixed-root-paint-encoding.json",
+      "sourceSha256": "b112619e432e67b31d605f847d31dab716ce3c5bcbaf334c20985b9d2fe124e2",
+      "destinationSha256": "b112619e432e67b31d605f847d31dab716ce3c5bcbaf334c20985b9d2fe124e2",
+      "bytes": 299536,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "scripts/data/preserved-front-surfaces-v23.blend",
+      "destination": "scripts/data/preserved-front-surfaces.blend",
+      "sourceSha256": "69c73ce46be035abb655b03a9608523ce38f3695ed3f0bbdc5b5436cc488451c",
+      "destinationSha256": "69c73ce46be035abb655b03a9608523ce38f3695ed3f0bbdc5b5436cc488451c",
+      "bytes": 732142,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "scripts/data/preserved-front-surfaces-v23.json",
+      "destination": "scripts/data/preserved-front-surfaces.json",
+      "sourceSha256": "50af15b925da72edc69bcb8fb3fb138d0c21aba95705053bb29a7da5d30dbc9c",
+      "destinationSha256": "50af15b925da72edc69bcb8fb3fb138d0c21aba95705053bb29a7da5d30dbc9c",
+      "bytes": 611,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "scripts/drive_layout.py",
+      "destination": "scripts/drive_layout.py",
+      "sourceSha256": "53efe7cadef9f79d87d884f5b1981b9eca775f3de80c58eee98ee3d803e57d69",
+      "destinationSha256": "53efe7cadef9f79d87d884f5b1981b9eca775f3de80c58eee98ee3d803e57d69",
+      "bytes": 735,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "scripts/generate-concept-v10.py",
+      "destination": "scripts/generate-concept.py",
+      "sourceSha256": "ea4233de4e3969280524193a99bdba9052c5116d4a61d1ebfb46459e3c808210",
+      "destinationSha256": "72f121693aaa5a78b5e096fe3ab673de30239f972d9dc455fb946be015989c9a",
+      "bytes": 2134,
+      "edits": [
+        {
+          "destinationStart": 983,
+          "destinationEnd": 994,
+          "originalText": "details_v10",
+          "replacementText": "accessories"
+        },
+        {
+          "destinationStart": 1191,
+          "destinationEnd": 1202,
+          "originalText": "details_v10",
+          "replacementText": "accessories"
+        },
+        {
+          "destinationStart": 1234,
+          "destinationEnd": 1245,
+          "originalText": "details_v10",
+          "replacementText": "accessories"
+        },
+        {
+          "destinationStart": 1278,
+          "destinationEnd": 1289,
+          "originalText": "details_v10",
+          "replacementText": "accessories"
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "scripts/hinge_supports_v21.py",
+      "destination": "scripts/hinge_supports.py",
+      "sourceSha256": "3ceb9cce86a638191d0efa4b83c2f941e39909db42af2c5bd9596ae6ea6da83d",
+      "destinationSha256": "3ceb9cce86a638191d0efa4b83c2f941e39909db42af2c5bd9596ae6ea6da83d",
+      "bytes": 8068,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "scripts/output_slots_v22.py",
+      "destination": "scripts/output_slot_geometry.py",
+      "sourceSha256": "abb198cb363578773acc15bd04aaab4da2bf9507c6da0b99ef97db36ea703c5b",
+      "destinationSha256": "abb198cb363578773acc15bd04aaab4da2bf9507c6da0b99ef97db36ea703c5b",
+      "bytes": 3804,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "scripts/package-lock.json",
+      "destination": "scripts/package-lock.json",
+      "sourceSha256": "a4cda2aeaa58d86bffcc4b4020346d64b3abefc954d858f8c398521e464c904f",
+      "destinationSha256": "a4cda2aeaa58d86bffcc4b4020346d64b3abefc954d858f8c398521e464c904f",
+      "bytes": 25110,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "scripts/package.json",
+      "destination": "scripts/package.json",
+      "sourceSha256": "4d87fdff2312cb3afc1ecd98c39e152c6b44e792b4ea717c8f94204ab8d857a7",
+      "destinationSha256": "4d87fdff2312cb3afc1ecd98c39e152c6b44e792b4ea717c8f94204ab8d857a7",
+      "bytes": 178,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "scripts/propeller_details_v12.py",
+      "destination": "scripts/propeller_shape.py",
+      "sourceSha256": "51ee268df416fdc03304d9d5af397a1a3ef7d451cd6ab6b94ca6e9ca9f5a2636",
+      "destinationSha256": "51ee268df416fdc03304d9d5af397a1a3ef7d451cd6ab6b94ca6e9ca9f5a2636",
+      "bytes": 10104,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "scripts/propeller_details_v15.py",
+      "destination": "scripts/rotor_handedness.py",
+      "sourceSha256": "dfa3df250cc414a8c1bcbe48527fac6b65451c48e34eff08158a451d8797539a",
+      "destinationSha256": "a2efa85830f31a7e842e8b90719bdd9a06f80a283a7f17fbfa007a0affa84ff9",
+      "bytes": 4911,
+      "edits": [
+        {
+          "destinationStart": 75,
+          "destinationEnd": 80,
+          "originalText": "details_v12",
+          "replacementText": "shape"
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "scripts/reexport-source-v24.py",
+      "destination": "scripts/reexport-source.py",
+      "sourceSha256": "58a0b7ffe80f6013a0a68e75faaaf827674b5bb05f06c2b1a235c5b3202e39cf",
+      "destinationSha256": "12434c473af230a3cd5e2dd0a45dee5095829dc8d97032b124c484a4b3b912b8",
+      "bytes": 459,
+      "edits": [
+        {
+          "destinationStart": 370,
+          "destinationEnd": 387,
+          "originalText": "assets",
+          "replacementText": "qa/current/author"
+        },
+        {
+          "destinationStart": 403,
+          "destinationEnd": 403,
+          "originalText": "-v24",
+          "replacementText": ""
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "scripts/slot_preservation_v24.py",
+      "destination": "scripts/preserved_surfaces.py",
+      "sourceSha256": "fd43bf257f0e0fb88e05a770a6200e9d4bdd0e3e8e6c7f9233f678c924125759",
+      "destinationSha256": "4e7d66d3991317311a91251920e7841f9d35db50d411d80613798c576bf1e18e",
+      "bytes": 7883,
+      "edits": [
+        {
+          "destinationStart": 416,
+          "destinationEnd": 474,
+          "originalText": "",
+          "replacementText": ".json').read_text())\n    path=root/'scripts/data/preserved"
+        },
+        {
+          "destinationStart": 475,
+          "destinationEnd": 480,
+          "originalText": "v23.json').read_text())\n    path=root/'scripts/data/preserved",
+          "replacementText": "front"
+        },
+        {
+          "destinationStart": 481,
+          "destinationEnd": 489,
+          "originalText": "front-surfaces-v23",
+          "replacementText": "surfaces"
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "scripts/slot_topology_v24.py",
+      "destination": "scripts/slot_topology.py",
+      "sourceSha256": "cb733918cd83a5da937dc102ae7b7946e90dbbe13a4c946c2dfc0c0c8f1f71c4",
+      "destinationSha256": "a58e6a868b17fe4898e9f42bdc9b810b6b50f974f8161b23597a0fd3d1cbcdef",
+      "bytes": 17817,
+      "edits": [
+        {
+          "destinationStart": 11556,
+          "destinationEnd": 11556,
+          "originalText": "-v23",
+          "replacementText": ""
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "scripts/straight_slot_profile_v24.py",
+      "destination": "scripts/output_slot_profile.py",
+      "sourceSha256": "801db5bf951757e3814e7c4435fae4b664ea280df71c002b5db653ac7d673e56",
+      "destinationSha256": "e93f43e2edb3e31ec72b2f527700dd19e582221aba6703928851043ef3799d2d",
+      "bytes": 10277,
+      "edits": [
+        {
+          "destinationStart": 94,
+          "destinationEnd": 103,
+          "originalText": "s_v22",
+          "replacementText": "_geometry"
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "scripts/surface_finish_v22.py",
+      "destination": "scripts/surface_finish.py",
+      "sourceSha256": "49e7a9fd1a52ae3fdd5ab816b6e3c0c880dffd4fba9aee2b5e520967b5b5d5d5",
+      "destinationSha256": "49e7a9fd1a52ae3fdd5ab816b6e3c0c880dffd4fba9aee2b5e520967b5b5d5d5",
+      "bytes": 4762,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "scripts/test-straight-slot-v24.py",
+      "destination": "scripts/test-straight-slot.py",
+      "sourceSha256": "bb18fbd04761a401cee90b85f25bf5650b3b55ee108159f96ddf9ee5ff366b21",
+      "destinationSha256": "8d7e16723ed0cbc42d945def5a53354d109d6895a51152acf9f8e93d6d5b0a88",
+      "bytes": 3119,
+      "edits": [
+        {
+          "destinationStart": 736,
+          "destinationEnd": 755,
+          "originalText": "straight_slot_profile_v24",
+          "replacementText": "output_slot_profile"
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "scripts/verify-motor-animation-v24.py",
+      "destination": "scripts/verify-motor-animation.py",
+      "sourceSha256": "c4147ec3c2d0c3d61f6942da74f469fd779d1d376747480fdd4fa220e4363784",
+      "destinationSha256": "613ef719d9be7aaa93ff3f6941543de211526fbe90f381b5ded88498a6d2114e",
+      "bytes": 2941,
+      "edits": [
+        {
+          "destinationStart": 2635,
+          "destinationEnd": 2637,
+          "originalText": "assets",
+          "replacementText": "qa"
+        },
+        {
+          "destinationStart": 2638,
+          "destinationEnd": 2639,
+          "originalText": "so",
+          "replacementText": "c"
+        },
+        {
+          "destinationStart": 2641,
+          "destinationEnd": 2657,
+          "originalText": "",
+          "replacementText": "rent/author/sour"
+        },
+        {
+          "destinationStart": 2675,
+          "destinationEnd": 2675,
+          "originalText": "-v24",
+          "replacementText": ""
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "scripts/verify-native-drive-v24.py",
+      "destination": "scripts/verify-native-drive.py",
+      "sourceSha256": "db258e6d7bf9ad250c72cb698cd1bcf89b6161595260dd39c7ef3e2416a0b747",
+      "destinationSha256": "692658b17a18cbee6af00b31214cedd8c77399495df1b4c39f677d9ba05f1bc2",
+      "bytes": 2093,
+      "edits": [
+        {
+          "destinationStart": 1983,
+          "destinationEnd": 1985,
+          "originalText": "assets",
+          "replacementText": "qa"
+        },
+        {
+          "destinationStart": 1986,
+          "destinationEnd": 2001,
+          "originalText": "",
+          "replacementText": "current/author/"
+        },
+        {
+          "destinationStart": 2020,
+          "destinationEnd": 2039,
+          "originalText": "-v",
+          "replacementText": ".json','w'),indent="
+        },
+        {
+          "destinationStart": 2040,
+          "destinationEnd": 2048,
+          "originalText": "4.",
+          "replacementText": ");print("
+        },
+        {
+          "destinationStart": 2052,
+          "destinationEnd": 2060,
+          "originalText": "','w')",
+          "replacementText": ".dumps(r"
+        },
+        {
+          "destinationStart": 2070,
+          "destinationEnd": 2071,
+          "originalText": "",
+          "replacementText": ")"
+        },
+        {
+          "destinationStart": 2072,
+          "destinationEnd": 2072,
+          "originalText": "print(json.dumps(r,indent=2));",
+          "replacementText": ""
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "scripts/verify-preservation-v24.mjs",
+      "destination": "scripts/verify-preservation.mjs",
+      "sourceSha256": "6ae64d0652f11f33a2fdfdf1afc658c8319a0cb65edaff25d9227acaab25da96",
+      "destinationSha256": "8cd3038602325f588b70b1da2828ca8287513c88d3bb8852e8c21d6a3ebff0ad",
+      "bytes": 5125,
+      "edits": [
+        {
+          "destinationStart": 4638,
+          "destinationEnd": 4640,
+          "originalText": "assets",
+          "replacementText": "qa"
+        },
+        {
+          "destinationStart": 4641,
+          "destinationEnd": 4656,
+          "originalText": "",
+          "replacementText": "current/author/"
+        },
+        {
+          "destinationStart": 4668,
+          "destinationEnd": 4668,
+          "originalText": "-v24",
+          "replacementText": ""
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "scripts/verify-source-runtime-v24.mjs",
+      "destination": "scripts/verify-source-runtime.mjs",
+      "sourceSha256": "3d63745bd55873584879b09195f32cf63aa3efd6f5670c0915b680980346166d",
+      "destinationSha256": "d3621cad2c55e85df075e8d9d17cb6a7f124c6c28ce0fd353dfe7b6408400cd9",
+      "bytes": 6510,
+      "edits": [
+        {
+          "destinationStart": 452,
+          "destinationEnd": 454,
+          "originalText": "assets",
+          "replacementText": "qa"
+        },
+        {
+          "destinationStart": 455,
+          "destinationEnd": 470,
+          "originalText": "",
+          "replacementText": "current/author/"
+        },
+        {
+          "destinationStart": 485,
+          "destinationEnd": 485,
+          "originalText": "-v24",
+          "replacementText": ""
+        },
+        {
+          "destinationStart": 6183,
+          "destinationEnd": 6200,
+          "originalText": "assets",
+          "replacementText": "qa/current/author"
+        },
+        {
+          "destinationStart": 6224,
+          "destinationEnd": 6224,
+          "originalText": "-v24",
+          "replacementText": ""
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "src/DetailPanel.tsx",
+      "destination": "src/DetailPanel.tsx",
+      "sourceSha256": "5377da7b364d1c94eed0cc2cfc82c7f053a1ebe8270966040eeaa3f234c66c96",
+      "destinationSha256": "5377da7b364d1c94eed0cc2cfc82c7f053a1ebe8270966040eeaa3f234c66c96",
+      "bytes": 3424,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "src/InternalDrivePanel.tsx",
+      "destination": "src/InternalDrivePanel.tsx",
+      "sourceSha256": "befbd976df707aadeae47a916f364dd1b8e6e4f4af80e6165c34a21bf14a26ab",
+      "destinationSha256": "befbd976df707aadeae47a916f364dd1b8e6e4f4af80e6165c34a21bf14a26ab",
+      "bytes": 1384,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "src/Scene.tsx",
+      "destination": "src/Scene.tsx",
+      "sourceSha256": "0a7354b91bfaab621fcd2d26f0543682b5ef19aa004988a0033cfa4c987248fd",
+      "destinationSha256": "0a7354b91bfaab621fcd2d26f0543682b5ef19aa004988a0033cfa4c987248fd",
+      "bytes": 25525,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "src/cameraNavigation.test.ts",
+      "destination": "src/cameraNavigation.test.ts",
+      "sourceSha256": "a524e204e7521cea1b09b7f69a9e8cf79b91c3418ce2beaef0e23e0124066578",
+      "destinationSha256": "a524e204e7521cea1b09b7f69a9e8cf79b91c3418ce2beaef0e23e0124066578",
+      "bytes": 9921,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "src/cameraNavigation.ts",
+      "destination": "src/cameraNavigation.ts",
+      "sourceSha256": "7329027c4188edb1f387e00b621ab9b710777aaf3eb6753ee04f411a7cb5e78c",
+      "destinationSha256": "7329027c4188edb1f387e00b621ab9b710777aaf3eb6753ee04f411a7cb5e78c",
+      "bytes": 1792,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "src/details.test.ts",
+      "destination": "src/details.test.ts",
+      "sourceSha256": "9be0942f82dcf2229164353b016b8ef1330298c5ae575cee0636d7e14aaa6f78",
+      "destinationSha256": "afe85890b306d7ff99f3da1dba5d8ac6ce2bf5811990310eec87fb7ab93348b5",
+      "bytes": 12966,
+      "edits": [
+        {
+          "destinationStart": 520,
+          "destinationEnd": 523,
+          "originalText": "v14",
+          "replacementText": "lib"
+        },
+        {
+          "destinationStart": 531,
+          "destinationEnd": 537,
+          "originalText": "",
+          "replacementText": "-motor"
+        },
+        {
+          "destinationStart": 9947,
+          "destinationEnd": 9950,
+          "originalText": "v14",
+          "replacementText": "lib"
+        },
+        {
+          "destinationStart": 10417,
+          "destinationEnd": 10420,
+          "originalText": "v14",
+          "replacementText": "lib"
+        },
+        {
+          "destinationStart": 11719,
+          "destinationEnd": 11722,
+          "originalText": "v13",
+          "replacementText": "lib"
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "src/details.ts",
+      "destination": "src/details.ts",
+      "sourceSha256": "6b6a967e411a72e5bea6f44badb89f33746c01e5e1d770ce91d962a1d4cb1a66",
+      "destinationSha256": "6b6a967e411a72e5bea6f44badb89f33746c01e5e1d770ce91d962a1d4cb1a66",
+      "bytes": 2779,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "src/experience.test.ts",
+      "destination": "src/experience.test.ts",
+      "sourceSha256": "b7d6b8147ce3bd0f05621c53c7fea5bfed5e44c674092fa2f184efec8ed921a5",
+      "destinationSha256": "b7d6b8147ce3bd0f05621c53c7fea5bfed5e44c674092fa2f184efec8ed921a5",
+      "bytes": 3987,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "src/experience.ts",
+      "destination": "src/experience.ts",
+      "sourceSha256": "d4afe57fbd401cbcba996cebc0e2d56771b425d4ad2df79e696158cb8822f105",
+      "destinationSha256": "d4afe57fbd401cbcba996cebc0e2d56771b425d4ad2df79e696158cb8822f105",
+      "bytes": 7572,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "src/flight.test.ts",
+      "destination": "src/flight.test.ts",
+      "sourceSha256": "ebb7d4c5752755bfac8b676bb9b5602f83c08d19c46555f454e4d1bda5172328",
+      "destinationSha256": "ebb7d4c5752755bfac8b676bb9b5602f83c08d19c46555f454e4d1bda5172328",
+      "bytes": 1269,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "src/flight.ts",
+      "destination": "src/flight.ts",
+      "sourceSha256": "00f3e09ac2579f6c7ca484a07692d191548821cb35b37509b61aafcb0ad9800a",
+      "destinationSha256": "00f3e09ac2579f6c7ca484a07692d191548821cb35b37509b61aafcb0ad9800a",
+      "bytes": 3759,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "src/inspection.test.ts",
+      "destination": "src/inspection.test.ts",
+      "sourceSha256": "d909d27763778f96a70a73203eb4645d3bca5be307bc33bf33f072d649b766c5",
+      "destinationSha256": "d909d27763778f96a70a73203eb4645d3bca5be307bc33bf33f072d649b766c5",
+      "bytes": 7723,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "src/inspection.ts",
+      "destination": "src/inspection.ts",
+      "sourceSha256": "6169f60df2ca81abcf361b42fbdb751e7e7e50362cdae0bd4d0c9e000d599ca4",
+      "destinationSha256": "6169f60df2ca81abcf361b42fbdb751e7e7e50362cdae0bd4d0c9e000d599ca4",
+      "bytes": 6709,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "src/internalDriveInspection.test.ts",
+      "destination": "src/internalDriveInspection.test.ts",
+      "sourceSha256": "1e5f19637fe04b590bc1a584cbe90b5536a665c352b069c34606af769da2c545",
+      "destinationSha256": "d3c6994875df5e15c79f66286371b93c6637ddbb2bbd65690276804375462c9b",
+      "bytes": 8629,
+      "edits": [
+        {
+          "destinationStart": 557,
+          "destinationEnd": 560,
+          "originalText": "v14",
+          "replacementText": "lib"
+        },
+        {
+          "destinationStart": 568,
+          "destinationEnd": 574,
+          "originalText": "",
+          "replacementText": "-motor"
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "src/internalDriveInspection.ts",
+      "destination": "src/internalDriveInspection.ts",
+      "sourceSha256": "1a5fae23375a81475b43b9fe8d16bcce506a3b76663b1bba3ba9b288ad6f6a42",
+      "destinationSha256": "1a5fae23375a81475b43b9fe8d16bcce506a3b76663b1bba3ba9b288ad6f6a42",
+      "bytes": 2093,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "src/internalDriveMotion.test.ts",
+      "destination": "src/internalDriveMotion.test.ts",
+      "sourceSha256": "d5aeb0c535155acbaf94bc3496a343c3c882bc21e7d3dd21e79805daae35c994",
+      "destinationSha256": "d5aeb0c535155acbaf94bc3496a343c3c882bc21e7d3dd21e79805daae35c994",
+      "bytes": 3105,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "src/main.tsx",
+      "destination": "src/main.tsx",
+      "sourceSha256": "0149f7a69d4d5aeb746722160f8fbcd57defdf78e80e1fe3d9038dc76f84361e",
+      "destinationSha256": "0149f7a69d4d5aeb746722160f8fbcd57defdf78e80e1fe3d9038dc76f84361e",
+      "bytes": 236,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "src/motors.ts",
+      "destination": "src/motors.ts",
+      "sourceSha256": "5297141cc670fd98034bd242e189f0d61681587db209a02da08fb73971c02824",
+      "destinationSha256": "5297141cc670fd98034bd242e189f0d61681587db209a02da08fb73971c02824",
+      "bytes": 5268,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "src/recordingLoader.ts",
+      "destination": "src/recordingLoader.ts",
+      "sourceSha256": "3ff3d85e8c6a5a0285b76ed1044454ef045b8a903d0404df3e565bcfdaeca54d",
+      "destinationSha256": "3ff3d85e8c6a5a0285b76ed1044454ef045b8a903d0404df3e565bcfdaeca54d",
+      "bytes": 2999,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "src/rig.test.ts",
+      "destination": "src/rig.test.ts",
+      "sourceSha256": "7663ccba45f9bb4c8359645f007c82121d70a4889860db256572ae17f2eaba8c",
+      "destinationSha256": "7663ccba45f9bb4c8359645f007c82121d70a4889860db256572ae17f2eaba8c",
+      "bytes": 19255,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "src/rig.ts",
+      "destination": "src/rig.ts",
+      "sourceSha256": "4215cd44a02e36e62a2a7ccacd16a38b3fe9d82a727c0233af6d889caa56efb5",
+      "destinationSha256": "4215cd44a02e36e62a2a7ccacd16a38b3fe9d82a727c0233af6d889caa56efb5",
+      "bytes": 25357,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "src/rotor-geometry.test.ts",
+      "destination": "src/rotor-geometry.test.ts",
+      "sourceSha256": "156bb77284a3287c9473384a1c291b3e2e66a82e71831fae107f60dd8e4b43e1",
+      "destinationSha256": "156bb77284a3287c9473384a1c291b3e2e66a82e71831fae107f60dd8e4b43e1",
+      "bytes": 5675,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "src/rotor.test.ts",
+      "destination": "src/rotor.test.ts",
+      "sourceSha256": "32482ded4969ee21b25b71240e872112e4e165c941fd9c4818f2207f2ddd6dd7",
+      "destinationSha256": "a5381b168d324f316e96542370b9f4b989ba9000adb09998e2315e4b85577f05",
+      "bytes": 19982,
+      "edits": [
+        {
+          "destinationStart": 539,
+          "destinationEnd": 542,
+          "originalText": "v9",
+          "replacementText": "lib"
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "src/rotorExposure.ts",
+      "destination": "src/rotorExposure.ts",
+      "sourceSha256": "478cb4cddd2027e41dc74134ca808c9eff47b72ed949219d2464d951d1ae303e",
+      "destinationSha256": "478cb4cddd2027e41dc74134ca808c9eff47b72ed949219d2464d951d1ae303e",
+      "bytes": 5680,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "src/rotorExposureProfile.test.ts",
+      "destination": "src/rotorExposureProfile.test.ts",
+      "sourceSha256": "fb59f56dfd8c89597e1d7f294383cab3cff8ef119c2b388b87bd909bd63dfb17",
+      "destinationSha256": "fb59f56dfd8c89597e1d7f294383cab3cff8ef119c2b388b87bd909bd63dfb17",
+      "bytes": 6399,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "src/rotorExposureProfile.ts",
+      "destination": "src/rotorExposureProfile.ts",
+      "sourceSha256": "a8e1c9fc3ba86e3d80a749a4a9d2ea8207a3501ab9b292fcc691a39cdf1e2a24",
+      "destinationSha256": "a8e1c9fc3ba86e3d80a749a4a9d2ea8207a3501ab9b292fcc691a39cdf1e2a24",
+      "bytes": 7533,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "src/rotorPresentation.test.ts",
+      "destination": "src/rotorPresentation.test.ts",
+      "sourceSha256": "cc1606501b5f6bca4b3eb9333694ee3c8f31f628faa4ce4c2f83404d77f0193b",
+      "destinationSha256": "cc1606501b5f6bca4b3eb9333694ee3c8f31f628faa4ce4c2f83404d77f0193b",
+      "bytes": 10157,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "src/rotorVisibility.test.ts",
+      "destination": "src/rotorVisibility.test.ts",
+      "sourceSha256": "d3a3294b7dac76cf8dcb0596ee2d1d881507bdee601d6ee311624399ad45fc34",
+      "destinationSha256": "d3a3294b7dac76cf8dcb0596ee2d1d881507bdee601d6ee311624399ad45fc34",
+      "bytes": 6090,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "src/runtime.test.ts",
+      "destination": "src/runtime.test.ts",
+      "sourceSha256": "8fb1af0a23d9ba528c6cee17464c1d865459cf2564054aad59b64de4770534a7",
+      "destinationSha256": "c3a69b23dc6f470d9fb93911b813997b010b127807dad4d0e446159b07873a18",
+      "bytes": 2123,
+      "edits": [
+        {
+          "destinationStart": 155,
+          "destinationEnd": 158,
+          "originalText": "v15",
+          "replacementText": "lib"
+        },
+        {
+          "destinationStart": 159,
+          "destinationEnd": 172,
+          "originalText": "verification/runtime",
+          "replacementText": "runtime-rotor"
+        },
+        {
+          "destinationStart": 262,
+          "destinationEnd": 265,
+          "originalText": "v15/verification",
+          "replacementText": "lib"
+        },
+        {
+          "destinationStart": 376,
+          "destinationEnd": 379,
+          "originalText": "v15/verification",
+          "replacementText": "lib"
+        }
+      ],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "src/sceneLighting.ts",
+      "destination": "src/sceneLighting.ts",
+      "sourceSha256": "00584eba19c175341efb5893b5b53a09b560232dd371381acde8c502f8752150",
+      "destinationSha256": "00584eba19c175341efb5893b5b53a09b560232dd371381acde8c502f8752150",
+      "bytes": 1554,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "src/simulation.test.ts",
+      "destination": "src/simulation.test.ts",
+      "sourceSha256": "ee34ddb0a3615087e000ca2c92f77fc120bc76d119a62a0e6f5918440887d76f",
+      "destinationSha256": "ee34ddb0a3615087e000ca2c92f77fc120bc76d119a62a0e6f5918440887d76f",
+      "bytes": 31356,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "src/simulation.ts",
+      "destination": "src/simulation.ts",
+      "sourceSha256": "db34291fe2bca396f94c77d359900ea05da1ab148b8d0c5cac05eb3d933e4e34",
+      "destinationSha256": "db34291fe2bca396f94c77d359900ea05da1ab148b8d0c5cac05eb3d933e4e34",
+      "bytes": 23108,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "src/simulationBridge.ts",
+      "destination": "src/simulationBridge.ts",
+      "sourceSha256": "2bfac4d7037ba9513aff8c6f51689c98112c230ec5b244d76044dd3059e426d8",
+      "destinationSha256": "2bfac4d7037ba9513aff8c6f51689c98112c230ec5b244d76044dd3059e426d8",
+      "bytes": 10333,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "src/tilt.test.ts",
+      "destination": "src/tilt.test.ts",
+      "sourceSha256": "792ed40d569d083f6f582b29f9b03995647c0e441679cb59463206a12a8a8cc5",
+      "destinationSha256": "792ed40d569d083f6f582b29f9b03995647c0e441679cb59463206a12a8a8cc5",
+      "bytes": 5792,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "src/tilt.ts",
+      "destination": "src/tilt.ts",
+      "sourceSha256": "aaad954b22fda6719b3a4fee829271ad212dc5c9a7d354c163e8f64731cd7327",
+      "destinationSha256": "aaad954b22fda6719b3a4fee829271ad212dc5c9a7d354c163e8f64731cd7327",
+      "bytes": 2601,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "tsconfig.json",
+      "destination": "tsconfig.json",
+      "sourceSha256": "713b3d770d95aa35bbd97ac64dca82b0d6f6c7b9cf1ae5c11808051a8762ba1a",
+      "destinationSha256": "713b3d770d95aa35bbd97ac64dca82b0d6f6c7b9cf1ae5c11808051a8762ba1a",
+      "bytes": 371,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    },
+    {
+      "source": "vite.config.ts",
+      "destination": "vite.config.ts",
+      "sourceSha256": "0f2ea1904c7a1b7a123207f1d01cad2e27c15ecaf09f9b9c9fa241c28e563871",
+      "destinationSha256": "0f2ea1904c7a1b7a123207f1d01cad2e27c15ecaf09f9b9c9fa241c28e563871",
+      "bytes": 394,
+      "edits": [],
+      "reverseReconstructionVerified": true
+    }
+  ],
+  "adaptedFiles": [
+    {
+      "source": "qa/v22/verification/verify-inspection.mts",
+      "destination": "qa/lib/verify-inspection.mts",
+      "sourceSha256": "f22e4ea2464b095f5934abd395d51dd2a6c0004af50c91a84b059e9b349abd13",
+      "currentSha256": "44a7e24af191ff1a1e4d83a3f912bbb72655978f422b57c19e31622d1f76b9d0",
+      "reason": "当前验收适配或人工修改，须独立验收，不宣称只是路径替换"
+    },
+    {
+      "source": "qa/v24/verification/freeze-inputs.mjs",
+      "destination": "qa/current/freeze-inputs.mjs",
+      "sourceSha256": "0bc812d44c4e39fad14d87744afa81b533e08a823825022db3ad1557c17fb03c",
+      "currentSha256": "97528d1ff91f8683053480dab5f744465d80d00d1623276213917baecf2b8b80",
+      "reason": "当前验收适配或人工修改，须独立验收，不宣称只是路径替换"
+    },
+    {
+      "source": "qa/v24/verification/measure-slot.mts",
+      "destination": "qa/current/measure-slot.mts",
+      "sourceSha256": "74b6e57148cc479476d73fb8c2ce07b043429816d46d685d225594b0f1dafc62",
+      "currentSha256": "6fb8a4c8636577df9953c6c95346991466adf2ae89e41a2aeb4f8f78317dc8bf",
+      "reason": "当前验收适配或人工修改，须独立验收，不宣称只是路径替换"
+    },
+    {
+      "source": "qa/v24/verification/motion-reference.selftest.mts",
+      "destination": "qa/current/motion-reference.selftest.mts",
+      "sourceSha256": "2eee123ab6bcfb800a08c2ee3d61b629431116e02ec86ed34ffe1fac8071492e",
+      "currentSha256": "6add0f51d772d4b27bcf8bcfe073923d56bbdcb66024362cd360c41307951ba5",
+      "reason": "当前验收适配或人工修改，须独立验收，不宣称只是路径替换"
+    },
+    {
+      "source": "qa/v24/verification/refinement-contract.json",
+      "destination": "qa/contracts/fuselage-slot-refinement.json",
+      "sourceSha256": "121f9350c512b261b20184290a570e778e9353f7565f09bf9ca6e67b07b5115d",
+      "currentSha256": "637cd3e0c748e70613b9637fd842a76fe4c301cba96e91064020a5546cdcf7c0",
+      "reason": "当前验收适配或人工修改，须独立验收，不宣称只是路径替换",
+      "currentAvailability": "not a current input; retained historical provenance"
+    },
+    {
+      "source": "qa/v24/verification/run-safety.sh",
+      "destination": "qa/current/run-safety.sh",
+      "sourceSha256": "7b3dd1c425697ec0b791b9f11f26b6d326edf4df5ae88b79e15cd2525aa2127e",
+      "currentSha256": "71949aa0a7321cf94510b1b8c2230f5bfdc8f0d77e169cdaccafeb010457a051",
+      "reason": "当前验收适配或人工修改，须独立验收，不宣称只是路径替换"
+    },
+    {
+      "source": "qa/v24/verification/summarize.mjs",
+      "destination": "qa/current/summarize.mjs",
+      "sourceSha256": "e8cc025eb4351d232258960e92329bcad638344276441c90cf26607503435db6",
+      "currentSha256": "c519ee497ca6d33a835f680d80008468961a7a01bb3f121f87a076679e7a39f4",
+      "reason": "当前验收适配或人工修改，须独立验收，不宣称只是路径替换"
+    },
+    {
+      "source": "qa/v24/verification/support-contracts.json",
+      "destination": "qa/contracts/supports.json",
+      "sourceSha256": "aa51b4d32b9972d87502384f13fc06ac7bb9e62412a9b9f07b1395f3df95b70d",
+      "currentSha256": "02884612c37a713c41d54fb66a3b4b58309a4515c8bab0af94bcdba16d1c25b4",
+      "reason": "当前验收适配或人工修改，须独立验收，不宣称只是路径替换"
+    },
+    {
+      "source": "qa/v24/verification/verify-inheritance.mjs",
+      "destination": "qa/current/verify-inheritance.mjs",
+      "sourceSha256": "20d6113c2c7972e2ed27b198b98b743efdc308c3d2330e6a98b8285ff14d5d4b",
+      "currentSha256": "8ca7a216059f15607bc7d5e67853873aae295b36d84172ca5fb04d56c94d6dc7",
+      "reason": "当前验收适配或人工修改，须独立验收，不宣称只是路径替换"
+    },
+    {
+      "source": "qa/v24/verification/verify-local-scope.mts",
+      "destination": "qa/current/verify-local-scope.mts",
+      "sourceSha256": "8448e2a8e02eebe92d786727602460cce26216ec42a1becaa19a55013e23a8ff",
+      "currentSha256": "4d08a8dc523efde5b88b1cfab82fe5697fd33c58b1b8b98ecb1e14e7d28e55c8",
+      "reason": "当前验收适配或人工修改，须独立验收，不宣称只是路径替换"
+    },
+    {
+      "source": "qa/v24/verification/verify-preservation.mts",
+      "destination": "qa/current/verify-preservation.mts",
+      "sourceSha256": "c4cf816074c0b85fac7bfc718903481aa895a3b6ded6969ca758f67b445106b1",
+      "currentSha256": "4f87b21a54540f67133ef2592f4aab81f05d333add90f5a23719905fbac81786",
+      "reason": "当前验收适配或人工修改，须独立验收，不宣称只是路径替换"
+    },
+    {
+      "source": "qa/v24/verification/verify-reviewed-contract.mjs",
+      "destination": "qa/current/verify-reviewed-contract.mjs",
+      "sourceSha256": "90d59f8bfc833a58faefd159835659fa9946e95698b025087b3478d631339cfb",
+      "currentSha256": "35b625d272b9cdee3679cdefba2bc014e64ba9d697b5779ef90dc309666e687f",
+      "reason": "当前验收适配或人工修改，须独立验收，不宣称只是路径替换"
+    },
+    {
+      "source": "qa/v24/verification/verify-solids.mts",
+      "destination": "qa/current/verify-solids.mts",
+      "sourceSha256": "aa22dc2d7ea81883a98eaea7e4e463dc9908b38a0efdc6661f87c89f5600ada5",
+      "currentSha256": "df3fd944625f7f47f76e0e1798ccdc3019d131940513c793926a2863a7a3d5dd",
+      "reason": "当前验收适配或人工修改，须独立验收，不宣称只是路径替换"
+    },
+    {
+      "source": "qa/v24/verification/verify-support.mts",
+      "destination": "qa/current/verify-support.mts",
+      "sourceSha256": "1e087b16638b05b5839f63657e63c20834d6fba42a26ca6c93b142120883170f",
+      "currentSha256": "0e1a8e257dcef97b4ae48465e7762f84e3f8cba5b80bdd6859fc381fd1940e01",
+      "reason": "当前验收适配或人工修改，须独立验收，不宣称只是路径替换"
+    },
+    {
+      "source": "scripts/verify-regeneration-v24.mjs",
+      "destination": "scripts/verify-regeneration.mjs",
+      "sourceSha256": "77ac3394220dd1839f5c0623c076416be8160c52792a64b38324be5565d39b20",
+      "currentSha256": "5b36d7cad2e97c4896ddbf83b71a94ca0a5b8a1e0a44dc612bb156145dfddd35",
+      "reason": "当前验收适配或人工修改，须独立验收，不宣称只是路径替换"
+    },
+    {
+      "source": "src/model.test.ts",
+      "destination": "src/model.test.ts",
+      "sourceSha256": "5ffe49e79a5fdd2a88f941c6cef6d55bcdd80abeb4b4f416fc2d39e155fb92e5",
+      "currentSha256": "d7c8394bb8d12e5bfef1d99e19665c8dc01ada8d37338d70d145c16959b3fecf",
+      "reason": "当前验收适配或人工修改，须独立验收，不宣称只是路径替换"
+    },
+    {
+      "source": "qa/v14/runtime-ui-source-check.mts",
+      "destination": "qa/lib/runtime-ui-source-check.mts",
+      "sourceSha256": "17ad58939975ae0dc5795f8102cffec07ec5473365f495b6de0a1b3bc83b6b46",
+      "previousPathOnlyDestinationSha256": "17ad58939975ae0dc5795f8102cffec07ec5473365f495b6de0a1b3bc83b6b46",
+      "currentSha256": "f68a6f4b4eceda7879ba2c1f016e2ea88dcc5ea21bbade0cc27c9775a4bb23d0",
+      "reason": "Already semantically adapted in the immediate accepted 55-stage release; historical mapping metadata is corrected here, without a new file edit in this revision.",
+      "previousPathOnlyMigration": {
+        "source": "qa/v14/runtime-ui-source-check.mts",
+        "destination": "qa/lib/runtime-ui-source-check.mts",
+        "sourceSha256": "17ad58939975ae0dc5795f8102cffec07ec5473365f495b6de0a1b3bc83b6b46",
+        "destinationSha256": "17ad58939975ae0dc5795f8102cffec07ec5473365f495b6de0a1b3bc83b6b46",
+        "bytes": 4876,
+        "edits": [],
+        "reverseReconstructionVerified": true
+      },
+      "changedSinceImmediate55StageBaseline": false
+    },
+    {
+      "source": "qa/v23/verification/audit-scene.selftest.mts",
+      "destination": "qa/lib/snapshot-audit.selftest.mts",
+      "sourceSha256": "85414e4204f02b889d9fb2d9be7cbcbc0d8e717cabd3089c0da2184c4ef04c34",
+      "previousPathOnlyDestinationSha256": "66d1918a8ec253f416ef41ea96d60c54f51635c5165d8ffc9d3fdd99494cde99",
+      "currentSha256": "537b170cb1772714239435f6ed34d94d2c7f071ca6a3535644819c0014f21eee",
+      "reason": "Already semantically adapted in the immediate accepted 55-stage release; historical mapping metadata is corrected here, without a new file edit in this revision.",
+      "previousPathOnlyMigration": {
+        "source": "qa/v23/verification/audit-scene.selftest.mts",
+        "destination": "qa/lib/snapshot-audit.selftest.mts",
+        "sourceSha256": "85414e4204f02b889d9fb2d9be7cbcbc0d8e717cabd3089c0da2184c4ef04c34",
+        "destinationSha256": "66d1918a8ec253f416ef41ea96d60c54f51635c5165d8ffc9d3fdd99494cde99",
+        "bytes": 2367,
+        "edits": [
+          {
+            "destinationStart": 147,
+            "destinationEnd": 147,
+            "originalText": ".",
+            "replacementText": ""
+          },
+          {
+            "destinationStart": 148,
+            "destinationEnd": 190,
+            "originalText": ".",
+            "replacementText": "pose-audit.mts';\nimport {loadAudit} from '"
+          },
+          {
+            "destinationStart": 192,
+            "destinationEnd": 199,
+            "originalText": "v15/verification/audi",
+            "replacementText": "snapsho"
+          },
+          {
+            "destinationStart": 201,
+            "destinationEnd": 206,
+            "originalText": "scene",
+            "replacementText": "audit"
+          },
+          {
+            "destinationStart": 221,
+            "destinationEnd": 240,
+            "originalText": "loadAudit",
+            "replacementText": "containedComponents"
+          },
+          {
+            "destinationStart": 249,
+            "destinationEnd": 249,
+            "originalText": "/audit-scene.mts';\nimport {containedComponents} from '../../v9",
+            "replacementText": ""
+          }
+        ],
+        "reverseReconstructionVerified": true
+      },
+      "changedSinceImmediate55StageBaseline": false
+    },
+    {
+      "source": "qa/v24/verification/affected-scope.mts",
+      "destination": "qa/current/affected-scope.mts",
+      "sourceSha256": "76f62e2bd8976e908b71dbefca1ffcceb2316ee26f928ee4d7c1abb85d427f69",
+      "previousPathOnlyDestinationSha256": "76f62e2bd8976e908b71dbefca1ffcceb2316ee26f928ee4d7c1abb85d427f69",
+      "currentSha256": "0712dd1ff3fcb5ed81c8a8e72c4e13506182a9edba2a72298aa38a7b06b2bad4",
+      "reason": "Already semantically adapted in the immediate accepted 55-stage release; historical mapping metadata is corrected here, without a new file edit in this revision.",
+      "previousPathOnlyMigration": {
+        "source": "qa/v24/verification/affected-scope.mts",
+        "destination": "qa/current/affected-scope.mts",
+        "sourceSha256": "76f62e2bd8976e908b71dbefca1ffcceb2316ee26f928ee4d7c1abb85d427f69",
+        "destinationSha256": "76f62e2bd8976e908b71dbefca1ffcceb2316ee26f928ee4d7c1abb85d427f69",
+        "bytes": 2511,
+        "edits": [],
+        "reverseReconstructionVerified": true
+      },
+      "changedSinceImmediate55StageBaseline": false
+    },
+    {
+      "source": "qa/v24/verification/affected-scope.selftest.mts",
+      "destination": "qa/current/affected-scope.selftest.mts",
+      "sourceSha256": "2d6e58b20a27003fcb7c47190d2dcef816451df81afa17d0182cee3a8897467d",
+      "previousPathOnlyDestinationSha256": "2d6e58b20a27003fcb7c47190d2dcef816451df81afa17d0182cee3a8897467d",
+      "currentSha256": "758a2d78e0e05a27ea3fbbd926c63211d3a5b0421109f610ab4e9377217777dc",
+      "reason": "Already semantically adapted in the immediate accepted 55-stage release; historical mapping metadata is corrected here, without a new file edit in this revision.",
+      "previousPathOnlyMigration": {
+        "source": "qa/v24/verification/affected-scope.selftest.mts",
+        "destination": "qa/current/affected-scope.selftest.mts",
+        "sourceSha256": "2d6e58b20a27003fcb7c47190d2dcef816451df81afa17d0182cee3a8897467d",
+        "destinationSha256": "2d6e58b20a27003fcb7c47190d2dcef816451df81afa17d0182cee3a8897467d",
+        "bytes": 1573,
+        "edits": [],
+        "reverseReconstructionVerified": true
+      },
+      "changedSinceImmediate55StageBaseline": false
+    },
+    {
+      "source": "qa/v24/verification/decoration-topology.mts",
+      "destination": "qa/current/decoration-topology.mts",
+      "sourceSha256": "8c5cceb8911a649da7e446195326bd9d794e329ba0fa934dd73da70ca6096c1b",
+      "previousPathOnlyDestinationSha256": "8c5cceb8911a649da7e446195326bd9d794e329ba0fa934dd73da70ca6096c1b",
+      "currentSha256": "6f6a20c291725de92ea3a93eb9dd6434d89fddbe4a0c66b41547836f56d69107",
+      "reason": "Already semantically adapted in the immediate accepted 55-stage release; historical mapping metadata is corrected here, without a new file edit in this revision.",
+      "previousPathOnlyMigration": {
+        "source": "qa/v24/verification/decoration-topology.mts",
+        "destination": "qa/current/decoration-topology.mts",
+        "sourceSha256": "8c5cceb8911a649da7e446195326bd9d794e329ba0fa934dd73da70ca6096c1b",
+        "destinationSha256": "8c5cceb8911a649da7e446195326bd9d794e329ba0fa934dd73da70ca6096c1b",
+        "bytes": 2657,
+        "edits": [],
+        "reverseReconstructionVerified": true
+      },
+      "changedSinceImmediate55StageBaseline": false
+    },
+    {
+      "source": "qa/v24/verification/patch-coverage.mts",
+      "destination": "qa/current/patch-coverage.mts",
+      "sourceSha256": "b6e77d0748cad663d622e0d06d47e302995e7243c9b3e357a2f44a6980802f76",
+      "previousPathOnlyDestinationSha256": "975478e5d81ddc3600bd9f29ffa363370dab368dbbf4e1b74ae9401008905034",
+      "currentSha256": "8bc0df511708422312c10e952f8ab272f7f80872716a6bb30fcd8a4617c7df17",
+      "reason": "Semantically adapted for the current four-powertrain/natural-wing revision and independently checked; not claimed to be a path-only migration.",
+      "previousPathOnlyMigration": {
+        "source": "qa/v24/verification/patch-coverage.mts",
+        "destination": "qa/current/patch-coverage.mts",
+        "sourceSha256": "b6e77d0748cad663d622e0d06d47e302995e7243c9b3e357a2f44a6980802f76",
+        "destinationSha256": "975478e5d81ddc3600bd9f29ffa363370dab368dbbf4e1b74ae9401008905034",
+        "bytes": 10183,
+        "edits": [
+          {
+            "destinationStart": 125,
+            "destinationEnd": 128,
+            "originalText": "../v9",
+            "replacementText": "lib"
+          }
+        ],
+        "reverseReconstructionVerified": true
+      },
+      "changedSinceImmediate55StageBaseline": true
+    },
+    {
+      "source": "qa/v24/verification/patch-coverage.selftest.mts",
+      "destination": "qa/current/patch-coverage.selftest.mts",
+      "sourceSha256": "7fc57252b59d58f59462716efa0382fc31f468372c8f7849037c06a993dbdda3",
+      "previousPathOnlyDestinationSha256": "87716292c75bd00aa69a8ed161530c79b8ec148b9532644439516f3bf6046712",
+      "currentSha256": "ec175f676d096769749bdeb065bc4f0cb17b58f0b0f4b583d032e4299ba42438",
+      "reason": "Semantically adapted for the current four-powertrain/natural-wing revision and independently checked; not claimed to be a path-only migration.",
+      "previousPathOnlyMigration": {
+        "source": "qa/v24/verification/patch-coverage.selftest.mts",
+        "destination": "qa/current/patch-coverage.selftest.mts",
+        "sourceSha256": "7fc57252b59d58f59462716efa0382fc31f468372c8f7849037c06a993dbdda3",
+        "destinationSha256": "87716292c75bd00aa69a8ed161530c79b8ec148b9532644439516f3bf6046712",
+        "bytes": 4617,
+        "edits": [
+          {
+            "destinationStart": 136,
+            "destinationEnd": 139,
+            "originalText": "..",
+            "replacementText": "lib"
+          },
+          {
+            "destinationStart": 140,
+            "destinationEnd": 196,
+            "originalText": "v7",
+            "replacementText": "triangle-contact.mjs';\nimport { solidTopology } from '.."
+          },
+          {
+            "destinationStart": 197,
+            "destinationEnd": 200,
+            "originalText": "triangle-contact.mjs';\nimport { solidTopology } from '../../v9",
+            "replacementText": "lib"
+          }
+        ],
+        "reverseReconstructionVerified": true
+      },
+      "changedSinceImmediate55StageBaseline": true
+    },
+    {
+      "source": "qa/v24/verification/stages.json",
+      "destination": "qa/current/stages.json",
+      "sourceSha256": "aba614d1c99c201dce641d16db31aae445344cacb4b3c6fcab7e43ccb7f4959a",
+      "previousPathOnlyDestinationSha256": "aba614d1c99c201dce641d16db31aae445344cacb4b3c6fcab7e43ccb7f4959a",
+      "currentSha256": "e9d2b2f377dcdb2aa0a8ce183b4cd1ead08ebcc465f0b0f6e58822e5574b7b7c",
+      "reason": "Semantically adapted for the current four-powertrain/natural-wing revision and independently checked; not claimed to be a path-only migration.",
+      "previousPathOnlyMigration": {
+        "source": "qa/v24/verification/stages.json",
+        "destination": "qa/current/stages.json",
+        "sourceSha256": "aba614d1c99c201dce641d16db31aae445344cacb4b3c6fcab7e43ccb7f4959a",
+        "destinationSha256": "aba614d1c99c201dce641d16db31aae445344cacb4b3c6fcab7e43ccb7f4959a",
+        "bytes": 996,
+        "edits": [],
+        "reverseReconstructionVerified": true
+      },
+      "changedSinceImmediate55StageBaseline": true
+    },
+    {
+      "source": "qa/v24/verification/verify-local-motion.mts",
+      "destination": "qa/current/verify-local-motion.mts",
+      "sourceSha256": "21bcff92b918d8a991c371d4dbe392c9f0ab4be365c19922722018731a3d9f06",
+      "previousPathOnlyDestinationSha256": "e106f3aa21acc964614fe43931179882ec2681daf623239e2bfed7aefd714d0e",
+      "currentSha256": "5e69324db9a5c56aec030a7a0d83152046a07eb1ea313e873f055600318335c7",
+      "reason": "Already semantically adapted in the immediate accepted 55-stage release; historical mapping metadata is corrected here, without a new file edit in this revision.",
+      "previousPathOnlyMigration": {
+        "source": "qa/v24/verification/verify-local-motion.mts",
+        "destination": "qa/current/verify-local-motion.mts",
+        "sourceSha256": "21bcff92b918d8a991c371d4dbe392c9f0ab4be365c19922722018731a3d9f06",
+        "destinationSha256": "e106f3aa21acc964614fe43931179882ec2681daf623239e2bfed7aefd714d0e",
+        "bytes": 5566,
+        "edits": [
+          {
+            "destinationStart": 361,
+            "destinationEnd": 364,
+            "originalText": "..",
+            "replacementText": "lib"
+          },
+          {
+            "destinationStart": 365,
+            "destinationEnd": 453,
+            "originalText": "v7",
+            "replacementText": "triangle-contact.mjs\");\nconst { containedComponents, pointInSolid } =\n  await import(\".."
+          },
+          {
+            "destinationStart": 454,
+            "destinationEnd": 457,
+            "originalText": "triangle-contact.mjs\");\nconst { containedComponents, pointInSolid } =\n  await import(\"../../v9",
+            "replacementText": "lib"
+          },
+          {
+            "destinationStart": 524,
+            "destinationEnd": 533,
+            "originalText": "v24",
+            "replacementText": "contracts"
+          },
+          {
+            "destinationStart": 534,
+            "destinationEnd": 542,
+            "originalText": "verification/refinement",
+            "replacementText": "fuselage"
+          },
+          {
+            "destinationStart": 543,
+            "destinationEnd": 557,
+            "originalText": "contrac",
+            "replacementText": "slot-refinemen"
+          },
+          {
+            "destinationStart": 3899,
+            "destinationEnd": 3908,
+            "originalText": "v24",
+            "replacementText": "contracts"
+          },
+          {
+            "destinationStart": 3909,
+            "destinationEnd": 3915,
+            "originalText": "verification/support-contrac",
+            "replacementText": "suppor"
+          },
+          {
+            "destinationStart": 5260,
+            "destinationEnd": 5267,
+            "originalText": "v24/verification",
+            "replacementText": "current"
+          }
+        ],
+        "reverseReconstructionVerified": true
+      },
+      "changedSinceImmediate55StageBaseline": false
+    },
+    {
+      "source": "qa/v24/verification/verify-relative-motion.mts",
+      "destination": "qa/current/verify-relative-motion.mts",
+      "sourceSha256": "28658856de3553d14963b4e1df84d662bb72acdaf18d2a08dd57644e09353642",
+      "previousPathOnlyDestinationSha256": "32d205725e42774b3cd02948d70813cf6f48c8f12c5c9dc618f861ebf089e19a",
+      "currentSha256": "fbfb814fa6afa2471dd4452af5499220748ae71d5c1504d49961183e1ce683c6",
+      "reason": "Already semantically adapted in the immediate accepted 55-stage release; historical mapping metadata is corrected here, without a new file edit in this revision.",
+      "previousPathOnlyMigration": {
+        "source": "qa/v24/verification/verify-relative-motion.mts",
+        "destination": "qa/current/verify-relative-motion.mts",
+        "sourceSha256": "28658856de3553d14963b4e1df84d662bb72acdaf18d2a08dd57644e09353642",
+        "destinationSha256": "32d205725e42774b3cd02948d70813cf6f48c8f12c5c9dc618f861ebf089e19a",
+        "bytes": 5998,
+        "edits": [
+          {
+            "destinationStart": 399,
+            "destinationEnd": 402,
+            "originalText": "..",
+            "replacementText": "lib"
+          },
+          {
+            "destinationStart": 403,
+            "destinationEnd": 440,
+            "originalText": "v7",
+            "replacementText": "triangle-contact.mjs',solidModule='.."
+          },
+          {
+            "destinationStart": 441,
+            "destinationEnd": 444,
+            "originalText": "triangle-contact.mjs',solidModule='../../v9",
+            "replacementText": "lib"
+          },
+          {
+            "destinationStart": 634,
+            "destinationEnd": 643,
+            "originalText": "v24",
+            "replacementText": "contracts"
+          },
+          {
+            "destinationStart": 644,
+            "destinationEnd": 652,
+            "originalText": "verification/refinement",
+            "replacementText": "fuselage"
+          },
+          {
+            "destinationStart": 653,
+            "destinationEnd": 667,
+            "originalText": "contrac",
+            "replacementText": "slot-refinemen"
+          },
+          {
+            "destinationStart": 5123,
+            "destinationEnd": 5130,
+            "originalText": "v15",
+            "replacementText": "current"
+          },
+          {
+            "destinationStart": 5131,
+            "destinationEnd": 5138,
+            "originalText": "verification",
+            "replacementText": "results"
+          }
+        ],
+        "reverseReconstructionVerified": true
+      },
+      "changedSinceImmediate55StageBaseline": false
+    },
+    {
+      "source": "qa/v24/verification/verify-rotor-envelope.mts",
+      "destination": "qa/current/verify-rotor-envelope.mts",
+      "sourceSha256": "b5d1fc24c1fed3c55ecef7d7fd0560c4a7174b6a5d92288594201b5897d81939",
+      "previousPathOnlyDestinationSha256": "57b6151420f9d7a9882946a2f837608330cd90659a32820efd65f349e334e67b",
+      "currentSha256": "baedfa8b291f4601bf44e6c24f5d2c96a68b1efb7ad271a289aa3be152ebb10d",
+      "reason": "Already semantically adapted in the immediate accepted 55-stage release; historical mapping metadata is corrected here, without a new file edit in this revision.",
+      "previousPathOnlyMigration": {
+        "source": "qa/v24/verification/verify-rotor-envelope.mts",
+        "destination": "qa/current/verify-rotor-envelope.mts",
+        "sourceSha256": "b5d1fc24c1fed3c55ecef7d7fd0560c4a7174b6a5d92288594201b5897d81939",
+        "destinationSha256": "57b6151420f9d7a9882946a2f837608330cd90659a32820efd65f349e334e67b",
+        "bytes": 8847,
+        "edits": [
+          {
+            "destinationStart": 297,
+            "destinationEnd": 300,
+            "originalText": "../v11",
+            "replacementText": "lib"
+          },
+          {
+            "destinationStart": 872,
+            "destinationEnd": 879,
+            "originalText": "v15",
+            "replacementText": "current"
+          },
+          {
+            "destinationStart": 880,
+            "destinationEnd": 887,
+            "originalText": "verification",
+            "replacementText": "results"
+          },
+          {
+            "destinationStart": 1258,
+            "destinationEnd": 1267,
+            "originalText": "v24",
+            "replacementText": "contracts"
+          },
+          {
+            "destinationStart": 1268,
+            "destinationEnd": 1276,
+            "originalText": "verification/refinement",
+            "replacementText": "fuselage"
+          },
+          {
+            "destinationStart": 1277,
+            "destinationEnd": 1291,
+            "originalText": "contrac",
+            "replacementText": "slot-refinemen"
+          }
+        ],
+        "reverseReconstructionVerified": true
+      },
+      "changedSinceImmediate55StageBaseline": false
+    },
+    {
+      "source": "scripts/compress-model.mjs",
+      "destination": "scripts/compress-model.mjs",
+      "sourceSha256": "08ed15d56da0b419a5c5de312530fa52f2b8f395f8e08d5093d273c50f8fd214",
+      "previousPathOnlyDestinationSha256": "25b5ae1d4a5e604ec3358e5cc94ad85d1575041ac09a21380c309b7c718825a6",
+      "currentSha256": "288a3d913df8c80722b8cc7361956d3db5f37fedfa56a86f0f117b0af7ba00b6",
+      "reason": "Already semantically adapted in the immediate accepted 55-stage release; historical mapping metadata is corrected here, without a new file edit in this revision.",
+      "previousPathOnlyMigration": {
+        "source": "scripts/compress-model.mjs",
+        "destination": "scripts/compress-model.mjs",
+        "sourceSha256": "08ed15d56da0b419a5c5de312530fa52f2b8f395f8e08d5093d273c50f8fd214",
+        "destinationSha256": "25b5ae1d4a5e604ec3358e5cc94ad85d1575041ac09a21380c309b7c718825a6",
+        "bytes": 10866,
+        "edits": [
+          {
+            "destinationStart": 1526,
+            "destinationEnd": 1526,
+            "originalText": "-v13",
+            "replacementText": ""
+          },
+          {
+            "destinationStart": 8213,
+            "destinationEnd": 8213,
+            "originalText": "-v13",
+            "replacementText": ""
+          }
+        ],
+        "reverseReconstructionVerified": true
+      },
+      "changedSinceImmediate55StageBaseline": false
+    },
+    {
+      "source": "scripts/export-transition.py",
+      "destination": "scripts/export-transition.py",
+      "sourceSha256": "02859ec06f423172c380dd079af4994aa18da0dba61be2c8c7e5d011e37b4dd5",
+      "previousPathOnlyDestinationSha256": "667cc4fd5a2bd300d19c19f6104892aa80e964b3ab1fd547431c1e1d947fb9a3",
+      "currentSha256": "f2ae90b6493e42ad3a591ad3a4f80775d0b05d8eb7bcdb7b4fde2733a5f17e0b",
+      "reason": "Already semantically adapted in the immediate accepted 55-stage release; historical mapping metadata is corrected here, without a new file edit in this revision.",
+      "previousPathOnlyMigration": {
+        "source": "scripts/export-transition.py",
+        "destination": "scripts/export-transition.py",
+        "sourceSha256": "02859ec06f423172c380dd079af4994aa18da0dba61be2c8c7e5d011e37b4dd5",
+        "destinationSha256": "667cc4fd5a2bd300d19c19f6104892aa80e964b3ab1fd547431c1e1d947fb9a3",
+        "bytes": 20969,
+        "edits": [
+          {
+            "destinationStart": 679,
+            "destinationEnd": 679,
+            "originalText": "_v22",
+            "replacementText": ""
+          },
+          {
+            "destinationStart": 2986,
+            "destinationEnd": 2986,
+            "originalText": "_v22",
+            "replacementText": ""
+          }
+        ],
+        "reverseReconstructionVerified": true
+      },
+      "changedSinceImmediate55StageBaseline": false
+    },
+    {
+      "source": "scripts/fairing_refinements_v22.py",
+      "destination": "scripts/joint_fairings.py",
+      "sourceSha256": "99b49a270bdaf9f4e0bad3e86c2fd4f23847e611ca5cb37640d950f937c9ff66",
+      "previousPathOnlyDestinationSha256": "9ef7df580cbd7a88997078c2274290f4c11b6a2a698ceab7169d970117e3bccb",
+      "currentSha256": "b8bdd4d0f904fba6346a7cd604cf8521ed93ce04225cf5c2fc65a824a3bc8268",
+      "reason": "Already semantically adapted in the immediate accepted 55-stage release; historical mapping metadata is corrected here, without a new file edit in this revision.",
+      "previousPathOnlyMigration": {
+        "source": "scripts/fairing_refinements_v22.py",
+        "destination": "scripts/joint_fairings.py",
+        "sourceSha256": "99b49a270bdaf9f4e0bad3e86c2fd4f23847e611ca5cb37640d950f937c9ff66",
+        "destinationSha256": "9ef7df580cbd7a88997078c2274290f4c11b6a2a698ceab7169d970117e3bccb",
+        "bytes": 6581,
+        "edits": [
+          {
+            "destinationStart": 231,
+            "destinationEnd": 254,
+            "originalText": "airframe_details_v14",
+            "replacementText": "embedded_joint_surfaces"
+          },
+          {
+            "destinationStart": 4078,
+            "destinationEnd": 4078,
+            "originalText": "_v21",
+            "replacementText": ""
+          }
+        ],
+        "reverseReconstructionVerified": true
+      },
+      "changedSinceImmediate55StageBaseline": false
+    },
+    {
+      "source": "scripts/generate_transwing.py",
+      "destination": "scripts/generate_transwing.py",
+      "sourceSha256": "3088df55c8662271012edd1c257197d22a5c7d06fe614ed21184cb721a20d3f3",
+      "previousPathOnlyDestinationSha256": "8c36f6cf13c72f4404ee616d1d4c65ec42c2318294f7a2a8910b8fb125a0cc31",
+      "currentSha256": "d410d07e1f44691234180586c5ae926d5018561c70b8bba1fa96aac3bbc6575e",
+      "reason": "Semantically adapted for the current four-powertrain/natural-wing revision and independently checked; not claimed to be a path-only migration.",
+      "previousPathOnlyMigration": {
+        "source": "scripts/generate_transwing.py",
+        "destination": "scripts/generate_transwing.py",
+        "sourceSha256": "3088df55c8662271012edd1c257197d22a5c7d06fe614ed21184cb721a20d3f3",
+        "destinationSha256": "8c36f6cf13c72f4404ee616d1d4c65ec42c2318294f7a2a8910b8fb125a0cc31",
+        "bytes": 57660,
+        "edits": [
+          {
+            "destinationStart": 525,
+            "destinationEnd": 534,
+            "originalText": "airframe_details_v14 import ",
+            "replacementText": "embedded_"
+          },
+          {
+            "destinationStart": 540,
+            "destinationEnd": 562,
+            "originalText": "",
+            "replacementText": "surfaces import joint_"
+          },
+          {
+            "destinationStart": 630,
+            "destinationEnd": 643,
+            "originalText": "airframe_details_v12",
+            "replacementText": "wing_surfaces"
+          },
+          {
+            "destinationStart": 846,
+            "destinationEnd": 850,
+            "originalText": "lender/v24",
+            "replacementText": "uild"
+          },
+          {
+            "destinationStart": 899,
+            "destinationEnd": 899,
+            "originalText": "/v24",
+            "replacementText": ""
+          },
+          {
+            "destinationStart": 10462,
+            "destinationEnd": 10481,
+            "originalText": "straight_slot_profile_v24",
+            "replacementText": "output_slot_profile"
+          },
+          {
+            "destinationStart": 25483,
+            "destinationEnd": 25551,
+            "originalText": "s_v22 import prism as output_roof_prism\nfrom straight_slot_profile_v24",
+            "replacementText": "_geometry import prism as output_roof_prism\nfrom output_slot_profile"
+          },
+          {
+            "destinationStart": 40518,
+            "destinationEnd": 40529,
+            "originalText": "details_v10",
+            "replacementText": "accessories"
+          },
+          {
+            "destinationStart": 40633,
+            "destinationEnd": 40633,
+            "originalText": "_v23",
+            "replacementText": ""
+          },
+          {
+            "destinationStart": 40755,
+            "destinationEnd": 40766,
+            "originalText": "details_v11",
+            "replacementText": "refinements"
+          },
+          {
+            "destinationStart": 40911,
+            "destinationEnd": 40916,
+            "originalText": "details_v12",
+            "replacementText": "shape"
+          },
+          {
+            "destinationStart": 41013,
+            "destinationEnd": 41029,
+            "originalText": "propeller_details_v15",
+            "replacementText": "rotor_handedness"
+          },
+          {
+            "destinationStart": 41116,
+            "destinationEnd": 41139,
+            "originalText": "airframe_details_v13",
+            "replacementText": "central_wing_attachment"
+          },
+          {
+            "destinationStart": 41290,
+            "destinationEnd": 41298,
+            "originalText": "details_v18",
+            "replacementText": "geometry"
+          },
+          {
+            "destinationStart": 41400,
+            "destinationEnd": 41400,
+            "originalText": "_v22",
+            "replacementText": ""
+          },
+          {
+            "destinationStart": 41487,
+            "destinationEnd": 41494,
+            "originalText": "refinements_v20",
+            "replacementText": "endcaps"
+          },
+          {
+            "destinationStart": 41598,
+            "destinationEnd": 41598,
+            "originalText": "_v21",
+            "replacementText": ""
+          },
+          {
+            "destinationStart": 41695,
+            "destinationEnd": 41695,
+            "originalText": "_v21",
+            "replacementText": ""
+          },
+          {
+            "destinationStart": 41798,
+            "destinationEnd": 41798,
+            "originalText": "_v21",
+            "replacementText": ""
+          },
+          {
+            "destinationStart": 41885,
+            "destinationEnd": 41899,
+            "originalText": "fairing_refinements_v22",
+            "replacementText": "joint_fairings"
+          },
+          {
+            "destinationStart": 42009,
+            "destinationEnd": 42009,
+            "originalText": "_v22",
+            "replacementText": ""
+          },
+          {
+            "destinationStart": 42094,
+            "destinationEnd": 42094,
+            "originalText": "slot_",
+            "replacementText": ""
+          },
+          {
+            "destinationStart": 42101,
+            "destinationEnd": 42112,
+            "originalText": "ation_v24",
+            "replacementText": "ed_surfaces"
+          },
+          {
+            "destinationStart": 42297,
+            "destinationEnd": 42297,
+            "originalText": "_v24",
+            "replacementText": ""
+          }
+        ],
+        "reverseReconstructionVerified": true
+      },
+      "changedSinceImmediate55StageBaseline": true
+    },
+    {
+      "source": "scripts/internal_drive_v22.py",
+      "destination": "scripts/internal_drive.py",
+      "sourceSha256": "830c67029a739bf27507f0bb6c5b47cf28be0b30116906060f0314ae709e8bb8",
+      "previousPathOnlyDestinationSha256": "830c67029a739bf27507f0bb6c5b47cf28be0b30116906060f0314ae709e8bb8",
+      "currentSha256": "30df1ef2526cc8f2a4d2975bdd398c2c5887db413946c5a1b8f8a73493281c75",
+      "reason": "Already semantically adapted in the immediate accepted 55-stage release; historical mapping metadata is corrected here, without a new file edit in this revision.",
+      "previousPathOnlyMigration": {
+        "source": "scripts/internal_drive_v22.py",
+        "destination": "scripts/internal_drive.py",
+        "sourceSha256": "830c67029a739bf27507f0bb6c5b47cf28be0b30116906060f0314ae709e8bb8",
+        "destinationSha256": "830c67029a739bf27507f0bb6c5b47cf28be0b30116906060f0314ae709e8bb8",
+        "bytes": 22934,
+        "edits": [],
+        "reverseReconstructionVerified": true
+      },
+      "changedSinceImmediate55StageBaseline": false
+    },
+    {
+      "source": "scripts/joint_refinements_v20.py",
+      "destination": "scripts/joint_endcaps.py",
+      "sourceSha256": "19c9cb606bd4f0c1ce86aa88106af3374ebe5b9c7159bcc61f90e21909790b2f",
+      "previousPathOnlyDestinationSha256": "19c9cb606bd4f0c1ce86aa88106af3374ebe5b9c7159bcc61f90e21909790b2f",
+      "currentSha256": "3f25b27f3455e50cf077f11217584c59e59064ba275b817513247d084ba2f263",
+      "reason": "Already semantically adapted in the immediate accepted 55-stage release; historical mapping metadata is corrected here, without a new file edit in this revision.",
+      "previousPathOnlyMigration": {
+        "source": "scripts/joint_refinements_v20.py",
+        "destination": "scripts/joint_endcaps.py",
+        "sourceSha256": "19c9cb606bd4f0c1ce86aa88106af3374ebe5b9c7159bcc61f90e21909790b2f",
+        "destinationSha256": "19c9cb606bd4f0c1ce86aa88106af3374ebe5b9c7159bcc61f90e21909790b2f",
+        "bytes": 7806,
+        "edits": [],
+        "reverseReconstructionVerified": true
+      },
+      "changedSinceImmediate55StageBaseline": false
+    },
+    {
+      "source": "scripts/kinematics.py",
+      "destination": "scripts/kinematics.py",
+      "sourceSha256": "3540f96c09517fd1f6b7a6dc9518b3c7399b33143686075b48f29da34da523b3",
+      "previousPathOnlyDestinationSha256": "922f96fe80759337d26c5f00a002f1a93313297dadd84fff82e577c7b9e8b4e1",
+      "currentSha256": "c729167c9cd1ccc7c4b879885e61090a9233fe6b6d5096d08652867096129896",
+      "reason": "Already semantically adapted in the immediate accepted 55-stage release; historical mapping metadata is corrected here, without a new file edit in this revision.",
+      "previousPathOnlyMigration": {
+        "source": "scripts/kinematics.py",
+        "destination": "scripts/kinematics.py",
+        "sourceSha256": "3540f96c09517fd1f6b7a6dc9518b3c7399b33143686075b48f29da34da523b3",
+        "destinationSha256": "922f96fe80759337d26c5f00a002f1a93313297dadd84fff82e577c7b9e8b4e1",
+        "bytes": 2434,
+        "edits": [
+          {
+            "destinationStart": 2231,
+            "destinationEnd": 2231,
+            "originalText": "_v22",
+            "replacementText": ""
+          }
+        ],
+        "reverseReconstructionVerified": true
+      },
+      "changedSinceImmediate55StageBaseline": false
+    },
+    {
+      "source": "scripts/linkage_details_v18.py",
+      "destination": "scripts/linkage_geometry.py",
+      "sourceSha256": "d9aa27b5722a68ccfbe788353f85fbe10ae47705675dfa9e7ea678dae484edb6",
+      "previousPathOnlyDestinationSha256": "d9aa27b5722a68ccfbe788353f85fbe10ae47705675dfa9e7ea678dae484edb6",
+      "currentSha256": "dc69500e86a0afbee4ce8d6a7f76cb7824052d25222309d25e0c42f8e42d00c5",
+      "reason": "Already semantically adapted in the immediate accepted 55-stage release; historical mapping metadata is corrected here, without a new file edit in this revision.",
+      "previousPathOnlyMigration": {
+        "source": "scripts/linkage_details_v18.py",
+        "destination": "scripts/linkage_geometry.py",
+        "sourceSha256": "d9aa27b5722a68ccfbe788353f85fbe10ae47705675dfa9e7ea678dae484edb6",
+        "destinationSha256": "d9aa27b5722a68ccfbe788353f85fbe10ae47705675dfa9e7ea678dae484edb6",
+        "bytes": 4480,
+        "edits": [],
+        "reverseReconstructionVerified": true
+      },
+      "changedSinceImmediate55StageBaseline": false
+    },
+    {
+      "source": "scripts/verify-solids-v24.py",
+      "destination": "scripts/verify-solids.py",
+      "sourceSha256": "9f51540ce87406e83aef2e25c5fe1b185728de3bbc8740204f91ffac66847b61",
+      "previousPathOnlyDestinationSha256": "9a5d26c83b4f6ddf906d88df27ea6d5af295d9edca76b9988f67efeea43cdd56",
+      "currentSha256": "18cac73510964d58cd7b0c60735a79724fae2aad0791295123b309c9c42f6673",
+      "reason": "Semantically adapted for the current four-powertrain/natural-wing revision and independently checked; not claimed to be a path-only migration.",
+      "previousPathOnlyMigration": {
+        "source": "scripts/verify-solids-v24.py",
+        "destination": "scripts/verify-solids.py",
+        "sourceSha256": "9f51540ce87406e83aef2e25c5fe1b185728de3bbc8740204f91ffac66847b61",
+        "destinationSha256": "9a5d26c83b4f6ddf906d88df27ea6d5af295d9edca76b9988f67efeea43cdd56",
+        "bytes": 2366,
+        "edits": [
+          {
+            "destinationStart": 2026,
+            "destinationEnd": 2028,
+            "originalText": "assets",
+            "replacementText": "qa"
+          },
+          {
+            "destinationStart": 2029,
+            "destinationEnd": 2044,
+            "originalText": "",
+            "replacementText": "current/author/"
+          },
+          {
+            "destinationStart": 2057,
+            "destinationEnd": 2057,
+            "originalText": "-v24",
+            "replacementText": ""
+          }
+        ],
+        "reverseReconstructionVerified": true
+      },
+      "changedSinceImmediate55StageBaseline": true
+    },
+    {
+      "source": "scripts/verify-source-v24.py",
+      "destination": "scripts/verify-source.py",
+      "sourceSha256": "75bf16a861fa96b3c94ed811efe0be5586bb66cdf4343140646c7cf636e7aab6",
+      "previousPathOnlyDestinationSha256": "b2da7159e28d34085f301c870f3195ca0349b517935bf3605b3bc1fd66312b0d",
+      "currentSha256": "bcc0297e1849272c9c17a012bf8da5a05bfe897d8797030f1f0b261b5a3ed088",
+      "reason": "Already semantically adapted in the immediate accepted 55-stage release; historical mapping metadata is corrected here, without a new file edit in this revision.",
+      "previousPathOnlyMigration": {
+        "source": "scripts/verify-source-v24.py",
+        "destination": "scripts/verify-source.py",
+        "sourceSha256": "75bf16a861fa96b3c94ed811efe0be5586bb66cdf4343140646c7cf636e7aab6",
+        "destinationSha256": "b2da7159e28d34085f301c870f3195ca0349b517935bf3605b3bc1fd66312b0d",
+        "bytes": 4063,
+        "edits": [
+          {
+            "destinationStart": 258,
+            "destinationEnd": 266,
+            "originalText": "airframe",
+            "replacementText": "embedded"
+          },
+          {
+            "destinationStart": 267,
+            "destinationEnd": 272,
+            "originalText": "details",
+            "replacementText": "joint"
+          },
+          {
+            "destinationStart": 273,
+            "destinationEnd": 281,
+            "originalText": "v14",
+            "replacementText": "surfaces"
+          },
+          {
+            "destinationStart": 3714,
+            "destinationEnd": 3731,
+            "originalText": "assets",
+            "replacementText": "qa/current/author"
+          },
+          {
+            "destinationStart": 3749,
+            "destinationEnd": 3749,
+            "originalText": "-v24",
+            "replacementText": ""
+          }
+        ],
+        "reverseReconstructionVerified": true
+      },
+      "changedSinceImmediate55StageBaseline": false
+    },
+    {
+      "source": "scripts/wing_seam_v23.py",
+      "destination": "scripts/wing_seam.py",
+      "sourceSha256": "d7a8ae4faed9f154d314ff89220094c89899f13e2e5f483ac0b99d05e8ec3e02",
+      "previousPathOnlyDestinationSha256": "d7a8ae4faed9f154d314ff89220094c89899f13e2e5f483ac0b99d05e8ec3e02",
+      "currentSha256": "4228da9c2983aa252b34bd059d9a5335bedcaac181319c16f824787aafb758fc",
+      "reason": "Semantically adapted for the current four-powertrain/natural-wing revision and independently checked; not claimed to be a path-only migration.",
+      "previousPathOnlyMigration": {
+        "source": "scripts/wing_seam_v23.py",
+        "destination": "scripts/wing_seam.py",
+        "sourceSha256": "d7a8ae4faed9f154d314ff89220094c89899f13e2e5f483ac0b99d05e8ec3e02",
+        "destinationSha256": "d7a8ae4faed9f154d314ff89220094c89899f13e2e5f483ac0b99d05e8ec3e02",
+        "bytes": 3746,
+        "edits": [],
+        "reverseReconstructionVerified": true
+      },
+      "changedSinceImmediate55StageBaseline": true
+    },
+    {
+      "source": "src/App.tsx",
+      "destination": "src/App.tsx",
+      "sourceSha256": "b6786ac27629d279821fce1e36c7d8c8d4b9ce89340c43d4a4318c4e15f0397b",
+      "previousPathOnlyDestinationSha256": "b6786ac27629d279821fce1e36c7d8c8d4b9ce89340c43d4a4318c4e15f0397b",
+      "currentSha256": "c75b976a76d44337839caecfa3afc9fe285dea89cbb5b5eb2a3354a7e0d40dfa",
+      "reason": "Already semantically adapted in the immediate accepted 55-stage release; historical mapping metadata is corrected here, without a new file edit in this revision.",
+      "previousPathOnlyMigration": {
+        "source": "src/App.tsx",
+        "destination": "src/App.tsx",
+        "sourceSha256": "b6786ac27629d279821fce1e36c7d8c8d4b9ce89340c43d4a4318c4e15f0397b",
+        "destinationSha256": "b6786ac27629d279821fce1e36c7d8c8d4b9ce89340c43d4a4318c4e15f0397b",
+        "bytes": 48431,
+        "edits": [],
+        "reverseReconstructionVerified": true
+      },
+      "changedSinceImmediate55StageBaseline": false
+    },
+    {
+      "source": "src/SimulationPanel.tsx",
+      "destination": "src/SimulationPanel.tsx",
+      "sourceSha256": "53f21dd089b77a300d7e1d39068b1c73c61b8a4916443add2418e2307d78dc22",
+      "previousPathOnlyDestinationSha256": "53f21dd089b77a300d7e1d39068b1c73c61b8a4916443add2418e2307d78dc22",
+      "currentSha256": "b6ef7b660442b2d7840fbeb4491883a6ff9fe63343b41ef6d39ccd08f6e89b6f",
+      "reason": "Already semantically adapted in the immediate accepted 55-stage release; historical mapping metadata is corrected here, without a new file edit in this revision.",
+      "previousPathOnlyMigration": {
+        "source": "src/SimulationPanel.tsx",
+        "destination": "src/SimulationPanel.tsx",
+        "sourceSha256": "53f21dd089b77a300d7e1d39068b1c73c61b8a4916443add2418e2307d78dc22",
+        "destinationSha256": "53f21dd089b77a300d7e1d39068b1c73c61b8a4916443add2418e2307d78dc22",
+        "bytes": 11298,
+        "edits": [],
+        "reverseReconstructionVerified": true
+      },
+      "changedSinceImmediate55StageBaseline": false
+    },
+    {
+      "source": "src/style.css",
+      "destination": "src/style.css",
+      "sourceSha256": "051ad2a8260e947686b0fd46f0cc3d9cabbd3fe64f0cb51978769635038275be",
+      "previousPathOnlyDestinationSha256": "051ad2a8260e947686b0fd46f0cc3d9cabbd3fe64f0cb51978769635038275be",
+      "currentSha256": "7c0da5f0f423f43d69a17e12cf269e32ac16f4c50c7e3ae86ba9dca15a31b66d",
+      "reason": "Already semantically adapted in the immediate accepted 55-stage release; historical mapping metadata is corrected here, without a new file edit in this revision.",
+      "previousPathOnlyMigration": {
+        "source": "src/style.css",
+        "destination": "src/style.css",
+        "sourceSha256": "051ad2a8260e947686b0fd46f0cc3d9cabbd3fe64f0cb51978769635038275be",
+        "destinationSha256": "051ad2a8260e947686b0fd46f0cc3d9cabbd3fe64f0cb51978769635038275be",
+        "bytes": 45999,
+        "edits": [],
+        "reverseReconstructionVerified": true
+      },
+      "changedSinceImmediate55StageBaseline": false
+    },
+    {
+      "source": "scripts/surface_supports_v21.py",
+      "destination": "scripts/surface_supports.py",
+      "sourceSha256": "905a56f30e75b821a63a2edd15ee9b88d14409e626a4d15e28b9bf89e4f537a5",
+      "previousPathOnlyDestinationSha256": "905a56f30e75b821a63a2edd15ee9b88d14409e626a4d15e28b9bf89e4f537a5",
+      "currentSha256": "05a6d563f71306aaff858ac24878d0574874033a4ca8c9ee0557a91f4927b291",
+      "reason": "Current nacelle/wing revision explicitly extends reviewed domain or design checks. This is a semantic adaptation with independent selftests, not a path-only migration.",
+      "previousPathOnlyMigration": {
+        "source": "scripts/surface_supports_v21.py",
+        "destination": "scripts/surface_supports.py",
+        "sourceSha256": "905a56f30e75b821a63a2edd15ee9b88d14409e626a4d15e28b9bf89e4f537a5",
+        "destinationSha256": "905a56f30e75b821a63a2edd15ee9b88d14409e626a4d15e28b9bf89e4f537a5",
+        "bytes": 21972,
+        "edits": [],
+        "reverseReconstructionVerified": true
+      }
+    }
+  ],
+  "newFiles": [
+    {
+      "path": "qa/current/input-lock-integrity.mjs",
+      "sha256": "cd95254932ca4dbe72f3a51d2c0fedd582cee34a55a4f0c13c833524da0be1fa",
+      "originKind": "当前工程新增验证或发行工具",
+      "claim": "单独测试并纳入当前输入或交付清单，不宣称与历史源码逐字相同"
+    },
+    {
+      "path": "qa/current/input-lock-integrity.selftest.mjs",
+      "sha256": "fc72502e9c3194e4dc1b1237d9980355cf84bbdf08daac0e380c482ab4b7e911",
+      "originKind": "当前工程新增验证或发行工具",
+      "claim": "单独测试并纳入当前输入或交付清单，不宣称与历史源码逐字相同"
+    },
+    {
+      "path": "qa/current/local-module-dependencies.mjs",
+      "sha256": "27eeb09763f0073ddd15aa3ac37865399bb5133776bf55066d9f59f8fa259541",
+      "originKind": "当前工程新增验证或发行工具",
+      "claim": "单独测试并纳入当前输入或交付清单，不宣称与历史源码逐字相同"
+    },
+    {
+      "path": "qa/current/local-module-dependencies.selftest.mjs",
+      "sha256": "fa4682e7a4ae3ee3183059673f349e0eaca1c44e9fef39f9bd64d805ea2f0b54",
+      "originKind": "当前工程新增验证或发行工具",
+      "claim": "单独测试并纳入当前输入或交付清单，不宣称与历史源码逐字相同"
+    },
+    {
+      "path": "qa/current/motion-reference-adapter.mjs",
+      "sha256": "c12f85a37a1b787a0c2a76fd76dd7b32f505c3f23e235bb95cbd43227c494328",
+      "originKind": "当前工程新增验证或发行工具",
+      "claim": "单独测试并纳入当前输入或交付清单，不宣称与历史源码逐字相同"
+    },
+    {
+      "path": "qa/current/motion-reference-cli.mts",
+      "sha256": "dcddaa71eefa3c6843ebc2e7395f76349d7f2140103dccc62bffb04f97ea9118",
+      "originKind": "当前工程新增验证或发行工具",
+      "claim": "单独测试并纳入当前输入或交付清单，不宣称与历史源码逐字相同"
+    },
+    {
+      "path": "qa/current/reference-data.mts",
+      "sha256": "55032fd9e3458788e2193a97712ccb6b6e5c90e162241a6851f3f86ed65da6ba",
+      "originKind": "当前工程新增验证或发行工具",
+      "claim": "单独测试并纳入当前输入或交付清单，不宣称与历史源码逐字相同"
+    },
+    {
+      "path": "qa/current/reference-records.mjs",
+      "sha256": "1348a7ecbd85d4345f36ada0176a9b35e697d809baeda584fd1f29db29795ef1",
+      "originKind": "当前工程新增验证或发行工具",
+      "claim": "单独测试并纳入当前输入或交付清单，不宣称与历史源码逐字相同"
+    },
+    {
+      "path": "qa/current/regeneration-evidence.mjs",
+      "sha256": "79f1570d2ab4eaea246a472961f21016a3709b9e25ee7b48b09a6a00adc68595",
+      "originKind": "当前工程新增验证或发行工具",
+      "claim": "单独测试并纳入当前输入或交付清单，不宣称与历史源码逐字相同"
+    },
+    {
+      "path": "qa/current/regeneration-evidence.selftest.mjs",
+      "sha256": "988926e51d3338d9279ce4bc6f829aaed44285131fd06a2bd248a8d884afcb70",
+      "originKind": "当前工程新增验证或发行工具",
+      "claim": "单独测试并纳入当前输入或交付清单，不宣称与历史源码逐字相同"
+    },
+    {
+      "path": "scripts/package_project.py",
+      "sha256": "673cf75e53f3ee0b370d120ac020f306d83ffe9391ddcc7f58f3a4ac0b994da2",
+      "originKind": "当前工程新增验证或发行工具",
+      "claim": "单独测试并纳入当前输入或交付清单，不宣称与历史源码逐字相同"
+    },
+    {
+      "path": "scripts/test_package_project.py",
+      "sha256": "f8e0d5edc870cdb1fd2baa30ac251133f238b71e5f4317a4b869d56c649c8535",
+      "originKind": "当前工程新增验证或发行工具",
+      "claim": "单独测试并纳入当前输入或交付清单，不宣称与历史源码逐字相同"
+    },
+    {
+      "path": "scripts/verify-regeneration-exact.mjs",
+      "sha256": "9ef1c2d2867252b812947d37fd4f1e1cb0e7641d6c1d88535d3320781a161ed6",
+      "originKind": "当前工程新增验证或发行工具",
+      "claim": "单独测试并纳入当前输入或交付清单，不宣称与历史源码逐字相同"
+    },
+    {
+      "path": "qa/nacelle/adaptive-patch-coverage.mts",
+      "sha256": "28ba0afc3a012d35bb396a631783b43550e128cd52015d02e3800ed00bed62e6",
+      "originKind": "Current four-powertrain and natural-wing independent validation",
+      "claim": "Independently tested and frozen where used; not asserted identical to historical code."
+    },
+    {
+      "path": "qa/nacelle/capture-baseline.mts",
+      "sha256": "65a40504896f814aa226c5f6ccb16355bc62bf8af40977915176e8244fadcf35",
+      "originKind": "Current four-powertrain and natural-wing independent validation",
+      "claim": "Independently tested and frozen where used; not asserted identical to historical code."
+    },
+    {
+      "path": "qa/nacelle/capture-candidate.mts",
+      "sha256": "74bcef54a053894de72993a8cee5e0622ddac2ba919c4cfb7147ca6f81d35af8",
+      "originKind": "Current four-powertrain and natural-wing independent validation",
+      "claim": "Independently tested and frozen where used; not asserted identical to historical code."
+    },
+    {
+      "path": "qa/nacelle/capture-fixed-wing-baseline.mts",
+      "sha256": "3bd7de8a6fd579ae548bc40093562d10a4ceb67df100fdde040c0671f4b92f03",
+      "originKind": "Current four-powertrain and natural-wing independent validation",
+      "claim": "Independently tested and frozen where used; not asserted identical to historical code."
+    },
+    {
+      "path": "qa/nacelle/capture-fuselage-baseline.mts",
+      "sha256": "1be4051aa5d1ee035965d83f2bc21da8470dcd14544e30388178981b085b3cdd",
+      "originKind": "Current four-powertrain and natural-wing independent validation",
+      "claim": "Independently tested and frozen where used; not asserted identical to historical code."
+    },
+    {
+      "path": "qa/nacelle/capture-moving-root-baseline.mts",
+      "sha256": "45a1be60ec43e149eb3fa2b6241e81fca2c0b116362986c02db6cd65e6a86888",
+      "originKind": "Current four-powertrain and natural-wing independent validation",
+      "claim": "Independently tested and frozen where used; not asserted identical to historical code."
+    },
+    {
+      "path": "qa/nacelle/diagnose-motion-contact.mts",
+      "sha256": "1aa2d1d53e3d0b61930811ba49e62e01ca734e2935f62a829b3fde49a8ed9409",
+      "originKind": "Current four-powertrain and natural-wing independent validation",
+      "claim": "Independently tested and frozen where used; not asserted identical to historical code."
+    },
+    {
+      "path": "qa/nacelle/fixed-wing-surface-translation.mts",
+      "sha256": "457d5057a428f24ea4e7a85e25033318473eb2e9d08b03cdb23ea0ff030f2128",
+      "originKind": "Current four-powertrain and natural-wing independent validation",
+      "claim": "Independently tested and frozen where used; not asserted identical to historical code."
+    },
+    {
+      "path": "qa/nacelle/powertrain-identity.mts",
+      "sha256": "19484a04151a0028c033818e26ed719723ff533717e83b7ea3c6c4cf33f528b4",
+      "originKind": "Current four-powertrain and natural-wing independent validation",
+      "claim": "Independently tested and frozen where used; not asserted identical to historical code."
+    },
+    {
+      "path": "qa/nacelle/powertrain-identity.selftest.mts",
+      "sha256": "aa6a91370a0c630ba7ac61531b59edaca5e2c8439836c5d83d728d92959c2099",
+      "originKind": "Current four-powertrain and natural-wing independent validation",
+      "claim": "Independently tested and frozen where used; not asserted identical to historical code."
+    },
+    {
+      "path": "qa/nacelle/probe-powertrain.mts",
+      "sha256": "48770a1ba3f7a34ee1292d02a869794708105da19131eea6c5d35c095dfd827b",
+      "originKind": "Current four-powertrain and natural-wing independent validation",
+      "claim": "Independently tested and frozen where used; not asserted identical to historical code."
+    },
+    {
+      "path": "qa/nacelle/probe-self-contact.mts",
+      "sha256": "339f22d6bf494f66ba03c629e8e3ecf31df1fec5eb9cb9a153786e986b76beab",
+      "originKind": "Current four-powertrain and natural-wing independent validation",
+      "claim": "Independently tested and frozen where used; not asserted identical to historical code."
+    },
+    {
+      "path": "qa/nacelle/probe-virtual-wing-lift.mts",
+      "sha256": "6e9371f703860f4af21ccc43aec2a030a5c84a198435abd7aae3a1b03357818a",
+      "originKind": "Current four-powertrain and natural-wing independent validation",
+      "claim": "Independently tested and frozen where used; not asserted identical to historical code."
+    },
+    {
+      "path": "qa/nacelle/underside-continuity.mts",
+      "sha256": "b15032293645e67c80dc984d0ce650c627bf040912ddff1c6a938d3c72f9997f",
+      "originKind": "Current four-powertrain and natural-wing independent validation",
+      "claim": "Independently tested and frozen where used; not asserted identical to historical code."
+    },
+    {
+      "path": "qa/nacelle/verify-fuselage-scope.mts",
+      "sha256": "f39c31fd453325e485b2ec4a0e6291dfc62f6afc80b399034929b22bdd6a1fdd",
+      "originKind": "Current four-powertrain and natural-wing independent validation",
+      "claim": "Independently tested and frozen where used; not asserted identical to historical code."
+    },
+    {
+      "path": "qa/nacelle/verify-mesh-precision.mjs",
+      "sha256": "5e823c6e70cec2e566f45c244e4d2a1bd54d2e3d9a992e201b7e64463f80dfba",
+      "originKind": "Current four-powertrain and natural-wing independent validation",
+      "claim": "Independently tested and frozen where used; not asserted identical to historical code."
+    },
+    {
+      "path": "qa/nacelle/verify-nacelle-motion-impact.mts",
+      "sha256": "29d34d153cdbdac25fa4b2196b6c0b44b677fa3f83aa73b420ec496a200f0242",
+      "originKind": "Current four-powertrain and natural-wing independent validation",
+      "claim": "Independently tested and frozen where used; not asserted identical to historical code."
+    },
+    {
+      "path": "qa/nacelle/verify-nacelle-placement.mts",
+      "sha256": "65ae1187bb177f8773511a9d3d5b2ad62c0ba148ab6fae8c981e1435f19a7c1c",
+      "originKind": "Current four-powertrain and natural-wing independent validation",
+      "claim": "Independently tested and frozen where used; not asserted identical to historical code."
+    },
+    {
+      "path": "qa/nacelle/verify-nacelle-review.mjs",
+      "sha256": "14d22b9f7756ef413f1f05cac41ff9442ba2c732d0ca8f74f83b1e02d7d27345",
+      "originKind": "Current four-powertrain and natural-wing independent validation",
+      "claim": "Independently tested and frozen where used; not asserted identical to historical code."
+    },
+    {
+      "path": "qa/nacelle/verify-wing-shape.mts",
+      "sha256": "b2be8bd228fca7c9c62b217ad951a04d0af626894ba7f913d4159b6de808e722",
+      "originKind": "Current four-powertrain and natural-wing independent validation",
+      "claim": "Independently tested and frozen where used; not asserted identical to historical code."
+    },
+    {
+      "path": "qa/nacelle/wing-shape-logic.mts",
+      "sha256": "534d784356a5a2d2e5c97fcbae7427f4ca4efc299d85dacfc62ab5c9e3269b78",
+      "originKind": "Current four-powertrain and natural-wing independent validation",
+      "claim": "Independently tested and frozen where used; not asserted identical to historical code."
+    },
+    {
+      "path": "qa/nacelle/wing-shape.selftest.mts",
+      "sha256": "1d7b27f3e4fdeaaf81c1dc4c82fec27cae76f693ada77c3d5d5ce004d7b40ce3",
+      "originKind": "Current four-powertrain and natural-wing independent validation",
+      "claim": "Independently tested and frozen where used; not asserted identical to historical code."
+    },
+    {
+      "path": "qa/current/capture-layered-candidate.mts",
+      "sha256": "d411e1d949638eec85a5758d3574c70f4adc8a6d05a2f6baedf1751356199221",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/current/capture-previous-reference.mts",
+      "sha256": "d3c6b015e9de67fbfd33aa9468d74244230df5d45077009e3ed254a5c283aa8a",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/current/diagnose-wing-root.mts",
+      "sha256": "cc73f744ff3a60a1793b2dad22c5b3377f4be7e5c01b21a030bec57f44a3f344",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/current/extract-previous-support-bounds.mjs",
+      "sha256": "1eb4747a0ae48822a44f87d9a247d58bb584a4971fdf6a631605d242dd5085a1",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/current/fairing-clearance-evidence.mjs",
+      "sha256": "3162630f2d9e73e018d6829b315c3d6044cff88b82a913469dbde168a63a7897",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/current/fairing-clearance.mts",
+      "sha256": "7e8f1ff48f243e58c818332d027a622c20d3104efbf866335e139f09b1342523",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/current/fairing-clearance.selftest.mts",
+      "sha256": "cf00486d10f6aafd3f0704c444b22c409ef16323a451bc86b40ad336c3abc308",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/current/fairing-support-roles.mjs",
+      "sha256": "2ad858c2826fa12a64cd14f4b4b2b6412a0060c44147b514f6290142b9e5cbd5",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/current/fairing-support-roles.selftest.mjs",
+      "sha256": "88959c461a5951d703685d660663a97e497f406ad057520d0c9dccf02a701f3a",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/current/hinge-identity-baseline.mts",
+      "sha256": "41d863e1c12a3ae04d9879be295221a790ae7ff9834631ada89377b09f86edd7",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/current/hinge-identity.mts",
+      "sha256": "300e40f2859582004d73d2b09de188973d835afc356ce5a514682aa8853926e9",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/current/hinge-identity.selftest.mts",
+      "sha256": "07d57fe609f69b327f6bc0b05990fd26d629af6a261cc11a56f672dae2d01ad3",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/current/layered-contract-logic.mjs",
+      "sha256": "d9496d571986e4c99daa92a32bf1ac1bfbb378d8ba7bce5f07977ae3dc441cc5",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/current/layered-domain-schema.mjs",
+      "sha256": "404e33036a6446e796c1b394344c2ee86a1af126c8b3fc3a3a1dcc6a408b17c6",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/current/layered-domain-schema.selftest.mjs",
+      "sha256": "5fe0ba0a772332468af6019ad8af44b9643de71bdbe28e4fefc42cab972f3a77",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/current/layered-sections.mts",
+      "sha256": "fdb556ccb702d9803b0ae452fc15b0fe90663b893b1c5a0328532bf42fd11890",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/current/layered-sections.selftest.mts",
+      "sha256": "542b7f42359d44f051fd7cd0ab1b74c277283ae14a674c326f6371628e54883a",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/current/model-reference.mts",
+      "sha256": "16d8c541fbc3343692b4145a2d81b007918ec7dbfe0fd6c19c96c26094824ecb",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/current/nacelle-support-additions.mjs",
+      "sha256": "60738d92f54a1a6430d192110621841f7bb44740e678b7d982c1889da30866bf",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/current/nacelle-support-additions.selftest.mjs",
+      "sha256": "330e33d530badaf6d424f34d17015c93b20563709cdbac613435c3901863fb34",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/current/node-inventory.mjs",
+      "sha256": "37f5cec27e3edc652867e6de826a8b4648963f4dd14ce3b19c7c8a8169f27480",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/current/node-inventory.selftest.mjs",
+      "sha256": "860eda41b2a9d2605840f5542eac16c5f3e39dff528a4b26f17e8846a79cfb34",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/current/probe-layer-sections.mts",
+      "sha256": "2862214450338c88b02cf51e6f6e97d19d326f752fc31661ece70bdf39e3718c",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/current/probe-layered-candidate.mts",
+      "sha256": "eed73a11b34ec033fc1da41e46316fd216e26d600cfedebc039d66f54af6db02",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/current/probe-pan-domain.mts",
+      "sha256": "35ab60493a437cf958857a25c2cfaa4005535465f552addebba7759ffc504b36",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/current/rotor-impact.mts",
+      "sha256": "0f96d65e9c7be63014d6d9f9b917f15aeb8ad11ec6f437703df8ef7cd8bcda59",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/current/rotor-impact.selftest.mts",
+      "sha256": "e0a902720b8aea23de55550ec96079a83a207cf4bbe64b63657e9d5688239c40",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/current/support-coordinate-review.mjs",
+      "sha256": "a53566a04a962176f7873319307a51f5c8069e5358f695316c065421605dd305",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/current/support-coordinate-review.selftest.mjs",
+      "sha256": "4b697c3a34ed444c38db5dc9c3b98922abcf8537de59447944a7944e6471e0f7",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/current/verify-fairing-clearance.mts",
+      "sha256": "945c08e33d5c052c66bc9d1438d08bceb9a54a2cc2c8f85c09dffa2142cae7e7",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/current/verify-hinge-identity.mts",
+      "sha256": "d289de1d070f5b1580504343ec95ac848a0936d4f86f4e068e8d12c92bfc36b3",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/current/verify-layered-geometry.mts",
+      "sha256": "b2096b1ddc5a8b507ab83cc936543f2319701461e0902871c0f7964baa43eb8d",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/current/verify-layered-motion-impact.mts",
+      "sha256": "992c8b4de4c6615a8497510ec2748a9bf89d9f1ec52558a5ed9dd0a328cbf2bc",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/current/verify-layered-scope.mts",
+      "sha256": "99a3032db1a5d5702095689d4fe14ef0a1f79945c2d53a4aa0fbb184a6a9ba89",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "scripts/layered_wing_joint.py",
+      "sha256": "93a6d24c32f47974a57aaa2733ae8fcce3d6698e4b55dae9c6efabb0acda7b76",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "scripts/mesh_precision.py",
+      "sha256": "8e39c57a9fddb666b6e0bf55fd6e3343d2838f91f22e08f270875aed6b76712b",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "scripts/nacelle_wing_layout.py",
+      "sha256": "72551901a17d9da9a44ff3c935ccc20c6048aef8080e340a78434896b5948a6e",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "scripts/test_mesh_precision.py",
+      "sha256": "212c2938021d9f1cea93a44043dcba0e8790ea158d8f9c0dfd588492c2c4df61",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/nacelle/accessory-preservation-capture.mts",
+      "sha256": "e5fa6912fa8667bb026a0c30f292415d20fb843a004161fbbed27e747b6df8dd",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/nacelle/accessory-preservation-verify.mts",
+      "sha256": "ec100aa72f1745552cc0e4c4e8141224664063ecee87d8d2e162c28e48e6ebaa",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/nacelle/accessory-preservation.mts",
+      "sha256": "2bd785c3cc77ddd53d9896f2c202477a16dd587eb0b000118d8636485bd01d6a",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/nacelle/accessory-preservation.selftest.mts",
+      "sha256": "66a4f0f018c9e08e1e74312bbb97e2226a2063f6b4c59198b742b2dac8bda866",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/nacelle/exact-self-capture-reference.mts",
+      "sha256": "b5574bda12d7a8e82475f4eef215c2e23b64780c96680fcf2010ad6133f724f0",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/nacelle/exact-self-geometry.mjs",
+      "sha256": "5a02a819a25a5b70b080baf470703df86d48d0010558c4210c51be2cc143c0f2",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/nacelle/exact-self-geometry.selftest.mjs",
+      "sha256": "4dba2a3dc84c14497436b1e0f0fced3c03d5d430cb6c49af54e926a4a252dcf9",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/nacelle/exact-self-load.mts",
+      "sha256": "5d517080b469fa40c0328fdc5c7415c9e8b9b4557d539eca47bb8a3cd62ecf8c",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/nacelle/exact-self-verify.mts",
+      "sha256": "28d2ff7af1e7de8e194478429d46d834751bdfa3e36aa95f3932e9329d8be2f4",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/nacelle/hinge-dependency-review.mjs",
+      "sha256": "a3063835302c8dcf9a415d2c89c8143e575168c1d24e22beac67e39a5f1bb064",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/nacelle/oriented-microfold-corrections.mts",
+      "sha256": "166d84ce01348c9536dbc573727cbe6304e33bbb8da437e8088ac480c52048b9",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/nacelle/probe-source-axis-powertrain.mts",
+      "sha256": "2b7f94089719a5db99809101e19bfa763e61032a9e5469685e011b8c02d23310",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/nacelle/probe-wing-exact-orientation.mts",
+      "sha256": "1d185b7bfec80a90fba76702eb4425aa28b94bf72c08b5a6c2ff525b67a85d4e",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/nacelle/repair-solid-orientation.mts",
+      "sha256": "d8ea6ba557f5440d9476f32b772c87fca8209fcdcf9df097fc47c26328c9c329",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "scripts/test_wing_surface_repair.py",
+      "sha256": "3f1e15929ddb7054b876f6fd60ffba9cee5f8ddffc13001afb867b54be366bb0",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "scripts/wing_surface_repair.py",
+      "sha256": "f9c82250b63b01ea190094fa906c17ca629234c4f7b1c51b772573b6f9bbac43",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/nacelle/capture-host-decoration-reference.mts",
+      "sha256": "8a6b9f087708ad2ca7ab8b28f26b27bce09d25a53c5d0423ab764e0bf659ae0b",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/nacelle/capture-host-decoration-subdivision-reference.mts",
+      "sha256": "b88eb536cb46a26dfc5f44dfadc1de2fbe6e670dbd814efcb237004aa0e5cc07",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/nacelle/host-decoration-preservation.mts",
+      "sha256": "f9f2132983120f2c32f5d65ff17ce3bd98c6f70e2ef38baa2ec1cf78e1958281",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/nacelle/host-decoration-preservation.selftest.mts",
+      "sha256": "d574221ae14980bcb64ab9c29f5216de08b3e623ecdd39e4f463ac8bf73a5f77",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    },
+    {
+      "path": "qa/nacelle/host-decoration-subdivision.mts",
+      "sha256": "65cbf65a11e7919f7aea2d8745a060eb6d275f26b72a5966c2d546f83fa5640d",
+      "originKind": "Current code dependency or auxiliary verification with an explicit hash",
+      "claim": "Frozen where actually used; independent current code or previously unindexed dependency. No claim of exact historical code identity."
+    }
+  ],
+  "retiredMappings": [
+    {
+      "source": "qa/v22/reference/red-target-mapping.json",
+      "destination": "qa/contracts/wing-anchor-target-mapping.json",
+      "sourceSha256": "2ecc32a1099f0dfad215442daa9bce1598b860d54f8020fed1377916fe5991e6",
+      "destinationSha256": "2ecc32a1099f0dfad215442daa9bce1598b860d54f8020fed1377916fe5991e6",
+      "bytes": 6435,
+      "edits": [],
+      "reverseReconstructionVerified": true,
+      "currentAvailability": "not a current input",
+      "claim": "Historical source mapping retained for provenance; current dependency closure does not rely on this missing retired path."
+    },
+    {
+      "source": "qa/v22/verification/refinement-contract.json",
+      "destination": "qa/contracts/wing-anchor-refinement.json",
+      "sourceSha256": "34df8f1e120ab9bff34fcbeb829feb922ee7547c26529fead2fb78cc30e578c3",
+      "destinationSha256": "34df8f1e120ab9bff34fcbeb829feb922ee7547c26529fead2fb78cc30e578c3",
+      "bytes": 6863,
+      "edits": [],
+      "reverseReconstructionVerified": true,
+      "currentAvailability": "not a current input",
+      "claim": "Historical source mapping retained for provenance; current dependency closure does not rely on this missing retired path."
+    },
+    {
+      "source": "qa/v24/verification/reviewed-contract-logic.mjs",
+      "destination": "qa/current/reviewed-contract-logic.mjs",
+      "sourceSha256": "f9cdbc2573b579663d2fcb40c0fecdb20b143edd98c42870a2ffd122dccaef89",
+      "destinationSha256": "f9cdbc2573b579663d2fcb40c0fecdb20b143edd98c42870a2ffd122dccaef89",
+      "bytes": 6356,
+      "edits": [],
+      "reverseReconstructionVerified": true,
+      "currentAvailability": "not a current input",
+      "claim": "Historical source mapping retained for provenance; current dependency closure does not rely on this missing retired path."
+    },
+    {
+      "source": "scripts/data/red-target-footprint.json",
+      "destination": "scripts/data/red-target-footprint.json",
+      "sourceSha256": "4235ff1718d1bcb1b321f3c5b626af1d53f243c8501d99965333b1a8b7da0b26",
+      "destinationSha256": "4235ff1718d1bcb1b321f3c5b626af1d53f243c8501d99965333b1a8b7da0b26",
+      "bytes": 1980,
+      "edits": [],
+      "reverseReconstructionVerified": true,
+      "currentAvailability": "not a current input",
+      "claim": "Historical source mapping retained for provenance; current dependency closure does not rely on this missing retired path."
+    },
+    {
+      "source": "scripts/data/red-target-mapping.json",
+      "destination": "scripts/data/red-target-mapping.json",
+      "sourceSha256": "2ecc32a1099f0dfad215442daa9bce1598b860d54f8020fed1377916fe5991e6",
+      "destinationSha256": "2ecc32a1099f0dfad215442daa9bce1598b860d54f8020fed1377916fe5991e6",
+      "bytes": 6435,
+      "edits": [],
+      "reverseReconstructionVerified": true,
+      "currentAvailability": "not a current input",
+      "claim": "Historical source mapping retained for provenance; current dependency closure does not rely on this missing retired path."
+    }
+  ]
+}

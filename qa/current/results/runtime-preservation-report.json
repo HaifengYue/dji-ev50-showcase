@@ -7,7 +7,7 @@
   ],
   "exactUnchangedMeshIdentityRequired": true,
   "passed": true,
-  "sourceSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+  "sourceSha256": "062fd09dee64984221316ede5ba684f6c1b6ff4f7b7ee2a0bd818a8888fd6f43",
   "baselineSha256": "01e19eaacd6e9035568f603f49492e02de345808b287b8d951b780a86378ca89",
   "referenceArtifact": {
     "path": "qa/reference/accepted-reference.json",
@@ -15,7 +15,7 @@
   },
   "exactRawReferenceFingerprints": true,
   "contractPath": "qa/contracts/model-refinement.json",
-  "contractSha256": "b7a96cebc32dbc7ed7622e032e42da80b9bb5b4ee1b1d5f7f502e418207eaac0",
+  "contractSha256": "550b01295b5c2e69a489966da74ec4e80ca7829a4590babfdbe384386ed81e43",
   "unchangedGeometryAndCornerNormals": [
     {
       "name": "Blade_hinge_arm_L_Front_A",
@@ -4675,7 +4675,7 @@
       },
       "after": {
         "uniquePositions": "aa0dbaffa02676e765eed76139a8b1a19af8a69e3a2cee6e5165d23f65db1f6a",
-        "orientedTriangles": "3b0fb3bf21b5e2c781978cbed2e32bd7d4ad5ae066a881beb3f39abab1e5e369",
+        "orientedTriangles": "53cb3c4cc3ce3653a3f0e342c016cba3ae04c063b9a3576c3f8b5ad007827285",
         "triangleCount": 140
       },
       "beforeNormal": {
@@ -4685,7 +4685,7 @@
       },
       "afterNormal": {
         "uniquePositions": "b579e1b57682605461e1786e2776c785ec01dc28f689c7f1d5784d6fec19682d",
-        "orientedTriangles": "9f3096163929129500f119bc1ce2e3e0e0b9aa3f69bdc803639a0b842f7aaef0",
+        "orientedTriangles": "1e16b2f6379ef5e8ec64f1441cc6ad3ca72bfb8f313d198cb862f016f579461f",
         "triangleCount": 140
       },
       "exactFloat32PositionTopologyEqual": false
@@ -4702,7 +4702,7 @@
       },
       "after": {
         "uniquePositions": "aa0dbaffa02676e765eed76139a8b1a19af8a69e3a2cee6e5165d23f65db1f6a",
-        "orientedTriangles": "8158d479e919e03d421c8d8b4a11839deced6c3b7e8b65eb004b438f371a7a5d",
+        "orientedTriangles": "335129f38b961e95ca09b89c7411642c0c46167cf3fbb1b53916eac79570c8bc",
         "triangleCount": 140
       },
       "beforeNormal": {
@@ -4712,7 +4712,7 @@
       },
       "afterNormal": {
         "uniquePositions": "b579e1b57682605461e1786e2776c785ec01dc28f689c7f1d5784d6fec19682d",
-        "orientedTriangles": "5d56ec5ca4a8c21330301e567e7539f594e0102fe0f2c3d39753cbe4952db668",
+        "orientedTriangles": "1174f8feca1eace7474d39cd7d82874f77b73ee0343493a5d0176347d2c71bc3",
         "triangleCount": 140
       },
       "exactFloat32PositionTopologyEqual": false
@@ -4836,8 +4836,8 @@
         "triangleCount": 380
       },
       "after": {
-        "uniquePositions": "7017b70734081714e93ed47d1257f5eedede6fe3c4aecfb4fabb7213464288e9",
-        "orientedTriangles": "104390731129e3e246043072c6ee8bcb66564fb848e15bb584c442797fc24103",
+        "uniquePositions": "81333aeb2783836d8f872da036922b82ec8a119cbdced90c195a6fb71cc109cb",
+        "orientedTriangles": "8e749175f102d95f4e7f73826de0c30ebbce1b0901644b1eec543c603b4dd0f5",
         "triangleCount": 380
       },
       "beforeNormal": {
@@ -4846,8 +4846,8 @@
         "triangleCount": 380
       },
       "afterNormal": {
-        "uniquePositions": "2400ad3f88f2ce0f837d63fa3721124348d25727b4011a14dfc2008ac97eb3c0",
-        "orientedTriangles": "0764cea75202d0fa290eaca69c1426cf8cca9d1c5a422df6d467c7d234505d9a",
+        "uniquePositions": "b6c4f7db7a7c7c9f2869fac36663addc558fa0b35f252fc6d2dcf6dde7058a7e",
+        "orientedTriangles": "84f148f872622779c15f1fd734dba9f3843c0219e9ce2e3e3b5096d97c780be1",
         "triangleCount": 380
       },
       "exactFloat32PositionTopologyEqual": false
@@ -4863,8 +4863,8 @@
         "triangleCount": 380
       },
       "after": {
-        "uniquePositions": "ccea97d997db61ab47c9a49957b9a2b683bc1d8260baff38f9ae3c6d08792bb3",
-        "orientedTriangles": "8e66bbfaf0dad7f400f977c57c456f01d0c303ca3a2fdeace7544e1378a441ce",
+        "uniquePositions": "a0ed4eccda8d4a023c74c9ae59f9b954355fb2f07d75246541252fb180a57aba",
+        "orientedTriangles": "441447d74aa193d39d73b67aa12e8fece24c297873bbea9240487cdc1bee50fe",
         "triangleCount": 380
       },
       "beforeNormal": {
@@ -4873,8 +4873,8 @@
         "triangleCount": 380
       },
       "afterNormal": {
-        "uniquePositions": "961f6dd9bf46618b189c371bea979672a56e23d0aa19761d308ad08b3a4b06d2",
-        "orientedTriangles": "ebebb2f9b798675e4d03349e1192f31fade61fb5dac8b41c73152147b72070be",
+        "uniquePositions": "31ad0a79afb5d4229f391578c987a06e99a4c2da59b50cabb797d85bfca0d28c",
+        "orientedTriangles": "fd145740b3e489db8e100857d43e4935102e9bbe4d97dd224f7b667c000c7357",
         "triangleCount": 380
       },
       "exactFloat32PositionTopologyEqual": false
@@ -4890,9 +4890,9 @@
         "triangleCount": 5874
       },
       "after": {
-        "uniquePositions": "8f33b1ca7b7fd373a3f1289046e8c4828e869038a42c31d1b79817705109483d",
-        "orientedTriangles": "f9a0b1c28b63929f5df786bed27d2d10bfcb55644f95ddcb1ada423563fd6f86",
-        "triangleCount": 24520
+        "uniquePositions": "5268168edf5617f6374bf654c6352d697b64ff1aeb35b0ea77c9d11c7cce20d2",
+        "orientedTriangles": "e5015c966bac7203b1f9ac36ee1881356ea087cf734e73456836033588dda0ed",
+        "triangleCount": 6472
       },
       "beforeNormal": {
         "uniquePositions": "1b304da1775b6ec789b5f3abbbe9b147122c65aa425fe9e545c019c5e82da13f",
@@ -4900,9 +4900,9 @@
         "triangleCount": 5874
       },
       "afterNormal": {
-        "uniquePositions": "03726dbcd090d098f19631f2c195b0bb63f907621befcc41054c7278a00457fc",
-        "orientedTriangles": "01966eaee4bc4a728abf0d64daa2d378abf04dde4928e7fd7022bcba903c69a0",
-        "triangleCount": 24520
+        "uniquePositions": "c3f30b7c3cb82125ebec4377dd6c3e0c98584a2204b820844ec1d7464a4ac974",
+        "orientedTriangles": "1899dcfbbd556c3209a86c8a2e1ce54d4ddf52e9980174820227e958f0af7ff0",
+        "triangleCount": 6472
       },
       "exactFloat32PositionTopologyEqual": false
     },
@@ -4917,9 +4917,9 @@
         "triangleCount": 5864
       },
       "after": {
-        "uniquePositions": "c1497b4ec632edd9f65c7ce630bd2b861689a8ebf0e49a0ee8674f33b7ac7ff5",
-        "orientedTriangles": "07ef24491fc6599046b3f195b57ba101ee40139f8e9f906ef350e9f163a7b882",
-        "triangleCount": 24520
+        "uniquePositions": "39e5ccccd1f199054f22fea4a003e41ec0e731aac24fea81ce8a4ae47100eba1",
+        "orientedTriangles": "dbbb86c1e59a360b91bccf021b2810fab7fb6b1cee6e72748583c5e5586e4e9b",
+        "triangleCount": 6462
       },
       "beforeNormal": {
         "uniquePositions": "c1188da9d40714d043f873a478db6e70bc6e1d84e24c66082cc758b1962bc95b",
@@ -4927,9 +4927,9 @@
         "triangleCount": 5864
       },
       "afterNormal": {
-        "uniquePositions": "23cb65f05f09dd16204044cf72098f90969dc0f938fba3bf9c7362481e0fd1a1",
-        "orientedTriangles": "e30c3af4a57aee8463513941894305c63a3154f4136620baebbc165bd057b8e4",
-        "triangleCount": 24520
+        "uniquePositions": "830aa14a350fcf87c0ae0e304de10bf23775d8a4b79ea8f86e8bc0a66d9a507f",
+        "orientedTriangles": "2c64fe49f6a437179c09724264afb4092c7bc0d4087a1ffa6ee92487697cf474",
+        "triangleCount": 6462
       },
       "exactFloat32PositionTopologyEqual": false
     },
@@ -4944,8 +4944,8 @@
         "triangleCount": 88
       },
       "after": {
-        "uniquePositions": "6d39b7e5355b809942abc973d1f51b3f6dcd5917ff05116725523cb042e4fb75",
-        "orientedTriangles": "afe5b8752484388e058473186691a8ae3fa4a4641d5980e42a9e02611330ce73",
+        "uniquePositions": "3221723c7acf185f3cb460fdc98d529fb1fe41a0c505224fc80695cd99d3139b",
+        "orientedTriangles": "1f2949e7798a0b8ec34a32f8e305538f773dacc0434cebffbe042fdf53533a35",
         "triangleCount": 88
       },
       "beforeNormal": {
@@ -4954,8 +4954,8 @@
         "triangleCount": 88
       },
       "afterNormal": {
-        "uniquePositions": "9d83d029482c1a0dbef4c41124b2c0dcf171fecb8b805dae989f6953660758aa",
-        "orientedTriangles": "787200ba3b7f2793439cdc6f9cbc99140a69f019e1ba4e18aae93659d934891c",
+        "uniquePositions": "ad5c93c8852df34e59d74f88dfaa2785113e7ac6458c455732d6eb824eeec565",
+        "orientedTriangles": "cbffcbd60f439fc06af0be6b8f38b128af64301b43c29b49747aff8540213714",
         "triangleCount": 88
       },
       "exactFloat32PositionTopologyEqual": false
@@ -4971,8 +4971,8 @@
         "triangleCount": 88
       },
       "after": {
-        "uniquePositions": "1fa3cf0ea467281376e73a6c8e5b0dbb14fa7564c8915fb818986b1eea6a926e",
-        "orientedTriangles": "ef8243b30ac915975d1e93218d586d7eedd51d0f7cb47b56817fa1b0bcfe73e1",
+        "uniquePositions": "95d580636e66e7e245a65712f5001934783dfa2ed807f40f02dd324b953d004f",
+        "orientedTriangles": "425daa4c5ddf048589cf66a9de538b57513f49e11e7a8ead5dc718f2b6c5015a",
         "triangleCount": 88
       },
       "beforeNormal": {
@@ -4981,8 +4981,8 @@
         "triangleCount": 88
       },
       "afterNormal": {
-        "uniquePositions": "8ecd65c6f874f33cdf9817b252a308287707ce865f47daf0ba79f8018460ae63",
-        "orientedTriangles": "cafaf10d2fede459e67a45174027acd73a335b8dfd71adbf7c457ce2a5d21ea6",
+        "uniquePositions": "7982539297cac66644b1971620734b1ffb9ebf6bf84c5f615169d18ba4614093",
+        "orientedTriangles": "72ee5818ca5e4437a68437ef18fe83597d29940a8f31e2a8408f5b6f2002d09f",
         "triangleCount": 88
       },
       "exactFloat32PositionTopologyEqual": false
@@ -4998,8 +4998,8 @@
         "triangleCount": 88
       },
       "after": {
-        "uniquePositions": "cf5f1ee3ade0e813baac68d06a2e2342324fa9916cf745b773202436a5178a10",
-        "orientedTriangles": "8c6dc7b7aab8972966e63ce2d01b251d1eb6e95c4123028fa37ec418014ec9ea",
+        "uniquePositions": "a524d6906a14d15645cf590d11519e0a4d42a23eda942d725207661b4d1338ca",
+        "orientedTriangles": "4abadeb3c3c8fc38b2339be5ce3a967a824002bee1bd999658ea0b83ff140d30",
         "triangleCount": 88
       },
       "beforeNormal": {
@@ -5008,8 +5008,8 @@
         "triangleCount": 88
       },
       "afterNormal": {
-        "uniquePositions": "5c53e7b55568f35bf84f62ff940838389d7d93e1194dd1f57a70180b540fc7ce",
-        "orientedTriangles": "ca9a8063ccfca6de931738d36c3cf23c1daf5cd977a21023c39af018bec08df4",
+        "uniquePositions": "8d9772e8ab3f3580a31b31740a069240d55611ed6458d0f23f1f5809c48b60b9",
+        "orientedTriangles": "a5599b470ab4ecd1fd38ab8e14dca58660d534ab16fb5143d174a41884d838cd",
         "triangleCount": 88
       },
       "exactFloat32PositionTopologyEqual": false
@@ -5025,8 +5025,8 @@
         "triangleCount": 88
       },
       "after": {
-        "uniquePositions": "e3f44d894be3010b7452c0dfac51b3a080d1e56f40d5fcd4115c3e965dad740e",
-        "orientedTriangles": "dd59c8c17f6b6e4fb7b3ed03144d887eb9412e1efcf807e52685d30c4eeb2553",
+        "uniquePositions": "6207724b60ce8b605a04989944f5828aba45c0cc38f1d16032bfc0526e6384cf",
+        "orientedTriangles": "6f91e1e385b3c945a1f53ae522afea2203023539162528149d55aba4fcb51498",
         "triangleCount": 88
       },
       "beforeNormal": {
@@ -5035,8 +5035,8 @@
         "triangleCount": 88
       },
       "afterNormal": {
-        "uniquePositions": "15ea0d01f9b23101232e41c76cf39d447fd4be6e480dba9484657c30647da02f",
-        "orientedTriangles": "2a2aa99ec4251156829f6dfd98f8d69721df07b6649d9e113f12528b1db06c4e",
+        "uniquePositions": "5a82a9c310d58814e730c7c98e97ddb6606084f29437b1bb2e7f41c4a796404e",
+        "orientedTriangles": "fbc32e2dfc6121ac73bbf47961180bf83f63b1c9951b5f789f7b4325056e43d4",
         "triangleCount": 88
       },
       "exactFloat32PositionTopologyEqual": false
@@ -5052,8 +5052,8 @@
         "triangleCount": 136
       },
       "after": {
-        "uniquePositions": "fabfaf0f9a8be418d2001a228f00c85a19cc055c547bf9b84a28dc98f6e6e612",
-        "orientedTriangles": "1d9dc66b73c079aa687ac9a3255983d41503c14c305c4b1d1d552fd021df64bb",
+        "uniquePositions": "739f56f9198abd47c7ccc4662e9ccc1f292821e0099af9d4ac72aeaacfc12051",
+        "orientedTriangles": "137db1fb49ac3251873bacbb706143dbd30f5a6a3f589a4092800330a11318e2",
         "triangleCount": 136
       },
       "beforeNormal": {
@@ -5062,8 +5062,8 @@
         "triangleCount": 136
       },
       "afterNormal": {
-        "uniquePositions": "06fb6e79d471c45bb3732b2a4653b3759acc9e81e3e39dc734827f5000a0c3f8",
-        "orientedTriangles": "82ca39003c8e95af2e7603725855f031230f9821df727fc9e081b5c8d29b635f",
+        "uniquePositions": "09bc0adacbaf4d1419b866401f7fe3d787b098b0824f01056996e53e96ceb189",
+        "orientedTriangles": "0e37d04a1fddb6170122579bf4e88ad51e87109b65489d34d25ba5b2dcdd788e",
         "triangleCount": 136
       },
       "exactFloat32PositionTopologyEqual": false
@@ -5106,8 +5106,8 @@
         "triangleCount": 136
       },
       "after": {
-        "uniquePositions": "3b4379867b06a6bb339f2b00a8844e2b6a479a6dcddf2e3499fdd3d67b097735",
-        "orientedTriangles": "59b9e56213e0f505cf38ff0573cd2c216bbf5dcb6ef73288fb3b37f5c594885b",
+        "uniquePositions": "ad6b4f605eb8d479c63d1ff5e0d022ec43def9b65373239362b89a706a3cb886",
+        "orientedTriangles": "0757238465da3bc461b5d21924d8c98538a454d33443c5e705b34f95ebbeee17",
         "triangleCount": 136
       },
       "beforeNormal": {
@@ -5116,8 +5116,8 @@
         "triangleCount": 136
       },
       "afterNormal": {
-        "uniquePositions": "247edb040d1f20edf8f4e036565ba6c9a7b6585c1498edc6341caa3dd6076e78",
-        "orientedTriangles": "68450f4cb378e81a6493fa7f39840357077468dc29348bc868fa45d6a1fa93c5",
+        "uniquePositions": "bee39cc502cf315e2a805fc36c2e01bc6be238f8635bf1a48132390b36d69cf0",
+        "orientedTriangles": "15310d353c74e2625bef24e3da8f73413eb98afc2fb55eed538841ebd4696406",
         "triangleCount": 136
       },
       "exactFloat32PositionTopologyEqual": false
@@ -5160,8 +5160,8 @@
         "triangleCount": 760
       },
       "after": {
-        "uniquePositions": "e9948defdc8cc12e58a614041721b80b6597afa5a191454e8347a84eb94f8a9a",
-        "orientedTriangles": "d74ede69515247050d123fa4021edaeb428b1d59c6a4ffa388bc521d3b750b0c",
+        "uniquePositions": "34662e378bb3ceba57e624bf64782ad84f4578d28e295b3da616a024956f7014",
+        "orientedTriangles": "37dcd0249d60d84d642c26fecd64642269f3ad630305109a4723eb637c0ebee3",
         "triangleCount": 760
       },
       "beforeNormal": {
@@ -5170,8 +5170,8 @@
         "triangleCount": 760
       },
       "afterNormal": {
-        "uniquePositions": "46faefa17e4cf575d2d10381969a92a94a9ad51a41a495c8f9c700642df8e530",
-        "orientedTriangles": "f64eb3427c054d9f6d0c776e26bb30f9b2a817b28bd3988bb661dc793529f789",
+        "uniquePositions": "4b5ecd812220f1e9c5d91f53941597e7c177b6efcdf5b0f4c6722ad496f06d2f",
+        "orientedTriangles": "756e157489a63cebfc6850013dd8d11bdcdf55e44c5d3c4ad90baf70448ac2ee",
         "triangleCount": 760
       },
       "exactFloat32PositionTopologyEqual": false
@@ -5187,8 +5187,8 @@
         "triangleCount": 760
       },
       "after": {
-        "uniquePositions": "3693700566cb75eb8ad0359ab98f1bb4646f84d0c42883d92f3000c1514cba6b",
-        "orientedTriangles": "14f0811c36a1994a54a4cfd4dc553c59b018c51f7cf25b07b56bfdfaa16e7802",
+        "uniquePositions": "35b6c7952585b53b036d221a91be875e7e113177f84e130f1ed1c7822acd44fd",
+        "orientedTriangles": "9a19b6b9da05378b88ce24ab5592b93209fc35c3e7429c2cad8444982276c902",
         "triangleCount": 760
       },
       "beforeNormal": {
@@ -5197,8 +5197,8 @@
         "triangleCount": 760
       },
       "afterNormal": {
-        "uniquePositions": "32791dc3d46b789eec5f9fa23b7f3904d43cc8edc0f464e44b4d54f2d414280b",
-        "orientedTriangles": "4faaa379add40e95b80402a8cf512095809c32788c844f1c3f22456dfac03377",
+        "uniquePositions": "b1a06933a966931710c8b920f7ce8ccabfb1794c77889cfbdd451dfab7182ff5",
+        "orientedTriangles": "eca7a303ecb1a077d2a7316a7c6f1a6347d297f130473411a9c27dda50b6e09e",
         "triangleCount": 760
       },
       "exactFloat32PositionTopologyEqual": false
@@ -5214,8 +5214,8 @@
         "triangleCount": 760
       },
       "after": {
-        "uniquePositions": "7acaf516151edb51da8a0b6c2ba1c371dc7c36b1778f47aab8a0d86473987d80",
-        "orientedTriangles": "41e399188d965ff5ce5fec9a0245308176dcd7ca8d00c62ab4bfc5e0698afee6",
+        "uniquePositions": "cfb17a0a805fb8e83e67fe41ed577d95018f2b7074ab25907cc19936951d6d95",
+        "orientedTriangles": "158a6910b537bae61724f8aefd9d9959cf995a2d4977bee7b3e26b9c8580bb08",
         "triangleCount": 760
       },
       "beforeNormal": {
@@ -5224,8 +5224,8 @@
         "triangleCount": 760
       },
       "afterNormal": {
-        "uniquePositions": "6ab0eccb93164fee0717fc2b56ac0cecf817a98b38ae5430b45fbdb1c5b81c38",
-        "orientedTriangles": "b86b79a38fab7e7dbad4b0240ef00263343dbf74f9f5420902204d6969192f92",
+        "uniquePositions": "ca0fdffa29c714e57b252051fe5cc7fc9819dafd77b59c76662d603b8a48e301",
+        "orientedTriangles": "3841cc1a4f241e9d57ff8cebebb83b24fd92301ef46f55075865fb99631a3ac4",
         "triangleCount": 760
       },
       "exactFloat32PositionTopologyEqual": false
@@ -5241,8 +5241,8 @@
         "triangleCount": 760
       },
       "after": {
-        "uniquePositions": "4fdaf2ba138b29c64acdfe928e78dc31acba78a639e8c640cf0ac422b034b797",
-        "orientedTriangles": "47dd3657e26932c8bf4d991d7d99748917b8a4139c987ae2ef90d90c661bff78",
+        "uniquePositions": "da9e1fb31011fff955ae20b8a3786a28f1a5a10c31c48e0eef5bd22dd513bb5f",
+        "orientedTriangles": "835af60575c4bfce0dc32d097cd385607bdbe6ce9d936da7bd3471d95d9de3a7",
         "triangleCount": 760
       },
       "beforeNormal": {
@@ -5251,8 +5251,8 @@
         "triangleCount": 760
       },
       "afterNormal": {
-        "uniquePositions": "9aee0d6eb77170adad076e69128ef2e0ec384ed41d6379c092873ef5be44ec31",
-        "orientedTriangles": "b076ac18e77471eb9dc060dd2d12ad4e14b21a3174edf9079763f502af5e0497",
+        "uniquePositions": "4e64302f7b304e3b02074e27d9a99decb4298fb60981614b0413f74742b22075",
+        "orientedTriangles": "1dd4a989ca4d9cf10bef716b64b8f19a0278354266c7f59415600a920ab22bf5",
         "triangleCount": 760
       },
       "exactFloat32PositionTopologyEqual": false
@@ -5268,8 +5268,8 @@
         "triangleCount": 576
       },
       "after": {
-        "uniquePositions": "47a5e59b626c11faa2471587d6c5564f7c4d8fdf4f46ba32996ad42ebdf1b6c1",
-        "orientedTriangles": "2bc143188bdb00774d94e32ad12f9e9f9b28ede8d7f95b9065a82d7088414607",
+        "uniquePositions": "7e546e032ded5feedc38aec2e7a636dd4fdda6659f5be5e50ff5e4ccb438eb15",
+        "orientedTriangles": "c361fd00eca16b4057128e9ed512c2685378e7ec740c9ae697e20be85da9921f",
         "triangleCount": 576
       },
       "beforeNormal": {
@@ -5278,8 +5278,8 @@
         "triangleCount": 576
       },
       "afterNormal": {
-        "uniquePositions": "16f0d60cd12b64a796c2216a0bfd5791b37ac6ee3357d34789c3101d3a13cd24",
-        "orientedTriangles": "229bfaebbc8e81c38f30d4fa72427e405aaad5611008ec21c3f59135b5da02d4",
+        "uniquePositions": "7a8a7b6a366e4aed2e2c7242ba6a6e632af6e399f92240d98b68ddb9d6950ef1",
+        "orientedTriangles": "c1e31a6b2aec76f455747a158c7c48a0ab243245da5f6484c264a03ebecc7e62",
         "triangleCount": 576
       },
       "exactFloat32PositionTopologyEqual": false
@@ -5295,8 +5295,8 @@
         "triangleCount": 576
       },
       "after": {
-        "uniquePositions": "ff75d63523e2031ee4a72095373147d73a5db444a8dd028d49c9fe4e1241fb60",
-        "orientedTriangles": "c147b3fd49b052cd5926d262bd60da840f768f8842727e71e339eb7ba926da1b",
+        "uniquePositions": "2f815eb09fc3a4624b442dea6785845ed6087b5f2210ba722d4896ddb7a9adc1",
+        "orientedTriangles": "425d32ed5d07044e549e18ee7b942b40c58abbf43353006f5143d577f72bd177",
         "triangleCount": 576
       },
       "beforeNormal": {
@@ -5305,8 +5305,8 @@
         "triangleCount": 576
       },
       "afterNormal": {
-        "uniquePositions": "397e9e618c099827537b1db7ed448117ef284a3a96dbe1d2ee1b890c6c739a3d",
-        "orientedTriangles": "da23ee5d0a0ef5d3e5895c97301e2b1d381f9e413635533d35632ea4786f5a09",
+        "uniquePositions": "5782f0673932324eead1dd2a4c556f7e0cd9e7685ef80e4ac465807dda473125",
+        "orientedTriangles": "7a0c33dd34493402f0b943d26131b3712a5b6d63a45385605af40e52229d3301",
         "triangleCount": 576
       },
       "exactFloat32PositionTopologyEqual": false
@@ -5322,8 +5322,8 @@
         "triangleCount": 76
       },
       "after": {
-        "uniquePositions": "e9464796550931538e6bfa7ec7573e317930c113cfe4f3fa490e011cba93d645",
-        "orientedTriangles": "b2c073fde468c8bea21729a2d536351daba83279d47c9eaa8eb51dc1b11dc322",
+        "uniquePositions": "4dbe08f18ded73dc3942e87dd10b6dd94a354ded8c4cc235c79447e9f21b56a1",
+        "orientedTriangles": "4702dac29e92dc13ae799836fe783b5de8b3c554a538b45a447129a3a78ace5e",
         "triangleCount": 76
       },
       "beforeNormal": {
@@ -5332,8 +5332,8 @@
         "triangleCount": 76
       },
       "afterNormal": {
-        "uniquePositions": "a195826c45fda02566525badde806fd663a242a279c2377207786593d7de3e64",
-        "orientedTriangles": "b0e1931e3fa2a6b4403f1d2b379a0f623fb18f7b65d0f4aeb78540155b7cba47",
+        "uniquePositions": "03590b6c7176254274c1e4e2e6bd3842486a3ef958ab3f0bdf868b787dd291b5",
+        "orientedTriangles": "3076df7f1c4df5e6c5023ef2266f7e5794ffaad77528483b39d7b0f552c7a286",
         "triangleCount": 76
       },
       "exactFloat32PositionTopologyEqual": false
@@ -5349,8 +5349,8 @@
         "triangleCount": 76
       },
       "after": {
-        "uniquePositions": "8a8ed35a342107516efe27d442fcf7d45a56aac2aa4beb79952185758b49522c",
-        "orientedTriangles": "4f6e6f00a03cef1c6e7e9bcbc31f563bde649f613edaee7d31b11206ce5ab8eb",
+        "uniquePositions": "dd195bb11819fce7fa25a9ec20e56ec2f1ea75098fe4b4a880a6a2dc372e198f",
+        "orientedTriangles": "a5064939ce46cbb69072040c1432f2d0350b96aad1de9b2a47834f211430da38",
         "triangleCount": 76
       },
       "beforeNormal": {
@@ -5359,8 +5359,8 @@
         "triangleCount": 76
       },
       "afterNormal": {
-        "uniquePositions": "41fd2737c994f138839a5c3857bb1dbec65029276000a18c821809e61185a75d",
-        "orientedTriangles": "e36cf556bc427a1f8b37f43b8810bc0172fd57b9cf393d114b6587a250e96960",
+        "uniquePositions": "669bc307dd1130575995cd9681e3df958cf90e7e5d2b0f1bcf340ea3afeb5c7d",
+        "orientedTriangles": "22270058d3c9699d89d97a6f88f3e8bf7e1c862c0c6a0cd1004b9e2398051e89",
         "triangleCount": 76
       },
       "exactFloat32PositionTopologyEqual": false
@@ -5646,8 +5646,8 @@
         "triangleCount": 288
       },
       "after": {
-        "uniquePositions": "3b8eb10b003ac77493ff1202d5e02bb646e96db95b51c26998175c517c4f901b",
-        "orientedTriangles": "3d69f2deb0ccdffb55d5fa61848fd354ca48c4a0fb6162c003c77e5db8c88c67",
+        "uniquePositions": "48dcfebee7e73872851e5d62d28bea6acd8b25af0375134396b0a5d72ebb1072",
+        "orientedTriangles": "8f9f0cb9c729fa8a89b65a0b544e769499ac0487e515cf868004273b2eac800f",
         "triangleCount": 288
       },
       "beforeNormal": {
@@ -5656,8 +5656,8 @@
         "triangleCount": 288
       },
       "afterNormal": {
-        "uniquePositions": "1000f6486523e16a395761159948e2b0a6cd1f034d80f5cf35424d686be7a07a",
-        "orientedTriangles": "2a8c1ed473604ec991fc462a56c28b8991f3bfdf68ddba244afb5011a90184e3",
+        "uniquePositions": "2fbe27a28e170f1eec45f4427c2427e583479a51a334e3eaa69d97a7bd196448",
+        "orientedTriangles": "152804ad0c51d121fb379dcc9d4551ac3bf836509385f8345c645a506a5e1f88",
         "triangleCount": 288
       },
       "exactFloat32PositionTopologyEqual": false
@@ -5673,8 +5673,8 @@
         "triangleCount": 288
       },
       "after": {
-        "uniquePositions": "84d249954528e69510a920aa0dcace1e2986e805193e555639a743f482f475e0",
-        "orientedTriangles": "a299b64a560ede6bef02be824610a3999e84ceff8060b533c312db231760b22f",
+        "uniquePositions": "5a26f8cfe1edfe5943012e7a9be89cd56d772d46c6b0a938ab16b2951ad8ec83",
+        "orientedTriangles": "7fb8616bfa444424030b220bd5cfce8d3f4466cd26b393391ece26fa0ced52a1",
         "triangleCount": 288
       },
       "beforeNormal": {
@@ -5683,8 +5683,8 @@
         "triangleCount": 288
       },
       "afterNormal": {
-        "uniquePositions": "8a514ccd25abded96041fac35f29114e72cd3e2e81f4d9f25bef37bc08579a10",
-        "orientedTriangles": "71270315a7ea5c00c3a9300615a94a34c38e97e27a458c9279e6b7192af755d1",
+        "uniquePositions": "7cd475dbbca42ef1cf62489ab86d9c507287572e0162232cc45ff8477b829eeb",
+        "orientedTriangles": "5fd57157f39aa0681b7d65a565d3f13636e782bc552d1e77acfd6ab73276fa75",
         "triangleCount": 288
       },
       "exactFloat32PositionTopologyEqual": false
@@ -5889,8 +5889,8 @@
         "triangleCount": 268
       },
       "after": {
-        "uniquePositions": "2eb23d8b364c0008f5da96d332fd379179a9b529e58f9c6cea3db9222760e533",
-        "orientedTriangles": "343545561830e48819a4e7b930bf5d0ef573af0a822dd67f4d4b8b1037ba5765",
+        "uniquePositions": "6029b869b32dd9b450893de0965ee8d07bf6028c6d199825a20988f3d55da3cb",
+        "orientedTriangles": "c27c7cd8c4223a4123c8fa165bfc3222e56c54104d331fe07ff6e694c3c62ac7",
         "triangleCount": 268
       },
       "beforeNormal": {
@@ -5899,8 +5899,8 @@
         "triangleCount": 268
       },
       "afterNormal": {
-        "uniquePositions": "ee68463fac21afdf420b4202be655fc05e127c489c23279032029eae84f4ef70",
-        "orientedTriangles": "28ce485a3b2cf37d36d103051f7c43db41393c9c764c11c1f377016cb453acb8",
+        "uniquePositions": "dcda344441e43007cf6abbd2c6c7d657c518b726fddb31dcc8fb0979ea04e8f4",
+        "orientedTriangles": "9fdbcd890fa62c0c4c367c28e7d881b5b1caad4464936ee71c3cac3936cc6bd6",
         "triangleCount": 268
       },
       "exactFloat32PositionTopologyEqual": false
@@ -6240,8 +6240,8 @@
         "triangleCount": 3139
       },
       "after": {
-        "uniquePositions": "3141f33455daf5e50e5eb113c97ddc96c868b2c272aa360522211670aa1b9194",
-        "orientedTriangles": "06603d4f8b6132b86086d133d452dbe3849d5634146c8b44ef47c2cb73b1c567",
+        "uniquePositions": "58b7cf3af2022dcd1c7743c6c5b01bdc01aa28f01a1fd903ea15b1a7bb0e909a",
+        "orientedTriangles": "352cb4738de33460c85a376e52298f1103a2dced23b981af1264a3ed4929762e",
         "triangleCount": 714
       },
       "beforeNormal": {
@@ -6250,8 +6250,8 @@
         "triangleCount": 3139
       },
       "afterNormal": {
-        "uniquePositions": "245acc61bc054d6e719759e6d6aecbeaf357a89cbe9626563fb05db1d7eca6c0",
-        "orientedTriangles": "194933e3155fe6e2b8096a96491c689935e802edde42418d80273f2009833d5a",
+        "uniquePositions": "163071e8b1a201b70a285b9aec250c5f31d3a01f0ac00a2367ded8c12b746174",
+        "orientedTriangles": "2ecb94a40ba6a0b3bf020327699bfa1d20f7da0efcf3221b8ab702f861c5f246",
         "triangleCount": 714
       },
       "exactFloat32PositionTopologyEqual": false
@@ -6267,8 +6267,8 @@
         "triangleCount": 3139
       },
       "after": {
-        "uniquePositions": "57a31c1cb78b9c4655809c69af16a66fa4cb9849b2d68a06d7b47f0a0d7d6d53",
-        "orientedTriangles": "d9d8879e4e98c8208d4b035d29c5f3a17b869a777ada0bb580abe29691638ce8",
+        "uniquePositions": "6b0fe910d2cc6233c2a9cdbf67d292eb8e326335b8dedbc180e1f4f9d9a8e6b0",
+        "orientedTriangles": "038f4020f7204423a8422d0176dd3456a4543a92e94fea49e73bebcb90da911d",
         "triangleCount": 714
       },
       "beforeNormal": {
@@ -6277,8 +6277,8 @@
         "triangleCount": 3139
       },
       "afterNormal": {
-        "uniquePositions": "fac0ef29f62d9613594cd42000925f9678a21913d550efc5d23f3c16ff31c1d4",
-        "orientedTriangles": "ea4508e5701e607b9bf5b5460660e007cc9a3d1fe1ccd5428640151912229ec9",
+        "uniquePositions": "ef5cba61c99f7846791dc73f784bdde24fb5242e54d82babc0facf8aaeaeb723",
+        "orientedTriangles": "0339be9fa071606d4e86a6f18d1cc9125d26114e33efa99115924095c4d6e88e",
         "triangleCount": 714
       },
       "exactFloat32PositionTopologyEqual": false
@@ -6294,9 +6294,9 @@
         "triangleCount": 3334
       },
       "after": {
-        "uniquePositions": "7a4b8b70404460bd00e25ec566af2fb13d1042bba4b27ce201bc4ec26ea6f3b5",
-        "orientedTriangles": "6137dee93022ad43743c6312e41416facc47c8fe5d5e233fd951da7ea887612d",
-        "triangleCount": 4018
+        "uniquePositions": "db48e0266e83871b39d3927fccd690f5682a2b95b18527ee598d2da1fed296e4",
+        "orientedTriangles": "2aa4a82d230fac2ad12f3f71a58922ba8d146102f80e6f517b99a3a7121395cb",
+        "triangleCount": 1676
       },
       "beforeNormal": {
         "uniquePositions": "7f83235459d66b44fe07d3be69d57c4183cac59175712650d900ceb3353a9eaf",
@@ -6304,9 +6304,9 @@
         "triangleCount": 3334
       },
       "afterNormal": {
-        "uniquePositions": "c55709bfe9a95c275a50465871f489b59da1bc5861f3b97237cce9388cbfdd61",
-        "orientedTriangles": "26123ad9036f086e59f5cc45a41ff18903604e29d8ab2a33b3a7c31a2b1dd089",
-        "triangleCount": 4018
+        "uniquePositions": "c60373ea7fd875098cdf1bf1edbbb85b6cb302940d1e3d2531b943214dd78e39",
+        "orientedTriangles": "173f0c141c0f1a82036c0574942e4cf2df4220d8524b85861c32cf930cb16504",
+        "triangleCount": 1676
       },
       "exactFloat32PositionTopologyEqual": false
     },
@@ -6321,9 +6321,9 @@
         "triangleCount": 3330
       },
       "after": {
-        "uniquePositions": "8edb6d5f5a67390419c9b7140cc75a42d194985e70218f1bb8035e6e5dba1736",
-        "orientedTriangles": "26256c597078ef23eaeaa5020f46b75b0b4611a7f271df7f80bebddfe68595c4",
-        "triangleCount": 4018
+        "uniquePositions": "850b68e0595a8cdbb5767653cbddb533ea7f2aadd28f75553eb82dcf1c7bb1c1",
+        "orientedTriangles": "747bfdea2c863b7f48dcbb469c8f8c2746fe2282dd47caef704c8d731cd1f9c7",
+        "triangleCount": 1676
       },
       "beforeNormal": {
         "uniquePositions": "b081603c28b70c00b4554e714d9bd84bf693350d842bfddccb90bcf5dc2a2cae",
@@ -6331,9 +6331,9 @@
         "triangleCount": 3330
       },
       "afterNormal": {
-        "uniquePositions": "30d8391e6bb5bc70074732bbf390872bfe1146e997d59dad685808d1c3cba070",
-        "orientedTriangles": "4a6e7f1ad377dfad45a9ec2b57cc1ae25db1d8ab7ec59075226feb9c566dcc79",
-        "triangleCount": 4018
+        "uniquePositions": "3f0f9991d85932040acfc5b8c34c02b3763db562f62fbf02ae5ffe89f706d703",
+        "orientedTriangles": "01795bdf186ff01e167a2ae2104661af290de623943b239de151e192ff79f7e0",
+        "triangleCount": 1676
       },
       "exactFloat32PositionTopologyEqual": false
     },
@@ -6348,8 +6348,8 @@
         "triangleCount": 15344
       },
       "after": {
-        "uniquePositions": "e5170de32952dd2ac49a3cd3df77412a675855d1d6bab75fd805edbf1a620599",
-        "orientedTriangles": "d257ac1d5b27fa6676a32e0d4558704a7545374eb15f17c391e301d3c53d8cdb",
+        "uniquePositions": "870207bda66658134bee94156683cf5f8cc9d8ded3c0b5cf850e6bc067695209",
+        "orientedTriangles": "5dbca90b8655aedb5e9c91ddd30c4069937b824e101dfad5e40b3b7a521baac2",
         "triangleCount": 17836
       },
       "beforeNormal": {
@@ -6358,8 +6358,8 @@
         "triangleCount": 15344
       },
       "afterNormal": {
-        "uniquePositions": "aecb8ccaf0ddf209c1243013e8e4d5a81d9272b45498e68ea89f5cdcc4e1131f",
-        "orientedTriangles": "abdf965145b5c0d7cbb388ecef39bb665f9b5cd370c7f17763b947095a08ebdb",
+        "uniquePositions": "3daab22267d0188bb8c6a61ce2bfed578594e4b6ff997bdd95ef99965c7e1657",
+        "orientedTriangles": "4884a3f32688e961445e45609677fa6cff6225f5220f6ffd9e1330dfd4ab636b",
         "triangleCount": 17836
       },
       "exactFloat32PositionTopologyEqual": false
@@ -6483,9 +6483,9 @@
         "triangleCount": 40
       },
       "after": {
-        "uniquePositions": "d33e86e9fd0bb29f2b9136c8c66b6e493bed77ddfbbbd98ac599cb2f37131d70",
-        "orientedTriangles": "3bd326c185a2dca37eb32e1d6d10316e74988910d0556fe61337ac36bfd4d077",
-        "triangleCount": 104
+        "uniquePositions": "35ad3cb3e222da4473fc7ff371b2455949bfc001fcd3c4a8a78eaedf7b1baab5",
+        "orientedTriangles": "08bf669a949812787d6abe02bda690c10cf5752de5fc4395d187f14fbdd741e9",
+        "triangleCount": 2680
       },
       "beforeNormal": {
         "uniquePositions": "b2fd0893a0f59ec4db8b7768a319f9bae1a1a017f79e4d2da5bdfae681f9cb65",
@@ -6493,9 +6493,9 @@
         "triangleCount": 40
       },
       "afterNormal": {
-        "uniquePositions": "53bde0ba6c36453805a8b7ad37c8311c0e697fecfb1a09ea9510881aaf55f933",
-        "orientedTriangles": "b3269bed67d357d9cac267ee5c455ef46d651d1dd2bb58c379097429c8259e86",
-        "triangleCount": 104
+        "uniquePositions": "42df9df9c9519c0cb5cb2d5c5df05e7e60b0889add053f66a9b1d963546fc54a",
+        "orientedTriangles": "a8c76eee898460a97d81d5ddb9c46614f5f134ad8337d31454a20c889117b85f",
+        "triangleCount": 2680
       },
       "exactFloat32PositionTopologyEqual": false
     },
@@ -6537,9 +6537,9 @@
         "triangleCount": 40
       },
       "after": {
-        "uniquePositions": "43eaeb60ca2d0eedb6dcc5d2c58f805d5fa52d9f7a10524132f02a1b0f1979ac",
-        "orientedTriangles": "ec5a096f5323a01f7085f860fa7f3ec40df8c51b7a003fe33ad666794d6d9cf1",
-        "triangleCount": 104
+        "uniquePositions": "3e4b804209c22d8cf0bcdbf0f76fd2a98fbd54b23ad443290cfe4e0151d2471d",
+        "orientedTriangles": "1acdcffc4b472195246c9fde89a556c53c4b2a6309611f8e03228705b3be82bb",
+        "triangleCount": 2680
       },
       "beforeNormal": {
         "uniquePositions": "a0a0882130143df64c7ff1fa0f36f50fc7ed3a10e38bc94e43fbf2a34962da8f",
@@ -6547,9 +6547,9 @@
         "triangleCount": 40
       },
       "afterNormal": {
-        "uniquePositions": "cc2dadc6581e1bb83671e0982e1a2b0dfbcedd30c736a68ccfb3569111cb5c61",
-        "orientedTriangles": "71a2c2df8b74472c307da630938eff455736cfc9d7493a27e65d285b42dd977b",
-        "triangleCount": 104
+        "uniquePositions": "b392f01764080169a4a7cc5ea17fc9f57d9a53d4a8c455b42c291e355f42090e",
+        "orientedTriangles": "b86cd63f97a73483327388ab87332eb051e14bdf003389861f42602a0e6b5f55",
+        "triangleCount": 2680
       },
       "exactFloat32PositionTopologyEqual": false
     },
@@ -6969,8 +6969,8 @@
         "triangleCount": 288
       },
       "after": {
-        "uniquePositions": "2e4db967da2c3387897ee36c942296ddd747e642dbf61462abec2d5f1e726a0d",
-        "orientedTriangles": "f1054905ca6d67be8f2e5dad367a8d837980bd3a361603479e4c1444d457783b",
+        "uniquePositions": "50cf11a56ec9ac998e5b53f03debb96a0f82724dd1132e67dd8eca613b637f03",
+        "orientedTriangles": "6b95f2c7e1461f362e3a54e66237b74bf31304703b1f66c207824b0994a73159",
         "triangleCount": 288
       },
       "beforeNormal": {
@@ -6979,8 +6979,8 @@
         "triangleCount": 288
       },
       "afterNormal": {
-        "uniquePositions": "9077fdaff255944cb84d690229674eef13e80a42b0fa53cd905adf952b06ef90",
-        "orientedTriangles": "91a5e4d6b01045d6019970d066686b48709f48da9b7919dd6156dde0acaf1168",
+        "uniquePositions": "1b8872d05abcb85da48b7fbe74f520f7d2cd227e0598fe7ce996f5737ab73341",
+        "orientedTriangles": "bbd10a389fdaaf94d09f04972be61c7387c8f68dd517a93b5f6a9fd09aadd140",
         "triangleCount": 288
       },
       "exactFloat32PositionTopologyEqual": false
@@ -6996,8 +6996,8 @@
         "triangleCount": 288
       },
       "after": {
-        "uniquePositions": "5565cac37a07643e9fdabe841b7ed63b20b2e16efbf5ec9b882e725f37cbc0ef",
-        "orientedTriangles": "511fe0e28698e07ecab9aa9fa0446cf51ff3e9748de6687f3ab82d201e136faf",
+        "uniquePositions": "177bdf7e0b56f8b313f14bce39ff7e65a8a86c69a15f311cb14e6bad816ff5dd",
+        "orientedTriangles": "3a44fe66bd27dc76cabcae925554057f6b5876a69432c88d0b8a8bc4d13eb0fd",
         "triangleCount": 288
       },
       "beforeNormal": {
@@ -7006,8 +7006,8 @@
         "triangleCount": 288
       },
       "afterNormal": {
-        "uniquePositions": "9c2f7fcac785e630328bb27516697d998bdcc4e9d7a5f6605a7ad2a19a843fbb",
-        "orientedTriangles": "5b5f88994090699d397e79839b7a33c8e577be03eb55282409418f7ce74f9a04",
+        "uniquePositions": "942a5111109a1daae7bb20746558a5d694056f26b4a5b7759987f9e3a0dc43b7",
+        "orientedTriangles": "b5f75f72b91c539a85637e7999a85ab57228ad5b3366ad61b5bc5dc3e3df1982",
         "triangleCount": 288
       },
       "exactFloat32PositionTopologyEqual": false
@@ -7023,8 +7023,8 @@
         "triangleCount": 5760
       },
       "after": {
-        "uniquePositions": "1bd7854b8203a8535671bc8625a7cdccc00c378ea6dd166e61876c0369529833",
-        "orientedTriangles": "7ee5d281e7e3df090a820e8ad4b359cdb661b68c371060f448226c93a7cebb70",
+        "uniquePositions": "6ce82e3f5a0d97023dad549285c0e10a8208ef634743cb217589633b231622df",
+        "orientedTriangles": "c673e4c9613456781a36f0b9e02595f83ab1cc17caea5ee62ba9b47685fa653d",
         "triangleCount": 5760
       },
       "beforeNormal": {
@@ -7033,8 +7033,8 @@
         "triangleCount": 5760
       },
       "afterNormal": {
-        "uniquePositions": "131b8024a03b87ee097c1738d8fff59053f77c4bf5a86752f22bc1fc91f9d2ef",
-        "orientedTriangles": "113b70317b1b24de8af5831ee4c3cd144d4ab97d9c6c6100b8ecf8c2d89c8027",
+        "uniquePositions": "9a1a4b9b9d47df2fb1bfe4fb8dd3f153f5b448237e4fd1997b723067379692ad",
+        "orientedTriangles": "c0258d58475e09aa1d5b42832bd350381e8dcb1f741ce2e3a25ae4e7bb229054",
         "triangleCount": 5760
       },
       "exactFloat32PositionTopologyEqual": false
@@ -7050,8 +7050,8 @@
         "triangleCount": 5760
       },
       "after": {
-        "uniquePositions": "0853321dfa8faa42e5bb7d002f058fefd5c70b30ce3386ce2e21b9dcbdd4fd08",
-        "orientedTriangles": "ee438ce24ee686e74350e1e70c2b15952786eec439fdfd4ff9d4cf41a59785a2",
+        "uniquePositions": "0da36e74456bb574479d4a1c7325fcbf7c3d698cb84d38b9014a3d04583bb481",
+        "orientedTriangles": "25c95b4325eb426d27158e1b0ccf522cd6daf62b6f06c873105853640708708e",
         "triangleCount": 5760
       },
       "beforeNormal": {
@@ -7060,8 +7060,8 @@
         "triangleCount": 5760
       },
       "afterNormal": {
-        "uniquePositions": "37de97bf81cd92670e3f7088745bd21f5f8a0d9931c423e4d91fc5106f28843e",
-        "orientedTriangles": "520466b55b04bec6f4e234d7592827beccad8d85daf60dd828a3de8c2f3d4428",
+        "uniquePositions": "b59a17bba2c9ec3647a5a954b73e95e4b410739b44f03e06113baffb0d2270f1",
+        "orientedTriangles": "2f3d1d487355403cdf3b4cd685158ef071aac3abe2d4502c066825c7e36b333f",
         "triangleCount": 5760
       },
       "exactFloat32PositionTopologyEqual": false
@@ -7212,8 +7212,8 @@
         "triangleCount": 3908
       },
       "after": {
-        "uniquePositions": "2233d5e7e72f0f30d687177aebeaa89c4b42d45a593833e942a00d7454ee8ee8",
-        "orientedTriangles": "8730b8110a50846214b875614f7166f7ff656e13b524e2a361e28f863aa21dfa",
+        "uniquePositions": "7dcba3776ac71960f3f3919679b02148321b30badb41e5c151c051e18a3577a1",
+        "orientedTriangles": "9c411f44e5c28e071ba469012376227c4a76406f6278c19f761196848b956c26",
         "triangleCount": 4208
       },
       "beforeNormal": {
@@ -7222,8 +7222,8 @@
         "triangleCount": 3908
       },
       "afterNormal": {
-        "uniquePositions": "59e0befeca22703e4d20b5d96aa245809548f8216f376b67b9fbde7417ad156c",
-        "orientedTriangles": "1373b8a0ad8cf87cdda9e3f47a16833e4b5a3130706a183c06250afe269d002a",
+        "uniquePositions": "49596b5c6545b1f1903c9c7abd1a8ee34b991e71b048790f09da1be6bd1b7e54",
+        "orientedTriangles": "9f1ae8b929df469882418a1e46cb2354fb55d4648cc392b640c2a62d97e5e49d",
         "triangleCount": 4208
       },
       "exactFloat32PositionTopologyEqual": false
@@ -7239,8 +7239,8 @@
         "triangleCount": 3908
       },
       "after": {
-        "uniquePositions": "dd5910a56086f0374ac21d0baf69d2d8ce765711ebb660256fe353c8ebcc4d35",
-        "orientedTriangles": "8ee803126739c988491d4af00cf2341180329fc17cf4017b36d1a3ce04a53236",
+        "uniquePositions": "9a0ee6b21fbbcb49b7db8462fd23d9343cfe4a8f4351c3fb01b7c28735ef5b80",
+        "orientedTriangles": "583abc056dbecf49fdd214dfec4787ce290e6379826629f36974e307a33ea49f",
         "triangleCount": 4208
       },
       "beforeNormal": {
@@ -7249,8 +7249,8 @@
         "triangleCount": 3908
       },
       "afterNormal": {
-        "uniquePositions": "dbec45e0bd9aac5112a743e2fdbb21f884cbd43fda4637ec839eb6e7c1fadaf5",
-        "orientedTriangles": "138635661e65221886dbea867462fa465b866ab6a864e64914ff728624ea7579",
+        "uniquePositions": "1db293a1031a7fcd14ab3b1bc0863f0eb110d5a69001c9121b68236df2d4a590",
+        "orientedTriangles": "0f09c3a93a02effe283f31ce77bda34abc0212925fe0741e69da3727eaf448ed",
         "triangleCount": 4208
       },
       "exactFloat32PositionTopologyEqual": false
@@ -7984,7 +7984,7 @@
           "beforePresent": true,
           "before": 0.9104609710668883,
           "afterPresent": true,
-          "after": 1.0224658716734112
+          "after": 1.0145352165651556
         }
       ]
     },
@@ -8044,7 +8044,7 @@
           "beforePresent": true,
           "before": 0.9104609710668883,
           "afterPresent": true,
-          "after": 1.0224658716734112
+          "after": 1.0145352165651556
         }
       ]
     },
@@ -8233,12 +8233,14 @@
     "Blade_hinge_pin_L_Rear_A",
     "Blade_hinge_pin_L_Rear_B",
     "Blade_hinge_pin_R_Front_A",
+    "Blade_hinge_pin_R_Front_B",
     "Blade_hinge_pin_R_Rear_B",
     "BladeFold_L_Front_A",
     "BladeFold_L_Front_B",
     "BladeFold_L_Rear_A",
     "BladeFold_L_Rear_B",
     "BladeFold_R_Front_A",
+    "BladeFold_R_Front_B",
     "BladeFold_R_Rear_B",
     "BraceBall_L_Wing",
     "BraceBall_R_Wing",
@@ -8315,10 +8317,18 @@
     "Drive_RearSupport",
     "Drive_RingGear",
     "Drive_ScrewRotor",
+    "Landing_wear_tip_L_Front",
+    "Landing_wear_tip_L_Rear",
+    "Landing_wear_tip_R_Front",
+    "Landing_wear_tip_R_Rear",
     "Lower_fuselage_join",
     "Lower_fuselage_join001",
     "Lower_fuselage_join002",
     "Lower_fuselage_join003",
+    "Motor_cowl_L_Front",
+    "Motor_cowl_L_Rear",
+    "Motor_cowl_R_Front",
+    "Motor_cowl_R_Rear",
     "Motor_spindle_L_Front",
     "Motor_spindle_L_Rear",
     "Motor_spindle_R_Front",
@@ -8363,6 +8373,8 @@
     "Prop_L_Rear",
     "Prop_R_Front",
     "Prop_R_Rear",
+    "Root_access_cover_L",
+    "Root_access_cover_R",
     "RootAxisEnd_L",
     "RootAxisEnd_R",
     "RootAxisStart_L",
@@ -8380,6 +8392,7 @@
     "RootBearingSeal_R_Front",
     "RootBearingSeal_R_Rear",
     "RootCarrierBridge_L",
+    "RootCarrierBridge_R",
     "RootFixedBearingPedestal_L",
     "RootFixedBearingPedestal_R",
     "RootHingeEndcap_L-0148",

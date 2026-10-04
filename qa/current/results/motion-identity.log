@@ -13,6 +13,6 @@
 {
   passed: true,
   out: 'qa/current/results/motion-identity-report.json',
-  declaredRerunMeshes: 234,
-  exactMotionMeshes: 79
+  declaredRerunMeshes: 236,
+  exactMotionMeshes: 77
 }

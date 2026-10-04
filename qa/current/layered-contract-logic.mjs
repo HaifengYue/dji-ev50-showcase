@@ -2,7 +2,7 @@
 import assert from 'node:assert/strict';
 import {resolveFullPanStrip} from './layered-domain-schema.mjs';
 import {reviewFairingSupportRoles,assertFixedCoordinateOnly} from './fairing-support-roles.mjs';
-import {reviewSupportCoordinateChanges} from './support-coordinate-review.mjs';
+import {reviewSupportCoordinateChanges,reviewAdditionalFixedMaterialInterfaces} from './support-coordinate-review.mjs';
 const clone=x=>JSON.parse(JSON.stringify(x)),sorted=x=>[...x].sort(),sameNames=(a,b)=>assert.deepEqual(sorted(a),sorted(b));
 export function reviewLowerDriveDescription(previous,current,changes=[]){
  const path='internalDrive.layoutV22.reason',before='Real red-target ball relocation requires a longer single slider stroke; no telescoping rods or fake ball positions',after='低置固定布局保留；实际新翼侧球心与定长杆闭合重新决定滑架行程，不使用伸缩杆或虚假球心';
@@ -28,8 +28,8 @@ export function reviewLayeredContractValues(previous,n,c,s,prior,wing,supportBou
  for(const key of ['axisZ','guideAxisZ','crossbeamZ','saddleZ','saddleSize','frameZ'])assert.deepEqual(n.internalDrive.loweredLayout[key],previous.internalDrive.loweredLayout[key]);
  assert.deepEqual(n.internalDrive.stroke,n.mechanism.sliderTravel);
  for(const key of ['classification','decorations','incidentalContacts','poses'])assert.deepEqual(s[key],prior[key],key+' may not relax physical classifications, limits or samples');
- const roleChanges=reviewFairingSupportRoles(prior,s,wing),retired=new Set(roleChanges.retiredFixedMaterialInterfaceIds);
- const oldFixed=new Map(prior.fixed.map(x=>[x.id,x])),nextFixed=new Map(s.fixed.map(x=>[x.id,x]));sameNames([...oldFixed.keys()].filter(id=>!retired.has(id)),[...nextFixed.keys()]);const changedFixed=[];
+ const additionalMaterial=reviewAdditionalFixedMaterialInterfaces(prior,s,wing,c,supportBoundsContext),roleChanges=reviewFairingSupportRoles(prior,s,wing),retired=new Set(roleChanges.retiredFixedMaterialInterfaceIds);
+ const oldFixed=new Map(prior.fixed.map(x=>[x.id,x])),nextFixed=new Map(s.fixed.map(x=>[x.id,x]));sameNames([...oldFixed.keys()].filter(id=>!retired.has(id)).concat(additionalMaterial.additionalFixedMaterialInterfaceIds),[...nextFixed.keys()]);const changedFixed=[];
  for(const[id,old]of oldFixed){if(retired.has(id))continue;const next=nextFixed.get(id);assertFixedCoordinateOnly(old,next);assert.equal(next.minimumContactArea,old.minimumContactArea,'No lower material-area threshold '+id);assert.deepEqual(next.pair,old.pair);assert.equal(next.frame??null,old.frame??null);
   if(old.cylinder){assert(next.cylinder,'Finite cylinder must remain '+id);for(const k of ['axis','range','minimumRadius','radius'])assert.deepEqual(next.cylinder[k],old.cylinder[k],'No relaxed finite cylinder '+id);}
   for(const region of next.regions??[next]){assert(region.min?.length===3&&region.max?.length===3);assert(region.min.every((v,k)=>Number.isFinite(v)&&Number.isFinite(region.max[k])&&v<region.max[k]));}
@@ -42,5 +42,5 @@ export function reviewLayeredContractValues(previous,n,c,s,prior,wing,supportBou
   assert.deepEqual(b,a,'Bore/shaft radii, clearance ranges, stations and angular samples must stay identical '+old.id);
  }
  assert.deepEqual(n.jointRefinements.newCollisionExemptions,[]);
- return {acceptedLowerDriveHeightAndStraightOutputPreserved:true,hingeAndWingAnchorRelocationAuthorized:true,originalMaterialAreaThresholdsPreserved:true,allFitRadiusGapAndSamplingLimitsPreserved:true,changedFixedInterfaceIds:changedFixed,relocatedFitCenters:relocatedFits,...roleChanges,...coordinateReview,...lowerDriveDescription,newCollisionExemptions:[],wingProfileAndSeamPreserved:false};
+ return {acceptedLowerDriveHeightAndStraightOutputPreserved:true,hingeAndWingAnchorRelocationAuthorized:true,originalMaterialAreaThresholdsPreserved:true,allFitRadiusGapAndSamplingLimitsPreserved:true,changedFixedInterfaceIds:changedFixed,relocatedFitCenters:relocatedFits,...roleChanges,...coordinateReview,...additionalMaterial,...lowerDriveDescription,newCollisionExemptions:[],wingProfileAndSeamPreserved:false};
 }

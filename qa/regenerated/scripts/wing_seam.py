@@ -7,6 +7,7 @@
 import itertools
 import bpy
 import bmesh
+from mesh_precision import face_area
 
 
 def finish_wing_seam_topology(names=None):
@@ -44,7 +45,7 @@ def finish_wing_seam_topology(names=None):
             if not found:raise ValueError('V23非流形边不能证明为有限零厚度赘片：'+obj.name)
         after_volume=bm.calc_volume(signed=True)
         if any(not e.is_manifold for e in bm.edges):raise ValueError('V23清理后翼面仍非流形：'+obj.name)
-        if any(f.calc_area()<=1e-18 for f in bm.faces):raise ValueError('V23清理后翼面有退化面：'+obj.name)
+        if any(face_area(f)<=1e-18 for f in bm.faces):raise ValueError('V23清理后翼面有退化面：'+obj.name)
         if abs(after_volume-before_volume)>1e-13:raise ValueError('V23清理影响实际翼面体积：'+obj.name)
         if removed:
             bm.normal_update();bm.to_mesh(obj.data);obj.data.update();obj.data.set_sharp_from_angle(angle=0.7330382858376184)

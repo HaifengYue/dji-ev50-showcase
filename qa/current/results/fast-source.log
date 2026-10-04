@@ -1,10 +1,10 @@
-1 / 30 接触对 0 SAT 1251287
-11 / 30 接触对 0 SAT 5844859
-21 / 30 接触对 0 SAT 9524646
+1 / 30 接触对 0 SAT 1460510
+11 / 30 接触对 0 SAT 6465293
+21 / 30 接触对 0 SAT 10446204
 {
   "passed": true,
   "source": "assets/blender/xp4-source.glb",
-  "sha256": "82ca7f6f9e98cb11737da6f1cb8b1507f71baf0ffcb57734b9beb7bb23e70126",
+  "sha256": "801b02ca6b12c326a04e0a1fe7741a99f168c629384ae836f490f7779428570e",
   "samples": 30,
   "contacts": [],
   "criticalOpen": []

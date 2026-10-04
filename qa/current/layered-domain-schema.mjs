@@ -7,7 +7,7 @@ export const FULL_PAN_LIMITS = Object.freeze({minimumGap:.003,maximumGap:.020,mi
 export function fullPanStripFromDesign(design) {
   assert.deepEqual(design?.panDomainBlender,FULL_PAN_DOMAIN,'Full-pan domain must retain Y[-1.78,-1.05], inner .653 and curve inset .015');
   assert.equal(design.nominalPanThickness,.010,'Nominal continuous lower-pan wall changed');
-  assert.equal(design.nominalCruiseVerticalGap,.015,'Nominal lower-pan vertical gap changed');
+  assert([.015,.019].includes(design.nominalCruiseVerticalGap),'Only the historical .015 or explicitly reviewed current .019 nominal design gap is supported; physical .003–.020 limits do not change');
   const curve=design.curveKnotsBlender;
   assert(Array.isArray(curve)&&curve.length>=2,'Full pan requires explicit curve knots');
   for(const[k,p]of curve.entries()) {

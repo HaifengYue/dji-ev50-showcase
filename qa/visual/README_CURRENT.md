@@ -1,24 +1,28 @@
-# 当前模型视觉检查
+# 当前翼下动力与平整翼腹媒体
 
-三张中文检查图和五秒实际机构短片，全部来自同一冻结运行模型。
+本目录来自同一当前运行模型的真实离线像素，不能替代独立几何验收。
 
-- `LAYERED_WING_TOP.jpg`：连续曲线边界、移位后的铰链及翼上杆点
-- `LAYERED_WING_PAN.jpg`：巡航上视、下视和低侧视，交叉观察上部让空与下层薄盆
-- `AIRFRAME_OVERVIEW.jpg`：收拢、中间和巡航三姿态的完整整机斜视与俯视
-- `LAYERED_WING_MOTION.mp4`：41个实际解算姿态，正反重播为5秒80帧，16帧／秒
+捕获记录保留渲染当时的状态，其中“几何验收待完成”仅表示捕获时尚未结束；当前同一组源/运行/Blend/manifest字节随后已通过[原65阶段完整链](../current/results/summary.json)及[索引保护强化定向补充](../current/host-protection-supplement/summary.json)。两套验收范围分别列明，原始捕获记录不被改写。
 
-每次渲染保留全部283个真实生产网格和原材质，采用双倍像素尺寸渲染再缩小以改善锯齿；没有剖切、隔离、隐藏、替换网格、修图、透明度处理或重绘。推进电机停转、桨叶收拢；只做媒体标签、排版、缩放与编码。
+- [巡航展开，四套完整动力舱位置](NACELLE_LAYOUT_CRUISE.png)：1200×900
+- [收翼俯视，对照用户红箭头方向](NACELLE_LAYOUT_HOVER.png)：1600×1000
+- [平整翼腹正前正交视角](WING_UNDERSIDE_PROFILE.png)：1600×700
+- [翼腹斜下与真实内自由边](WING_UNDERSIDE_OBLIQUE.png)：1200×900
+- [短舱与机翼真实安装区域](NACELLE_WING_MOUNT.png)：1300×900
+- [翼腹正下接回范围](WING_UNDERSIDE_BOTTOM.png)：1400×1000
+- [巡航整机下视](CRUISE_UNDERSIDE.png)：1200×900
+- [关节上开口与真实主轴罩](HINGE_CLEARANCE_DETAIL.png)：960×720
 
-运行模型SHA-256：`846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d`
+[实际整翼联动](NACELLE_WING_MOTION.mp4)：900×780，5.000秒，81帧，由41个真实生产rig姿态往返组成。推进器停机并收叶，没有光流或虚构中间模型。
 
-源模型SHA-256：`82ca7f6f9e98cb11737da6f1cb8b1507f71baf0ffcb57734b9beb7bb23e70126`
+源GLB SHA-256：801b02ca6b12c326a04e0a1fe7741a99f168c629384ae836f490f7779428570e
 
-机构代码SHA-256：`4215cd44a02e36e62a2a7ccacd16a38b3fe9d82a727c0233af6d889caa56efb5`
+运行GLB SHA-256：062fd09dee64984221316ede5ba684f6c1b6ff4f7b7ee2a0bd818a8888fd6f43
 
-共96次当前模型实际渲染。媒体合计1,034,045字节（0.986MiB）。完整网格绘制、每张图像解码、整段视频解码、80个视频帧及实际顶点取景边界均已检查，详见`RENDER_EVIDENCE.json`与关联逐项报告。
+每幅PNG与捕获逐字节一致；聊天JPG仅重新JPEG编码。全部图片和视频帧完整解码，并已人工检查所列视角和视频起点、展开极值、终点。
 
-## 验证边界
+[媒体量测与尺寸](MEDIA_VALIDATION.json)、[静态捕获](CAPTURE_REPORT.json)、[动作捕获](MOTION_CAPTURE_REPORT.json)、[捕获输入](RENDER_INPUTS.json)、[全部视频帧解码](VIDEO_DECODE.framemd5.txt)。
 
-实际运行GLB由生产rig求解，通过离线EGL渲染。沿用生产光照与ACES；标准材质GGX、区域反射采用已注明近似。不包含浏览器PMREM、阴影贴图或雾效，因此不是网页或手机验收。
+[灰色下翼皮身份](UNDERSIDE_IDENTITY.json)记录本次正前图灰带像素的实际射线命中；两侧活动翼各为单一闭合连接实体，内自由边并非独立悬片。
 
-图片保留自然遮挡；可读画面不等于全部材料可见。厚度、上下材料层次、实际间隙、接触与运动碰撞结论来自独立几何报告。概念重建不构成原厂CAD、制造、载荷、动力学或连续无碰撞认证。
+实际解码GLB、生产rig和原材质在Native EGL/Mesa离线栅格化，使用生产灯光数值和ACES。标准材质区域反射为记录在捕获报告中的近似；不移除遮挡，不修改蒙皮或材质来隐藏问题。该记录不等同于真实浏览器、PMREM、雾/阴影、手机GPU、触控或制造与适航验收。

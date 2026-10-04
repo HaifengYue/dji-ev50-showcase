@@ -4,7 +4,7 @@
   "reports": [
     {
       "source": "assets/blender/xp4-source.glb",
-      "sha256": "82ca7f6f9e98cb11737da6f1cb8b1507f71baf0ffcb57734b9beb7bb23e70126",
+      "sha256": "801b02ca6b12c326a04e0a1fe7741a99f168c629384ae836f490f7779428570e",
       "lead": 0.032,
       "rows": [
         {
@@ -13,20 +13,20 @@
           "fractionalChecks": 19110,
           "maxKeyQerror": 8.881784197001252e-16,
           "maxMidQerror": 6.661338147750939e-16,
-          "maximumActualStep": 0.12506046407192214,
-          "maxIncrementError": 1.4549550267362044e-7,
-          "maxAccumulationError": 8.038838927859615e-8,
-          "finalAccumulatedRadians": -5.805201154854278e-13,
-          "absoluteAngularPathRadians": 344.60680847943354,
-          "expectedAbsoluteAngularPathRadians": 344.606808473935,
-          "completeOutstrokeTurns": 27.4229384958744,
+          "maximumActualStep": 0.125325235778214,
+          "maxIncrementError": 1.526810738811113e-7,
+          "maxAccumulationError": 7.99885242486198e-8,
+          "finalAccumulatedRadians": -2.4382731077243758e-14,
+          "absoluteAngularPathRadians": 347.72116210690035,
+          "expectedAbsoluteAngularPathRadians": 347.72116210783605,
+          "completeOutstrokeTurns": 27.67077088356018,
           "segments": [
             {
               "from": 0,
               "to": 3.2916667461395264,
-              "actualRadians": -172.30340423971688,
-              "expectedRadians": -172.3034042369675,
-              "actualTurns": -27.42293849631198
+              "actualRadians": -173.86058105345077,
+              "expectedRadians": -173.86058105391803,
+              "actualTurns": -27.670770883485815
             },
             {
               "from": 3.2916667461395264,
@@ -38,9 +38,9 @@
             {
               "from": 4.958333492279053,
               "to": 8.291666984558105,
-              "actualRadians": 172.30340423971631,
-              "expectedRadians": 172.3034042369675,
-              "actualTurns": 27.42293849631189
+              "actualRadians": 173.86058105345074,
+              "expectedRadians": 173.86058105391803,
+              "actualTurns": 27.67077088348581
             }
           ]
         },
@@ -49,21 +49,21 @@
           "keyframes": 6371,
           "fractionalChecks": 19110,
           "maxKeyQerror": 8.881784197001252e-16,
-          "maxMidQerror": 6.661338147750939e-16,
-          "maximumActualStep": 0.3751812640240825,
-          "maxIncrementError": 1.401436551320967e-7,
-          "maxAccumulationError": 8.072677104564718e-8,
-          "finalAccumulatedRadians": -5.363003877795203e-13,
-          "absoluteAngularPathRadians": 1033.8204253428628,
-          "expectedAbsoluteAngularPathRadians": 1033.820425421805,
-          "completeOutstrokeTurns": 82.26881548762321,
+          "maxMidQerror": 7.771561172376096e-16,
+          "maximumActualStep": 0.37597566458064174,
+          "maxIncrementError": 1.430209174979602e-7,
+          "maxAccumulationError": 8.19058101342307e-8,
+          "finalAccumulatedRadians": -1.0690315820072183e-12,
+          "absoluteAngularPathRadians": 1043.1634863143538,
+          "expectedAbsoluteAngularPathRadians": 1043.163486323508,
+          "completeOutstrokeTurns": 83.01231265068054,
           "segments": [
             {
               "from": 0,
               "to": 3.2916667461395264,
-              "actualRadians": -516.9102126714308,
-              "expectedRadians": -516.9102127109026,
-              "actualTurns": -82.2688154813411
+              "actualRadians": -521.5817431571792,
+              "expectedRadians": -521.581743161754,
+              "actualTurns": -83.01231264995242
             },
             {
               "from": 3.2916667461395264,
@@ -75,9 +75,9 @@
             {
               "from": 4.958333492279053,
               "to": 8.291666984558105,
-              "actualRadians": 516.9102126714303,
-              "expectedRadians": 516.9102127109026,
-              "actualTurns": 82.26881548134101
+              "actualRadians": 521.5817431571782,
+              "expectedRadians": 521.581743161754,
+              "actualTurns": 83.01231264995226
             }
           ]
         },
@@ -86,21 +86,21 @@
           "keyframes": 6371,
           "fractionalChecks": 19110,
           "maxKeyQerror": 8.881784197001252e-16,
-          "maxMidQerror": 6.661338147750939e-16,
-          "maximumActualStep": 0.5002415555156595,
-          "maxIncrementError": 1.5526876684379687e-7,
-          "maxAccumulationError": 8.164693099388387e-8,
-          "finalAccumulatedRadians": 4.875453339658886e-13,
-          "absoluteAngularPathRadians": 1378.4272337723578,
-          "expectedAbsoluteAngularPathRadians": 1378.42723389574,
-          "completeOutstrokeTurns": 109.6917539834976,
+          "maxMidQerror": 7.771561172376096e-16,
+          "maximumActualStep": 0.5013008532675668,
+          "maxIncrementError": 1.4078384458215965e-7,
+          "maxAccumulationError": 8.205176982301055e-8,
+          "finalAccumulatedRadians": -1.544367932149182e-13,
+          "absoluteAngularPathRadians": 1390.8846485638471,
+          "expectedAbsoluteAngularPathRadians": 1390.8846484313442,
+          "completeOutstrokeTurns": 110.68308353424072,
           "segments": [
             {
               "from": 0,
               "to": 3.2916667461395264,
-              "actualRadians": 689.2136168861783,
-              "expectedRadians": 689.21361694787,
-              "actualTurns": 109.69175397367907
+              "actualRadians": 695.4423242819237,
+              "expectedRadians": 695.4423242156721,
+              "actualTurns": 110.68308354478499
             },
             {
               "from": 3.2916667461395264,
@@ -112,9 +112,9 @@
             {
               "from": 4.958333492279053,
               "to": 8.291666984558105,
-              "actualRadians": -689.2136168861779,
-              "expectedRadians": -689.21361694787,
-              "actualTurns": -109.691753973679
+              "actualRadians": -695.4423242819238,
+              "expectedRadians": -695.4423242156721,
+              "actualTurns": -110.683083544785
             }
           ]
         },
@@ -123,21 +123,21 @@
           "keyframes": 6371,
           "fractionalChecks": 19110,
           "maxKeyQerror": 8.881784197001252e-16,
-          "maxMidQerror": 6.661338147750939e-16,
-          "maximumActualStep": 0.5002415555156595,
-          "maxIncrementError": 1.5526876684379687e-7,
-          "maxAccumulationError": 8.164693099388387e-8,
-          "finalAccumulatedRadians": 4.875453339658886e-13,
-          "absoluteAngularPathRadians": 1378.4272337723578,
-          "expectedAbsoluteAngularPathRadians": 1378.42723389574,
-          "completeOutstrokeTurns": 109.6917539834976,
+          "maxMidQerror": 7.771561172376096e-16,
+          "maximumActualStep": 0.5013008532675668,
+          "maxIncrementError": 1.4078384458215965e-7,
+          "maxAccumulationError": 8.205176982301055e-8,
+          "finalAccumulatedRadians": -1.544367932149182e-13,
+          "absoluteAngularPathRadians": 1390.8846485638471,
+          "expectedAbsoluteAngularPathRadians": 1390.8846484313442,
+          "completeOutstrokeTurns": 110.68308353424072,
           "segments": [
             {
               "from": 0,
               "to": 3.2916667461395264,
-              "actualRadians": 689.2136168861783,
-              "expectedRadians": 689.21361694787,
-              "actualTurns": 109.69175397367907
+              "actualRadians": 695.4423242819237,
+              "expectedRadians": 695.4423242156721,
+              "actualTurns": 110.68308354478499
             },
             {
               "from": 3.2916667461395264,
@@ -149,9 +149,9 @@
             {
               "from": 4.958333492279053,
               "to": 8.291666984558105,
-              "actualRadians": -689.2136168861779,
-              "expectedRadians": -689.21361694787,
-              "actualTurns": -109.691753973679
+              "actualRadians": -695.4423242819238,
+              "expectedRadians": -695.4423242156721,
+              "actualTurns": -110.683083544785
             }
           ]
         },
@@ -160,21 +160,21 @@
           "keyframes": 6371,
           "fractionalChecks": 19110,
           "maxKeyQerror": 8.881784197001252e-16,
-          "maxMidQerror": 6.661338147750939e-16,
-          "maximumActualStep": 0.5002415555156595,
-          "maxIncrementError": 1.5526876684379687e-7,
-          "maxAccumulationError": 8.164693099388387e-8,
-          "finalAccumulatedRadians": 4.875453339658886e-13,
-          "absoluteAngularPathRadians": 1378.4272337723578,
-          "expectedAbsoluteAngularPathRadians": 1378.42723389574,
-          "completeOutstrokeTurns": 109.6917539834976,
+          "maxMidQerror": 7.771561172376096e-16,
+          "maximumActualStep": 0.5013008532675668,
+          "maxIncrementError": 1.4078384458215965e-7,
+          "maxAccumulationError": 8.205176982301055e-8,
+          "finalAccumulatedRadians": -1.544367932149182e-13,
+          "absoluteAngularPathRadians": 1390.8846485638471,
+          "expectedAbsoluteAngularPathRadians": 1390.8846484313442,
+          "completeOutstrokeTurns": 110.68308353424072,
           "segments": [
             {
               "from": 0,
               "to": 3.2916667461395264,
-              "actualRadians": 689.2136168861783,
-              "expectedRadians": 689.21361694787,
-              "actualTurns": 109.69175397367907
+              "actualRadians": 695.4423242819237,
+              "expectedRadians": 695.4423242156721,
+              "actualTurns": 110.68308354478499
             },
             {
               "from": 3.2916667461395264,
@@ -186,16 +186,16 @@
             {
               "from": 4.958333492279053,
               "to": 8.291666984558105,
-              "actualRadians": -689.2136168861779,
-              "expectedRadians": -689.21361694787,
-              "actualTurns": -109.691753973679
+              "actualRadians": -695.4423242819238,
+              "expectedRadians": -695.4423242156721,
+              "actualTurns": -110.683083544785
             }
           ]
         }
       ],
       "maximumKeyPhaseError": 8.881784197001252e-16,
-      "maximumMidpointPhaseError": 6.661338147750939e-16,
-      "maximumResolvableExpectedStep": 0.500241530258279,
+      "maximumMidpointPhaseError": 7.771561172376096e-16,
+      "maximumResolvableExpectedStep": 0.5013008342294256,
       "secondaryMotorClip": {
         "name": "TRANSWING_Motors_Start_Stop",
         "rows": [
@@ -235,7 +235,7 @@
     },
     {
       "source": "public/models/xp4.glb",
-      "sha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "sha256": "062fd09dee64984221316ede5ba684f6c1b6ff4f7b7ee2a0bd818a8888fd6f43",
       "lead": 0.032,
       "rows": [
         {
@@ -244,20 +244,20 @@
           "fractionalChecks": 19110,
           "maxKeyQerror": 8.881784197001252e-16,
           "maxMidQerror": 6.661338147750939e-16,
-          "maximumActualStep": 0.12506046407192214,
-          "maxIncrementError": 1.4549550267362044e-7,
-          "maxAccumulationError": 8.038838927859615e-8,
-          "finalAccumulatedRadians": -5.805201154854278e-13,
-          "absoluteAngularPathRadians": 344.60680847943354,
-          "expectedAbsoluteAngularPathRadians": 344.606808473935,
-          "completeOutstrokeTurns": 27.4229384958744,
+          "maximumActualStep": 0.125325235778214,
+          "maxIncrementError": 1.526810738811113e-7,
+          "maxAccumulationError": 7.99885242486198e-8,
+          "finalAccumulatedRadians": -2.4382731077243758e-14,
+          "absoluteAngularPathRadians": 347.72116210690035,
+          "expectedAbsoluteAngularPathRadians": 347.72116210783605,
+          "completeOutstrokeTurns": 27.67077088356018,
           "segments": [
             {
               "from": 0,
               "to": 3.2916667461395264,
-              "actualRadians": -172.30340423971688,
-              "expectedRadians": -172.3034042369675,
-              "actualTurns": -27.42293849631198
+              "actualRadians": -173.86058105345077,
+              "expectedRadians": -173.86058105391803,
+              "actualTurns": -27.670770883485815
             },
             {
               "from": 3.2916667461395264,
@@ -269,9 +269,9 @@
             {
               "from": 4.958333492279053,
               "to": 8.291666984558105,
-              "actualRadians": 172.30340423971631,
-              "expectedRadians": 172.3034042369675,
-              "actualTurns": 27.42293849631189
+              "actualRadians": 173.86058105345074,
+              "expectedRadians": 173.86058105391803,
+              "actualTurns": 27.67077088348581
             }
           ]
         },
@@ -280,21 +280,21 @@
           "keyframes": 6371,
           "fractionalChecks": 19110,
           "maxKeyQerror": 8.881784197001252e-16,
-          "maxMidQerror": 6.661338147750939e-16,
-          "maximumActualStep": 0.3751812640240825,
-          "maxIncrementError": 1.401436551320967e-7,
-          "maxAccumulationError": 8.072677104564718e-8,
-          "finalAccumulatedRadians": -5.363003877795203e-13,
-          "absoluteAngularPathRadians": 1033.8204253428628,
-          "expectedAbsoluteAngularPathRadians": 1033.820425421805,
-          "completeOutstrokeTurns": 82.26881548762321,
+          "maxMidQerror": 7.771561172376096e-16,
+          "maximumActualStep": 0.37597566458064174,
+          "maxIncrementError": 1.430209174979602e-7,
+          "maxAccumulationError": 8.19058101342307e-8,
+          "finalAccumulatedRadians": -1.0690315820072183e-12,
+          "absoluteAngularPathRadians": 1043.1634863143538,
+          "expectedAbsoluteAngularPathRadians": 1043.163486323508,
+          "completeOutstrokeTurns": 83.01231265068054,
           "segments": [
             {
               "from": 0,
               "to": 3.2916667461395264,
-              "actualRadians": -516.9102126714308,
-              "expectedRadians": -516.9102127109026,
-              "actualTurns": -82.2688154813411
+              "actualRadians": -521.5817431571792,
+              "expectedRadians": -521.581743161754,
+              "actualTurns": -83.01231264995242
             },
             {
               "from": 3.2916667461395264,
@@ -306,9 +306,9 @@
             {
               "from": 4.958333492279053,
               "to": 8.291666984558105,
-              "actualRadians": 516.9102126714303,
-              "expectedRadians": 516.9102127109026,
-              "actualTurns": 82.26881548134101
+              "actualRadians": 521.5817431571782,
+              "expectedRadians": 521.581743161754,
+              "actualTurns": 83.01231264995226
             }
           ]
         },
@@ -317,21 +317,21 @@
           "keyframes": 6371,
           "fractionalChecks": 19110,
           "maxKeyQerror": 8.881784197001252e-16,
-          "maxMidQerror": 6.661338147750939e-16,
-          "maximumActualStep": 0.5002415555156595,
-          "maxIncrementError": 1.5526876684379687e-7,
-          "maxAccumulationError": 8.164693099388387e-8,
-          "finalAccumulatedRadians": 4.875453339658886e-13,
-          "absoluteAngularPathRadians": 1378.4272337723578,
-          "expectedAbsoluteAngularPathRadians": 1378.42723389574,
-          "completeOutstrokeTurns": 109.6917539834976,
+          "maxMidQerror": 7.771561172376096e-16,
+          "maximumActualStep": 0.5013008532675668,
+          "maxIncrementError": 1.4078384458215965e-7,
+          "maxAccumulationError": 8.205176982301055e-8,
+          "finalAccumulatedRadians": -1.544367932149182e-13,
+          "absoluteAngularPathRadians": 1390.8846485638471,
+          "expectedAbsoluteAngularPathRadians": 1390.8846484313442,
+          "completeOutstrokeTurns": 110.68308353424072,
           "segments": [
             {
               "from": 0,
               "to": 3.2916667461395264,
-              "actualRadians": 689.2136168861783,
-              "expectedRadians": 689.21361694787,
-              "actualTurns": 109.69175397367907
+              "actualRadians": 695.4423242819237,
+              "expectedRadians": 695.4423242156721,
+              "actualTurns": 110.68308354478499
             },
             {
               "from": 3.2916667461395264,
@@ -343,9 +343,9 @@
             {
               "from": 4.958333492279053,
               "to": 8.291666984558105,
-              "actualRadians": -689.2136168861779,
-              "expectedRadians": -689.21361694787,
-              "actualTurns": -109.691753973679
+              "actualRadians": -695.4423242819238,
+              "expectedRadians": -695.4423242156721,
+              "actualTurns": -110.683083544785
             }
           ]
         },
@@ -354,21 +354,21 @@
           "keyframes": 6371,
           "fractionalChecks": 19110,
           "maxKeyQerror": 8.881784197001252e-16,
-          "maxMidQerror": 6.661338147750939e-16,
-          "maximumActualStep": 0.5002415555156595,
-          "maxIncrementError": 1.5526876684379687e-7,
-          "maxAccumulationError": 8.164693099388387e-8,
-          "finalAccumulatedRadians": 4.875453339658886e-13,
-          "absoluteAngularPathRadians": 1378.4272337723578,
-          "expectedAbsoluteAngularPathRadians": 1378.42723389574,
-          "completeOutstrokeTurns": 109.6917539834976,
+          "maxMidQerror": 7.771561172376096e-16,
+          "maximumActualStep": 0.5013008532675668,
+          "maxIncrementError": 1.4078384458215965e-7,
+          "maxAccumulationError": 8.205176982301055e-8,
+          "finalAccumulatedRadians": -1.544367932149182e-13,
+          "absoluteAngularPathRadians": 1390.8846485638471,
+          "expectedAbsoluteAngularPathRadians": 1390.8846484313442,
+          "completeOutstrokeTurns": 110.68308353424072,
           "segments": [
             {
               "from": 0,
               "to": 3.2916667461395264,
-              "actualRadians": 689.2136168861783,
-              "expectedRadians": 689.21361694787,
-              "actualTurns": 109.69175397367907
+              "actualRadians": 695.4423242819237,
+              "expectedRadians": 695.4423242156721,
+              "actualTurns": 110.68308354478499
             },
             {
               "from": 3.2916667461395264,
@@ -380,9 +380,9 @@
             {
               "from": 4.958333492279053,
               "to": 8.291666984558105,
-              "actualRadians": -689.2136168861779,
-              "expectedRadians": -689.21361694787,
-              "actualTurns": -109.691753973679
+              "actualRadians": -695.4423242819238,
+              "expectedRadians": -695.4423242156721,
+              "actualTurns": -110.683083544785
             }
           ]
         },
@@ -391,21 +391,21 @@
           "keyframes": 6371,
           "fractionalChecks": 19110,
           "maxKeyQerror": 8.881784197001252e-16,
-          "maxMidQerror": 6.661338147750939e-16,
-          "maximumActualStep": 0.5002415555156595,
-          "maxIncrementError": 1.5526876684379687e-7,
-          "maxAccumulationError": 8.164693099388387e-8,
-          "finalAccumulatedRadians": 4.875453339658886e-13,
-          "absoluteAngularPathRadians": 1378.4272337723578,
-          "expectedAbsoluteAngularPathRadians": 1378.42723389574,
-          "completeOutstrokeTurns": 109.6917539834976,
+          "maxMidQerror": 7.771561172376096e-16,
+          "maximumActualStep": 0.5013008532675668,
+          "maxIncrementError": 1.4078384458215965e-7,
+          "maxAccumulationError": 8.205176982301055e-8,
+          "finalAccumulatedRadians": -1.544367932149182e-13,
+          "absoluteAngularPathRadians": 1390.8846485638471,
+          "expectedAbsoluteAngularPathRadians": 1390.8846484313442,
+          "completeOutstrokeTurns": 110.68308353424072,
           "segments": [
             {
               "from": 0,
               "to": 3.2916667461395264,
-              "actualRadians": 689.2136168861783,
-              "expectedRadians": 689.21361694787,
-              "actualTurns": 109.69175397367907
+              "actualRadians": 695.4423242819237,
+              "expectedRadians": 695.4423242156721,
+              "actualTurns": 110.68308354478499
             },
             {
               "from": 3.2916667461395264,
@@ -417,16 +417,16 @@
             {
               "from": 4.958333492279053,
               "to": 8.291666984558105,
-              "actualRadians": -689.2136168861779,
-              "expectedRadians": -689.21361694787,
-              "actualTurns": -109.691753973679
+              "actualRadians": -695.4423242819238,
+              "expectedRadians": -695.4423242156721,
+              "actualTurns": -110.683083544785
             }
           ]
         }
       ],
       "maximumKeyPhaseError": 8.881784197001252e-16,
-      "maximumMidpointPhaseError": 6.661338147750939e-16,
-      "maximumResolvableExpectedStep": 0.500241530258279,
+      "maximumMidpointPhaseError": 7.771561172376096e-16,
+      "maximumResolvableExpectedStep": 0.5013008342294256,
       "secondaryMotorClip": {
         "name": "TRANSWING_Motors_Start_Stop",
         "rows": [

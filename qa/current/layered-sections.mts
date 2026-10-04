@@ -23,7 +23,17 @@ export function verifyLowerWrap(fixed:any,moving:any,{minimumGap,minimumSkinThic
 }
 
 /** Sampled wing-seat material margin: U-shaped outer wing/underpan sections are not a planar slab. */
-export const SEAT_MARGIN_RULES=Object.freeze({directions:32,minimumRadius:.0445,datum:'actual cruise WingPivot world Y (Blender Z), shared ROOT_LOFT midplane',datumMinimumAbsX:1.00,datumMaximumAbsX:1.20,bandHalfSpan:.003,minimumSecondaryMaterialSpan:.006,maximumSecondaryMaterialSpan:.09});
+export const SEAT_MARGIN_RULES=Object.freeze({directions:32,minimumRadius:.0445,datum:'retained cruise ROOT_LOFT midplane from immutable pre-edit geometry, independently confirmed by actual upper/lower skin',datumMinimumAbsX:1.00,datumMaximumAbsX:1.20,bandHalfSpan:.003,minimumSecondaryMaterialSpan:.006,maximumSecondaryMaterialSpan:.09});
+/** Raising/rebasing a hinge must not silently move the unchanged wing-material datum. */
+export function verifyRetainedWingSeatDatum(referenceHeight:number,actualAxisHeight:number,reviewedAxisLift:number,upper:{top:number,bottom:number},encodingTolerance:number){
+ assert([referenceHeight,actualAxisHeight,reviewedAxisLift].every(Number.isFinite));assert([1e-6,6e-5].includes(encodingTolerance),'Use original source/runtime encoding bounds');
+ const failures:string[]=[],compensatedFrameHeight=actualAxisHeight-reviewedAxisLift,frameError=Math.abs(compensatedFrameHeight-referenceHeight);
+ const actualUpperSkin=upper?.top,actualLowerSkin=upper?.bottom,valid=[actualUpperSkin,actualLowerSkin].every(Number.isFinite)&&actualUpperSkin>actualLowerSkin;
+ const actualMaterialMidpoint=valid?(actualUpperSkin+actualLowerSkin)/2:null,midplaneError=actualMaterialMidpoint===null?Infinity:Math.abs(actualMaterialMidpoint-referenceHeight);
+ if(frameError>encodingTolerance)failures.push('Actual raised axis minus the reviewed rebase does not recover the frozen cruise wing datum');
+ if(!valid||midplaneError>encodingTolerance)failures.push('Actual upper/lower material does not independently confirm the retained wing midplane');
+ return {passed:!failures.length,failures,referenceHeight,actualAxisHeight,reviewedAxisLift,compensatedFrameHeight,frameError,actualUpperSkin,actualLowerSkin,actualMaterialMidpoint,midplaneError,encodingTolerance,axisIsNotWingMidplane:reviewedAxisLift!==0,scope:'Datum only. Original32 circumference rays, .0445 radius, .006 interior material band and all real raised-axis support/bore gates remain unchanged.'};
+}
 export function verifySeatMarginSection(fixed:any,moving:any,actualWingDatumHeight:number){
  assert(Number.isFinite(actualWingDatumHeight),'Actual verified wing midplane height must be finite');
  const failures:string[]=[],bandCenter=actualWingDatumHeight,requiredBand={datum:SEAT_MARGIN_RULES.datum,center:bandCenter,top:bandCenter+SEAT_MARGIN_RULES.bandHalfSpan,bottom:bandCenter-SEAT_MARGIN_RULES.bandHalfSpan,span:2*SEAT_MARGIN_RULES.bandHalfSpan};

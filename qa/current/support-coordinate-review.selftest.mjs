@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';import fs from 'node:fs';import path fro
 import {compactSupportMeasurementEvidence,reviewSupportCoordinateChange,reviewSupportCoordinateChanges,verifyFormalSupportCoordinateEvidence,validatePreviousSupportBounds,translatedRegionDelta,unionBounds,MODEL_PATHS,PREVIOUS_SUPPORT_BOUNDS_SHA256} from './support-coordinate-review.mjs';
 import {reviewLowerDriveDescription} from './layered-contract-logic.mjs';
 import {verifiedReference} from './reference-records.mjs';
+import {runNacelleSupportAdditionSelftests} from './nacelle-support-additions.selftest.mjs';
 const clone=x=>JSON.parse(JSON.stringify(x)),encodings=['source','runtime'],c={sourceSha256:'a'.repeat(64),runtimeSha256:'b'.repeat(64)};
 function fixture(multi=false){
  const region=(i=0)=>({min:[i*20,0,0],max:[i*20+10,10,10],cylinder:{center:[i*20+5,5,5],axis:[1,0,0],range:[-4,4],minimumRadius:.1,radius:8}}),before={id:'fixed:a/b',pair:['a','b'],frame:null,minimumContactArea:1e-12,...(multi?{regions:Array.from({length:4},(_,i)=>region(i))}:region())},delta=[3,-1,2],after=clone(before),rs=d=>d.regions??[d];
@@ -79,6 +80,6 @@ export function runSupportCoordinateReviewSelftests(){let checks=0;const test=fn
   a=>a.next.guideSpan[0]-=.01,a=>a.next.extra='unknown',a=>delete a.next.frontSupportY,
   a=>a.next.reason+=' arbitrary',a=>a.changes=[],a=>a.changes[0].path='internalDrive.*',a=>a.changes.push(clone(record)),
  ])test(()=>{const a={next:clone(next),changes:[clone(record)]};mutate(a);assert.throws(()=>reviewLowerDriveDescription(old,a.next,a.changes));});
- return {passed:true,checks,noModelsLoaded:true,formalCurrentSupportReportStillRequired:true};
+ const additionalMaterial=runNacelleSupportAdditionSelftests();return {passed:true,checks:checks+additionalMaterial.checks,coordinateChecks:checks,additionalMaterial,noModelsLoaded:true,formalCurrentSupportReportStillRequired:true};
 }
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){const r=runSupportCoordinateReviewSelftests();if(process.env.QA_OUT)fs.writeFileSync(process.env.QA_OUT,JSON.stringify(r,null,2)+'\n');console.log(r);}

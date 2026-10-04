@@ -371,32 +371,43 @@ def build_surface_supports(ctx):
     add(_record(antenna, host, '保留天线端点和杆身，原根圈延伸入机壳并封闭两端', before,
                 nominalEmbedding=ANTENNA_EMBED, originalOpenEndsClosed=True))
 
+    # 动力同刚体内部贴合在既有构造坐标原点完成，避免整体主轴高度改变
+    # 经 world/local Float32 往返后重造原尾尖。恢复真实轴后再执行完整 TRS。
+    from kinematics import REFERENCE_PIVOT
     for side in ('L', 'R'):
-        for end in ('Front', 'Rear'):
-            key = side+'_'+end
-            host = bpy.data.objects['Nacelle_'+key]
-            obj = bpy.data.objects['Landing_wear_tip_'+key]
-            frame = _frame(obj)
-            points = _points(obj, frame)
-            before = [p.copy() for p in points]
-            tree = _tree(host, frame)
-            # V11内壁最后160个顶点为40分段的四个内圈。只改变前两圈，
-            # 在相对舱壳纵向[.994,1.009375]形成有限固定安装带。
-            # 可见外圈、接地点及后段原.0002径向/端面余隙全部保持。
-            if len(points) < 320:
-                raise ValueError('V21接地端内壁拓扑不符：' + obj.name)
-            inner_start = len(points)-160
-            for i in range(inner_start, inner_start+80):
-                hit, normal, index, distance = tree.find_nearest(points[i])
-                if hit is None or distance > .00040:
-                    raise ValueError('V21接地端内壁不是原.0002间隙带：' + obj.name)
-                points[i] = hit-normal*TIP_EMBED
-            _set_points(obj, points, frame)
-            add(_record(obj, host, '仅原接地端前两内圈内收，形成有限环形固定安装带', before,
-                        changedInnerVertices=80, originalOuterVerticesUnchanged=True,
-                        nacelleLongitudinalBand=[.994, 1.009375],
-                        nominalEmbedding=TIP_EMBED, distalClearancePreserved=.0002))
-            add(_fit_saddle(bpy.data.objects['Pod_wing_saddle_'+key], host))
+        pivot=bpy.data.objects['WingPivot_'+side]
+        actual_location=pivot.location.copy()
+        pivot.location.z=REFERENCE_PIVOT[2]
+        bpy.context.view_layer.update()
+        try:
+            for end in ('Front', 'Rear'):
+                key = side+'_'+end
+                host = bpy.data.objects['Nacelle_'+key]
+                obj = bpy.data.objects['Landing_wear_tip_'+key]
+                frame = _frame(obj)
+                points = _points(obj, frame)
+                before = [p.copy() for p in points]
+                tree = _tree(host, frame)
+                # V11内壁最后160个顶点为40分段的四个内圈。只改变前两圈，
+                # 在相对舱壳纵向[.994,1.009375]形成有限固定安装带。
+                # 可见外圈、接地点及后段原.0002径向/端面余隙全部保持。
+                if len(points) < 320:
+                    raise ValueError('V21接地端内壁拓扑不符：' + obj.name)
+                inner_start = len(points)-160
+                for i in range(inner_start, inner_start+80):
+                    hit, normal, index, distance = tree.find_nearest(points[i])
+                    if hit is None or distance > .00040:
+                        raise ValueError('V21接地端内壁不是原.0002间隙带：' + obj.name)
+                    points[i] = hit-normal*TIP_EMBED
+                _set_points(obj, points, frame)
+                add(_record(obj, host, '仅原接地端前两内圈内收，形成有限环形固定安装带', before,
+                            changedInnerVertices=80, originalOuterVerticesUnchanged=True,
+                            nacelleLongitudinalBand=[.994, 1.009375],
+                            nominalEmbedding=TIP_EMBED, distalClearancePreserved=.0002))
+                add(_fit_saddle(bpy.data.objects['Pod_wing_saddle_'+key], host))
+        finally:
+            pivot.location=actual_location
+            bpy.context.view_layer.update()
 
     # 全机检查确认这三个完整线管没有与真实宿主接合；只修这些确诊对象。
     add(_fit_seam(bpy.data.objects['Dorsal_hatch_main'], bpy.data.objects['Fuselage'], 5, True))

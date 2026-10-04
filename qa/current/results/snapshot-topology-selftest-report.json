@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+  "runtimeSha256": "062fd09dee64984221316ede5ba684f6c1b6ff4f7b7ee2a0bd818a8888fd6f43",
   "regressionFixture": {
     "kind": "deterministic synthetic two-triangle open-surface cache test",
     "singularTransformIsOnlyTestInput": true,
@@ -239,7 +239,7 @@
       {
         "wing": 0,
         "mesh": "Lower_fuselage_join",
-        "actualTriangles": 104,
+        "actualTriangles": 2680,
         "components": 1,
         "closed": false
       },
@@ -253,7 +253,7 @@
       {
         "wing": 0,
         "mesh": "Lower_fuselage_join002",
-        "actualTriangles": 104,
+        "actualTriangles": 2680,
         "components": 1,
         "closed": false
       },
@@ -295,7 +295,7 @@
       {
         "wing": 0,
         "mesh": "Fixed_root_L",
-        "actualTriangles": 4018,
+        "actualTriangles": 1676,
         "components": 1,
         "closed": true
       },
@@ -330,7 +330,7 @@
       {
         "wing": 0,
         "mesh": "Composite_wing_L",
-        "actualTriangles": 24520,
+        "actualTriangles": 6472,
         "components": 1,
         "closed": true
       },
@@ -869,7 +869,7 @@
       {
         "wing": 0,
         "mesh": "Fixed_root_R",
-        "actualTriangles": 4018,
+        "actualTriangles": 1676,
         "components": 1,
         "closed": true
       },
@@ -904,7 +904,7 @@
       {
         "wing": 0,
         "mesh": "Composite_wing_R",
-        "actualTriangles": 24520,
+        "actualTriangles": 6462,
         "components": 1,
         "closed": true
       },
@@ -2220,7 +2220,7 @@
       {
         "wing": 0.030555555555555555,
         "mesh": "Lower_fuselage_join",
-        "actualTriangles": 104,
+        "actualTriangles": 2680,
         "components": 1,
         "closed": false
       },
@@ -2234,7 +2234,7 @@
       {
         "wing": 0.030555555555555555,
         "mesh": "Lower_fuselage_join002",
-        "actualTriangles": 104,
+        "actualTriangles": 2680,
         "components": 1,
         "closed": false
       },
@@ -2276,7 +2276,7 @@
       {
         "wing": 0.030555555555555555,
         "mesh": "Fixed_root_L",
-        "actualTriangles": 4018,
+        "actualTriangles": 1676,
         "components": 1,
         "closed": true
       },
@@ -2311,7 +2311,7 @@
       {
         "wing": 0.030555555555555555,
         "mesh": "Composite_wing_L",
-        "actualTriangles": 24520,
+        "actualTriangles": 6472,
         "components": 1,
         "closed": true
       },
@@ -2850,7 +2850,7 @@
       {
         "wing": 0.030555555555555555,
         "mesh": "Fixed_root_R",
-        "actualTriangles": 4018,
+        "actualTriangles": 1676,
         "components": 1,
         "closed": true
       },
@@ -2885,7 +2885,7 @@
       {
         "wing": 0.030555555555555555,
         "mesh": "Composite_wing_R",
-        "actualTriangles": 24520,
+        "actualTriangles": 6462,
         "components": 1,
         "closed": true
       },
@@ -4201,7 +4201,7 @@
       {
         "wing": 1,
         "mesh": "Lower_fuselage_join",
-        "actualTriangles": 104,
+        "actualTriangles": 2680,
         "components": 1,
         "closed": false
       },
@@ -4215,7 +4215,7 @@
       {
         "wing": 1,
         "mesh": "Lower_fuselage_join002",
-        "actualTriangles": 104,
+        "actualTriangles": 2680,
         "components": 1,
         "closed": false
       },
@@ -4257,7 +4257,7 @@
       {
         "wing": 1,
         "mesh": "Fixed_root_L",
-        "actualTriangles": 4018,
+        "actualTriangles": 1676,
         "components": 1,
         "closed": true
       },
@@ -4292,7 +4292,7 @@
       {
         "wing": 1,
         "mesh": "Composite_wing_L",
-        "actualTriangles": 24520,
+        "actualTriangles": 6472,
         "components": 1,
         "closed": true
       },
@@ -4831,7 +4831,7 @@
       {
         "wing": 1,
         "mesh": "Fixed_root_R",
-        "actualTriangles": 4018,
+        "actualTriangles": 1676,
         "components": 1,
         "closed": true
       },
@@ -4866,7 +4866,7 @@
       {
         "wing": 1,
         "mesh": "Composite_wing_R",
-        "actualTriangles": 24520,
+        "actualTriangles": 6462,
         "components": 1,
         "closed": true
       },
@@ -6182,7 +6182,7 @@
       {
         "wing": 0.030555555555555555,
         "mesh": "Lower_fuselage_join",
-        "actualTriangles": 104,
+        "actualTriangles": 2680,
         "components": 1,
         "closed": false
       },
@@ -6196,7 +6196,7 @@
       {
         "wing": 0.030555555555555555,
         "mesh": "Lower_fuselage_join002",
-        "actualTriangles": 104,
+        "actualTriangles": 2680,
         "components": 1,
         "closed": false
       },
@@ -6238,7 +6238,7 @@
       {
         "wing": 0.030555555555555555,
         "mesh": "Fixed_root_L",
-        "actualTriangles": 4018,
+        "actualTriangles": 1676,
         "components": 1,
         "closed": true
       },
@@ -6273,7 +6273,7 @@
       {
         "wing": 0.030555555555555555,
         "mesh": "Composite_wing_L",
-        "actualTriangles": 24520,
+        "actualTriangles": 6472,
         "components": 1,
         "closed": true
       },
@@ -6812,7 +6812,7 @@
       {
         "wing": 0.030555555555555555,
         "mesh": "Fixed_root_R",
-        "actualTriangles": 4018,
+        "actualTriangles": 1676,
         "components": 1,
         "closed": true
       },
@@ -6847,7 +6847,7 @@
       {
         "wing": 0.030555555555555555,
         "mesh": "Composite_wing_R",
-        "actualTriangles": 24520,
+        "actualTriangles": 6462,
         "components": 1,
         "closed": true
       },
@@ -8163,7 +8163,7 @@
       {
         "wing": 0,
         "mesh": "Lower_fuselage_join",
-        "actualTriangles": 104,
+        "actualTriangles": 2680,
         "components": 1,
         "closed": false
       },
@@ -8177,7 +8177,7 @@
       {
         "wing": 0,
         "mesh": "Lower_fuselage_join002",
-        "actualTriangles": 104,
+        "actualTriangles": 2680,
         "components": 1,
         "closed": false
       },
@@ -8219,7 +8219,7 @@
       {
         "wing": 0,
         "mesh": "Fixed_root_L",
-        "actualTriangles": 4018,
+        "actualTriangles": 1676,
         "components": 1,
         "closed": true
       },
@@ -8254,7 +8254,7 @@
       {
         "wing": 0,
         "mesh": "Composite_wing_L",
-        "actualTriangles": 24520,
+        "actualTriangles": 6472,
         "components": 1,
         "closed": true
       },
@@ -8793,7 +8793,7 @@
       {
         "wing": 0,
         "mesh": "Fixed_root_R",
-        "actualTriangles": 4018,
+        "actualTriangles": 1676,
         "components": 1,
         "closed": true
       },
@@ -8828,7 +8828,7 @@
       {
         "wing": 0,
         "mesh": "Composite_wing_R",
-        "actualTriangles": 24520,
+        "actualTriangles": 6462,
         "components": 1,
         "closed": true
       },

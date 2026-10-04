@@ -6,7 +6,7 @@
     },
     {
       "path": "assets/blender/xp4-source.glb",
-      "sha256": "82ca7f6f9e98cb11737da6f1cb8b1507f71baf0ffcb57734b9beb7bb23e70126"
+      "sha256": "801b02ca6b12c326a04e0a1fe7741a99f168c629384ae836f490f7779428570e"
     },
     {
       "path": "dist/assets/index-D1B7vCse.css",
@@ -34,7 +34,7 @@
     },
     {
       "path": "dist/models/manifest.json",
-      "sha256": "5151d3ed1013e3aeb1035308245f32635aff97be33a6b670c34243b05d3d7df1"
+      "sha256": "b311aa5bfb7dab0923a0b95d83e42d48aa0ba34ea064f78162f6e81863ce33d8"
     },
     {
       "path": "dist/models/nacelle-system-concept.glb",
@@ -42,7 +42,7 @@
     },
     {
       "path": "dist/models/xp4.glb",
-      "sha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d"
+      "sha256": "062fd09dee64984221316ede5ba684f6c1b6ff4f7b7ee2a0bd818a8888fd6f43"
     },
     {
       "path": "examples/python/drive_trajectory.py",
@@ -78,7 +78,7 @@
     },
     {
       "path": "public/models/manifest.json",
-      "sha256": "5151d3ed1013e3aeb1035308245f32635aff97be33a6b670c34243b05d3d7df1"
+      "sha256": "b311aa5bfb7dab0923a0b95d83e42d48aa0ba34ea064f78162f6e81863ce33d8"
     },
     {
       "path": "public/models/nacelle-system-concept.glb",
@@ -86,7 +86,7 @@
     },
     {
       "path": "public/models/xp4.glb",
-      "sha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d"
+      "sha256": "062fd09dee64984221316ede5ba684f6c1b6ff4f7b7ee2a0bd818a8888fd6f43"
     },
     {
       "path": "python/tests/protocol_events.json",
@@ -258,7 +258,7 @@
     },
     {
       "path": "src/model.test.ts",
-      "sha256": "21ad4e994dcc88058fd73b3770dd6b0f8c6389d3dda2d45ec08026932ec979c3"
+      "sha256": "d7c8394bb8d12e5bfef1d99e19665c8dc01ada8d37338d70d145c16959b3fecf"
     },
     {
       "path": "src/motors.ts",

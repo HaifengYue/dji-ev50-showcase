@@ -7,17 +7,21 @@ mkdir -p "$OUT"
 if [[ -e "$OUT/status.log" ]]; then echo "Refuse overwrite $OUT"; exit 2; fi
 [[ -f "$OUT/input-sha256.txt" ]] || { echo 'Frozen final inputs required'; exit 2; }
 # 正式入口清理诊断覆盖；输出目录 QA_DIR 保留，模型/采样网格不可由继承环境缩减。
-unset QA_OUT QA_MODEL QA_MODEL_KIND QA_SOURCE_MODEL QA_RUNTIME_MODEL QA_SOURCE QA_ENCODING QA_PASS QA_PREFLIGHT QA_BASELINE_ONLY QA_ALLOW_OPEN_DIAGNOSTIC QA_STEPS QA_WING_ONLY
+unset QA_MODEL_ROOT QA_EXACT_NEAR_DIAGNOSTICS QA_OUT QA_MODEL QA_MODEL_KIND QA_SOURCE_MODEL QA_RUNTIME_MODEL QA_SOURCE QA_ENCODING QA_PASS QA_PREFLIGHT QA_BASELINE_ONLY QA_ALLOW_OPEN_DIAGNOSTIC QA_STEPS QA_WING_ONLY
 export QA_CONTACTS=qa/contracts/drive-contact-contracts.json
 export QA_DRIVE_CONTRACT=qa/contracts/drive-motion.json
 export QA_REFINEMENTS=qa/contracts/model-refinement.json
 export QA_SUPPORT_CONTRACT=qa/contracts/supports.json
 run(){ local name="$1"; shift; echo "START $name $(date -u +%FT%TZ)"; "$@" > "$OUT/$name.log" 2>&1; local status=$?; echo "$name $status" | tee -a "$OUT/status.log"; if [[ $status -ne 0 ]]; then echo "STOP failed $name"; exit "$status"; fi; }
+run nacelle-review env QA_OUT="$OUT/nacelle-review-report.json" node qa/nacelle/verify-nacelle-review.mjs
 run reviewed-contract env QA_OUT="$OUT/reviewed-contract-report.json" node qa/current/verify-reviewed-contract.mjs
 run support-coordinate-selftest env QA_OUT="$OUT/support-coordinate-selftest-report.json" node qa/current/support-coordinate-review.selftest.mjs
+run mesh-precision env QA_OUT="$OUT/mesh-precision-report.json" node qa/nacelle/verify-mesh-precision.mjs
 run regenerated-contract env QA_OUT="$OUT/regenerated-contract-report.json" node qa/current/verify-regenerated-contract.mjs
 run preservation env QA_OUT="$OUT/preservation-report.json" node --import tsx qa/current/verify-preservation.mts
 run runtime-preservation env QA_ENCODING=runtime QA_OUT="$OUT/runtime-preservation-report.json" node --import tsx qa/current/verify-preservation.mts
+run powertrain-identity-selftest env QA_OUT="$OUT/powertrain-identity-selftest-report.json" node --import tsx --test qa/nacelle/powertrain-identity.selftest.mts
+run nacelle-placement env QA_OUT="$OUT/nacelle-placement-report.json" node --import tsx qa/nacelle/verify-nacelle-placement.mts
 run layered-scope env QA_OUT="$OUT/layered-scope-report.json" node --import tsx qa/current/verify-layered-scope.mts
 run hinge-identity-selftest env QA_OUT="$OUT/hinge-identity-selftest-report.json" node --import tsx --test qa/current/hinge-identity.selftest.mts
 run hinge-identity env QA_OUT="$OUT/hinge-identity-report.json" node --import tsx qa/current/verify-hinge-identity.mts
@@ -25,10 +29,16 @@ run fairing-role-selftest env QA_OUT="$OUT/fairing-role-selftest-report.json" no
 run fairing-clearance-selftest env QA_OUT="$OUT/fairing-clearance-selftest-report.json" node --import tsx qa/current/fairing-clearance.selftest.mts
 run fairing-clearance env QA_OUT="$OUT/fairing-clearance-report.json" node --import tsx qa/current/verify-fairing-clearance.mts
 run layered-sections-selftest env QA_OUT="$OUT/layered-sections-selftest-report.json" node --import tsx qa/current/layered-sections.selftest.mts
+run exact-self-selftest env QA_OUT="$OUT/exact-self-selftest-report.json" node --test qa/nacelle/exact-self-geometry.selftest.mjs
+run exact-self-contact env QA_OUT="$OUT/exact-self-contact-report.json" node --import tsx qa/nacelle/exact-self-verify.mts
+run wing-shape-selftest env QA_OUT="$OUT/wing-shape-selftest-report.json" node --import tsx --test qa/nacelle/wing-shape.selftest.mts
+run fuselage-scope env QA_OUT="$OUT/fuselage-scope-report.json" node --import tsx qa/nacelle/verify-fuselage-scope.mts
+run wing-shape env QA_OUT="$OUT/wing-shape-report.json" node --import tsx qa/nacelle/verify-wing-shape.mts
 run layered-geometry env QA_OUT="$OUT/layered-geometry-report.json" node --import tsx qa/current/verify-layered-geometry.mts
 run motion-reference-selftest env QA_OUT="$OUT/motion-reference-selftest-report.json" node --import tsx qa/current/motion-reference.selftest.mts
 run motion-identity node --import tsx qa/current/motion-reference-cli.mts compare --scope qa/contracts/model-refinement.json --out "$OUT/motion-identity-report.json"
 run layered-motion-impact env QA_OUT="$OUT/layered-motion-impact-report.json" node --import tsx qa/current/verify-layered-motion-impact.mts
+run nacelle-motion-impact env QA_OUT="$OUT/nacelle-motion-impact-report.json" node --import tsx qa/nacelle/verify-nacelle-motion-impact.mts
 run inheritance env QA_OUT="$OUT/inheritance-report.json" node qa/current/verify-inheritance.mjs
 run affected-scope-selftest env QA_OUT="$OUT/affected-scope-selftest-report.json" node --import tsx qa/current/affected-scope.selftest.mts
 run patch-coverage-selftest env QA_OUT="$OUT/patch-coverage-selftest-report.json" node --import tsx qa/current/patch-coverage.selftest.mts

@@ -1,7 +1,7 @@
 {
   "passed": true,
   "source": "public/models/xp4.glb",
-  "sha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+  "sha256": "062fd09dee64984221316ede5ba684f6c1b6ff4f7b7ee2a0bd818a8888fd6f43",
   "pass": "wing",
   "sampleCount": 836,
   "states": [
@@ -15056,8 +15056,8 @@
   ],
   "currentSnapshotTopologyRefreshes": [],
   "exactPairCache": {
-    "freshNarrowPhasePairPoses": 120438,
-    "exactTransformPairReuses": 292696,
+    "freshNarrowPhasePairPoses": 123844,
+    "exactTransformPairReuses": 306184,
     "immutableGeometryIdentityAndVersionsAsserted": true,
     "policy": "仅本轮不可变网格身份/属性/数组/版本与Float64世界矩阵完全相同才复用；任何几何变化直接失败，不能让原矩阵快照缓存失效"
   },
@@ -15283,6 +15283,8 @@
     "RootHingeEndcap_R0148",
     "RootHingeShaft_L",
     "RootHingeShaft_R",
+    "Root_access_cover_L",
+    "Root_access_cover_R",
     "Spinner_L_Front",
     "Spinner_L_Rear",
     "Spinner_R_Front",
@@ -15805,6 +15807,12 @@
         ]
       },
       {
+        "ancestor": "BladeFold_R_Front_B",
+        "meshDescendants": [
+          "Blade_R_Front_B"
+        ]
+      },
+      {
         "ancestor": "BladeFold_R_Rear_B",
         "meshDescendants": [
           "Blade_R_Rear_B"
@@ -15838,6 +15846,12 @@
         "ancestor": "Blade_hinge_pin_R_Front_A",
         "meshDescendants": [
           "Blade_hinge_pin_R_Front_A"
+        ]
+      },
+      {
+        "ancestor": "Blade_hinge_pin_R_Front_B",
+        "meshDescendants": [
+          "Blade_hinge_pin_R_Front_B"
         ]
       },
       {
@@ -16333,6 +16347,30 @@
         ]
       },
       {
+        "ancestor": "Landing_wear_tip_L_Front",
+        "meshDescendants": [
+          "Landing_wear_tip_L_Front"
+        ]
+      },
+      {
+        "ancestor": "Landing_wear_tip_L_Rear",
+        "meshDescendants": [
+          "Landing_wear_tip_L_Rear"
+        ]
+      },
+      {
+        "ancestor": "Landing_wear_tip_R_Front",
+        "meshDescendants": [
+          "Landing_wear_tip_R_Front"
+        ]
+      },
+      {
+        "ancestor": "Landing_wear_tip_R_Rear",
+        "meshDescendants": [
+          "Landing_wear_tip_R_Rear"
+        ]
+      },
+      {
         "ancestor": "Lower_fuselage_join",
         "meshDescendants": [
           "Lower_fuselage_join"
@@ -16410,6 +16448,30 @@
         "ancestor": "MotorFrontBearing_R_Rear",
         "meshDescendants": [
           "MotorFrontBearing_R_Rear"
+        ]
+      },
+      {
+        "ancestor": "Motor_cowl_L_Front",
+        "meshDescendants": [
+          "Motor_cowl_L_Front"
+        ]
+      },
+      {
+        "ancestor": "Motor_cowl_L_Rear",
+        "meshDescendants": [
+          "Motor_cowl_L_Rear"
+        ]
+      },
+      {
+        "ancestor": "Motor_cowl_R_Front",
+        "meshDescendants": [
+          "Motor_cowl_R_Front"
+        ]
+      },
+      {
+        "ancestor": "Motor_cowl_R_Rear",
+        "meshDescendants": [
+          "Motor_cowl_R_Rear"
         ]
       },
       {
@@ -16715,6 +16777,12 @@
         ]
       },
       {
+        "ancestor": "RootCarrierBridge_R",
+        "meshDescendants": [
+          "RootCarrierBridge_R"
+        ]
+      },
+      {
         "ancestor": "RootFixedBearingPedestal_L",
         "meshDescendants": [
           "RootFixedBearingPedestal_L"
@@ -16760,6 +16828,18 @@
         "ancestor": "RootHingeShaft_R",
         "meshDescendants": [
           "RootHingeShaft_R"
+        ]
+      },
+      {
+        "ancestor": "Root_access_cover_L",
+        "meshDescendants": [
+          "Root_access_cover_L"
+        ]
+      },
+      {
+        "ancestor": "Root_access_cover_R",
+        "meshDescendants": [
+          "Root_access_cover_R"
         ]
       },
       {
@@ -17169,6 +17249,8 @@
       "RootHingeEndcap_R0148",
       "RootHingeShaft_L",
       "RootHingeShaft_R",
+      "Root_access_cover_L",
+      "Root_access_cover_R",
       "Spinner_L_Front",
       "Spinner_L_Rear",
       "Spinner_R_Front",
@@ -17218,8 +17300,6 @@
       "Pitot_probe_foot",
       "Pitot_probe_mount",
       "Pitot_probe_tube",
-      "Root_access_cover_L",
-      "Root_access_cover_R",
       "Tail_receiver",
       "Tail_root_fastener_L",
       "Tail_root_fastener_L001",
@@ -17235,8 +17315,8 @@
       "Ventral_tail_tab"
     ]
   },
-  "unchangedRelativePairsInherited": 457,
-  "relativePairCount": 32477,
+  "unchangedRelativePairsInherited": 435,
+  "relativePairCount": 32499,
   "groups": {
     "固定机体": [
       "Fuselage",
@@ -17584,9 +17664,9 @@
   },
   "sameRigidPairsSkipped": 6969,
   "criticalOpen": [],
-  "broadHits": 413134,
-  "triangleSATTests": 304295933,
-  "containTests": 120438,
+  "broadHits": 430028,
+  "triangleSATTests": 326640388,
+  "containTests": 123844,
   "contacts": [],
   "unresolved": [
     {
@@ -17659,7 +17739,7 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 272
+      "samples": 268
     },
     {
       "container": "V_tail_blue_leading_L",
@@ -17683,7 +17763,7 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 360
+      "samples": 356
     },
     {
       "container": "Wing_blue_leading_L",
@@ -17707,7 +17787,7 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 272
+      "samples": 268
     },
     {
       "container": "V_tail_blue_leading_L",
@@ -17731,31 +17811,7 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 272
-    },
-    {
-      "container": "Pod_mount_seam_L_Front001",
-      "contained": "Fixed_root_L",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "半度参数整翼与四种折叶截面",
-        "wing": 0,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 352
+      "samples": 268
     },
     {
       "container": "Wing_blue_leading_L",
@@ -17803,7 +17859,7 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 184
+      "samples": 192
     },
     {
       "container": "Fixed_root_blue_L",
@@ -17828,102 +17884,6 @@
         "hatch": 0
       },
       "samples": 836
-    },
-    {
-      "container": "Pod_mount_seam_L_Front",
-      "contained": "BraceRod_mesh_L",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "半度参数整翼与四种折叶截面",
-        "wing": 0,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 88
-    },
-    {
-      "container": "Pod_mount_seam_L_Front001",
-      "contained": "BraceRod_mesh_L",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "半度参数整翼与四种折叶截面",
-        "wing": 0,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 108
-    },
-    {
-      "container": "Pod_mount_seam_L_Rear",
-      "contained": "BraceRod_mesh_L",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "半度参数整翼与四种折叶截面",
-        "wing": 0,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 48
-    },
-    {
-      "container": "Pod_mount_seam_L_Rear001",
-      "contained": "BraceRod_mesh_L",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "半度参数整翼与四种折叶截面",
-        "wing": 0,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 48
     },
     {
       "container": "Wing_blue_leading_L",
@@ -18115,7 +18075,7 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 272
+      "samples": 268
     },
     {
       "container": "V_tail_blue_leading_R",
@@ -18139,7 +18099,7 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 360
+      "samples": 356
     },
     {
       "container": "Wing_blue_leading_R",
@@ -18163,7 +18123,7 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 272
+      "samples": 268
     },
     {
       "container": "V_tail_blue_leading_R",
@@ -18187,31 +18147,7 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 272
-    },
-    {
-      "container": "Pod_mount_seam_R_Front",
-      "contained": "Fixed_root_R",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "半度参数整翼与四种折叶截面",
-        "wing": 0,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 352
+      "samples": 268
     },
     {
       "container": "Wing_blue_leading_R",
@@ -18259,7 +18195,7 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 184
+      "samples": 192
     },
     {
       "container": "Fixed_root_blue_R",
@@ -18284,102 +18220,6 @@
         "hatch": 0
       },
       "samples": 836
-    },
-    {
-      "container": "Pod_mount_seam_R_Front",
-      "contained": "BraceRod_mesh_R",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "半度参数整翼与四种折叶截面",
-        "wing": 0,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 108
-    },
-    {
-      "container": "Pod_mount_seam_R_Front001",
-      "contained": "BraceRod_mesh_R",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "半度参数整翼与四种折叶截面",
-        "wing": 0,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 88
-    },
-    {
-      "container": "Pod_mount_seam_R_Rear",
-      "contained": "BraceRod_mesh_R",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "半度参数整翼与四种折叶截面",
-        "wing": 0,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 48
-    },
-    {
-      "container": "Pod_mount_seam_R_Rear001",
-      "contained": "BraceRod_mesh_R",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "半度参数整翼与四种折叶截面",
-        "wing": 0,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 48
     },
     {
       "container": "Wing_blue_leading_R",
@@ -18743,11 +18583,11 @@
     },
     {
       "container": "Wing_blue_leading_L",
-      "contained": "Blade_L_Front_B",
+      "contained": "Blade_L_Front_A",
       "reason": "开放或非流形容器",
       "firstState": {
         "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.044444444444444446,
+        "wing": 0.03888888888888889,
         "fold": [
           1,
           1,
@@ -18763,7 +18603,31 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 545
+      "samples": 570
+    },
+    {
+      "container": "Wing_blue_leading_L",
+      "contained": "Blade_L_Front_B",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "半度参数整翼与四种折叶截面",
+        "wing": 0.03888888888888889,
+        "fold": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 479
     },
     {
       "container": "Wing_blue_leading_R",
@@ -18771,7 +18635,7 @@
       "reason": "开放或非流形容器",
       "firstState": {
         "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.044444444444444446,
+        "wing": 0.03888888888888889,
         "fold": [
           1,
           1,
@@ -18787,31 +18651,7 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 545
-    },
-    {
-      "container": "Wing_blue_leading_L",
-      "contained": "Blade_L_Front_A",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.05,
-        "fold": [
-          1,
-          1,
-          1,
-          1
-        ],
-        "phase": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 593
+      "samples": 479
     },
     {
       "container": "Wing_blue_leading_R",
@@ -18819,7 +18659,7 @@
       "reason": "开放或非流形容器",
       "firstState": {
         "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.05,
+        "wing": 0.03888888888888889,
         "fold": [
           1,
           1,
@@ -18835,7 +18675,7 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 593
+      "samples": 570
     },
     {
       "container": "Wing_blue_angular_panel_L",
@@ -18843,7 +18683,7 @@
       "reason": "开放或非流形容器",
       "firstState": {
         "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.05555555555555555,
+        "wing": 0.05,
         "fold": [
           0,
           0,
@@ -18859,31 +18699,7 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 96
-    },
-    {
-      "container": "Wing_blue_leading_L",
-      "contained": "RootBearingFixed_L_Front",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.05555555555555555,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 752
+      "samples": 36
     },
     {
       "container": "Wing_blue_angular_panel_R",
@@ -18891,7 +18707,7 @@
       "reason": "开放或非流形容器",
       "firstState": {
         "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.05555555555555555,
+        "wing": 0.05,
         "fold": [
           0,
           0,
@@ -18907,11 +18723,11 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 96
+      "samples": 36
     },
     {
-      "container": "Wing_blue_leading_R",
-      "contained": "RootBearingFixed_R_Front",
+      "container": "Wing_blue_leading_L",
+      "contained": "RootBearingFixed_L_Front",
       "reason": "开放或非流形容器",
       "firstState": {
         "label": "半度参数整翼与四种折叶截面",
@@ -18939,7 +18755,7 @@
       "reason": "开放或非流形容器",
       "firstState": {
         "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.06111111111111111,
+        "wing": 0.05555555555555555,
         "fold": [
           0,
           0,
@@ -18955,7 +18771,31 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 748
+      "samples": 752
+    },
+    {
+      "container": "Wing_blue_leading_R",
+      "contained": "RootBearingFixed_R_Front",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "半度参数整翼与四种折叶截面",
+        "wing": 0.05555555555555555,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 752
     },
     {
       "container": "Wing_blue_leading_R",
@@ -18963,7 +18803,7 @@
       "reason": "开放或非流形容器",
       "firstState": {
         "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.06111111111111111,
+        "wing": 0.05555555555555555,
         "fold": [
           0,
           0,
@@ -18979,7 +18819,7 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 748
+      "samples": 752
     },
     {
       "container": "Wing_blue_leading_L",
@@ -18989,10 +18829,10 @@
         "label": "半度参数整翼与四种折叶截面",
         "wing": 0.07777777777777778,
         "fold": [
-          1,
-          1,
-          1,
-          1
+          0.75,
+          0.75,
+          0.75,
+          0.75
         ],
         "phase": [
           0,
@@ -19003,7 +18843,7 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 584
+      "samples": 597
     },
     {
       "container": "Wing_blue_leading_R",
@@ -19013,10 +18853,10 @@
         "label": "半度参数整翼与四种折叶截面",
         "wing": 0.07777777777777778,
         "fold": [
-          1,
-          1,
-          1,
-          1
+          0.75,
+          0.75,
+          0.75,
+          0.75
         ],
         "phase": [
           0,
@@ -19027,7 +18867,7 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 584
+      "samples": 597
     },
     {
       "container": "Wing_blue_leading_L",
@@ -19175,6 +19015,54 @@
     },
     {
       "container": "Wing_blue_leading_L",
+      "contained": "Blade_L_Rear_A",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "半度参数整翼与四种折叶截面",
+        "wing": 0.08888888888888889,
+        "fold": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 545
+    },
+    {
+      "container": "Wing_blue_leading_R",
+      "contained": "Blade_R_Rear_B",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "半度参数整翼与四种折叶截面",
+        "wing": 0.08888888888888889,
+        "fold": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 545
+    },
+    {
+      "container": "Wing_blue_leading_L",
       "contained": "RootHingeEndcap_L-0148",
       "reason": "开放或非流形容器",
       "firstState": {
@@ -19220,54 +19108,6 @@
         "hatch": 0
       },
       "samples": 720
-    },
-    {
-      "container": "Wing_blue_leading_L",
-      "contained": "Blade_L_Rear_A",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.1,
-        "fold": [
-          1,
-          1,
-          1,
-          1
-        ],
-        "phase": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 511
-    },
-    {
-      "container": "Wing_blue_leading_R",
-      "contained": "Blade_R_Rear_B",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.1,
-        "fold": [
-          1,
-          1,
-          1,
-          1
-        ],
-        "phase": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 511
     },
     {
       "container": "Wing_blue_leading_L",
@@ -19515,12 +19355,12 @@
       "reason": "开放或非流形容器",
       "firstState": {
         "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.16666666666666666,
+        "wing": 0.15,
         "fold": [
-          1,
-          1,
-          1,
-          1
+          0.75,
+          0.75,
+          0.75,
+          0.75
         ],
         "phase": [
           0,
@@ -19531,7 +19371,7 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 170
+      "samples": 12
     },
     {
       "container": "Wing_blue_angular_panel_R",
@@ -19539,12 +19379,12 @@
       "reason": "开放或非流形容器",
       "firstState": {
         "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.16666666666666666,
+        "wing": 0.15,
         "fold": [
-          1,
-          1,
-          1,
-          1
+          0.75,
+          0.75,
+          0.75,
+          0.75
         ],
         "phase": [
           0,
@@ -19555,31 +19395,7 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 170
-    },
-    {
-      "container": "Wing_blue_leading_L",
-      "contained": "Blade_hinge_arm_L_Front_B",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.19444444444444445,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 368
+      "samples": 12
     },
     {
       "container": "Wing_blue_leading_L",
@@ -19587,7 +19403,7 @@
       "reason": "开放或非流形容器",
       "firstState": {
         "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.19444444444444445,
+        "wing": 0.16111111111111112,
         "fold": [
           0,
           0,
@@ -19603,31 +19419,7 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 396
-    },
-    {
-      "container": "Wing_blue_leading_R",
-      "contained": "Blade_hinge_arm_R_Front_A",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.19444444444444445,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 368
+      "samples": 356
     },
     {
       "container": "Wing_blue_leading_R",
@@ -19635,7 +19427,7 @@
       "reason": "开放或非流形容器",
       "firstState": {
         "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.19444444444444445,
+        "wing": 0.16111111111111112,
         "fold": [
           0,
           0,
@@ -19651,7 +19443,31 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 396
+      "samples": 356
+    },
+    {
+      "container": "Wing_blue_leading_L",
+      "contained": "Blade_hinge_arm_L_Front_B",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "半度参数整翼与四种折叶截面",
+        "wing": 0.16666666666666666,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 308
     },
     {
       "container": "Wing_blue_leading_L",
@@ -19659,7 +19475,7 @@
       "reason": "开放或非流形容器",
       "firstState": {
         "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.2,
+        "wing": 0.16666666666666666,
         "fold": [
           0,
           0,
@@ -19675,7 +19491,31 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 348
+      "samples": 284
+    },
+    {
+      "container": "Wing_blue_leading_R",
+      "contained": "Blade_hinge_arm_R_Front_A",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "半度参数整翼与四种折叶截面",
+        "wing": 0.16666666666666666,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 308
     },
     {
       "container": "Wing_blue_leading_R",
@@ -19683,7 +19523,55 @@
       "reason": "开放或非流形容器",
       "firstState": {
         "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.2,
+        "wing": 0.16666666666666666,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 284
+    },
+    {
+      "container": "Wing_blue_leading_L",
+      "contained": "Blade_hinge_arm_L_Front_A",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "半度参数整翼与四种折叶截面",
+        "wing": 0.17777777777777778,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 348
+    },
+    {
+      "container": "Wing_blue_leading_R",
+      "contained": "Blade_hinge_arm_R_Front_B",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "半度参数整翼与四种折叶截面",
+        "wing": 0.17777777777777778,
         "fold": [
           0,
           0,
@@ -19703,107 +19591,11 @@
     },
     {
       "container": "Wing_blue_leading_L",
-      "contained": "Blade_hinge_arm_L_Front_A",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.2111111111111111,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 388
-    },
-    {
-      "container": "Wing_blue_leading_L",
-      "contained": "Root_access_cover_L",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.2111111111111111,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 632
-    },
-    {
-      "container": "Wing_blue_leading_R",
-      "contained": "Blade_hinge_arm_R_Front_B",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.2111111111111111,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 388
-    },
-    {
-      "container": "Wing_blue_leading_R",
-      "contained": "Root_access_cover_R",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.2111111111111111,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 632
-    },
-    {
-      "container": "Wing_blue_leading_L",
       "contained": "Blade_hinge_pin_L_Front_A",
       "reason": "开放或非流形容器",
       "firstState": {
         "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.2222222222222222,
+        "wing": 0.18333333333333332,
         "fold": [
           0,
           0,
@@ -19819,7 +19611,7 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 376
+      "samples": 340
     },
     {
       "container": "Wing_blue_leading_R",
@@ -19827,7 +19619,7 @@
       "reason": "开放或非流形容器",
       "firstState": {
         "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.2222222222222222,
+        "wing": 0.18333333333333332,
         "fold": [
           0,
           0,
@@ -19843,15 +19635,15 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 376
+      "samples": 340
     },
     {
-      "container": "Fixed_root_blue_L",
-      "contained": "Composite_wing_L",
+      "container": "Pod_mount_seam_L_Front001",
+      "contained": "Fixed_root_L",
       "reason": "开放或非流形容器",
       "firstState": {
         "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.23333333333333334,
+        "wing": 0.22777777777777777,
         "fold": [
           0,
           0,
@@ -19867,15 +19659,15 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 636
+      "samples": 256
     },
     {
-      "container": "Fixed_root_blue_R",
-      "contained": "Composite_wing_R",
+      "container": "Pod_mount_seam_R_Front",
+      "contained": "Fixed_root_R",
       "reason": "开放或非流形容器",
       "firstState": {
         "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.23333333333333334,
+        "wing": 0.22777777777777777,
         "fold": [
           0,
           0,
@@ -19891,7 +19683,55 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 636
+      "samples": 256
+    },
+    {
+      "container": "Wing_blue_leading_L",
+      "contained": "Root_access_cover_L",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "半度参数整翼与四种折叶截面",
+        "wing": 0.2388888888888889,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 612
+    },
+    {
+      "container": "Wing_blue_leading_R",
+      "contained": "Root_access_cover_R",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "半度参数整翼与四种折叶截面",
+        "wing": 0.2388888888888889,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 612
     },
     {
       "container": "Wing_blue_leading_L",
@@ -19942,12 +19782,12 @@
       "samples": 500
     },
     {
-      "container": "Wing_blue_leading_L",
-      "contained": "Spinner_L_Rear",
+      "container": "Fixed_root_blue_L",
+      "contained": "Composite_wing_L",
       "reason": "开放或非流形容器",
       "firstState": {
         "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.36666666666666664,
+        "wing": 0.25555555555555554,
         "fold": [
           0,
           0,
@@ -19963,7 +19803,103 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 368
+      "samples": 604
+    },
+    {
+      "container": "Fixed_root_blue_R",
+      "contained": "Composite_wing_R",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "半度参数整翼与四种折叶截面",
+        "wing": 0.25555555555555554,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 604
+    },
+    {
+      "container": "Pod_mount_seam_L_Front001",
+      "contained": "RootHingeEndcap_L-0148",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "半度参数整翼与四种折叶截面",
+        "wing": 0.3055555555555556,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 396
+    },
+    {
+      "container": "Pod_mount_seam_R_Front",
+      "contained": "RootHingeEndcap_R-0148",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "半度参数整翼与四种折叶截面",
+        "wing": 0.3055555555555556,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 396
+    },
+    {
+      "container": "Wing_blue_leading_L",
+      "contained": "Spinner_L_Rear",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "半度参数整翼与四种折叶截面",
+        "wing": 0.3111111111111111,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 404
     },
     {
       "container": "Wing_blue_leading_R",
@@ -19971,7 +19907,151 @@
       "reason": "开放或非流形容器",
       "firstState": {
         "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.36666666666666664,
+        "wing": 0.3111111111111111,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 404
+    },
+    {
+      "container": "Wing_blue_leading_L",
+      "contained": "Blade_hinge_arm_L_Rear_B",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "半度参数整翼与四种折叶截面",
+        "wing": 0.31666666666666665,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 388
+    },
+    {
+      "container": "Wing_blue_leading_R",
+      "contained": "Blade_hinge_arm_R_Rear_A",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "半度参数整翼与四种折叶截面",
+        "wing": 0.31666666666666665,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 388
+    },
+    {
+      "container": "Wing_blue_leading_L",
+      "contained": "Blade_hinge_pin_L_Rear_B",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "半度参数整翼与四种折叶截面",
+        "wing": 0.32222222222222224,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 380
+    },
+    {
+      "container": "Wing_blue_leading_R",
+      "contained": "Blade_hinge_pin_R_Rear_A",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "半度参数整翼与四种折叶截面",
+        "wing": 0.32222222222222224,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 380
+    },
+    {
+      "container": "Pod_mount_seam_L_Front001",
+      "contained": "RootHingeShaft_L",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "半度参数整翼与四种折叶截面",
+        "wing": 0.3277777777777778,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 368
+    },
+    {
+      "container": "Pod_mount_seam_R_Front",
+      "contained": "RootHingeShaft_R",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "半度参数整翼与四种折叶截面",
+        "wing": 0.3277777777777778,
         "fold": [
           0,
           0,
@@ -19991,107 +20071,59 @@
     },
     {
       "container": "Wing_blue_leading_L",
-      "contained": "Blade_hinge_arm_L_Rear_B",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.37222222222222223,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 356
-    },
-    {
-      "container": "Wing_blue_leading_R",
-      "contained": "Blade_hinge_arm_R_Rear_A",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.37222222222222223,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 356
-    },
-    {
-      "container": "Wing_blue_leading_L",
-      "contained": "Blade_hinge_pin_L_Rear_B",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.38333333333333336,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 344
-    },
-    {
-      "container": "Wing_blue_leading_R",
-      "contained": "Blade_hinge_pin_R_Rear_A",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.38333333333333336,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 344
-    },
-    {
-      "container": "Wing_blue_leading_L",
       "contained": "Blade_hinge_arm_L_Rear_A",
       "reason": "开放或非流形容器",
       "firstState": {
         "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.42777777777777776,
+        "wing": 0.35555555555555557,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 372
+    },
+    {
+      "container": "Wing_blue_leading_R",
+      "contained": "Blade_hinge_arm_R_Rear_B",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "半度参数整翼与四种折叶截面",
+        "wing": 0.35555555555555557,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 372
+    },
+    {
+      "container": "Pod_mount_seam_L_Front001",
+      "contained": "RootBearingFixed_L_Front",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "半度参数整翼与四种折叶截面",
+        "wing": 0.3611111111111111,
         "fold": [
           0,
           0,
@@ -20110,12 +20142,108 @@
       "samples": 324
     },
     {
-      "container": "Wing_blue_leading_R",
-      "contained": "Blade_hinge_arm_R_Rear_B",
+      "container": "Pod_mount_seam_L_Front001",
+      "contained": "RootBearingSeal_L_Front",
       "reason": "开放或非流形容器",
       "firstState": {
         "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.42777777777777776,
+        "wing": 0.3611111111111111,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 324
+    },
+    {
+      "container": "Pod_mount_seam_L_Front001",
+      "contained": "RootBearingHousing_L",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "半度参数整翼与四种折叶截面",
+        "wing": 0.3611111111111111,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 324
+    },
+    {
+      "container": "Pod_mount_seam_R_Front",
+      "contained": "RootBearingFixed_R_Front",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "半度参数整翼与四种折叶截面",
+        "wing": 0.3611111111111111,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 324
+    },
+    {
+      "container": "Pod_mount_seam_R_Front",
+      "contained": "RootBearingSeal_R_Front",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "半度参数整翼与四种折叶截面",
+        "wing": 0.3611111111111111,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 324
+    },
+    {
+      "container": "Pod_mount_seam_R_Front",
+      "contained": "RootBearingHousing_R",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "半度参数整翼与四种折叶截面",
+        "wing": 0.3611111111111111,
         "fold": [
           0,
           0,
@@ -20139,7 +20267,7 @@
       "reason": "开放或非流形容器",
       "firstState": {
         "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.45555555555555555,
+        "wing": 0.37777777777777777,
         "fold": [
           0,
           0,
@@ -20155,7 +20283,7 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 304
+      "samples": 352
     },
     {
       "container": "Wing_blue_leading_R",
@@ -20163,7 +20291,7 @@
       "reason": "开放或非流形容器",
       "firstState": {
         "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.45555555555555555,
+        "wing": 0.37777777777777777,
         "fold": [
           0,
           0,
@@ -20179,7 +20307,55 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 304
+      "samples": 352
+    },
+    {
+      "container": "Pod_mount_seam_L_Front001",
+      "contained": "RootFairingFixed_L",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "半度参数整翼与四种折叶截面",
+        "wing": 0.4,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 252
+    },
+    {
+      "container": "Pod_mount_seam_R_Front",
+      "contained": "RootFairingFixed_R",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "半度参数整翼与四种折叶截面",
+        "wing": 0.4,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 252
     },
     {
       "container": "Wing_blue_angular_panel_L",
@@ -20187,12 +20363,12 @@
       "reason": "开放或非流形容器",
       "firstState": {
         "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.5111111111111111,
+        "wing": 0.4722222222222222,
         "fold": [
-          0.75,
-          0.75,
-          0.75,
-          0.75
+          0.25,
+          0.25,
+          0.25,
+          0.25
         ],
         "phase": [
           0,
@@ -20203,7 +20379,7 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 67
+      "samples": 86
     },
     {
       "container": "Wing_blue_angular_panel_R",
@@ -20211,12 +20387,12 @@
       "reason": "开放或非流形容器",
       "firstState": {
         "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.5111111111111111,
+        "wing": 0.4722222222222222,
         "fold": [
-          0.75,
-          0.75,
-          0.75,
-          0.75
+          0.25,
+          0.25,
+          0.25,
+          0.25
         ],
         "phase": [
           0,
@@ -20227,103 +20403,7 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 67
-    },
-    {
-      "container": "Wing_blue_leading_L",
-      "contained": "Fixed_root_blue_L",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.5333333333333333,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 388
-    },
-    {
-      "container": "Fixed_root_blue_L",
-      "contained": "Wing_blue_leading_L",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.5333333333333333,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 388
-    },
-    {
-      "container": "Wing_blue_leading_R",
-      "contained": "Fixed_root_blue_R",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.5333333333333333,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 388
-    },
-    {
-      "container": "Fixed_root_blue_R",
-      "contained": "Wing_blue_leading_R",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.5333333333333333,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 388
+      "samples": 86
     },
     {
       "container": "Wing_blue_leading_L",
@@ -20372,6 +20452,102 @@
         "hatch": 0
       },
       "samples": 304
+    },
+    {
+      "container": "Wing_blue_leading_L",
+      "contained": "Fixed_root_blue_L",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "半度参数整翼与四种折叶截面",
+        "wing": 0.5555555555555556,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 372
+    },
+    {
+      "container": "Fixed_root_blue_L",
+      "contained": "Wing_blue_leading_L",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "半度参数整翼与四种折叶截面",
+        "wing": 0.5555555555555556,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 372
+    },
+    {
+      "container": "Wing_blue_leading_R",
+      "contained": "Fixed_root_blue_R",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "半度参数整翼与四种折叶截面",
+        "wing": 0.5555555555555556,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 372
+    },
+    {
+      "container": "Fixed_root_blue_R",
+      "contained": "Wing_blue_leading_R",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "半度参数整翼与四种折叶截面",
+        "wing": 0.5555555555555556,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 372
     },
     {
       "container": "Wing_blue_leading_L",
@@ -20468,54 +20644,6 @@
         "hatch": 0
       },
       "samples": 296
-    },
-    {
-      "container": "Pod_mount_seam_L_Front",
-      "contained": "ControlSurface_L_Inboard",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.6055555555555555,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 52
-    },
-    {
-      "container": "Pod_mount_seam_R_Front001",
-      "contained": "ControlSurface_R_Inboard",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "半度参数整翼与四种折叶截面",
-        "wing": 0.6055555555555555,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 52
     }
   ],
   "limitations": [

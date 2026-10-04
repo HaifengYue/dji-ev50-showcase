@@ -13,6 +13,7 @@
     "no tolerance relaxation",
     "multi-triangle coplanar coverage independent of traversal order"
   ],
+  "multipleDomainCases": 8,
   "coplanarFanOrderCases": 10,
   "rescanCertificates": 25,
   "tetraFailure": {

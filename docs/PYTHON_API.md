@@ -4,7 +4,7 @@
 
 ## 1. 独立安装和启动
 
-以下命令在当前工程根目录执行。Python 需要 3.10 或更高版本，服务、SDK 和测试只依赖标准库，`python/requirements.lock` 无第三方依赖。当前工程已完成26项Python单测，并在55阶段正式验收中执行实际SDK/HTTP/SSE/生产GLB链路；报告见 `qa/frontend/summary.json` 与 `qa/current/results/python-render-report.json`。
+以下命令在当前工程根目录执行。Python 需要 3.10 或更高版本，服务、SDK 和测试只依赖标准库，`python/requirements.lock` 无第三方依赖。当前工程已完成26项Python单测，并在本轮原65阶段正式验收中执行实际SDK/HTTP/SSE/生产GLB链路；报告见 `qa/frontend/summary.json` 与 `qa/current/results/python-render-report.json`。
 
 安装器在当前项目建立 `.venv` 并在该虚拟环境内注册 `python/` 包路径，整个步骤不联网、不安装到全局环境。移动或重新解压工程后再运行安装器即可。
 

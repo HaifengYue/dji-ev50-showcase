@@ -4,6 +4,12 @@
 仅独立构建几何；不复制官方网格、纹理、标识或摄影图像。
 """
 import bpy, bmesh, math, os, json, shutil, sys, hashlib
+# The exact CSG/triangulation lineage is verified using Blender's four-worker scheduler.
+# Refuse a different/default worker count rather than silently change protected raw geometry.
+_thread_args=[sys.argv[i+1]for i,a in enumerate(sys.argv[:-1])if a in ('-t','--threads')]
+_thread_args += [a.split('=',1)[1]for a in sys.argv if a.startswith('--threads=')]
+if not _thread_args or any(a!='4'for a in _thread_args):
+    raise RuntimeError('Deterministic generation requires: blender -b -t 4 --python-exit-code 1 --python scripts/generate_transwing.py')
 bpy.context.preferences.filepaths.save_version=0
 from mathutils import Vector, Quaternion, Matrix
 from mathutils.geometry import tessellate_polygon
@@ -694,6 +700,7 @@ CENTRAL_ATTACHMENT=build_central_attachment(globals())
 EMBEDDED_JOINTS=finish_embedded_joints(globals())
 from layered_wing_joint import build_layered_wing_joint
 LAYERED_WING_JOINT=build_layered_wing_joint(globals())
+from nacelle_wing_layout import reposition_nacelles, lift_central_attachment
 slider_samples=[slider_at(i/1000) for i in range(1001)]
 slider_min,slider_max=min(slider_samples),max(slider_samples)
 from linkage_geometry import build_linkage_details
@@ -710,6 +717,8 @@ from surface_supports import build_surface_supports
 SURFACE_SUPPORTS=build_surface_supports(globals())
 from joint_fairings import build_fairing_refinements
 FAIRING_REFINEMENTS=build_fairing_refinements(globals())
+from wing_surface_repair import repair_wing_surfaces
+WING_SURFACE_REPAIR=repair_wing_surfaces()
 from surface_finish import build_surface_finish
 SURFACE_FINISH_V22=build_surface_finish(globals())
 from preserved_surfaces import preserve_untouched, finish_topology
@@ -723,6 +732,8 @@ SLOT_PROFILE_CONFIG['preservation']=preserve_untouched(globals())
 SLOT_PROFILE_CONFIG['topology']=finish_topology()
 SLOT_PROFILE_CONFIG['normalRefinement']=refine_normals(globals())
 SLOT_PROFILE_CONFIG['adjacentSeamFit']=fit_adjacent_seams(globals())
+CENTRAL_ATTACHMENT_LIFT=lift_central_attachment()
+NACELLE_LAYOUT=reposition_nacelles(globals())
 
 scene=bpy.context.scene
 # 可编辑源文件、独立GLB和网页模型共用确定性的烘焙动作。
@@ -752,6 +763,8 @@ manifest['nativeDriveConstraintV22']={'method':'persistent local simple sin/cos 
 manifest['animations']=[{'name':transition_export.CLIP,'purpose':'原整翼机构回归基准','frames':[0,199],'fps':24,'channels':18},{'name':transition_export.MOTOR_CLIP,'purpose':'四动力先展开再转动、停转寻位再收桨','frames':[0,168],'fps':24,'channels':26,'durationSeconds':7,'timingIsIllustrative':True}]
 manifest['rootInterface']={'surface':'前部连续退让曲面与轴旁同轴孔腔共同构成上下错层；活动上皮真实让位，下皮为有限承托材料','axisHalfGap':ROOT_HALF_GAP,'axisHalfGapScope':'兼容字段，仅为旧同轴构造半间隙；当前上开口及下盆间隙参见layeredWingJoint，不代表全局最小净空','hardwareProfile':'原同轴径向曲面只用于轴旁过渡与硬件分缝','booleanBevelUsed':False,'visualReconstruction':True,'geometryContract':'layeredWingJoint'}
 manifest['layeredWingJoint']=LAYERED_WING_JOINT
+manifest['nacelleLayout']=NACELLE_LAYOUT
+manifest['centralAttachmentLift']=CENTRAL_ATTACHMENT_LIFT
 manifest['wingSeamTopology']={'version':24,'parts':LAYERED_WING_JOINT['closedWingSolids'],'method':'四个当前主翼实体的闭合、正体积、非退化三角面；旧预构造布尔报告不能替代本结果'}
 manifest['straightFuselageSlot']=SLOT_PROFILE_CONFIG
 manifest['wingSeamRefinement']={'version':24,'changedNodes':['Fixed_root_L','Fixed_root_R','Composite_wing_L','Composite_wing_R','Fixed_root_blue_L','Fixed_root_blue_R','Wing_blue_leading_L','Wing_blue_leading_R','BraceWingSeat_L','BraceWingSeat_R'],'axialGap':2*ROOT_HALF_GAP,'hardwareHalfGapPreserved':HARDWARE_HALF_GAP,'fairingSeamPreserved':.003,'method':'连续前部轮廓、实体上下错层、实际移轴和球心内移；不继承旧曲面或旧运动配对身份','claimBoundary':'当前实际网格和全程采样另验；非连续碰撞、制造性或适航证明'}
@@ -762,8 +775,8 @@ manifest['surfaceRefinements']['currentRootEvidence']='当前几何及法线由l
 manifest['embeddedWingJoints'].pop('changedRootNormals',None)
 manifest['centralAttachment'].pop('fixedRoots',None)
 manifest['centralAttachment'].pop('paintTaper',None)
-manifest['centralAttachment']['currentRootEvidence']='机身中央鞍面保留；外接固定翼及蓝边由layeredWingJoint当前重建'
-manifest['centralAttachment']['preserved']=['机身中央鞍面和原前舱腔体','CargoHoodShell及0–55度开盖轴','两腹部探头','旋翼部件局部几何；当前世界运动另验']
+manifest['centralAttachment']['currentRootEvidence']='固定中央翼等厚上移，机身相接鞍面由centralAttachmentLift作有限C1抬升；外接固定翼及蓝边由layeredWingJoint当前重建'
+manifest['centralAttachment']['preserved']=['centralAttachmentLift明确域外的原前舱腔体与机壳；域内鞍面有限抬升','CargoHoodShell及0–55度开盖轴','两腹部探头','旋翼部件局部几何；当前世界运动另验']
 manifest['detailRevision']['reference']='原实机外观参考的局部基元，加当前用户标注的连续分层翼根与真实移轴；原创概念尺寸，不是原厂CAD或飞控'
 manifest['detailRevision']['currentGeometryContract']='layeredWingJoint'
 manifest['detailRevision'].pop('unchangedSurfaceAndPropellerBaselineVersion',None)
@@ -775,6 +788,7 @@ manifest['jointRefinements']=JOINT_REFINEMENTS
 manifest['hingeSupports']=HINGE_SUPPORTS
 manifest['controlSupports']=CONTROL_SUPPORTS
 manifest['surfaceSupports']=SURFACE_SUPPORTS
+manifest['wingSurfaceRepair']=WING_SURFACE_REPAIR
 manifest['fairingRefinements']=FAIRING_REFINEMENTS
 manifest['surfaceFinishV22']=SURFACE_FINISH_V22
 manifest['mechanism']['actualSlotTravel']=[slot_min,slot_max]

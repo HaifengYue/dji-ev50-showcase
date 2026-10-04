@@ -1,0 +1,19 @@
+{
+  passed: true,
+  reports: [
+    {
+      encoding: 'source',
+      passed: true,
+      rows: [Array],
+      failureCount: 0,
+      failures: []
+    },
+    {
+      encoding: 'runtime',
+      passed: true,
+      rows: [Array],
+      failureCount: 0,
+      failures: []
+    }
+  ]
+}

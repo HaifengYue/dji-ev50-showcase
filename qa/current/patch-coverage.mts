@@ -5,7 +5,8 @@ type Point = number[];
 type Triangle = { vertices: Point[]; triangleIndex?: number; bounds?: { min: Point; max: Point } };
 type Plane = { normal: Point; offset: number };
 export type LocalDeformationDomain = { minimumAbsX: number; maximumAbsX: number; longitudinalY: number[]; verticalZ: number[] };
-export type CoverageOptions = { epsilon?: number; maximumFragments?: number; maximumFailures?: number; maximumPasses?: number };
+export type LocalDeformationDomains = LocalDeformationDomain | readonly LocalDeformationDomain[];
+export type CoverageOptions = { epsilon?: number; maximumFragments?: number; maximumFailures?: number; maximumPasses?: number; includeResidualPolygons?: boolean };
 const dot = (a: Point, b: Point) => a.reduce((s, x, i) => s + x * b[i], 0);
 const sub = (a: Point, b: Point) => a.map((x, i) => x - b[i]);
 const cross = (a: Point, b: Point) => [a[1]*b[2]-a[2]*b[1], a[2]*b[0]-a[0]*b[2], a[0]*b[1]-a[1]*b[0]];
@@ -46,11 +47,18 @@ function validateDomain(d: LocalDeformationDomain) {
     [d.longitudinalY,d.verticalZ].every(v => v?.length === 2 && v.every(Number.isFinite) && v[0] < v[1]))) throw new Error('Invalid explicit local deformation domain');
 }
 /** World coordinates are [Blender X, Blender Z, -Blender Y]. */
-export function clipOutsideDomain(triangle: Triangle, domain: LocalDeformationDomain): Point[][] {
-  validateDomain(domain);
+export function normalizeDeformationDomains(domain: LocalDeformationDomains): readonly LocalDeformationDomain[] {
+  const domains = Array.isArray(domain) ? domain : [domain];
+  if (!domains.length) throw new Error('At least one explicit local deformation domain is required');
+  domains.forEach(validateDomain);
+  return domains;
+}
+/** Subtract each explicit volume separately. The protected gaps between domains are never authorized. */
+export function clipOutsideDomain(triangle: Triangle, domain: LocalDeformationDomains): Point[][] {
+  const domains = normalizeDeformationDomains(domain);
   if(triangle.vertices?.length!==3 || !triangle.vertices.every(p=>p?.length===3 && p.every(Number.isFinite)))throw new Error('Source triangle requires three finite world-space vertices');
   let patches = [triangle.vertices];
-  for (const [lo,hi] of [[domain.minimumAbsX,domain.maximumAbsX],[-domain.maximumAbsX,-domain.minimumAbsX]]) {
+  for (const domain of domains) for (const [lo,hi] of [[domain.minimumAbsX,domain.maximumAbsX],[-domain.maximumAbsX,-domain.minimumAbsX]]) {
     const planes=boxPlanes([lo,domain.verticalZ[0],-domain.longitudinalY[1]],[hi,domain.verticalZ[1],-domain.longitudinalY[0]]);
     patches=patches.flatMap(poly=>subtractConvex(poly,planes,true).outside);
   }
@@ -78,7 +86,7 @@ function targetPrism(t: Triangle, epsilon: number): Plane[] | null {
  * Distance to a convex set is convex: bounding ALL fragment vertices therefore bounds EVERY
  * point of the fragment. Prism partitioning supplies full-area coverage across retriangulations.
  * Unproven residuals, nonfinite arithmetic, and resource exhaustion fail closed. */
-export function proveOutsidePatchCoverage(source: {triangles: Triangle[]} | Triangle[], target: any, domain: LocalDeformationDomain, options: CoverageOptions = {}) {
+export function proveOutsidePatchCoverage(source: {triangles: Triangle[]} | Triangle[], target: any, domain: LocalDeformationDomains, options: CoverageOptions = {}) {
   const epsilon=options.epsilon??1e-6,maximumFragments=options.maximumFragments??20000,maximumFailures=options.maximumFailures??8,maximumPasses=options.maximumPasses??16;
   if(!Number.isFinite(epsilon)||epsilon<0||epsilon>1e-6)throw new Error('Coverage tolerance must be finite and at most 1e-6');
   if([maximumFragments,maximumFailures,maximumPasses].some(n=>!Number.isInteger(n)||n<1))throw new Error('Coverage resource limits must be positive integers');
@@ -114,7 +122,7 @@ export function proveOutsidePatchCoverage(source: {triangles: Triangle[]} | Tria
       const key=stateKey(remaining);if(seenStates.has(key))break;seenStates.add(key);
       if(pass+1===maximumPasses)limitReason='coverage-pass-limit';
     }
-    if(remaining.length) { stats.failedPatches++;if(failures.length<maximumFailures)failures.push({triangleIndex:tri.triangleIndex,reason:limitReason??'unproven-protected-patch',targetTriangleCandidates:near.length,residualPatches:remaining.length,witnessPolygon:remaining[0]}); }
+    if(remaining.length) { stats.failedPatches++;if(failures.length<maximumFailures)failures.push({triangleIndex:tri.triangleIndex,reason:limitReason??'unproven-protected-patch',targetTriangleCandidates:near.length,residualPatches:remaining.length,witnessPolygon:remaining[0],...(options.includeResidualPolygons?{unprovenPolygons:remaining}:{} )}); }
   }
   return {passed:stats.failedPatches===0,epsilon,method:'Closed domain clipping; convex target-triangle neighborhood certificates over full polygon partitions',stats,failures};
 }
@@ -124,7 +132,7 @@ function changedTriangles(source: any, target: any): Triangle[] {
   return source.triangles.filter((t:Triangle)=>{const k=canonical(t),n=counts.get(k)??0;if(n){counts.set(k,n-1);return false;}return true;});
 }
 /** Direct integration entry point: compares changed oriented triangle multisets in BOTH directions. */
-export function verifyOutsidePatchCoverage(before: any, after: any, domain: LocalDeformationDomain, options: CoverageOptions = {}) {
+export function verifyOutsidePatchCoverage(before: any, after: any, domain: LocalDeformationDomains, options: CoverageOptions = {}) {
   const beforeToAfter=proveOutsidePatchCoverage(changedTriangles(before,after),after,domain,options),afterToBefore=proveOutsidePatchCoverage(changedTriangles(after,before),before,domain,options);
   return {passed:beforeToAfter.passed&&afterToBefore.passed,epsilon:beforeToAfter.epsilon,beforeToAfter,afterToBefore};
 }

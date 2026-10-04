@@ -1,0 +1,204 @@
+{
+  "formatVersion": 1,
+  "passed": true,
+  "complete": true,
+  "expectedTests": 38,
+  "registeredTests": 38,
+  "executedTests": 38,
+  "fixture": {
+    "path": "qa/nacelle/exact-self-regressions.json",
+    "sha256": "ace7778c93e83b79d99b941bbb46c22a002d612e5c6a8b53be906f3d0fdd6d4b"
+  },
+  "tests": [
+    {
+      "name": "strict interior intersection",
+      "passed": true,
+      "executed": true
+    },
+    {
+      "name": "edge crosses face interior",
+      "passed": true,
+      "executed": true
+    },
+    {
+      "name": "coplanar positive-area overlap",
+      "passed": true,
+      "executed": true
+    },
+    {
+      "name": "shared point does not exclude remote overlap",
+      "passed": true,
+      "executed": true
+    },
+    {
+      "name": "shared edge same-side overlap fails",
+      "passed": true,
+      "executed": true
+    },
+    {
+      "name": "legal shared edge, coplanar and noncoplanar",
+      "passed": true,
+      "executed": true
+    },
+    {
+      "name": "legal shared point, coplanar and noncoplanar",
+      "passed": true,
+      "executed": true
+    },
+    {
+      "name": "boundary contact outside shared simplex fails",
+      "passed": true,
+      "executed": true
+    },
+    {
+      "name": "duplicate oriented or reversed face fails",
+      "passed": true,
+      "executed": true
+    },
+    {
+      "name": "pure epsilon proximity is separate from strict intersection",
+      "passed": true,
+      "executed": true
+    },
+    {
+      "name": "arbitrarily thin positive area triangle is not filtered",
+      "passed": true,
+      "executed": true
+    },
+    {
+      "name": "exact zero-area triangle rejects rather than disappearing",
+      "passed": true,
+      "executed": true
+    },
+    {
+      "name": "lost index/truncated index/invalid index cannot pass",
+      "passed": true,
+      "executed": true
+    },
+    {
+      "name": "BVH candidates exactly equal all-pairs closed bounds (including coplanar and shared endpoints)",
+      "passed": true,
+      "executed": true
+    },
+    {
+      "name": "missing runtime, missing required mesh, omitted candidate fail closed",
+      "passed": true,
+      "executed": true
+    },
+    {
+      "name": "IEEE754 exact decomposition covers subnormals and negative zero",
+      "passed": true,
+      "executed": true
+    },
+    {
+      "name": "exact affine world identity and nonsingularity validation",
+      "passed": true,
+      "executed": true
+    },
+    {
+      "name": "Fuselage exact directed triangle pair inheritance; equal counts alone fail",
+      "passed": true,
+      "executed": true
+    },
+    {
+      "name": "Fuselage old contacts touching deformation domain reject",
+      "passed": true,
+      "executed": true
+    },
+    {
+      "name": "exact domain clipping catches triangle interior with every vertex outside",
+      "passed": true,
+      "executed": true
+    },
+    {
+      "name": "exact classification is invariant to operand order, winding, powers-of-two scaling and translation",
+      "passed": true,
+      "executed": true
+    },
+    {
+      "name": "directed exact world identity survives an equivalent rational local affine representation",
+      "passed": true,
+      "executed": true
+    },
+    {
+      "name": "rejected actual candidate2 Fixed_root_L 93/2784",
+      "passed": true,
+      "executed": true
+    },
+    {
+      "name": "rejected actual candidate2 Fixed_root_L 93/3545",
+      "passed": true,
+      "executed": true
+    },
+    {
+      "name": "rejected actual candidate2 Fixed_root_R 85/1882",
+      "passed": true,
+      "executed": true
+    },
+    {
+      "name": "rejected actual candidate2 Fixed_root_R 85/3545",
+      "passed": true,
+      "executed": true
+    },
+    {
+      "name": "rejected actual candidate2 Composite_wing_L 25/7220",
+      "passed": true,
+      "executed": true
+    },
+    {
+      "name": "rejected actual candidate2 Composite_wing_L 4496/7598",
+      "passed": true,
+      "executed": true
+    },
+    {
+      "name": "rejected actual candidate2 Composite_wing_L 6745/7217",
+      "passed": true,
+      "executed": true
+    },
+    {
+      "name": "rejected actual candidate2 Composite_wing_L 5432/6745",
+      "passed": true,
+      "executed": true
+    },
+    {
+      "name": "rejected actual candidate2 Composite_wing_L 2250/7217",
+      "passed": true,
+      "executed": true
+    },
+    {
+      "name": "rejected actual candidate2 Composite_wing_L 2250/5432",
+      "passed": true,
+      "executed": true
+    },
+    {
+      "name": "rejected actual candidate2 Composite_wing_R 6653/7083",
+      "passed": true,
+      "executed": true
+    },
+    {
+      "name": "rejected actual candidate2 Composite_wing_R 4818/6653",
+      "passed": true,
+      "executed": true
+    },
+    {
+      "name": "rejected actual candidate2 Composite_wing_R 11/7457",
+      "passed": true,
+      "executed": true
+    },
+    {
+      "name": "rejected actual candidate2 Composite_wing_R 11/7460",
+      "passed": true,
+      "executed": true
+    },
+    {
+      "name": "rejected actual candidate2 Composite_wing_R 6413/7457",
+      "passed": true,
+      "executed": true
+    },
+    {
+      "name": "rejected actual candidate2 Composite_wing_R 6413/7460",
+      "passed": true,
+      "executed": true
+    }
+  ]
+}

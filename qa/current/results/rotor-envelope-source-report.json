@@ -1,6 +1,6 @@
 {
   "source": "assets/blender/xp4-source.glb",
-  "sha256": "82ca7f6f9e98cb11737da6f1cb8b1507f71baf0ffcb57734b9beb7bb23e70126",
+  "sha256": "801b02ca6b12c326a04e0a1fe7741a99f168c629384ae836f490f7779428570e",
   "passed": true,
   "stressPassed": true,
   "execution": "实际运行时模型经真实姿态函数驱动",
@@ -227,6 +227,8 @@
     "RootHingeEndcap_R0148",
     "RootHingeShaft_L",
     "RootHingeShaft_R",
+    "Root_access_cover_L",
+    "Root_access_cover_R",
     "Spinner_L_Front",
     "Spinner_L_Rear",
     "Spinner_R_Front",
@@ -13068,6 +13070,12 @@
         ]
       },
       {
+        "ancestor": "BladeFold_R_Front_B",
+        "meshDescendants": [
+          "Blade_R_Front_B"
+        ]
+      },
+      {
         "ancestor": "BladeFold_R_Rear_B",
         "meshDescendants": [
           "Blade_R_Rear_B"
@@ -13101,6 +13109,12 @@
         "ancestor": "Blade_hinge_pin_R_Front_A",
         "meshDescendants": [
           "Blade_hinge_pin_R_Front_A"
+        ]
+      },
+      {
+        "ancestor": "Blade_hinge_pin_R_Front_B",
+        "meshDescendants": [
+          "Blade_hinge_pin_R_Front_B"
         ]
       },
       {
@@ -13596,6 +13610,30 @@
         ]
       },
       {
+        "ancestor": "Landing_wear_tip_L_Front",
+        "meshDescendants": [
+          "Landing_wear_tip_L_Front"
+        ]
+      },
+      {
+        "ancestor": "Landing_wear_tip_L_Rear",
+        "meshDescendants": [
+          "Landing_wear_tip_L_Rear"
+        ]
+      },
+      {
+        "ancestor": "Landing_wear_tip_R_Front",
+        "meshDescendants": [
+          "Landing_wear_tip_R_Front"
+        ]
+      },
+      {
+        "ancestor": "Landing_wear_tip_R_Rear",
+        "meshDescendants": [
+          "Landing_wear_tip_R_Rear"
+        ]
+      },
+      {
         "ancestor": "Lower_fuselage_join",
         "meshDescendants": [
           "Lower_fuselage_join"
@@ -13673,6 +13711,30 @@
         "ancestor": "MotorFrontBearing_R_Rear",
         "meshDescendants": [
           "MotorFrontBearing_R_Rear"
+        ]
+      },
+      {
+        "ancestor": "Motor_cowl_L_Front",
+        "meshDescendants": [
+          "Motor_cowl_L_Front"
+        ]
+      },
+      {
+        "ancestor": "Motor_cowl_L_Rear",
+        "meshDescendants": [
+          "Motor_cowl_L_Rear"
+        ]
+      },
+      {
+        "ancestor": "Motor_cowl_R_Front",
+        "meshDescendants": [
+          "Motor_cowl_R_Front"
+        ]
+      },
+      {
+        "ancestor": "Motor_cowl_R_Rear",
+        "meshDescendants": [
+          "Motor_cowl_R_Rear"
         ]
       },
       {
@@ -13978,6 +14040,12 @@
         ]
       },
       {
+        "ancestor": "RootCarrierBridge_R",
+        "meshDescendants": [
+          "RootCarrierBridge_R"
+        ]
+      },
+      {
         "ancestor": "RootFixedBearingPedestal_L",
         "meshDescendants": [
           "RootFixedBearingPedestal_L"
@@ -14023,6 +14091,18 @@
         "ancestor": "RootHingeShaft_R",
         "meshDescendants": [
           "RootHingeShaft_R"
+        ]
+      },
+      {
+        "ancestor": "Root_access_cover_L",
+        "meshDescendants": [
+          "Root_access_cover_L"
+        ]
+      },
+      {
+        "ancestor": "Root_access_cover_R",
+        "meshDescendants": [
+          "Root_access_cover_R"
         ]
       },
       {
@@ -14432,6 +14512,8 @@
       "RootHingeEndcap_R0148",
       "RootHingeShaft_L",
       "RootHingeShaft_R",
+      "Root_access_cover_L",
+      "Root_access_cover_R",
       "Spinner_L_Front",
       "Spinner_L_Rear",
       "Spinner_R_Front",
@@ -14481,8 +14563,6 @@
       "Pitot_probe_foot",
       "Pitot_probe_mount",
       "Pitot_probe_tube",
-      "Root_access_cover_L",
-      "Root_access_cover_R",
       "Tail_receiver",
       "Tail_root_fastener_L",
       "Tail_root_fastener_L001",
@@ -14501,107 +14581,107 @@
   "unchangedRotorBodyPairsInherited": 0,
   "neutralMainMotionSamples": 201,
   "detailStressSamples": 320,
-  "meshTriangleChecks": 45143776,
+  "meshTriangleChecks": 21422476,
   "slabTriangleChecks": 0,
   "contacts": [],
   "reachableContacts": [],
   "unseparatedRotorEnvelopes": [],
-  "minimumCylinderSeparatingGap": 0.07001885199181312,
+  "minimumCylinderSeparatingGap": 0.4200185773406119,
   "minimumSeparationEvidence": [
     {
-      "unfold": 0.675,
-      "a": "Prop_R_Front",
-      "b": "Prop_R_Rear",
+      "unfold": 1,
+      "a": "Prop_L_Front",
+      "b": "Prop_L_Rear",
       "separated": true,
-      "separatingGap": 0.07001885199181312,
+      "separatingGap": 0.4200185773406119,
       "axis": [
-        0.8514306409713139,
-        0.28905361766480114,
-        -0.4376229766934874
+        -0.9999999999998754,
+        1.7881389994899804e-7,
+        -4.659999180840301e-7
+      ]
+    },
+    {
+      "unfold": 0.995,
+      "a": "Prop_L_Front",
+      "b": "Prop_L_Rear",
+      "separated": true,
+      "separatingGap": 0.4200185773433581,
+      "axis": [
+        -0.9999634423372147,
+        0.006027787559451597,
+        -0.006064632408130798
       ]
     },
     {
       "unfold": 0.99,
-      "a": "Prop_R_Front",
-      "b": "Prop_R_Rear",
+      "a": "Prop_L_Front",
+      "b": "Prop_L_Rear",
       "separated": true,
-      "separatingGap": 0.07001885199181312,
+      "separatingGap": 0.42001857735159365,
       "axis": [
-        0.9998537889832302,
-        0.012018006248753326,
-        -0.012164217265522958
+        -0.9998537811549838,
+        0.012018181516336943,
+        -0.012164687547247045
       ]
     },
     {
-      "unfold": 0.68,
-      "a": "Prop_R_Front",
-      "b": "Prop_R_Rear",
+      "unfold": 0.985,
+      "a": "Prop_L_Front",
+      "b": "Prop_L_Rear",
       "separated": true,
-      "separatingGap": 0.07001885199181335,
+      "separatingGap": 0.420018577365319,
       "axis": [
-        0.8557956382172267,
-        0.28651765725883444,
-        -0.4307220190416075
+        -0.9996710284785426,
+        0.01797070376987922,
+        -0.018299962477231247
       ]
     },
     {
-      "unfold": 0.93,
-      "a": "Prop_R_Front",
-      "b": "Prop_R_Rear",
+      "unfold": 0.98,
+      "a": "Prop_L_Front",
+      "b": "Prop_L_Rear",
       "separated": true,
-      "separatingGap": 0.07001885199181335,
+      "separatingGap": 0.42001857738453285,
       "axis": [
-        0.9928482219753256,
-        0.0807651868522067,
-        -0.08791696487688107
+        -0.9994152043485665,
+        0.023884701558460748,
+        -0.02446978439578886
       ]
     },
     {
-      "unfold": 0.955,
-      "a": "Prop_R_Front",
-      "b": "Prop_R_Rear",
+      "unfold": 0.975,
+      "a": "Prop_L_Front",
+      "b": "Prop_L_Rear",
       "separated": true,
-      "separatingGap": 0.07001885199181335,
+      "separatingGap": 0.42001857740923165,
       "axis": [
-        0.9970413097353867,
-        0.05285411489511928,
-        -0.05581280515973241
+        -0.9990863368188476,
+        0.02975952634510613,
+        -0.030673476712152977
       ]
     },
     {
-      "unfold": 0.635,
-      "a": "Prop_R_Front",
-      "b": "Prop_R_Rear",
+      "unfold": 0.97,
+      "a": "Prop_L_Front",
+      "b": "Prop_L_Rear",
       "separated": true,
-      "separatingGap": 0.07001885199181346,
+      "separatingGap": 0.4200185774394142,
       "axis": [
-        0.8145068187322415,
-        0.30686245711796206,
-        -0.4923556383857207
+        -0.9986844619532196,
+        0.0355945338886023,
+        -0.03691035912127829
       ]
     },
     {
-      "unfold": 0.87,
-      "a": "Prop_R_Front",
-      "b": "Prop_R_Rear",
+      "unfold": 0.965,
+      "a": "Prop_L_Front",
+      "b": "Prop_L_Rear",
       "separated": true,
-      "separatingGap": 0.07001885199181346,
+      "separatingGap": 0.4200185774750771,
       "axis": [
-        0.9754417111984387,
-        0.14298178642186882,
-        -0.16754007522343012
-      ]
-    },
-    {
-      "unfold": 0.44,
-      "a": "Prop_R_Front",
-      "b": "Prop_R_Rear",
-      "separated": true,
-      "separatingGap": 0.07001885199181357,
-      "axis": [
-        0.5916770576347351,
-        0.3280764675429853,
-        -0.7363994099082499
+        -0.9982096238216013,
+        0.041389084314146854,
+        -0.04317974767844135
       ]
     }
   ],

@@ -1,7 +1,7 @@
 {
   "passed": true,
   "source": "assets/blender/xp4-source.glb",
-  "sha256": "82ca7f6f9e98cb11737da6f1cb8b1507f71baf0ffcb57734b9beb7bb23e70126",
+  "sha256": "801b02ca6b12c326a04e0a1fe7741a99f168c629384ae836f490f7779428570e",
   "pass": "spin",
   "sampleCount": 672,
   "states": [
@@ -12104,8 +12104,8 @@
   ],
   "currentSnapshotTopologyRefreshes": [],
   "exactPairCache": {
-    "freshNarrowPhasePairPoses": 13148,
-    "exactTransformPairReuses": 279080,
+    "freshNarrowPhasePairPoses": 13244,
+    "exactTransformPairReuses": 290788,
     "immutableGeometryIdentityAndVersionsAsserted": true,
     "policy": "仅本轮不可变网格身份/属性/数组/版本与Float64世界矩阵完全相同才复用；任何几何变化直接失败，不能让原矩阵快照缓存失效"
   },
@@ -12331,6 +12331,8 @@
     "RootHingeEndcap_R0148",
     "RootHingeShaft_L",
     "RootHingeShaft_R",
+    "Root_access_cover_L",
+    "Root_access_cover_R",
     "Spinner_L_Front",
     "Spinner_L_Rear",
     "Spinner_R_Front",
@@ -12853,6 +12855,12 @@
         ]
       },
       {
+        "ancestor": "BladeFold_R_Front_B",
+        "meshDescendants": [
+          "Blade_R_Front_B"
+        ]
+      },
+      {
         "ancestor": "BladeFold_R_Rear_B",
         "meshDescendants": [
           "Blade_R_Rear_B"
@@ -12886,6 +12894,12 @@
         "ancestor": "Blade_hinge_pin_R_Front_A",
         "meshDescendants": [
           "Blade_hinge_pin_R_Front_A"
+        ]
+      },
+      {
+        "ancestor": "Blade_hinge_pin_R_Front_B",
+        "meshDescendants": [
+          "Blade_hinge_pin_R_Front_B"
         ]
       },
       {
@@ -13381,6 +13395,30 @@
         ]
       },
       {
+        "ancestor": "Landing_wear_tip_L_Front",
+        "meshDescendants": [
+          "Landing_wear_tip_L_Front"
+        ]
+      },
+      {
+        "ancestor": "Landing_wear_tip_L_Rear",
+        "meshDescendants": [
+          "Landing_wear_tip_L_Rear"
+        ]
+      },
+      {
+        "ancestor": "Landing_wear_tip_R_Front",
+        "meshDescendants": [
+          "Landing_wear_tip_R_Front"
+        ]
+      },
+      {
+        "ancestor": "Landing_wear_tip_R_Rear",
+        "meshDescendants": [
+          "Landing_wear_tip_R_Rear"
+        ]
+      },
+      {
         "ancestor": "Lower_fuselage_join",
         "meshDescendants": [
           "Lower_fuselage_join"
@@ -13458,6 +13496,30 @@
         "ancestor": "MotorFrontBearing_R_Rear",
         "meshDescendants": [
           "MotorFrontBearing_R_Rear"
+        ]
+      },
+      {
+        "ancestor": "Motor_cowl_L_Front",
+        "meshDescendants": [
+          "Motor_cowl_L_Front"
+        ]
+      },
+      {
+        "ancestor": "Motor_cowl_L_Rear",
+        "meshDescendants": [
+          "Motor_cowl_L_Rear"
+        ]
+      },
+      {
+        "ancestor": "Motor_cowl_R_Front",
+        "meshDescendants": [
+          "Motor_cowl_R_Front"
+        ]
+      },
+      {
+        "ancestor": "Motor_cowl_R_Rear",
+        "meshDescendants": [
+          "Motor_cowl_R_Rear"
         ]
       },
       {
@@ -13763,6 +13825,12 @@
         ]
       },
       {
+        "ancestor": "RootCarrierBridge_R",
+        "meshDescendants": [
+          "RootCarrierBridge_R"
+        ]
+      },
+      {
         "ancestor": "RootFixedBearingPedestal_L",
         "meshDescendants": [
           "RootFixedBearingPedestal_L"
@@ -13808,6 +13876,18 @@
         "ancestor": "RootHingeShaft_R",
         "meshDescendants": [
           "RootHingeShaft_R"
+        ]
+      },
+      {
+        "ancestor": "Root_access_cover_L",
+        "meshDescendants": [
+          "Root_access_cover_L"
+        ]
+      },
+      {
+        "ancestor": "Root_access_cover_R",
+        "meshDescendants": [
+          "Root_access_cover_R"
         ]
       },
       {
@@ -14217,6 +14297,8 @@
       "RootHingeEndcap_R0148",
       "RootHingeShaft_L",
       "RootHingeShaft_R",
+      "Root_access_cover_L",
+      "Root_access_cover_R",
       "Spinner_L_Front",
       "Spinner_L_Rear",
       "Spinner_R_Front",
@@ -14266,8 +14348,6 @@
       "Pitot_probe_foot",
       "Pitot_probe_mount",
       "Pitot_probe_tube",
-      "Root_access_cover_L",
-      "Root_access_cover_R",
       "Tail_receiver",
       "Tail_root_fastener_L",
       "Tail_root_fastener_L001",
@@ -14283,8 +14363,8 @@
       "Ventral_tail_tab"
     ]
   },
-  "unchangedRelativePairsInherited": 457,
-  "relativePairCount": 32477,
+  "unchangedRelativePairsInherited": 435,
+  "relativePairCount": 32499,
   "groups": {
     "固定机体": [
       "Fuselage",
@@ -14632,9 +14712,9 @@
   },
   "sameRigidPairsSkipped": 6969,
   "criticalOpen": [],
-  "broadHits": 292228,
-  "triangleSATTests": 26343115,
-  "containTests": 13148,
+  "broadHits": 304032,
+  "triangleSATTests": 27293494,
+  "containTests": 13244,
   "contacts": [],
   "unresolved": [
     {
@@ -14782,30 +14862,6 @@
       "samples": 288
     },
     {
-      "container": "Pod_mount_seam_L_Front001",
-      "contained": "Fixed_root_L",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "四桨不同步相位格",
-        "wing": 0,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          0,
-          1.832595714594046,
-          3.4033920413889427,
-          0.7853981633974483
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 288
-    },
-    {
       "container": "Wing_blue_leading_L",
       "contained": "Fixed_root_L",
       "reason": "开放或非流形容器",
@@ -14876,102 +14932,6 @@
         "hatch": 0
       },
       "samples": 672
-    },
-    {
-      "container": "Pod_mount_seam_L_Front",
-      "contained": "BraceRod_mesh_L",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "四桨不同步相位格",
-        "wing": 0,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          0,
-          1.832595714594046,
-          3.4033920413889427,
-          0.7853981633974483
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 96
-    },
-    {
-      "container": "Pod_mount_seam_L_Front001",
-      "contained": "BraceRod_mesh_L",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "四桨不同步相位格",
-        "wing": 0,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          0,
-          1.832595714594046,
-          3.4033920413889427,
-          0.7853981633974483
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 96
-    },
-    {
-      "container": "Pod_mount_seam_L_Rear",
-      "contained": "BraceRod_mesh_L",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "四桨不同步相位格",
-        "wing": 0,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          0,
-          1.832595714594046,
-          3.4033920413889427,
-          0.7853981633974483
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 96
-    },
-    {
-      "container": "Pod_mount_seam_L_Rear001",
-      "contained": "BraceRod_mesh_L",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "四桨不同步相位格",
-        "wing": 0,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          0,
-          1.832595714594046,
-          3.4033920413889427,
-          0.7853981633974483
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 96
     },
     {
       "container": "Wing_blue_leading_L",
@@ -15238,30 +15198,6 @@
       "samples": 288
     },
     {
-      "container": "Pod_mount_seam_R_Front",
-      "contained": "Fixed_root_R",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "四桨不同步相位格",
-        "wing": 0,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          0,
-          1.832595714594046,
-          3.4033920413889427,
-          0.7853981633974483
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 288
-    },
-    {
       "container": "Wing_blue_leading_R",
       "contained": "Fixed_root_R",
       "reason": "开放或非流形容器",
@@ -15332,102 +15268,6 @@
         "hatch": 0
       },
       "samples": 672
-    },
-    {
-      "container": "Pod_mount_seam_R_Front",
-      "contained": "BraceRod_mesh_R",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "四桨不同步相位格",
-        "wing": 0,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          0,
-          1.832595714594046,
-          3.4033920413889427,
-          0.7853981633974483
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 96
-    },
-    {
-      "container": "Pod_mount_seam_R_Front001",
-      "contained": "BraceRod_mesh_R",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "四桨不同步相位格",
-        "wing": 0,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          0,
-          1.832595714594046,
-          3.4033920413889427,
-          0.7853981633974483
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 96
-    },
-    {
-      "container": "Pod_mount_seam_R_Rear",
-      "contained": "BraceRod_mesh_R",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "四桨不同步相位格",
-        "wing": 0,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          0,
-          1.832595714594046,
-          3.4033920413889427,
-          0.7853981633974483
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 96
-    },
-    {
-      "container": "Pod_mount_seam_R_Rear001",
-      "contained": "BraceRod_mesh_R",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "四桨不同步相位格",
-        "wing": 0,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          0,
-          1.832595714594046,
-          3.4033920413889427,
-          0.7853981633974483
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 96
     },
     {
       "container": "Wing_blue_leading_R",
@@ -15596,30 +15436,6 @@
         "hatch": 0
       },
       "samples": 672
-    },
-    {
-      "container": "Wing_blue_angular_panel_L",
-      "contained": "Fixed_root_L",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "四桨不同步相位格",
-        "wing": 0.125,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          0,
-          1.832595714594046,
-          3.4033920413889427,
-          0.7853981633974483
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 96
     },
     {
       "container": "Wing_blue_angular_panel_L",
@@ -15911,30 +15727,6 @@
     },
     {
       "container": "Wing_blue_angular_panel_R",
-      "contained": "Fixed_root_R",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "四桨不同步相位格",
-        "wing": 0.125,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          0,
-          1.832595714594046,
-          3.4033920413889427,
-          0.7853981633974483
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 96
-    },
-    {
-      "container": "Wing_blue_angular_panel_R",
       "contained": "ControlFlexureMoving_R_Inboard",
       "reason": "开放或非流形容器",
       "firstState": {
@@ -16222,8 +16014,8 @@
       "samples": 480
     },
     {
-      "container": "Fixed_root_blue_L",
-      "contained": "Composite_wing_L",
+      "container": "Pod_mount_seam_L_Front001",
+      "contained": "Fixed_root_L",
       "reason": "开放或非流形容器",
       "firstState": {
         "label": "四桨不同步相位格",
@@ -16243,7 +16035,7 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 480
+      "samples": 192
     },
     {
       "container": "Wing_blue_leading_L",
@@ -16459,7 +16251,7 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 224
+      "samples": 192
     },
     {
       "container": "Wing_blue_leading_L",
@@ -16483,7 +16275,7 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 224
+      "samples": 192
     },
     {
       "container": "Wing_blue_leading_L",
@@ -16534,8 +16326,8 @@
       "samples": 384
     },
     {
-      "container": "Fixed_root_blue_R",
-      "contained": "Composite_wing_R",
+      "container": "Pod_mount_seam_R_Front",
+      "contained": "Fixed_root_R",
       "reason": "开放或非流形容器",
       "firstState": {
         "label": "四桨不同步相位格",
@@ -16555,7 +16347,7 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 480
+      "samples": 192
     },
     {
       "container": "Wing_blue_leading_R",
@@ -16771,7 +16563,7 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 224
+      "samples": 192
     },
     {
       "container": "Wing_blue_leading_R",
@@ -16795,7 +16587,7 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 224
+      "samples": 192
     },
     {
       "container": "Wing_blue_leading_R",
@@ -16867,7 +16659,7 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 204
+      "samples": 224
     },
     {
       "container": "Wing_blue_leading_L",
@@ -16891,7 +16683,31 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 204
+      "samples": 224
+    },
+    {
+      "container": "Wing_blue_leading_R",
+      "contained": "Blade_R_Rear_B",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨不同步相位格",
+        "wing": 0.25,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0.7853981633974483,
+          5.759586531581287,
+          2.6179938779914944,
+          3.141592653589793
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 224
     },
     {
       "container": "Wing_blue_leading_R",
@@ -16915,35 +16731,11 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 204
+      "samples": 224
     },
     {
-      "container": "Wing_blue_leading_R",
-      "contained": "Blade_R_Rear_B",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "四桨不同步相位格",
-        "wing": 0.25,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          1.3089969389957472,
-          2.0943951023931953,
-          0,
-          2.6179938779914944
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 204
-    },
-    {
-      "container": "Wing_blue_angular_panel_L",
-      "contained": "Blade_L_Front_A",
+      "container": "Fixed_root_blue_L",
+      "contained": "Composite_wing_L",
       "reason": "开放或非流形容器",
       "firstState": {
         "label": "四桨不同步相位格",
@@ -16963,7 +16755,151 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 4
+      "samples": 384
+    },
+    {
+      "container": "Pod_mount_seam_L_Front001",
+      "contained": "RootHingeShaft_L",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨不同步相位格",
+        "wing": 0.5,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          1.832595714594046,
+          3.4033920413889427,
+          0.7853981633974483
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 192
+    },
+    {
+      "container": "Pod_mount_seam_L_Front001",
+      "contained": "RootBearingFixed_L_Front",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨不同步相位格",
+        "wing": 0.5,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          1.832595714594046,
+          3.4033920413889427,
+          0.7853981633974483
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 192
+    },
+    {
+      "container": "Pod_mount_seam_L_Front001",
+      "contained": "RootBearingSeal_L_Front",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨不同步相位格",
+        "wing": 0.5,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          1.832595714594046,
+          3.4033920413889427,
+          0.7853981633974483
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 192
+    },
+    {
+      "container": "Pod_mount_seam_L_Front001",
+      "contained": "RootHingeEndcap_L-0148",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨不同步相位格",
+        "wing": 0.5,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          1.832595714594046,
+          3.4033920413889427,
+          0.7853981633974483
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 192
+    },
+    {
+      "container": "Pod_mount_seam_L_Front001",
+      "contained": "RootBearingHousing_L",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨不同步相位格",
+        "wing": 0.5,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          1.832595714594046,
+          3.4033920413889427,
+          0.7853981633974483
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 192
+    },
+    {
+      "container": "Pod_mount_seam_L_Front001",
+      "contained": "RootFairingFixed_L",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨不同步相位格",
+        "wing": 0.5,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          1.832595714594046,
+          3.4033920413889427,
+          0.7853981633974483
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 96
     },
     {
       "container": "Wing_blue_leading_L",
@@ -17035,7 +16971,7 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 172
+      "samples": 192
     },
     {
       "container": "Wing_blue_leading_L",
@@ -17059,7 +16995,7 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 172
+      "samples": 192
     },
     {
       "container": "Wing_blue_leading_L",
@@ -17084,6 +17020,174 @@
         "hatch": 0
       },
       "samples": 192
+    },
+    {
+      "container": "Fixed_root_blue_R",
+      "contained": "Composite_wing_R",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨不同步相位格",
+        "wing": 0.5,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          1.832595714594046,
+          3.4033920413889427,
+          0.7853981633974483
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 384
+    },
+    {
+      "container": "Pod_mount_seam_R_Front",
+      "contained": "RootHingeShaft_R",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨不同步相位格",
+        "wing": 0.5,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          1.832595714594046,
+          3.4033920413889427,
+          0.7853981633974483
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 192
+    },
+    {
+      "container": "Pod_mount_seam_R_Front",
+      "contained": "RootBearingFixed_R_Front",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨不同步相位格",
+        "wing": 0.5,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          1.832595714594046,
+          3.4033920413889427,
+          0.7853981633974483
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 192
+    },
+    {
+      "container": "Pod_mount_seam_R_Front",
+      "contained": "RootBearingSeal_R_Front",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨不同步相位格",
+        "wing": 0.5,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          1.832595714594046,
+          3.4033920413889427,
+          0.7853981633974483
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 192
+    },
+    {
+      "container": "Pod_mount_seam_R_Front",
+      "contained": "RootHingeEndcap_R-0148",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨不同步相位格",
+        "wing": 0.5,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          1.832595714594046,
+          3.4033920413889427,
+          0.7853981633974483
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 192
+    },
+    {
+      "container": "Pod_mount_seam_R_Front",
+      "contained": "RootBearingHousing_R",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨不同步相位格",
+        "wing": 0.5,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          1.832595714594046,
+          3.4033920413889427,
+          0.7853981633974483
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 192
+    },
+    {
+      "container": "Pod_mount_seam_R_Front",
+      "contained": "RootFairingFixed_R",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨不同步相位格",
+        "wing": 0.5,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          1.832595714594046,
+          3.4033920413889427,
+          0.7853981633974483
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 96
     },
     {
       "container": "Wing_blue_leading_R",
@@ -17155,7 +17259,7 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 172
+      "samples": 192
     },
     {
       "container": "Wing_blue_leading_R",
@@ -17179,7 +17283,7 @@
         "surfaces": {},
         "hatch": 0
       },
-      "samples": 172
+      "samples": 192
     },
     {
       "container": "Wing_blue_leading_R",
@@ -17204,78 +17308,6 @@
         "hatch": 0
       },
       "samples": 192
-    },
-    {
-      "container": "Wing_blue_angular_panel_R",
-      "contained": "Blade_R_Front_A",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "四桨不同步相位格",
-        "wing": 0.5,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          0.2617993877991494,
-          3.141592653589793,
-          5.235987755982989,
-          3.665191429188092
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 4
-    },
-    {
-      "container": "Wing_blue_angular_panel_L",
-      "contained": "Blade_L_Front_B",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "四桨不同步相位格",
-        "wing": 0.5,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          3.141592653589793,
-          4.974188368183839,
-          0.2617993877991494,
-          3.926990816987241
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 4
-    },
-    {
-      "container": "Wing_blue_angular_panel_R",
-      "contained": "Blade_R_Front_B",
-      "reason": "开放或非流形容器",
-      "firstState": {
-        "label": "四桨不同步相位格",
-        "wing": 0.5,
-        "fold": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "phase": [
-          3.4033920413889427,
-          0,
-          2.0943951023931953,
-          0.5235987755982988
-        ],
-        "surfaces": {},
-        "hatch": 0
-      },
-      "samples": 4
     },
     {
       "container": "Wing_blue_leading_L",

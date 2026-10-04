@@ -1,6 +1,7 @@
 /** Exact old-padding reconciliation. Compact discovery records never replace the formal support gate. */
 import assert from 'node:assert/strict';
 import {assertFixedCoordinateOnly} from './fairing-support-roles.mjs';
+import {reviewAdditionalNacelleSupportValues,verifyFormalAdditionalNacelleSupportEvidence} from './nacelle-support-additions.mjs';
 export const PREVIOUS_SUPPORT_REPORT_SHA256='9b4df1a79cb7fbbfb0a1f377fda37a50e00e1e65df32d29baff276fc21047b8d';
 export const PREVIOUS_SUPPORT_CONTRACT_SHA256='64cadf0b8fd862350b2ca8b4911ba05a12d05387e2aff9a3796b4760d599d013';
 export const PREVIOUS_ACCEPTED_REFERENCE_SHA256='eadb50535353fcf85ae8a518f23f5b81c3a869bd42f3c5df2a10b30a862f3cfd';
@@ -70,6 +71,11 @@ export function reviewSupportCoordinateChanges(prior,current,wing,c,context){
  const rows=changed.map(id=>reviewSupportCoordinateChange(changes.get(id),old.get(id),next.get(id),Object.fromEntries(encodings.map(e=>[e,oldRows[e].get(id)])),c,regions(old.get(id)).length>1?translatedRegionDelta(id,context.previousReference,context.manifest,wing.design):undefined));
  return {exactSupportCoordinatePaddingPreserved:true,supportCoordinateChangeCount:rows.length,singleRegionUnionPaddingCount:rows.filter(r=>r.method==='exact-previous-union-padding').length,exactTranslatedMultiRegionCount:rows.filter(r=>r.method==='exact-whole-region-translation').length,previousSupportBoundsSha256:context.sha256,requiredSupportAcceptanceStage:'support',supportMaterialAcceptanceEstablished:false};
 }
+/** Separate new material edges retain original saddle limits; historical direct fairing roles are unchanged. */
+export function reviewAdditionalFixedMaterialInterfaces(prior,current,wing,c,context){
+ const records=wing.additionalFixedMaterialInterfaces??[];if(!records.length)return reviewAdditionalNacelleSupportValues(prior,current,wing,c,null,null);
+ assert(context?.bounds&&context.previousReference,'Immutable previous support observations required for additional material');assert.equal(context.sha256,PREVIOUS_SUPPORT_BOUNDS_SHA256);const oldRows=validatePreviousSupportBounds(context.bounds,context.previousReference,prior);return reviewAdditionalNacelleSupportValues(prior,current,wing,c,oldRows,context.sha256);
+}
 /** Final acceptance must replay the actual current material algorithm and match all compact measurements. */
 export function verifyFormalSupportCoordinateEvidence(report,wing,c){
  assert(report?.passed===true&&report.contractReviewed===true,'Formal reviewed support report required');assert(Array.isArray(report.reports)&&report.reports.length===2);assert.deepEqual(sort(report.reports.map(r=>r.source)),sort(Object.values(MODEL_PATHS)));
@@ -77,5 +83,5 @@ export function verifyFormalSupportCoordinateEvidence(report,wing,c){
  for(const encoding of encodings){const m=report.reports.find(r=>r.source===MODEL_PATHS[encoding]);assert(m?.passed===true);assert.equal(m.sha256,c[encoding+'Sha256']);assert.equal(m.encodingTolerance,encoding==='source'?1e-6:6e-5);const rows=unique(m.rows,'formal support rows');
   for(const change of changes.values()){const r=rows.get(change.id),e=change.evidence?.[encoding];assert(r&&e,'Missing formal material observation '+change.id);currentEvidence(e,change.before,change.after,c,encoding);assert.equal(r.passed,true);assert.equal(r.type,'fixed-material');assert(r.rerun!==false&&!r.inheritedFrom,'Relocated support may not inherit historical material evidence');assert.equal(r.sameRigid,true);assert.deepEqual(r.bad,[]);assert.deepEqual(r.unresolved,[]);assert.deepEqual(r.pair,change.after.pair);assert.equal(r.frame??null,change.after.frame??null);assert.deepEqual(r.observedBounds,e.actualContactBounds,'Formal material bounds differ from coordinate review');assert.equal(r.sampleCount,e.sampleCount);assert.equal(r.spanTriangleArea,e.spanTriangleArea);assert.deepEqual(r.regionCoverage,e.finiteRegionValidation.coverage.map(({index,samples,spanArea})=>({index,samples,spanArea})),'Formal per-region coverage differs');}
  }
- return {formalCurrentSupportCoordinatesConfirmed:true,measuredChangedInterfacesPerEncoding:changes.size,sourceAndRuntime:true};
+ return {formalCurrentSupportCoordinatesConfirmed:true,measuredChangedInterfacesPerEncoding:changes.size,sourceAndRuntime:true,...verifyFormalAdditionalNacelleSupportEvidence(report,wing,c)};
 }

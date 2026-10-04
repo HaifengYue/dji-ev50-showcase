@@ -29,7 +29,7 @@
   "out": "qa/current/results/rotor-envelope-source-report.json",
   "passed": true,
   "stressPassed": true,
-  "sha256": "82ca7f6f9e98cb11737da6f1cb8b1507f71baf0ffcb57734b9beb7bb23e70126",
+  "sha256": "801b02ca6b12c326a04e0a1fe7741a99f168c629384ae836f490f7779428570e",
   "contacts": [],
-  "minimumCylinderSeparatingGap": 0.07001885199181312
+  "minimumCylinderSeparatingGap": 0.4200185773406119
 }

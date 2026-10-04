@@ -1,7 +1,7 @@
 {
   "passed": true,
   "source": "assets/blender/xp4-source.glb",
-  "sha256": "82ca7f6f9e98cb11737da6f1cb8b1507f71baf0ffcb57734b9beb7bb23e70126",
+  "sha256": "801b02ca6b12c326a04e0a1fe7741a99f168c629384ae836f490f7779428570e",
   "baselineSha256": "80ce0d237f5266077b5c34f4fc63e062a01d47c682be252eeedcf1cbb4f9f085",
   "referenceArtifact": {
     "path": "qa/reference/source-protected-surfaces.json",
@@ -23,8 +23,36 @@
   "rows": [
     {
       "name": "Fuselage",
-      "outsideOriginalVertices": 5914,
-      "preservedOutsideOriginalVertices": 5914,
+      "domains": [
+        {
+          "minimumAbsX": 0.074,
+          "maximumAbsX": 0.3,
+          "longitudinalY": [
+            0.76416,
+            2.1
+          ],
+          "verticalZ": [
+            -0.2,
+            0.22
+          ],
+          "reviewStatus": "预检采用最初实际中央底板保护界限 .074；.092仅是外环参数门槛"
+        },
+        {
+          "minimumAbsX": 0.2234,
+          "maximumAbsX": 0.6201,
+          "longitudinalY": [
+            -2.0023,
+            -0.7299
+          ],
+          "verticalZ": [
+            -0.27,
+            0.1322
+          ],
+          "reviewStatus": "Finite full-triangle support of the authorized central saddle deformation, fixed before final acceptance; separate from the unchanged old ventral-slot domain."
+        }
+      ],
+      "outsideOriginalVertices": 4068,
+      "preservedOutsideOriginalVertices": 4068,
       "newOutsideSubdivisionVertices": 53,
       "unchangedOutsideOrientedTriangles": false,
       "maximumOutsideSurfaceDifference": 6.5242145712920045e-9,
@@ -111,13 +139,13 @@
           "epsilon": 0.000001,
           "method": "Closed domain clipping; convex target-triangle neighborhood certificates over full polygon partitions",
           "stats": {
-            "sourceTriangles": 2888,
-            "protectedPatches": 392,
-            "targetTriangleCandidates": 8430,
-            "convexCertificates": 2083,
-            "certificateVertices": 5393,
+            "sourceTriangles": 6019,
+            "protectedPatches": 397,
+            "targetTriangleCandidates": 8467,
+            "convexCertificates": 2088,
+            "certificateVertices": 5413,
             "wholeFragmentRescanCertificates": 44,
-            "coveragePasses": 392,
+            "coveragePasses": 397,
             "largestResidualSet": 12,
             "failedPatches": 0
           },
@@ -128,27 +156,42 @@
           "epsilon": 0.000001,
           "method": "Closed domain clipping; convex target-triangle neighborhood certificates over full polygon partitions",
           "stats": {
-            "sourceTriangles": 5380,
-            "protectedPatches": 557,
-            "targetTriangleCandidates": 7572,
-            "convexCertificates": 1745,
-            "certificateVertices": 4072,
+            "sourceTriangles": 8511,
+            "protectedPatches": 562,
+            "targetTriangleCandidates": 7632,
+            "convexCertificates": 1750,
+            "certificateVertices": 4092,
             "wholeFragmentRescanCertificates": 11,
-            "coveragePasses": 557,
+            "coveragePasses": 562,
             "largestResidualSet": 13,
             "failedPatches": 0
           },
           "failures": []
         }
       },
-      "beforeOutsideTriangles": 11575,
-      "afterOutsideTriangles": 11630,
-      "beforeHash": "978f8dbb69dd40efa27614bb9647fecb3aede2bfcc723cc56512f03066f71a1f",
-      "afterHash": "1d9cbe5692d21e69b7815c15c3c9627b20a0e474664420c20f8bef62187a864b",
+      "beforeOutsideTriangles": 7591,
+      "afterOutsideTriangles": 7646,
+      "beforeHash": "7bc25058ac39f31d3a2a2d26c806e83d2e05a227965c0a5b477b51eb5a5c2c08",
+      "afterHash": "6d5581e9087cf4eb0d234657a9fb84505f60165051033c84d5c189db8abb7cd9",
       "passed": true
     },
     {
       "name": "ActuatorSideSlot_L",
+      "domains": [
+        {
+          "minimumAbsX": 0.074,
+          "maximumAbsX": 0.3,
+          "longitudinalY": [
+            0.76416,
+            2.1
+          ],
+          "verticalZ": [
+            -0.2,
+            0.22
+          ],
+          "reviewStatus": "预检采用最初实际中央底板保护界限 .074；.092仅是外环参数门槛"
+        }
+      ],
       "outsideOriginalVertices": 0,
       "preservedOutsideOriginalVertices": 0,
       "newOutsideSubdivisionVertices": 0,
@@ -202,6 +245,21 @@
     },
     {
       "name": "ActuatorSideSlot_R",
+      "domains": [
+        {
+          "minimumAbsX": 0.074,
+          "maximumAbsX": 0.3,
+          "longitudinalY": [
+            0.76416,
+            2.1
+          ],
+          "verticalZ": [
+            -0.2,
+            0.22
+          ],
+          "reviewStatus": "预检采用最初实际中央底板保护界限 .074；.092仅是外环参数门槛"
+        }
+      ],
       "outsideOriginalVertices": 0,
       "preservedOutsideOriginalVertices": 0,
       "newOutsideSubdivisionVertices": 0,
@@ -255,6 +313,21 @@
     },
     {
       "name": "Lower_fuselage_join001",
+      "domains": [
+        {
+          "minimumAbsX": 0.074,
+          "maximumAbsX": 0.3,
+          "longitudinalY": [
+            0.76416,
+            2.1
+          ],
+          "verticalZ": [
+            -0.2,
+            0.22
+          ],
+          "reviewStatus": "预检采用最初实际中央底板保护界限 .074；.092仅是外环参数门槛"
+        }
+      ],
       "outsideOriginalVertices": 0,
       "preservedOutsideOriginalVertices": 0,
       "newOutsideSubdivisionVertices": 0,
@@ -308,6 +381,21 @@
     },
     {
       "name": "Lower_fuselage_join003",
+      "domains": [
+        {
+          "minimumAbsX": 0.074,
+          "maximumAbsX": 0.3,
+          "longitudinalY": [
+            0.76416,
+            2.1
+          ],
+          "verticalZ": [
+            -0.2,
+            0.22
+          ],
+          "reviewStatus": "预检采用最初实际中央底板保护界限 .074；.092仅是外环参数门槛"
+        }
+      ],
       "outsideOriginalVertices": 0,
       "preservedOutsideOriginalVertices": 0,
       "newOutsideSubdivisionVertices": 0,
@@ -361,8 +449,35 @@
     },
     {
       "name": "Lower_fuselage_join",
-      "outsideOriginalVertices": 20,
-      "preservedOutsideOriginalVertices": 20,
+      "domains": [
+        {
+          "minimumAbsX": 0.074,
+          "maximumAbsX": 0.3,
+          "longitudinalY": [
+            0.76416,
+            2.1
+          ],
+          "verticalZ": [
+            -0.2,
+            0.22
+          ],
+          "reviewStatus": "预检采用最初实际中央底板保护界限 .074；.092仅是外环参数门槛"
+        },
+        {
+          "minimumAbsX": 0.3954,
+          "maximumAbsX": 0.4609,
+          "longitudinalY": [
+            -1.3403,
+            -0.567
+          ],
+          "verticalZ": [
+            -0.0965,
+            -0.045
+          ]
+        }
+      ],
+      "outsideOriginalVertices": 8,
+      "preservedOutsideOriginalVertices": 8,
       "newOutsideSubdivisionVertices": 8,
       "unchangedOutsideOrientedTriangles": false,
       "maximumOutsideSurfaceDifference": 4.96032240002604e-9,
@@ -449,14 +564,14 @@
           "epsilon": 0.000001,
           "method": "Closed domain clipping; convex target-triangle neighborhood certificates over full polygon partitions",
           "stats": {
-            "sourceTriangles": 8,
+            "sourceTriangles": 24,
             "protectedPatches": 8,
             "targetTriangleCandidates": 199,
-            "convexCertificates": 82,
-            "certificateVertices": 195,
+            "convexCertificates": 100,
+            "certificateVertices": 256,
             "wholeFragmentRescanCertificates": 0,
             "coveragePasses": 8,
-            "largestResidualSet": 7,
+            "largestResidualSet": 9,
             "failedPatches": 0
           },
           "failures": []
@@ -466,7 +581,7 @@
           "epsilon": 0.000001,
           "method": "Closed domain clipping; convex target-triangle neighborhood certificates over full polygon partitions",
           "stats": {
-            "sourceTriangles": 72,
+            "sourceTriangles": 2664,
             "protectedPatches": 28,
             "targetTriangleCandidates": 239,
             "convexCertificates": 111,
@@ -479,16 +594,43 @@
           "failures": []
         }
       },
-      "beforeOutsideTriangles": 32,
-      "afterOutsideTriangles": 44,
-      "beforeHash": "5c5d370602b0f7260ba7a7580a2231171d610112ae31d918993f198793c342de",
-      "afterHash": "f79dad0b68529ed91bc65fabdecdb06467e62fa5bb7732e14e17c69bdeb728c4",
+      "beforeOutsideTriangles": 8,
+      "afterOutsideTriangles": 20,
+      "beforeHash": "abf5227a6b16a0355b2b919906e4d3cd3c8ab9e4f4e2e2191b097ac864fde19b",
+      "afterHash": "4bd60b2bf036be9fe9e56c071acb526813ed8b8ed66e263b8ecb5d262faf6967",
       "passed": true
     },
     {
       "name": "Lower_fuselage_join002",
-      "outsideOriginalVertices": 20,
-      "preservedOutsideOriginalVertices": 20,
+      "domains": [
+        {
+          "minimumAbsX": 0.074,
+          "maximumAbsX": 0.3,
+          "longitudinalY": [
+            0.76416,
+            2.1
+          ],
+          "verticalZ": [
+            -0.2,
+            0.22
+          ],
+          "reviewStatus": "预检采用最初实际中央底板保护界限 .074；.092仅是外环参数门槛"
+        },
+        {
+          "minimumAbsX": 0.3954,
+          "maximumAbsX": 0.4609,
+          "longitudinalY": [
+            -1.3403,
+            -0.567
+          ],
+          "verticalZ": [
+            -0.0965,
+            -0.045
+          ]
+        }
+      ],
+      "outsideOriginalVertices": 8,
+      "preservedOutsideOriginalVertices": 8,
       "newOutsideSubdivisionVertices": 8,
       "unchangedOutsideOrientedTriangles": false,
       "maximumOutsideSurfaceDifference": 5.613230828207377e-9,
@@ -575,12 +717,12 @@
           "epsilon": 0.000001,
           "method": "Closed domain clipping; convex target-triangle neighborhood certificates over full polygon partitions",
           "stats": {
-            "sourceTriangles": 8,
+            "sourceTriangles": 24,
             "protectedPatches": 8,
             "targetTriangleCandidates": 198,
-            "convexCertificates": 101,
-            "certificateVertices": 292,
-            "wholeFragmentRescanCertificates": 1,
+            "convexCertificates": 85,
+            "certificateVertices": 240,
+            "wholeFragmentRescanCertificates": 0,
             "coveragePasses": 8,
             "largestResidualSet": 6,
             "failedPatches": 0
@@ -592,7 +734,7 @@
           "epsilon": 0.000001,
           "method": "Closed domain clipping; convex target-triangle neighborhood certificates over full polygon partitions",
           "stats": {
-            "sourceTriangles": 72,
+            "sourceTriangles": 2664,
             "protectedPatches": 28,
             "targetTriangleCandidates": 239,
             "convexCertificates": 110,
@@ -605,14 +747,29 @@
           "failures": []
         }
       },
-      "beforeOutsideTriangles": 32,
-      "afterOutsideTriangles": 44,
-      "beforeHash": "41ec3167838883972883ebf7eda6e7e1f531a9cd3ac0452028b6fe1e053d70a2",
-      "afterHash": "e47b666dd52c9c998d7b74de7757d9e071d4f87db695d28f20183d02c6f9b404",
+      "beforeOutsideTriangles": 8,
+      "afterOutsideTriangles": 20,
+      "beforeHash": "d26bf81d9cba0c7ce4ce5eca5f0452b0f0d8483e28704f38cac8b4cc09969a0a",
+      "afterHash": "aed812636ce12e246e2ef7094a63e873870d449bf1e1905f346166c0070d1dbf",
       "passed": true
     },
     {
       "name": "Tail_boom_join",
+      "domains": [
+        {
+          "minimumAbsX": 0.074,
+          "maximumAbsX": 0.3,
+          "longitudinalY": [
+            0.76416,
+            2.1
+          ],
+          "verticalZ": [
+            -0.2,
+            0.22
+          ],
+          "reviewStatus": "预检采用最初实际中央底板保护界限 .074；.092仅是外环参数门槛"
+        }
+      ],
       "outsideOriginalVertices": 84,
       "preservedOutsideOriginalVertices": 84,
       "newOutsideSubdivisionVertices": 0,

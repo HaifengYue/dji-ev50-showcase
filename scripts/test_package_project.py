@@ -159,6 +159,111 @@ class PackageTests(unittest.TestCase):
             self.assertIsNone(archive.testzip())
             return {name.removeprefix(package.PREFIX): archive.read(name) for name in archive.namelist()}
 
+    def install_supplement(self):
+        # 构造65阶段、290项旧锁与四份旧字节，不读取真实模型或真实验收输出。
+        self.stages = ['synthetic-check', 'support-selftest'] + [
+            'synthetic-stage-' + str(index) for index in range(62)] + ['input-stability']
+        self.files[package.GEOMETRY_STAGES_PATH] = package.encoded(self.stages)
+        self.files[package.STATUS] = ''.join(name + ' 0\n' for name in self.stages).encode()
+        for name in self.stages:
+            self.files['qa/current/results/' + name + '.log'] = b'passed\n'
+            if name not in package.LOG_ONLY_STAGES:
+                self.files['qa/current/results/' + name + '-report.json'] = b'{"passed":true}'
+        for name in sorted(package.HARDENED_INPUTS):
+            self.files[name] = ('原始验证输入：' + name).encode()
+            self.physics_paths.append(name)
+        while len(self.physics_paths) < 290:
+            name = 'qa/contracts/synthetic-input-' + str(len(self.physics_paths)) + '.json'
+            self.files[name] = b'{}'
+            self.physics_paths.append(name)
+        self.physics_paths.sort()
+        self.freeze()
+        self.bind_metadata()
+        original_lock = package.locked_inputs(self.files[package.LOCK])
+        self.files['qa/current/results/input-sha256.txt'] = ''.join(
+            sha + '  ' + name + '\n' for name, sha in original_lock.items()).encode()
+        original_summary = json.loads(self.files[package.SUMMARY])
+        overlay = {
+            'fullRunSummaryPath': package.SUMMARY,
+            'fullRunSummarySha256': package.digest(self.files[package.SUMMARY]),
+            'fullRunInputLockPath': package.LOCK,
+            'fullRunInputLockSha256': package.digest(self.files[package.LOCK]),
+            'sourceSha256': original_summary['sourceSha256'],
+            'runtimeSha256': original_summary['runtimeSha256'], 'overlays': []}
+        differences = []
+        for name in sorted(package.HARDENED_INPUTS):
+            stored = package.ORIGINAL_INPUT_DIR + '/' + name
+            self.files[stored] = self.files[name]
+            self.files[name] += '\n已硬化的当前断言\n'.encode()
+            overlay['overlays'].append({'path': name, 'storedPath': stored, 'sha256': original_lock[name]})
+            differences.append({'path': name, 'originalSha256': original_lock[name],
+                                'currentSha256': package.digest(self.files[name]), 'originalBytes': stored})
+        self.files[package.ORIGINAL_OVERLAY] = package.encoded(overlay)
+        for name in package.SUPPLEMENT_DEPENDENCIES:
+            self.files.setdefault(name, '// 合成补充验证依赖\n'.encode())
+        self.files['qa/nacelle/unrelated-source.mts'] = b'unrelated-source'
+        self.files['qa/nacelle/probe-self-contact.mts'] = b'excluded-probe'
+        self.files['qa/nacelle/diagnostics/report.json'] = b'excluded-diagnostic'
+        for name in package.SUPPLEMENT_STAGES:
+            self.files[package.SUPPLEMENT_DIR + '/' + name + '.log'] = b'passed\n'
+            if name == 'input-stability':
+                continue
+            report = {'passed': True}
+            if name in {'indexed-host-material', 'unused-points-regression'}:
+                report['sourceSha256'] = original_summary['sourceSha256']
+            if name == 'nacelle-placement':
+                report['reports'] = [{'encoding': encoding, 'passed': True, 'failures': [],
+                                      'sha256': original_summary[encoding + 'Sha256']}
+                                     for encoding in ['source', 'runtime']]
+            self.files[package.SUPPLEMENT_DIR + '/' + name + '-report.json'] = package.encoded(report)
+        self.files[package.SUPPLEMENT_DIR + '/status.log'] = ''.join(
+            name + ' 0\n' for name in package.SUPPLEMENT_STAGES).encode()
+        self.files[package.SUPPLEMENT_SUMMARY] = package.encoded({
+            'passed': True, 'fullChainRerunAfterHardening': False,
+            **{key: original_summary[key] for key in ['sourceSha256', 'runtimeSha256', 'sourceBlendSha256']},
+            'originalFullRun': {
+                'summaryPath': package.SUMMARY, 'summarySha256': package.digest(self.files[package.SUMMARY]),
+                'inputLockPath': package.LOCK, 'inputLockSha256': package.digest(self.files[package.LOCK]),
+                'stages': 65, 'inputFiles': 290, 'allStagesPassed': True, 'overlayPath': package.ORIGINAL_OVERLAY},
+            'currentTargetedValidation': {
+                'stages': [{'name': name, 'exitCode': 0} for name in package.SUPPLEMENT_STAGES],
+                'inputLockPath': package.SUPPLEMENT_LOCK, 'inputStability': True},
+            'changedOriginalInputs': differences})
+        self.supplement_paths = sorted(set(self.physics_paths) | package.SUPPLEMENT_DEPENDENCIES | {
+            name for name in self.files if name.startswith(('qa/current/results/', package.ORIGINAL_INPUT_DIR + '/'))})
+        self.refresh_supplement_bindings()
+
+    def refresh_supplement_bindings(self):
+        # 负例可重算外围摘要，证明拒绝来自独立约束而非偶然的陈旧哈希。
+        original = json.loads(self.files[package.SUMMARY])
+        lock = {'fullRunSummarySha256': package.digest(self.files[package.SUMMARY]),
+                'sourceSha256': original['sourceSha256'], 'runtimeSha256': original['runtimeSha256'],
+                'files': [{'path': name, 'sha256': package.digest(self.files[name])}
+                          for name in self.supplement_paths]}
+        self.files[package.SUPPLEMENT_LOCK] = package.encoded(lock)
+        self.files[package.SUPPLEMENT_DIR + '/input-sha256.txt'] = ''.join(
+            row['sha256'] + '  ' + row['path'] + '\n' for row in lock['files']).encode()
+        data = json.loads(self.files[package.SUPPLEMENT_SUMMARY])
+        data['currentTargetedValidation'].update({
+            'inputLockSha256': package.digest(self.files[package.SUPPLEMENT_LOCK]),
+            'inputFiles': len(self.supplement_paths), 'reports': {
+                name: {'path': package.SUPPLEMENT_DIR + '/' + name + '-report.json',
+                       'sha256': package.digest(self.files[package.SUPPLEMENT_DIR + '/' + name + '-report.json'])}
+                for name in package.SUPPLEMENT_STAGES[:-1]}})
+        self.files[package.SUPPLEMENT_SUMMARY] = package.encoded(data)
+        info = json.loads(self.files[package.METADATA])
+        info.update({'合并冻结输入数': len(set(self.physics_paths) | set(self.frontend_paths) | set(self.supplement_paths)),
+                     '修后完整65阶段重跑': False, '原始输入覆盖层路径': package.ORIGINAL_OVERLAY,
+                     '原始输入覆盖层SHA256': package.digest(self.files[package.ORIGINAL_OVERLAY]),
+                     '定向补充验收': {
+                         '全部通过': True, '输入稳定': True, '路径': package.SUPPLEMENT_SUMMARY,
+                         'SHA256': package.digest(self.files[package.SUPPLEMENT_SUMMARY]),
+                         '输入锁路径': package.SUPPLEMENT_LOCK,
+                         '输入锁SHA256': package.digest(self.files[package.SUPPLEMENT_LOCK]),
+                         '阶段数': len(package.SUPPLEMENT_STAGES), '冻结输入数': len(self.supplement_paths)}})
+        self.files[package.METADATA] = package.encoded(info)
+        self.flush()
+
     def test_reject_noncanonical_paths(self):
         for name in ['', '../a', '/a', 'a//b', 'a/./b', 'a\\b', 'C:a', 'a\nb',
                      'a\x7fb', 'a/CON.txt', 'a/end.', 'a/end ', 'a/what?.json']:
@@ -183,6 +288,36 @@ class PackageTests(unittest.TestCase):
         for rows in [[], [row, row], [{'path': 'a.py', 'sha256': 'bad'}], [None]]:
             with self.subTest(rows=rows), self.assertRaises(ValueError):
                 package.locked_inputs(package.encoded({'files': rows}))
+
+    def test_registered_versioned_reference_fixture_is_preserved_byte_for_byte(self):
+        name = 'qa/reference/nacelle-oriented-repair-corrections-v2.json'
+        self.assertFalse(package.forbidden(name))
+        self.assertTrue(package.selected(name))
+        self.files[name] = b'{"formatVersion":2,"fixture":"frozen-original"}\n'
+        self.physics_paths.append(name)
+        self.physics_paths.sort()
+        self.freeze()
+        self.bind_metadata()
+        self.flush()
+        self.make_package()
+        contents = self.archive_contents()
+        self.assertEqual(contents[name], self.files[name])
+        self.assertEqual(package.locked_inputs(contents[package.LOCK])[name], package.digest(self.files[name]))
+
+    def test_versioned_reference_exception_does_not_allow_similar_or_unsafe_paths(self):
+        for name in ['qa/reference/nacelle-oriented-repair-corrections-v3.json',
+                     'qa/reference/nacelle-oriented-repair-corrections-v2-copy.json',
+                     'qa/reference/other-v2.json',
+                     'qa/reference/archive/nacelle-oriented-repair-corrections-v2.json',
+                     'qa/reference/nacelle-oriented-repair-corrections-v2.glb',
+                     'qa/reference/nacelle-oriented-repair-corrections-v2.png',
+                     'qa/private/nacelle-oriented-repair-corrections-v2.json',
+                     'qa/candidates/nacelle-oriented-repair-corrections-v2.json']:
+            with self.subTest(name=name):
+                self.assertTrue(package.forbidden(name))
+                self.assertFalse(package.selected(name))
+                with self.assertRaisesRegex(ValueError, '禁止交付'):
+                    package.locked_inputs(package.encoded({'files': [{'path': name, 'sha256': 'a' * 64}]}))
 
     def test_input_symlinks_and_parent_symlinks_rejected(self):
         (self.root / 'link').symlink_to(self.root / 'README.md')
@@ -318,6 +453,210 @@ class PackageTests(unittest.TestCase):
         payload1, manifest1, result1 = package.prepare_package(self.root)
         payload2, manifest2, result2 = package.prepare_package(self.root)
         self.assertEqual((payload1, manifest1, result1), (payload2, manifest2, result2))
+
+    def test_supplement_roundtrip_preserves_both_revisions_and_claim_boundary(self):
+        self.install_supplement()
+        result = self.make_package()
+        contents = self.archive_contents()
+        manifest = json.loads(contents[package.MANIFEST])
+        self.assertFalse(manifest['fullChainRerunAfterHardening'])
+        self.assertFalse(result['fullChainRerunAfterHardening'])
+        self.assertEqual(result['lockedInputs'], 290)
+        self.assertEqual(result['supplementLockedInputs'], len(self.supplement_paths))
+        self.assertEqual(result['combinedLockedInputs'], len(
+            set(self.physics_paths) | set(self.frontend_paths) | set(self.supplement_paths)))
+        for name in self.supplement_paths:
+            self.assertEqual(contents[name], self.files[name])
+        for name in package.HARDENED_INPUTS:
+            self.assertNotEqual(contents[name], contents[package.ORIGINAL_INPUT_DIR + '/' + name])
+            original = package.locked_inputs(contents[package.LOCK])
+            self.assertEqual(package.digest(contents[package.ORIGINAL_INPUT_DIR + '/' + name]), original[name])
+        for path_key, hash_key in [('supplementInputLockPath', 'supplementInputLockSha256'),
+                                   ('supplementSummaryPath', 'supplementSummarySha256'),
+                                   ('originalInputOverlayPath', 'originalInputOverlaySha256')]:
+            self.assertEqual(manifest[hash_key], package.digest(contents[manifest[path_key]]))
+        for name in ['qa/nacelle/unrelated-source.mts', 'qa/nacelle/probe-self-contact.mts',
+                     'qa/nacelle/diagnostics/report.json']:
+            self.assertNotIn(name, contents)
+            self.assertEqual((self.root / name).read_bytes(), self.files[name])
+
+    def test_incomplete_supplement_cannot_fall_back_to_original_only(self):
+        (self.root / package.ORIGINAL_INPUT_DIR).mkdir()
+        with self.assertRaisesRegex(ValueError, '输入缺失'):
+            self.make_package()
+        self.assertFalse(self.output.exists())
+
+    def test_supplement_unchanged_original_input_drift_is_rejected(self):
+        self.install_supplement()
+        self.files['qa/current/check.mts'] += b'changed-with-new-lock'
+        self.refresh_supplement_bindings()
+        with self.assertRaisesRegex(ValueError, '未批准的输入漂移'):
+            self.make_package()
+
+    def test_supplement_hardened_current_input_drift_is_rejected(self):
+        self.install_supplement()
+        (self.root / 'qa/nacelle/host-decoration-preservation.mts').write_bytes(b'changed-after-supplement')
+        with self.assertRaisesRegex(ValueError, '互相冲突|冻结输入已变化'):
+            self.make_package()
+
+    def test_supplement_original_bytes_cannot_be_replaced_even_with_new_lock(self):
+        self.install_supplement()
+        self.files[package.ORIGINAL_INPUT_DIR + '/qa/current/summarize.mjs'] = b'fake-original'
+        self.refresh_supplement_bindings()
+        with self.assertRaisesRegex(ValueError, '旧字节、路径或SHA256'):
+            self.make_package()
+
+    def test_supplement_overlay_cannot_expand_allowed_changes(self):
+        self.install_supplement()
+        overlay = json.loads(self.files[package.ORIGINAL_OVERLAY])
+        name = 'qa/current/check.mts'
+        overlay['overlays'].append({'path': name, 'storedPath': package.ORIGINAL_INPUT_DIR + '/' + name,
+                                    'sha256': package.digest(self.files[name])})
+        self.files[package.ORIGINAL_OVERLAY] = package.encoded(overlay)
+        self.refresh_supplement_bindings()
+        with self.assertRaisesRegex(ValueError, '四项硬化输入'):
+            self.make_package()
+
+    def test_supplement_overlay_relocation_is_rejected(self):
+        self.install_supplement()
+        overlay = json.loads(self.files[package.ORIGINAL_OVERLAY])
+        overlay['overlays'][0]['storedPath'] = 'qa/reference/accepted-reference.json'
+        self.files[package.ORIGINAL_OVERLAY] = package.encoded(overlay)
+        self.refresh_supplement_bindings()
+        with self.assertRaisesRegex(ValueError, '旧字节、路径或SHA256'):
+            self.make_package()
+
+    def test_supplement_cannot_omit_required_history_helpers_or_current_inputs(self):
+        self.install_supplement()
+        full = list(self.supplement_paths)
+        for name in ['qa/current/check.mts', package.ORIGINAL_OVERLAY,
+                     package.ORIGINAL_INPUT_DIR + '/qa/current/summarize.mjs',
+                     'qa/nacelle/host-indexed-exactness.mjs',
+                     'qa/nacelle/host-indexed-exactness.selftest.mjs',
+                     'qa/current/results/synthetic-check.log', package.SUMMARY]:
+            with self.subTest(name=name):
+                self.supplement_paths = [path for path in full if path != name]
+                self.refresh_supplement_bindings()
+                with self.assertRaisesRegex(ValueError, '缺少原始证据或当前必要依赖'):
+                    self.make_package()
+
+    def test_supplement_follows_transitive_extensionless_and_dynamic_local_imports(self):
+        self.install_supplement()
+        entry = 'qa/nacelle/host-indexed-exactness.mjs'
+        self.files[entry] += b'import "./supplement-helper";'
+        self.files['qa/nacelle/supplement-helper.mts'] = b'export {x} from "./helper-leaf.mjs";'
+        self.files['qa/nacelle/helper-leaf.mts'] = b'export const x=1;'
+        self.files['qa/nacelle/host-unused-points-regression.mts'] += b"await import(project+'/qa/nacelle/helper-leaf.mjs');"
+        self.supplement_paths.append('qa/nacelle/supplement-helper.mts')
+        self.refresh_supplement_bindings()
+        with self.assertRaisesRegex(ValueError, '缺少原始证据或当前必要依赖.*helper-leaf'):
+            self.make_package()
+        self.supplement_paths.append('qa/nacelle/helper-leaf.mts')
+        self.supplement_paths.sort()
+        self.refresh_supplement_bindings()
+        self.make_package()
+
+    def test_supplement_forbidden_probe_cannot_be_locked(self):
+        self.install_supplement()
+        self.supplement_paths.append('qa/nacelle/probe-self-contact.mts')
+        self.refresh_supplement_bindings()
+        with self.assertRaisesRegex(ValueError, '禁止交付'):
+            self.make_package()
+
+    def test_supplement_cannot_claim_complete_post_hardening_rerun(self):
+        self.install_supplement()
+        data = json.loads(self.files[package.SUPPLEMENT_SUMMARY])
+        data['fullChainRerunAfterHardening'] = True
+        self.files[package.SUPPLEMENT_SUMMARY] = package.encoded(data)
+        self.refresh_supplement_bindings()
+        with self.assertRaisesRegex(ValueError, '严格区分原65阶段'):
+            self.make_package()
+
+    def test_supplement_must_bind_same_models_and_original_evidence(self):
+        self.install_supplement()
+        original = self.files[package.SUPPLEMENT_SUMMARY]
+        for field in ['runtimeSha256', 'sourceSha256', 'sourceBlendSha256']:
+            with self.subTest(field=field):
+                data = json.loads(original)
+                data[field] = '0' * 64
+                self.files[package.SUPPLEMENT_SUMMARY] = package.encoded(data)
+                self.refresh_supplement_bindings()
+                with self.assertRaisesRegex(ValueError, '模型哈希不一致'):
+                    self.make_package()
+        data = json.loads(original)
+        data['originalFullRun']['summarySha256'] = '0' * 64
+        self.files[package.SUPPLEMENT_SUMMARY] = package.encoded(data)
+        self.refresh_supplement_bindings()
+        with self.assertRaisesRegex(ValueError, '严格区分原65阶段'):
+            self.make_package()
+
+    def test_supplement_changed_input_declaration_must_match_real_bytes(self):
+        self.install_supplement()
+        data = json.loads(self.files[package.SUPPLEMENT_SUMMARY])
+        data['changedOriginalInputs'][0]['currentSha256'] = '0' * 64
+        self.files[package.SUPPLEMENT_SUMMARY] = package.encoded(data)
+        self.refresh_supplement_bindings()
+        with self.assertRaisesRegex(ValueError, '四项输入变更'):
+            self.make_package()
+
+    def test_supplement_stage_order_exit_code_and_status_are_independent(self):
+        self.install_supplement()
+        original = self.files[package.SUPPLEMENT_SUMMARY]
+        for value in [False, 1]:
+            with self.subTest(exit_code=value):
+                data = json.loads(original)
+                data['currentTargetedValidation']['stages'][0]['exitCode'] = value
+                self.files[package.SUPPLEMENT_SUMMARY] = package.encoded(data)
+                self.refresh_supplement_bindings()
+                with self.assertRaisesRegex(ValueError, '定向阶段顺序'):
+                    self.make_package()
+        self.files[package.SUPPLEMENT_SUMMARY] = original
+        self.refresh_supplement_bindings()
+        (self.root / package.SUPPLEMENT_DIR / 'status.log').write_bytes(b'input-stability 0\n')
+        with self.assertRaisesRegex(ValueError, '补充阶段记录'):
+            self.make_package()
+
+    def test_supplement_report_binding_failure_and_model_are_checked(self):
+        self.install_supplement()
+        name = package.SUPPLEMENT_DIR + '/indexed-host-material-report.json'
+        original = self.files[name]
+        (self.root / name).write_bytes(b'{"passed":true}')
+        with self.assertRaisesRegex(ValueError, '字节绑定失效'):
+            self.make_package()
+        for fields, expected in [({'passed': False}, '原始报告未通过'),
+                                 ({'sourceSha256': '0' * 64}, '未绑定当前源模型')]:
+            with self.subTest(fields=fields):
+                data = json.loads(original)
+                data.update(fields)
+                self.files[name] = package.encoded(data)
+                self.refresh_supplement_bindings()
+                with self.assertRaisesRegex(ValueError, expected):
+                    self.make_package()
+
+    def test_supplement_missing_log_cannot_be_hidden_by_passed_summary(self):
+        self.install_supplement()
+        original = package.input_path
+
+        def missing(relative, root):
+            if relative == package.SUPPLEMENT_DIR + '/input-stability.log':
+                raise ValueError('工程输入缺失：' + relative)
+            return original(relative, root)
+
+        with patch.object(package, 'input_path', side_effect=missing):
+            with self.assertRaisesRegex(ValueError, '输入缺失'):
+                self.make_package()
+
+    def test_supplement_checksum_text_and_metadata_are_bound(self):
+        self.install_supplement()
+        (self.root / package.SUPPLEMENT_DIR / 'input-sha256.txt').write_bytes(b'fake-checksum-list')
+        with self.assertRaisesRegex(ValueError, '逐文件校验清单'):
+            self.make_package()
+        self.flush()
+        data = json.loads(self.files[package.METADATA])
+        data['修后完整65阶段重跑'] = True
+        self.write_json(package.METADATA, data)
+        with self.assertRaisesRegex(ValueError, '定向补充验收和原始输入覆盖层'):
+            self.make_package()
 
     def test_stale_locked_input_rejected_before_output(self):
         (self.root / 'src/App.tsx').write_bytes(b'changed')

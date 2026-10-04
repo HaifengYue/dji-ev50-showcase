@@ -2,7 +2,7 @@
   "passed": true,
   "evidence": "CSS source layout model plus actual decoded GLB bounding-box projection through unchanged production camera functions; no browser screenshots, browser interactions or physical rerun",
   "cssSha256": "7c0da5f0f423f43d69a17e12cf269e32ac16f4c50c7e3ae86ba9dca15a31b66d",
-  "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+  "runtimeSha256": "062fd09dee64984221316ede5ba684f6c1b6ff4f7b7ee2a0bd818a8888fd6f43",
   "layouts": [
     {
       "viewport": [
@@ -202,5 +202,5 @@
   "flightTimeStepSeconds": 0.5,
   "flightDurationSeconds": 57,
   "projectedCorners": 35840,
-  "largestAbsoluteNdcXY": 0.7575757575757576
+  "largestAbsoluteNdcXY": 0.7575757575757572
 }

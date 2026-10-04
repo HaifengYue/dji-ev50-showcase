@@ -8,7 +8,7 @@ import {fileURLToPath} from 'node:url';
 export function collectFrozenInputs(){
 const files=new Set(),queue=[];
 function add(p){p=path.normalize(p);assert(!path.isAbsolute(p)&&!p.startsWith('..'));assert(fs.statSync(p).isFile(),'缺少实际依赖 '+p);if(!files.has(p)){files.add(p);queue.push(p);}}
-for(const p of ['public/models/xp4.glb','assets/blender/xp4-source.glb','assets/blender/xp4.blend','qa/current/author/source-reexport.glb','public/models/nacelle-system-concept.glb','assets/blender/nacelle-system-concept-source.glb','public/models/manifest.json','package.json','package-lock.json','scripts/package.json','scripts/package-lock.json','qa/current/run-safety.sh','qa/current/freeze-inputs.mjs','qa/current/summarize.mjs','qa/current/stages.json','qa/contracts/model-refinement.json','qa/contracts/supports.json','qa/contracts/layered-wing-refinement.json','qa/contracts/drive-contact-contracts.json','qa/contracts/drive-motion.json','qa/contracts/reference-supports.json','scripts/data/preserved-front-surfaces.blend','scripts/data/preserved-front-surfaces.json','qa/reference/accepted-reference.json','qa/reference/source-protected-surfaces.json','qa/reference/reference-manifest.json','qa/reference/evidence-map.json','qa/reference/code-migration.json','qa/current/reference-records.mjs','qa/current/reference-data.mts'])add(p);
+for(const p of ['public/models/xp4.glb','assets/blender/xp4-source.glb','assets/blender/xp4.blend','qa/current/author/source-reexport.glb','public/models/nacelle-system-concept.glb','assets/blender/nacelle-system-concept-source.glb','public/models/manifest.json','package.json','package-lock.json','scripts/package.json','scripts/package-lock.json','qa/current/run-safety.sh','qa/current/freeze-inputs.mjs','qa/current/summarize.mjs','qa/current/stages.json','qa/contracts/model-refinement.json','qa/contracts/nacelle-wing-refinement.json','qa/nacelle/wing-shape-regressions.json','qa/nacelle/exact-self-regressions.json','qa/nacelle/oriented-microfold-regressions.json','qa/contracts/supports.json','qa/contracts/layered-wing-refinement.json','qa/contracts/drive-contact-contracts.json','qa/contracts/drive-motion.json','qa/contracts/reference-supports.json','scripts/data/preserved-front-surfaces.blend','scripts/data/preserved-front-surfaces.json','scripts/data/wing-post-triangulation-regression.json','qa/reference/accepted-reference.json','qa/reference/source-protected-surfaces.json','qa/reference/reference-manifest.json','qa/reference/evidence-map.json','qa/reference/code-migration.json','qa/current/reference-records.mjs','qa/current/reference-data.mts'])add(p);
 // 必要原始证据按来源映射逐字节验收；不保留旧完整模型或迭代目录。
 const referenceManifest=JSON.parse(fs.readFileSync('qa/reference/reference-manifest.json','utf8'));
 assert.equal(referenceManifest.formatVersion,1);for(const row of referenceManifest.artifacts){assert(row.path.startsWith('qa/reference/')&&row.path.endsWith('.json'),'只冻结当前精简数学参照及来源JSON');const bytes=fs.readFileSync(row.path);assert.equal(bytes.length,row.bytes,'参照字节数不符 '+row.path);assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),row.sha256,'参照哈希不符 '+row.path);add(row.path);}
@@ -20,7 +20,8 @@ const rebuilt=JSON.parse(fs.readFileSync('qa/current/author/generator-reproducib
 add(rebuilt.regeneratedSourcePath);add(path.join(root,'public/models/xp4.glb'));add(path.join(root,'public/models/nacelle-system-concept.glb'));
 for(const r of rebuilt.generatorHashes){add(path.join('scripts',r.file));add(path.join(root,'scripts',r.file));}
 for(const p of ['scripts/reexport-source.py','scripts/verify-source.py','scripts/verify-solids.py','scripts/verify-motor-animation.py','scripts/verify-native-drive.py','scripts/verify-source-runtime.mjs','scripts/verify-regeneration.mjs','scripts/verify-regeneration-exact.mjs'])add(p);
-const runner=fs.readFileSync('qa/current/run-safety.sh','utf8');for(const m of runner.matchAll(/(?:node(?: --import tsx| --test)?|python3?)\s+["']?([^\s"']+\.(?:mjs|mts|py))/g))if(!m[1].includes('$'))add(m[1]);
+const runner=fs.readFileSync('qa/current/run-safety.sh','utf8');for(const m of runner.matchAll(/(?:node(?:(?: --import tsx)|(?: --test))*|python3?)\s+["']?([^\s"']+\.(?:mjs|mts|py))/g))if(!m[1].includes('$'))add(m[1]);
+for(const entry of ['qa/nacelle/powertrain-identity.selftest.mts','qa/nacelle/wing-shape.selftest.mts'])assert(files.has(entry),'Combined Node loader/test flags must not omit required formal selftest '+entry);
 // 下列 SDK 实际被 python-render 脚本以子进程调用，不能只依赖 JS 静态 import 收集。
 for(const entry of fs.readdirSync('python/transwing_sim',{withFileTypes:true}))if(entry.isFile()&&entry.name.endsWith('.py'))add('python/transwing_sim/'+entry.name);
 for(let i=0;i<queue.length;i++){
@@ -38,7 +39,7 @@ for(let i=0;i<queue.length;i++){
 }
 // 不锁入并未被实际读取的旧可选契约；当前姿态/包络验证没有这两项输入。
 for(const p of files)assert(!/package_delivery|split_delivery|package_project|author-diagnostics|preflight|private-reference|original-photo|reference-private/.test(p),'非正式或私有输入 '+p);
-for(const p of ['qa/contracts/model-refinement.json','qa/contracts/layered-wing-refinement.json','qa/contracts/supports.json'])assert.equal(JSON.parse(fs.readFileSync(p)).reviewed,true);
+for(const p of ['qa/contracts/model-refinement.json','qa/contracts/nacelle-wing-refinement.json','qa/contracts/layered-wing-refinement.json','qa/contracts/supports.json'])assert.equal(JSON.parse(fs.readFileSync(p)).reviewed,true);
 return [...files].sort();
 }
 

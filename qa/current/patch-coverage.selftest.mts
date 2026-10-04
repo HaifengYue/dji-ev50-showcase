@@ -33,5 +33,19 @@ for(const reverse of [false,true])for(let rotation=0;rotation<count;rotation++){
   rescanCertificates+=result.beforeToAfter.stats.wholeFragmentRescanCertificates+result.afterToBefore.stats.wholeFragmentRescanCertificates;orderCases++;
 }
 assert(rescanCertificates>0,'Regression must actually exercise residual recertification');
-const report={passed:true,cases:['closed tetra protected-patch displacement rejected','coplanar retriangulation','coplanar subdivision','bounded 0.9e-6 encoding drift','1.1e-6 drift rejected','protected hole rejected','authorized-volume edit','central boundary protected','bidirectional added-area rejection','no tolerance relaxation','multi-triangle coplanar coverage independent of traversal order'],coplanarFanOrderCases:orderCases,rescanCertificates,tetraFailure:escaped.beforeToAfter.failures[0],epsilon:1e-6};
+// Two separated authorizations must not silently authorize their bounding-box gap.
+const saddleDomain={minimumAbsX:.074,maximumAbsX:.3,longitudinalY:[-3,-2],verticalZ:[-.2,.22]};
+const separated=[domain,saddleDomain];
+assert.deepEqual(verifyOutsidePatchCoverage(a,b,[domain]),verifyOutsidePatchCoverage(a,b,domain),'Single-domain array remains exactly backward-compatible');
+const gap=snapshot([[.1,0,0],[.2,0,0],[.15,.1,.2]],[[0,1,2]]);
+assert(!verifyOutsidePatchCoverage(gap,empty,separated).passed,'Protected space between domains must not be authorized');
+const spanning=snapshot([[.1,0,-1],[.2,0,2.5],[.1,.1,2.5]],[[0,1,2]]);
+assert(!verifyOutsidePatchCoverage(spanning,empty,separated).passed,'Triangle whose vertices lie in two domains still has a protected cross-domain interior');
+const saddleInside=snapshot([[.1,0,2.2],[.2,0,2.2],[.15,.1,2.5]],[[0,1,2]]);
+assert(verifyOutsidePatchCoverage({triangles:[...inside.triangles,...saddleInside.triangles]},empty,separated).passed,'Separated authorized-volume changes may both pass');
+assert(!verifyOutsidePatchCoverage(empty,gap,separated).passed,'Added inter-domain bridge must fail bidirectionally');
+assert(!verifyOutsidePatchCoverage(boundary,empty,separated).passed,'Second domain never relaxes first protected boundary');
+assert.throws(()=>verifyOutsidePatchCoverage(a,b,[]));
+assert.throws(()=>verifyOutsidePatchCoverage(a,b,[domain,{...saddleDomain,maximumAbsX:Infinity}]));
+const report={passed:true,cases:['closed tetra protected-patch displacement rejected','coplanar retriangulation','coplanar subdivision','bounded 0.9e-6 encoding drift','1.1e-6 drift rejected','protected hole rejected','authorized-volume edit','central boundary protected','bidirectional added-area rejection','no tolerance relaxation','multi-triangle coplanar coverage independent of traversal order'],multipleDomainCases:8,coplanarFanOrderCases:orderCases,rescanCertificates,tetraFailure:escaped.beforeToAfter.failures[0],epsilon:1e-6};
 if(process.env.QA_OUT)fs.writeFileSync(process.env.QA_OUT,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));

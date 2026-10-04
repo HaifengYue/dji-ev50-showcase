@@ -10,10 +10,12 @@ from functools import lru_cache
 import os
 import bpy
 import bmesh
+from mesh_precision import face_area
 from mathutils import Vector, Matrix
 from mathutils.bvhtree import BVHTree
 import kinematics
 from embedded_joint_surfaces import joint_profile
+from nacelle_wing_layout import CENTRAL_WING_LIFT, HINGE_LIFT, lift_fixed_wing, is_nacelle_root
 
 HALF_GAP = .003
 RELIEF_START_Y = -1.84
@@ -23,7 +25,7 @@ INNER_EDGE_X = .65
 UPPER_REFERENCE_Z = -.17
 SEAM_REFERENCE_PIVOT = (1.41,-1.41,-.22)
 UPPER_RECESS = .012
-PAN_GAP = .015
+PAN_GAP = .019
 PAN_WALL = .010
 FILLET_RADIUS = .060
 FILLET_Y = (-1.5647568868,-1.4870875186)
@@ -116,6 +118,9 @@ def _build_swept_relief(side,obj):
     report={'ys':ys,'zs':zs,'grid':enlarged,'angleSamples':samples,'angleRangeDegrees':[0,120],'rayHits':hits,'axialMargin':margin,'gridStep':.01,'neighborhoodCells':1,'panIsNotCutByUpperRelief':True,
             'claimBoundary':'真实三角材料驱动的有限角度保守减材；完整独立姿态检查另验，不宣称连续碰撞或制造公差证明'}
     _MOVING_ENVELOPES[side]=report
+    if os.environ.get('TRANSWING_DEBUG_DIR'):
+        import json
+        json.dump(report,open(os.path.join(os.environ['TRANSWING_DEBUG_DIR'],'swept-envelope-'+str(side)+'.json'),'w'))
     print('完成活动翼扫掠开口',side,hits,flush=True)
     return report
 
@@ -132,25 +137,25 @@ def _closed(obj):
     # 同一闭合多边面只选择合法的三角剖分，不改顶点、孔腔或检测门槛。
     for quad,ngon in [('BEAUTY','EAR_CLIP'),('ALTERNATE','EAR_CLIP'),('SHORT_EDGE','EAR_CLIP'),('BEAUTY','BEAUTY'),('ALTERNATE','BEAUTY'),('FIXED','EAR_CLIP')]:
         trial=source.copy();bmesh.ops.triangulate(trial,faces=list(trial.faces),quad_method=quad,ngon_method=ngon)
-        if all(e.is_manifold for e in trial.edges) and all(f.calc_area()>1e-18 for f in trial.faces):
+        if all(e.is_manifold for e in trial.edges) and all(face_area(f)>1e-18 for f in trial.faces):
             bm=trial;triangulation={'quad':quad,'ngon':ngon,'existingVertexCoordinatesUnchanged':True};break
         trial.free()
     if bm is None:bm=source.copy();_triangulate(bm)
     source.free()
     bad=sum(not e.is_manifold for e in bm.edges)
-    zero=sum(f.calc_area()<=1e-18 for f in bm.faces)
+    zero=sum(face_area(f)<=1e-18 for f in bm.faces)
     volume=bm.calc_volume(signed=True)
     cleanup=None
     if not bad and zero:
         # 只对当前严格零面积面邻边使用既有1e−7构造合并尺度。
         # 必须保持闭合、无新增退化且体积差≤1e−13，不能用它吞掉实体薄壁。
-        trial=bm.copy();faces=[f for f in trial.faces if f.calc_area()<=1e-18]
+        trial=bm.copy();faces=[f for f in trial.faces if face_area(f)<=1e-18]
         trial.verts.ensure_lookup_table();trial.verts.index_update()
         edges=sorted({e for f in faces for e in f.edges},key=lambda e:tuple(sorted(v.index for v in e.verts)))
         bmesh.ops.dissolve_degenerate(trial,edges=edges,dist=1e-7)
         _triangulate(trial)
         after=trial.calc_volume(signed=True)
-        if all(e.is_manifold for e in trial.edges) and all(f.calc_area()>1e-18 for f in trial.faces) and abs(after-volume)<=1e-13:
+        if all(e.is_manifold for e in trial.edges) and all(face_area(f)>1e-18 for f in trial.faces) and abs(after-volume)<=1e-13:
             cleanup={'zeroAreaFacesBefore':zero,'beforeVolume':volume,'afterVolume':after,'maximumConstructionDistance':1e-7,'maximumPermittedVolumeChange':1e-13}
             bm.free();bm=trial;zero=0;volume=after
         else:trial.free()
@@ -215,74 +220,91 @@ def _keep_outer_wing(ctx,new,original,side):
 
 
 def _make_lower_pan(ctx,side,stock,stations):
-    """完整有限厚度盆底：真实翼腹下方保留间隙，外缘圆顺接回同一活动翼。"""
+    """复用原翼腹的实际三角平面共同剖分，避免重采样跨面造成自交。
+
+    可见下表面仅向材料内偏置1e-5，无旧下凹；上表面保留有限厚度。
+    整个底面沿原翼腹；以顶部有限材料搭接，不再添加底面渐升。
+    """
+    from collections import namedtuple
+    Point=namedtuple('PlanePoint','x y z')
     origin=kinematics.pivot_position(side);parent=stock.parent
-    stock.data.calc_loop_triangles()
-    tree=BVHTree.FromPolygons([v.co.copy()for v in stock.data.vertices],
-        [tuple(t.vertices)for t in stock.data.loop_triangles],all_triangles=True)
-    ys=sorted(set([-1.86+.01*j for j in range(101)]+
+    _orient(stock);stock.data.calc_loop_triangles()
+    ys=sorted(set(round(y,10) for y in ([-1.86+.01*j for j in range(101)]+
         [-1.81+.0025*j for j in range(17)]+[-1.055+.0025*j for j in range(17)]+
-        [FILLET_Y[0]+(FILLET_Y[1]-FILLET_Y[0])*j/32 for j in range(33)]))
-    ys=sorted(set(round(y,10)for y in ys))
-    columns=29;inner=INNER_EDGE_X+HALF_GAP
-    rows=[];bottoms=[];maximum_outer=0.;query_misses=0
+        [FILLET_Y[0]+(FILLET_Y[1]-FILLET_Y[0])*j/32 for j in range(33)])))
+    rows=[]
     for y in ys:
         curve=reference_curve(y)
         outer=max(curve+.13,max(boundary_x(y,z,False,side)for z in (-.28,-.26,-.24,-.22,-.20,-.18,-.16,-.14))+.055)
-        if outer>1.80:raise ValueError('活动开口超出稳定翼根接合域，不能强截盆底：'+str((side,y,outer)))
-        maximum_outer=max(maximum_outer,outer)
-        # 主验收域保持原厚度与间隙；仅域外有限端段作C1渐收。
+        if outer>1.80:raise ValueError('活动開口超出翼根接合域：'+str((side,y,outer)))
         full=smooth((y+1.795)/.015)*smooth((-1.015-y)/.035)
+        rows.append({'y':y,'innerAbsX':INNER_EDGE_X+HALF_GAP+.020*(1-full),'outerAbsX':outer})
+    def clip(poly,field):
+        if not poly:return []
+        out=[]
+        for a,b in zip(poly,poly[1:]+poly[:1]):
+            da,db=field(a),field(b);ia,ib=da>=0,db>=0
+            if ia:out.append(a)
+            if ia!=ib:
+                t=da/(da-db);out.append(Point(*(a[i]+(b[i]-a[i])*t for i in range(3))))
+        result=[]
+        for p in out:
+            if not result or math.dist(p,result[-1])>1e-11:result.append(p)
+        if len(result)>1 and math.dist(result[0],result[-1])<=1e-11:result.pop()
+        return result
+    def planform(p,front):
+        st=ctx['wing_station'](stations,side*p.x-origin.x)
+        le=st[1]+origin.y
+        return p.y-le-.020 if front else le+st[2]-.015-p.y
+    vertices=[];faces=[];lookup={};max_residual=0.;source_triangles=0
+    def add(p,j):
+        a,b=rows[j],rows[j+1];t=(p.y-a['y'])/(b['y']-a['y'])
+        outer=a['outerAbsX']+(b['outerAbsX']-a['outerAbsX'])*t
+        full=smooth((p.y+1.795)/.015)*smooth((-1.015-p.y)/.035)
         wall=.003+(PAN_WALL-.003)*full
-        gap=.006+(PAN_GAP-.006)*full
-        row_inner=inner+.020*(1-full)
-        row=[]
-        for k in range(columns):
-            x=row_inner+(outer-row_inner)*k/(columns-1)
-            local_x=side*x-origin.x;local_y=y-origin.y
-            hit,normal,index,distance=tree.ray_cast(Vector((local_x,local_y,-1)),Vector((0,0,1)),3)
-            if hit is None:
-                # 仅用于平面轮廓外的构造刀料；后续按原翼平面轮廓真实裁掉。
-                station=ctx['wing_station'](stations,local_x)
-                u=max(0,min(1,(local_y-station[1])/station[2]))
-                skin=ctx['airfoil_point'](station,u,False)[2]+origin.z
-                upper=ctx['airfoil_point'](station,u,True)[2]+origin.z;query_misses+=1
-            else:
-                skin=hit.z+origin.z
-                top_hit,_,_,_=tree.ray_cast(Vector((local_x,local_y,1)),Vector((0,0,-1)),3)
-                upper=top_hit.z+origin.z if top_hit is not None else skin
-            start=max(curve+.02,inner+.005)
-            # 只在真正有足够厚度的翼腹内形成有限搭接；薄前/后缘不向上鼓包。
-            blend=smooth((x-start)/(outer-start))*smooth((upper-skin-.018)/.022)
-            lower=skin-(gap+wall)+(gap+wall+.002)*blend
-            row.append((side*x,y,lower,wall))
-        rows.append(row)
-    vertices=[]
-    for layer in (0,1):
-        for row in rows:
-            for x,y,z,wall in row:vertices.append(tuple(Vector((x,y,z+layer*wall))-origin))
-    n=len(ys)*columns;faces=[]
-    for j in range(len(ys)-1):
-        for k in range(columns-1):
-            a=j*columns+k;b=a+columns
-            faces.extend([(a,b,b+1,a+1),(n+a,n+a+1,n+b+1,n+b)])
-    perimeter=list(range(columns))+[j*columns+columns-1 for j in range(1,len(ys))]+[(len(ys)-1)*columns+k for k in range(columns-2,-1,-1)]+[j*columns for j in range(len(ys)-2,0,-1)]
-    for a,b in zip(perimeter,perimeter[1:]+perimeter[:1]):faces.append((a,b,n+b,n+a))
-    pan=ctx['mesh_object']('Temporary_continuous_lower_pan',vertices,faces,ctx['body'],parent)
-    _orient(pan)
-    outline=[(x,leading+.020)for x,leading,chord,z,ratio in stations]+[(x,leading+chord-.015)for x,leading,chord,z,ratio in reversed(stations)]
-    vv=[(x,y,z-origin.z)for z in (-.70,.40)for x,y in outline];m=len(outline)
-    ff=[tuple(range(m-1,-1,-1)),tuple(range(m,m*2))]+[(i,(i+1)%m,(i+1)%m+m,i+m)for i in range(m)]
-    prism=ctx['mesh_object']('Temporary_original_wing_planform',vv,ff,None,parent)
-    _orient(prism);_boolean(pan,prism,'INTERSECT');bpy.data.objects.remove(prism,do_unlink=True)
-    _closed(pan)
+        # 固定自然底面，仅顶层进入原翼有限材料；无外接凸坡。
+        lift=.00001
+        q=(side*p.x-origin.x,p.y-origin.y,p.z-origin.z+lift,wall)
+        key=tuple(round(v,10)for v in q)
+        if key not in lookup:lookup[key]=len(vertices);vertices.append(q)
+        return lookup[key]
+    for triangle in stock.data.loop_triangles:
+        if triangle.normal.z>=-1e-9:continue
+        base=[Point(side*(stock.data.vertices[i].co.x+origin.x),stock.data.vertices[i].co.y+origin.y,stock.data.vertices[i].co.z+origin.z)for i in triangle.vertices]
+        if max(p.y for p in base)<ys[0] or min(p.y for p in base)>ys[-1]:continue
+        source_triangles+=1
+        for j,(a,b)in enumerate(zip(rows,rows[1:])):
+            if max(p.y for p in base)<a['y'] or min(p.y for p in base)>b['y']:continue
+            poly=clip(base,lambda p:p.y-a['y']);poly=clip(poly,lambda p:b['y']-p.y)
+            def bound(p,kind):
+                t=(p.y-a['y'])/(b['y']-a['y']);v=a[kind]+(b[kind]-a[kind])*t
+                return p.x-v if kind=='innerAbsX' else v-p.x
+            poly=clip(poly,lambda p:bound(p,'innerAbsX'));poly=clip(poly,lambda p:bound(p,'outerAbsX'))
+            poly=clip(poly,lambda p:planform(p,True));poly=clip(poly,lambda p:planform(p,False))
+            if len(poly)<3:continue
+            indices=[add(p,j)for p in poly]
+            if len(set(indices))>=3:faces.append(tuple(indices))
+    n=len(vertices);vv=[p[:3]for p in vertices]+[(x,y,z+wall)for x,y,z,wall in vertices]
+    ff=faces+[tuple(n+i for i in reversed(f))for f in faces]
+    edges={}
+    for f in faces:
+        for a,b in zip(f,f[1:]+f[:1]):edges.setdefault(tuple(sorted((a,b))),[]).append((a,b))
+    if any(len(v)>2 for v in edges.values()):raise ValueError('原翼腹共同剖分不是流形')
+    for edge,uses in edges.items():
+        if len(uses)==1:
+            a,b=uses[0];ff.append((b,a,n+a,n+b))
+    pan=ctx['mesh_object']('Temporary_continuous_lower_pan',vv,ff,ctx['body'],parent)
+    _orient(pan);_closed(pan)
     return pan,{'nominalWallThickness':PAN_WALL,'nominalCruiseVerticalGap':PAN_GAP,
-        'innerAbsX':inner,'maximumOuterAbsX':maximum_outer,'fullMaterialDomainY':[-1.78,-1.05],
-        'targetCoveredOuterX':'reference_curve(Y)−.015，原真实翼平面轮廓及主轴孔除外',
-        'connection':'外段盆底以C1高度渐变进入原活动翼实际材料，布尔并成同一闭合连通体',
-        'outsidePlanformConstructionQueries':query_misses,
+        'lowerSurface':'exact original underside triangle planes plus 0.00001 inward offset; no downward relief',
+        'inwardConstructionOffset':.00001,'centralWingVerticalLift':CENTRAL_WING_LIFT,
+        'innerAbsX':INNER_EDGE_X+HALF_GAP,'maximumOuterAbsX':max(r['outerAbsX']for r in rows),
+        'fullMaterialDomainY':[-1.78,-1.05],'targetCoveredOuterX':'reference_curve(Y)−.015，原真实翼平面轮廓及主轴孔除外',
+        'connection':'原翼腹真实三角平面共同剖分；底面恒定自然曲面，顶部有限搭接并为同一闭合实体',
+        'sourceUndersideTriangles':source_triangles,'outerJoinRowsBlender':rows,
         'streamlinedEnds':{'fullThicknessY':[-1.78,-1.05],'frontBlendY':[-1.795,-1.78],'aftBlendY':[-1.05,-1.015],
-            'minimumEndWall':.003,'minimumEndVerticalGap':.006,'planformEdgeSetback':{'front':.020,'rear':.015},'maximumInnerCornerRetreat':.020,'construction':'上下表面及平面内缘使用C1函数渐收，薄端封口保持闭合，不使用会损坏微小交线的布尔倒角'}}
+            'minimumEndWall':.003,'minimumEndVerticalGap':.006,'planformEdgeSetback':{'front':.020,'rear':.015},'maximumInnerCornerRetreat':.020,
+            'construction':'C1厚度/内缘渐收，底面沿同一原翼腹真实平面；闭合收边'}}
 
 
 def _cutter(ctx,side,fixed,parent=None):
@@ -386,7 +408,9 @@ def _orient_open_paint(obj,host):
         hit,outward,_,_=tree.find_nearest((a+b+c)/3)
         if hit is None:raise ValueError('蓝皮缺少真实翼皮法线参照：'+obj.name)
         agreement+=normal.dot(outward);area+=normal.length
-    if abs(agreement)<area*.5:raise ValueError('蓝皮外向参照不明确：'+obj.name)
+    if abs(agreement)<area*.5:
+        if os.environ.get('TRANSWING_DEBUG_DIR'):bpy.ops.wm.save_as_mainfile(filepath=os.path.join(os.environ['TRANSWING_DEBUG_DIR'],'paint-orientation-debug.blend'))
+        raise ValueError('蓝皮外向参照不明确：'+obj.name+str((agreement,area,agreement/area)))
     if agreement<0:faces=[tuple(reversed(face))for face in faces]
     final_edges={}
     for face in faces:
@@ -428,7 +452,9 @@ def build_layered_wing_joint(ctx):
         origin=kinematics.pivot_position(sign);shift=old_pivots[sign]-origin
         for child in list(pivot.children):
             if child.name.startswith(('RootCarrier','BraceBall_','BraceBallPin_')) or child.name=='BraceWing_'+side:continue
-            _rebase_child(child,shift);rebased.append(child.name)
+            child_shift=shift.copy()
+            if is_nacelle_root(child.name):child_shift.z=0.0
+            _rebase_child(child,child_shift);rebased.append(child.name)
         pivot.location=origin
         fixed_axis_names={'RootAxisStart_'+side,'RootAxisEnd_'+side,'RootHingeShaft_'+side,'RootFixedBearingPedestal_'+side,
             *('RootHingeEndcap_'+side+value for value in ('-0.148','0.148')),
@@ -448,14 +474,20 @@ def build_layered_wing_joint(ctx):
             new.name=name+'__temporary'
             pan=None
             if not is_fixed:
+                if os.environ.get('TRANSWING_DEBUG_DIR'):
+                    import json
+                    json.dump(st,open(os.path.join(os.environ['TRANSWING_DEBUG_DIR'],'pan-stations-'+side+'.json'),'w'))
+                    bpy.ops.wm.save_as_mainfile(filepath=os.path.join(os.environ['TRANSWING_DEBUG_DIR'],'before-pan-build-'+side+'.blend'))
                 pan,pan_report=_make_lower_pan(ctx,sign,new,st);pans.append({'side':side,**pan_report})
             _clip(ctx,new,sign,is_fixed)
             if not is_fixed:_keep_outer_wing(ctx,new,bpy.data.objects[name],sign)
             if pan:
                 _closed(new)
+                if os.environ.get('TRANSWING_DEBUG_DIR'):
+                    bpy.ops.wm.save_as_mainfile(filepath=os.path.join(os.environ['TRANSWING_DEBUG_DIR'],'before-pan-union-'+side+'.blend'))
                 _boolean(new,pan,'UNION');bpy.data.objects.remove(pan,do_unlink=True)
                 _closed(new)
-            ctx['shaft_bore'](new,origin if is_fixed else Vector(),kinematics.wing_axis(sign))
+            ctx['shaft_bore'](new,origin-Vector((0,0,CENTRAL_WING_LIFT)) if is_fixed else Vector(),kinematics.wing_axis(sign))
             obj=_replace(bpy.data.objects[name],new)
             obj['layeredWingJoint']=True
             obj['jointRevision']=24
@@ -465,6 +497,7 @@ def build_layered_wing_joint(ctx):
             if is_fixed:
                 from central_wing_attachment import _trim_root
                 _trim_root(obj,sign)
+                lift_fixed_wing(obj)
             cleanup=None;row=None
             if not is_fixed:
                 from wing_seam import finish_wing_seam_topology
@@ -481,6 +514,7 @@ def build_layered_wing_joint(ctx):
         for name,st,parent,is_fixed,width in [('Fixed_root_blue_'+side,fixed,None,True,.12),('Wing_blue_leading_'+side,stations[:-2],pivot,False,.105)]:
             new=ctx['skin_band'](name+'__temporary',st,0,width,ctx['blue'],parent)
             _clip(ctx,new,sign,is_fixed,False)
+            if is_fixed:lift_fixed_wing(new)
             obj=_replace(bpy.data.objects[name],new)
             obj['layeredWingJoint']=True
             if is_fixed:
@@ -518,7 +552,7 @@ def build_layered_wing_joint(ctx):
         rod.rotation_quaternion=kinematics.rod_rotation(b-a,bpy.data.objects['WingPivot_'+side].matrix_world.to_3x3()@Vector((0,0,1)))
         rod.scale=(1,1,1)
     return {'conceptOnly':True,'source':'用户标注的连续红色边界、黄色移轴箭头及蓝色杆端内移指示；未使用原厂CAD或尺寸推断',
-            'construction':'圆顺固定上层、真实扫掠上开口和连续有限厚度下盆；下盘按实际翼腹留隙并接回同一活动翼，轴孔单独保留',
+            'construction':'固定中央翼上下皮同量上移，活动翼底沿原自然翼腹三角共同剖分、取消下凹；上部按固定翼真实扫掠让位，真实主轴与固定翼同量抬升保持原通孔关系',
             'boundaryFunction':'boundary_x(y,z,fixed)，实际采样和导出三角面另验',
             'parameters':{'frontRetreat':FRONT_RETREAT,'reliefStartY':RELIEF_START_Y,'reliefEndY':RELIEF_END_Y,'upperReferenceZ':UPPER_REFERENCE_Z,'referenceRadialBlend':[.16,.30],'curveReferencePivot':list(SEAM_REFERENCE_PIVOT),'filletRadius':FILLET_RADIUS,'filletY':list(FILLET_Y),'filletCenter':list(FILLET_CENTER),'upperRecess':UPPER_RECESS,'movingInnerEdgeAbsX':INNER_EDGE_X+HALF_GAP,'innerEdgeTransitionWidth':.04},
             'lowerPans':pans,'openPaintOrientation':paint_orientation,
@@ -528,5 +562,5 @@ def build_layered_wing_joint(ctx):
             'oldPivotBlender':list(kinematics.REFERENCE_PIVOT),'newRightPivotBlender':list(kinematics.pivot_position(1)),
             'wingAnchorCruiseBlender':list(kinematics.WING_ANCHOR_CRUISE),'braceLength':kinematics.brace_length(1),
             'sliderTravel':[kinematics.slider_at(0),kinematics.slider_at(1)],'rebasedDirectChildren':rebased,'translatedFixedAxisNodes':moved,'closedWingSolids':rows,'sweptUpperRelief':{str(side):data for side,data in _MOVING_ENVELOPES.items()},
-            'cruiseOuterAssemblyPreserved':True,'fullStrokeRequiresNewCollisionEvidence':True,
+            'cruiseOuterAssemblyPreserved':True,'cruiseOuterAssemblyPreservedScope':'仅layeredWingJoint本构造步骤前后；最终动力节点再按nacelleLayout成组位移','fullStrokeRequiresNewCollisionEvidence':True,
             'claimBoundary':'有限样本概念机构；不证明连续碰撞、制造公差、强度或适航'}

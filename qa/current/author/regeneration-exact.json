@@ -7,8 +7,8 @@
         "assets/blender/xp4-source.glb",
         "qa/regenerated/assets/blender/xp4-source.glb"
       ],
-      "sourceSha256": "82ca7f6f9e98cb11737da6f1cb8b1507f71baf0ffcb57734b9beb7bb23e70126",
-      "regeneratedSha256": "dda50afb4487d68ae7af7528bcb173bbc07692bce80709cd8d0b9647e029430f",
+      "sourceSha256": "801b02ca6b12c326a04e0a1fe7741a99f168c629384ae836f490f7779428570e",
+      "regeneratedSha256": "90b3ff42fe5cc807bc0383feccded8522346d29a24559ec67dcbdb8e98e30786",
       "byteIdentical": false,
       "meshes": 283,
       "rawAttributeAndOrientedTriangleMultisetsExactlyEqual": true,
@@ -21,8 +21,8 @@
         "public/models/xp4.glb",
         "qa/regenerated/public/models/xp4.glb"
       ],
-      "sourceSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
-      "regeneratedSha256": "f3aed2257ef3ff118fb3344c76da4196422743913af10be04e4fbfe627e40175",
+      "sourceSha256": "062fd09dee64984221316ede5ba684f6c1b6ff4f7b7ee2a0bd818a8888fd6f43",
+      "regeneratedSha256": "565f5bb8b0cc5382dcf9157d634115faa3021b3c7d42f9cdcccdf6072eedf286",
       "byteIdentical": false,
       "meshes": 283,
       "rawAttributeAndOrientedTriangleMultisetsExactlyEqual": true,

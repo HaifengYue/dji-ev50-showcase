@@ -1,6 +1,15 @@
 {
   "passed": true,
-  "checks": 67,
+  "checks": 112,
+  "coordinateChecks": 67,
+  "additionalMaterial": {
+    "passed": true,
+    "checks": 45,
+    "noModelsLoaded": true,
+    "newFiniteMaterialInterfaces": 4,
+    "unchangedExistingMaterialThresholds": true,
+    "formalNewSupportMeasurementsRequired": true
+  },
   "noModelsLoaded": true,
   "formalCurrentSupportReportStillRequired": true
 }

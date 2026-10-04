@@ -2,7 +2,7 @@
 import math
 from mathutils import Vector, Quaternion, Matrix
 REFERENCE_PIVOT = (1.35, -1.30, -.22)
-PIVOT_X, PIVOT_Y, PIVOT_Z = 1.50, -1.47, -.22
+PIVOT_X, PIVOT_Y, PIVOT_Z = 1.50, -1.47, -.191
 WING_ANCHOR_CRUISE = (1.12, -1.14, -.16545563208944739)
 _AUTHORING_REFERENCE = False
 

@@ -1,6 +1,6 @@
 {
   passed: true,
-  fullPanSchema: { passed: true, checks: 24, noAssetScan: true },
+  fullPanSchema: { passed: true, checks: 26, noAssetScan: true },
   checks: [
     'finite facing gap',
     'interpenetration rejection',
@@ -51,6 +51,12 @@
     'minimum seat radius preserved',
     'nonfinite and omitted seat intersections rejected',
     'whole circle remains inside independently justified ROOT_LOFT datum span',
-    'ray parameters agree with actual vertical endpoint geometry'
+    'ray parameters agree with actual vertical endpoint geometry',
+    'retained wing midpoint independently confirmed after hinge lift',
+    'new axis cannot masquerade as original midplane',
+    'missing rebase rejected',
+    'actually shifted wing material rejected',
+    'nonfinite datum skins rejected',
+    'datum encoding tolerance cannot widen'
   ]
 }

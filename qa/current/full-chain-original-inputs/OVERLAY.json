@@ -1,0 +1,32 @@
+{
+  "createdUtc": "2026-10-04T20:32:32.911399+00:00",
+  "purpose": "Original full65/290 frozen verifier bytes retained before a source-only indexed-material assertion hardening. All other original frozen files remain at their original project paths. The patched verifier is validated by a separate targeted supplement, not represented as a full65 rerun.",
+  "sourceSha256": "801b02ca6b12c326a04e0a1fe7741a99f168c629384ae836f490f7779428570e",
+  "runtimeSha256": "062fd09dee64984221316ede5ba684f6c1b6ff4f7b7ee2a0bd818a8888fd6f43",
+  "fullRunSummaryPath": "qa/current/results/summary.json",
+  "fullRunSummarySha256": "ca6e655c67a25366ad7ce50f7b9c4023f54bbca5e28994abc898dfc8005c79d2",
+  "fullRunInputLockPath": "qa/current/results/input-lock.json",
+  "fullRunInputLockSha256": "c348ce4a6a2afe8f0d04bfda82013293d9f0e553bbf1ea43a39a45e99dd8415d",
+  "overlays": [
+    {
+      "path": "qa/nacelle/host-decoration-preservation.mts",
+      "storedPath": "qa/current/full-chain-original-inputs/qa/nacelle/host-decoration-preservation.mts",
+      "sha256": "f9f2132983120f2c32f5d65ff17ce3bd98c6f70e2ef38baa2ec1cf78e1958281"
+    },
+    {
+      "path": "qa/nacelle/powertrain-identity.selftest.mts",
+      "storedPath": "qa/current/full-chain-original-inputs/qa/nacelle/powertrain-identity.selftest.mts",
+      "sha256": "aa6a91370a0c630ba7ac61531b59edaca5e2c8439836c5d83d728d92959c2099"
+    },
+    {
+      "path": "qa/current/summarize.mjs",
+      "storedPath": "qa/current/full-chain-original-inputs/qa/current/summarize.mjs",
+      "sha256": "c519ee497ca6d33a835f680d80008468961a7a01bb3f121f87a076679e7a39f4"
+    },
+    {
+      "path": "qa/reference/code-migration.json",
+      "storedPath": "qa/current/full-chain-original-inputs/qa/reference/code-migration.json",
+      "sha256": "0493c38dc5c892213289ed1f5ed556462ac5b2e5a0162a24e55de5a9fa2efa65"
+    }
+  ]
+}

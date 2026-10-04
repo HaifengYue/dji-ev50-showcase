@@ -1,7 +1,7 @@
 {
   passed: true,
   reports: [
-    { encoding: 'source', geometryChanges: 85, transforms: 108 },
-    { encoding: 'runtime', geometryChanges: 63, transforms: 150 }
+    { encoding: 'source', geometryChanges: 88, transforms: 153 },
+    { encoding: 'runtime', geometryChanges: 66, transforms: 165 }
   ]
 }

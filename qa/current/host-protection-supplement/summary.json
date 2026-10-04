@@ -1,0 +1,104 @@
+{
+  "passed": true,
+  "sourceSha256": "801b02ca6b12c326a04e0a1fe7741a99f168c629384ae836f490f7779428570e",
+  "runtimeSha256": "062fd09dee64984221316ede5ba684f6c1b6ff4f7b7ee2a0bd818a8888fd6f43",
+  "sourceBlendSha256": "93b87989cf4b19cd55236d13da99fa592b482429e77c9adf52ad9b36b0d6551d",
+  "fullChainRerunAfterHardening": false,
+  "originalFullRun": {
+    "summaryPath": "qa/current/results/summary.json",
+    "summarySha256": "ca6e655c67a25366ad7ce50f7b9c4023f54bbca5e28994abc898dfc8005c79d2",
+    "inputLockPath": "qa/current/results/input-lock.json",
+    "inputLockSha256": "c348ce4a6a2afe8f0d04bfda82013293d9f0e553bbf1ea43a39a45e99dd8415d",
+    "stages": 65,
+    "inputFiles": 290,
+    "allStagesPassed": true,
+    "originalInputReconstruction": "Use current project files except the four exact originals listed in the overlay",
+    "overlayPath": "qa/current/full-chain-original-inputs/OVERLAY.json"
+  },
+  "currentTargetedValidation": {
+    "stages": [
+      {
+        "name": "powertrain-identity-selftest",
+        "exitCode": 0
+      },
+      {
+        "name": "nacelle-placement",
+        "exitCode": 0
+      },
+      {
+        "name": "indexed-host-material",
+        "exitCode": 0
+      },
+      {
+        "name": "unused-points-regression",
+        "exitCode": 0
+      },
+      {
+        "name": "input-stability",
+        "exitCode": 0
+      }
+    ],
+    "inputLockPath": "qa/current/host-protection-supplement/input-lock.json",
+    "inputLockSha256": "21eaac5c824c4bd2124af6f744a080bf58fa96fc3ba46b734d168fe3c7bd8f0b",
+    "inputFiles": 431,
+    "inputStability": true,
+    "reports": {
+      "powertrain-identity-selftest": {
+        "path": "qa/current/host-protection-supplement/powertrain-identity-selftest-report.json",
+        "sha256": "a87c7d00f0cee8f64f9c683e579a972feae276c0148927c94bf7e196eca71896"
+      },
+      "nacelle-placement": {
+        "path": "qa/current/host-protection-supplement/nacelle-placement-report.json",
+        "sha256": "1d0f3cc8c7cfe9647262619c19a8d87f8ce72d3a588ee279aba6307cb71a447d"
+      },
+      "indexed-host-material": {
+        "path": "qa/current/host-protection-supplement/indexed-host-material-report.json",
+        "sha256": "0adeb1168d9b6df2e2351aa2c6e53b56c58b1e9af3df6bb681b6d01ee4a8ae5c"
+      },
+      "unused-points-regression": {
+        "path": "qa/current/host-protection-supplement/unused-points-regression-report.json",
+        "sha256": "a884d82d47dcc142b085c26aba37b69b71f79034a7f45edf7ef0dd5d534dda73"
+      }
+    }
+  },
+  "changedOriginalInputs": [
+    {
+      "path": "qa/current/summarize.mjs",
+      "originalSha256": "c519ee497ca6d33a835f680d80008468961a7a01bb3f121f87a076679e7a39f4",
+      "currentSha256": "fc562b109f7be8a5978bc026199d2de9354f5a31b2c79791db6899f39d0a3f46",
+      "originalBytes": "qa/current/full-chain-original-inputs/qa/current/summarize.mjs"
+    },
+    {
+      "path": "qa/nacelle/host-decoration-preservation.mts",
+      "originalSha256": "f9f2132983120f2c32f5d65ff17ce3bd98c6f70e2ef38baa2ec1cf78e1958281",
+      "currentSha256": "2839480d8bc23ec814612966837356da756447edbac199fbaa15f8b8d0a26410",
+      "originalBytes": "qa/current/full-chain-original-inputs/qa/nacelle/host-decoration-preservation.mts"
+    },
+    {
+      "path": "qa/nacelle/powertrain-identity.selftest.mts",
+      "originalSha256": "aa6a91370a0c630ba7ac61531b59edaca5e2c8439836c5d83d728d92959c2099",
+      "currentSha256": "9e64ba6a22a9d52288a497d4c2a654a6d79c749bc5a19ee8d69beffe67704f87",
+      "originalBytes": "qa/current/full-chain-original-inputs/qa/nacelle/powertrain-identity.selftest.mts"
+    },
+    {
+      "path": "qa/reference/code-migration.json",
+      "originalSha256": "0493c38dc5c892213289ed1f5ed556462ac5b2e5a0162a24e55de5a9fa2efa65",
+      "currentSha256": "9115286cbd4d2a29ba148fbde51dc45af8d4d22e3edf63f83633fd644081d268",
+      "originalBytes": "qa/current/full-chain-original-inputs/qa/reference/code-migration.json"
+    }
+  ],
+  "sourceIndexedProtection": {
+    "seams": 2,
+    "protectedOrientedTrianglesPerSeam": 88,
+    "originalExactIndexedPointsPerSeam": 48,
+    "newUnmovedBoundaryPointsPerSeam": 156,
+    "exactCornersPerSeam": 1192,
+    "unusedRawPositions": 0
+  },
+  "regressions": {
+    "originalHostCasesRetained": 19,
+    "newExactIndexedCases": 21,
+    "powertrainTopLevelChecks": 13
+  },
+  "claim": "The same final source/runtime/Blend completed the original frozen65-stage physical chain. Only the explicitly named source exact-indexed-material QA assertion and its tests/reporting were hardened afterwards; affected placement/selftest and independent actual-index/counterexample checks were rerun under this new lock. Unaffected SAT/physical stages were not represented as rerun under the patched verifier."
+}

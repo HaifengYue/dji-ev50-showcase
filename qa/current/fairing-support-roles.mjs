@@ -1,5 +1,6 @@
 /** Four explicitly authorized attachment-to-clearance changes; clearances never add support graph edges. */
 import assert from 'node:assert/strict';
+import {registeredAdditionalNacelleSupportIds} from './nacelle-support-additions.mjs';
 const clone=x=>JSON.parse(JSON.stringify(x)),sorted=x=>[...x].sort();
 export function fairingClearanceSpecifications(){
  return ['L','R'].flatMap(side=>['Fixed','Moving'].map(role=>{
@@ -18,7 +19,7 @@ export function assertFixedCoordinateOnly(before,after){
 export function reviewFairingSupportRoles(prior,current,wing){
  const old=new Map(prior.fixed.map(d=>[d.id,d])),next=new Map(current.fixed.map(d=>[d.id,d]));
  assert.equal(old.size,prior.fixed.length,'Duplicate previous fixed interface');assert.equal(next.size,current.fixed.length,'Duplicate current fixed interface');
- const removed=[...old.keys()].filter(id=>!next.has(id)),added=[...next.keys()].filter(id=>!old.has(id));assert.deepEqual(added,[],'No new material-support graph edges authorized');
+ const removed=[...old.keys()].filter(id=>!next.has(id)),added=[...next.keys()].filter(id=>!old.has(id));assert.deepEqual(sorted(added),registeredAdditionalNacelleSupportIds(prior,current,wing),'Only separately reviewed finite nacelle saddle material additions are allowed');
  const changes=wing.supportRoleChanges??[],clearances=current.clearances??[];
  if(!removed.length){assert.deepEqual(changes,[],'Role records without exact removed material interfaces');assert.deepEqual(clearances,[],'Clearance checks must replace the four explicit fairing material interfaces');return {retiredFixedMaterialInterfaceIds:[],newNonSupportingClearanceIds:[],requiredClearanceVerificationStage:null};}
  const specs=fairingClearanceSpecifications();
