@@ -1,34 +1,132 @@
 {
   "source": "assets/blender/xp4-source.glb",
-  "sha256": "14deba2a8cb20fb13c6cc05f8c4c09d441285b9754b014499942ad39992f7ce4",
+  "sha256": "82ca7f6f9e98cb11737da6f1cb8b1507f71baf0ffcb57734b9beb7bb23e70126",
   "passed": true,
   "stressPassed": true,
   "execution": "实际运行时模型经真实姿态函数驱动",
   "sampleCount": 521,
   "changedTargets": [
-    "Fuselage",
-    "Tail_boom_join",
+    "ActuatorSideSlot_L",
+    "ActuatorSideSlot_R",
+    "Blade_L_Front_A",
+    "Blade_L_Front_B",
+    "Blade_L_Rear_A",
+    "Blade_L_Rear_B",
+    "Blade_R_Front_A",
+    "Blade_R_Front_B",
+    "Blade_R_Rear_A",
+    "Blade_R_Rear_B",
+    "Blade_hinge_arm_L_Front_A",
+    "Blade_hinge_arm_L_Front_B",
+    "Blade_hinge_arm_L_Rear_A",
+    "Blade_hinge_arm_L_Rear_B",
+    "Blade_hinge_arm_R_Front_A",
+    "Blade_hinge_arm_R_Front_B",
+    "Blade_hinge_arm_R_Rear_A",
+    "Blade_hinge_arm_R_Rear_B",
+    "Blade_hinge_pin_L_Front_A",
+    "Blade_hinge_pin_L_Front_B",
+    "Blade_hinge_pin_L_Rear_A",
+    "Blade_hinge_pin_L_Rear_B",
+    "Blade_hinge_pin_R_Front_A",
+    "Blade_hinge_pin_R_Front_B",
+    "Blade_hinge_pin_R_Rear_A",
+    "Blade_hinge_pin_R_Rear_B",
+    "BraceBallPin_L_Body",
+    "BraceBallPin_L_Wing",
+    "BraceBallPin_R_Body",
+    "BraceBallPin_R_Wing",
+    "BraceBall_L_Body",
+    "BraceBall_L_Wing",
+    "BraceBall_R_Body",
+    "BraceBall_R_Wing",
     "BraceBodyCarriage_L",
     "BraceBodyCarriage_R",
+    "BraceRodEyeNeck_L_Body",
+    "BraceRodEyeNeck_L_Root",
+    "BraceRodEyeNeck_R_Body",
+    "BraceRodEyeNeck_R_Root",
+    "BraceRodEye_L_Body",
+    "BraceRodEye_L_Root",
+    "BraceRodEye_R_Body",
+    "BraceRodEye_R_Root",
+    "BraceRodFerrule_L_Body",
+    "BraceRodFerrule_L_Root",
+    "BraceRodFerrule_R_Body",
+    "BraceRodFerrule_R_Root",
+    "BraceRod_mesh_L",
+    "BraceRod_mesh_R",
+    "BraceWingSeat_L",
+    "BraceWingSeat_R",
+    "Composite_wing_L",
+    "Composite_wing_R",
+    "ControlFlexureFixed_L_Inboard",
+    "ControlFlexureFixed_L_Outboard",
+    "ControlFlexureFixed_R_Inboard",
+    "ControlFlexureFixed_R_Outboard",
+    "ControlFlexureMoving_L_Inboard",
+    "ControlFlexureMoving_L_Outboard",
+    "ControlFlexureMoving_R_Inboard",
+    "ControlFlexureMoving_R_Outboard",
+    "ControlHingeFixed_L_Inboard",
+    "ControlHingeFixed_L_Outboard",
+    "ControlHingeFixed_R_Inboard",
+    "ControlHingeFixed_R_Outboard",
+    "ControlHingeMoving_L_Inboard",
+    "ControlHingeMoving_L_Outboard",
+    "ControlHingeMoving_R_Inboard",
+    "ControlHingeMoving_R_Outboard",
+    "ControlHorn_L_Inboard",
+    "ControlHorn_L_Outboard",
+    "ControlHorn_R_Inboard",
+    "ControlHorn_R_Outboard",
+    "ControlSurface_L_Inboard",
+    "ControlSurface_L_Outboard",
+    "ControlSurface_R_Inboard",
+    "ControlSurface_R_Outboard",
+    "Cowl_boundary_L_Front",
+    "Cowl_boundary_L_Rear",
+    "Cowl_boundary_R_Front",
+    "Cowl_boundary_R_Rear",
+    "Drive_CouplingWitness",
     "Drive_Crossbeam",
+    "Drive_FrontFoot_L",
+    "Drive_FrontFoot_R",
+    "Drive_FrontGuidePedestal_L",
+    "Drive_FrontGuidePedestal_R",
+    "Drive_FrontGuideSeat_L",
+    "Drive_FrontGuideSeat_R",
+    "Drive_FrontScrewBearing",
+    "Drive_FrontScrewPedestal",
+    "Drive_FrontSupport",
+    "Drive_FrontTravelStop_L",
+    "Drive_FrontTravelStop_R",
     "Drive_GuideBridge_L",
     "Drive_GuideBridge_R",
     "Drive_GuideBushing_L",
     "Drive_GuideBushing_R",
-    "Drive_NutCarriage",
-    "Drive_NutInternalThread",
-    "Drive_OutputWeb",
-    "ActuatorSideSlot_L",
-    "ActuatorSideSlot_R",
-    "Lower_fuselage_join",
-    "Lower_fuselage_join001",
-    "Lower_fuselage_join002",
-    "Lower_fuselage_join003",
-    "Drive_CouplingWitness",
+    "Drive_GuideRail_L",
+    "Drive_GuideRail_R",
     "Drive_LeadScrewCore",
     "Drive_LeadScrewThread",
+    "Drive_MotorFoot_L",
+    "Drive_MotorFoot_R",
+    "Drive_MotorGearboxAdapter",
+    "Drive_MotorHousing",
+    "Drive_MotorMount",
+    "Drive_MotorRotorDisc",
+    "Drive_MotorSaddle_L",
+    "Drive_MotorSaddle_R",
+    "Drive_MotorShaft",
+    "Drive_MotorWitness",
+    "Drive_NutCarriage",
+    "Drive_NutInternalThread",
     "Drive_OutputCoupling",
+    "Drive_OutputWeb",
     "Drive_PlanetCarrier",
+    "Drive_PlanetGear_0",
+    "Drive_PlanetGear_1",
+    "Drive_PlanetGear_2",
     "Drive_PlanetPin_0",
     "Drive_PlanetPin_1",
     "Drive_PlanetPin_2",
@@ -38,47 +136,4457 @@
     "Drive_PlanetRetainer_1_Rear",
     "Drive_PlanetRetainer_2_Front",
     "Drive_PlanetRetainer_2_Rear",
+    "Drive_RearFoot_L",
+    "Drive_RearFoot_R",
+    "Drive_RearGuidePedestal_L",
+    "Drive_RearGuidePedestal_R",
+    "Drive_RearGuideSeat_L",
+    "Drive_RearGuideSeat_R",
+    "Drive_RearScrewBearing",
+    "Drive_RearScrewPedestal",
+    "Drive_RearSupport",
+    "Drive_RearTravelStop_L",
+    "Drive_RearTravelStop_R",
+    "Drive_ReductionHousing",
+    "Drive_RingGear",
+    "Drive_SunGear",
+    "Fixed_root_L",
+    "Fixed_root_R",
+    "Fixed_root_blue_L",
+    "Fixed_root_blue_R",
+    "Fuselage",
+    "Landing_wear_tip_L_Front",
+    "Landing_wear_tip_L_Rear",
+    "Landing_wear_tip_R_Front",
+    "Landing_wear_tip_R_Rear",
+    "Lower_fuselage_join",
+    "Lower_fuselage_join001",
+    "Lower_fuselage_join002",
+    "Lower_fuselage_join003",
+    "MotorFrontBearing_L_Front",
+    "MotorFrontBearing_L_Rear",
+    "MotorFrontBearing_R_Front",
+    "MotorFrontBearing_R_Rear",
+    "Motor_cowl_L_Front",
+    "Motor_cowl_L_Rear",
+    "Motor_cowl_R_Front",
+    "Motor_cowl_R_Rear",
+    "Motor_spindle_L_Front",
+    "Motor_spindle_L_Rear",
+    "Motor_spindle_R_Front",
+    "Motor_spindle_R_Rear",
+    "Nacelle_L_Front",
+    "Nacelle_L_Rear",
+    "Nacelle_R_Front",
+    "Nacelle_R_Rear",
+    "Pod_U_access_panel_L_Front",
+    "Pod_U_access_panel_L_Front001",
+    "Pod_U_access_panel_L_Rear",
+    "Pod_U_access_panel_L_Rear001",
+    "Pod_U_access_panel_R_Front",
+    "Pod_U_access_panel_R_Front001",
+    "Pod_U_access_panel_R_Rear",
+    "Pod_U_access_panel_R_Rear001",
+    "Pod_mount_seam_L_Front",
+    "Pod_mount_seam_L_Front001",
+    "Pod_mount_seam_L_Rear",
+    "Pod_mount_seam_L_Rear001",
+    "Pod_mount_seam_R_Front",
+    "Pod_mount_seam_R_Front001",
+    "Pod_mount_seam_R_Rear",
+    "Pod_mount_seam_R_Rear001",
+    "Pod_wing_saddle_L_Front",
+    "Pod_wing_saddle_L_Rear",
+    "Pod_wing_saddle_R_Front",
+    "Pod_wing_saddle_R_Rear",
+    "RootBearingFixed_L_Front",
+    "RootBearingFixed_L_Rear",
+    "RootBearingFixed_R_Front",
+    "RootBearingFixed_R_Rear",
+    "RootBearingHousing_L",
+    "RootBearingHousing_R",
+    "RootBearingSeal_L_Front",
+    "RootBearingSeal_L_Rear",
+    "RootBearingSeal_R_Front",
+    "RootBearingSeal_R_Rear",
+    "RootCarrierBridge_L",
+    "RootCarrierBridge_R",
+    "RootCarrierMoving_L",
+    "RootCarrierMoving_R",
+    "RootCarrierThrust_L",
+    "RootCarrierThrust_R",
+    "RootFairingFixed_L",
+    "RootFairingFixed_R",
+    "RootFairingMoving_L",
+    "RootFairingMoving_R",
+    "RootFixedBearingPedestal_L",
+    "RootFixedBearingPedestal_R",
+    "RootHingeEndcap_L-0148",
+    "RootHingeEndcap_L0148",
+    "RootHingeEndcap_R-0148",
+    "RootHingeEndcap_R0148",
+    "RootHingeShaft_L",
+    "RootHingeShaft_R",
+    "Spinner_L_Front",
+    "Spinner_L_Rear",
+    "Spinner_R_Front",
+    "Spinner_R_Rear",
+    "Tail_boom_join",
+    "Wing_blue_angular_panel_L",
+    "Wing_blue_angular_panel_R",
+    "Wing_blue_leading_L",
+    "Wing_blue_leading_R",
+    "Wing_service_panel_L",
+    "Wing_service_panel_L001",
+    "Wing_service_panel_R",
+    "Wing_service_panel_R001"
+  ],
+  "actualBodyTargets": [
+    "ActuatorSideSlot_L",
+    "ActuatorSideSlot_R",
+    "BraceBallPin_L_Body",
+    "BraceBallPin_L_Wing",
+    "BraceBallPin_R_Body",
+    "BraceBallPin_R_Wing",
+    "BraceBall_L_Body",
+    "BraceBall_L_Wing",
+    "BraceBall_R_Body",
+    "BraceBall_R_Wing",
+    "BraceBodyCarriage_L",
+    "BraceBodyCarriage_R",
+    "BraceRodEyeNeck_L_Body",
+    "BraceRodEyeNeck_L_Root",
+    "BraceRodEyeNeck_R_Body",
+    "BraceRodEyeNeck_R_Root",
+    "BraceRodEye_L_Body",
+    "BraceRodEye_L_Root",
+    "BraceRodEye_R_Body",
+    "BraceRodEye_R_Root",
+    "BraceRodFerrule_L_Body",
+    "BraceRodFerrule_L_Root",
+    "BraceRodFerrule_R_Body",
+    "BraceRodFerrule_R_Root",
+    "BraceRod_mesh_L",
+    "BraceRod_mesh_R",
+    "BraceWingSeat_L",
+    "BraceWingSeat_R",
+    "CargoHingeCap_L",
+    "CargoHingeCap_R",
+    "CargoHingeFixedSeat",
+    "CargoHingeMovingSeat_L",
+    "CargoHingeMovingSeat_R",
+    "CargoHingePin",
+    "CargoHoodShell",
+    "CargoLatchFixed_L",
+    "CargoLatchFixed_R",
+    "CargoLatchMoving_L",
+    "CargoLatchMoving_R",
+    "CargoLatchPin_L",
+    "CargoLatchPin_R",
+    "CargoOpeningLip",
+    "Composite_wing_L",
+    "Composite_wing_R",
+    "ControlFlexureFixed_L_Inboard",
+    "ControlFlexureFixed_L_Outboard",
+    "ControlFlexureFixed_R_Inboard",
+    "ControlFlexureFixed_R_Outboard",
+    "ControlFlexureFixed_Tail_L",
+    "ControlFlexureFixed_Tail_R",
+    "ControlFlexureMoving_L_Inboard",
+    "ControlFlexureMoving_L_Outboard",
+    "ControlFlexureMoving_R_Inboard",
+    "ControlFlexureMoving_R_Outboard",
+    "ControlFlexureMoving_Tail_L",
+    "ControlFlexureMoving_Tail_R",
+    "ControlHingeFixed_L_Inboard",
+    "ControlHingeFixed_L_Outboard",
+    "ControlHingeFixed_R_Inboard",
+    "ControlHingeFixed_R_Outboard",
+    "ControlHingeFixed_Tail_L",
+    "ControlHingeFixed_Tail_R",
+    "ControlHingeMoving_L_Inboard",
+    "ControlHingeMoving_L_Outboard",
+    "ControlHingeMoving_R_Inboard",
+    "ControlHingeMoving_R_Outboard",
+    "ControlHingeMoving_Tail_L",
+    "ControlHingeMoving_Tail_R",
+    "ControlHorn_L_Inboard",
+    "ControlHorn_L_Outboard",
+    "ControlHorn_R_Inboard",
+    "ControlHorn_R_Outboard",
+    "ControlSurface_L_Inboard",
+    "ControlSurface_L_Outboard",
+    "ControlSurface_R_Inboard",
+    "ControlSurface_R_Outboard",
+    "ControlSurface_Tail_L",
+    "ControlSurface_Tail_R",
+    "Cowl_boundary_L_Front",
+    "Cowl_boundary_L_Rear",
+    "Cowl_boundary_R_Front",
+    "Cowl_boundary_R_Rear",
+    "Dorsal_antenna",
+    "Dorsal_hatch_main",
+    "Dorsal_small_receiver",
+    "Drive_CouplingWitness",
+    "Drive_Crossbeam",
+    "Drive_FrontFoot_L",
+    "Drive_FrontFoot_R",
+    "Drive_FrontGuidePedestal_L",
+    "Drive_FrontGuidePedestal_R",
+    "Drive_FrontGuideSeat_L",
+    "Drive_FrontGuideSeat_R",
+    "Drive_FrontScrewBearing",
+    "Drive_FrontScrewPedestal",
+    "Drive_FrontSupport",
+    "Drive_FrontTravelStop_L",
+    "Drive_FrontTravelStop_R",
+    "Drive_GuideBridge_L",
+    "Drive_GuideBridge_R",
+    "Drive_GuideBushing_L",
+    "Drive_GuideBushing_R",
+    "Drive_GuideRail_L",
+    "Drive_GuideRail_R",
+    "Drive_LeadScrewCore",
+    "Drive_LeadScrewThread",
+    "Drive_MotorFoot_L",
+    "Drive_MotorFoot_R",
+    "Drive_MotorGearboxAdapter",
+    "Drive_MotorHousing",
+    "Drive_MotorMount",
+    "Drive_MotorRotorDisc",
+    "Drive_MotorSaddle_L",
+    "Drive_MotorSaddle_R",
+    "Drive_MotorShaft",
+    "Drive_MotorWitness",
+    "Drive_NutCarriage",
+    "Drive_NutInternalThread",
+    "Drive_OutputCoupling",
+    "Drive_OutputWeb",
+    "Drive_PlanetCarrier",
     "Drive_PlanetGear_0",
     "Drive_PlanetGear_1",
     "Drive_PlanetGear_2",
-    "Drive_MotorRotorDisc",
-    "Drive_MotorShaft",
-    "Drive_MotorWitness",
-    "Drive_SunGear",
-    "Drive_MotorHousing",
-    "Drive_ReductionHousing",
-    "Drive_MotorGearboxAdapter",
-    "Drive_RingGear",
-    "Drive_MotorMount",
-    "Drive_MotorSaddle_L",
-    "Drive_MotorSaddle_R",
-    "Drive_FrontSupport",
-    "Drive_FrontScrewPedestal",
-    "Drive_FrontScrewBearing",
-    "Drive_FrontGuidePedestal_L",
-    "Drive_FrontGuideSeat_L",
-    "Drive_FrontGuidePedestal_R",
-    "Drive_FrontGuideSeat_R",
-    "Drive_RearSupport",
-    "Drive_RearScrewPedestal",
-    "Drive_RearScrewBearing",
-    "Drive_RearGuidePedestal_L",
-    "Drive_RearGuideSeat_L",
-    "Drive_RearGuidePedestal_R",
-    "Drive_RearGuideSeat_R",
-    "Drive_GuideRail_L",
-    "Drive_GuideRail_R",
-    "Drive_FrontFoot_L",
-    "Drive_FrontFoot_R",
+    "Drive_PlanetPin_0",
+    "Drive_PlanetPin_1",
+    "Drive_PlanetPin_2",
+    "Drive_PlanetRetainer_0_Front",
+    "Drive_PlanetRetainer_0_Rear",
+    "Drive_PlanetRetainer_1_Front",
+    "Drive_PlanetRetainer_1_Rear",
+    "Drive_PlanetRetainer_2_Front",
+    "Drive_PlanetRetainer_2_Rear",
     "Drive_RearFoot_L",
     "Drive_RearFoot_R",
-    "Drive_MotorFoot_L",
-    "Drive_MotorFoot_R",
-    "Drive_FrontTravelStop_L",
-    "Drive_FrontTravelStop_R",
+    "Drive_RearGuidePedestal_L",
+    "Drive_RearGuidePedestal_R",
+    "Drive_RearGuideSeat_L",
+    "Drive_RearGuideSeat_R",
+    "Drive_RearScrewBearing",
+    "Drive_RearScrewPedestal",
+    "Drive_RearSupport",
     "Drive_RearTravelStop_L",
-    "Drive_RearTravelStop_R"
+    "Drive_RearTravelStop_R",
+    "Drive_ReductionHousing",
+    "Drive_RingGear",
+    "Drive_SunGear",
+    "Fixed_root_L",
+    "Fixed_root_R",
+    "Fixed_root_blue_L",
+    "Fixed_root_blue_R",
+    "Fuselage",
+    "Hatch_fastener_main",
+    "Hatch_fastener_main001",
+    "Hatch_fastener_main002",
+    "Hatch_fastener_main003",
+    "Landing_wear_tip_L_Front",
+    "Landing_wear_tip_L_Rear",
+    "Landing_wear_tip_R_Front",
+    "Landing_wear_tip_R_Rear",
+    "Lower_fuselage_join",
+    "Lower_fuselage_join001",
+    "Lower_fuselage_join002",
+    "Lower_fuselage_join003",
+    "MotorFrontBearing_L_Front",
+    "MotorFrontBearing_L_Rear",
+    "MotorFrontBearing_R_Front",
+    "MotorFrontBearing_R_Rear",
+    "Motor_cowl_L_Front",
+    "Motor_cowl_L_Rear",
+    "Motor_cowl_R_Front",
+    "Motor_cowl_R_Rear",
+    "Motor_spindle_L_Front",
+    "Motor_spindle_L_Rear",
+    "Motor_spindle_R_Front",
+    "Motor_spindle_R_Rear",
+    "Nacelle_L_Front",
+    "Nacelle_L_Rear",
+    "Nacelle_R_Front",
+    "Nacelle_R_Rear",
+    "Pitot_probe_foot",
+    "Pitot_probe_mount",
+    "Pitot_probe_tube",
+    "Pod_U_access_panel_L_Front",
+    "Pod_U_access_panel_L_Front001",
+    "Pod_U_access_panel_L_Rear",
+    "Pod_U_access_panel_L_Rear001",
+    "Pod_U_access_panel_R_Front",
+    "Pod_U_access_panel_R_Front001",
+    "Pod_U_access_panel_R_Rear",
+    "Pod_U_access_panel_R_Rear001",
+    "Pod_mount_seam_L_Front",
+    "Pod_mount_seam_L_Front001",
+    "Pod_mount_seam_L_Rear",
+    "Pod_mount_seam_L_Rear001",
+    "Pod_mount_seam_R_Front",
+    "Pod_mount_seam_R_Front001",
+    "Pod_mount_seam_R_Rear",
+    "Pod_mount_seam_R_Rear001",
+    "Pod_wing_saddle_L_Front",
+    "Pod_wing_saddle_L_Rear",
+    "Pod_wing_saddle_R_Front",
+    "Pod_wing_saddle_R_Rear",
+    "RootBearingFixed_L_Front",
+    "RootBearingFixed_L_Rear",
+    "RootBearingFixed_R_Front",
+    "RootBearingFixed_R_Rear",
+    "RootBearingHousing_L",
+    "RootBearingHousing_R",
+    "RootBearingSeal_L_Front",
+    "RootBearingSeal_L_Rear",
+    "RootBearingSeal_R_Front",
+    "RootBearingSeal_R_Rear",
+    "RootCarrierBridge_L",
+    "RootCarrierBridge_R",
+    "RootCarrierMoving_L",
+    "RootCarrierMoving_R",
+    "RootCarrierThrust_L",
+    "RootCarrierThrust_R",
+    "RootFairingFixed_L",
+    "RootFairingFixed_R",
+    "RootFairingMoving_L",
+    "RootFairingMoving_R",
+    "RootFixedBearingPedestal_L",
+    "RootFixedBearingPedestal_R",
+    "RootHingeEndcap_L-0148",
+    "RootHingeEndcap_L0148",
+    "RootHingeEndcap_R-0148",
+    "RootHingeEndcap_R0148",
+    "RootHingeShaft_L",
+    "RootHingeShaft_R",
+    "Root_access_cover_L",
+    "Root_access_cover_R",
+    "Tail_boom_join",
+    "Tail_receiver",
+    "Tail_root_fastener_L",
+    "Tail_root_fastener_L001",
+    "Tail_root_fastener_R",
+    "Tail_root_fastener_R001",
+    "V_tail_L",
+    "V_tail_R",
+    "V_tail_blue_leading_L",
+    "V_tail_blue_leading_R",
+    "Ventral_antenna",
+    "Ventral_antenna001",
+    "Ventral_small_sensor",
+    "Ventral_tail_tab",
+    "Wing_blue_angular_panel_L",
+    "Wing_blue_angular_panel_R",
+    "Wing_blue_leading_L",
+    "Wing_blue_leading_R",
+    "Wing_service_panel_L",
+    "Wing_service_panel_L001",
+    "Wing_service_panel_R",
+    "Wing_service_panel_R001"
   ],
+  "changedRotors": [
+    "Prop_L_Front",
+    "Prop_L_Rear",
+    "Prop_R_Front",
+    "Prop_R_Rear"
+  ],
+  "rerunRotorBodyPairs": [
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Fuselage"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Dorsal_hatch_main"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Hatch_fastener_main"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Hatch_fastener_main001"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Hatch_fastener_main002"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Hatch_fastener_main003"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Tail_boom_join"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Dorsal_small_receiver"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Tail_receiver"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Dorsal_antenna"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Ventral_antenna"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Ventral_antenna001"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Ventral_small_sensor"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Ventral_tail_tab"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "BraceBall_L_Body"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "BraceBall_R_Body"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "BraceBallPin_L_Body"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "BraceBallPin_R_Body"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "BraceBodyCarriage_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "BraceBodyCarriage_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_Crossbeam"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_GuideBridge_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_GuideBridge_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_GuideBushing_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_GuideBushing_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_NutCarriage"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_NutInternalThread"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_OutputWeb"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "ActuatorSideSlot_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "ActuatorSideSlot_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Lower_fuselage_join"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Lower_fuselage_join001"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Lower_fuselage_join002"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Lower_fuselage_join003"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "V_tail_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "V_tail_blue_leading_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Tail_root_fastener_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Tail_root_fastener_L001"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Fixed_root_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Fixed_root_blue_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "BraceBall_L_Wing"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "BraceBallPin_L_Wing"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "BraceWingSeat_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Composite_wing_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "ControlFlexureFixed_L_Inboard"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "ControlFlexureFixed_L_Outboard"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "ControlHingeFixed_L_Inboard"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "ControlHingeFixed_L_Outboard"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "ControlFlexureMoving_L_Inboard"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "ControlHingeMoving_L_Inboard"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "ControlHorn_L_Inboard"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "ControlSurface_L_Inboard"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "ControlFlexureMoving_L_Outboard"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "ControlHingeMoving_L_Outboard"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "ControlHorn_L_Outboard"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "ControlSurface_L_Outboard"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Cowl_boundary_L_Front"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Cowl_boundary_L_Rear"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Landing_wear_tip_L_Front"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Landing_wear_tip_L_Rear"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Motor_cowl_L_Front"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Motor_cowl_L_Rear"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Motor_spindle_L_Front"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Motor_spindle_L_Rear"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "MotorFrontBearing_L_Front"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "MotorFrontBearing_L_Rear"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Nacelle_L_Front"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Nacelle_L_Rear"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Pod_mount_seam_L_Front"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Pod_mount_seam_L_Front001"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Pod_mount_seam_L_Rear"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Pod_mount_seam_L_Rear001"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Pod_U_access_panel_L_Front"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Pod_U_access_panel_L_Front001"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Pod_U_access_panel_L_Rear"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Pod_U_access_panel_L_Rear001"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Pod_wing_saddle_L_Front"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Pod_wing_saddle_L_Rear"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "RootCarrierBridge_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "RootCarrierMoving_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "RootCarrierThrust_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "RootFairingMoving_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Wing_blue_angular_panel_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Wing_blue_leading_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Wing_service_panel_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Wing_service_panel_L001"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "RootHingeShaft_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "RootBearingFixed_L_Front"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "RootBearingSeal_L_Front"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "RootBearingFixed_L_Rear"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "RootBearingSeal_L_Rear"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "RootFixedBearingPedestal_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Root_access_cover_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "RootHingeEndcap_L-0148"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "RootHingeEndcap_L0148"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "BraceRod_mesh_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "BraceRodEye_L_Body"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "BraceRodEye_L_Root"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "BraceRodEyeNeck_L_Body"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "BraceRodEyeNeck_L_Root"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "BraceRodFerrule_L_Body"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "BraceRodFerrule_L_Root"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "V_tail_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "V_tail_blue_leading_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Tail_root_fastener_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Tail_root_fastener_R001"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Fixed_root_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Fixed_root_blue_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "BraceBall_R_Wing"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "BraceBallPin_R_Wing"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "BraceWingSeat_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Composite_wing_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "ControlFlexureFixed_R_Inboard"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "ControlFlexureFixed_R_Outboard"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "ControlHingeFixed_R_Inboard"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "ControlHingeFixed_R_Outboard"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "ControlFlexureMoving_R_Inboard"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "ControlHingeMoving_R_Inboard"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "ControlHorn_R_Inboard"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "ControlSurface_R_Inboard"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "ControlFlexureMoving_R_Outboard"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "ControlHingeMoving_R_Outboard"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "ControlHorn_R_Outboard"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "ControlSurface_R_Outboard"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Cowl_boundary_R_Front"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Cowl_boundary_R_Rear"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Landing_wear_tip_R_Front"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Landing_wear_tip_R_Rear"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Motor_cowl_R_Front"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Motor_cowl_R_Rear"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Motor_spindle_R_Front"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Motor_spindle_R_Rear"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "MotorFrontBearing_R_Front"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "MotorFrontBearing_R_Rear"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Nacelle_R_Front"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Nacelle_R_Rear"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Pod_mount_seam_R_Front"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Pod_mount_seam_R_Front001"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Pod_mount_seam_R_Rear"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Pod_mount_seam_R_Rear001"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Pod_U_access_panel_R_Front"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Pod_U_access_panel_R_Front001"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Pod_U_access_panel_R_Rear"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Pod_U_access_panel_R_Rear001"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Pod_wing_saddle_R_Front"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Pod_wing_saddle_R_Rear"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "RootCarrierBridge_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "RootCarrierMoving_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "RootCarrierThrust_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "RootFairingMoving_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Wing_blue_angular_panel_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Wing_blue_leading_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Wing_service_panel_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Wing_service_panel_R001"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "RootHingeShaft_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "RootBearingFixed_R_Front"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "RootBearingSeal_R_Front"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "RootBearingFixed_R_Rear"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "RootBearingSeal_R_Rear"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "RootFixedBearingPedestal_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Root_access_cover_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "RootHingeEndcap_R-0148"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "RootHingeEndcap_R0148"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "BraceRod_mesh_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "BraceRodEye_R_Body"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "BraceRodEye_R_Root"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "BraceRodEyeNeck_R_Body"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "BraceRodEyeNeck_R_Root"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "BraceRodFerrule_R_Body"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "BraceRodFerrule_R_Root"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "ControlFlexureMoving_Tail_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "ControlHingeMoving_Tail_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "ControlSurface_Tail_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "ControlFlexureFixed_Tail_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "ControlFlexureMoving_Tail_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "ControlHingeMoving_Tail_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "ControlSurface_Tail_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "ControlFlexureFixed_Tail_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "CargoHingeMovingSeat_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "CargoHingeMovingSeat_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "CargoHoodShell"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "CargoLatchMoving_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "CargoLatchMoving_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "CargoOpeningLip"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "CargoLatchFixed_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "CargoLatchPin_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "CargoLatchFixed_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "CargoLatchPin_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Pitot_probe_foot"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Pitot_probe_mount"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Pitot_probe_tube"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_CouplingWitness"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_LeadScrewCore"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_LeadScrewThread"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_OutputCoupling"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_PlanetCarrier"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_PlanetPin_0"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_PlanetPin_1"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_PlanetPin_2"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_PlanetRetainer_0_Front"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_PlanetRetainer_0_Rear"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_PlanetRetainer_1_Front"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_PlanetRetainer_1_Rear"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_PlanetRetainer_2_Front"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_PlanetRetainer_2_Rear"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_PlanetGear_0"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_PlanetGear_1"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_PlanetGear_2"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_MotorRotorDisc"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_MotorShaft"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_MotorWitness"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_SunGear"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_MotorHousing"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_ReductionHousing"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_MotorGearboxAdapter"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_RingGear"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_MotorMount"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_MotorSaddle_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_MotorSaddle_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_FrontSupport"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_FrontScrewPedestal"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_FrontScrewBearing"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_FrontGuidePedestal_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_FrontGuideSeat_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_FrontGuidePedestal_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_FrontGuideSeat_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_RearSupport"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_RearScrewPedestal"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_RearScrewBearing"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_RearGuidePedestal_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_RearGuideSeat_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_RearGuidePedestal_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_RearGuideSeat_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_GuideRail_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_GuideRail_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_FrontFoot_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_FrontFoot_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_RearFoot_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_RearFoot_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_MotorFoot_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_MotorFoot_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_FrontTravelStop_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_FrontTravelStop_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_RearTravelStop_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "Drive_RearTravelStop_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "RootBearingHousing_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "RootBearingHousing_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "CargoHingeFixedSeat"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "CargoHingePin"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "CargoHingeCap_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "CargoHingeCap_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "ControlHingeFixed_Tail_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "ControlHingeFixed_Tail_R"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "RootFairingFixed_L"
+    },
+    {
+      "rotor": "Prop_L_Front",
+      "mesh": "RootFairingFixed_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Fuselage"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Dorsal_hatch_main"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Hatch_fastener_main"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Hatch_fastener_main001"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Hatch_fastener_main002"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Hatch_fastener_main003"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Tail_boom_join"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Dorsal_small_receiver"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Tail_receiver"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Dorsal_antenna"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Ventral_antenna"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Ventral_antenna001"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Ventral_small_sensor"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Ventral_tail_tab"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "BraceBall_L_Body"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "BraceBall_R_Body"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "BraceBallPin_L_Body"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "BraceBallPin_R_Body"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "BraceBodyCarriage_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "BraceBodyCarriage_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_Crossbeam"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_GuideBridge_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_GuideBridge_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_GuideBushing_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_GuideBushing_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_NutCarriage"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_NutInternalThread"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_OutputWeb"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "ActuatorSideSlot_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "ActuatorSideSlot_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Lower_fuselage_join"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Lower_fuselage_join001"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Lower_fuselage_join002"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Lower_fuselage_join003"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "V_tail_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "V_tail_blue_leading_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Tail_root_fastener_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Tail_root_fastener_L001"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Fixed_root_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Fixed_root_blue_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "BraceBall_L_Wing"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "BraceBallPin_L_Wing"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "BraceWingSeat_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Composite_wing_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "ControlFlexureFixed_L_Inboard"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "ControlFlexureFixed_L_Outboard"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "ControlHingeFixed_L_Inboard"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "ControlHingeFixed_L_Outboard"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "ControlFlexureMoving_L_Inboard"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "ControlHingeMoving_L_Inboard"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "ControlHorn_L_Inboard"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "ControlSurface_L_Inboard"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "ControlFlexureMoving_L_Outboard"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "ControlHingeMoving_L_Outboard"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "ControlHorn_L_Outboard"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "ControlSurface_L_Outboard"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Cowl_boundary_L_Front"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Cowl_boundary_L_Rear"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Landing_wear_tip_L_Front"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Landing_wear_tip_L_Rear"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Motor_cowl_L_Front"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Motor_cowl_L_Rear"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Motor_spindle_L_Front"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Motor_spindle_L_Rear"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "MotorFrontBearing_L_Front"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "MotorFrontBearing_L_Rear"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Nacelle_L_Front"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Nacelle_L_Rear"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Pod_mount_seam_L_Front"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Pod_mount_seam_L_Front001"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Pod_mount_seam_L_Rear"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Pod_mount_seam_L_Rear001"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Pod_U_access_panel_L_Front"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Pod_U_access_panel_L_Front001"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Pod_U_access_panel_L_Rear"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Pod_U_access_panel_L_Rear001"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Pod_wing_saddle_L_Front"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Pod_wing_saddle_L_Rear"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "RootCarrierBridge_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "RootCarrierMoving_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "RootCarrierThrust_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "RootFairingMoving_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Wing_blue_angular_panel_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Wing_blue_leading_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Wing_service_panel_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Wing_service_panel_L001"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "RootHingeShaft_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "RootBearingFixed_L_Front"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "RootBearingSeal_L_Front"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "RootBearingFixed_L_Rear"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "RootBearingSeal_L_Rear"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "RootFixedBearingPedestal_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Root_access_cover_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "RootHingeEndcap_L-0148"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "RootHingeEndcap_L0148"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "BraceRod_mesh_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "BraceRodEye_L_Body"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "BraceRodEye_L_Root"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "BraceRodEyeNeck_L_Body"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "BraceRodEyeNeck_L_Root"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "BraceRodFerrule_L_Body"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "BraceRodFerrule_L_Root"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "V_tail_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "V_tail_blue_leading_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Tail_root_fastener_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Tail_root_fastener_R001"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Fixed_root_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Fixed_root_blue_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "BraceBall_R_Wing"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "BraceBallPin_R_Wing"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "BraceWingSeat_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Composite_wing_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "ControlFlexureFixed_R_Inboard"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "ControlFlexureFixed_R_Outboard"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "ControlHingeFixed_R_Inboard"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "ControlHingeFixed_R_Outboard"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "ControlFlexureMoving_R_Inboard"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "ControlHingeMoving_R_Inboard"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "ControlHorn_R_Inboard"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "ControlSurface_R_Inboard"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "ControlFlexureMoving_R_Outboard"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "ControlHingeMoving_R_Outboard"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "ControlHorn_R_Outboard"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "ControlSurface_R_Outboard"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Cowl_boundary_R_Front"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Cowl_boundary_R_Rear"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Landing_wear_tip_R_Front"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Landing_wear_tip_R_Rear"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Motor_cowl_R_Front"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Motor_cowl_R_Rear"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Motor_spindle_R_Front"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Motor_spindle_R_Rear"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "MotorFrontBearing_R_Front"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "MotorFrontBearing_R_Rear"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Nacelle_R_Front"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Nacelle_R_Rear"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Pod_mount_seam_R_Front"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Pod_mount_seam_R_Front001"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Pod_mount_seam_R_Rear"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Pod_mount_seam_R_Rear001"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Pod_U_access_panel_R_Front"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Pod_U_access_panel_R_Front001"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Pod_U_access_panel_R_Rear"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Pod_U_access_panel_R_Rear001"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Pod_wing_saddle_R_Front"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Pod_wing_saddle_R_Rear"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "RootCarrierBridge_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "RootCarrierMoving_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "RootCarrierThrust_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "RootFairingMoving_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Wing_blue_angular_panel_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Wing_blue_leading_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Wing_service_panel_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Wing_service_panel_R001"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "RootHingeShaft_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "RootBearingFixed_R_Front"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "RootBearingSeal_R_Front"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "RootBearingFixed_R_Rear"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "RootBearingSeal_R_Rear"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "RootFixedBearingPedestal_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Root_access_cover_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "RootHingeEndcap_R-0148"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "RootHingeEndcap_R0148"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "BraceRod_mesh_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "BraceRodEye_R_Body"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "BraceRodEye_R_Root"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "BraceRodEyeNeck_R_Body"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "BraceRodEyeNeck_R_Root"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "BraceRodFerrule_R_Body"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "BraceRodFerrule_R_Root"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "ControlFlexureMoving_Tail_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "ControlHingeMoving_Tail_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "ControlSurface_Tail_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "ControlFlexureFixed_Tail_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "ControlFlexureMoving_Tail_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "ControlHingeMoving_Tail_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "ControlSurface_Tail_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "ControlFlexureFixed_Tail_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "CargoHingeMovingSeat_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "CargoHingeMovingSeat_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "CargoHoodShell"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "CargoLatchMoving_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "CargoLatchMoving_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "CargoOpeningLip"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "CargoLatchFixed_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "CargoLatchPin_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "CargoLatchFixed_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "CargoLatchPin_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Pitot_probe_foot"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Pitot_probe_mount"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Pitot_probe_tube"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_CouplingWitness"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_LeadScrewCore"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_LeadScrewThread"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_OutputCoupling"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_PlanetCarrier"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_PlanetPin_0"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_PlanetPin_1"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_PlanetPin_2"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_PlanetRetainer_0_Front"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_PlanetRetainer_0_Rear"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_PlanetRetainer_1_Front"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_PlanetRetainer_1_Rear"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_PlanetRetainer_2_Front"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_PlanetRetainer_2_Rear"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_PlanetGear_0"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_PlanetGear_1"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_PlanetGear_2"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_MotorRotorDisc"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_MotorShaft"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_MotorWitness"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_SunGear"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_MotorHousing"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_ReductionHousing"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_MotorGearboxAdapter"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_RingGear"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_MotorMount"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_MotorSaddle_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_MotorSaddle_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_FrontSupport"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_FrontScrewPedestal"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_FrontScrewBearing"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_FrontGuidePedestal_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_FrontGuideSeat_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_FrontGuidePedestal_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_FrontGuideSeat_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_RearSupport"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_RearScrewPedestal"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_RearScrewBearing"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_RearGuidePedestal_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_RearGuideSeat_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_RearGuidePedestal_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_RearGuideSeat_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_GuideRail_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_GuideRail_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_FrontFoot_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_FrontFoot_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_RearFoot_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_RearFoot_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_MotorFoot_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_MotorFoot_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_FrontTravelStop_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_FrontTravelStop_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_RearTravelStop_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "Drive_RearTravelStop_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "RootBearingHousing_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "RootBearingHousing_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "CargoHingeFixedSeat"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "CargoHingePin"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "CargoHingeCap_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "CargoHingeCap_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "ControlHingeFixed_Tail_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "ControlHingeFixed_Tail_R"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "RootFairingFixed_L"
+    },
+    {
+      "rotor": "Prop_L_Rear",
+      "mesh": "RootFairingFixed_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Fuselage"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Dorsal_hatch_main"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Hatch_fastener_main"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Hatch_fastener_main001"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Hatch_fastener_main002"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Hatch_fastener_main003"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Tail_boom_join"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Dorsal_small_receiver"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Tail_receiver"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Dorsal_antenna"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Ventral_antenna"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Ventral_antenna001"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Ventral_small_sensor"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Ventral_tail_tab"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "BraceBall_L_Body"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "BraceBall_R_Body"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "BraceBallPin_L_Body"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "BraceBallPin_R_Body"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "BraceBodyCarriage_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "BraceBodyCarriage_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_Crossbeam"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_GuideBridge_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_GuideBridge_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_GuideBushing_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_GuideBushing_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_NutCarriage"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_NutInternalThread"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_OutputWeb"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "ActuatorSideSlot_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "ActuatorSideSlot_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Lower_fuselage_join"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Lower_fuselage_join001"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Lower_fuselage_join002"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Lower_fuselage_join003"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "V_tail_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "V_tail_blue_leading_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Tail_root_fastener_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Tail_root_fastener_L001"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Fixed_root_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Fixed_root_blue_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "BraceBall_L_Wing"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "BraceBallPin_L_Wing"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "BraceWingSeat_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Composite_wing_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "ControlFlexureFixed_L_Inboard"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "ControlFlexureFixed_L_Outboard"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "ControlHingeFixed_L_Inboard"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "ControlHingeFixed_L_Outboard"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "ControlFlexureMoving_L_Inboard"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "ControlHingeMoving_L_Inboard"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "ControlHorn_L_Inboard"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "ControlSurface_L_Inboard"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "ControlFlexureMoving_L_Outboard"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "ControlHingeMoving_L_Outboard"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "ControlHorn_L_Outboard"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "ControlSurface_L_Outboard"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Cowl_boundary_L_Front"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Cowl_boundary_L_Rear"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Landing_wear_tip_L_Front"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Landing_wear_tip_L_Rear"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Motor_cowl_L_Front"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Motor_cowl_L_Rear"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Motor_spindle_L_Front"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Motor_spindle_L_Rear"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "MotorFrontBearing_L_Front"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "MotorFrontBearing_L_Rear"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Nacelle_L_Front"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Nacelle_L_Rear"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Pod_mount_seam_L_Front"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Pod_mount_seam_L_Front001"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Pod_mount_seam_L_Rear"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Pod_mount_seam_L_Rear001"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Pod_U_access_panel_L_Front"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Pod_U_access_panel_L_Front001"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Pod_U_access_panel_L_Rear"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Pod_U_access_panel_L_Rear001"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Pod_wing_saddle_L_Front"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Pod_wing_saddle_L_Rear"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "RootCarrierBridge_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "RootCarrierMoving_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "RootCarrierThrust_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "RootFairingMoving_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Wing_blue_angular_panel_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Wing_blue_leading_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Wing_service_panel_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Wing_service_panel_L001"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "RootHingeShaft_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "RootBearingFixed_L_Front"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "RootBearingSeal_L_Front"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "RootBearingFixed_L_Rear"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "RootBearingSeal_L_Rear"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "RootFixedBearingPedestal_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Root_access_cover_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "RootHingeEndcap_L-0148"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "RootHingeEndcap_L0148"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "BraceRod_mesh_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "BraceRodEye_L_Body"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "BraceRodEye_L_Root"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "BraceRodEyeNeck_L_Body"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "BraceRodEyeNeck_L_Root"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "BraceRodFerrule_L_Body"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "BraceRodFerrule_L_Root"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "V_tail_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "V_tail_blue_leading_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Tail_root_fastener_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Tail_root_fastener_R001"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Fixed_root_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Fixed_root_blue_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "BraceBall_R_Wing"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "BraceBallPin_R_Wing"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "BraceWingSeat_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Composite_wing_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "ControlFlexureFixed_R_Inboard"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "ControlFlexureFixed_R_Outboard"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "ControlHingeFixed_R_Inboard"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "ControlHingeFixed_R_Outboard"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "ControlFlexureMoving_R_Inboard"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "ControlHingeMoving_R_Inboard"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "ControlHorn_R_Inboard"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "ControlSurface_R_Inboard"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "ControlFlexureMoving_R_Outboard"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "ControlHingeMoving_R_Outboard"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "ControlHorn_R_Outboard"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "ControlSurface_R_Outboard"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Cowl_boundary_R_Front"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Cowl_boundary_R_Rear"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Landing_wear_tip_R_Front"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Landing_wear_tip_R_Rear"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Motor_cowl_R_Front"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Motor_cowl_R_Rear"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Motor_spindle_R_Front"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Motor_spindle_R_Rear"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "MotorFrontBearing_R_Front"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "MotorFrontBearing_R_Rear"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Nacelle_R_Front"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Nacelle_R_Rear"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Pod_mount_seam_R_Front"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Pod_mount_seam_R_Front001"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Pod_mount_seam_R_Rear"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Pod_mount_seam_R_Rear001"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Pod_U_access_panel_R_Front"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Pod_U_access_panel_R_Front001"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Pod_U_access_panel_R_Rear"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Pod_U_access_panel_R_Rear001"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Pod_wing_saddle_R_Front"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Pod_wing_saddle_R_Rear"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "RootCarrierBridge_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "RootCarrierMoving_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "RootCarrierThrust_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "RootFairingMoving_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Wing_blue_angular_panel_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Wing_blue_leading_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Wing_service_panel_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Wing_service_panel_R001"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "RootHingeShaft_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "RootBearingFixed_R_Front"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "RootBearingSeal_R_Front"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "RootBearingFixed_R_Rear"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "RootBearingSeal_R_Rear"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "RootFixedBearingPedestal_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Root_access_cover_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "RootHingeEndcap_R-0148"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "RootHingeEndcap_R0148"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "BraceRod_mesh_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "BraceRodEye_R_Body"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "BraceRodEye_R_Root"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "BraceRodEyeNeck_R_Body"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "BraceRodEyeNeck_R_Root"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "BraceRodFerrule_R_Body"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "BraceRodFerrule_R_Root"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "ControlFlexureMoving_Tail_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "ControlHingeMoving_Tail_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "ControlSurface_Tail_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "ControlFlexureFixed_Tail_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "ControlFlexureMoving_Tail_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "ControlHingeMoving_Tail_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "ControlSurface_Tail_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "ControlFlexureFixed_Tail_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "CargoHingeMovingSeat_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "CargoHingeMovingSeat_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "CargoHoodShell"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "CargoLatchMoving_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "CargoLatchMoving_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "CargoOpeningLip"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "CargoLatchFixed_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "CargoLatchPin_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "CargoLatchFixed_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "CargoLatchPin_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Pitot_probe_foot"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Pitot_probe_mount"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Pitot_probe_tube"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_CouplingWitness"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_LeadScrewCore"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_LeadScrewThread"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_OutputCoupling"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_PlanetCarrier"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_PlanetPin_0"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_PlanetPin_1"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_PlanetPin_2"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_PlanetRetainer_0_Front"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_PlanetRetainer_0_Rear"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_PlanetRetainer_1_Front"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_PlanetRetainer_1_Rear"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_PlanetRetainer_2_Front"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_PlanetRetainer_2_Rear"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_PlanetGear_0"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_PlanetGear_1"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_PlanetGear_2"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_MotorRotorDisc"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_MotorShaft"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_MotorWitness"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_SunGear"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_MotorHousing"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_ReductionHousing"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_MotorGearboxAdapter"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_RingGear"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_MotorMount"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_MotorSaddle_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_MotorSaddle_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_FrontSupport"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_FrontScrewPedestal"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_FrontScrewBearing"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_FrontGuidePedestal_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_FrontGuideSeat_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_FrontGuidePedestal_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_FrontGuideSeat_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_RearSupport"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_RearScrewPedestal"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_RearScrewBearing"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_RearGuidePedestal_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_RearGuideSeat_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_RearGuidePedestal_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_RearGuideSeat_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_GuideRail_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_GuideRail_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_FrontFoot_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_FrontFoot_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_RearFoot_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_RearFoot_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_MotorFoot_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_MotorFoot_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_FrontTravelStop_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_FrontTravelStop_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_RearTravelStop_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "Drive_RearTravelStop_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "RootBearingHousing_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "RootBearingHousing_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "CargoHingeFixedSeat"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "CargoHingePin"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "CargoHingeCap_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "CargoHingeCap_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "ControlHingeFixed_Tail_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "ControlHingeFixed_Tail_R"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "RootFairingFixed_L"
+    },
+    {
+      "rotor": "Prop_R_Front",
+      "mesh": "RootFairingFixed_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Fuselage"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Dorsal_hatch_main"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Hatch_fastener_main"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Hatch_fastener_main001"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Hatch_fastener_main002"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Hatch_fastener_main003"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Tail_boom_join"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Dorsal_small_receiver"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Tail_receiver"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Dorsal_antenna"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Ventral_antenna"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Ventral_antenna001"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Ventral_small_sensor"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Ventral_tail_tab"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "BraceBall_L_Body"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "BraceBall_R_Body"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "BraceBallPin_L_Body"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "BraceBallPin_R_Body"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "BraceBodyCarriage_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "BraceBodyCarriage_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_Crossbeam"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_GuideBridge_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_GuideBridge_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_GuideBushing_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_GuideBushing_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_NutCarriage"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_NutInternalThread"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_OutputWeb"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "ActuatorSideSlot_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "ActuatorSideSlot_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Lower_fuselage_join"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Lower_fuselage_join001"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Lower_fuselage_join002"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Lower_fuselage_join003"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "V_tail_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "V_tail_blue_leading_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Tail_root_fastener_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Tail_root_fastener_L001"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Fixed_root_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Fixed_root_blue_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "BraceBall_L_Wing"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "BraceBallPin_L_Wing"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "BraceWingSeat_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Composite_wing_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "ControlFlexureFixed_L_Inboard"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "ControlFlexureFixed_L_Outboard"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "ControlHingeFixed_L_Inboard"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "ControlHingeFixed_L_Outboard"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "ControlFlexureMoving_L_Inboard"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "ControlHingeMoving_L_Inboard"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "ControlHorn_L_Inboard"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "ControlSurface_L_Inboard"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "ControlFlexureMoving_L_Outboard"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "ControlHingeMoving_L_Outboard"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "ControlHorn_L_Outboard"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "ControlSurface_L_Outboard"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Cowl_boundary_L_Front"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Cowl_boundary_L_Rear"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Landing_wear_tip_L_Front"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Landing_wear_tip_L_Rear"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Motor_cowl_L_Front"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Motor_cowl_L_Rear"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Motor_spindle_L_Front"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Motor_spindle_L_Rear"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "MotorFrontBearing_L_Front"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "MotorFrontBearing_L_Rear"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Nacelle_L_Front"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Nacelle_L_Rear"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Pod_mount_seam_L_Front"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Pod_mount_seam_L_Front001"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Pod_mount_seam_L_Rear"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Pod_mount_seam_L_Rear001"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Pod_U_access_panel_L_Front"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Pod_U_access_panel_L_Front001"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Pod_U_access_panel_L_Rear"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Pod_U_access_panel_L_Rear001"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Pod_wing_saddle_L_Front"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Pod_wing_saddle_L_Rear"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "RootCarrierBridge_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "RootCarrierMoving_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "RootCarrierThrust_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "RootFairingMoving_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Wing_blue_angular_panel_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Wing_blue_leading_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Wing_service_panel_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Wing_service_panel_L001"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "RootHingeShaft_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "RootBearingFixed_L_Front"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "RootBearingSeal_L_Front"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "RootBearingFixed_L_Rear"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "RootBearingSeal_L_Rear"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "RootFixedBearingPedestal_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Root_access_cover_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "RootHingeEndcap_L-0148"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "RootHingeEndcap_L0148"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "BraceRod_mesh_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "BraceRodEye_L_Body"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "BraceRodEye_L_Root"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "BraceRodEyeNeck_L_Body"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "BraceRodEyeNeck_L_Root"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "BraceRodFerrule_L_Body"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "BraceRodFerrule_L_Root"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "V_tail_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "V_tail_blue_leading_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Tail_root_fastener_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Tail_root_fastener_R001"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Fixed_root_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Fixed_root_blue_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "BraceBall_R_Wing"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "BraceBallPin_R_Wing"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "BraceWingSeat_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Composite_wing_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "ControlFlexureFixed_R_Inboard"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "ControlFlexureFixed_R_Outboard"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "ControlHingeFixed_R_Inboard"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "ControlHingeFixed_R_Outboard"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "ControlFlexureMoving_R_Inboard"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "ControlHingeMoving_R_Inboard"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "ControlHorn_R_Inboard"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "ControlSurface_R_Inboard"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "ControlFlexureMoving_R_Outboard"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "ControlHingeMoving_R_Outboard"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "ControlHorn_R_Outboard"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "ControlSurface_R_Outboard"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Cowl_boundary_R_Front"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Cowl_boundary_R_Rear"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Landing_wear_tip_R_Front"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Landing_wear_tip_R_Rear"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Motor_cowl_R_Front"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Motor_cowl_R_Rear"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Motor_spindle_R_Front"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Motor_spindle_R_Rear"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "MotorFrontBearing_R_Front"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "MotorFrontBearing_R_Rear"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Nacelle_R_Front"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Nacelle_R_Rear"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Pod_mount_seam_R_Front"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Pod_mount_seam_R_Front001"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Pod_mount_seam_R_Rear"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Pod_mount_seam_R_Rear001"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Pod_U_access_panel_R_Front"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Pod_U_access_panel_R_Front001"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Pod_U_access_panel_R_Rear"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Pod_U_access_panel_R_Rear001"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Pod_wing_saddle_R_Front"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Pod_wing_saddle_R_Rear"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "RootCarrierBridge_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "RootCarrierMoving_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "RootCarrierThrust_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "RootFairingMoving_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Wing_blue_angular_panel_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Wing_blue_leading_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Wing_service_panel_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Wing_service_panel_R001"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "RootHingeShaft_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "RootBearingFixed_R_Front"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "RootBearingSeal_R_Front"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "RootBearingFixed_R_Rear"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "RootBearingSeal_R_Rear"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "RootFixedBearingPedestal_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Root_access_cover_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "RootHingeEndcap_R-0148"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "RootHingeEndcap_R0148"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "BraceRod_mesh_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "BraceRodEye_R_Body"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "BraceRodEye_R_Root"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "BraceRodEyeNeck_R_Body"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "BraceRodEyeNeck_R_Root"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "BraceRodFerrule_R_Body"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "BraceRodFerrule_R_Root"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "ControlFlexureMoving_Tail_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "ControlHingeMoving_Tail_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "ControlSurface_Tail_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "ControlFlexureFixed_Tail_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "ControlFlexureMoving_Tail_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "ControlHingeMoving_Tail_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "ControlSurface_Tail_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "ControlFlexureFixed_Tail_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "CargoHingeMovingSeat_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "CargoHingeMovingSeat_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "CargoHoodShell"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "CargoLatchMoving_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "CargoLatchMoving_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "CargoOpeningLip"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "CargoLatchFixed_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "CargoLatchPin_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "CargoLatchFixed_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "CargoLatchPin_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Pitot_probe_foot"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Pitot_probe_mount"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Pitot_probe_tube"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_CouplingWitness"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_LeadScrewCore"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_LeadScrewThread"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_OutputCoupling"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_PlanetCarrier"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_PlanetPin_0"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_PlanetPin_1"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_PlanetPin_2"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_PlanetRetainer_0_Front"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_PlanetRetainer_0_Rear"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_PlanetRetainer_1_Front"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_PlanetRetainer_1_Rear"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_PlanetRetainer_2_Front"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_PlanetRetainer_2_Rear"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_PlanetGear_0"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_PlanetGear_1"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_PlanetGear_2"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_MotorRotorDisc"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_MotorShaft"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_MotorWitness"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_SunGear"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_MotorHousing"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_ReductionHousing"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_MotorGearboxAdapter"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_RingGear"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_MotorMount"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_MotorSaddle_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_MotorSaddle_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_FrontSupport"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_FrontScrewPedestal"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_FrontScrewBearing"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_FrontGuidePedestal_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_FrontGuideSeat_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_FrontGuidePedestal_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_FrontGuideSeat_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_RearSupport"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_RearScrewPedestal"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_RearScrewBearing"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_RearGuidePedestal_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_RearGuideSeat_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_RearGuidePedestal_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_RearGuideSeat_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_GuideRail_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_GuideRail_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_FrontFoot_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_FrontFoot_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_RearFoot_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_RearFoot_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_MotorFoot_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_MotorFoot_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_FrontTravelStop_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_FrontTravelStop_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_RearTravelStop_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "Drive_RearTravelStop_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "RootBearingHousing_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "RootBearingHousing_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "CargoHingeFixedSeat"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "CargoHingePin"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "CargoHingeCap_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "CargoHingeCap_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "ControlHingeFixed_Tail_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "ControlHingeFixed_Tail_R"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "RootFairingFixed_L"
+    },
+    {
+      "rotor": "Prop_R_Rear",
+      "mesh": "RootFairingFixed_R"
+    }
+  ],
+  "rerunRotorBodyPairCount": 1020,
   "appliedPoseStates": [
     {
       "wing": 0,
@@ -8341,8 +12849,36 @@
     "geometryChangedMeshes": [
       "ActuatorSideSlot_L",
       "ActuatorSideSlot_R",
+      "BraceBallPin_L_Wing",
+      "BraceBallPin_R_Wing",
       "BraceBodyCarriage_L",
       "BraceBodyCarriage_R",
+      "BraceRod_mesh_L",
+      "BraceRod_mesh_R",
+      "BraceWingSeat_L",
+      "BraceWingSeat_R",
+      "Composite_wing_L",
+      "Composite_wing_R",
+      "ControlFlexureFixed_L_Inboard",
+      "ControlFlexureFixed_L_Outboard",
+      "ControlFlexureFixed_R_Inboard",
+      "ControlFlexureFixed_R_Outboard",
+      "ControlFlexureMoving_L_Inboard",
+      "ControlFlexureMoving_L_Outboard",
+      "ControlFlexureMoving_R_Inboard",
+      "ControlFlexureMoving_R_Outboard",
+      "ControlHingeFixed_L_Inboard",
+      "ControlHingeFixed_L_Outboard",
+      "ControlHingeFixed_R_Inboard",
+      "ControlHingeFixed_R_Outboard",
+      "ControlHingeMoving_L_Inboard",
+      "ControlHingeMoving_R_Inboard",
+      "ControlHorn_L_Inboard",
+      "ControlHorn_L_Outboard",
+      "Cowl_boundary_L_Front",
+      "Cowl_boundary_L_Rear",
+      "Cowl_boundary_R_Front",
+      "Cowl_boundary_R_Rear",
       "Drive_FrontFoot_L",
       "Drive_FrontFoot_R",
       "Drive_FrontGuidePedestal_L",
@@ -8373,12 +12909,66 @@
       "Drive_RearTravelStop_L",
       "Drive_RearTravelStop_R",
       "Drive_ReductionHousing",
+      "Fixed_root_L",
+      "Fixed_root_R",
+      "Fixed_root_blue_L",
+      "Fixed_root_blue_R",
       "Fuselage",
+      "Landing_wear_tip_L_Front",
+      "Landing_wear_tip_L_Rear",
+      "Landing_wear_tip_R_Front",
+      "Landing_wear_tip_R_Rear",
       "Lower_fuselage_join",
       "Lower_fuselage_join001",
       "Lower_fuselage_join002",
       "Lower_fuselage_join003",
-      "Tail_boom_join"
+      "MotorFrontBearing_L_Front",
+      "MotorFrontBearing_L_Rear",
+      "MotorFrontBearing_R_Front",
+      "MotorFrontBearing_R_Rear",
+      "Motor_cowl_L_Front",
+      "Motor_cowl_L_Rear",
+      "Motor_cowl_R_Front",
+      "Motor_cowl_R_Rear",
+      "Nacelle_L_Front",
+      "Nacelle_L_Rear",
+      "Nacelle_R_Front",
+      "Nacelle_R_Rear",
+      "Pod_U_access_panel_L_Front",
+      "Pod_U_access_panel_L_Front001",
+      "Pod_U_access_panel_L_Rear",
+      "Pod_U_access_panel_L_Rear001",
+      "Pod_U_access_panel_R_Front",
+      "Pod_U_access_panel_R_Front001",
+      "Pod_U_access_panel_R_Rear",
+      "Pod_U_access_panel_R_Rear001",
+      "Pod_mount_seam_L_Front",
+      "Pod_mount_seam_L_Front001",
+      "Pod_mount_seam_L_Rear",
+      "Pod_mount_seam_L_Rear001",
+      "Pod_mount_seam_R_Front",
+      "Pod_mount_seam_R_Front001",
+      "Pod_mount_seam_R_Rear",
+      "Pod_mount_seam_R_Rear001",
+      "Pod_wing_saddle_L_Front",
+      "Pod_wing_saddle_L_Rear",
+      "Pod_wing_saddle_R_Front",
+      "Pod_wing_saddle_R_Rear",
+      "RootBearingHousing_L",
+      "RootBearingHousing_R",
+      "RootFairingFixed_L",
+      "RootFairingFixed_R",
+      "RootFairingMoving_L",
+      "RootFairingMoving_R",
+      "Tail_boom_join",
+      "Wing_blue_angular_panel_L",
+      "Wing_blue_angular_panel_R",
+      "Wing_blue_leading_L",
+      "Wing_blue_leading_R",
+      "Wing_service_panel_L",
+      "Wing_service_panel_L001",
+      "Wing_service_panel_R",
+      "Wing_service_panel_R001"
     ],
     "declaredMotionAffectedMeshes": [
       "BraceBodyCarriage_L",
@@ -8448,6 +13038,114 @@
     ],
     "transformedAncestorDescendants": [
       {
+        "ancestor": "BladeFold_L_Front_A",
+        "meshDescendants": [
+          "Blade_L_Front_A"
+        ]
+      },
+      {
+        "ancestor": "BladeFold_L_Front_B",
+        "meshDescendants": [
+          "Blade_L_Front_B"
+        ]
+      },
+      {
+        "ancestor": "BladeFold_L_Rear_A",
+        "meshDescendants": [
+          "Blade_L_Rear_A"
+        ]
+      },
+      {
+        "ancestor": "BladeFold_L_Rear_B",
+        "meshDescendants": [
+          "Blade_L_Rear_B"
+        ]
+      },
+      {
+        "ancestor": "BladeFold_R_Front_A",
+        "meshDescendants": [
+          "Blade_R_Front_A"
+        ]
+      },
+      {
+        "ancestor": "BladeFold_R_Rear_B",
+        "meshDescendants": [
+          "Blade_R_Rear_B"
+        ]
+      },
+      {
+        "ancestor": "Blade_hinge_pin_L_Front_A",
+        "meshDescendants": [
+          "Blade_hinge_pin_L_Front_A"
+        ]
+      },
+      {
+        "ancestor": "Blade_hinge_pin_L_Front_B",
+        "meshDescendants": [
+          "Blade_hinge_pin_L_Front_B"
+        ]
+      },
+      {
+        "ancestor": "Blade_hinge_pin_L_Rear_A",
+        "meshDescendants": [
+          "Blade_hinge_pin_L_Rear_A"
+        ]
+      },
+      {
+        "ancestor": "Blade_hinge_pin_L_Rear_B",
+        "meshDescendants": [
+          "Blade_hinge_pin_L_Rear_B"
+        ]
+      },
+      {
+        "ancestor": "Blade_hinge_pin_R_Front_A",
+        "meshDescendants": [
+          "Blade_hinge_pin_R_Front_A"
+        ]
+      },
+      {
+        "ancestor": "Blade_hinge_pin_R_Rear_B",
+        "meshDescendants": [
+          "Blade_hinge_pin_R_Rear_B"
+        ]
+      },
+      {
+        "ancestor": "BraceBallPin_L_Body",
+        "meshDescendants": [
+          "BraceBallPin_L_Body"
+        ]
+      },
+      {
+        "ancestor": "BraceBallPin_L_Wing",
+        "meshDescendants": [
+          "BraceBallPin_L_Wing"
+        ]
+      },
+      {
+        "ancestor": "BraceBallPin_R_Body",
+        "meshDescendants": [
+          "BraceBallPin_R_Body"
+        ]
+      },
+      {
+        "ancestor": "BraceBallPin_R_Wing",
+        "meshDescendants": [
+          "BraceBallPin_R_Wing"
+        ]
+      },
+      {
+        "ancestor": "BraceBall_L_Wing",
+        "meshDescendants": [
+          "BraceBall_L_Wing"
+        ]
+      },
+      {
+        "ancestor": "BraceBall_R_Wing",
+        "meshDescendants": [
+          "BraceBall_R_Wing"
+        ]
+      },
+      {
         "ancestor": "BraceBodyCarriage_L",
         "meshDescendants": [
           "BraceBodyCarriage_L"
@@ -8457,6 +13155,239 @@
         "ancestor": "BraceBodyCarriage_R",
         "meshDescendants": [
           "BraceBodyCarriage_R"
+        ]
+      },
+      {
+        "ancestor": "BraceRodEyeNeck_L_Body",
+        "meshDescendants": [
+          "BraceRodEyeNeck_L_Body"
+        ]
+      },
+      {
+        "ancestor": "BraceRodEyeNeck_L_Root",
+        "meshDescendants": [
+          "BraceRodEyeNeck_L_Root"
+        ]
+      },
+      {
+        "ancestor": "BraceRodEyeNeck_R_Body",
+        "meshDescendants": [
+          "BraceRodEyeNeck_R_Body"
+        ]
+      },
+      {
+        "ancestor": "BraceRodEyeNeck_R_Root",
+        "meshDescendants": [
+          "BraceRodEyeNeck_R_Root"
+        ]
+      },
+      {
+        "ancestor": "BraceRodEye_L_Root",
+        "meshDescendants": [
+          "BraceRodEye_L_Root"
+        ]
+      },
+      {
+        "ancestor": "BraceRodEye_R_Root",
+        "meshDescendants": [
+          "BraceRodEye_R_Root"
+        ]
+      },
+      {
+        "ancestor": "BraceRodFerrule_L_Body",
+        "meshDescendants": [
+          "BraceRodFerrule_L_Body"
+        ]
+      },
+      {
+        "ancestor": "BraceRodFerrule_L_Root",
+        "meshDescendants": [
+          "BraceRodFerrule_L_Root"
+        ]
+      },
+      {
+        "ancestor": "BraceRodFerrule_R_Body",
+        "meshDescendants": [
+          "BraceRodFerrule_R_Body"
+        ]
+      },
+      {
+        "ancestor": "BraceRodFerrule_R_Root",
+        "meshDescendants": [
+          "BraceRodFerrule_R_Root"
+        ]
+      },
+      {
+        "ancestor": "BraceRod_L",
+        "meshDescendants": [
+          "BraceRodEyeNeck_L_Body",
+          "BraceRodEyeNeck_L_Root",
+          "BraceRodEye_L_Body",
+          "BraceRodEye_L_Root",
+          "BraceRodFerrule_L_Body",
+          "BraceRodFerrule_L_Root",
+          "BraceRod_mesh_L"
+        ]
+      },
+      {
+        "ancestor": "BraceRod_R",
+        "meshDescendants": [
+          "BraceRodEyeNeck_R_Body",
+          "BraceRodEyeNeck_R_Root",
+          "BraceRodEye_R_Body",
+          "BraceRodEye_R_Root",
+          "BraceRodFerrule_R_Body",
+          "BraceRodFerrule_R_Root",
+          "BraceRod_mesh_R"
+        ]
+      },
+      {
+        "ancestor": "BraceRod_mesh_L",
+        "meshDescendants": [
+          "BraceRod_mesh_L"
+        ]
+      },
+      {
+        "ancestor": "BraceRod_mesh_R",
+        "meshDescendants": [
+          "BraceRod_mesh_R"
+        ]
+      },
+      {
+        "ancestor": "BraceSpreader",
+        "meshDescendants": [
+          "BraceBallPin_L_Body",
+          "BraceBallPin_R_Body",
+          "BraceBall_L_Body",
+          "BraceBall_R_Body",
+          "BraceBodyCarriage_L",
+          "BraceBodyCarriage_R",
+          "Drive_Crossbeam",
+          "Drive_GuideBridge_L",
+          "Drive_GuideBridge_R",
+          "Drive_GuideBushing_L",
+          "Drive_GuideBushing_R",
+          "Drive_NutCarriage",
+          "Drive_NutInternalThread",
+          "Drive_OutputWeb"
+        ]
+      },
+      {
+        "ancestor": "BraceWingSeat_L",
+        "meshDescendants": [
+          "BraceWingSeat_L"
+        ]
+      },
+      {
+        "ancestor": "BraceWingSeat_R",
+        "meshDescendants": [
+          "BraceWingSeat_R"
+        ]
+      },
+      {
+        "ancestor": "BraceWing_L",
+        "meshDescendants": []
+      },
+      {
+        "ancestor": "BraceWing_R",
+        "meshDescendants": []
+      },
+      {
+        "ancestor": "ControlAxisEnd_L_Inboard",
+        "meshDescendants": []
+      },
+      {
+        "ancestor": "ControlAxisEnd_L_Outboard",
+        "meshDescendants": []
+      },
+      {
+        "ancestor": "ControlAxisEnd_R_Inboard",
+        "meshDescendants": []
+      },
+      {
+        "ancestor": "ControlAxisEnd_R_Outboard",
+        "meshDescendants": []
+      },
+      {
+        "ancestor": "ControlAxisStart_L_Inboard",
+        "meshDescendants": []
+      },
+      {
+        "ancestor": "ControlAxisStart_L_Outboard",
+        "meshDescendants": []
+      },
+      {
+        "ancestor": "ControlAxisStart_R_Inboard",
+        "meshDescendants": []
+      },
+      {
+        "ancestor": "ControlAxisStart_R_Outboard",
+        "meshDescendants": []
+      },
+      {
+        "ancestor": "ControlPivot_L_Inboard",
+        "meshDescendants": [
+          "ControlFlexureMoving_L_Inboard",
+          "ControlHingeMoving_L_Inboard",
+          "ControlHorn_L_Inboard",
+          "ControlSurface_L_Inboard"
+        ]
+      },
+      {
+        "ancestor": "ControlPivot_L_Outboard",
+        "meshDescendants": [
+          "ControlFlexureMoving_L_Outboard",
+          "ControlHingeMoving_L_Outboard",
+          "ControlHorn_L_Outboard",
+          "ControlSurface_L_Outboard"
+        ]
+      },
+      {
+        "ancestor": "ControlPivot_R_Inboard",
+        "meshDescendants": [
+          "ControlFlexureMoving_R_Inboard",
+          "ControlHingeMoving_R_Inboard",
+          "ControlHorn_R_Inboard",
+          "ControlSurface_R_Inboard"
+        ]
+      },
+      {
+        "ancestor": "ControlPivot_R_Outboard",
+        "meshDescendants": [
+          "ControlFlexureMoving_R_Outboard",
+          "ControlHingeMoving_R_Outboard",
+          "ControlHorn_R_Outboard",
+          "ControlSurface_R_Outboard"
+        ]
+      },
+      {
+        "ancestor": "Cowl_boundary_L_Front",
+        "meshDescendants": [
+          "Cowl_boundary_L_Front"
+        ]
+      },
+      {
+        "ancestor": "Cowl_boundary_L_Rear",
+        "meshDescendants": [
+          "Cowl_boundary_L_Rear"
+        ]
+      },
+      {
+        "ancestor": "Cowl_boundary_R_Front",
+        "meshDescendants": [
+          "Cowl_boundary_R_Front"
+        ]
+      },
+      {
+        "ancestor": "Cowl_boundary_R_Rear",
+        "meshDescendants": [
+          "Cowl_boundary_R_Rear"
+        ]
+      },
+      {
+        "ancestor": "Drive_CouplingWitness",
+        "meshDescendants": [
+          "Drive_CouplingWitness"
         ]
       },
       {
@@ -8514,6 +13445,12 @@
         ]
       },
       {
+        "ancestor": "Drive_LeadScrewCore",
+        "meshDescendants": [
+          "Drive_LeadScrewCore"
+        ]
+      },
+      {
         "ancestor": "Drive_MotorMount",
         "meshDescendants": [
           "Drive_MotorMount"
@@ -8529,6 +13466,12 @@
         ]
       },
       {
+        "ancestor": "Drive_MotorRotorDisc",
+        "meshDescendants": [
+          "Drive_MotorRotorDisc"
+        ]
+      },
+      {
         "ancestor": "Drive_MotorSaddle_L",
         "meshDescendants": [
           "Drive_MotorSaddle_L"
@@ -8541,9 +13484,63 @@
         ]
       },
       {
+        "ancestor": "Drive_MotorShaft",
+        "meshDescendants": [
+          "Drive_MotorShaft"
+        ]
+      },
+      {
+        "ancestor": "Drive_MotorWitness",
+        "meshDescendants": [
+          "Drive_MotorWitness"
+        ]
+      },
+      {
         "ancestor": "Drive_OutputWeb",
         "meshDescendants": [
           "Drive_OutputWeb"
+        ]
+      },
+      {
+        "ancestor": "Drive_PlanetCarrier",
+        "meshDescendants": [
+          "Drive_PlanetCarrier"
+        ]
+      },
+      {
+        "ancestor": "Drive_PlanetPin_0",
+        "meshDescendants": [
+          "Drive_PlanetPin_0"
+        ]
+      },
+      {
+        "ancestor": "Drive_PlanetPin_1",
+        "meshDescendants": [
+          "Drive_PlanetPin_1"
+        ]
+      },
+      {
+        "ancestor": "Drive_PlanetPin_2",
+        "meshDescendants": [
+          "Drive_PlanetPin_2"
+        ]
+      },
+      {
+        "ancestor": "Drive_PlanetRotor_0",
+        "meshDescendants": [
+          "Drive_PlanetGear_0"
+        ]
+      },
+      {
+        "ancestor": "Drive_PlanetRotor_1",
+        "meshDescendants": [
+          "Drive_PlanetGear_1"
+        ]
+      },
+      {
+        "ancestor": "Drive_PlanetRotor_2",
+        "meshDescendants": [
+          "Drive_PlanetGear_2"
         ]
       },
       {
@@ -8623,17 +13620,679 @@
         ]
       },
       {
+        "ancestor": "MotorAxisEnd_L_Front",
+        "meshDescendants": []
+      },
+      {
+        "ancestor": "MotorAxisEnd_L_Rear",
+        "meshDescendants": []
+      },
+      {
+        "ancestor": "MotorAxisEnd_R_Front",
+        "meshDescendants": []
+      },
+      {
+        "ancestor": "MotorAxisEnd_R_Rear",
+        "meshDescendants": []
+      },
+      {
+        "ancestor": "MotorAxisStart_L_Front",
+        "meshDescendants": []
+      },
+      {
+        "ancestor": "MotorAxisStart_L_Rear",
+        "meshDescendants": []
+      },
+      {
+        "ancestor": "MotorAxisStart_R_Front",
+        "meshDescendants": []
+      },
+      {
+        "ancestor": "MotorAxisStart_R_Rear",
+        "meshDescendants": []
+      },
+      {
+        "ancestor": "MotorFrontBearing_L_Front",
+        "meshDescendants": [
+          "MotorFrontBearing_L_Front"
+        ]
+      },
+      {
+        "ancestor": "MotorFrontBearing_L_Rear",
+        "meshDescendants": [
+          "MotorFrontBearing_L_Rear"
+        ]
+      },
+      {
+        "ancestor": "MotorFrontBearing_R_Front",
+        "meshDescendants": [
+          "MotorFrontBearing_R_Front"
+        ]
+      },
+      {
+        "ancestor": "MotorFrontBearing_R_Rear",
+        "meshDescendants": [
+          "MotorFrontBearing_R_Rear"
+        ]
+      },
+      {
+        "ancestor": "Motor_spindle_L_Front",
+        "meshDescendants": [
+          "Motor_spindle_L_Front"
+        ]
+      },
+      {
+        "ancestor": "Motor_spindle_L_Rear",
+        "meshDescendants": [
+          "Motor_spindle_L_Rear"
+        ]
+      },
+      {
+        "ancestor": "Motor_spindle_R_Front",
+        "meshDescendants": [
+          "Motor_spindle_R_Front"
+        ]
+      },
+      {
+        "ancestor": "Motor_spindle_R_Rear",
+        "meshDescendants": [
+          "Motor_spindle_R_Rear"
+        ]
+      },
+      {
+        "ancestor": "Nacelle_L_Front",
+        "meshDescendants": [
+          "Nacelle_L_Front"
+        ]
+      },
+      {
+        "ancestor": "Nacelle_L_Rear",
+        "meshDescendants": [
+          "Nacelle_L_Rear"
+        ]
+      },
+      {
+        "ancestor": "Nacelle_R_Front",
+        "meshDescendants": [
+          "Nacelle_R_Front"
+        ]
+      },
+      {
+        "ancestor": "Nacelle_R_Rear",
+        "meshDescendants": [
+          "Nacelle_R_Rear"
+        ]
+      },
+      {
+        "ancestor": "Pod_U_access_panel_L_Front",
+        "meshDescendants": [
+          "Pod_U_access_panel_L_Front"
+        ]
+      },
+      {
+        "ancestor": "Pod_U_access_panel_L_Front001",
+        "meshDescendants": [
+          "Pod_U_access_panel_L_Front001"
+        ]
+      },
+      {
+        "ancestor": "Pod_U_access_panel_L_Rear",
+        "meshDescendants": [
+          "Pod_U_access_panel_L_Rear"
+        ]
+      },
+      {
+        "ancestor": "Pod_U_access_panel_L_Rear001",
+        "meshDescendants": [
+          "Pod_U_access_panel_L_Rear001"
+        ]
+      },
+      {
+        "ancestor": "Pod_U_access_panel_R_Front",
+        "meshDescendants": [
+          "Pod_U_access_panel_R_Front"
+        ]
+      },
+      {
+        "ancestor": "Pod_U_access_panel_R_Front001",
+        "meshDescendants": [
+          "Pod_U_access_panel_R_Front001"
+        ]
+      },
+      {
+        "ancestor": "Pod_U_access_panel_R_Rear",
+        "meshDescendants": [
+          "Pod_U_access_panel_R_Rear"
+        ]
+      },
+      {
+        "ancestor": "Pod_U_access_panel_R_Rear001",
+        "meshDescendants": [
+          "Pod_U_access_panel_R_Rear001"
+        ]
+      },
+      {
+        "ancestor": "Pod_mount_seam_L_Front",
+        "meshDescendants": [
+          "Pod_mount_seam_L_Front"
+        ]
+      },
+      {
+        "ancestor": "Pod_mount_seam_L_Front001",
+        "meshDescendants": [
+          "Pod_mount_seam_L_Front001"
+        ]
+      },
+      {
+        "ancestor": "Pod_mount_seam_L_Rear",
+        "meshDescendants": [
+          "Pod_mount_seam_L_Rear"
+        ]
+      },
+      {
+        "ancestor": "Pod_mount_seam_L_Rear001",
+        "meshDescendants": [
+          "Pod_mount_seam_L_Rear001"
+        ]
+      },
+      {
+        "ancestor": "Pod_mount_seam_R_Front",
+        "meshDescendants": [
+          "Pod_mount_seam_R_Front"
+        ]
+      },
+      {
+        "ancestor": "Pod_mount_seam_R_Front001",
+        "meshDescendants": [
+          "Pod_mount_seam_R_Front001"
+        ]
+      },
+      {
+        "ancestor": "Pod_mount_seam_R_Rear",
+        "meshDescendants": [
+          "Pod_mount_seam_R_Rear"
+        ]
+      },
+      {
+        "ancestor": "Pod_mount_seam_R_Rear001",
+        "meshDescendants": [
+          "Pod_mount_seam_R_Rear001"
+        ]
+      },
+      {
+        "ancestor": "Pod_wing_saddle_L_Front",
+        "meshDescendants": [
+          "Pod_wing_saddle_L_Front"
+        ]
+      },
+      {
+        "ancestor": "Pod_wing_saddle_L_Rear",
+        "meshDescendants": [
+          "Pod_wing_saddle_L_Rear"
+        ]
+      },
+      {
+        "ancestor": "Pod_wing_saddle_R_Front",
+        "meshDescendants": [
+          "Pod_wing_saddle_R_Front"
+        ]
+      },
+      {
+        "ancestor": "Pod_wing_saddle_R_Rear",
+        "meshDescendants": [
+          "Pod_wing_saddle_R_Rear"
+        ]
+      },
+      {
+        "ancestor": "Prop_L_Front",
+        "meshDescendants": [
+          "Blade_L_Front_A",
+          "Blade_L_Front_B",
+          "Blade_hinge_arm_L_Front_A",
+          "Blade_hinge_arm_L_Front_B",
+          "Blade_hinge_pin_L_Front_A",
+          "Blade_hinge_pin_L_Front_B",
+          "Spinner_L_Front"
+        ]
+      },
+      {
+        "ancestor": "Prop_L_Rear",
+        "meshDescendants": [
+          "Blade_L_Rear_A",
+          "Blade_L_Rear_B",
+          "Blade_hinge_arm_L_Rear_A",
+          "Blade_hinge_arm_L_Rear_B",
+          "Blade_hinge_pin_L_Rear_A",
+          "Blade_hinge_pin_L_Rear_B",
+          "Spinner_L_Rear"
+        ]
+      },
+      {
+        "ancestor": "Prop_R_Front",
+        "meshDescendants": [
+          "Blade_R_Front_A",
+          "Blade_R_Front_B",
+          "Blade_hinge_arm_R_Front_A",
+          "Blade_hinge_arm_R_Front_B",
+          "Blade_hinge_pin_R_Front_A",
+          "Blade_hinge_pin_R_Front_B",
+          "Spinner_R_Front"
+        ]
+      },
+      {
+        "ancestor": "Prop_R_Rear",
+        "meshDescendants": [
+          "Blade_R_Rear_A",
+          "Blade_R_Rear_B",
+          "Blade_hinge_arm_R_Rear_A",
+          "Blade_hinge_arm_R_Rear_B",
+          "Blade_hinge_pin_R_Rear_A",
+          "Blade_hinge_pin_R_Rear_B",
+          "Spinner_R_Rear"
+        ]
+      },
+      {
+        "ancestor": "RootAxisEnd_L",
+        "meshDescendants": []
+      },
+      {
+        "ancestor": "RootAxisEnd_R",
+        "meshDescendants": []
+      },
+      {
+        "ancestor": "RootAxisStart_L",
+        "meshDescendants": []
+      },
+      {
+        "ancestor": "RootAxisStart_R",
+        "meshDescendants": []
+      },
+      {
+        "ancestor": "RootBearingCenter_L_Front",
+        "meshDescendants": []
+      },
+      {
+        "ancestor": "RootBearingCenter_L_Rear",
+        "meshDescendants": []
+      },
+      {
+        "ancestor": "RootBearingCenter_R_Front",
+        "meshDescendants": []
+      },
+      {
+        "ancestor": "RootBearingCenter_R_Rear",
+        "meshDescendants": []
+      },
+      {
+        "ancestor": "RootBearingFixed_L_Front",
+        "meshDescendants": [
+          "RootBearingFixed_L_Front"
+        ]
+      },
+      {
+        "ancestor": "RootBearingFixed_L_Rear",
+        "meshDescendants": [
+          "RootBearingFixed_L_Rear"
+        ]
+      },
+      {
+        "ancestor": "RootBearingFixed_R_Front",
+        "meshDescendants": [
+          "RootBearingFixed_R_Front"
+        ]
+      },
+      {
+        "ancestor": "RootBearingFixed_R_Rear",
+        "meshDescendants": [
+          "RootBearingFixed_R_Rear"
+        ]
+      },
+      {
+        "ancestor": "RootBearingSeal_L_Front",
+        "meshDescendants": [
+          "RootBearingSeal_L_Front"
+        ]
+      },
+      {
+        "ancestor": "RootBearingSeal_L_Rear",
+        "meshDescendants": [
+          "RootBearingSeal_L_Rear"
+        ]
+      },
+      {
+        "ancestor": "RootBearingSeal_R_Front",
+        "meshDescendants": [
+          "RootBearingSeal_R_Front"
+        ]
+      },
+      {
+        "ancestor": "RootBearingSeal_R_Rear",
+        "meshDescendants": [
+          "RootBearingSeal_R_Rear"
+        ]
+      },
+      {
+        "ancestor": "RootCarrierBridge_L",
+        "meshDescendants": [
+          "RootCarrierBridge_L"
+        ]
+      },
+      {
+        "ancestor": "RootFixedBearingPedestal_L",
+        "meshDescendants": [
+          "RootFixedBearingPedestal_L"
+        ]
+      },
+      {
+        "ancestor": "RootFixedBearingPedestal_R",
+        "meshDescendants": [
+          "RootFixedBearingPedestal_R"
+        ]
+      },
+      {
+        "ancestor": "RootHingeEndcap_L-0148",
+        "meshDescendants": [
+          "RootHingeEndcap_L-0148"
+        ]
+      },
+      {
+        "ancestor": "RootHingeEndcap_L0148",
+        "meshDescendants": [
+          "RootHingeEndcap_L0148"
+        ]
+      },
+      {
+        "ancestor": "RootHingeEndcap_R-0148",
+        "meshDescendants": [
+          "RootHingeEndcap_R-0148"
+        ]
+      },
+      {
+        "ancestor": "RootHingeEndcap_R0148",
+        "meshDescendants": [
+          "RootHingeEndcap_R0148"
+        ]
+      },
+      {
+        "ancestor": "RootHingeShaft_L",
+        "meshDescendants": [
+          "RootHingeShaft_L"
+        ]
+      },
+      {
+        "ancestor": "RootHingeShaft_R",
+        "meshDescendants": [
+          "RootHingeShaft_R"
+        ]
+      },
+      {
         "ancestor": "Tail_boom_join",
         "meshDescendants": [
           "Tail_boom_join"
+        ]
+      },
+      {
+        "ancestor": "WingPivot_L",
+        "meshDescendants": [
+          "Blade_L_Front_A",
+          "Blade_L_Front_B",
+          "Blade_L_Rear_A",
+          "Blade_L_Rear_B",
+          "Blade_hinge_arm_L_Front_A",
+          "Blade_hinge_arm_L_Front_B",
+          "Blade_hinge_arm_L_Rear_A",
+          "Blade_hinge_arm_L_Rear_B",
+          "Blade_hinge_pin_L_Front_A",
+          "Blade_hinge_pin_L_Front_B",
+          "Blade_hinge_pin_L_Rear_A",
+          "Blade_hinge_pin_L_Rear_B",
+          "BraceBallPin_L_Wing",
+          "BraceBall_L_Wing",
+          "BraceWingSeat_L",
+          "Composite_wing_L",
+          "ControlFlexureFixed_L_Inboard",
+          "ControlFlexureFixed_L_Outboard",
+          "ControlFlexureMoving_L_Inboard",
+          "ControlFlexureMoving_L_Outboard",
+          "ControlHingeFixed_L_Inboard",
+          "ControlHingeFixed_L_Outboard",
+          "ControlHingeMoving_L_Inboard",
+          "ControlHingeMoving_L_Outboard",
+          "ControlHorn_L_Inboard",
+          "ControlHorn_L_Outboard",
+          "ControlSurface_L_Inboard",
+          "ControlSurface_L_Outboard",
+          "Cowl_boundary_L_Front",
+          "Cowl_boundary_L_Rear",
+          "Landing_wear_tip_L_Front",
+          "Landing_wear_tip_L_Rear",
+          "MotorFrontBearing_L_Front",
+          "MotorFrontBearing_L_Rear",
+          "Motor_cowl_L_Front",
+          "Motor_cowl_L_Rear",
+          "Motor_spindle_L_Front",
+          "Motor_spindle_L_Rear",
+          "Nacelle_L_Front",
+          "Nacelle_L_Rear",
+          "Pod_U_access_panel_L_Front",
+          "Pod_U_access_panel_L_Front001",
+          "Pod_U_access_panel_L_Rear",
+          "Pod_U_access_panel_L_Rear001",
+          "Pod_mount_seam_L_Front",
+          "Pod_mount_seam_L_Front001",
+          "Pod_mount_seam_L_Rear",
+          "Pod_mount_seam_L_Rear001",
+          "Pod_wing_saddle_L_Front",
+          "Pod_wing_saddle_L_Rear",
+          "RootCarrierBridge_L",
+          "RootCarrierMoving_L",
+          "RootCarrierThrust_L",
+          "RootFairingMoving_L",
+          "Spinner_L_Front",
+          "Spinner_L_Rear",
+          "Wing_blue_angular_panel_L",
+          "Wing_blue_leading_L",
+          "Wing_service_panel_L",
+          "Wing_service_panel_L001"
+        ]
+      },
+      {
+        "ancestor": "WingPivot_R",
+        "meshDescendants": [
+          "Blade_R_Front_A",
+          "Blade_R_Front_B",
+          "Blade_R_Rear_A",
+          "Blade_R_Rear_B",
+          "Blade_hinge_arm_R_Front_A",
+          "Blade_hinge_arm_R_Front_B",
+          "Blade_hinge_arm_R_Rear_A",
+          "Blade_hinge_arm_R_Rear_B",
+          "Blade_hinge_pin_R_Front_A",
+          "Blade_hinge_pin_R_Front_B",
+          "Blade_hinge_pin_R_Rear_A",
+          "Blade_hinge_pin_R_Rear_B",
+          "BraceBallPin_R_Wing",
+          "BraceBall_R_Wing",
+          "BraceWingSeat_R",
+          "Composite_wing_R",
+          "ControlFlexureFixed_R_Inboard",
+          "ControlFlexureFixed_R_Outboard",
+          "ControlFlexureMoving_R_Inboard",
+          "ControlFlexureMoving_R_Outboard",
+          "ControlHingeFixed_R_Inboard",
+          "ControlHingeFixed_R_Outboard",
+          "ControlHingeMoving_R_Inboard",
+          "ControlHingeMoving_R_Outboard",
+          "ControlHorn_R_Inboard",
+          "ControlHorn_R_Outboard",
+          "ControlSurface_R_Inboard",
+          "ControlSurface_R_Outboard",
+          "Cowl_boundary_R_Front",
+          "Cowl_boundary_R_Rear",
+          "Landing_wear_tip_R_Front",
+          "Landing_wear_tip_R_Rear",
+          "MotorFrontBearing_R_Front",
+          "MotorFrontBearing_R_Rear",
+          "Motor_cowl_R_Front",
+          "Motor_cowl_R_Rear",
+          "Motor_spindle_R_Front",
+          "Motor_spindle_R_Rear",
+          "Nacelle_R_Front",
+          "Nacelle_R_Rear",
+          "Pod_U_access_panel_R_Front",
+          "Pod_U_access_panel_R_Front001",
+          "Pod_U_access_panel_R_Rear",
+          "Pod_U_access_panel_R_Rear001",
+          "Pod_mount_seam_R_Front",
+          "Pod_mount_seam_R_Front001",
+          "Pod_mount_seam_R_Rear",
+          "Pod_mount_seam_R_Rear001",
+          "Pod_wing_saddle_R_Front",
+          "Pod_wing_saddle_R_Rear",
+          "RootCarrierBridge_R",
+          "RootCarrierMoving_R",
+          "RootCarrierThrust_R",
+          "RootFairingMoving_R",
+          "Spinner_R_Front",
+          "Spinner_R_Rear",
+          "Wing_blue_angular_panel_R",
+          "Wing_blue_leading_R",
+          "Wing_service_panel_R",
+          "Wing_service_panel_R001"
+        ]
+      },
+      {
+        "ancestor": "Wing_blue_angular_panel_L",
+        "meshDescendants": [
+          "Wing_blue_angular_panel_L"
+        ]
+      },
+      {
+        "ancestor": "Wing_blue_angular_panel_R",
+        "meshDescendants": [
+          "Wing_blue_angular_panel_R"
+        ]
+      },
+      {
+        "ancestor": "Wing_blue_leading_L",
+        "meshDescendants": [
+          "Wing_blue_leading_L"
+        ]
+      },
+      {
+        "ancestor": "Wing_blue_leading_R",
+        "meshDescendants": [
+          "Wing_blue_leading_R"
+        ]
+      },
+      {
+        "ancestor": "Wing_service_panel_L",
+        "meshDescendants": [
+          "Wing_service_panel_L"
+        ]
+      },
+      {
+        "ancestor": "Wing_service_panel_L001",
+        "meshDescendants": [
+          "Wing_service_panel_L001"
+        ]
+      },
+      {
+        "ancestor": "Wing_service_panel_R",
+        "meshDescendants": [
+          "Wing_service_panel_R"
+        ]
+      },
+      {
+        "ancestor": "Wing_service_panel_R001",
+        "meshDescendants": [
+          "Wing_service_panel_R001"
         ]
       }
     ],
     "rerunMeshes": [
       "ActuatorSideSlot_L",
       "ActuatorSideSlot_R",
+      "Blade_L_Front_A",
+      "Blade_L_Front_B",
+      "Blade_L_Rear_A",
+      "Blade_L_Rear_B",
+      "Blade_R_Front_A",
+      "Blade_R_Front_B",
+      "Blade_R_Rear_A",
+      "Blade_R_Rear_B",
+      "Blade_hinge_arm_L_Front_A",
+      "Blade_hinge_arm_L_Front_B",
+      "Blade_hinge_arm_L_Rear_A",
+      "Blade_hinge_arm_L_Rear_B",
+      "Blade_hinge_arm_R_Front_A",
+      "Blade_hinge_arm_R_Front_B",
+      "Blade_hinge_arm_R_Rear_A",
+      "Blade_hinge_arm_R_Rear_B",
+      "Blade_hinge_pin_L_Front_A",
+      "Blade_hinge_pin_L_Front_B",
+      "Blade_hinge_pin_L_Rear_A",
+      "Blade_hinge_pin_L_Rear_B",
+      "Blade_hinge_pin_R_Front_A",
+      "Blade_hinge_pin_R_Front_B",
+      "Blade_hinge_pin_R_Rear_A",
+      "Blade_hinge_pin_R_Rear_B",
+      "BraceBallPin_L_Body",
+      "BraceBallPin_L_Wing",
+      "BraceBallPin_R_Body",
+      "BraceBallPin_R_Wing",
+      "BraceBall_L_Body",
+      "BraceBall_L_Wing",
+      "BraceBall_R_Body",
+      "BraceBall_R_Wing",
       "BraceBodyCarriage_L",
       "BraceBodyCarriage_R",
+      "BraceRodEyeNeck_L_Body",
+      "BraceRodEyeNeck_L_Root",
+      "BraceRodEyeNeck_R_Body",
+      "BraceRodEyeNeck_R_Root",
+      "BraceRodEye_L_Body",
+      "BraceRodEye_L_Root",
+      "BraceRodEye_R_Body",
+      "BraceRodEye_R_Root",
+      "BraceRodFerrule_L_Body",
+      "BraceRodFerrule_L_Root",
+      "BraceRodFerrule_R_Body",
+      "BraceRodFerrule_R_Root",
+      "BraceRod_mesh_L",
+      "BraceRod_mesh_R",
+      "BraceWingSeat_L",
+      "BraceWingSeat_R",
+      "Composite_wing_L",
+      "Composite_wing_R",
+      "ControlFlexureFixed_L_Inboard",
+      "ControlFlexureFixed_L_Outboard",
+      "ControlFlexureFixed_R_Inboard",
+      "ControlFlexureFixed_R_Outboard",
+      "ControlFlexureMoving_L_Inboard",
+      "ControlFlexureMoving_L_Outboard",
+      "ControlFlexureMoving_R_Inboard",
+      "ControlFlexureMoving_R_Outboard",
+      "ControlHingeFixed_L_Inboard",
+      "ControlHingeFixed_L_Outboard",
+      "ControlHingeFixed_R_Inboard",
+      "ControlHingeFixed_R_Outboard",
+      "ControlHingeMoving_L_Inboard",
+      "ControlHingeMoving_L_Outboard",
+      "ControlHingeMoving_R_Inboard",
+      "ControlHingeMoving_R_Outboard",
+      "ControlHorn_L_Inboard",
+      "ControlHorn_L_Outboard",
+      "ControlHorn_R_Inboard",
+      "ControlHorn_R_Outboard",
+      "ControlSurface_L_Inboard",
+      "ControlSurface_L_Outboard",
+      "ControlSurface_R_Inboard",
+      "ControlSurface_R_Outboard",
+      "Cowl_boundary_L_Front",
+      "Cowl_boundary_L_Rear",
+      "Cowl_boundary_R_Front",
+      "Cowl_boundary_R_Rear",
       "Drive_CouplingWitness",
       "Drive_Crossbeam",
       "Drive_FrontFoot_L",
@@ -8696,131 +14355,19 @@
       "Drive_ReductionHousing",
       "Drive_RingGear",
       "Drive_SunGear",
-      "Fuselage",
-      "Lower_fuselage_join",
-      "Lower_fuselage_join001",
-      "Lower_fuselage_join002",
-      "Lower_fuselage_join003",
-      "Tail_boom_join"
-    ],
-    "inheritanceCandidates": [
-      "Blade_L_Front_A",
-      "Blade_L_Front_B",
-      "Blade_L_Rear_A",
-      "Blade_L_Rear_B",
-      "Blade_R_Front_A",
-      "Blade_R_Front_B",
-      "Blade_R_Rear_A",
-      "Blade_R_Rear_B",
-      "Blade_hinge_arm_L_Front_A",
-      "Blade_hinge_arm_L_Front_B",
-      "Blade_hinge_arm_L_Rear_A",
-      "Blade_hinge_arm_L_Rear_B",
-      "Blade_hinge_arm_R_Front_A",
-      "Blade_hinge_arm_R_Front_B",
-      "Blade_hinge_arm_R_Rear_A",
-      "Blade_hinge_arm_R_Rear_B",
-      "Blade_hinge_pin_L_Front_A",
-      "Blade_hinge_pin_L_Front_B",
-      "Blade_hinge_pin_L_Rear_A",
-      "Blade_hinge_pin_L_Rear_B",
-      "Blade_hinge_pin_R_Front_A",
-      "Blade_hinge_pin_R_Front_B",
-      "Blade_hinge_pin_R_Rear_A",
-      "Blade_hinge_pin_R_Rear_B",
-      "BraceBallPin_L_Body",
-      "BraceBallPin_L_Wing",
-      "BraceBallPin_R_Body",
-      "BraceBallPin_R_Wing",
-      "BraceBall_L_Body",
-      "BraceBall_L_Wing",
-      "BraceBall_R_Body",
-      "BraceBall_R_Wing",
-      "BraceRodEyeNeck_L_Body",
-      "BraceRodEyeNeck_L_Root",
-      "BraceRodEyeNeck_R_Body",
-      "BraceRodEyeNeck_R_Root",
-      "BraceRodEye_L_Body",
-      "BraceRodEye_L_Root",
-      "BraceRodEye_R_Body",
-      "BraceRodEye_R_Root",
-      "BraceRodFerrule_L_Body",
-      "BraceRodFerrule_L_Root",
-      "BraceRodFerrule_R_Body",
-      "BraceRodFerrule_R_Root",
-      "BraceRod_mesh_L",
-      "BraceRod_mesh_R",
-      "BraceWingSeat_L",
-      "BraceWingSeat_R",
-      "CargoHingeCap_L",
-      "CargoHingeCap_R",
-      "CargoHingeFixedSeat",
-      "CargoHingeMovingSeat_L",
-      "CargoHingeMovingSeat_R",
-      "CargoHingePin",
-      "CargoHoodShell",
-      "CargoLatchFixed_L",
-      "CargoLatchFixed_R",
-      "CargoLatchMoving_L",
-      "CargoLatchMoving_R",
-      "CargoLatchPin_L",
-      "CargoLatchPin_R",
-      "CargoOpeningLip",
-      "Composite_wing_L",
-      "Composite_wing_R",
-      "ControlFlexureFixed_L_Inboard",
-      "ControlFlexureFixed_L_Outboard",
-      "ControlFlexureFixed_R_Inboard",
-      "ControlFlexureFixed_R_Outboard",
-      "ControlFlexureFixed_Tail_L",
-      "ControlFlexureFixed_Tail_R",
-      "ControlFlexureMoving_L_Inboard",
-      "ControlFlexureMoving_L_Outboard",
-      "ControlFlexureMoving_R_Inboard",
-      "ControlFlexureMoving_R_Outboard",
-      "ControlFlexureMoving_Tail_L",
-      "ControlFlexureMoving_Tail_R",
-      "ControlHingeFixed_L_Inboard",
-      "ControlHingeFixed_L_Outboard",
-      "ControlHingeFixed_R_Inboard",
-      "ControlHingeFixed_R_Outboard",
-      "ControlHingeFixed_Tail_L",
-      "ControlHingeFixed_Tail_R",
-      "ControlHingeMoving_L_Inboard",
-      "ControlHingeMoving_L_Outboard",
-      "ControlHingeMoving_R_Inboard",
-      "ControlHingeMoving_R_Outboard",
-      "ControlHingeMoving_Tail_L",
-      "ControlHingeMoving_Tail_R",
-      "ControlHorn_L_Inboard",
-      "ControlHorn_L_Outboard",
-      "ControlHorn_R_Inboard",
-      "ControlHorn_R_Outboard",
-      "ControlSurface_L_Inboard",
-      "ControlSurface_L_Outboard",
-      "ControlSurface_R_Inboard",
-      "ControlSurface_R_Outboard",
-      "ControlSurface_Tail_L",
-      "ControlSurface_Tail_R",
-      "Cowl_boundary_L_Front",
-      "Cowl_boundary_L_Rear",
-      "Cowl_boundary_R_Front",
-      "Cowl_boundary_R_Rear",
-      "Dorsal_antenna",
-      "Dorsal_hatch_main",
-      "Dorsal_small_receiver",
       "Fixed_root_L",
       "Fixed_root_R",
       "Fixed_root_blue_L",
       "Fixed_root_blue_R",
-      "Hatch_fastener_main",
-      "Hatch_fastener_main001",
-      "Hatch_fastener_main002",
-      "Hatch_fastener_main003",
+      "Fuselage",
       "Landing_wear_tip_L_Front",
       "Landing_wear_tip_L_Rear",
       "Landing_wear_tip_R_Front",
       "Landing_wear_tip_R_Rear",
+      "Lower_fuselage_join",
+      "Lower_fuselage_join001",
+      "Lower_fuselage_join002",
+      "Lower_fuselage_join003",
       "MotorFrontBearing_L_Front",
       "MotorFrontBearing_L_Rear",
       "MotorFrontBearing_R_Front",
@@ -8837,9 +14384,6 @@
       "Nacelle_L_Rear",
       "Nacelle_R_Front",
       "Nacelle_R_Rear",
-      "Pitot_probe_foot",
-      "Pitot_probe_mount",
-      "Pitot_probe_tube",
       "Pod_U_access_panel_L_Front",
       "Pod_U_access_panel_L_Front001",
       "Pod_U_access_panel_L_Rear",
@@ -8888,12 +14432,57 @@
       "RootHingeEndcap_R0148",
       "RootHingeShaft_L",
       "RootHingeShaft_R",
-      "Root_access_cover_L",
-      "Root_access_cover_R",
       "Spinner_L_Front",
       "Spinner_L_Rear",
       "Spinner_R_Front",
       "Spinner_R_Rear",
+      "Tail_boom_join",
+      "Wing_blue_angular_panel_L",
+      "Wing_blue_angular_panel_R",
+      "Wing_blue_leading_L",
+      "Wing_blue_leading_R",
+      "Wing_service_panel_L",
+      "Wing_service_panel_L001",
+      "Wing_service_panel_R",
+      "Wing_service_panel_R001"
+    ],
+    "inheritanceCandidates": [
+      "CargoHingeCap_L",
+      "CargoHingeCap_R",
+      "CargoHingeFixedSeat",
+      "CargoHingeMovingSeat_L",
+      "CargoHingeMovingSeat_R",
+      "CargoHingePin",
+      "CargoHoodShell",
+      "CargoLatchFixed_L",
+      "CargoLatchFixed_R",
+      "CargoLatchMoving_L",
+      "CargoLatchMoving_R",
+      "CargoLatchPin_L",
+      "CargoLatchPin_R",
+      "CargoOpeningLip",
+      "ControlFlexureFixed_Tail_L",
+      "ControlFlexureFixed_Tail_R",
+      "ControlFlexureMoving_Tail_L",
+      "ControlFlexureMoving_Tail_R",
+      "ControlHingeFixed_Tail_L",
+      "ControlHingeFixed_Tail_R",
+      "ControlHingeMoving_Tail_L",
+      "ControlHingeMoving_Tail_R",
+      "ControlSurface_Tail_L",
+      "ControlSurface_Tail_R",
+      "Dorsal_antenna",
+      "Dorsal_hatch_main",
+      "Dorsal_small_receiver",
+      "Hatch_fastener_main",
+      "Hatch_fastener_main001",
+      "Hatch_fastener_main002",
+      "Hatch_fastener_main003",
+      "Pitot_probe_foot",
+      "Pitot_probe_mount",
+      "Pitot_probe_tube",
+      "Root_access_cover_L",
+      "Root_access_cover_R",
       "Tail_receiver",
       "Tail_root_fastener_L",
       "Tail_root_fastener_L001",
@@ -8906,125 +14495,117 @@
       "Ventral_antenna",
       "Ventral_antenna001",
       "Ventral_small_sensor",
-      "Ventral_tail_tab",
-      "Wing_blue_angular_panel_L",
-      "Wing_blue_angular_panel_R",
-      "Wing_blue_leading_L",
-      "Wing_blue_leading_R",
-      "Wing_service_panel_L",
-      "Wing_service_panel_L001",
-      "Wing_service_panel_R",
-      "Wing_service_panel_R001"
+      "Ventral_tail_tab"
     ]
   },
-  "unchangedRotorBodyPairsInherited": true,
+  "unchangedRotorBodyPairsInherited": 0,
   "neutralMainMotionSamples": 201,
   "detailStressSamples": 320,
-  "meshTriangleChecks": 0,
+  "meshTriangleChecks": 45143776,
   "slabTriangleChecks": 0,
   "contacts": [],
   "reachableContacts": [],
   "unseparatedRotorEnvelopes": [],
-  "minimumCylinderSeparatingGap": 0.07001865143439068,
+  "minimumCylinderSeparatingGap": 0.07001885199181312,
   "minimumSeparationEvidence": [
     {
-      "unfold": 1,
-      "a": "Prop_L_Front",
-      "b": "Prop_L_Rear",
+      "unfold": 0.675,
+      "a": "Prop_R_Front",
+      "b": "Prop_R_Rear",
       "separated": true,
-      "separatingGap": 0.07001865143439068,
+      "separatingGap": 0.07001885199181312,
       "axis": [
-        -0.9999999999999822,
-        1.7881394508784247e-7,
-        -5.960466463829707e-8
-      ]
-    },
-    {
-      "unfold": 0.995,
-      "a": "Prop_L_Front",
-      "b": "Prop_L_Rear",
-      "separated": true,
-      "separatingGap": 0.07001865143484787,
-      "axis": [
-        -0.9999634447869142,
-        0.006027790023945402,
-        -0.006064226027733792
+        0.8514306409713139,
+        0.28905361766480114,
+        -0.4376229766934874
       ]
     },
     {
       "unfold": 0.99,
-      "a": "Prop_L_Front",
-      "b": "Prop_L_Rear",
+      "a": "Prop_R_Front",
+      "b": "Prop_R_Rear",
       "separated": true,
-      "separatingGap": 0.07001865143622132,
+      "separatingGap": 0.07001885199181312,
       "axis": [
-        -0.9998537860391516,
-        0.012018186459864381,
-        -0.012164281211416524
+        0.9998537889832302,
+        0.012018006248753326,
+        -0.012164217265522958
       ]
     },
     {
-      "unfold": 0.985,
-      "a": "Prop_L_Front",
-      "b": "Prop_L_Rear",
+      "unfold": 0.68,
+      "a": "Prop_R_Front",
+      "b": "Prop_R_Rear",
       "separated": true,
-      "separatingGap": 0.0700186514385086,
+      "separatingGap": 0.07001885199181335,
       "axis": [
-        -0.9996710357817881,
-        0.017970711206753493,
-        -0.018299556215668276
+        0.8557956382172267,
+        0.28651765725883444,
+        -0.4307220190416075
       ]
     },
     {
-      "unfold": 0.98,
-      "a": "Prop_L_Front",
-      "b": "Prop_L_Rear",
+      "unfold": 0.93,
+      "a": "Prop_R_Front",
+      "b": "Prop_R_Rear",
       "separated": true,
-      "separatingGap": 0.07001865144171149,
+      "separatingGap": 0.07001885199181335,
       "axis": [
-        -0.9994152140552334,
-        0.023884711502721565,
-        -0.024469378238192275
+        0.9928482219753256,
+        0.0807651868522067,
+        -0.08791696487688107
       ]
     },
     {
-      "unfold": 0.975,
-      "a": "Prop_L_Front",
-      "b": "Prop_L_Rear",
+      "unfold": 0.955,
+      "a": "Prop_R_Front",
+      "b": "Prop_R_Rear",
       "separated": true,
-      "separatingGap": 0.07001865144582953,
+      "separatingGap": 0.07001885199181335,
       "axis": [
-        -0.9990863489130163,
-        0.02975953881051827,
-        -0.03067307068820612
+        0.9970413097353867,
+        0.05285411489511928,
+        -0.05581280515973241
       ]
     },
     {
-      "unfold": 0.97,
-      "a": "Prop_L_Front",
-      "b": "Prop_L_Rear",
+      "unfold": 0.635,
+      "a": "Prop_R_Front",
+      "b": "Prop_R_Rear",
       "separated": true,
-      "separatingGap": 0.07001865145085961,
+      "separatingGap": 0.07001885199181346,
       "axis": [
-        -0.9986844764187084,
-        0.03559454888865411,
-        -0.03690995326064976
+        0.8145068187322415,
+        0.30686245711796206,
+        -0.4923556383857207
       ]
     },
     {
-      "unfold": 0.965,
-      "a": "Prop_L_Front",
-      "b": "Prop_L_Rear",
+      "unfold": 0.87,
+      "a": "Prop_R_Front",
+      "b": "Prop_R_Rear",
       "separated": true,
-      "separatingGap": 0.07001865145680486,
+      "separatingGap": 0.07001885199181346,
       "axis": [
-        -0.9982096406419689,
-        0.04138910186204859,
-        -0.04317934201078461
+        0.9754417111984387,
+        0.14298178642186882,
+        -0.16754007522343012
+      ]
+    },
+    {
+      "unfold": 0.44,
+      "a": "Prop_R_Front",
+      "b": "Prop_R_Rear",
+      "separated": true,
+      "separatingGap": 0.07001885199181357,
+      "axis": [
+        0.5916770576347351,
+        0.3280764675429853,
+        -0.7363994099082499
       ]
     }
   ],
-  "method": "每片实际桨叶三角形的轴向高度/径向范围形成保守全周环柱超集；所有改动的非旋翼网格实际三角形与之裁剪检查；未变网格与原旋翼之间的证据在精确恒等门槛后继承V22。不同旋翼以有限厚度全圆柱超集分离轴证明任意相位分離；未分离则保留未解析，不伪称实交。独立MotorAxis标记定义轴，不硬编码局部Y。",
+  "method": "每片实际桨叶三角形的轴向高度/径向范围形成保守全周环柱超集；旋翼任一后代被几何或运动影响时，该旋翼对全部非旋翼目标重跑，否则重跑该旋翼对受影响目标。只有旋翼和目标两端均精确未变才继承。所有不同旋翼仍以有限厚度全圆柱超集分离轴证明任意相位分离；未分离保留未解析，不伪称实交。独立MotorAxis标记定义轴。",
   "limitations": [
     "全周包络消除相位采样空隙，整翼与舵面仍为有限姿态样本，非解析连续认证",
     "保守环柱候选接触不能单独证明真实桨叶撞击，发现后需实体细化，未擅自豁免",

@@ -1,16 +1,30 @@
-"""V22 红色标记球心 + 定长控制杆 + 紧凑滑架；主斜轴保持。尺寸为外观约束重建。"""
+"""移轴后的真实翼上球心、定长控制杆与共用滑架；尺寸为概念外观拟合。"""
 import math
 from mathutils import Vector, Quaternion, Matrix
-PIVOT_X, PIVOT_Y, PIVOT_Z = 1.35, -1.30, -.22
+REFERENCE_PIVOT = (1.35, -1.30, -.22)
+PIVOT_X, PIVOT_Y, PIVOT_Z = 1.50, -1.47, -.22
+WING_ANCHOR_CRUISE = (1.12, -1.14, -.16545563208944739)
+_AUTHORING_REFERENCE = False
+
+def use_authoring_reference(enabled):
+    """原有外廓先按原坐标构造；移轴重基后只使用实际机构坐标。"""
+    global _AUTHORING_REFERENCE
+    _AUTHORING_REFERENCE = bool(enabled)
 FOLD_ANGLE = 2 * math.pi / 3
 BEARING_OFFSET = .16
 SLIDER_X, SLIDER_Z, SLIDER_CRUISE_Y = .16, -.02, 1.90
 
 def wing_axis(sign):return Vector((-sign,-1,1)).normalized()
 def wing_rotation(sign,unfold):return Quaternion(wing_axis(sign),sign*FOLD_ANGLE*(1-unfold))
-def pivot_position(sign):return Vector((sign*PIVOT_X,PIVOT_Y,PIVOT_Z))
+def pivot_position(sign):
+    x,y,z = REFERENCE_PIVOT if _AUTHORING_REFERENCE else (PIVOT_X,PIVOT_Y,PIVOT_Z)
+    return Vector((sign*x,y,z))
 def brace_body(sign):return Vector((sign*SLIDER_X,SLIDER_CRUISE_Y,SLIDER_Z))
-def brace_wing_local(sign):return Vector((-sign*.45969725856807764,.33799887117646427,.03580632777801959))
+def brace_wing_local(sign):
+    if _AUTHORING_REFERENCE:
+        return Vector((-sign*.45969725856807764,.33799887117646427,.03580632777801959))
+    x,y,z = WING_ANCHOR_CRUISE
+    return Vector((sign*x,y,z))-pivot_position(sign)
 def brace_length(sign):return (pivot_position(sign)+brace_wing_local(sign)-brace_body(sign)).length
 
 def slider_y(wing_world,sign=1):

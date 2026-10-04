@@ -37,12 +37,13 @@ const priorContract = JSON.parse(fs.readFileSync("qa/contracts/reference-support
 const priorEvidence = resolveEvidence("qa/v23/verification/final/support-report.json");
 const priorReportPath = priorEvidence.path;
 const priorReport = priorEvidence.data;
-const refinement=JSON.parse(fs.readFileSync("qa/contracts/fuselage-slot-refinement.json", "utf8"));
+const refinement=JSON.parse(fs.readFileSync("qa/contracts/model-refinement.json", "utf8"));
 const inheritance = JSON.parse(fs.readFileSync((process.env.QA_DIR ?? "qa/current/results") + "/inheritance-report.json", "utf8"));
 assert(inheritance.passed && priorReport.passed);
 
 const reports: any[] = [];
 for (const source of sources) {
+  console.log("SUPPORT_BEGIN", source);
   const a = await loadAudit(source),
     encoding = source.includes("source") ? 1e-6 : 6e-5,
     rows: any[] = [],
@@ -82,6 +83,7 @@ for (const source of sources) {
     inheritedInterfaces++;
   }
   for (const d of c.fixed) {
+    if (newlyMeasuredInterfaces % 25 === 0) console.log("SUPPORT_FIXED", source, "measured", newlyMeasuredInterfaces, "inherited", inheritedInterfaces);
     if (!involvesChanged(d)) { inherit(d,"fixed"); continue; } newlyMeasuredInterfaces++;
     const r = materialContact(a, d.pair, d.frame ?? null),
       regions = d.regions ?? [d];
@@ -158,6 +160,7 @@ for (const source of sources) {
     { wing: 0.75 },
     { wing: 1 },
   ];
+  console.log("SUPPORT_FITS", source, "fixed rows", rows.length);
   for (const d of c.fits) {
     if (!involvesChanged(d)) { inherit(d,"fits"); continue; } newlyMeasuredInterfaces++;
     const states: any[] = [];
@@ -328,6 +331,7 @@ for (const source of sources) {
     wing: 1,
     fold: [1, 1, 1, 1],
   });
+  console.log("SUPPORT_DECORATIONS", source, "rows", rows.length);
   for (const d of c.decorations) {
     if (!involvesChanged(d)) { inherit(d,"decorations"); continue; } newlyMeasuredInterfaces++;
     const r = decorationDistances(a, d),
@@ -394,6 +398,7 @@ for (const source of sources) {
     ),
     decorativeNames = new Set(c.decorations.map((d) => d.name)),
     fixedContactCoverage: any[] = [];
+  console.log("SUPPORT_FIXED_CONTACT_COVERAGE", source, "rows", rows.length);
   for (const p of a.fixedPairs) {
     if (!changed.has(p.a.name) && !changed.has(p.b.name)) continue;
     if (

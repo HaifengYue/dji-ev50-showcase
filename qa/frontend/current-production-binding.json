@@ -1,0 +1,226 @@
+{
+  "formatVersion": 1,
+  "passed": true,
+  "scope": "本轮层叠翼、真实移轴与连接机构的新生产资产，绑定真实新55阶段和最终前端五阶段",
+  "expectedGitParent": "c46ebfda6adfccc4798a6ccca094f8e9c087739e",
+  "baselineProjectManifestSha256": "7fd1facd3e14071498d5bded956430d182deba93f31facd41c0aea5aada3531d",
+  "productionAssets": {
+    "public/models/xp4.glb": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+    "assets/blender/xp4-source.glb": "82ca7f6f9e98cb11737da6f1cb8b1507f71baf0ffcb57734b9beb7bb23e70126",
+    "assets/blender/xp4.blend": "869458bd88bdf1a60ae07f28d565187ed6d164bd11a49589e6beae90c5ad3ac1",
+    "public/models/manifest.json": "5151d3ed1013e3aeb1035308245f32635aff97be33a6b670c34243b05d3d7df1"
+  },
+  "physicsRerun": true,
+  "physicsRerunClaim": "本轮重新执行55个正式阶段；234网格影响域重新检查，其余49网格的有限配对仅在严格几何/法线/拓扑与逐态世界矩阵恒等证据成立时明确继承",
+  "oldUnchangedPhysicalEvidenceReuseApplies": false,
+  "physicalStages": 55,
+  "physicalInputs": 236,
+  "frontendStages": 5,
+  "frontendInputs": 89,
+  "combinedInputs": 300,
+  "allActualInputHashesVerified": true,
+  "rerunMeshCount": 234,
+  "exactInheritedMeshCount": 49,
+  "references": {
+    "physicalSummary": {
+      "path": "qa/current/results/summary.json",
+      "sha256": "475931954be31763db409dd96055d64a0d58edbb71f427e29fbfd07119d32fb4"
+    },
+    "physicalInputLock": {
+      "path": "qa/current/results/input-lock.json",
+      "sha256": "231f3fb641e0b34050705e47bf587a03823c30c457545cad7238b19f5a3b1de5"
+    },
+    "frontendSummary": {
+      "path": "qa/frontend/summary.json",
+      "sha256": "443cbe55777733de6957c523287251f974463d0610a86f8a5154d2ed9b7fc6e1"
+    },
+    "frontendInputLock": {
+      "path": "qa/frontend/input-lock.json",
+      "sha256": "f4b3c77ed31ec3145875939d4da7e83b129e3976de75d1c5b531f43ab5427911"
+    },
+    "uiSourceReport": {
+      "path": "qa/frontend/ui-source-report.json",
+      "sha256": "f102868913d749a0974559f9855e9ef4535ffe53f372474b61a7b1dde7f42116"
+    },
+    "viewportFramingReport": {
+      "path": "qa/frontend/viewport-framing-report.json",
+      "sha256": "1c0abe1e0a33c664525f5f44e0ce62baaa9c2aeee7a10f06b9a08d9387d8ee2f"
+    }
+  },
+  "initialMigrationRecord": {
+    "path": "qa/reference/code-migration.json",
+    "sha256": "737ed854be7fe7a3f375b16b8b664e996f6216eb2101cca09f7330577efeb865",
+    "claim": "仅保留初始化来源事实；后续已修改文件不再声称是当前纯路径迁移"
+  },
+  "changedSinceInitialMigration": [
+    {
+      "path": "qa/lib/runtime-ui-source-check.mts",
+      "initialRecordSha256": "17ad58939975ae0dc5795f8102cffec07ec5473365f495b6de0a1b3bc83b6b46",
+      "currentSha256": "f68a6f4b4eceda7879ba2c1f016e2ea88dcc5ea21bbade0cc27c9775a4bb23d0",
+      "currentStatus": "后续修改"
+    },
+    {
+      "path": "qa/contracts/wing-anchor-target-mapping.json",
+      "initialRecordSha256": "2ecc32a1099f0dfad215442daa9bce1598b860d54f8020fed1377916fe5991e6",
+      "currentSha256": null,
+      "currentStatus": "退出当前实际工程，原文件工程外保留"
+    },
+    {
+      "path": "qa/contracts/wing-anchor-refinement.json",
+      "initialRecordSha256": "34df8f1e120ab9bff34fcbeb829feb922ee7547c26529fead2fb78cc30e578c3",
+      "currentSha256": null,
+      "currentStatus": "退出当前实际工程，原文件工程外保留"
+    },
+    {
+      "path": "qa/lib/snapshot-audit.selftest.mts",
+      "initialRecordSha256": "66d1918a8ec253f416ef41ea96d60c54f51635c5165d8ffc9d3fdd99494cde99",
+      "currentSha256": "537b170cb1772714239435f6ed34d94d2c7f071ca6a3535644819c0014f21eee",
+      "currentStatus": "后续修改"
+    },
+    {
+      "path": "qa/current/affected-scope.mts",
+      "initialRecordSha256": "76f62e2bd8976e908b71dbefca1ffcceb2316ee26f928ee4d7c1abb85d427f69",
+      "currentSha256": "0712dd1ff3fcb5ed81c8a8e72c4e13506182a9edba2a72298aa38a7b06b2bad4",
+      "currentStatus": "后续修改"
+    },
+    {
+      "path": "qa/current/affected-scope.selftest.mts",
+      "initialRecordSha256": "2d6e58b20a27003fcb7c47190d2dcef816451df81afa17d0182cee3a8897467d",
+      "currentSha256": "758a2d78e0e05a27ea3fbbd926c63211d3a5b0421109f610ab4e9377217777dc",
+      "currentStatus": "后续修改"
+    },
+    {
+      "path": "qa/current/decoration-topology.mts",
+      "initialRecordSha256": "8c5cceb8911a649da7e446195326bd9d794e329ba0fa934dd73da70ca6096c1b",
+      "currentSha256": "6f6a20c291725de92ea3a93eb9dd6434d89fddbe4a0c66b41547836f56d69107",
+      "currentStatus": "后续修改"
+    },
+    {
+      "path": "qa/current/reviewed-contract-logic.mjs",
+      "initialRecordSha256": "f9cdbc2573b579663d2fcb40c0fecdb20b143edd98c42870a2ffd122dccaef89",
+      "currentSha256": null,
+      "currentStatus": "退出当前实际工程，原文件工程外保留"
+    },
+    {
+      "path": "qa/current/stages.json",
+      "initialRecordSha256": "aba614d1c99c201dce641d16db31aae445344cacb4b3c6fcab7e43ccb7f4959a",
+      "currentSha256": "7086a88b6ffd3c09d5e5f1babd80d2f387e8c6f19cc1d8c2cee25c32966b5ec5",
+      "currentStatus": "后续修改"
+    },
+    {
+      "path": "qa/current/verify-local-motion.mts",
+      "initialRecordSha256": "e106f3aa21acc964614fe43931179882ec2681daf623239e2bfed7aefd714d0e",
+      "currentSha256": "5e69324db9a5c56aec030a7a0d83152046a07eb1ea313e873f055600318335c7",
+      "currentStatus": "后续修改"
+    },
+    {
+      "path": "qa/current/verify-relative-motion.mts",
+      "initialRecordSha256": "32d205725e42774b3cd02948d70813cf6f48c8f12c5c9dc618f861ebf089e19a",
+      "currentSha256": "fbfb814fa6afa2471dd4452af5499220748ae71d5c1504d49961183e1ce683c6",
+      "currentStatus": "后续修改"
+    },
+    {
+      "path": "qa/current/verify-rotor-envelope.mts",
+      "initialRecordSha256": "57b6151420f9d7a9882946a2f837608330cd90659a32820efd65f349e334e67b",
+      "currentSha256": "baedfa8b291f4601bf44e6c24f5d2c96a68b1efb7ad271a289aa3be152ebb10d",
+      "currentStatus": "后续修改"
+    },
+    {
+      "path": "scripts/compress-model.mjs",
+      "initialRecordSha256": "25b5ae1d4a5e604ec3358e5cc94ad85d1575041ac09a21380c309b7c718825a6",
+      "currentSha256": "288a3d913df8c80722b8cc7361956d3db5f37fedfa56a86f0f117b0af7ba00b6",
+      "currentStatus": "后续修改"
+    },
+    {
+      "path": "scripts/data/red-target-footprint.json",
+      "initialRecordSha256": "4235ff1718d1bcb1b321f3c5b626af1d53f243c8501d99965333b1a8b7da0b26",
+      "currentSha256": null,
+      "currentStatus": "退出当前实际工程，原文件工程外保留"
+    },
+    {
+      "path": "scripts/data/red-target-mapping.json",
+      "initialRecordSha256": "2ecc32a1099f0dfad215442daa9bce1598b860d54f8020fed1377916fe5991e6",
+      "currentSha256": null,
+      "currentStatus": "退出当前实际工程，原文件工程外保留"
+    },
+    {
+      "path": "scripts/export-transition.py",
+      "initialRecordSha256": "667cc4fd5a2bd300d19c19f6104892aa80e964b3ab1fd547431c1e1d947fb9a3",
+      "currentSha256": "f2ae90b6493e42ad3a591ad3a4f80775d0b05d8eb7bcdb7b4fde2733a5f17e0b",
+      "currentStatus": "后续修改"
+    },
+    {
+      "path": "scripts/joint_fairings.py",
+      "initialRecordSha256": "9ef7df580cbd7a88997078c2274290f4c11b6a2a698ceab7169d970117e3bccb",
+      "currentSha256": "b8bdd4d0f904fba6346a7cd604cf8521ed93ce04225cf5c2fc65a824a3bc8268",
+      "currentStatus": "后续修改"
+    },
+    {
+      "path": "scripts/generate_transwing.py",
+      "initialRecordSha256": "8c36f6cf13c72f4404ee616d1d4c65ec42c2318294f7a2a8910b8fb125a0cc31",
+      "currentSha256": "15143d25b906b75c0699c1c3eb344652cb0f7219707fb46302cc8f521436cc53",
+      "currentStatus": "后续修改"
+    },
+    {
+      "path": "scripts/internal_drive.py",
+      "initialRecordSha256": "830c67029a739bf27507f0bb6c5b47cf28be0b30116906060f0314ae709e8bb8",
+      "currentSha256": "30df1ef2526cc8f2a4d2975bdd398c2c5887db413946c5a1b8f8a73493281c75",
+      "currentStatus": "后续修改"
+    },
+    {
+      "path": "scripts/joint_endcaps.py",
+      "initialRecordSha256": "19c9cb606bd4f0c1ce86aa88106af3374ebe5b9c7159bcc61f90e21909790b2f",
+      "currentSha256": "3f25b27f3455e50cf077f11217584c59e59064ba275b817513247d084ba2f263",
+      "currentStatus": "后续修改"
+    },
+    {
+      "path": "scripts/kinematics.py",
+      "initialRecordSha256": "922f96fe80759337d26c5f00a002f1a93313297dadd84fff82e577c7b9e8b4e1",
+      "currentSha256": "73339f62a1e7bbfe2073aa7c0e65e26af69cfd46bf3a69d7d9ffcedae66a0ad5",
+      "currentStatus": "后续修改"
+    },
+    {
+      "path": "scripts/linkage_geometry.py",
+      "initialRecordSha256": "d9aa27b5722a68ccfbe788353f85fbe10ae47705675dfa9e7ea678dae484edb6",
+      "currentSha256": "dc69500e86a0afbee4ce8d6a7f76cb7824052d25222309d25e0c42f8e42d00c5",
+      "currentStatus": "后续修改"
+    },
+    {
+      "path": "scripts/verify-source.py",
+      "initialRecordSha256": "b2da7159e28d34085f301c870f3195ca0349b517935bf3605b3bc1fd66312b0d",
+      "currentSha256": "bcc0297e1849272c9c17a012bf8da5a05bfe897d8797030f1f0b261b5a3ed088",
+      "currentStatus": "后续修改"
+    },
+    {
+      "path": "scripts/wing_seam.py",
+      "initialRecordSha256": "d7a8ae4faed9f154d314ff89220094c89899f13e2e5f483ac0b99d05e8ec3e02",
+      "currentSha256": "a952e838ded95bdac45401d4ffc9f61632c13d71197f5b2f8eb7984418361a58",
+      "currentStatus": "后续修改"
+    },
+    {
+      "path": "src/App.tsx",
+      "initialRecordSha256": "b6786ac27629d279821fce1e36c7d8c8d4b9ce89340c43d4a4318c4e15f0397b",
+      "currentSha256": "c75b976a76d44337839caecfa3afc9fe285dea89cbb5b5eb2a3354a7e0d40dfa",
+      "currentStatus": "后续修改"
+    },
+    {
+      "path": "src/SimulationPanel.tsx",
+      "initialRecordSha256": "53f21dd089b77a300d7e1d39068b1c73c61b8a4916443add2418e2307d78dc22",
+      "currentSha256": "b6ef7b660442b2d7840fbeb4491883a6ff9fe63343b41ef6d39ccd08f6e89b6f",
+      "currentStatus": "后续修改"
+    },
+    {
+      "path": "src/style.css",
+      "initialRecordSha256": "051ad2a8260e947686b0fd46f0cc3d9cabbd3fe64f0cb51978769635038275be",
+      "currentSha256": "7c0da5f0f423f43d69a17e12cf269e32ac16f4c50c7e3ae86ba9dca15a31b66d",
+      "currentStatus": "后续修改"
+    },
+    {
+      "path": "qa/current/motion-reference-cli.mts",
+      "initialRecordSha256": "6d73245f65d4c9eee109703e0d6f0e57caf417e2acd74f73a29ee3b2a24cb99d",
+      "currentSha256": "dcddaa71eefa3c6843ebc2e7395f76349d7f2140103dccc62bffb04f97ea9118",
+      "currentStatus": "后续修改"
+    }
+  ],
+  "limitations": "沿用正式物理报告的有限采样、明确继承和概念模型边界；源码/SSR与GLB投影不代替浏览器像素、触控或设备性能验收。当前视觉另行由COPY_CURRENT_MEDIA绑定"
+}

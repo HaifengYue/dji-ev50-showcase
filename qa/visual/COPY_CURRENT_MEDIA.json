@@ -1,40 +1,74 @@
 {
-  "description": "仅复制当前模型成片与当前证据；不复制内部对比、旧版本内容或嵌套准备/逐帧目录",
+  "scope": "Only current model media and hash-bound current reports. No private baseline or original user image.",
+  "productionInputHashes": {
+    "public/models/xp4.glb": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+    "assets/blender/xp4-source.glb": "82ca7f6f9e98cb11737da6f1cb8b1507f71baf0ffcb57734b9beb7bb23e70126",
+    "assets/blender/xp4.blend": "869458bd88bdf1a60ae07f28d565187ed6d164bd11a49589e6beae90c5ad3ac1",
+    "public/models/manifest.json": "5151d3ed1013e3aeb1035308245f32635aff97be33a6b670c34243b05d3d7df1",
+    "src/rig.ts": "4215cd44a02e36e62a2a7ccacd16a38b3fe9d82a727c0233af6d889caa56efb5",
+    "src/motors.ts": "5297141cc670fd98034bd242e189f0d61681587db209a02da08fb73971c02824",
+    "src/details.ts": "6b6a967e411a72e5bea6f44badb89f33746c01e5e1d770ce91d962a1d4cb1a66",
+    "src/sceneLighting.ts": "00584eba19c175341efb5893b5b53a09b560232dd371381acde8c502f8752150",
+    "src/internalDriveInspection.ts": "1a5fae23375a81475b43b9fe8d16bcce506a3b76663b1bba3ba9b288ad6f6a42",
+    "package-lock.json": "8ca282ddba0bc23d4de0e6db5888de6b3b855a0597ac9c8296c4ddef78ce1ff4",
+    "node_modules/three/package.json": "aa42494664dba4cf76d89c6975ee38321a402f09a048672e190bad6f13beec93",
+    "node_modules/three/src/renderers/shaders/ShaderChunk/tonemapping_pars_fragment.glsl.js": "447958b93d07616c83d9273829ed810eb734d02ebbe60f12fc9bdda4f7928f44"
+  },
+  "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+  "sourceSha256": "82ca7f6f9e98cb11737da6f1cb8b1507f71baf0ffcb57734b9beb7bb23e70126",
+  "blendSha256": "869458bd88bdf1a60ae07f28d565187ed6d164bd11a49589e6beae90c5ad3ac1",
+  "manifestSha256": "5151d3ed1013e3aeb1035308245f32635aff97be33a6b670c34243b05d3d7df1",
+  "rigSha256": "4215cd44a02e36e62a2a7ccacd16a38b3fe9d82a727c0233af6d889caa56efb5",
   "files": [
     {
-      "file": "FUSELAGE_SLOT_DETAILS.jpg",
-      "bytes": 265803,
-      "sha256": "a81197fb7e4c8cb513d17ee0617ab5139f6439201a07d3861aa8c91550ebf647"
-    },
-    {
-      "file": "FUSELAGE_SLOT_STROKE.jpg",
-      "bytes": 325536,
-      "sha256": "09d46919d64313414ea3ffc750d62f960335248bb4a79db714be2a3c09aa7aeb"
-    },
-    {
       "file": "AIRFRAME_OVERVIEW.jpg",
-      "bytes": 352560,
-      "sha256": "50d565b18b475db5edad970341007e12bd760f850e6dccb9f9f8dd3363d94a58"
+      "bytes": 145751,
+      "sha256": "f56c674cf7432e89d1edce7be22a8baef9b1ac796f00a3054e7d9a5ef99239a9"
     },
     {
-      "file": "FUSELAGE_SLOT_MOTION.mp4",
-      "bytes": 587900,
-      "sha256": "fd6d0f845d4f6be794b423109780a3440124b664b187b457fa28a5566f7a321a"
+      "file": "CAPTURE_REPORT.json",
+      "bytes": 112094,
+      "sha256": "672118fb0b97b578901897bdfbf81c5476d0b29b2eda3956d70ad9f295c477d9"
     },
     {
-      "file": "RENDER_EVIDENCE.json",
-      "bytes": 12828,
-      "sha256": "9f8a7e5ef4470a0ed4338a14c3f669c34aa61a5910fa93a83bbee3d307e8bd5a"
+      "file": "DECODING_REPORT.json",
+      "bytes": 26963,
+      "sha256": "fa2876d3e75610c4cfe0a70124597ebfb4c7353b004a758965874a7f1d767380"
+    },
+    {
+      "file": "FRAMING_REPORT.json",
+      "bytes": 490158,
+      "sha256": "9104622ed13c0caba435023955efa3bd27a84284b0cc0b148dd90c55e19f5e3a"
+    },
+    {
+      "file": "LAYERED_WING_MOTION.mp4",
+      "bytes": 490197,
+      "sha256": "0085c221b6b236996f21b7b836f949b93cc29f2a1a52b972e516bf502716e324"
+    },
+    {
+      "file": "LAYERED_WING_PAN.jpg",
+      "bytes": 195291,
+      "sha256": "81cc3ffc76268755c41266ceae886f4cdc1267ccad577ce3d8b7a033110a9c8d"
+    },
+    {
+      "file": "LAYERED_WING_TOP.jpg",
+      "bytes": 202806,
+      "sha256": "237cf9727277274f66c834af743a77bb0e2020e16ef7a03c63ecf3c466db239b"
     },
     {
       "file": "README_CURRENT.md",
-      "bytes": 2454,
-      "sha256": "eec1c29dbdb56e34c212abe19ba26a0c50c85def9686f556398d6d83b4035a0d"
+      "bytes": 1805,
+      "sha256": "45d6e2f115fa2dbac5da1cdaeca9e335bc422c331e58f4a4cf62b4d8b95b3227"
     },
     {
-      "file": "CONTACT_READABILITY.json",
-      "bytes": 7757,
-      "sha256": "1bb2ec4f30bfb1b41c511144291da45cc1b604a40084c504fd95096782097170"
+      "file": "RENDER_EVIDENCE.json",
+      "bytes": 6327,
+      "sha256": "eda605e7e3eaaeb5baefc72675c21a46399929950d1c134ad19945f1c63e8e77"
+    },
+    {
+      "file": "VIDEO_DECODE.framemd5.txt",
+      "bytes": 6615,
+      "sha256": "7c38252532f492a570b8bbe4ae2a7fa96ae63ffd2ca98668ec09e7831e1e7bdf"
     }
   ]
 }

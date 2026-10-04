@@ -1,5 +1,5 @@
 {
-  "lockedAt": "2026-10-04T07:09:28.144Z",
+  "lockedAt": "2026-10-04T13:16:06.726Z",
   "scope": "当前实际生产、源/重建资产、精简参考、严格未变配对继承与独立物理检查依赖；不包含发行脚本、私有原图或候选预检",
   "files": [
     {
@@ -8,11 +8,11 @@
     },
     {
       "path": "assets/blender/xp4-source.glb",
-      "sha256": "14deba2a8cb20fb13c6cc05f8c4c09d441285b9754b014499942ad39992f7ce4"
+      "sha256": "82ca7f6f9e98cb11737da6f1cb8b1507f71baf0ffcb57734b9beb7bb23e70126"
     },
     {
       "path": "assets/blender/xp4.blend",
-      "sha256": "0dc4feb2a628dad23f1e82d122167a08154b7f72f301bc5f5fc8e59c210b6857"
+      "sha256": "869458bd88bdf1a60ae07f28d565187ed6d164bd11a49589e6beae90c5ad3ac1"
     },
     {
       "path": "package-lock.json",
@@ -24,7 +24,7 @@
     },
     {
       "path": "public/models/manifest.json",
-      "sha256": "5c75a42613bd42c5229204236b6a3605cf59f0190f8d4e7fdb8cb6611ffa04d9"
+      "sha256": "5151d3ed1013e3aeb1035308245f32635aff97be33a6b670c34243b05d3d7df1"
     },
     {
       "path": "public/models/nacelle-system-concept.glb",
@@ -32,7 +32,7 @@
     },
     {
       "path": "public/models/xp4.glb",
-      "sha256": "313b014ec70b409175b34a08f66ec56820a51ea094085ce1eef96fc444ce4b2b"
+      "sha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d"
     },
     {
       "path": "python/transwing_sim/__init__.py",
@@ -63,8 +63,12 @@
       "sha256": "6f5ac374e7512b877440ce84f77368347f05232dfe9701d4a1e3e086ef16d763"
     },
     {
-      "path": "qa/contracts/fuselage-slot-refinement.json",
-      "sha256": "637cd3e0c748e70613b9637fd842a76fe4c301cba96e91064020a5546cdcf7c0"
+      "path": "qa/contracts/layered-wing-refinement.json",
+      "sha256": "ed3dd660843d5e8ff61ea554c17217630dbf0b50524ce94c1647a65dc3d54e5c"
+    },
+    {
+      "path": "qa/contracts/model-refinement.json",
+      "sha256": "b7a96cebc32dbc7ed7622e032e42da80b9bb5b4ee1b1d5f7f502e418207eaac0"
     },
     {
       "path": "qa/contracts/reference-supports.json",
@@ -72,23 +76,15 @@
     },
     {
       "path": "qa/contracts/supports.json",
-      "sha256": "64cadf0b8fd862350b2ca8b4911ba05a12d05387e2aff9a3796b4760d599d013"
-    },
-    {
-      "path": "qa/contracts/wing-anchor-refinement.json",
-      "sha256": "34df8f1e120ab9bff34fcbeb829feb922ee7547c26529fead2fb78cc30e578c3"
-    },
-    {
-      "path": "qa/contracts/wing-anchor-target-mapping.json",
-      "sha256": "2ecc32a1099f0dfad215442daa9bce1598b860d54f8020fed1377916fe5991e6"
+      "sha256": "05ebaa25e8d45f6c785bf851245db07cc1882cdc6f1e9f6cbeeadca2497bb4d6"
     },
     {
       "path": "qa/current/affected-scope.mts",
-      "sha256": "76f62e2bd8976e908b71dbefca1ffcceb2316ee26f928ee4d7c1abb85d427f69"
+      "sha256": "0712dd1ff3fcb5ed81c8a8e72c4e13506182a9edba2a72298aa38a7b06b2bad4"
     },
     {
       "path": "qa/current/affected-scope.selftest.mts",
-      "sha256": "2d6e58b20a27003fcb7c47190d2dcef816451df81afa17d0182cee3a8897467d"
+      "sha256": "758a2d78e0e05a27ea3fbbd926c63211d3a5b0421109f610ab4e9377217777dc"
     },
     {
       "path": "qa/current/audit-scene.mts",
@@ -96,39 +92,39 @@
     },
     {
       "path": "qa/current/author/generator-reproducibility.json",
-      "sha256": "5a30382a816912af7f51684d56fadd5a175a1041a50a78a8d5b54ec5765fcc81"
+      "sha256": "bf8df98816ab6a4b4caa47cf6c465e1e848176e147570e8bd9364883842ab803"
     },
     {
       "path": "qa/current/author/regenerated-runtime-geometry.json",
-      "sha256": "a618ecd4ccc4835ad905c1b2298d92788d71ce6c990ddc57dc4d11a5d08b0228"
+      "sha256": "23e491af483f4ea2b972564916312dc4c623f43d0fc24c22c58115af92bc3ebd"
     },
     {
       "path": "qa/current/author/regeneration-exact.json",
-      "sha256": "32329d0dadf6344fb179fea067472b86b293ebb35b6c3b48fde90db687b499ed"
+      "sha256": "e2ed986c163bfd201e8a4bf5a67bf87f599e6fc22902c0a23fdf9270977870c4"
     },
     {
       "path": "qa/current/author/source-kinematics.json",
-      "sha256": "fee7e7350a3d645b19193df61871890917c5b99721dd833ba4e2d07e88f726e8"
+      "sha256": "36e6a8af72d1313ce140b74e53328d218109fb9cce521acf2927b1238acdefa7"
     },
     {
       "path": "qa/current/author/source-motor-animation.json",
-      "sha256": "481819c9c2670791c131edea8f8e31d9bda5da1b8e57d57bfec065eaae6784a9"
+      "sha256": "1ffdc8ccff491d5791bdf21317af8646d4e32258b5cc7f70fdb0e2470125e476"
     },
     {
       "path": "qa/current/author/source-native-drive.json",
-      "sha256": "5c8f6ad17b2806ea7732e732148f76a3d51983c2673e851103596e307a0f5b70"
+      "sha256": "afbb9ac84a03747f2667987d629373fa0f4e482246af0789e446c2446afe6ca6"
     },
     {
       "path": "qa/current/author/source-reexport.glb",
-      "sha256": "14deba2a8cb20fb13c6cc05f8c4c09d441285b9754b014499942ad39992f7ce4"
+      "sha256": "82ca7f6f9e98cb11737da6f1cb8b1507f71baf0ffcb57734b9beb7bb23e70126"
     },
     {
       "path": "qa/current/author/source-runtime-geometry.json",
-      "sha256": "96893c6892dd8f29e4970bbe3ab5df4478bbc9a2f4a05bee919c41dfcfe1566e"
+      "sha256": "1e5cfb155e51b7783e08c0789f933aee6db1a629be47c60e9eae1c620cdfc174"
     },
     {
       "path": "qa/current/author/source-solids.json",
-      "sha256": "31698c4ff58b34bfd332f89bbf91e97bb5d72ed8ad025f953789c9a418b5da3e"
+      "sha256": "cc15ce17125f1e56bd380513a43b6c81cea08690eafd0b26920f5ac3af0cbf73"
     },
     {
       "path": "qa/current/broadphase.mts",
@@ -140,7 +136,7 @@
     },
     {
       "path": "qa/current/decoration-topology.mts",
-      "sha256": "8c5cceb8911a649da7e446195326bd9d794e329ba0fa934dd73da70ca6096c1b"
+      "sha256": "6f6a20c291725de92ea3a93eb9dd6434d89fddbe4a0c66b41547836f56d69107"
     },
     {
       "path": "qa/current/decoration-topology.selftest.mts",
@@ -155,12 +151,60 @@
       "sha256": "1eae34a872ffe44c74818833112ec9cc3c67c4761c3752f9a3b0cbfe2ebb50a5"
     },
     {
+      "path": "qa/current/fairing-clearance-evidence.mjs",
+      "sha256": "3162630f2d9e73e018d6829b315c3d6044cff88b82a913469dbde168a63a7897"
+    },
+    {
+      "path": "qa/current/fairing-clearance.mts",
+      "sha256": "7e8f1ff48f243e58c818332d027a622c20d3104efbf866335e139f09b1342523"
+    },
+    {
+      "path": "qa/current/fairing-clearance.selftest.mts",
+      "sha256": "cf00486d10f6aafd3f0704c444b22c409ef16323a451bc86b40ad336c3abc308"
+    },
+    {
+      "path": "qa/current/fairing-support-roles.mjs",
+      "sha256": "425ca8046ef434b1dcf23a59549633ede01db8062e8d3bdbc127b025baa9c36d"
+    },
+    {
+      "path": "qa/current/fairing-support-roles.selftest.mjs",
+      "sha256": "88959c461a5951d703685d660663a97e497f406ad057520d0c9dccf02a701f3a"
+    },
+    {
       "path": "qa/current/freeze-inputs.mjs",
-      "sha256": "9eb392df985d5712b47afd045e88f0a6d0d74ab1316636c0490b7dcece828de8"
+      "sha256": "789fc992cf08b352d97f96ca624dc9c04cffe42f09b150e6ae098dea005680a5"
+    },
+    {
+      "path": "qa/current/hinge-identity-baseline.mts",
+      "sha256": "41d863e1c12a3ae04d9879be295221a790ae7ff9834631ada89377b09f86edd7"
+    },
+    {
+      "path": "qa/current/hinge-identity.mts",
+      "sha256": "300e40f2859582004d73d2b09de188973d835afc356ce5a514682aa8853926e9"
     },
     {
       "path": "qa/current/input-lock-integrity.mjs",
       "sha256": "cd95254932ca4dbe72f3a51d2c0fedd582cee34a55a4f0c13c833524da0be1fa"
+    },
+    {
+      "path": "qa/current/layered-contract-logic.mjs",
+      "sha256": "fda06b2c8ee00f3b9f76296af0981708dc33e319b6e1b23138cc09b1382775c2"
+    },
+    {
+      "path": "qa/current/layered-domain-schema.mjs",
+      "sha256": "5899c0c4cccae54ab6357a0daa7017645675b660934559d68f28325600eeb75d"
+    },
+    {
+      "path": "qa/current/layered-domain-schema.selftest.mjs",
+      "sha256": "7075c933fdf29e0ca6597b4239acb20b8f0a6b61d0e597568082d96ce188e86a"
+    },
+    {
+      "path": "qa/current/layered-sections.mts",
+      "sha256": "04227231484aaa3339dd7c9fa7d8647b3d44829bdb6042cf61a5ba8881d114e5"
+    },
+    {
+      "path": "qa/current/layered-sections.selftest.mts",
+      "sha256": "a15f3385b2ba4e29747d5db9c289819a26aa562f300bc178004af21d632947f2"
     },
     {
       "path": "qa/current/local-module-dependencies.mjs",
@@ -171,12 +215,16 @@
       "sha256": "6fb8a4c8636577df9953c6c95346991466adf2ae89e41a2aeb4f8f78317dc8bf"
     },
     {
+      "path": "qa/current/model-reference.mts",
+      "sha256": "16d8c541fbc3343692b4145a2d81b007918ec7dbfe0fd6c19c96c26094824ecb"
+    },
+    {
       "path": "qa/current/motion-reference-adapter.mjs",
       "sha256": "c12f85a37a1b787a0c2a76fd76dd7b32f505c3f23e235bb95cbd43227c494328"
     },
     {
       "path": "qa/current/motion-reference-cli.mts",
-      "sha256": "6d73245f65d4c9eee109703e0d6f0e57caf417e2acd74f73a29ee3b2a24cb99d"
+      "sha256": "dcddaa71eefa3c6843ebc2e7395f76349d7f2140103dccc62bffb04f97ea9118"
     },
     {
       "path": "qa/current/motion-reference.mts",
@@ -185,6 +233,14 @@
     {
       "path": "qa/current/motion-reference.selftest.mts",
       "sha256": "6add0f51d772d4b27bcf8bcfe073923d56bbdcb66024362cd360c41307951ba5"
+    },
+    {
+      "path": "qa/current/node-inventory.mjs",
+      "sha256": "37f5cec27e3edc652867e6de826a8b4648963f4dd14ce3b19c7c8a8169f27480"
+    },
+    {
+      "path": "qa/current/node-inventory.selftest.mjs",
+      "sha256": "860eda41b2a9d2605840f5542eac16c5f3e39dff528a4b26f17e8846a79cfb34"
     },
     {
       "path": "qa/current/patch-coverage.mts",
@@ -207,12 +263,16 @@
       "sha256": "79f1570d2ab4eaea246a472961f21016a3709b9e25ee7b48b09a6a00adc68595"
     },
     {
-      "path": "qa/current/reviewed-contract-logic.mjs",
-      "sha256": "f9cdbc2573b579663d2fcb40c0fecdb20b143edd98c42870a2ffd122dccaef89"
+      "path": "qa/current/rotor-impact.mts",
+      "sha256": "0f96d65e9c7be63014d6d9f9b917f15aeb8ad11ec6f437703df8ef7cd8bcda59"
+    },
+    {
+      "path": "qa/current/rotor-impact.selftest.mts",
+      "sha256": "e0a902720b8aea23de55550ec96079a83a207cf4bbe64b63657e9d5688239c40"
     },
     {
       "path": "qa/current/run-safety.sh",
-      "sha256": "3cb3cb79d82e62ff94f4d73f307b8867e366bf52051da046783fc0bd41824ef6"
+      "sha256": "ba1ce42ffc4c3557a19a0c1ec835d92fa4dbe31a98746d1f0b18d5adc65ed4b5"
     },
     {
       "path": "qa/current/slot-boundary-vertices.mts",
@@ -232,7 +292,7 @@
     },
     {
       "path": "qa/current/stages.json",
-      "sha256": "aba614d1c99c201dce641d16db31aae445344cacb4b3c6fcab7e43ccb7f4959a"
+      "sha256": "7086a88b6ffd3c09d5e5f1babd80d2f387e8c6f19cc1d8c2cee25c32966b5ec5"
     },
     {
       "path": "qa/current/straight-output-geometry.mts",
@@ -244,23 +304,51 @@
     },
     {
       "path": "qa/current/summarize.mjs",
-      "sha256": "c9b610575a6f0da3429a65486218522e19f6622db9c5c9732b0e7d3de0960fa7"
+      "sha256": "5f59256755695aa84f9403318ab6ef0bb6b5230ba9ed5351843c11878ddfee73"
+    },
+    {
+      "path": "qa/current/support-coordinate-review.mjs",
+      "sha256": "7732c551226425bda616d8af230a7df3024f5cf02fd8af55d9a4b79b1f1de3cc"
+    },
+    {
+      "path": "qa/current/support-coordinate-review.selftest.mjs",
+      "sha256": "74967b3bed2c32235845cd3d4b568a69d5f9cd40eb7da66c50c1e3ff2d7d7a99"
+    },
+    {
+      "path": "qa/current/verify-fairing-clearance.mts",
+      "sha256": "945c08e33d5c052c66bc9d1438d08bceb9a54a2cc2c8f85c09dffa2142cae7e7"
+    },
+    {
+      "path": "qa/current/verify-hinge-identity.mts",
+      "sha256": "d289de1d070f5b1580504343ec95ac848a0936d4f86f4e068e8d12c92bfc36b3"
     },
     {
       "path": "qa/current/verify-inheritance.mjs",
-      "sha256": "82ddbe669defc3905e77deeb83248163232bc2bd877e62690ae5552ca8e585c2"
+      "sha256": "8ca7a216059f15607bc7d5e67853873aae295b36d84172ca5fb04d56c94d6dc7"
+    },
+    {
+      "path": "qa/current/verify-layered-geometry.mts",
+      "sha256": "013ff17d2a0697e1311c020cb94c9ef18136ab053e64320cfa4241fe575421ad"
+    },
+    {
+      "path": "qa/current/verify-layered-motion-impact.mts",
+      "sha256": "992c8b4de4c6615a8497510ec2748a9bf89d9f1ec52558a5ed9dd0a328cbf2bc"
+    },
+    {
+      "path": "qa/current/verify-layered-scope.mts",
+      "sha256": "99a3032db1a5d5702095689d4fe14ef0a1f79945c2d53a4aa0fbb184a6a9ba89"
     },
     {
       "path": "qa/current/verify-local-motion.mts",
-      "sha256": "e106f3aa21acc964614fe43931179882ec2681daf623239e2bfed7aefd714d0e"
+      "sha256": "5e69324db9a5c56aec030a7a0d83152046a07eb1ea313e873f055600318335c7"
     },
     {
       "path": "qa/current/verify-local-scope.mts",
-      "sha256": "642ee23b7c80ea3e44d904ebdc4584ce68fb460ef44c2827308a1d8f4a8b063f"
+      "sha256": "2127748419dc32098a6beff58a9bc071facff9cf1ed8540ff5bbc9bd3fbdc151"
     },
     {
       "path": "qa/current/verify-preservation.mts",
-      "sha256": "dd0e2df9faf11573edcc19f825e80b2b597301ca162118c37e907e8705e4cd4d"
+      "sha256": "4f87b21a54540f67133ef2592f4aab81f05d333add90f5a23719905fbac81786"
     },
     {
       "path": "qa/current/verify-regenerated-contract.mjs",
@@ -268,19 +356,19 @@
     },
     {
       "path": "qa/current/verify-relative-motion.mts",
-      "sha256": "32d205725e42774b3cd02948d70813cf6f48c8f12c5c9dc618f861ebf089e19a"
+      "sha256": "fbfb814fa6afa2471dd4452af5499220748ae71d5c1504d49961183e1ce683c6"
     },
     {
       "path": "qa/current/verify-reviewed-contract.mjs",
-      "sha256": "611ed16a51873f89191f5db874d6d9df1ba4e2e6992d90c09745713d9d7734aa"
+      "sha256": "35b625d272b9cdee3679cdefba2bc014e64ba9d697b5779ef90dc309666e687f"
     },
     {
       "path": "qa/current/verify-rotor-envelope.mts",
-      "sha256": "57b6151420f9d7a9882946a2f837608330cd90659a32820efd65f349e334e67b"
+      "sha256": "baedfa8b291f4601bf44e6c24f5d2c96a68b1efb7ad271a289aa3be152ebb10d"
     },
     {
       "path": "qa/current/verify-solids.mts",
-      "sha256": "dca3c9d316b065dba6010ef9a579816876bc20b5bfbd1379de0299a1467965dc"
+      "sha256": "df3fd944625f7f47f76e0e1798ccdc3019d131940513c793926a2863a7a3d5dd"
     },
     {
       "path": "qa/current/verify-straight-output.mts",
@@ -288,7 +376,7 @@
     },
     {
       "path": "qa/current/verify-support.mts",
-      "sha256": "2878ed115aa9a07ba69d6f7b5863f3bacf22948c0ab4dcfa1e69a5ddab4c8d84"
+      "sha256": "0e1a8e257dcef97b4ae48465e7762f84e3f8cba5b80bdd6859fc381fd1940e01"
     },
     {
       "path": "qa/lib/drive-contract.mts",
@@ -320,7 +408,7 @@
     },
     {
       "path": "qa/lib/snapshot-audit.selftest.mts",
-      "sha256": "66d1918a8ec253f416ef41ea96d60c54f51635c5165d8ffc9d3fdd99494cde99"
+      "sha256": "537b170cb1772714239435f6ed34d94d2c7f071ca6a3535644819c0014f21eee"
     },
     {
       "path": "qa/lib/solid-contact.mjs",
@@ -360,7 +448,7 @@
     },
     {
       "path": "qa/lib/verify-inspection.mts",
-      "sha256": "e3e43c4d45a6b72297b9d8890b3065187e66e6861144de21139f4466bed83f59"
+      "sha256": "44a7e24af191ff1a1e4d83a3f912bbb72655978f422b57c19e31622d1f76b9d0"
     },
     {
       "path": "qa/lib/verify-linkage.mts",
@@ -507,8 +595,28 @@
       "sha256": "ed04822c5a89200a719e79bb44a1cc66cbdd57cd3a6eb90430d0c4e6aad6de19"
     },
     {
+      "path": "qa/reference/previous-accepted-motion.json",
+      "sha256": "3f21f5935f36ffaf0e10882c213bdc5ed90a56596d67845d51f0247db8d64786"
+    },
+    {
+      "path": "qa/reference/previous-accepted-reference.json",
+      "sha256": "eadb50535353fcf85ae8a518f23f5b81c3a869bd42f3c5df2a10b30a862f3cfd"
+    },
+    {
+      "path": "qa/reference/previous-accepted-summary.json",
+      "sha256": "78b136c86298d1106910cde5cc85cac50449c11cc13028d691be052ce345af7b"
+    },
+    {
+      "path": "qa/reference/previous-support-bounds.json",
+      "sha256": "a880438f7cdcef2d5f5958b08e813683acff8a9afac84049e388f5089185337e"
+    },
+    {
+      "path": "qa/reference/previous-supports.json",
+      "sha256": "64cadf0b8fd862350b2ca8b4911ba05a12d05387e2aff9a3796b4760d599d013"
+    },
+    {
       "path": "qa/reference/reference-manifest.json",
-      "sha256": "85d097484767c1679dec04a80b9d1a9aae9f4c0e8a9c3d600fd6906e6522c6e4"
+      "sha256": "e33134892df62045c2cb396871fbf048924ca314e52890c2f8574034bfb38ced"
     },
     {
       "path": "qa/reference/source-protected-surfaces.json",
@@ -516,15 +624,15 @@
     },
     {
       "path": "qa/regenerated/assets/blender/xp4-source.glb",
-      "sha256": "969b3efec68c93f496a77957c6dbcd10c226a3c3ae948f97de0f3ebfd8d7c1df"
+      "sha256": "dda50afb4487d68ae7af7528bcb173bbc07692bce80709cd8d0b9647e029430f"
     },
     {
       "path": "qa/regenerated/public/models/nacelle-system-concept.glb",
-      "sha256": "55f0d778657593e8745ecd0711f5720c3d6f98abb91b9ffab0875eeef8d08996"
+      "sha256": "e19dab612efc023e91d0f32152bb146ed5644d27a3fff45e2aeaaeb9103f51ce"
     },
     {
       "path": "qa/regenerated/public/models/xp4.glb",
-      "sha256": "c078890f155eafa89a495b3c7f1f4e805303dbcfed7ddb781552f963f16bd5a7"
+      "sha256": "f3aed2257ef3ff118fb3344c76da4196422743913af10be04e4fbfe627e40175"
     },
     {
       "path": "qa/regenerated/scripts/airframe_accessories.py",
@@ -540,7 +648,7 @@
     },
     {
       "path": "qa/regenerated/scripts/compress-model.mjs",
-      "sha256": "25b5ae1d4a5e604ec3358e5cc94ad85d1575041ac09a21380c309b7c718825a6"
+      "sha256": "288a3d913df8c80722b8cc7361956d3db5f37fedfa56a86f0f117b0af7ba00b6"
     },
     {
       "path": "qa/regenerated/scripts/control_supports.py",
@@ -559,14 +667,6 @@
       "sha256": "50af15b925da72edc69bcb8fb3fb138d0c21aba95705053bb29a7da5d30dbc9c"
     },
     {
-      "path": "qa/regenerated/scripts/data/red-target-footprint.json",
-      "sha256": "4235ff1718d1bcb1b321f3c5b626af1d53f243c8501d99965333b1a8b7da0b26"
-    },
-    {
-      "path": "qa/regenerated/scripts/data/red-target-mapping.json",
-      "sha256": "2ecc32a1099f0dfad215442daa9bce1598b860d54f8020fed1377916fe5991e6"
-    },
-    {
       "path": "qa/regenerated/scripts/drive_layout.py",
       "sha256": "53efe7cadef9f79d87d884f5b1981b9eca775f3de80c58eee98ee3d803e57d69"
     },
@@ -576,11 +676,11 @@
     },
     {
       "path": "qa/regenerated/scripts/export-transition.py",
-      "sha256": "667cc4fd5a2bd300d19c19f6104892aa80e964b3ab1fd547431c1e1d947fb9a3"
+      "sha256": "f2ae90b6493e42ad3a591ad3a4f80775d0b05d8eb7bcdb7b4fde2733a5f17e0b"
     },
     {
       "path": "qa/regenerated/scripts/generate_transwing.py",
-      "sha256": "8c36f6cf13c72f4404ee616d1d4c65ec42c2318294f7a2a8910b8fb125a0cc31"
+      "sha256": "15143d25b906b75c0699c1c3eb344652cb0f7219707fb46302cc8f521436cc53"
     },
     {
       "path": "qa/regenerated/scripts/hinge_supports.py",
@@ -588,23 +688,27 @@
     },
     {
       "path": "qa/regenerated/scripts/internal_drive.py",
-      "sha256": "830c67029a739bf27507f0bb6c5b47cf28be0b30116906060f0314ae709e8bb8"
+      "sha256": "30df1ef2526cc8f2a4d2975bdd398c2c5887db413946c5a1b8f8a73493281c75"
     },
     {
       "path": "qa/regenerated/scripts/joint_endcaps.py",
-      "sha256": "19c9cb606bd4f0c1ce86aa88106af3374ebe5b9c7159bcc61f90e21909790b2f"
+      "sha256": "3f25b27f3455e50cf077f11217584c59e59064ba275b817513247d084ba2f263"
     },
     {
       "path": "qa/regenerated/scripts/joint_fairings.py",
-      "sha256": "9ef7df580cbd7a88997078c2274290f4c11b6a2a698ceab7169d970117e3bccb"
+      "sha256": "b8bdd4d0f904fba6346a7cd604cf8521ed93ce04225cf5c2fc65a824a3bc8268"
     },
     {
       "path": "qa/regenerated/scripts/kinematics.py",
-      "sha256": "922f96fe80759337d26c5f00a002f1a93313297dadd84fff82e577c7b9e8b4e1"
+      "sha256": "73339f62a1e7bbfe2073aa7c0e65e26af69cfd46bf3a69d7d9ffcedae66a0ad5"
+    },
+    {
+      "path": "qa/regenerated/scripts/layered_wing_joint.py",
+      "sha256": "1e77e7ca77b30366f3f019c33e33746f0a9088b0f4a6251e7015e1a3398829f9"
     },
     {
       "path": "qa/regenerated/scripts/linkage_geometry.py",
-      "sha256": "d9aa27b5722a68ccfbe788353f85fbe10ae47705675dfa9e7ea678dae484edb6"
+      "sha256": "dc69500e86a0afbee4ce8d6a7f76cb7824052d25222309d25e0c42f8e42d00c5"
     },
     {
       "path": "qa/regenerated/scripts/output_slot_geometry.py",
@@ -640,7 +744,7 @@
     },
     {
       "path": "qa/regenerated/scripts/wing_seam.py",
-      "sha256": "d7a8ae4faed9f154d314ff89220094c89899f13e2e5f483ac0b99d05e8ec3e02"
+      "sha256": "a952e838ded95bdac45401d4ffc9f61632c13d71197f5b2f8eb7984418361a58"
     },
     {
       "path": "qa/regenerated/scripts/wing_surfaces.py",
@@ -660,7 +764,7 @@
     },
     {
       "path": "scripts/compress-model.mjs",
-      "sha256": "25b5ae1d4a5e604ec3358e5cc94ad85d1575041ac09a21380c309b7c718825a6"
+      "sha256": "288a3d913df8c80722b8cc7361956d3db5f37fedfa56a86f0f117b0af7ba00b6"
     },
     {
       "path": "scripts/control_supports.py",
@@ -679,14 +783,6 @@
       "sha256": "50af15b925da72edc69bcb8fb3fb138d0c21aba95705053bb29a7da5d30dbc9c"
     },
     {
-      "path": "scripts/data/red-target-footprint.json",
-      "sha256": "4235ff1718d1bcb1b321f3c5b626af1d53f243c8501d99965333b1a8b7da0b26"
-    },
-    {
-      "path": "scripts/data/red-target-mapping.json",
-      "sha256": "2ecc32a1099f0dfad215442daa9bce1598b860d54f8020fed1377916fe5991e6"
-    },
-    {
       "path": "scripts/drive_layout.py",
       "sha256": "53efe7cadef9f79d87d884f5b1981b9eca775f3de80c58eee98ee3d803e57d69"
     },
@@ -696,11 +792,11 @@
     },
     {
       "path": "scripts/export-transition.py",
-      "sha256": "667cc4fd5a2bd300d19c19f6104892aa80e964b3ab1fd547431c1e1d947fb9a3"
+      "sha256": "f2ae90b6493e42ad3a591ad3a4f80775d0b05d8eb7bcdb7b4fde2733a5f17e0b"
     },
     {
       "path": "scripts/generate_transwing.py",
-      "sha256": "8c36f6cf13c72f4404ee616d1d4c65ec42c2318294f7a2a8910b8fb125a0cc31"
+      "sha256": "15143d25b906b75c0699c1c3eb344652cb0f7219707fb46302cc8f521436cc53"
     },
     {
       "path": "scripts/hinge_supports.py",
@@ -708,23 +804,27 @@
     },
     {
       "path": "scripts/internal_drive.py",
-      "sha256": "830c67029a739bf27507f0bb6c5b47cf28be0b30116906060f0314ae709e8bb8"
+      "sha256": "30df1ef2526cc8f2a4d2975bdd398c2c5887db413946c5a1b8f8a73493281c75"
     },
     {
       "path": "scripts/joint_endcaps.py",
-      "sha256": "19c9cb606bd4f0c1ce86aa88106af3374ebe5b9c7159bcc61f90e21909790b2f"
+      "sha256": "3f25b27f3455e50cf077f11217584c59e59064ba275b817513247d084ba2f263"
     },
     {
       "path": "scripts/joint_fairings.py",
-      "sha256": "9ef7df580cbd7a88997078c2274290f4c11b6a2a698ceab7169d970117e3bccb"
+      "sha256": "b8bdd4d0f904fba6346a7cd604cf8521ed93ce04225cf5c2fc65a824a3bc8268"
     },
     {
       "path": "scripts/kinematics.py",
-      "sha256": "922f96fe80759337d26c5f00a002f1a93313297dadd84fff82e577c7b9e8b4e1"
+      "sha256": "73339f62a1e7bbfe2073aa7c0e65e26af69cfd46bf3a69d7d9ffcedae66a0ad5"
+    },
+    {
+      "path": "scripts/layered_wing_joint.py",
+      "sha256": "1e77e7ca77b30366f3f019c33e33746f0a9088b0f4a6251e7015e1a3398829f9"
     },
     {
       "path": "scripts/linkage_geometry.py",
-      "sha256": "d9aa27b5722a68ccfbe788353f85fbe10ae47705675dfa9e7ea678dae484edb6"
+      "sha256": "dc69500e86a0afbee4ce8d6a7f76cb7824052d25222309d25e0c42f8e42d00c5"
     },
     {
       "path": "scripts/output_slot_geometry.py",
@@ -784,7 +884,7 @@
     },
     {
       "path": "scripts/verify-regeneration.mjs",
-      "sha256": "66fd93f7bcc98f139845e81d54248d6c843ea59eac28ba413c55c0a5229759bb"
+      "sha256": "b4c5e1f3a5cae2ee39ad996e1ed4786091046dc3e0c00a0d78b47667315a8d4f"
     },
     {
       "path": "scripts/verify-solids.py",
@@ -796,11 +896,11 @@
     },
     {
       "path": "scripts/verify-source.py",
-      "sha256": "b2da7159e28d34085f301c870f3195ca0349b517935bf3605b3bc1fd66312b0d"
+      "sha256": "bcc0297e1849272c9c17a012bf8da5a05bfe897d8797030f1f0b261b5a3ed088"
     },
     {
       "path": "scripts/wing_seam.py",
-      "sha256": "d7a8ae4faed9f154d314ff89220094c89899f13e2e5f483ac0b99d05e8ec3e02"
+      "sha256": "a952e838ded95bdac45401d4ffc9f61632c13d71197f5b2f8eb7984418361a58"
     },
     {
       "path": "scripts/wing_surfaces.py",

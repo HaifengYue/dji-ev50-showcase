@@ -112,7 +112,7 @@ test("V24仍保留V20槽顶内收方法和十二枚销端的真实几何收口",
   }
 });
 
-test("V22翼端球铰靠根侧且所有新增支承有实际节点与有限接口", async () => {
+test("新翼端球铰真实内移且所有支承有实际节点与有限接口", async () => {
   const manifest = JSON.parse(
     readFileSync(
       new URL("../public/models/manifest.json", import.meta.url),
@@ -131,9 +131,9 @@ test("V22翼端球铰靠根侧且所有新增支承有实际节点与有限接�
     ["R", 1],
   ] as const) {
     const anchor = scene.getObjectByName(`BraceWing_${side}`)!;
-    assert.ok(Math.abs(anchor.position.x + sign * 0.45969725856807764) < 1e-6);
-    assert.ok(Math.abs(anchor.position.y - 0.03580632777801959) < 1e-6);
-    assert.ok(Math.abs(anchor.position.z + 0.33799887117646427) < 1e-6);
+    assert.ok(Math.abs(anchor.position.x + sign * 0.38) < 1e-6);
+    assert.ok(Math.abs(anchor.position.y - 0.05454436791055261) < 1e-6);
+    assert.ok(Math.abs(anchor.position.z + 0.33) < 1e-6);
     assert.equal(anchor.parent?.name, `WingPivot_${side}`);
     assert.ok(scene.getObjectByName(`RootBearingHousing_${side}`));
   }
@@ -149,7 +149,10 @@ test("V22翼端球铰靠根侧且所有新增支承有实际节点与有限接�
   assert.equal(manifest.controlSupports.newNodes.length, 12);
   for (const group of [manifest.hingeSupports, manifest.controlSupports]) {
     for (const name of group.newNodes)
-      assert.ok(scene.getObjectByName(name), name);
+      assert.ok(
+        scene.getObjectByName(THREE.PropertyBinding.sanitizeNodeName(name)),
+        name,
+      );
     assert.ok(group.fixedAttachmentInterfaces.length > 0);
     assert.ok(
       group.rotatingSupportInterfaces.every(
@@ -251,7 +254,7 @@ test("V22压缩保留五传动空节点的静态TRS与全部旋转轨原值", as
   }
 });
 
-test("V22红点、实际槽轮廓、内部布局和薄壁罩均有可复算契约", async () => {
+test("新球心、刚杆闭合、实际槽轮廓和低置布局均有可复算契约", async () => {
   const manifest = JSON.parse(
     readFileSync(
       new URL("../public/models/manifest.json", import.meta.url),
@@ -259,20 +262,32 @@ test("V22红点、实际槽轮廓、内部布局和薄壁罩均有可复算契�
     ),
   );
   const scene = await loadModel();
+  assert.equal(manifest.redTargetFootprint, undefined);
+  assert.equal(manifest.redTargetMapping, undefined);
   assert.equal(
-    manifest.redTargetFootprint.chosenInterpretation,
-    "exactBallCenterProjectionAlternative",
+    manifest.wingAttachmentReference.exactImagePixelRegistrationClaimed,
+    false,
   );
-  assert.deepEqual(
-    manifest.redTargetFootprint.projectionTargetReferencePixel,
-    [191, 452],
-  );
-  assert.ok(
-    Math.abs(manifest.mechanism.sides.R.braceLength - 2.958268432297501) < 1e-6,
-  );
-  assert.ok(
-    Math.abs(manifest.mechanism.sliderTravel[0] - 0.9104612197143451) < 1e-6,
-  );
+  const pivot = new THREE.Vector3(1.5, -0.22, 1.47);
+  const anchor = new THREE.Vector3(1.12, -0.16545563208944739, 1.14);
+  const body = new THREE.Vector3(0.16, -0.02, -1.9);
+  const length = anchor.distanceTo(body);
+  const hoverAnchor = anchor
+    .clone()
+    .sub(pivot)
+    .applyAxisAngle(new THREE.Vector3(-1, 1, 1).normalize(), (2 * Math.PI) / 3)
+    .add(pivot);
+  const hoverSlider =
+    -hoverAnchor.z +
+    Math.sqrt(
+      length ** 2 -
+        (hoverAnchor.x - body.x) ** 2 -
+        (hoverAnchor.y - body.y) ** 2,
+    );
+  assert.ok(Math.abs(manifest.mechanism.sides.R.braceLength - length) < 1e-6);
+  assert.ok(Math.abs(manifest.mechanism.sliderTravel[0] - hoverSlider) < 1e-6);
+  assert.ok(manifest.mechanism.sliderTravel[0] >= 0.9104609710668883);
+  assert.ok(Math.abs(manifest.mechanism.sliderTravel[1] - 1.9) < 1e-6);
   assert.ok(
     manifest.mechanism.slotEnvelopeBlender.actualRoundedOutlineRightXY.length >
       50,
@@ -299,7 +314,7 @@ test("V22红点、实际槽轮廓、内部布局和薄壁罩均有可复算契�
   );
 });
 
-test("V24保留V23真实主翼缝、平顺后缘退让与原硬件净空", () => {
+test("新分层翼根有可复算移轴和闭合材料契约；实际净空由独立物理门检验", async () => {
   const manifest = JSON.parse(
     readFileSync(
       new URL("../public/models/manifest.json", import.meta.url),
@@ -307,65 +322,47 @@ test("V24保留V23真实主翼缝、平顺后缘退让与原硬件净空", () =>
     ),
   );
   const seam = manifest.wingSeamRefinement;
+  const layered = manifest.layeredWingJoint;
   assert.equal(manifest.version, 24);
-  assert.equal(seam.version, 23);
-  assert.equal(seam.baselineVersion, 22);
-  assert.equal(seam.baselineAxialGap, 0.024);
+  assert.equal(seam.version, 24);
   assert.equal(seam.axialGap, 0.006);
-  assert.equal(seam.mainSeamNominalReductionFraction, 0.75);
   assert.equal(manifest.rootInterface.axisHalfGap, 0.003);
-  assert.equal(manifest.embeddedWingJoints.profile.halfGap, 0.003);
-  assert.equal(manifest.surfaceRefinements.root.axisHalfGap, 0.003);
+  assert.equal(manifest.rootInterface.geometryContract, "layeredWingJoint");
   assert.equal(manifest.mechanism.rootClearance, 0.006);
   assert.equal(seam.hardwareHalfGapPreserved, 0.012);
   assert.equal(seam.fairingSeamPreserved, 0.003);
-  assert.equal(manifest.fairingRefinements.serviceSeamAxialGap, 0.003);
   assert.equal(manifest.fairingRefinements.nominalWallThickness, 0.0025);
-  assert.equal(manifest.fairingRefinements.protectedHardwareUnchanged, true);
-  const relief = seam.movingTrailingTipRelief;
-  assert.equal(relief.radialStart, 0.72);
-  assert.equal(relief.radialEnd, 0.8);
-  assert.equal(relief.maximumAdditionalGap, 0.005);
-  assert.equal(relief.endAxialGap, 0.011);
-  assert.equal(relief.endAxialGap, seam.axialGap + relief.maximumAdditionalGap);
-  assert.ok(relief.endAxialGap < seam.baselineAxialGap);
-  assert.match(relief.interpolation, /C1 smoothstep/);
+  assert.equal(layered.fullStrokeRequiresNewCollisionEvidence, true);
+  assert.equal(manifest.surfaceRefinements.root.mechanismAxesUnchanged, false);
+  assert.equal(
+    manifest.internalDrive.loweredLayout.bodyBallAndWingTrajectoryUnchanged,
+    false,
+  );
+  const scene = await loadModel();
+  for (const [side, sign] of [
+    ["L", -1],
+    ["R", 1],
+  ] as const) {
+    const pivot = scene.getObjectByName(`WingPivot_${side}`)!;
+    assert.ok(
+      pivot.position.distanceTo(new THREE.Vector3(sign * 1.5, -0.22, 1.47)) <
+        1e-6,
+    );
+  }
+  for (const name of layered.rebasedDirectChildren)
+    assert.ok(
+      scene.getObjectByName(THREE.PropertyBinding.sanitizeNodeName(name)),
+      name,
+    );
+  assert.equal(manifest.wingSeamTopology.version, 24);
   assert.deepEqual(
-    seam.changedNodes.slice().sort(),
-    [
-      "Fixed_root_L",
-      "Fixed_root_R",
-      "Composite_wing_L",
-      "Composite_wing_R",
-      "Fixed_root_blue_L",
-      "Fixed_root_blue_R",
-      "Wing_blue_leading_L",
-      "Wing_blue_leading_R",
-      "BraceWingSeat_L",
-      "BraceWingSeat_R",
-    ].sort(),
+    manifest.wingSeamTopology.parts.map((p: { node: string }) => p.node).sort(),
+    ["Composite_wing_L", "Composite_wing_R", "Fixed_root_L", "Fixed_root_R"],
   );
-});
-
-test("V23布尔赘片修复保持闭合外皮且不修改现存顶点坐标", () => {
-  const manifest = JSON.parse(
-    readFileSync(
-      new URL("../public/models/manifest.json", import.meta.url),
-      "utf8",
-    ),
-  );
-  assert.equal(manifest.wingSeamTopology.version, 23);
-  assert.equal(manifest.wingSeamTopology.parts.length, 2);
   for (const part of manifest.wingSeamTopology.parts) {
-    assert.equal(part.existingVertexCoordinatesUnchanged, true);
-    assert.equal(part.boundaryEdges, 0);
     assert.equal(part.nonManifoldEdges, 0);
-    assert.ok(Math.abs(part.afterVolume - part.beforeVolume) <= 1e-13);
-    for (const shell of part.removedNumericalShells) {
-      assert.equal(shell.faces, 4);
-      assert.ok(shell.absoluteTetraVolume <= 1e-15);
-      assert.ok(shell.maximumEdgeLength <= 0.01);
-    }
+    assert.equal(part.zeroAreaFaces, 0);
+    assert.ok(part.volume > 1e-10);
   }
 });
 

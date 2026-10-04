@@ -1,10 +1,14 @@
 {
   passed: true,
+  currentNodeInventory: { passed: true, checks: 15, noProductionModelLoaded: true },
   checks: [
     'changed-parent descendant closure',
     'exact unaffected eligibility',
     'unexpected actual motion rejected',
     'missing exact identity rejected',
-    'missing declared node rejected'
+    'missing declared node rejected',
+    'current GLB complete-node identity and transformed leaf-marker closure',
+    'source/runtime geometry and normal-only changes enter the same conservative rerun union',
+    'unknown encoding-specific geometry names rejected'
   ]
 }

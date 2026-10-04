@@ -26,7 +26,7 @@ def build_linkage_details(ctx):
         top=Vector(output_top_local(sign,ctx['SLIDER_Z']))
         pin_mount=ball+stud*OUTPUT_STUD_DISTANCE
         carriage=cylinder('BraceBodyCarriage_'+side,pin_mount,top,OUTPUT_LINK_RADIUS,metal,spreader,vertices=24,bevel_width=.001)
-        carriage['purpose']='低位共同滑架的单根直斜输出件；原球心、球销及杆长保持'
+        carriage['purpose']='低位共同滑架的单根直斜输出件；机身侧球心及球销保持，运动按当前定长闭环求解'
         carriage['straightOutputEndpointsLocal']=[list(pin_mount),list(top)]
         carriage['straightOutputRadius']=OUTPUT_LINK_RADIUS
         carriage['motion']='inherits BraceSpreader; translation only, no extra linkage DOF'
@@ -51,9 +51,9 @@ def build_linkage_details(ctx):
         faces += [tuple(range(n-1,-1,-1)),tuple(3*n+i for i in range(n))]
         seat=mesh('BraceWingSeat_'+side,verts,faces,metal,pivot,smooth=True)
         seat.data.set_sharp_from_angle(angle=math.radians(40))
-        seat['purpose']='V18 upright, low-profile wing-top spherical joint seat'
+        seat['purpose']='直接贴合当前翼型的低轮廓正装球座'
         seat['attachmentRadius']=WING_SEAT_RADIUS
         seat['attachmentDepth']=WING_SEAT_DEPTH
         seat['wingHost']=wing.name
         contacts.append({'pair':[seat.name,wing.name],'type':'fixed bonded mounting footprint','wingLocalCenter':[anchor.x,anchor.y,0], 'radius':WING_SEAT_RADIUS,'maximumDepthBelowHostSurface':WING_SEAT_DEPTH,'maximumSeatTopZ':anchor.z-.024})
-    return {'version':22,'conceptOnly':True,'bodyOutput':'低置共用滑架，每侧一根直斜输出件连接原球销；不增设运动自由度', 'wingOutput':'V22按用户红点可见球心投影定位；安装足迹直接贴最终活动翼网格，主斜轴保持', 'oldWingAnchorLocal':{'L':[.26,.18,.04176],'R':[-.26,.18,.04176]}, 'newWingAnchorLocal':{side:list(ctx['brace_wing_local'](sign)) for side,sign in [('L',-1),('R',1)]}, 'baselineVersion':21,'newNodes':[],'changedNodes':['BraceWingSeat_L','BraceWingSeat_R','BraceBodyCarriage_L','BraceBodyCarriage_R'], 'removedNodePrefixes':[], 'bodyAnchorChange':{'oldLateral':.16,'newLateral':.16,'oldHeight':-.02,'newHeight':-.02}, 'preserved':['spherical eye dimensions and .0005 nominal seat gap','root hinge/airframe/propeller geometry and materials','wing rotation API','rigid rod scale=1'], 'fixedAttachmentInterfaces':contacts, 'claimBoundary':'原创机构简化与运动可视化；非原厂内部结构、制造设计、强度或适航证明'}
+    return {'version':22,'conceptOnly':True,'bodyOutput':'低置共用滑架，每侧一根直斜输出件连接原球销；不增设运动自由度', 'wingOutput':'按当前标注向翼弦内部移动实际球心；安装足迹直接贴最终活动翼网格，实际主轴位置由layeredWingJoint定义', 'oldWingAnchorLocal':{'L':[.26,.18,.04176],'R':[-.26,.18,.04176]}, 'newWingAnchorLocal':{side:list(ctx['brace_wing_local'](sign)) for side,sign in [('L',-1),('R',1)]}, 'baselineVersion':21,'newNodes':[],'changedNodes':['BraceWingSeat_L','BraceWingSeat_R','BraceBodyCarriage_L','BraceBodyCarriage_R'], 'removedNodePrefixes':[], 'bodyAnchorChange':{'oldLateral':.16,'newLateral':.16,'oldHeight':-.02,'newHeight':-.02}, 'preserved':['spherical eye dimensions and .0005 nominal seat gap','机身及旋翼部件局部几何和材质；翼根实际曲面及运动另验','wing rotation API','rigid rod scale=1'], 'fixedAttachmentInterfaces':contacts, 'claimBoundary':'原创机构简化与运动可视化；非原厂内部结构、制造设计、强度或适航证明'}

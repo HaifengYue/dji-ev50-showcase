@@ -1,12 +1,12 @@
-import {verifyDecorationTopology} from "./decoration-topology.mts";
+import {decorationTopology,verifyDecorationTopologySummary} from "./decoration-topology.mts";
+import {verifiedReference} from './reference-records.mjs';
 import {affectedScope} from "./affected-scope.mts";
 /** V22 actual source/runtime drive and linkage topology, nonzero triangle area and volume checks. */
 import fs from "node:fs";
 import { loadAudit } from "./audit-scene.mts";
-const refinement=JSON.parse(fs.readFileSync("qa/contracts/fuselage-slot-refinement.json", "utf8"));
+const refinement=JSON.parse(fs.readFileSync("qa/contracts/model-refinement.json", "utf8"));
 const decorationNames=new Set(JSON.parse(fs.readFileSync("qa/contracts/supports.json","utf8")).decorations.map(d=>d.name));
-const referenceSurfaces=JSON.parse(fs.readFileSync("qa/reference/source-protected-surfaces.json","utf8"));
-const referenceSnapshots=new Map(referenceSurfaces.meshes.map(m=>[m.name,{triangles:m.triangles.map((ids,i)=>({triangleIndex:m.sourceTriangleIndices[i],vertices:ids.map(j=>m.worldPositions[j])})),skippedDegenerate:m.skippedDegenerate}]));
+const previousReference=verifiedReference('previous-accepted-reference.json').data;
 const reports = [];
 for (const source of [
   "assets/blender/xp4-source.glb",
@@ -49,10 +49,11 @@ for (const source of [
       zeroAreaTriangles: zeroArea,
       minArea,
       volume: Math.abs(volume),
-      passed: top.closed && !zeroArea && Math.abs(volume) > 1e-10 && (!/^(Fuselage$|ActuatorSideSlot_[LR]$)/.test(m.name) || top.componentCount===1),
+      passed: top.closed && !zeroArea && Math.abs(volume) > 1e-10 && (!/^(Fuselage$|ActuatorSideSlot_[LR]$|Fixed_root_[LR]$|Composite_wing_[LR]$)/.test(m.name) || top.componentCount===1),
     });
   }
-  const decorations=a.meshes.filter(m=>changed.has(m.name)&&decorationNames.has(m.name)).map(m=>{const before=referenceSnapshots.get(m.name);if(!before)throw new Error('改动装饰缺少原材料面参照 '+m.name);return {name:m.name,...verifyDecorationTopology(before,a.snap(m))};});
+  const prior=previousReference.models.find(m=>m.encoding===(source.includes('source')?'source':'runtime'));
+  const decorations=a.meshes.filter(m=>changed.has(m.name)&&decorationNames.has(m.name)).map(m=>{const before=prior.nodes.find(n=>n.name===m.name)?.topology;if(!before)throw new Error('改动装饰缺少已验收的拓扑参照 '+m.name);return {name:m.name,...verifyDecorationTopologySummary(before,decorationTopology(a.snap(m)))};});
   reports.push({
     source,
     sha256: a.sha256,

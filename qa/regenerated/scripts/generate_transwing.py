@@ -1,13 +1,17 @@
-"""蓝边 P4/N273PD V24 修复机腹输出长槽的真实平直薄壁轮廓，保留V23主翼曲面翼缝，保持V22红点球铰、长行程与薄壁翼根蒙皮，保留V19实体中央横梁与有限中空后舱丝杠驱动，保留V15双手性扭转桨叶，保留V14内嵌短轴与局部错层搭接，非原厂 CAD。
+"""连续分层翼根、实际移轴及翼上球心内移；保留真实机腹直槽、低置驱动和单直斜输出。
+原创概念几何与定长闭环机构，不是原厂CAD、制造图纸或适航模型。
 运行：blender -b -t 4 --python scripts/generate_transwing.py
 仅独立构建几何；不复制官方网格、纹理、标识或摄影图像。
 """
 import bpy, bmesh, math, os, json, shutil, sys, hashlib
+bpy.context.preferences.filepaths.save_version=0
 from mathutils import Vector, Quaternion, Matrix
 from mathutils.geometry import tessellate_polygon
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'scripts'))
 from kinematics import *
+use_authoring_reference(True)
+PIVOT_X,PIVOT_Y,PIVOT_Z=REFERENCE_PIVOT
 from embedded_joint_surfaces import joint_profile, lip_factor as root_lip_factor, finish_embedded_joints
 from wing_surfaces import root_stations, moving_stations, build_surface_refinements, densify_root, roll_joint_skin, refined_body_sections
 MODELS = os.path.join(ROOT, 'public/models')
@@ -688,6 +692,10 @@ ROTOR_HANDEDNESS=build_rotor_handedness(globals())
 from central_wing_attachment import build_central_attachment
 CENTRAL_ATTACHMENT=build_central_attachment(globals())
 EMBEDDED_JOINTS=finish_embedded_joints(globals())
+from layered_wing_joint import build_layered_wing_joint
+LAYERED_WING_JOINT=build_layered_wing_joint(globals())
+slider_samples=[slider_at(i/1000) for i in range(1001)]
+slider_min,slider_max=min(slider_samples),max(slider_samples)
 from linkage_geometry import build_linkage_details
 LINKAGE_REFINEMENTS=build_linkage_details(globals())
 from internal_drive import build_internal_drive
@@ -742,12 +750,25 @@ manifest['animation']={'name':transition_export.CLIP,'durationSeconds':199/24,'f
 manifest['drivePhaseEncodingV22']=transition_export._read_glb(os.path.join(SOURCES,'xp4-source.glb'))[0]['extras']['drivePhaseEncodingV22']
 manifest['nativeDriveConstraintV22']={'method':'persistent local simple sin/cos quaternion expressions','input':'BraceSpreader.location[1]','independentDegreesOfFreedom':0,'externalFunctionsRequired':False}
 manifest['animations']=[{'name':transition_export.CLIP,'purpose':'原整翼机构回归基准','frames':[0,199],'fps':24,'channels':18},{'name':transition_export.MOTOR_CLIP,'purpose':'四动力先展开再转动、停转寻位再收桨','frames':[0,168],'fps':24,'channels':26,'durationSeconds':7,'timingIsIllustrative':True}]
-manifest['rootInterface']={'surface':'旋转不变局部错层曲面 t=0.21*(1-exp(-(r/0.42)^2))-0.030*(1-smoothstep(r/0.160))；r>=0.160恢复原曲面；根部皮肤按0.10范围连续减薄为0.42倍厚度','axisHalfGap':ROOT_HALF_GAP,'curvatureDepth':ROOT_CURVE_DEPTH,'curvatureRadius':ROOT_CURVE_RADIUS,'lipThicknessFraction':.42,'lipTransitionDistance':.10,'booleanBevelUsed':False,'visualReconstruction':True}
-manifest['wingSeamTopology']=WING_SEAM_TOPOLOGY
+manifest['rootInterface']={'surface':'前部连续退让曲面与轴旁同轴孔腔共同构成上下错层；活动上皮真实让位，下皮为有限承托材料','axisHalfGap':ROOT_HALF_GAP,'axisHalfGapScope':'兼容字段，仅为旧同轴构造半间隙；当前上开口及下盆间隙参见layeredWingJoint，不代表全局最小净空','hardwareProfile':'原同轴径向曲面只用于轴旁过渡与硬件分缝','booleanBevelUsed':False,'visualReconstruction':True,'geometryContract':'layeredWingJoint'}
+manifest['layeredWingJoint']=LAYERED_WING_JOINT
+manifest['wingSeamTopology']={'version':24,'parts':LAYERED_WING_JOINT['closedWingSolids'],'method':'四个当前主翼实体的闭合、正体积、非退化三角面；旧预构造布尔报告不能替代本结果'}
 manifest['straightFuselageSlot']=SLOT_PROFILE_CONFIG
-manifest['wingSeamRefinement']={'version':23,'baselineVersion':22,'changedNodes':['Fixed_root_L','Fixed_root_R','Composite_wing_L','Composite_wing_R','Fixed_root_blue_L','Fixed_root_blue_R','Wing_blue_leading_L','Wing_blue_leading_R','BraceWingSeat_L','BraceWingSeat_R'],'baselineAxialGap':.024,'axialGap':2*ROOT_HALF_GAP,'mainSeamNominalReductionFraction':.75,'movingTrailingTipRelief':{'radialStart':ROOT_TIP_RELIEF_START,'radialEnd':ROOT_TIP_RELIEF_END,'maximumAdditionalGap':ROOT_TIP_RELIEF_DEPTH,'endAxialGap':2*ROOT_HALF_GAP+ROOT_TIP_RELIEF_DEPTH,'interpolation':'C1 smoothstep径向渐变，原同轴曲面连续收口','reason':'活动翼最内侧后缘让开固定中央机身JOIN_X=.62接合边；不缩短运动、不改变主轴/球心'},'hardwareHalfGapPreserved':HARDWARE_HALF_GAP,'fairingSeamPreserved':.003,'method':'同轴旋转不变曲面两侧真实翼型切口收紧，保留独立封闭蒙皮、原曲率/薄唇与运动轴；不新增遮缝几何','claimBoundary':'模型坐标中的概念可视化净空；离散实际三角面与姿态另验，不是制造公差或连续碰撞证明'}
+manifest['wingSeamRefinement']={'version':24,'changedNodes':['Fixed_root_L','Fixed_root_R','Composite_wing_L','Composite_wing_R','Fixed_root_blue_L','Fixed_root_blue_R','Wing_blue_leading_L','Wing_blue_leading_R','BraceWingSeat_L','BraceWingSeat_R'],'axialGap':2*ROOT_HALF_GAP,'hardwareHalfGapPreserved':HARDWARE_HALF_GAP,'fairingSeamPreserved':.003,'method':'连续前部轮廓、实体上下错层、实际移轴和球心内移；不继承旧曲面或旧运动配对身份','claimBoundary':'当前实际网格和全程采样另验；非连续碰撞、制造性或适航证明'}
+manifest['surfaceRefinements']['root']={'fixedNodes':['Fixed_root_L','Fixed_root_R'],'movingNodes':['Composite_wing_L','Composite_wing_R'],'sharedCruiseLoft':SURFACE_REFINEMENTS['root']['sharedCruiseLoft'],'axisHalfGap':ROOT_HALF_GAP,'mechanismAxesUnchanged':False,'geometryContract':'layeredWingJoint','visualReconstructionNotFactoryDimensions':True}
+manifest['embeddedWingJoints']['scope']='本构造阶段为旧局部硬件基元；最终主翼实体由layeredWingJoint替换，主轴位置和整翼运动已重新计算'
+for key in ('fixedRootTopology','rootSkinNormals','rootPaintProjection'):manifest['surfaceRefinements'].pop(key,None)
+manifest['surfaceRefinements']['currentRootEvidence']='当前几何及法线由layeredWingJoint、surfaceFinishV22和独立源/运行验证登记；不继承旧翼根统计'
+manifest['embeddedWingJoints'].pop('changedRootNormals',None)
+manifest['centralAttachment'].pop('fixedRoots',None)
+manifest['centralAttachment'].pop('paintTaper',None)
+manifest['centralAttachment']['currentRootEvidence']='机身中央鞍面保留；外接固定翼及蓝边由layeredWingJoint当前重建'
+manifest['centralAttachment']['preserved']=['机身中央鞍面和原前舱腔体','CargoHoodShell及0–55度开盖轴','两腹部探头','旋翼部件局部几何；当前世界运动另验']
+manifest['detailRevision']['reference']='原实机外观参考的局部基元，加当前用户标注的连续分层翼根与真实移轴；原创概念尺寸，不是原厂CAD或飞控'
+manifest['detailRevision']['currentGeometryContract']='layeredWingJoint'
+manifest['detailRevision'].pop('unchangedSurfaceAndPropellerBaselineVersion',None)
 manifest['pivotAngleMeaning']='signed rotation delta from authored folded pose to cruise; mechanism.foldAngle is the opposite cruise-to-folded angle'
-manifest['mechanism']={'version':24,'rootClearance':2*ROOT_HALF_GAP,'type':'机身直出紧凑滑架、正装翼上球座、定长控制杆；共用纵向自由度','source':'PteroDynamics UAFM section 2.4.7, publicly indexed FAA filing FAA-2024-2404-0001 attachment_10, pp19-20; dimensions reconstructed','spreaderNode':'BraceSpreader','sliderAxis':[0,0,-1],'sliderTravel':[slider_min,slider_max],'sliderBodyHeight':SLIDER_Z,'braceScale':[1,1,1],'sides':{side:{'axis':gltf_vector(wing_axis(sign)),'foldAngle':sign*FOLD_ANGLE,'bodyAnchorCruise':gltf_vector(brace_body(sign)),'bodyAnchorLocal':gltf_vector((sign*SLIDER_X,0,0)),'wingAnchorLocal':gltf_vector(brace_wing_local(sign)),'braceLength':brace_length(sign),'rodLocalAxis':[0,1,0],'shaftEndpoints':['RootAxisStart_'+side,'RootAxisEnd_'+side],'bearingCenters':['RootBearingCenter_'+side+'_Front','RootBearingCenter_'+side+'_Rear']} for side,sign in [('L',-1),('R',1)]}}
+manifest['mechanism']={'version':24,'rootClearance':2*ROOT_HALF_GAP,'rootClearanceScope':'兼容字段，仅保留旧局部轴向参数；当前真实三维间隙必须由layeredWingJoint和独立三角材料检查确定','type':'机身直出紧凑滑架、正装翼上球座、定长控制杆；共用纵向自由度','source':'PteroDynamics UAFM section 2.4.7, publicly indexed FAA filing FAA-2024-2404-0001 attachment_10, pp19-20; dimensions reconstructed','spreaderNode':'BraceSpreader','sliderAxis':[0,0,-1],'sliderTravel':[slider_min,slider_max],'sliderBodyHeight':SLIDER_Z,'braceScale':[1,1,1],'sides':{side:{'axis':gltf_vector(wing_axis(sign)),'foldAngle':sign*FOLD_ANGLE,'bodyAnchorCruise':gltf_vector(brace_body(sign)),'bodyAnchorLocal':gltf_vector((sign*SLIDER_X,0,0)),'wingAnchorLocal':gltf_vector(brace_wing_local(sign)),'braceLength':brace_length(sign),'rodLocalAxis':[0,1,0],'shaftEndpoints':['RootAxisStart_'+side,'RootAxisEnd_'+side],'bearingCenters':['RootBearingCenter_'+side+'_Front','RootBearingCenter_'+side+'_Rear']} for side,sign in [('L',-1),('R',1)]}}
 manifest['linkageSimplification']=LINKAGE_REFINEMENTS
 manifest['internalDrive']=INTERNAL_DRIVE
 manifest['jointRefinements']=JOINT_REFINEMENTS
@@ -757,11 +778,12 @@ manifest['surfaceSupports']=SURFACE_SUPPORTS
 manifest['fairingRefinements']=FAIRING_REFINEMENTS
 manifest['surfaceFinishV22']=SURFACE_FINISH_V22
 manifest['mechanism']['actualSlotTravel']=[slot_min,slot_max]
+manifest['mechanism']['actualSlotTravelScope']='兼容字段，记录保留槽口的既有制作包络；当前滑架真实行程在sliderTravel，必须检查其位于该包络内'
 manifest['mechanism']['slotEnvelopeBlender']={'centerX':SLOT_CENTER_X,'width':SLOT_WIDTH,'bottomZ':SLOT_BOTTOM_Z,'topZ':SLOT_TOP_Z,'actualRoundedOutlineRightXY':SLOT_OUTLINE,'previousTravel':[1.2090788195527518,1.8999999762819604]}
-manifest['redTargetMapping']=json.load(open(os.path.join(ROOT,'scripts/data/red-target-mapping.json')))
-manifest['redTargetFootprint']=json.load(open(os.path.join(ROOT,'scripts/data/red-target-footprint.json')))
-manifest['redTargetFootprint']['chosenInterpretation']='exactBallCenterProjectionAlternative'
-manifest['redTargetFootprint']['projectionTargetReferencePixel']=[191,452]
+manifest['wingAttachmentReference']={'source':'用户当前标注的蓝点向前、远离边缘指示','worldBlenderCruise':list(WING_ANCHOR_CRUISE),'fitIsIllustrative':True,'exactImagePixelRegistrationClaimed':False}
+manifest['internalDrive']['loweredLayout']['bodyBallAndWingTrajectoryUnchanged']=False
+manifest['internalDrive']['loweredLayout']['preserved']='机身侧球心、低置固定驱动布局及单直件保持；翼侧球心、杆长、滑架起点和相位按实际新机构重算'
+manifest['fairingRefinements']['protectedHardwareUnchangedScope']='仅指当前生成中的罩体构造前后同一硬件网格；主轴位置已由layeredWingJoint真实更新'
 manifest['spinnerAxleClearance']={'shaftRadius':.016,'blindBoreRadius':.017,'blindBoreFrontEndLocalZ':.003,'frontCapPreserved':True,'motorInternalTypeNotClaimed':True}
 manifest['rodEndSeat']={'type':'spherical retaining bore','ballRadius':.018,'seatRadius':.0185,'halfWidth':.005,'nominalRadialClearance':.0005,'centersUnchanged':False,'seatGeometryUnchanged':True}
 manifest['foldingHinge']={'version':12,'pivotRadius':.17,'forkBoreRadius':.0068,'pinAxisBlenderLocal':[0,1,0],'pinRadius':.006,'boreRadius':.0085,'sleeveOuterRadius':.022,'sleeveAxialHalfLength':.029,'forkInnerHalfWidth':.036,'radialClearance':.0025,'axialSideClearance':.007,'actualSolidBore':True,'samePropMovingPartsRequireContactChecks':True}

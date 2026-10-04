@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "checks": 25,
+  "noModelLoaded": true,
+  "regressions": [
+    "L_Rear substring double relocation",
+    "baked geometry displaced under unchanged object origin",
+    "missing side/station",
+    "wrong rigid body",
+    "legitimate mirrored bases/hex phases"
+  ]
+}

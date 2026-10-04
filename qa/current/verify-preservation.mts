@@ -7,7 +7,7 @@ import { measureNumericMeshDrift } from "../lib/numeric-drift.mts";
 import { MeshoptDecoder } from "three/examples/jsm/libs/meshopt_decoder.module.js";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 const contractPath =
-  process.env.QA_REFINEMENTS ?? "qa/contracts/fuselage-slot-refinement.json";
+  process.env.QA_REFINEMENTS ?? "qa/contracts/model-refinement.json";
 const c = JSON.parse(fs.readFileSync(contractPath, "utf8"));
 assert(c.reviewed === true || process.env.QA_PREFLIGHT === "1");
 const encoding = process.env.QA_ENCODING ?? "source";
@@ -55,8 +55,10 @@ function signature(o: any, normal: boolean, raw = true) {
     triangleCount: tri.length,
   };
 }
-const geometryAllowed = new Set(c.geometryChanges),
-  normalAllowed = new Set(c.normalOnlyChanges),
+const expectedGeometry = encoding === "runtime" ? (c.runtimeGeometryChanges ?? c.geometryChanges) : c.geometryChanges,
+  expectedNormals = encoding === "runtime" ? (c.runtimeNormalOnlyChanges ?? c.normalOnlyChanges) : c.normalOnlyChanges;
+const geometryAllowed = new Set(expectedGeometry),
+  normalAllowed = new Set(expectedNormals),
   transformAllowed = new Set(encoding === "runtime" ? (c.runtimeTransformChanges??c.runtimeEncodingTransformChanges) : c.transformChanges);
 const failures: any[] = [],
   unchanged: any[] = [],
@@ -129,7 +131,7 @@ for (const [name, a] of maps[0]) {
     const rawPositionTopologyEqual =
       JSON.stringify(signature(a, false, true)) ===
       JSON.stringify(signature(b, false, true));
-    if (!geometryAllowed.has(name) && JSON.stringify(signature(a, true, true)) !== JSON.stringify(signature(b, true, true))) failures.push({name, reason: "unchanged mesh lacks exact decoded position/normal/oriented-topology identity"});
+    if (!geometryAllowed.has(name) && !normalAllowed.has(name) && JSON.stringify(signature(a, true, true)) !== JSON.stringify(signature(b, true, true))) failures.push({name, reason: "unchanged mesh lacks exact decoded position/normal/oriented-topology identity"});
     if (normalAllowed.has(name) && !rawPositionTopologyEqual)
       failures.push({
         name,
@@ -177,12 +179,13 @@ for (const [name, a] of maps[0]) {
       delta <= numericTransform.maximumMatrixDifference,
       `${name} exceeds explicitly bounded Float32 rest drift`,
     );
-  // 源端全部TRS精确保留；运行端仅显式声明的压缩坐标重基对象可改变局部变换。
+  // 两编码分别声明真实TRS变更；未声明的节点仍要求未经舍入的完全恒等。
   if (!transformAllowed.has(name)) {
     if (delta !== 0) failures.push({name, reason:"node lacks exact undeclared local-transform identity", maximumMatrixDifference:delta});
     for (const field of ["position", "quaternion", "scale"]) if (JSON.stringify(a[field].toArray()) !== JSON.stringify(b[field].toArray())) failures.push({name, reason:"undeclared exact TRS component changed", field});
   }
-  if (delta > 1e-9) {
+  const rawTransformChanged = delta !== 0 || ["position", "quaternion", "scale"].some(field => JSON.stringify(a[field].toArray()) !== JSON.stringify(b[field].toArray()));
+  if (rawTransformChanged) {
     transformChanges.push(name);
     if (!transformAllowed.has(name))
       failures.push({
@@ -220,15 +223,15 @@ exact(removedNodes, c.removedNodes, "removal scope differs");
 exact(transformChanges, [...transformAllowed], "transform scope differs");
 exact(
   geometryChanges.map((r) => r.name),
-  c.geometryChanges,
+  expectedGeometry,
   "geometry scope differs",
 );
 exact(
   normalChanges.map((r) => r.name),
-  c.normalOnlyChanges,
+  expectedNormals,
   "normal-only scope differs",
 );
-assert(protectedNodes.length > 25, "Protected hardware list absent");
+assert.equal(protectedNodes.length,c.protectedNodeCount,"Explicit protected-node scope differs; relocated hinge is not silently treated as fixed");
 assert.deepEqual(reference.animations.map((c:any)=>c.name).sort(),current.animations.map(c=>c.name).sort(),"动作片段必须精确保留");
 const animationChanges:any[]=[],timelineChanges:any[]=[];
 for(const old of reference.animations){const next=current.animations.find(c=>c.name===old.name)!;assert.equal(old.duration,next.duration);assert.deepEqual(old.tracks.map((t:any)=>t.name).sort(),next.tracks.map(t=>t.name).sort());

@@ -52,7 +52,7 @@ for (const name of targets)
     `Final inspection target missing: ${name}`,
   );
 for (const name of JSON.parse(
-  fs.readFileSync("qa/contracts/wing-anchor-refinement.json", "utf8"),
+  fs.readFileSync("qa/contracts/model-refinement.json", "utf8"),
 ).geometryChanges)
   assert.equal(
     g.scene.getObjectByName(name)?.visible,

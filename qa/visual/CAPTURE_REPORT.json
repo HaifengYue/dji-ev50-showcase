@@ -1,0 +1,4353 @@
+{
+  "passed": true,
+  "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+  "sourceSha256": "82ca7f6f9e98cb11737da6f1cb8b1507f71baf0ffcb57734b9beb7bb23e70126",
+  "rigSha256": "4215cd44a02e36e62a2a7ccacd16a38b3fe9d82a727c0233af6d889caa56efb5",
+  "productionInputHashes": {
+    "public/models/xp4.glb": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+    "assets/blender/xp4-source.glb": "82ca7f6f9e98cb11737da6f1cb8b1507f71baf0ffcb57734b9beb7bb23e70126",
+    "assets/blender/xp4.blend": "869458bd88bdf1a60ae07f28d565187ed6d164bd11a49589e6beae90c5ad3ac1",
+    "public/models/manifest.json": "5151d3ed1013e3aeb1035308245f32635aff97be33a6b670c34243b05d3d7df1",
+    "src/rig.ts": "4215cd44a02e36e62a2a7ccacd16a38b3fe9d82a727c0233af6d889caa56efb5",
+    "src/motors.ts": "5297141cc670fd98034bd242e189f0d61681587db209a02da08fb73971c02824",
+    "src/details.ts": "6b6a967e411a72e5bea6f44badb89f33746c01e5e1d770ce91d962a1d4cb1a66",
+    "src/sceneLighting.ts": "00584eba19c175341efb5893b5b53a09b560232dd371381acde8c502f8752150",
+    "src/internalDriveInspection.ts": "1a5fae23375a81475b43b9fe8d16bcce506a3b76663b1bba3ba9b288ad6f6a42",
+    "package-lock.json": "8ca282ddba0bc23d4de0e6db5888de6b3b855a0597ac9c8296c4ddef78ce1ff4",
+    "node_modules/three/package.json": "aa42494664dba4cf76d89c6975ee38321a402f09a048672e190bad6f13beec93",
+    "node_modules/three/src/renderers/shaders/ShaderChunk/tonemapping_pars_fragment.glsl.js": "447958b93d07616c83d9273829ed810eb734d02ebbe60f12fc9bdda4f7928f44"
+  },
+  "captureMethodHashes": {
+    "cameras.json": "4dbe11626b4db1008bbe67f0d2aa63982d14a2ff30b64a4609ec6acfe5683f2b",
+    "export-render.mts": "f8d3ebb47720428c0a35655520e317926fd93ad4f2de8231bb346c1cdf88545b",
+    "native_gl.py": "31050ca4b8ee5a83390187028c93ec799ebf380370197602f419a618268b3ad4",
+    "freeze-inputs.py": "313979ab844d424e0dac0eae90b55251e20616759c42bb9f98220264594e40d3",
+    "verify-framing.py": "1841eb6602c873d418cf7bed42830f5ce7cfe106607525781ea88cd8ee6d5d08",
+    "compose.py": "aa5f920fb121768a1d8a46ebd4d3ed85aa129d028a61a98fd7584dfa2b74568a",
+    "animate.py": "67a2f5d9d2f7baa1ce5bbf15c63b9f4b3867be0a719ef9ee51c5b7772fbc6428",
+    "validate.py": "3943e7504916c26cdaeb2606c5069750125e1eab77750acc9069b06d209b5e41",
+    "run-final.sh": "6b2b9587a5218ce6cc6e0c94290684b8d2b16b86cac39102689befe0894a44fb"
+  },
+  "meshRosters": {
+    "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1": [
+      "ActuatorSideSlot_L",
+      "ActuatorSideSlot_R",
+      "Blade_L_Front_A",
+      "Blade_L_Front_B",
+      "Blade_L_Rear_A",
+      "Blade_L_Rear_B",
+      "Blade_R_Front_A",
+      "Blade_R_Front_B",
+      "Blade_R_Rear_A",
+      "Blade_R_Rear_B",
+      "Blade_hinge_arm_L_Front_A",
+      "Blade_hinge_arm_L_Front_B",
+      "Blade_hinge_arm_L_Rear_A",
+      "Blade_hinge_arm_L_Rear_B",
+      "Blade_hinge_arm_R_Front_A",
+      "Blade_hinge_arm_R_Front_B",
+      "Blade_hinge_arm_R_Rear_A",
+      "Blade_hinge_arm_R_Rear_B",
+      "Blade_hinge_pin_L_Front_A",
+      "Blade_hinge_pin_L_Front_B",
+      "Blade_hinge_pin_L_Rear_A",
+      "Blade_hinge_pin_L_Rear_B",
+      "Blade_hinge_pin_R_Front_A",
+      "Blade_hinge_pin_R_Front_B",
+      "Blade_hinge_pin_R_Rear_A",
+      "Blade_hinge_pin_R_Rear_B",
+      "BraceBallPin_L_Body",
+      "BraceBallPin_L_Wing",
+      "BraceBallPin_R_Body",
+      "BraceBallPin_R_Wing",
+      "BraceBall_L_Body",
+      "BraceBall_L_Wing",
+      "BraceBall_R_Body",
+      "BraceBall_R_Wing",
+      "BraceBodyCarriage_L",
+      "BraceBodyCarriage_R",
+      "BraceRodEyeNeck_L_Body",
+      "BraceRodEyeNeck_L_Root",
+      "BraceRodEyeNeck_R_Body",
+      "BraceRodEyeNeck_R_Root",
+      "BraceRodEye_L_Body",
+      "BraceRodEye_L_Root",
+      "BraceRodEye_R_Body",
+      "BraceRodEye_R_Root",
+      "BraceRodFerrule_L_Body",
+      "BraceRodFerrule_L_Root",
+      "BraceRodFerrule_R_Body",
+      "BraceRodFerrule_R_Root",
+      "BraceRod_mesh_L",
+      "BraceRod_mesh_R",
+      "BraceWingSeat_L",
+      "BraceWingSeat_R",
+      "CargoHingeCap_L",
+      "CargoHingeCap_R",
+      "CargoHingeFixedSeat",
+      "CargoHingeMovingSeat_L",
+      "CargoHingeMovingSeat_R",
+      "CargoHingePin",
+      "CargoHoodShell",
+      "CargoLatchFixed_L",
+      "CargoLatchFixed_R",
+      "CargoLatchMoving_L",
+      "CargoLatchMoving_R",
+      "CargoLatchPin_L",
+      "CargoLatchPin_R",
+      "CargoOpeningLip",
+      "Composite_wing_L",
+      "Composite_wing_R",
+      "ControlFlexureFixed_L_Inboard",
+      "ControlFlexureFixed_L_Outboard",
+      "ControlFlexureFixed_R_Inboard",
+      "ControlFlexureFixed_R_Outboard",
+      "ControlFlexureFixed_Tail_L",
+      "ControlFlexureFixed_Tail_R",
+      "ControlFlexureMoving_L_Inboard",
+      "ControlFlexureMoving_L_Outboard",
+      "ControlFlexureMoving_R_Inboard",
+      "ControlFlexureMoving_R_Outboard",
+      "ControlFlexureMoving_Tail_L",
+      "ControlFlexureMoving_Tail_R",
+      "ControlHingeFixed_L_Inboard",
+      "ControlHingeFixed_L_Outboard",
+      "ControlHingeFixed_R_Inboard",
+      "ControlHingeFixed_R_Outboard",
+      "ControlHingeFixed_Tail_L",
+      "ControlHingeFixed_Tail_R",
+      "ControlHingeMoving_L_Inboard",
+      "ControlHingeMoving_L_Outboard",
+      "ControlHingeMoving_R_Inboard",
+      "ControlHingeMoving_R_Outboard",
+      "ControlHingeMoving_Tail_L",
+      "ControlHingeMoving_Tail_R",
+      "ControlHorn_L_Inboard",
+      "ControlHorn_L_Outboard",
+      "ControlHorn_R_Inboard",
+      "ControlHorn_R_Outboard",
+      "ControlSurface_L_Inboard",
+      "ControlSurface_L_Outboard",
+      "ControlSurface_R_Inboard",
+      "ControlSurface_R_Outboard",
+      "ControlSurface_Tail_L",
+      "ControlSurface_Tail_R",
+      "Cowl_boundary_L_Front",
+      "Cowl_boundary_L_Rear",
+      "Cowl_boundary_R_Front",
+      "Cowl_boundary_R_Rear",
+      "Dorsal_antenna",
+      "Dorsal_hatch_main",
+      "Dorsal_small_receiver",
+      "Drive_CouplingWitness",
+      "Drive_Crossbeam",
+      "Drive_FrontFoot_L",
+      "Drive_FrontFoot_R",
+      "Drive_FrontGuidePedestal_L",
+      "Drive_FrontGuidePedestal_R",
+      "Drive_FrontGuideSeat_L",
+      "Drive_FrontGuideSeat_R",
+      "Drive_FrontScrewBearing",
+      "Drive_FrontScrewPedestal",
+      "Drive_FrontSupport",
+      "Drive_FrontTravelStop_L",
+      "Drive_FrontTravelStop_R",
+      "Drive_GuideBridge_L",
+      "Drive_GuideBridge_R",
+      "Drive_GuideBushing_L",
+      "Drive_GuideBushing_R",
+      "Drive_GuideRail_L",
+      "Drive_GuideRail_R",
+      "Drive_LeadScrewCore",
+      "Drive_LeadScrewThread",
+      "Drive_MotorFoot_L",
+      "Drive_MotorFoot_R",
+      "Drive_MotorGearboxAdapter",
+      "Drive_MotorHousing",
+      "Drive_MotorMount",
+      "Drive_MotorRotorDisc",
+      "Drive_MotorSaddle_L",
+      "Drive_MotorSaddle_R",
+      "Drive_MotorShaft",
+      "Drive_MotorWitness",
+      "Drive_NutCarriage",
+      "Drive_NutInternalThread",
+      "Drive_OutputCoupling",
+      "Drive_OutputWeb",
+      "Drive_PlanetCarrier",
+      "Drive_PlanetGear_0",
+      "Drive_PlanetGear_1",
+      "Drive_PlanetGear_2",
+      "Drive_PlanetPin_0",
+      "Drive_PlanetPin_1",
+      "Drive_PlanetPin_2",
+      "Drive_PlanetRetainer_0_Front",
+      "Drive_PlanetRetainer_0_Rear",
+      "Drive_PlanetRetainer_1_Front",
+      "Drive_PlanetRetainer_1_Rear",
+      "Drive_PlanetRetainer_2_Front",
+      "Drive_PlanetRetainer_2_Rear",
+      "Drive_RearFoot_L",
+      "Drive_RearFoot_R",
+      "Drive_RearGuidePedestal_L",
+      "Drive_RearGuidePedestal_R",
+      "Drive_RearGuideSeat_L",
+      "Drive_RearGuideSeat_R",
+      "Drive_RearScrewBearing",
+      "Drive_RearScrewPedestal",
+      "Drive_RearSupport",
+      "Drive_RearTravelStop_L",
+      "Drive_RearTravelStop_R",
+      "Drive_ReductionHousing",
+      "Drive_RingGear",
+      "Drive_SunGear",
+      "Fixed_root_L",
+      "Fixed_root_R",
+      "Fixed_root_blue_L",
+      "Fixed_root_blue_R",
+      "Fuselage",
+      "Hatch_fastener_main",
+      "Hatch_fastener_main001",
+      "Hatch_fastener_main002",
+      "Hatch_fastener_main003",
+      "Landing_wear_tip_L_Front",
+      "Landing_wear_tip_L_Rear",
+      "Landing_wear_tip_R_Front",
+      "Landing_wear_tip_R_Rear",
+      "Lower_fuselage_join",
+      "Lower_fuselage_join001",
+      "Lower_fuselage_join002",
+      "Lower_fuselage_join003",
+      "MotorFrontBearing_L_Front",
+      "MotorFrontBearing_L_Rear",
+      "MotorFrontBearing_R_Front",
+      "MotorFrontBearing_R_Rear",
+      "Motor_cowl_L_Front",
+      "Motor_cowl_L_Rear",
+      "Motor_cowl_R_Front",
+      "Motor_cowl_R_Rear",
+      "Motor_spindle_L_Front",
+      "Motor_spindle_L_Rear",
+      "Motor_spindle_R_Front",
+      "Motor_spindle_R_Rear",
+      "Nacelle_L_Front",
+      "Nacelle_L_Rear",
+      "Nacelle_R_Front",
+      "Nacelle_R_Rear",
+      "Pitot_probe_foot",
+      "Pitot_probe_mount",
+      "Pitot_probe_tube",
+      "Pod_U_access_panel_L_Front",
+      "Pod_U_access_panel_L_Front001",
+      "Pod_U_access_panel_L_Rear",
+      "Pod_U_access_panel_L_Rear001",
+      "Pod_U_access_panel_R_Front",
+      "Pod_U_access_panel_R_Front001",
+      "Pod_U_access_panel_R_Rear",
+      "Pod_U_access_panel_R_Rear001",
+      "Pod_mount_seam_L_Front",
+      "Pod_mount_seam_L_Front001",
+      "Pod_mount_seam_L_Rear",
+      "Pod_mount_seam_L_Rear001",
+      "Pod_mount_seam_R_Front",
+      "Pod_mount_seam_R_Front001",
+      "Pod_mount_seam_R_Rear",
+      "Pod_mount_seam_R_Rear001",
+      "Pod_wing_saddle_L_Front",
+      "Pod_wing_saddle_L_Rear",
+      "Pod_wing_saddle_R_Front",
+      "Pod_wing_saddle_R_Rear",
+      "RootBearingFixed_L_Front",
+      "RootBearingFixed_L_Rear",
+      "RootBearingFixed_R_Front",
+      "RootBearingFixed_R_Rear",
+      "RootBearingHousing_L",
+      "RootBearingHousing_R",
+      "RootBearingSeal_L_Front",
+      "RootBearingSeal_L_Rear",
+      "RootBearingSeal_R_Front",
+      "RootBearingSeal_R_Rear",
+      "RootCarrierBridge_L",
+      "RootCarrierBridge_R",
+      "RootCarrierMoving_L",
+      "RootCarrierMoving_R",
+      "RootCarrierThrust_L",
+      "RootCarrierThrust_R",
+      "RootFairingFixed_L",
+      "RootFairingFixed_R",
+      "RootFairingMoving_L",
+      "RootFairingMoving_R",
+      "RootFixedBearingPedestal_L",
+      "RootFixedBearingPedestal_R",
+      "RootHingeEndcap_L-0148",
+      "RootHingeEndcap_L0148",
+      "RootHingeEndcap_R-0148",
+      "RootHingeEndcap_R0148",
+      "RootHingeShaft_L",
+      "RootHingeShaft_R",
+      "Root_access_cover_L",
+      "Root_access_cover_R",
+      "Spinner_L_Front",
+      "Spinner_L_Rear",
+      "Spinner_R_Front",
+      "Spinner_R_Rear",
+      "Tail_boom_join",
+      "Tail_receiver",
+      "Tail_root_fastener_L",
+      "Tail_root_fastener_L001",
+      "Tail_root_fastener_R",
+      "Tail_root_fastener_R001",
+      "V_tail_L",
+      "V_tail_R",
+      "V_tail_blue_leading_L",
+      "V_tail_blue_leading_R",
+      "Ventral_antenna",
+      "Ventral_antenna001",
+      "Ventral_small_sensor",
+      "Ventral_tail_tab",
+      "Wing_blue_angular_panel_L",
+      "Wing_blue_angular_panel_R",
+      "Wing_blue_leading_L",
+      "Wing_blue_leading_R",
+      "Wing_service_panel_L",
+      "Wing_service_panel_L001",
+      "Wing_service_panel_R",
+      "Wing_service_panel_R001"
+    ]
+  },
+  "captureCount": 96,
+  "captures": [
+    {
+      "mode": "candidate",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "candidate/hangar-pose-000-whole.png",
+      "frame": "pose-000",
+      "unfold": 0,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          1200,
+          900
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        2400,
+        1800
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "98927641458b26f732e7aa4cf63019fb950c3fcbfe2d6fa6b74a7c6bc6ca5542"
+    },
+    {
+      "mode": "candidate",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "candidate/hangar-pose-000-whole-top.png",
+      "frame": "pose-000",
+      "unfold": 0,
+      "camera": "whole-top",
+      "cameraDefinition": {
+        "position": [
+          0,
+          8,
+          0
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          0,
+          1
+        ],
+        "scale": 8.5,
+        "meshSet": "exterior",
+        "resolution": [
+          1200,
+          900
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        2400,
+        1800
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "f899aeaeb6ef9c40824ec931368dc76e0d884d72aa691880cae5adecff943fe2"
+    },
+    {
+      "mode": "candidate",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "candidate/hangar-pose-001-whole.png",
+      "frame": "pose-001",
+      "unfold": 0.5,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          1200,
+          900
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        2400,
+        1800
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "3070927027b3607c358144cfa89c3a51cdac02930c0e6a378e6f8e94f67c0e72"
+    },
+    {
+      "mode": "candidate",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "candidate/hangar-pose-001-whole-top.png",
+      "frame": "pose-001",
+      "unfold": 0.5,
+      "camera": "whole-top",
+      "cameraDefinition": {
+        "position": [
+          0,
+          8,
+          0
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          0,
+          1
+        ],
+        "scale": 8.5,
+        "meshSet": "exterior",
+        "resolution": [
+          1200,
+          900
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        2400,
+        1800
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "1658acd4a503abbdcf393e05b793a01f313ff62300754d53a34ec092385dc64a"
+    },
+    {
+      "mode": "candidate",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "candidate/hangar-pose-002-root-top.png",
+      "frame": "pose-002",
+      "unfold": 1,
+      "camera": "root-top",
+      "cameraDefinition": {
+        "position": [
+          0,
+          8,
+          1.42
+        ],
+        "target": [
+          0,
+          -0.2,
+          1.42
+        ],
+        "up": [
+          0,
+          0,
+          1
+        ],
+        "scale": 2.12,
+        "meshSet": "exterior",
+        "resolution": [
+          1560,
+          760
+        ],
+        "scope": "both-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        3120,
+        1520
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "a231aa11f804da46ab2d8849ef9d3d8db756d2303bd297b5cdf98a416ab5ff00"
+    },
+    {
+      "mode": "candidate",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "candidate/hangar-pose-002-joint-top.png",
+      "frame": "pose-002",
+      "unfold": 1,
+      "camera": "joint-top",
+      "cameraDefinition": {
+        "position": [
+          1.12,
+          8,
+          1.43
+        ],
+        "target": [
+          1.12,
+          -0.2,
+          1.43
+        ],
+        "up": [
+          0,
+          0,
+          1
+        ],
+        "scale": 1.24,
+        "meshSet": "exterior",
+        "resolution": [
+          1200,
+          900
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        2400,
+        1800
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "994961043ee05c1b89b0552697b64806ff286497fa5302d181c8429eecbe2c40"
+    },
+    {
+      "mode": "candidate",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "candidate/hangar-pose-002-upper-oblique.png",
+      "frame": "pose-002",
+      "unfold": 1,
+      "camera": "upper-oblique",
+      "cameraDefinition": {
+        "position": [
+          2.2,
+          0.72,
+          2.48
+        ],
+        "target": [
+          1.12,
+          -0.21,
+          1.47
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 1.38,
+        "meshSet": "exterior",
+        "resolution": [
+          1200,
+          900
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        2400,
+        1800
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "e928b54a90c380b91d9e6b6ca4c7031eafe6d90607c6467e2a26163f89f792c3"
+    },
+    {
+      "mode": "candidate",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "candidate/hangar-pose-002-lower-oblique.png",
+      "frame": "pose-002",
+      "unfold": 1,
+      "camera": "lower-oblique",
+      "cameraDefinition": {
+        "position": [
+          2.15,
+          -0.78,
+          2.05
+        ],
+        "target": [
+          1.08,
+          -0.24,
+          1.43
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 1.4,
+        "meshSet": "exterior",
+        "resolution": [
+          1200,
+          900
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        2400,
+        1800
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "52c9cd5b3bb27ac6486f17948c95d11ab46d51e74db2cfdfaf57f30f5a1cf8e0"
+    },
+    {
+      "mode": "candidate",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "candidate/hangar-pose-002-root-side.png",
+      "frame": "pose-002",
+      "unfold": 1,
+      "camera": "root-side",
+      "cameraDefinition": {
+        "position": [
+          1.04,
+          -0.34,
+          2.85
+        ],
+        "target": [
+          1.06,
+          -0.215,
+          1.46
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 0.54,
+        "meshSet": "exterior",
+        "resolution": [
+          1500,
+          500
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        3000,
+        1000
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "ff6f41263122a2590af53578cdddc177395c263da9f92222388f8380595cdb39"
+    },
+    {
+      "mode": "candidate",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "candidate/hangar-pose-002-hinge-detail.png",
+      "frame": "pose-002",
+      "unfold": 1,
+      "camera": "hinge-detail",
+      "cameraDefinition": {
+        "position": [
+          2.1,
+          0.24,
+          2.05
+        ],
+        "target": [
+          1.49,
+          -0.21,
+          1.475
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 0.58,
+        "meshSet": "exterior",
+        "resolution": [
+          960,
+          720
+        ],
+        "scope": "hinge"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1920,
+        1440
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "2a8fbeda750b2124983ab58201c249ceea553695c6805a0fa9813b15461ca64a"
+    },
+    {
+      "mode": "candidate",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "candidate/hangar-pose-002-rodpoint-detail.png",
+      "frame": "pose-002",
+      "unfold": 1,
+      "camera": "rodpoint-detail",
+      "cameraDefinition": {
+        "position": [
+          1.35,
+          0.5,
+          0.05
+        ],
+        "target": [
+          1.12,
+          -0.18,
+          1.14
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 0.66,
+        "meshSet": "exterior",
+        "resolution": [
+          960,
+          720
+        ],
+        "scope": "rodpoint"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1920,
+        1440
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "b689a6299bffba02e6e653a6528be9af5a699b17053740d1acae85f8e8daf8e4"
+    },
+    {
+      "mode": "candidate",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "candidate/hangar-pose-002-whole.png",
+      "frame": "pose-002",
+      "unfold": 1,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          1200,
+          900
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        2400,
+        1800
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "072c8349e1b9d1b272dfffbe6c5c0d55217b1e587cd6fe6358b66b4fbd64ca52"
+    },
+    {
+      "mode": "candidate",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "candidate/hangar-pose-002-whole-top.png",
+      "frame": "pose-002",
+      "unfold": 1,
+      "camera": "whole-top",
+      "cameraDefinition": {
+        "position": [
+          0,
+          8,
+          0
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          0,
+          1
+        ],
+        "scale": 8.5,
+        "meshSet": "exterior",
+        "resolution": [
+          1200,
+          900
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        2400,
+        1800
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "94fcf4b2e882f4df3dee5ffafe8e6483271f0c02d50c240165479ef38301430d"
+    },
+    {
+      "mode": "candidate",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "candidate/hangar-pose-002-motion-root.png",
+      "frame": "pose-002",
+      "unfold": 1,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "33cd741dd51c340909620e6fe13157adf29fc6e2725d06f4863e92c50284a4ce"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-000-whole.png",
+      "frame": "pose-000",
+      "unfold": 0,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "4f9f668d9b5b4278b2a4aa80d95ad4ab1bd22e38fd84b29f082eed12ef4bf626"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-000-motion-root.png",
+      "frame": "pose-000",
+      "unfold": 0,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "c6795bebc9251f9a10b7e990f6820046b89ff18b5241e875c5a3571eed9d1eee"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-001-whole.png",
+      "frame": "pose-001",
+      "unfold": 0.025,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "d2e364cf16638a5560ed9e0fcfce6c2fa58c16348eba34a554c5e98e709fc104"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-001-motion-root.png",
+      "frame": "pose-001",
+      "unfold": 0.025,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "7949a289b0ef075f90d0d1e73304ce7cf37a06414848803d1cc45a037bf44e2a"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-002-whole.png",
+      "frame": "pose-002",
+      "unfold": 0.05,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "dbc29bb8cf49f0cff078daa2b91a46e1ea08543303d5bccea7412efa537d8577"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-002-motion-root.png",
+      "frame": "pose-002",
+      "unfold": 0.05,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "dd88a0ea1412dcf08d8e26832c310f51958c56562ddb158c691aad7daa8c8444"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-003-whole.png",
+      "frame": "pose-003",
+      "unfold": 0.075,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "b1307fc19eeffa688053a088e5b0aed1d56844dc16c078cdc367da6e17a47788"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-003-motion-root.png",
+      "frame": "pose-003",
+      "unfold": 0.075,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "dcbc333a87f67243d319529bde6c9f8af91c8d1a546df9ed9f35182303b935da"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-004-whole.png",
+      "frame": "pose-004",
+      "unfold": 0.1,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "8b47acd39bdb3068d8f79de9c9727f0807d1e2ec1635d2b7c835c230c8713ccb"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-004-motion-root.png",
+      "frame": "pose-004",
+      "unfold": 0.1,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "a668dce7040f2d9510002a23383edc4f16e0368ff4562493326b2dbef8b71ed6"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-005-whole.png",
+      "frame": "pose-005",
+      "unfold": 0.125,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "8ab2ad809f33e30b0c4ffcc4b41db9001b0addb50db4cf2bbd21a2999e85d24d"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-005-motion-root.png",
+      "frame": "pose-005",
+      "unfold": 0.125,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "b814bb589e8b48333e310abac4b4e10ead25df91e0bf6141e8a4953f8f696c41"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-006-whole.png",
+      "frame": "pose-006",
+      "unfold": 0.15,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "3a506e73e16222ebb2190285c2631032275d0f4222bac918fa57543dabed7e70"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-006-motion-root.png",
+      "frame": "pose-006",
+      "unfold": 0.15,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "d37fd1dbb968ed33688fadd2370aad77c6d2ab4f4d4d6d470e24c898cbee0ed8"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-007-whole.png",
+      "frame": "pose-007",
+      "unfold": 0.175,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "381d31bbf1660f160dcd82bee638642c37b92222198cdebc007f28000fb2a65c"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-007-motion-root.png",
+      "frame": "pose-007",
+      "unfold": 0.175,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "1ac37a65ce09ea99ad5f2a4dc2cfea28792c6bfbc510687a4482a2b520b57320"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-008-whole.png",
+      "frame": "pose-008",
+      "unfold": 0.2,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "a7c43ae3b014acbfd6d1477da6905bc49fe7c3a258ebb58599bf40ff3780928e"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-008-motion-root.png",
+      "frame": "pose-008",
+      "unfold": 0.2,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "630ca22c1b3033c76a574f95e365f96ddb2349b91b52fe0fe0105a23d926a6fd"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-009-whole.png",
+      "frame": "pose-009",
+      "unfold": 0.225,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "2770c2cf5f0591720107ee83bc9f0601f64ed6e2036ea40026370ac5f46d4e59"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-009-motion-root.png",
+      "frame": "pose-009",
+      "unfold": 0.225,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "bcff3327354f926d02c880539d6c227893957b144c9326d26d78064601ccf532"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-010-whole.png",
+      "frame": "pose-010",
+      "unfold": 0.25,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "01d9b8df8ab1bf861a7f0ff501166fbae522d3f229f961dfbe9fb6fff0735c38"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-010-motion-root.png",
+      "frame": "pose-010",
+      "unfold": 0.25,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "7231370815f7ca0d2b52a111847c05369bd2b341b20ced6cc17fd5333d505809"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-011-whole.png",
+      "frame": "pose-011",
+      "unfold": 0.275,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "9d3e9192bccca882961971ad93b5001ef8c6bf8fae702d0b8ab963c84e84e7c4"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-011-motion-root.png",
+      "frame": "pose-011",
+      "unfold": 0.275,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "3af030983919978c4fe190f5673abcfb98df33365ac388bd925ef2a69784d9ed"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-012-whole.png",
+      "frame": "pose-012",
+      "unfold": 0.3,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "9e90cd77ac753b1cf98c337b6e3e3498f598de244bc3c35c35f869bc94b254c0"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-012-motion-root.png",
+      "frame": "pose-012",
+      "unfold": 0.3,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "7c0bc8c045df4b38dfa5c3db4ec6cc04e78fab07979a938fdd24a1e4abd883cd"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-013-whole.png",
+      "frame": "pose-013",
+      "unfold": 0.325,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "2d6b67825c5ae6b23e9037c2bccf5214c7f1651390850caeed926c3a10c46ab4"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-013-motion-root.png",
+      "frame": "pose-013",
+      "unfold": 0.325,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "2bcf7fd06ba558d36f0c1368b67caf6dba9f80ae094eb55c6cc4b8a2a776a955"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-014-whole.png",
+      "frame": "pose-014",
+      "unfold": 0.35,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "9b3c7c0729851a0d6c1c192cd487f2d71c5412e96a6992410a5e31784dadf32f"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-014-motion-root.png",
+      "frame": "pose-014",
+      "unfold": 0.35,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "6ff63120be4c71f2314dc4010e9bf221460c7e2f904738efb97e09d682ff72ba"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-015-whole.png",
+      "frame": "pose-015",
+      "unfold": 0.375,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "ac703194a4279a883cc65efd95153d1e9156b14677a310964568d3bf255cb45a"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-015-motion-root.png",
+      "frame": "pose-015",
+      "unfold": 0.375,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "8767a2700f4b095b7d3b9fe8a878c40bfd90ba29cd983efe141d493bb8c029b2"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-016-whole.png",
+      "frame": "pose-016",
+      "unfold": 0.4,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "4bb42e2dd65c462356b148dd8c0555e3d16c263efc1685dfe6be4879b12028f2"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-016-motion-root.png",
+      "frame": "pose-016",
+      "unfold": 0.4,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "84cbb9b69adf314b1584765563cd3ba05b7bab506872203a8a2e216ad7acceec"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-017-whole.png",
+      "frame": "pose-017",
+      "unfold": 0.425,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "0cf07de56a0b1d48123ac24705a1e2fd8c69c3921ac110856e32dc09275547b7"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-017-motion-root.png",
+      "frame": "pose-017",
+      "unfold": 0.425,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "a6bbcb4e40e8bbb7e6ace624459587f7f2cb9ac44e9a5ba00333eb5eba910602"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-018-whole.png",
+      "frame": "pose-018",
+      "unfold": 0.45,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "7ba569d752cd73d930f05d4cc77566618be993f1edb19172e67a6fbce8d857a9"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-018-motion-root.png",
+      "frame": "pose-018",
+      "unfold": 0.45,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "3da1158367f4478f2e93c11419f234c75af8306c8acbd2e0e52206690eb0a0fc"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-019-whole.png",
+      "frame": "pose-019",
+      "unfold": 0.475,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "0e06822fe6f07f76e18b1aaa635899d5beaa271e197946de301ed3bdec8d2a10"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-019-motion-root.png",
+      "frame": "pose-019",
+      "unfold": 0.475,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "7b5f11aa3197e3acaba3e63dfee1ad02c9e986b0b45fc267a88a022fce1871ee"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-020-whole.png",
+      "frame": "pose-020",
+      "unfold": 0.5,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "d4e408f6069568ea6299546eee232508f185b1a780cbe73851c7cce0ad82cdae"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-020-motion-root.png",
+      "frame": "pose-020",
+      "unfold": 0.5,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "eb6229f6e1690fc623dd14a9f823f7abc82deaa8ad7108c481dcf4cd618ec7c0"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-021-whole.png",
+      "frame": "pose-021",
+      "unfold": 0.525,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "224a76aaa32d48696500df2106cf17efaee06ab9a989525db1274ae13132849b"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-021-motion-root.png",
+      "frame": "pose-021",
+      "unfold": 0.525,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "c310ac5cb49d82e9848cb30db560ce2272dcad931e0834b15d3e27931b93db2a"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-022-whole.png",
+      "frame": "pose-022",
+      "unfold": 0.55,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "91dfd8a9dd9b50e4ca0296394260d5f55cc33ced35cb19919217b628de62d5e7"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-022-motion-root.png",
+      "frame": "pose-022",
+      "unfold": 0.55,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "39b341c05ef12e9eb73ae219c418468537824ab47ab425a74b0faae4715d823a"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-023-whole.png",
+      "frame": "pose-023",
+      "unfold": 0.575,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "3f18fa4f3cfd5e38868f6498a21a30e2a183d73c17a1a3f6f6c0b0ba28adce16"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-023-motion-root.png",
+      "frame": "pose-023",
+      "unfold": 0.575,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "d91002fe425dc21b99a9dad2090b1cbf717f206d9e32c7139f1a35220ccf1a63"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-024-whole.png",
+      "frame": "pose-024",
+      "unfold": 0.6,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "df224178c6db0ae542ab4897e918d7550b765b3cfa9babda93da7ce6439035b3"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-024-motion-root.png",
+      "frame": "pose-024",
+      "unfold": 0.6,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "a96fccd08b5b008572b097efbb6ff4c37e13f9272c25b98ebca25cadf5e8ed29"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-025-whole.png",
+      "frame": "pose-025",
+      "unfold": 0.625,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "0dd5a4367813ae5d6c8f0fe2e97690d2bc84c6e03f8a9b67b9bfbede3716f928"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-025-motion-root.png",
+      "frame": "pose-025",
+      "unfold": 0.625,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "0d7aa7e7594ea6cd2bcd0035387d0f408302df0a4933571d4638f7061480de31"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-026-whole.png",
+      "frame": "pose-026",
+      "unfold": 0.65,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "635cd1f560a43a5e424cc56fb784fc740a7ba2d2cd77db94977b9e5928cb53ed"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-026-motion-root.png",
+      "frame": "pose-026",
+      "unfold": 0.65,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "45aa60547167e3db478b133c7c9632963c6765ba729884a38495a83068de8fc4"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-027-whole.png",
+      "frame": "pose-027",
+      "unfold": 0.675,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "933ab8e8bd98dadcebd3e24ef1e27bc96d0a53cc50890187bc075a7a09210315"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-027-motion-root.png",
+      "frame": "pose-027",
+      "unfold": 0.675,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "bf27573e2283be7dbc5744c45871de0fee47447d4900b110a345585fba9cd130"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-028-whole.png",
+      "frame": "pose-028",
+      "unfold": 0.7,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "69c09e7139a4dc9b58607f2bcad7c143a1b8c093ab4b1ab11a8c58d70f8eec7b"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-028-motion-root.png",
+      "frame": "pose-028",
+      "unfold": 0.7,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "e46e4022c49661de63637ada7709fffe2e4cf2d3e91d3dc6b17464c7fc7a8b3c"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-029-whole.png",
+      "frame": "pose-029",
+      "unfold": 0.725,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "a5c30d8856d6a9945a297226fd4006641037ed679fe160a9b294963e778a0670"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-029-motion-root.png",
+      "frame": "pose-029",
+      "unfold": 0.725,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "7edff92f9fc09b4bc56b2f338b4a572f4622ebb75a58f9452290e7b21678a9e3"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-030-whole.png",
+      "frame": "pose-030",
+      "unfold": 0.75,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "4181520c221b334ae8371d09d56eac8090e6b977b1259976e2629e4208df8ff1"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-030-motion-root.png",
+      "frame": "pose-030",
+      "unfold": 0.75,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "a650e445669470f6ec2b830ca2bc20dc862593932184d34a9bd78eae8abe43c3"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-031-whole.png",
+      "frame": "pose-031",
+      "unfold": 0.775,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "c302424e6f03f2e77b0260e008bd87c3694e0bad1e456e0f0cb45846178afbbd"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-031-motion-root.png",
+      "frame": "pose-031",
+      "unfold": 0.775,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "e946f961c06b129c928d512e9613dd2e4c7200ec4b10fcc7cdbb3321096f1450"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-032-whole.png",
+      "frame": "pose-032",
+      "unfold": 0.8,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "6f4fdfdd21bd13fff548d5cb1ab768f820f6f0c8d38372a7a988866ecea4a691"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-032-motion-root.png",
+      "frame": "pose-032",
+      "unfold": 0.8,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "7d627933656b834046b11886a25f22078573c79582f2b1038ae64166d21511b6"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-033-whole.png",
+      "frame": "pose-033",
+      "unfold": 0.825,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "5b5f476bf9e9bcab32859537250cad5ac22084afea67b9b6fb4e5d95818b7c83"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-033-motion-root.png",
+      "frame": "pose-033",
+      "unfold": 0.825,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "e7e7a61530662fd8c9399aadfb5769475a163c91a5ad8c76fa31421c8d50f992"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-034-whole.png",
+      "frame": "pose-034",
+      "unfold": 0.85,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "b6a99ea4c0de81fb6ee8060c255277d3ee20ae2f579eb2b128c165214e781de5"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-034-motion-root.png",
+      "frame": "pose-034",
+      "unfold": 0.85,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "ad8c65bc64732a1cd66ab1d979b9fa83d4a7af6a3c3c5ae8b325da4ced8bfcc3"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-035-whole.png",
+      "frame": "pose-035",
+      "unfold": 0.875,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "f77c99c9e644cc6e3d02e6f9aa9588705d31c65ddb28e3bd06e260cafcaaac45"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-035-motion-root.png",
+      "frame": "pose-035",
+      "unfold": 0.875,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "461166e18d989ec4d3a7f6ded7d88184a199af223e148b28758cb8d79d58fd71"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-036-whole.png",
+      "frame": "pose-036",
+      "unfold": 0.9,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "9aa43e28fe5b2f57062aa3f925724b40d0bb858ba1417b2df131f8316204b351"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-036-motion-root.png",
+      "frame": "pose-036",
+      "unfold": 0.9,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "c0c0308fa06da1c7644ee61bc33ebd1d867f8b04935058c4a7c7218b9f16bad0"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-037-whole.png",
+      "frame": "pose-037",
+      "unfold": 0.925,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "2af2fb8f2ee210e0856ad6b1ccdba91e0692504d19ac549fa8d8183557553259"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-037-motion-root.png",
+      "frame": "pose-037",
+      "unfold": 0.925,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "025af931237745a13cb5f7864e53716cdbc6a74a457c9ac1c64a380ce7cadca2"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-038-whole.png",
+      "frame": "pose-038",
+      "unfold": 0.95,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "0ad07a09c2e75057f185867c3778f5b7e9a543c633da1a1b2af83c351afc1430"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-038-motion-root.png",
+      "frame": "pose-038",
+      "unfold": 0.95,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "eb0f19f464d5de590c5a165e57a599990420ed1f0d57f57e4cc490d0648a1069"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-039-whole.png",
+      "frame": "pose-039",
+      "unfold": 0.975,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "b3fd3abf474c43a5e762594dcc4ef62c7a743c0d1e9a597922b274052313d9f3"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-039-motion-root.png",
+      "frame": "pose-039",
+      "unfold": 0.975,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "36c5f2cf95633c6f26db435c54876f6b2f46d26848019cbad2328d607b737e6d"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-040-whole.png",
+      "frame": "pose-040",
+      "unfold": 1,
+      "camera": "whole",
+      "cameraDefinition": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.6,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "whole"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "33ed1e1e6ea36a6c5a9fe5e7a4634abe894d70b82b7d25d912eae29bbb562cd4"
+    },
+    {
+      "mode": "motion",
+      "runtimeSha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
+      "file": "motion/hangar-pose-040-motion-root.png",
+      "frame": "pose-040",
+      "unfold": 1,
+      "camera": "motion-root",
+      "cameraDefinition": {
+        "position": [
+          3.8,
+          2,
+          3.5
+        ],
+        "target": [
+          1.2,
+          -0.12,
+          1.36
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 2.2,
+        "meshSet": "exterior",
+        "resolution": [
+          900,
+          780
+        ],
+        "scope": "right-root"
+      },
+      "drawSubmissionRosterSha256": "535c468de752968018b0e006ffa4cf1105f2127d8dd039cb187c6e6ea53013e1",
+      "actualSubmittedMeshCount": 283,
+      "rasterFramebuffer": [
+        1800,
+        1560
+      ],
+      "supersample": 2,
+      "originalProductionMaterials": true,
+      "omittedMeshes": [],
+      "renderedPngSha256": "33cd741dd51c340909620e6fe13157adf29fc6e2725d06f4863e92c50284a4ce"
+    }
+  ]
+}

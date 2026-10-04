@@ -40,6 +40,36 @@
       "sha256": "ed04822c5a89200a719e79bb44a1cc66cbdd57cd3a6eb90430d0c4e6aad6de19",
       "bytes": 3524,
       "originalPath": "qa/v24/reference/motion-method-origin.json"
+    },
+    {
+      "path": "qa/reference/previous-accepted-reference.json",
+      "sha256": "eadb50535353fcf85ae8a518f23f5b81c3a869bd42f3c5df2a10b30a862f3cfd",
+      "bytes": 2026676,
+      "purpose": "Immediate previous accepted current exact scope and decoration topology, no previous complete mesh assets"
+    },
+    {
+      "path": "qa/reference/previous-supports.json",
+      "sha256": "64cadf0b8fd862350b2ca8b4911ba05a12d05387e2aff9a3796b4760d599d013",
+      "bytes": 467292,
+      "purpose": "Immediate previous accepted physical thresholds and material interface domains"
+    },
+    {
+      "path": "qa/reference/previous-accepted-summary.json",
+      "sha256": "78b136c86298d1106910cde5cc85cac50449c11cc13028d691be052ce345af7b",
+      "bytes": 121204,
+      "purpose": "Immediate previous passed 44-stage summary, kept explicitly as historical evidence"
+    },
+    {
+      "path": "qa/reference/previous-accepted-motion.json",
+      "sha256": "3f21f5935f36ffaf0e10882c213bdc5ed90a56596d67845d51f0247db8d64786",
+      "bytes": 1854606,
+      "purpose": "Immediate previous current exact per-mesh motion capture from its passed frozen 44-stage acceptance; not mesh assets or new collision results"
+    },
+    {
+      "path": "qa/reference/previous-support-bounds.json",
+      "sha256": "a880438f7cdcef2d5f5958b08e813683acff8a9afac84049e388f5089185337e",
+      "bytes": 171864,
+      "purpose": "Exact previous accepted per-encoding fixed-interface observed bounds and region coverage; compact historical evidence, not a new geometry review"
     }
   ],
   "notIncluded": [

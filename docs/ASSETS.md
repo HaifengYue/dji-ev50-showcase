@@ -1,75 +1,80 @@
 # 资产与重建说明
 
-工程维护一架当前参考飞机及其生成、验证输入。独立动力模块用于同一飞机的概念部件检视，不是额外机型。当前模型包含真实机腹直槽、低置驱动和单直斜输出，见[机构说明](MECHANISM.md)。
+**当前状态：绕序与法线修复后的生产资产、八项作者验证、独立55阶段物理及最终前端五阶段均已通过；当前模型图像已通过解码、取景及人工视觉复核。**
 
-## 冻结生产资产
+工程维护同一架当前参考飞机。当前生产模型包含层叠翼及配套连接结构，保留机腹直槽与低置驱动；四个翼根整流罩由实体桥和底座安装，不能描述为直接埋入翼皮。真实构造与参数见 [机构说明](MECHANISM.md)。独立动力模块是同一飞机的部件说明。
 
-| 文件 | 字节数 | SHA-256 |
-| --- | ---: | --- |
-| `public/models/xp4.glb` | 2,437,828 | `313b014ec70b409175b34a08f66ec56820a51ea094085ce1eef96fc444ce4b2b` |
-| `assets/blender/xp4-source.glb` | 7,322,536 | `14deba2a8cb20fb13c6cc05f8c4c09d441285b9754b014499942ad39992f7ce4` |
-| `assets/blender/xp4.blend` | 31,073,592 | `0dc4feb2a628dad23f1e82d122167a08154b7f72f301bc5f5fc8e59c210b6857` |
-| `public/models/manifest.json` | 430,108 | `5c75a42613bd42c5229204236b6a3605cf59f0190f8d4e7fdb8cb6611ffa04d9` |
+## 当前冻结生产资产
 
-生产模型为283个网格、348个节点、227,746个渲染三角形、6种材质、0独立纹理；运行文件低于3,500,000字节预算。完整Blender源可编辑，源GLB未压缩，网页使用Meshopt运行编码。以上身份在当前工程作者链前后均未变化。
+| 文件 | 用途 | 字节数 | SHA-256 |
+| --- | --- | ---: | --- |
+| `public/models/xp4.glb` | 网页运行GLB | 2,779,796 | `846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d` |
+| `assets/blender/xp4-source.glb` | 未压缩源GLB | 8,329,156 | `82ca7f6f9e98cb11737da6f1cb8b1507f71baf0ffcb57734b9beb7bb23e70126` |
+| `assets/blender/xp4.blend` | 完整可编辑Blender源 | 34,215,264 | `869458bd88bdf1a60ae07f28d565187ed6d164bd11a49589e6beae90c5ad3ac1` |
+| `public/models/manifest.json` | 模型清单 | 657,363 | `5151d3ed1013e3aeb1035308245f32635aff97be33a6b670c34243b05d3d7df1` |
 
-`assets/blender/nacelle-system-concept-source.glb`与公开压缩副本保留独立动力模块。`examples/python/full_flow.py`、同名JSON及`public/examples/python-full-flow.json`提供公开演示生成器和离线回放，不包含私有用户参考。
+源与运行编码各有283个渲染网格、348个原始GLB节点、6种材质和0独立纹理。源和运行模型按283个实际网格实例分别计算，均为262,042个渲染三角形。源GLB有283个独立网格定义；运行GLB将复用几何合并为220个网格定义，这些去重定义合计226,910个三角形，不能将它误写为实际渲染三角总数。Three.js载入器额外建立的Scene容器不属于原始GLB节点。运行文件低于3,500,000字节预算。
 
-## 真实生成依赖
+`assets/blender/nacelle-system-concept-source.glb`及`public/models/nacelle-system-concept.glb`是独立概念动力部件的源/运行资产。公开Python示例位于`examples/python/`与`public/examples/`。原始用户图像、外部摄影、官方视频、凭据和依赖安装目录不进入交付。
 
-- `drive_layout.py`：驱动轴、导轨、横梁、鞍座及支承的共享布局
-- `internal_drive.py`、`linkage_geometry.py`：低置驱动、有限孔腔与直件连接
-- `output_slot_profile.py`、`slot_topology.py`、`preserved_surfaces.py`：真实直唇、短圆端、局部共同剖分、邻接装饰及域外保护
-- `generate_transwing.py`、`export-transition.py`：保存同一原生场景及动作，导出源GLB
-- `compress-model.mjs`：薄壁/孔腔保留所需Float32位置，再做Meshopt压缩
-- `scripts/data/`中的原生局部表面、涂装校准与数字配准数据：当前真实输入，详见其README
+## 实际生成输入
 
-独立重建验证绑定30项实际输入，包含`slot_topology.py`、`drive_layout.py`及正式表面数据。来源标记和校准哈希用于追溯，不表示分发旧发行版或完整历史整机。原始用户图片、外部摄影、官方视频、凭据及本机依赖目录不进入交付。
+当前独立重建绑定29项真实输入，完整文件名与SHA-256见 [生成器复现报告](../qa/current/author/generator-reproducibility.json) 的`generatorHashes`：
 
-## 已执行的作者链
+- `layered_wing_joint.py`、`wing_seam.py`、`wing_surfaces.py`等构造层叠翼与连接表面
+- `joint_fairings.py`、`joint_endcaps.py`、`hinge_supports.py`等构造整流罩、桥接与实体支承
+- `drive_layout.py`、`internal_drive.py`、`linkage_geometry.py`维持低置驱动布局和输出机构
+- `output_slot_profile.py`、`slot_topology.py`、`preserved_surfaces.py`及当前局部原生蒙皮模板维持机腹直槽与受保护表面
+- `generate_transwing.py`、`kinematics.py`、`export-transition.py`保存场景和动作并导出源GLB
+- `compress-model.mjs`与固定涂装编码数据生成当前Meshopt运行模型
 
-当前功能化命名工程中真实执行了以下检查，8份真实报告保存在`qa/current/author/`，最终统一索引见`qa/current/results/summary.json`的`sourceChecks`字段：
+局部蒙皮模板与固定校准数据是明确的重建输入，带来源身份，不冒称新生成或历史整机备份。当前不再使用的红点配准数据与旧翼根定位契约已移至工程外保留，不属于29项生成依赖。数据边界见 [生成数据说明](../scripts/data/README.md)。
 
-- 231个源部件拓扑检查；前两条装饰明确保留原8开边，不冒充闭壳
-- 2001个原生驱动采样，最大qerror约3.78e−15，低于原1e−10门槛；禁用自动执行仍通过
-- 1001个机构采样和673个旋翼动作采样
-- 保存的Blender重新导出，与生产源GLB逐字节一致
-- 当前源/运行两个动作共18姿态的实际顶点、法线、材质对照
-- 26项Python协议、桥接、HTTP测试及4项截面参数测试
-- 无预置模型的独立目录，使用30项同字节生成输入实际生成、压缩并验证
-- 重建源/运行各283网格的原始解码属性、有向三角多重集、材质、局部矩阵、父级及动作轨道逐值相同，未应用数值舍入；另完成重建运行模型18姿态对照
+## 已执行的当前作者验证
 
-独立重建GLB包装字节与生产文件不同。`generator-reproducibility.json`如实保留该事实，`regeneration-exact.json`补充原始值不舍入的严格等价证据；重建文件没有替换生产文件。
+八份当前作者报告均绑定上表实际资产，正式物理汇总的`sourceChecks`统一索引这些报告：
 
-独立物理早筛还证明最终双编码各331个支承接口通过，283网格都有实际支承路径；正式完整物理、前端及视觉汇总由[验证说明](VERIFICATION.md)登记。作者链通过不等于所有项目验收均已完成。
+- 231个源部件通过拓扑检查；两条前装饰保留原8开边形式，不当作闭合结构实体
+- 保存Blend重新打开后执行2,001个原生驱动样本，最大四元数误差`3.552713678800501e-15`，低于`1e-10`
+- 1,001个源机构样本与673个电机动作样本通过
+- 保存Blend实际重新导出的GLB与当前源GLB逐字节相同
+- 当前源/运行两种实际动作共18姿态核对顶点、法线与材质；实际最大双向顶点偏差约`2.9621e-05`，并非断言源与压缩编码原始属性逐字节相同
+- 在主模型输出初始为空的独立目录，用29项同字节生成输入真实生成与压缩，并完成独立运行模型18姿态对照
+- 对应编码之间，生产源与重建源、生产运行与重建运行各283网格的原始解码属性、有向三角多重集、材质、局部矩阵、父级和动作逐值一致，未做小数舍入
 
-## 复验入口
+独立重建GLB的包装字节与生产文件不同。较早的八位小数集合核对之外，[原始值精确复现](../qa/current/author/regeneration-exact.json)提供不舍入的最终证据；重建文件不替换生产资产。当前作者链不等于全部物理、视觉或设备验收通过，完整状态见 [验证说明](VERIFICATION.md)。
 
-环境为Blender4.3.2、Node.js24，前端最低Node.js22.12；实际依赖以锁文件为准：
+## 复验与独立重建
+
+实际作者环境为Blender4.3.2与Node.js24；前端最低Node.js22.12，Python最低3.10。更换工具版本后需重新验证输出。先安装两套锁定依赖：
 
 ```sh
 npm ci
 npm ci --prefix scripts
-mkdir -p qa/current/author
+python3 python/install.py
+```
+
+在工程根检查当前保存源及其导出：
+
+```sh
 blender -b -t 4 --python-exit-code 1 --python scripts/verify-solids.py
 blender --disable-autoexec -b -t 4 --python-exit-code 1 --python scripts/verify-native-drive.py
 blender -b -t 4 --python-exit-code 1 --python scripts/verify-source.py
 blender -b -t 4 --python-exit-code 1 --python scripts/verify-motor-animation.py
 blender -b -t 4 --python-exit-code 1 --python scripts/reexport-source.py
 node scripts/verify-source-runtime.mjs
-python scripts/test-straight-slot.py
-python python/install.py
+python3 scripts/test-straight-slot.py
 PYTHONPATH=python .venv/bin/python -m unittest discover -s python/tests -v
 ```
 
-需要重新生成时，先在独立目录按`verify-regeneration.mjs`的实际`generatorFiles`清单复制当前输入、概念资源和manifest，保留原生产文件。在该独立目录执行：
+上述入口会写作者结果，复验前应另行保留需要保留的记录。要验证独立再生，先在新的工程外目录按`verify-regeneration.mjs`的`generatorFiles`清单复制当前输入、两套包锁、概念资源和manifest，不预置当前整机GLB或Blend。安装依赖后执行：
 
 ```sh
 TRANSWING_RENDER=0 blender -b -t 4 --python-exit-code 1 --python scripts/generate_transwing.py
 node scripts/compress-model.mjs
 ```
 
-当前作者复验采用`qa/regenerated/`作为独立目录。从工程根验证结果：
+交付中的`qa/regenerated/`只保留当前验收输入锁实际依赖的重建输入和结果。可在工程根按以下入口核对，不能把生成出的文件直接覆盖生产模型：
 
 ```sh
 node scripts/verify-regeneration.mjs qa/regenerated/assets/blender/xp4-source.glb
@@ -77,8 +82,6 @@ node scripts/verify-regeneration-exact.mjs
 TRANSWING_COMPARE_SOURCE=qa/regenerated/public/models/xp4.glb TRANSWING_COMPARE_REPORT=qa/current/author/regenerated-runtime-geometry.json node scripts/verify-source-runtime.mjs
 ```
 
-独立目录也须安装或引用锁定的压缩工具依赖。`ASSET_TOOL_ROOT`可指定已安装这些依赖的本工程`scripts`绝对路径，不是额外几何输入。Windows环境的Python安装及运行方式见[Python接口](PYTHON_API.md)。
+独立目录可用`ASSET_TOOL_ROOT`指定已安装压缩依赖的本工程`scripts`绝对路径，该目录不是额外几何输入。Windows下的Python命令见 [Python接口](PYTHON_API.md)。构建继续使用`npm run build`及`--emptyOutDir false`，当前交付只选择实际入口引用闭包。
 
-构建使用`npm run build`及`--emptyOutDir false`保留原文件；实际交付仅包含本次入口引用的构建闭包。模型、源码或合同发生变化后，应重新运行受影响验证，不能沿用旧哈希或只改说明。
-
-本工程没有取得原厂CAD、材料、制造公差或认证资料。有限采样及数值验收不证明连续无碰撞、强度、疲劳、气动、制造性或适航。
+所有几何、运动、材料与间隙数值是原创概念模型约定，不是原厂制造尺寸；有限样本通过不证明连续净空、强度、疲劳、气动、制造性或适航。

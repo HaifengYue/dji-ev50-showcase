@@ -115,8 +115,8 @@ def bake_transition():
             for key in fc.keyframe_points:key.interpolation='LINEAR'
     s.frame_set(0);bpy.context.view_layer.update()
     s['transition_clip']=CLIP;s['transition_note']='第0–79帧由悬停转巡航，79–119帧保持巡航，119–199帧返回悬停。理想化视觉机构。'
-    os.makedirs(os.path.join(ROOT,'assets/transition-v13'),exist_ok=True)
-    json.dump(reference,open(os.path.join(ROOT,'assets/transition-v13/source-transition-reference.json'),'w'),indent=2)
+    os.makedirs(os.path.join(ROOT,'assets/animation'),exist_ok=True)
+    json.dump(reference,open(os.path.join(ROOT,'assets/animation/wing-transition-reference.json'),'w'),indent=2)
 
 def export_transition(path):
     bpy.context.scene.frame_set(0);bpy.context.view_layer.update();bpy.ops.object.select_all(action='SELECT')
@@ -213,10 +213,10 @@ def bake_transition():
     _attach_actions(MOTOR_CLIP)
     attach_native_drive_constraints()
     s['motor_demo_note']='0–12帧停机收桨；12–36帧先展开；36–60帧加速；60–96帧转动；96–120帧减速；120–132帧正向寻位；132–156帧收桨；156–168帧停机。时序与转速为演示参数，不是原厂控制律。'
-    text=bpy.data.texts.new('V15_动作切换.py')
+    text=bpy.data.texts.new('切换演示动作.py')
     text.write('"""在 Blender 中运行此文本即可切换完整四电机动作；把 MOTOR_CLIP 改为 CLIP 可回到整翼基准。"""\nimport os,runpy,bpy\nroot=os.path.abspath(os.path.join(os.path.dirname(bpy.data.filepath),\"../..\"))\nif not os.path.exists(root+\"/scripts/export-transition.py\"):root=os.path.abspath(os.path.join(root,\"..\"))\nns=runpy.run_path(root+\"/scripts/export-transition.py\",run_name=\"v14_select\")\nns[\"select_clip\"](ns[\"MOTOR_CLIP\"])\n')
-    os.makedirs(os.path.join(ROOT,'assets/transition-v15'),exist_ok=True)
-    json.dump(reference,open(os.path.join(ROOT,'assets/transition-v15/source-motor-reference.json'),'w'),indent=2)
+    os.makedirs(os.path.join(ROOT,'assets/animation'),exist_ok=True)
+    json.dump(reference,open(os.path.join(ROOT,'assets/animation/motor-reference.json'),'w'),indent=2)
     select_clip(CLIP)
 
 

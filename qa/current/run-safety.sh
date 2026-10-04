@@ -10,15 +10,25 @@ if [[ -e "$OUT/status.log" ]]; then echo "Refuse overwrite $OUT"; exit 2; fi
 unset QA_OUT QA_MODEL QA_MODEL_KIND QA_SOURCE_MODEL QA_RUNTIME_MODEL QA_SOURCE QA_ENCODING QA_PASS QA_PREFLIGHT QA_BASELINE_ONLY QA_ALLOW_OPEN_DIAGNOSTIC QA_STEPS QA_WING_ONLY
 export QA_CONTACTS=qa/contracts/drive-contact-contracts.json
 export QA_DRIVE_CONTRACT=qa/contracts/drive-motion.json
-export QA_REFINEMENTS=qa/contracts/fuselage-slot-refinement.json
+export QA_REFINEMENTS=qa/contracts/model-refinement.json
 export QA_SUPPORT_CONTRACT=qa/contracts/supports.json
 run(){ local name="$1"; shift; echo "START $name $(date -u +%FT%TZ)"; "$@" > "$OUT/$name.log" 2>&1; local status=$?; echo "$name $status" | tee -a "$OUT/status.log"; if [[ $status -ne 0 ]]; then echo "STOP failed $name"; exit "$status"; fi; }
 run reviewed-contract env QA_OUT="$OUT/reviewed-contract-report.json" node qa/current/verify-reviewed-contract.mjs
+run support-coordinate-selftest env QA_OUT="$OUT/support-coordinate-selftest-report.json" node qa/current/support-coordinate-review.selftest.mjs
 run regenerated-contract env QA_OUT="$OUT/regenerated-contract-report.json" node qa/current/verify-regenerated-contract.mjs
 run preservation env QA_OUT="$OUT/preservation-report.json" node --import tsx qa/current/verify-preservation.mts
 run runtime-preservation env QA_ENCODING=runtime QA_OUT="$OUT/runtime-preservation-report.json" node --import tsx qa/current/verify-preservation.mts
+run layered-scope env QA_OUT="$OUT/layered-scope-report.json" node --import tsx qa/current/verify-layered-scope.mts
+run hinge-identity-selftest env QA_OUT="$OUT/hinge-identity-selftest-report.json" node --import tsx --test qa/current/hinge-identity.selftest.mts
+run hinge-identity env QA_OUT="$OUT/hinge-identity-report.json" node --import tsx qa/current/verify-hinge-identity.mts
+run fairing-role-selftest env QA_OUT="$OUT/fairing-role-selftest-report.json" node qa/current/fairing-support-roles.selftest.mjs
+run fairing-clearance-selftest env QA_OUT="$OUT/fairing-clearance-selftest-report.json" node --import tsx qa/current/fairing-clearance.selftest.mts
+run fairing-clearance env QA_OUT="$OUT/fairing-clearance-report.json" node --import tsx qa/current/verify-fairing-clearance.mts
+run layered-sections-selftest env QA_OUT="$OUT/layered-sections-selftest-report.json" node --import tsx qa/current/layered-sections.selftest.mts
+run layered-geometry env QA_OUT="$OUT/layered-geometry-report.json" node --import tsx qa/current/verify-layered-geometry.mts
 run motion-reference-selftest env QA_OUT="$OUT/motion-reference-selftest-report.json" node --import tsx qa/current/motion-reference.selftest.mts
-run motion-identity node --import tsx qa/current/motion-reference-cli.mts compare --scope qa/contracts/fuselage-slot-refinement.json --out "$OUT/motion-identity-report.json"
+run motion-identity node --import tsx qa/current/motion-reference-cli.mts compare --scope qa/contracts/model-refinement.json --out "$OUT/motion-identity-report.json"
+run layered-motion-impact env QA_OUT="$OUT/layered-motion-impact-report.json" node --import tsx qa/current/verify-layered-motion-impact.mts
 run inheritance env QA_OUT="$OUT/inheritance-report.json" node qa/current/verify-inheritance.mjs
 run affected-scope-selftest env QA_OUT="$OUT/affected-scope-selftest-report.json" node --import tsx qa/current/affected-scope.selftest.mts
 run patch-coverage-selftest env QA_OUT="$OUT/patch-coverage-selftest-report.json" node --import tsx qa/current/patch-coverage.selftest.mts
@@ -42,6 +52,7 @@ run triangle-selftest node --test qa/lib/triangle-contact.selftest.mjs
 run solid-selftest node qa/lib/solid-contact.selftest.mjs
 run broadphase-selftest env QA_OUT="$OUT/broadphase-selftest-report.json" node --import tsx qa/current/broadphase.selftest.mts
 run exact-pair-cache-selftest env QA_OUT="$OUT/exact-pair-cache-selftest-report.json" node --import tsx qa/current/exact-pair-cache.selftest.mts
+run rotor-impact-selftest env QA_OUT="$OUT/rotor-impact-selftest-report.json" node --import tsx qa/current/rotor-impact.selftest.mts
 for encoding in source runtime; do
  if [[ "$encoding" == source ]]; then export QA_MODEL=assets/blender/xp4-source.glb; else export QA_MODEL=public/models/xp4.glb; fi
  for pass in fast wing spin details; do run "$pass-$encoding" env QA_PASS="$pass" QA_OUT="$OUT/$pass-$encoding-report.json" node --import tsx qa/current/verify-relative-motion.mts; done

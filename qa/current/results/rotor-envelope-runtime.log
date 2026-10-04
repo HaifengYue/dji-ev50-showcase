@@ -29,7 +29,7 @@
   "out": "qa/current/results/rotor-envelope-runtime-report.json",
   "passed": true,
   "stressPassed": true,
-  "sha256": "313b014ec70b409175b34a08f66ec56820a51ea094085ce1eef96fc444ce4b2b",
+  "sha256": "846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d",
   "contacts": [],
-  "minimumCylinderSeparatingGap": 0.07001865143439068
+  "minimumCylinderSeparatingGap": 0.07001885199181312
 }

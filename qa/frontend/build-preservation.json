@@ -1,7 +1,7 @@
 {
   "passed": true,
-  "beforeCount": 11,
-  "afterCount": 11,
+  "beforeCount": 14,
+  "afterCount": 14,
   "removedPaths": [],
   "currentDistributionFiles": [
     "dist/assets/index-D1B7vCse.css",
@@ -15,7 +15,10 @@
     "dist/models/xp4.glb"
   ],
   "retainedHistoricalPaths": [
+    "dist/assets/index-Clgw5HCR.js",
     "dist/assets/index-DI61ifvZ.css",
+    "dist/assets/index-DYws8zB-.css",
+    "dist/assets/index-YaS6E7Gj.js",
     "dist/assets/index-alPU3kaS.js"
   ],
   "说明": "允许更新同名文件，但不允许删除构建前已有文件；未引用旧包保留在目录中，不进入当前构建闭包。"

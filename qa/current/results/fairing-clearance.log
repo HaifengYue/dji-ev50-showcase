@@ -1,0 +1,19 @@
+{
+  passed: true,
+  reports: [
+    {
+      encoding: 'source',
+      sha256: '82ca7f6f9e98cb11737da6f1cb8b1507f71baf0ffcb57734b9beb7bb23e70126',
+      poses: 17,
+      clearances: 4,
+      failures: []
+    },
+    {
+      encoding: 'runtime',
+      sha256: '846185616204841c9939ea29b88827c9928c32232504571a5f7ab352fb455f6d',
+      poses: 17,
+      clearances: 4,
+      failures: []
+    }
+  ]
+}

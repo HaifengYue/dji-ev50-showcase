@@ -1,0 +1,9 @@
+{
+  passed: true,
+  checks: [
+    'changed-body/all-rotors',
+    'changed-rotor/unchanged-body',
+    'both-moved-rotors/all-bodies',
+    'unchanged-pair-only-inheritance'
+  ]
+}

@@ -1,15 +1,15 @@
-✔ all original accepted reports reconstruct the complete 3,224-state grid without loading GLBs (343.615681ms)
-✔ canonical hash ignores labels, fills original defaults, and discards spin phases only while folded (2.317679ms)
-✔ exact byte encoding preserves signed zero and tiny finite differences and rejects NaN (17.292329ms)
-✔ grid validation rejects missing/reordered poses or falsified declared hash (375.276833ms)
-✔ exact motion+geometry+ancestry allows inheritance with explicit baseline relation (13.373968ms)
-✔ sub-tolerance matrix differences force rerun and do not imply integrity failure (1.833989ms)
-✔ raw corner-normal differences forbid inheritance even when motion is bit-identical (153.342336ms)
-✔ active-ancestor identity changes forbid inheritance even with bit-identical world matrices (12.851389ms)
-✔ missing meshes fail closed; new meshes need explicit caller authorization and are rerun (25.963399ms)
-✔ actual scene omission and in-pose geometry replacement both fail immediately (9.929135ms)
-✔ oriented topology fingerprint preserves cyclic orientation and rejects reversed winding (0.426351ms)
-✔ comparison refuses a capture with missing matrix coverage despite matching counts elsewhere (9.466172ms)
+✔ all original accepted reports reconstruct the complete 3,224-state grid without loading GLBs (198.119509ms)
+✔ canonical hash ignores labels, fills original defaults, and discards spin phases only while folded (0.292513ms)
+✔ exact byte encoding preserves signed zero and tiny finite differences and rejects NaN (4.768717ms)
+✔ grid validation rejects missing/reordered poses or falsified declared hash (176.256983ms)
+✔ exact motion+geometry+ancestry allows inheritance with explicit baseline relation (6.664324ms)
+✔ sub-tolerance matrix differences force rerun and do not imply integrity failure (1.541452ms)
+✔ raw corner-normal differences forbid inheritance even when motion is bit-identical (1.327487ms)
+✔ active-ancestor identity changes forbid inheritance even with bit-identical world matrices (1.854155ms)
+✔ missing meshes fail closed; new meshes need explicit caller authorization and are rerun (5.471273ms)
+✔ actual scene omission and in-pose geometry replacement both fail immediately (3.503181ms)
+✔ oriented topology fingerprint preserves cyclic orientation and rejects reversed winding (0.410787ms)
+✔ comparison refuses a capture with missing matrix coverage despite matching counts elsewhere (1.323897ms)
 ℹ tests 12
 ℹ suites 0
 ℹ pass 12
@@ -17,4 +17,4 @@
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 1025.339097
+ℹ duration_ms 413.901573

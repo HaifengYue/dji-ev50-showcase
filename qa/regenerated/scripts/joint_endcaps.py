@@ -11,6 +11,7 @@ from mathutils import Vector
 
 SLOT_RADIAL_SETBACK = .002
 BALL_PIN_FREE_END = .017
+WING_PIN_FREE_END = .014
 BODY_PIN_SEAT_END = .035
 BLADE_PIN_HALF_LENGTH = .049
 
@@ -129,11 +130,12 @@ def build_joint_refinements(ctx):
         ball = ctx['brace_wing_local'](sign)
         axis = Vector((0, 0, 1))
         row = _replace_pin(ctx, 'BraceBallPin_' + side + '_Wing',
-                           ball - axis * .031, ball + axis * BALL_PIN_FREE_END, .0045, 12)
+                           ball - axis * .031, ball + axis * WING_PIN_FREE_END, .0045, 12)
         row.update({'ball': 'BraceBall_' + side + '_Wing',
                     'support': 'BraceWingSeat_' + side,
                     'ballCenterBlender': list(ball), 'axisBlender': list(axis),
-                    'oldAxialBounds': [-.031, .022], 'newAxialBounds': [-.031, .017]})
+                    'oldAxialBounds': [-.031, .022], 'previousRefinedAxialBounds':[-.031,.017], 'newAxialBounds': [-.031, WING_PIN_FREE_END],
+                    'currentReason':'当前分层翼根扫掠要求自由端完全收在球内，保留向翼座的真实穿入段和原销轴'})
         pins.append(row)
         for end in ('Front', 'Rear'):
             for leaf, leaf_sign in [('A', -1), ('B', 1)]:
@@ -153,6 +155,7 @@ def build_joint_refinements(ctx):
         'reference': '用户V19尾根局部截图；实际GLB无阴影隔离和射线命中共同确认槽顶板外露',
         'slotCovers': rows,
         'recessedPins': pins,
+        'currentWingPinFreeEnd':WING_PIN_FREE_END,
         'changedNodes': [r['node'] for r in rows + pins],
         'preserved': ['全部对象父级/局部变换/材质', '机身真实内腔与外模线', 'V尾翼与舵面',
                       '槽行程', '球心/定长杆/折翼轴', '中央横梁与全部内部驱动',

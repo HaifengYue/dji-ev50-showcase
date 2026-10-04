@@ -1,0 +1,6 @@
+{
+  passed: true,
+  checks: 31,
+  noModelsLoaded: true,
+  physicalClearanceNotEstablished: true
+}

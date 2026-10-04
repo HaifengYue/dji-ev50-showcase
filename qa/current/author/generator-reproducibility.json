@@ -5,12 +5,17 @@
   "generatorHashes": [
     {
       "file": "generate_transwing.py",
-      "sha256": "8c36f6cf13c72f4404ee616d1d4c65ec42c2318294f7a2a8910b8fb125a0cc31",
+      "sha256": "15143d25b906b75c0699c1c3eb344652cb0f7219707fb46302cc8f521436cc53",
       "rebuiltScriptIdentical": true
     },
     {
       "file": "wing_seam.py",
-      "sha256": "d7a8ae4faed9f154d314ff89220094c89899f13e2e5f483ac0b99d05e8ec3e02",
+      "sha256": "a952e838ded95bdac45401d4ffc9f61632c13d71197f5b2f8eb7984418361a58",
+      "rebuiltScriptIdentical": true
+    },
+    {
+      "file": "layered_wing_joint.py",
+      "sha256": "1e77e7ca77b30366f3f019c33e33746f0a9088b0f4a6251e7015e1a3398829f9",
       "rebuiltScriptIdentical": true
     },
     {
@@ -80,12 +85,12 @@
     },
     {
       "file": "linkage_geometry.py",
-      "sha256": "d9aa27b5722a68ccfbe788353f85fbe10ae47705675dfa9e7ea678dae484edb6",
+      "sha256": "dc69500e86a0afbee4ce8d6a7f76cb7824052d25222309d25e0c42f8e42d00c5",
       "rebuiltScriptIdentical": true
     },
     {
       "file": "internal_drive.py",
-      "sha256": "830c67029a739bf27507f0bb6c5b47cf28be0b30116906060f0314ae709e8bb8",
+      "sha256": "30df1ef2526cc8f2a4d2975bdd398c2c5887db413946c5a1b8f8a73493281c75",
       "rebuiltScriptIdentical": true
     },
     {
@@ -95,7 +100,7 @@
     },
     {
       "file": "joint_fairings.py",
-      "sha256": "9ef7df580cbd7a88997078c2274290f4c11b6a2a698ceab7169d970117e3bccb",
+      "sha256": "b8bdd4d0f904fba6346a7cd604cf8521ed93ce04225cf5c2fc65a824a3bc8268",
       "rebuiltScriptIdentical": true
     },
     {
@@ -104,18 +109,8 @@
       "rebuiltScriptIdentical": true
     },
     {
-      "file": "data/red-target-mapping.json",
-      "sha256": "2ecc32a1099f0dfad215442daa9bce1598b860d54f8020fed1377916fe5991e6",
-      "rebuiltScriptIdentical": true
-    },
-    {
-      "file": "data/red-target-footprint.json",
-      "sha256": "4235ff1718d1bcb1b321f3c5b626af1d53f243c8501d99965333b1a8b7da0b26",
-      "rebuiltScriptIdentical": true
-    },
-    {
       "file": "joint_endcaps.py",
-      "sha256": "19c9cb606bd4f0c1ce86aa88106af3374ebe5b9c7159bcc61f90e21909790b2f",
+      "sha256": "3f25b27f3455e50cf077f11217584c59e59064ba275b817513247d084ba2f263",
       "rebuiltScriptIdentical": true
     },
     {
@@ -135,17 +130,17 @@
     },
     {
       "file": "kinematics.py",
-      "sha256": "922f96fe80759337d26c5f00a002f1a93313297dadd84fff82e577c7b9e8b4e1",
+      "sha256": "73339f62a1e7bbfe2073aa7c0e65e26af69cfd46bf3a69d7d9ffcedae66a0ad5",
       "rebuiltScriptIdentical": true
     },
     {
       "file": "export-transition.py",
-      "sha256": "667cc4fd5a2bd300d19c19f6104892aa80e964b3ab1fd547431c1e1d947fb9a3",
+      "sha256": "f2ae90b6493e42ad3a591ad3a4f80775d0b05d8eb7bcdb7b4fde2733a5f17e0b",
       "rebuiltScriptIdentical": true
     },
     {
       "file": "compress-model.mjs",
-      "sha256": "25b5ae1d4a5e604ec3358e5cc94ad85d1575041ac09a21380c309b7c718825a6",
+      "sha256": "288a3d913df8c80722b8cc7361956d3db5f37fedfa56a86f0f117b0af7ba00b6",
       "rebuiltScriptIdentical": true
     },
     {
@@ -154,13 +149,13 @@
       "rebuiltScriptIdentical": true
     }
   ],
-  "sourceSha256": "14deba2a8cb20fb13c6cc05f8c4c09d441285b9754b014499942ad39992f7ce4",
-  "regeneratedSha256": "969b3efec68c93f496a77957c6dbcd10c226a3c3ae948f97de0f3ebfd8d7c1df",
-  "sourceBytes": 7322536,
-  "regeneratedBytes": 7322536,
+  "sourceSha256": "82ca7f6f9e98cb11737da6f1cb8b1507f71baf0ffcb57734b9beb7bb23e70126",
+  "regeneratedSha256": "dda50afb4487d68ae7af7528bcb173bbc07692bce80709cd8d0b9647e029430f",
+  "sourceBytes": 8329156,
+  "regeneratedBytes": 8329160,
   "byteIdentical": false,
   "meshes": 283,
-  "renderedTriangles": 227746,
+  "renderedTriangles": 262042,
   "meshTransformsEqual": true,
   "vertexAndNormalMultisetsEqualAtDecimalPlaces": 8,
   "orientedTriangleMultisetsEqual": true,

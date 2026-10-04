@@ -3,7 +3,8 @@ import assert from 'node:assert/strict';
 export function affectedScope(scene:any,contract:any){
  const nodes=new Map<string,any>();scene.traverse((o:any)=>{assert(!nodes.has(o.name),'节点名必须唯一 '+o.name);nodes.set(o.name,o);});
  const currentMeshes=[...nodes.values()].filter((o:any)=>o.isMesh).map((o:any)=>o.name).sort();
- const declaredGeometry=[...(contract.geometryChanges??[]),...(contract.normalOnlyChanges??[])];
+ const declaredGeometry=[...new Set<string>([...(contract.geometryChanges??[]),...(contract.normalOnlyChanges??[]),...(contract.runtimeGeometryChanges??[]),...(contract.runtimeNormalOnlyChanges??[])])];
+ for(const name of declaredGeometry)assert(nodes.get(name)?.isMesh,'Declared source/runtime geometry identity is not a current mesh '+name);
  const direct=new Set<string>([...declaredGeometry,...(contract.addedNodes??[]),...(contract.motionAffectedMeshes??[])]);
  const transformedAncestors=[...new Set<string>([...(contract.transformChanges??[]),...(contract.runtimeTransformChanges??contract.runtimeEncodingTransformChanges??[]),...(contract.parentChanges??[])])].sort();
  const descendantRows:any[]=[];

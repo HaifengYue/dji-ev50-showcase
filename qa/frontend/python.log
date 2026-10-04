@@ -26,6 +26,6 @@ test_reject_invalid_values_without_partial_mutation (test_protocol.ProtocolTests
 test_snapshot_conversion (test_protocol.ProtocolTests.test_snapshot_conversion) ... ok
 
 ----------------------------------------------------------------------
-Ran 26 tests in 0.775s
+Ran 26 tests in 0.825s
 
 OK

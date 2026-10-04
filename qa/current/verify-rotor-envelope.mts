@@ -1,5 +1,6 @@
 import {affectedScope} from "./affected-scope.mts";
 import {conservativeBoxesOverlap} from "./broadphase.mts";
+import {rotorImpact} from './rotor-impact.mts';
 // V14全部四桨全周保守包络：覆盖不同旋翼独立相位，且不把同WingPivot内的新舵面跳过。
 import fs from "node:fs";
 import * as T from "three";
@@ -24,9 +25,8 @@ const isChild = (object, parent) => {
   return false;
 };
 const owner = (m) => props.find((p) => isChild(m, p));
-const impact=affectedScope(a.scene,JSON.parse(fs.readFileSync("qa/contracts/fuselage-slot-refinement.json", "utf8"))), changed = new Set(impact.rerunMeshes);
-if(a.meshes.some(m=>owner(m)&&changed.has(m.name)))throw new Error("本轮旋翼必须恒等；旋翼改动须扩展到全部包络目标，不能继承旧配对");
-const body = a.meshes.filter((m) => !owner(m) && changed.has(m.name));
+const impact=affectedScope(a.scene,JSON.parse(fs.readFileSync("qa/contracts/model-refinement.json", "utf8"))), changed = new Set(impact.rerunMeshes);
+const rotorScope=rotorImpact(a.meshes,props,changed,isChild),body=rotorScope.body;
 const triangles = (m) =>
   a.snap(m).triangles.map((t) => ({
     index: t.triangleIndex,
@@ -122,6 +122,7 @@ for (const [sampleIndex, state] of states.entries()) {
   const active = rs;
   for (const r of active) {
     for (const m of body) {
+      if(!rotorScope.includes(r.name,m.name))continue;
       if (!conservativeBoxesOverlap(r.box,m.qaBox)) continue;
       const tri = getTriangles(m);
       let hit = null;
@@ -193,10 +194,14 @@ const reachableContacts = [...contacts.values()].filter(
     stressPassed: contacts.size === 0 && overlaps.length === 0,
     execution: "实际运行时模型经真实姿态函数驱动",
     sampleCount: states.length,
-    changedTargets: body.map(m=>m.name),
+    changedTargets: [...changed].sort(),
+    actualBodyTargets: [...new Set(rotorScope.pairs.map(p=>p.mesh))].sort(),
+    changedRotors: rotorScope.changedRotors,
+    rerunRotorBodyPairs: rotorScope.pairs,
+    rerunRotorBodyPairCount: rotorScope.rerunPairCount,
     appliedPoseStates: states.map(state=>({wing:state.unfold,fold:[0,0,0,0],surfaces:state.surfaces??{},hatch:state.hatch??0})),
     affectedScope: impact,
-    unchangedRotorBodyPairsInherited: true,
+    unchangedRotorBodyPairsInherited: rotorScope.inheritedPairCount,
     neutralMainMotionSamples: 201,
     detailStressSamples: a.poses.length,
     meshTriangleChecks,
@@ -211,7 +216,7 @@ const reachableContacts = [...contacts.values()].filter(
       .sort((x, y) => x.separatingGap - y.separatingGap)
       .slice(0, 8),
     method:
-      "每片实际桨叶三角形的轴向高度/径向范围形成保守全周环柱超集；所有改动的非旋翼网格实际三角形与之裁剪检查；未变网格与原旋翼之间的证据在精确恒等门槛后继承V22。不同旋翼以有限厚度全圆柱超集分离轴证明任意相位分離；未分离则保留未解析，不伪称实交。独立MotorAxis标记定义轴，不硬编码局部Y。",
+      "每片实际桨叶三角形的轴向高度/径向范围形成保守全周环柱超集；旋翼任一后代被几何或运动影响时，该旋翼对全部非旋翼目标重跑，否则重跑该旋翼对受影响目标。只有旋翼和目标两端均精确未变才继承。所有不同旋翼仍以有限厚度全圆柱超集分离轴证明任意相位分离；未分离保留未解析，不伪称实交。独立MotorAxis标记定义轴。",
     limitations: [
       "全周包络消除相位采样空隙，整翼与舵面仍为有限姿态样本，非解析连续认证",
       "保守环柱候选接触不能单独证明真实桨叶撞击，发现后需实体细化，未擅自豁免",

@@ -2,19 +2,19 @@
   "modelVersion": 24,
   "passed": true,
   "samples": 2001,
-  "maxQerror": 3.774758283725532e-15,
+  "maxQerror": 3.552713678800501e-15,
   "worst": {
-    "frame": 38.407,
+    "frame": 8.159,
     "name": "Drive_ScrewRotor",
-    "qerror": 3.774758283725532e-15,
-    "sliderY": 1.4142121076583862
+    "qerror": 3.552713678800501e-15,
+    "sliderY": 1.0462312698364258
   },
   "reopenedSavedBlend": true,
   "driverConstraints": [
     {
       "node": "Drive_ScrewRotor",
       "component": 0,
-      "expression": "cos(-pi*(slide-(0.9104609710668883))/(0.032)*(1.0))",
+      "expression": "cos(-pi*(slide-(1.0224658716734112))/(0.032)*(1.0))",
       "simpleExpression": true,
       "input": "BraceSpreader.location[1]"
     },
@@ -28,7 +28,7 @@
     {
       "node": "Drive_ScrewRotor",
       "component": 2,
-      "expression": "sin(-pi*(slide-(0.9104609710668883))/(0.032)*(1.0))",
+      "expression": "sin(-pi*(slide-(1.0224658716734112))/(0.032)*(1.0))",
       "simpleExpression": true,
       "input": "BraceSpreader.location[1]"
     },
@@ -42,7 +42,7 @@
     {
       "node": "Drive_MotorRotor",
       "component": 0,
-      "expression": "cos(-pi*(slide-(0.9104609710668883))/(0.032)*(3.0))",
+      "expression": "cos(-pi*(slide-(1.0224658716734112))/(0.032)*(3.0))",
       "simpleExpression": true,
       "input": "BraceSpreader.location[1]"
     },
@@ -56,7 +56,7 @@
     {
       "node": "Drive_MotorRotor",
       "component": 2,
-      "expression": "sin(-pi*(slide-(0.9104609710668883))/(0.032)*(3.0))",
+      "expression": "sin(-pi*(slide-(1.0224658716734112))/(0.032)*(3.0))",
       "simpleExpression": true,
       "input": "BraceSpreader.location[1]"
     },
@@ -70,7 +70,7 @@
     {
       "node": "Drive_PlanetRotor_0",
       "component": 0,
-      "expression": "cos(-pi*(slide-(0.9104609710668883))/(0.032)*(-4.0))",
+      "expression": "cos(-pi*(slide-(1.0224658716734112))/(0.032)*(-4.0))",
       "simpleExpression": true,
       "input": "BraceSpreader.location[1]"
     },
@@ -84,7 +84,7 @@
     {
       "node": "Drive_PlanetRotor_0",
       "component": 2,
-      "expression": "sin(-pi*(slide-(0.9104609710668883))/(0.032)*(-4.0))",
+      "expression": "sin(-pi*(slide-(1.0224658716734112))/(0.032)*(-4.0))",
       "simpleExpression": true,
       "input": "BraceSpreader.location[1]"
     },
@@ -98,7 +98,7 @@
     {
       "node": "Drive_PlanetRotor_1",
       "component": 0,
-      "expression": "cos(-pi*(slide-(0.9104609710668883))/(0.032)*(-4.0))",
+      "expression": "cos(-pi*(slide-(1.0224658716734112))/(0.032)*(-4.0))",
       "simpleExpression": true,
       "input": "BraceSpreader.location[1]"
     },
@@ -112,7 +112,7 @@
     {
       "node": "Drive_PlanetRotor_1",
       "component": 2,
-      "expression": "sin(-pi*(slide-(0.9104609710668883))/(0.032)*(-4.0))",
+      "expression": "sin(-pi*(slide-(1.0224658716734112))/(0.032)*(-4.0))",
       "simpleExpression": true,
       "input": "BraceSpreader.location[1]"
     },
@@ -126,7 +126,7 @@
     {
       "node": "Drive_PlanetRotor_2",
       "component": 0,
-      "expression": "cos(-pi*(slide-(0.9104609710668883))/(0.032)*(-4.0))",
+      "expression": "cos(-pi*(slide-(1.0224658716734112))/(0.032)*(-4.0))",
       "simpleExpression": true,
       "input": "BraceSpreader.location[1]"
     },
@@ -140,7 +140,7 @@
     {
       "node": "Drive_PlanetRotor_2",
       "component": 2,
-      "expression": "sin(-pi*(slide-(0.9104609710668883))/(0.032)*(-4.0))",
+      "expression": "sin(-pi*(slide-(1.0224658716734112))/(0.032)*(-4.0))",
       "simpleExpression": true,
       "input": "BraceSpreader.location[1]"
     },
@@ -153,5 +153,5 @@
     }
   ],
   "automaticExecutionFailed": false,
-  "sourceBlendSha256": "0dc4feb2a628dad23f1e82d122167a08154b7f72f301bc5f5fc8e59c210b6857"
+  "sourceBlendSha256": "869458bd88bdf1a60ae07f28d565187ed6d164bd11a49589e6beae90c5ad3ac1"
 }

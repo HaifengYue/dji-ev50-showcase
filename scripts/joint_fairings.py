@@ -1,8 +1,8 @@
-"""V22 紧凑翼面主铰链蒙皮罩，原创概念外观，非原厂 CAD。
+"""实际移轴后的紧凑薄壁轴罩；原创概念外观，非原厂CAD。
 
-只新增固定/活动两组真实薄壁罩；既有主轴、端帽、轴承、回转套、
-翼面及120度运动完全不改。两罩分缝沿同轴旋转不变曲面，空腔
-由内外两套曲面及有限闭合边缘构成，不靠隐藏原件假装包裹。
+罩径位于新翼皮的真实轴孔内，保留两半罩闭壳和有限壁厚。
+通过原实体桥/底座安装至同一刚体翼皮，不以罩壳跨接两片活动翼。
+轴承、轴心、端帽、回转套和现有支脚的局部几何不变。
 """
 import hashlib
 import math
@@ -14,7 +14,7 @@ from mathutils import Vector
 from embedded_joint_surfaces import joint_profile
 
 WALL = .0025
-OUTER_RADIUS = .054
+OUTER_RADIUS = .044
 HALF_SEAM = .0015
 RADIAL_SEGMENTS = 72
 PROFILE_SEGMENTS = 20
@@ -48,7 +48,7 @@ def _closed(obj):
     obj.data.update()
     for face in obj.data.polygons:
         face.use_smooth = True
-    # Both sides of the narrow service rim remain independent from the exterior.
+    # 窄检修边缘两侧保持独立法线，不能通过平滑掩盖实体分缝。
     obj.data.set_sharp_from_angle(angle=math.radians(38))
     return volume
 
@@ -60,8 +60,8 @@ def _dome(context, side, sign, fixed):
     v = axis.cross(u).normalized()
     outward = 1 if fixed else -1
     parent = None if fixed else bpy.data.objects['WingPivot_' + side]
-    # Axial teardrop, with just enough room around the unchanged endcaps.
-    length = .134 if fixed else .082
+    # 轴向泪滴闭壳围住未改端帽；固定端保留额外轴向内腔。
+    length = .142 if fixed else .082
     verts, faces = [], []
     rings = []
     for inner in (False, True):
@@ -94,7 +94,7 @@ def _dome(context, side, sign, fixed):
     name = 'RootFairing' + ('Fixed_' if fixed else 'Moving_') + side
     obj = context['mesh_object'](name, verts, faces, context['body'], parent)
     volume = _closed(obj)
-    obj['fairingRevision'] = 22
+    obj['fairingRevision'] = 24
     obj['conceptOnly'] = True
     obj['fairingRole'] = '固定翼侧中空蒙皮罩' if fixed else '活动翼侧中空蒙皮罩'
     obj['wallThicknessNominal'] = WALL
@@ -104,11 +104,7 @@ def _dome(context, side, sign, fixed):
 
 
 def build_fairing_refinements(context):
-    """Call after V21 finite supports and before animation baking/export.
-
-    Context is generate_transwing.py globals(). It needs mesh_object, body,
-    wing_axis and pivot_position. No production path writes happen here.
-    """
+    """在实际有限支承构造后、原生动画烘焙前生成当前两半罩。"""
     from surface_supports import _contact
     hardware = sorted([o for o in bpy.data.objects if o.type == 'MESH' and o.name.startswith((
         'RootHingeShaft_', 'RootHingeEndcap_', 'RootBearing', 'RootCarrier', 'RootFixedBearingPedestal_'))],
@@ -119,8 +115,7 @@ def build_fairing_refinements(context):
         for fixed in (True, False):
             obj, volume = _dome(context, side, sign, fixed)
             bpy.context.view_layer.update()
-            host = bpy.data.objects[('Fixed_root_' if fixed else 'Composite_wing_') + side]
-            contacts.append(_contact(obj, host, '两实际闭合材料的有限安装边接合；内部空腔及活动分缝保留'))
+            # 罩壳位于翼皮轴孔内，真实安装路径经原支脚，不要求壳面埋入翼皮。
             support = bpy.data.objects[('RootFixedBearingPedestal_' if fixed else 'RootCarrierBridge_') + side]
             contacts.append(_contact(obj, support, '蒙皮罩与同刚体原有限安装足相接；原安装足网格不变'))
             objects.append(obj.name)
@@ -130,10 +125,14 @@ def build_fairing_refinements(context):
     after = {o.name: _digest(o) for o in hardware}
     if before != after:
         raise ValueError('V22 fairing changed protected internal hinge hardware')
-    return {'version': 22, 'conceptOnly': True, 'newNodes': objects,
+    return {'version': 24, 'conceptOnly': True, 'newNodes': objects,
             'construction': '固定/活动两侧独立薄壁旋转曲面蒙皮罩，内外曲面与闭合分缝边形成真实空腔',
             'nominalWallThickness': WALL, 'outerRadius': OUTER_RADIUS,
             'serviceSeamAxialGap': 2*HALF_SEAM,
+            'attachmentDesign':{'path':'薄罩→原实体桥/底座→同刚体翼皮','directWingContactRequired':False,
+                'wingBoreRadius':.045,'nominalRadialWingGap':.045-OUTER_RADIUS,
+                'fixedAxialLength':.142,'movingAxialLength':.082,
+                'scope':'名义尺寸为模型单位；内腔、孔壁和跨刚体实际净空须独立验证'},
             'movingRangeDegrees': 120,
             'geometryInvariant': '每个罩顶点都位于原主轴旋转不变的joint_profile(r)一侧；不以遮挡或跨关节实心盖代替结构',
             'fixedAttachmentInterfaces': contacts, 'topology': topology,

@@ -18,7 +18,12 @@ const paintEncoding=JSON.parse(fs.readFileSync(path.join(root,'scripts/data/fixe
 if(paintEncoding.runtimeBaselineSha256!=='3947012c3504967fbd4e18983b2ca89c26311eb313d644af31836f021cd5680a')throw new Error('蓝边编码基线不匹配');
 let paintRestoredVertices=0;
 const seamPaintRetainedFloat32=[];
+const layeredPaintFloat32=[];
 for(const n of doc.getRoot().listNodes().filter(n=>/^Fixed_root_blue_[LR]$/.test(n.getName())))for(const primitive of n.getMesh().listPrimitives()){
+ if(n.getExtras().layeredWingJoint===true){
+  // 新层叠翼根的蓝边整片按当前源坐标编码，禁止套用旧翼根身份映射。
+  layeredPaintFloat32.push({node:n.getName(),vertices:primitive.getAttribute('POSITION').getCount(),reason:'当前分层翼根完整源Float32表面'});continue;
+ }
  const positions=primitive.getAttribute('POSITION');
  for(let i=0;i<positions.getCount();i++){
   const p=positions.getElement(i,[]);if(Math.abs(p[0])<=paintEncoding.minimumAbsX)continue;
@@ -40,7 +45,7 @@ for(const n of doc.getRoot().listNodes().filter(n=>/^Fixed_root_blue_[LR]$/.test
 // 以下实体保留源Float32位置及原局部变换，索引与法线继续Meshopt压缩。
 // V14缩短端帽的极薄倒角同样保留Float32；否则16位位置会压塌36个面/端帽。
 // 不隐藏或删除网格，也不通过提高碰撞检测容差掩盖开孔。
-const exactNodes=doc.getRoot().listNodes().filter(n=>n.getMesh()&&/^(Drive_.+|CargoHinge.+|ControlHinge.+|RootBearingHousing_.+|RootFairing.+|ActuatorSideSlot_.+|Fuselage|CargoHoodShell|CargoOpeningLip|Composite_wing_[LR]|V_tail_[LR]|ControlSurface_.+|ControlFlexure.+|ControlHorn_.+|Motor_cowl_.+|Landing_wear_tip_.+|Fixed_root_[LR]|Fixed_root_blue_[LR]|Blade_[LR]_(Front|Rear)_[AB]|RootHingeEndcap_.+)$/.test(n.getName()));
+const exactNodes=doc.getRoot().listNodes().filter(n=>n.getMesh()&&/^(Drive_.+|CargoHinge.+|ControlHinge.+|RootBearingHousing_.+|RootFairing.+|ActuatorSideSlot_.+|Fuselage|CargoHoodShell|CargoOpeningLip|Composite_wing_[LR]|V_tail_[LR]|ControlSurface_.+|ControlFlexure.+|ControlHorn_.+|Motor_cowl_.+|Landing_wear_tip_.+|Fixed_root_[LR]|Fixed_root_blue_[LR]|Wing_blue_leading_[LR]|Blade_[LR]_(Front|Rear)_[AB]|RootHingeEndcap_.+)$/.test(n.getName()));
 const exactMeshes=new Set(exactNodes.map(n=>n.getMesh()));
 const exactTransforms=exactNodes.map(n=>[n,n.getMatrix().slice()]);
 const exactPositions=[...exactMeshes].flatMap(m=>m.listPrimitives().map(p=>[p,p.getAttribute('POSITION').clone()]));
@@ -86,9 +91,9 @@ const required=['WingPivot_L','WingPivot_R','Prop_L_Front','Prop_L_Rear','Prop_R
 const names=new Set(check.getRoot().listNodes().map(n=>n.getName()));for(const n of required)if(!names.has(n))throw new Error('Missing rig node '+n);
 const triangles=check.getRoot().listMeshes().flatMap(m=>m.listPrimitives()).reduce((n,p)=>n+(p.getIndices()?.getCount()??p.getAttribute('POSITION').getCount())/3,0);
 const renderedTriangles=check.getRoot().listNodes().reduce((sum,n)=>sum+(n.getMesh()?.listPrimitives().reduce((s,p)=>s+(p.getIndices()?.getCount()??p.getAttribute('POSITION').getCount())/3,0)??0),0);
-const report={modelVersion:24,driveRestTransformPreservation,paintEncodingPreservation:{restoredVertices:paintRestoredVertices,seamFloat32Vertices:seamPaintRetainedFloat32.length,seamFloat32ProfileDistanceMaximum:Math.max(0,...seamPaintRetainedFloat32.map(x=>x.profileDistance)),seamFloat32DistanceBound:.15,baselineSha256:paintEncoding.runtimeBaselineSha256,map:"scripts/data/fixed-root-paint-encoding.json"},animations:clips.map(a=>({name:a.getName(),channels:a.listChannels().length,startSeconds:0,durationSeconds:a.listSamplers().reduce((maximum,s)=>s.getInput().getArray().reduce((m,t)=>Math.max(m,t),maximum),-Infinity)})),bounds:getBounds(check.getRoot().listScenes()[0]),meshInstances:check.getRoot().listNodes().filter(n=>n.getMesh()).length,renderedTriangles,inputBytes:fs.statSync(input).size,runtimeBytes:fs.statSync(out).size,compression:'EXT_meshopt_compression',quantization:{positions:16,normals:12,level:'medium',float32PositionExceptions:exactNodes.map(n=>n.getName())},triangles,meshes:check.getRoot().listMeshes().length,nodes:check.getRoot().listNodes().length,materials:check.getRoot().listMaterials().length,rigNodesVerified:required,textures:check.getRoot().listTextures().length};
+const report={modelVersion:24,driveRestTransformPreservation,paintEncodingPreservation:{layeredSourceFloat32Nodes:layeredPaintFloat32,layeredSourceFloat32Vertices:layeredPaintFloat32.reduce((sum,row)=>sum+row.vertices,0),legacyMappingAppliedToChangedWing:false,restoredVertices:paintRestoredVertices,seamFloat32Vertices:seamPaintRetainedFloat32.length,seamFloat32ProfileDistanceMaximum:Math.max(0,...seamPaintRetainedFloat32.map(x=>x.profileDistance)),seamFloat32DistanceBound:.15,baselineSha256:paintEncoding.runtimeBaselineSha256,map:"scripts/data/fixed-root-paint-encoding.json"},animations:clips.map(a=>({name:a.getName(),channels:a.listChannels().length,startSeconds:0,durationSeconds:a.listSamplers().reduce((maximum,s)=>s.getInput().getArray().reduce((m,t)=>Math.max(m,t),maximum),-Infinity)})),bounds:getBounds(check.getRoot().listScenes()[0]),meshInstances:check.getRoot().listNodes().filter(n=>n.getMesh()).length,renderedTriangles,inputBytes:fs.statSync(input).size,runtimeBytes:fs.statSync(out).size,compression:'EXT_meshopt_compression',quantization:{positions:16,normals:12,level:'medium',float32PositionExceptions:exactNodes.map(n=>n.getName())},triangles,meshes:check.getRoot().listMeshes().length,nodes:check.getRoot().listNodes().length,materials:check.getRoot().listMaterials().length,rigNodesVerified:required,textures:check.getRoot().listTextures().length};
 if(report.runtimeBytes>3500000)throw new Error('V24运行资产超过3500000字节预算，需人工核对几何保真和资源成本');
 const manifestPath=path.join(root,'public/models/manifest.json'),manifest=JSON.parse(fs.readFileSync(manifestPath,'utf8'));
-manifest.assetEncoding={driveRestTransformPreservation,paintEncodingPreservation:report.paintEncodingPreservation,runtimeBytes:report.runtimeBytes,runtimeBudgetBytes:3500000,compression:report.compression,quantization:report.quantization,reason:'机腹输出长槽采用真实平直薄壁轮廓，内部丝杠与导轨低置，两侧输出采用单根直斜件，相邻装饰局部重新贴壳。主翼缝、原球心、定长杆、主倾转轨迹、原翼根罩和五轴相位保持；运行预算3500000字节，薄壁与真孔保留Float32，不降低几何或碰撞精度。'};
+manifest.assetEncoding={driveRestTransformPreservation,paintEncodingPreservation:report.paintEncodingPreservation,runtimeBytes:report.runtimeBytes,runtimeBudgetBytes:3500000,compression:report.compression,quantization:report.quantization,reason:'连续闭合层叠翼根、实际移轴、翼上球心和定长杆重算；机腹直槽、低置固定驱动及两侧单直输出保留。滑架与五轴相位按新机构重建。当前主翼和蓝边保留源Float32，不套用旧翼根坐标身份；运行预算3500000字节，真实薄壁与孔腔不降低几何精度。'};
 fs.writeFileSync(manifestPath,JSON.stringify(manifest,null,2));
 fs.writeFileSync(path.join(root,'assets/model-validation.json'),JSON.stringify(report,null,2));console.log(report);

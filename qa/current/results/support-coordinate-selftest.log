@@ -1,0 +1,6 @@
+{
+  passed: true,
+  checks: 67,
+  noModelsLoaded: true,
+  formalCurrentSupportReportStillRequired: true
+}

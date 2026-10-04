@@ -7,7 +7,7 @@ import {exactPairCache} from './exact-pair-cache.mts';
 import {surfaceIds,type AuditPose} from './audit-scene.mts';
 const triModule='../lib/triangle-contact.mjs',solidModule='../lib/solid-contact.mjs';
 const {intersectMeshTriangles}=await import(triModule),{containedComponents}=await import(solidModule);
-const audit=await loadAudit(), scope=JSON.parse(readFileSync('qa/contracts/fuselage-slot-refinement.json','utf8')), impact=affectedScope(audit.scene,scope), changed=new Set(impact.rerunMeshes); const allRelativePairCount=audit.pairs.length; audit.pairs=audit.pairs.filter(p=>changed.has(p.a.name)||changed.has(p.b.name)); const pass=process.env.QA_PASS??'fast',states:AuditPose[]=[];
+const audit=await loadAudit(), scope=JSON.parse(readFileSync('qa/contracts/model-refinement.json','utf8')), impact=affectedScope(audit.scene,scope), changed=new Set(impact.rerunMeshes); const allRelativePairCount=audit.pairs.length; audit.pairs=audit.pairs.filter(p=>changed.has(p.a.name)||changed.has(p.b.name)); const pass=process.env.QA_PASS??'fast',states:AuditPose[]=[];
 const add=(label:string,wing:number,fold:number[]= [1,1,1,1],phase:number[]=[0,0,0,0],surfaces:Record<string,number>={},hatch=0)=>states.push({label,wing,fold,phase,surfaces,hatch});
 if(pass==='fast'){
  for(const wing of [0,.125,.25,.5,.75,.875,1])for(const fold of [0,.5,1])add('四桨同步粗门槛',wing,[fold,fold,fold,fold]);

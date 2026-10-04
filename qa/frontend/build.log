@@ -13,7 +13,7 @@ dist/assets/index-D1B7vCse.css   25.27 kB │ gzip:   5.57 kB
 dist/assets/index-rGvhun1F.js   195.02 kB │ gzip:  71.06 kB
 dist/assets/scene-CAbU1Meg.js   580.48 kB │ gzip: 182.28 kB
 dist/assets/three-D1MzFUPS.js   704.57 kB │ gzip: 181.63 kB
-✓ built in 6.37s
+✓ built in 6.27s
 npm notice
 npm notice New major version of npm available! 11.9.0 -> 12.2.0
 npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0

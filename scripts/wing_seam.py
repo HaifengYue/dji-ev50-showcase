@@ -9,10 +9,10 @@ import bpy
 import bmesh
 
 
-def finish_wing_seam_topology():
+def finish_wing_seam_topology(names=None):
     rows=[]
-    for side in ('L','R'):
-        obj=bpy.data.objects['Composite_wing_'+side]
+    for name in names or ('Composite_wing_L','Composite_wing_R'):
+        obj=bpy.data.objects[name]
         bm=bmesh.new();bm.from_mesh(obj.data)
         bm.verts.ensure_lookup_table();bm.verts.index_update()
         before_volume=bm.calc_volume(signed=True)

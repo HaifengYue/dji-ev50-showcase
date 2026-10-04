@@ -4,7 +4,7 @@
 
 ## 1. 独立安装和启动
 
-以下命令在当前工程根目录执行。Python 需要 3.10 或更高版本，服务、SDK 和测试只依赖标准库，`python/requirements.lock` 无第三方依赖。当前工程迁移后的最终测试尚未完成，实际运行环境和结果须另行登记。
+以下命令在当前工程根目录执行。Python 需要 3.10 或更高版本，服务、SDK 和测试只依赖标准库，`python/requirements.lock` 无第三方依赖。当前工程已完成26项Python单测，并在55阶段正式验收中执行实际SDK/HTTP/SSE/生产GLB链路；报告见 `qa/frontend/summary.json` 与 `qa/current/results/python-render-report.json`。
 
 安装器在当前项目建立 `.venv` 并在该虚拟环境内注册 `python/` 包路径，整个步骤不联网、不安装到全局环境。移动或重新解压工程后再运行安装器即可。
 
@@ -235,7 +235,7 @@ PowerShell：
 .\.venv\Scripts\python.exe -m unittest discover -s python/tests -v
 ```
 
-覆盖协议范围/类型/非有限数、四元数、单位边界、原子安全模式、确定性回放、顺序与重复冲突、并发、租约和退出、断开/重连、过旧历史、安全Host/Origin/路径/JSON大小、模拟响应丢失的幂等重试、真实HTTP/SSE传输与模拟查看器ACK。跨端真实生产运行时与 GLB 链路检查迁入 `qa/current/`，前端与 Python 五阶段入口拟为 `qa/frontend/run.py`；入口仍待迁移后执行验证。Python 测试不是浏览器像素、真实手机或实机飞控测试。
+覆盖协议范围/类型/非有限数、四元数、单位边界、原子安全模式、确定性回放、顺序与重复冲突、并发、租约和退出、断开/重连、过旧历史、安全Host/Origin/路径/JSON大小、模拟响应丢失的幂等重试、真实HTTP/SSE传输与模拟查看器ACK。跨端真实生产运行时与GLB链路检查位于 `qa/current/`，前端与Python五阶段入口为 `qa/frontend/run.py`；两项入口均已在当前工程实际执行通过。Python 测试不是浏览器像素、真实手机或实机飞控测试。
 
 结构机器说明见 `python/protocol.schema.json`（JSON Schema 2020-12）；四元数单位长度、状态合并后的安全约束与时间累计上限等跨字段语义仍需运行时验证。当前工程的最终 Python 结果须在迁移后重新运行并绑定实际文件，不沿用旧测试日志作为通过结论。这里提供 Windows 与 Linux/macOS 命令，不表示已在各平台完成实测。完整覆盖见 [验证说明](VERIFICATION.md)。
 

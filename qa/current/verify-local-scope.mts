@@ -2,7 +2,7 @@
 import {loadReferenceAudit} from './reference-data.mts';
 import {verifyOutsidePatchCoverage} from './patch-coverage.mts';
 import {surfaceDistance} from '../lib/solid-contact.mjs';import fs from 'node:fs';import assert from 'node:assert/strict';import crypto from 'node:crypto';import {loadAudit} from './audit-scene.mts';
-const c=JSON.parse(fs.readFileSync('qa/contracts/fuselage-slot-refinement.json','utf8'));
+const c=JSON.parse(fs.readFileSync('qa/contracts/model-refinement.json','utf8'));
 const b=loadReferenceAudit(),a=await loadAudit(process.env.QA_MODEL??'assets/blender/xp4-source.glb');
 const region=c.localDeformationDomainBlender;assert(region,'必须显式给出且独立复审机腹局部变形界限');
 const inRegion=(p:number[])=>{const [x,z,negY]=p,y=-negY;return Math.abs(x)>=region.minimumAbsX&&Math.abs(x)<=region.maximumAbsX&&y>=region.longitudinalY[0]&&y<=region.longitudinalY[1]&&z>=region.verticalZ[0]&&z<=region.verticalZ[1];};

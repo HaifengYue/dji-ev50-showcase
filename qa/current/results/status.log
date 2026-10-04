@@ -1,9 +1,19 @@
 reviewed-contract 0
+support-coordinate-selftest 0
 regenerated-contract 0
 preservation 0
 runtime-preservation 0
+layered-scope 0
+hinge-identity-selftest 0
+hinge-identity 0
+fairing-role-selftest 0
+fairing-clearance-selftest 0
+fairing-clearance 0
+layered-sections-selftest 0
+layered-geometry 0
 motion-reference-selftest 0
 motion-identity 0
+layered-motion-impact 0
 inheritance 0
 affected-scope-selftest 0
 patch-coverage-selftest 0
@@ -27,6 +37,7 @@ triangle-selftest 0
 solid-selftest 0
 broadphase-selftest 0
 exact-pair-cache-selftest 0
+rotor-impact-selftest 0
 fast-source 0
 wing-source 0
 spin-source 0

@@ -9,7 +9,7 @@ const { intersectMeshTriangles } =
   await import("../lib/triangle-contact.mjs");
 const { containedComponents, pointInSolid } =
   await import("../lib/solid-contact.mjs");
-const scope = JSON.parse(fs.readFileSync("qa/contracts/fuselage-slot-refinement.json", "utf8"));
+const scope = JSON.parse(fs.readFileSync("qa/contracts/model-refinement.json", "utf8"));
 const audit = await loadAudit(), impact=affectedScope(audit.scene,scope), changed = new Set(impact.rerunMeshes), selected = audit.meshes.filter(m=>changed.has(m.name));
 const nameSet = new Set(selected.map((m) => m.name));
 const relative = audit.pairs.filter(

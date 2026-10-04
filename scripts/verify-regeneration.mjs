@@ -93,6 +93,7 @@ assert.deepEqual(animations[0], animations[1], "Animation track data differs");
 const generatorFiles = [
   "generate_transwing.py",
   "wing_seam.py",
+  "layered_wing_joint.py",
   "output_slot_profile.py",
   "preserved_surfaces.py",
   "slot_topology.py",
@@ -111,8 +112,6 @@ const generatorFiles = [
   "output_slot_geometry.py",
   "joint_fairings.py",
   "surface_finish.py",
-  "data/red-target-mapping.json",
-  "data/red-target-footprint.json",
   "joint_endcaps.py",
   "hinge_supports.py",
   "control_supports.py",

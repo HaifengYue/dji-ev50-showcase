@@ -1,7 +1,7 @@
 {
   "passed": true,
   "source": "assets/blender/xp4-source.glb",
-  "sha256": "14deba2a8cb20fb13c6cc05f8c4c09d441285b9754b014499942ad39992f7ce4",
+  "sha256": "82ca7f6f9e98cb11737da6f1cb8b1507f71baf0ffcb57734b9beb7bb23e70126",
   "baselineSha256": "80ce0d237f5266077b5c34f4fc63e062a01d47c682be252eeedcf1cbb4f9f085",
   "referenceArtifact": {
     "path": "qa/reference/source-protected-surfaces.json",
