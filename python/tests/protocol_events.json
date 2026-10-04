@@ -1,0 +1,413 @@
+[
+  {
+    "protocol": "transwing.sim.v1",
+    "revision": 1,
+    "state": {
+      "owner": "external",
+      "positionM": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "attitude": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "motors": {
+        "L_Front": {
+          "targetRpm": 0.0,
+          "enabled": false
+        },
+        "R_Front": {
+          "targetRpm": 0.0,
+          "enabled": false
+        },
+        "L_Rear": {
+          "targetRpm": 0.0,
+          "enabled": false
+        },
+        "R_Rear": {
+          "targetRpm": 0.0,
+          "enabled": false
+        }
+      },
+      "wingTilt": 0.0,
+      "surfaces": {
+        "L_Inboard": 0.0,
+        "R_Inboard": 0.0,
+        "L_Outboard": 0.0,
+        "R_Outboard": 0.0,
+        "Tail_L": 0.0,
+        "Tail_R": 0.0
+      },
+      "hatchDeg": 0.0,
+      "display": {
+        "wireframe": false,
+        "exploded": false,
+        "environment": "hangar"
+      },
+      "time": {
+        "seconds": 0.0,
+        "mode": "deterministic",
+        "paused": true
+      }
+    },
+    "op": "snapshot"
+  },
+  {
+    "protocol": "transwing.sim.v1",
+    "revision": 2,
+    "state": {
+      "owner": "external",
+      "positionM": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "attitude": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "motors": {
+        "L_Front": {
+          "targetRpm": 0.0,
+          "enabled": false
+        },
+        "R_Front": {
+          "targetRpm": 0.0,
+          "enabled": false
+        },
+        "L_Rear": {
+          "targetRpm": 0.0,
+          "enabled": false
+        },
+        "R_Rear": {
+          "targetRpm": 0.0,
+          "enabled": false
+        }
+      },
+      "wingTilt": 0.5,
+      "surfaces": {
+        "L_Inboard": 0.0,
+        "R_Inboard": 0.0,
+        "L_Outboard": 0.0,
+        "R_Outboard": 0.0,
+        "Tail_L": 0.0,
+        "Tail_R": 0.0
+      },
+      "hatchDeg": 0.0,
+      "display": {
+        "wireframe": false,
+        "exploded": false,
+        "environment": "hangar"
+      },
+      "time": {
+        "seconds": 0.0,
+        "mode": "deterministic",
+        "paused": true
+      }
+    },
+    "op": "set",
+    "seq": 1,
+    "sessionId": "b7defcf2daa34d01bb6655ff46e3ebb7"
+  },
+  {
+    "protocol": "transwing.sim.v1",
+    "revision": 3,
+    "state": {
+      "owner": "external",
+      "positionM": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "attitude": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "motors": {
+        "L_Front": {
+          "targetRpm": 0.0,
+          "enabled": false
+        },
+        "R_Front": {
+          "targetRpm": 0.0,
+          "enabled": false
+        },
+        "L_Rear": {
+          "targetRpm": 0.0,
+          "enabled": false
+        },
+        "R_Rear": {
+          "targetRpm": 0.0,
+          "enabled": false
+        }
+      },
+      "wingTilt": 0.5,
+      "surfaces": {
+        "L_Inboard": 0.0,
+        "R_Inboard": 0.0,
+        "L_Outboard": 0.0,
+        "R_Outboard": 0.0,
+        "Tail_L": 0.0,
+        "Tail_R": 0.0
+      },
+      "hatchDeg": 0.0,
+      "display": {
+        "wireframe": false,
+        "exploded": false,
+        "environment": "hangar"
+      },
+      "time": {
+        "seconds": 0.1,
+        "mode": "deterministic",
+        "paused": true
+      }
+    },
+    "op": "step",
+    "dt": 0.1,
+    "seq": 2,
+    "sessionId": "b7defcf2daa34d01bb6655ff46e3ebb7"
+  },
+  {
+    "protocol": "transwing.sim.v1",
+    "revision": 4,
+    "state": {
+      "owner": "external",
+      "positionM": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "attitude": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "motors": {
+        "L_Front": {
+          "targetRpm": 0.0,
+          "enabled": false
+        },
+        "R_Front": {
+          "targetRpm": 0.0,
+          "enabled": false
+        },
+        "L_Rear": {
+          "targetRpm": 0.0,
+          "enabled": false
+        },
+        "R_Rear": {
+          "targetRpm": 0.0,
+          "enabled": false
+        }
+      },
+      "wingTilt": 0.5,
+      "surfaces": {
+        "L_Inboard": 0.0,
+        "R_Inboard": 0.0,
+        "L_Outboard": 0.0,
+        "R_Outboard": 0.0,
+        "Tail_L": 0.0,
+        "Tail_R": 0.0
+      },
+      "hatchDeg": 0.0,
+      "display": {
+        "wireframe": false,
+        "exploded": false,
+        "environment": "hangar"
+      },
+      "time": {
+        "seconds": 0.1,
+        "mode": "deterministic",
+        "paused": true
+      }
+    },
+    "op": "pause",
+    "seq": 3,
+    "sessionId": "b7defcf2daa34d01bb6655ff46e3ebb7"
+  },
+  {
+    "protocol": "transwing.sim.v1",
+    "revision": 5,
+    "state": {
+      "owner": "external",
+      "positionM": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "attitude": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "motors": {
+        "L_Front": {
+          "targetRpm": 0.0,
+          "enabled": false
+        },
+        "R_Front": {
+          "targetRpm": 0.0,
+          "enabled": false
+        },
+        "L_Rear": {
+          "targetRpm": 0.0,
+          "enabled": false
+        },
+        "R_Rear": {
+          "targetRpm": 0.0,
+          "enabled": false
+        }
+      },
+      "wingTilt": 0.5,
+      "surfaces": {
+        "L_Inboard": 0.0,
+        "R_Inboard": 0.0,
+        "L_Outboard": 0.0,
+        "R_Outboard": 0.0,
+        "Tail_L": 0.0,
+        "Tail_R": 0.0
+      },
+      "hatchDeg": 0.0,
+      "display": {
+        "wireframe": false,
+        "exploded": false,
+        "environment": "hangar"
+      },
+      "time": {
+        "seconds": 2.0,
+        "mode": "deterministic",
+        "paused": true
+      }
+    },
+    "op": "seek",
+    "seq": 4,
+    "sessionId": "b7defcf2daa34d01bb6655ff46e3ebb7"
+  },
+  {
+    "protocol": "transwing.sim.v1",
+    "revision": 6,
+    "state": {
+      "owner": "external",
+      "positionM": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "attitude": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "motors": {
+        "L_Front": {
+          "targetRpm": 0.0,
+          "enabled": false
+        },
+        "R_Front": {
+          "targetRpm": 0.0,
+          "enabled": false
+        },
+        "L_Rear": {
+          "targetRpm": 0.0,
+          "enabled": false
+        },
+        "R_Rear": {
+          "targetRpm": 0.0,
+          "enabled": false
+        }
+      },
+      "wingTilt": 0.0,
+      "surfaces": {
+        "L_Inboard": 0.0,
+        "R_Inboard": 0.0,
+        "L_Outboard": 0.0,
+        "R_Outboard": 0.0,
+        "Tail_L": 0.0,
+        "Tail_R": 0.0
+      },
+      "hatchDeg": 0.0,
+      "display": {
+        "wireframe": false,
+        "exploded": false,
+        "environment": "hangar"
+      },
+      "time": {
+        "seconds": 0.0,
+        "mode": "deterministic",
+        "paused": true
+      }
+    },
+    "op": "reset",
+    "seq": 5,
+    "sessionId": "b7defcf2daa34d01bb6655ff46e3ebb7"
+  },
+  {
+    "protocol": "transwing.sim.v1",
+    "revision": 7,
+    "state": {
+      "owner": "ui",
+      "positionM": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "attitude": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "motors": {
+        "L_Front": {
+          "targetRpm": 0.0,
+          "enabled": false
+        },
+        "R_Front": {
+          "targetRpm": 0.0,
+          "enabled": false
+        },
+        "L_Rear": {
+          "targetRpm": 0.0,
+          "enabled": false
+        },
+        "R_Rear": {
+          "targetRpm": 0.0,
+          "enabled": false
+        }
+      },
+      "wingTilt": 0.0,
+      "surfaces": {
+        "L_Inboard": 0.0,
+        "R_Inboard": 0.0,
+        "L_Outboard": 0.0,
+        "R_Outboard": 0.0,
+        "Tail_L": 0.0,
+        "Tail_R": 0.0
+      },
+      "hatchDeg": 0.0,
+      "display": {
+        "wireframe": false,
+        "exploded": false,
+        "environment": "hangar"
+      },
+      "time": {
+        "seconds": 0.0,
+        "mode": "deterministic",
+        "paused": true
+      }
+    },
+    "op": "interrupt",
+    "reason": "client_closed"
+  }
+]

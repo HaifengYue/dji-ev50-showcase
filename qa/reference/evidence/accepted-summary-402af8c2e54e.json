@@ -1,0 +1,2186 @@
+{
+  "modelVersion": 23,
+  "passed": true,
+  "runtimeSha256": "01e19eaacd6e9035568f603f49492e02de345808b287b8d951b780a86378ca89",
+  "sourceSha256": "80ce0d237f5266077b5c34f4fc63e062a01d47c682be252eeedcf1cbb4f9f085",
+  "sourceBlendSha256": "5c5d73d4d7c84d70284854abc4e71a50a3c9bcf744ea8b22144a801e800dbe82",
+  "inputLockFiles": 198,
+  "inputStability": true,
+  "stages": [
+    {
+      "name": "reviewed-contract",
+      "exitCode": 0
+    },
+    {
+      "name": "regenerated-contract",
+      "exitCode": 0
+    },
+    {
+      "name": "preservation",
+      "exitCode": 0
+    },
+    {
+      "name": "runtime-preservation",
+      "exitCode": 0
+    },
+    {
+      "name": "inheritance",
+      "exitCode": 0
+    },
+    {
+      "name": "seam-gap",
+      "exitCode": 0
+    },
+    {
+      "name": "seat-reattachment",
+      "exitCode": 0
+    },
+    {
+      "name": "snapshot-topology-selftest",
+      "exitCode": 0
+    },
+    {
+      "name": "seam-motion",
+      "exitCode": 0
+    },
+    {
+      "name": "wing-anchor",
+      "exitCode": 0
+    },
+    {
+      "name": "fairings",
+      "exitCode": 0
+    },
+    {
+      "name": "retained-joints",
+      "exitCode": 0
+    },
+    {
+      "name": "support-selftest",
+      "exitCode": 0
+    },
+    {
+      "name": "support",
+      "exitCode": 0
+    },
+    {
+      "name": "solids",
+      "exitCode": 0
+    },
+    {
+      "name": "inspection",
+      "exitCode": 0
+    },
+    {
+      "name": "linkage",
+      "exitCode": 0
+    },
+    {
+      "name": "baked-winding",
+      "exitCode": 0
+    },
+    {
+      "name": "drive-motion",
+      "exitCode": 0
+    },
+    {
+      "name": "local-parity",
+      "exitCode": 0
+    },
+    {
+      "name": "triangle-selftest",
+      "exitCode": 0
+    },
+    {
+      "name": "solid-selftest",
+      "exitCode": 0
+    },
+    {
+      "name": "fast",
+      "exitCode": 0
+    },
+    {
+      "name": "wing",
+      "exitCode": 0
+    },
+    {
+      "name": "spin",
+      "exitCode": 0
+    },
+    {
+      "name": "details",
+      "exitCode": 0
+    },
+    {
+      "name": "rotor-envelope",
+      "exitCode": 0
+    },
+    {
+      "name": "fixed-interfaces",
+      "exitCode": 0
+    },
+    {
+      "name": "exported-motor-clip",
+      "exitCode": 0
+    },
+    {
+      "name": "python-render",
+      "exitCode": 0
+    },
+    {
+      "name": "input-stability",
+      "exitCode": 0
+    }
+  ],
+  "scope": {
+    "geometryChanges": [
+      "Fixed_root_L",
+      "Fixed_root_blue_L",
+      "BraceWingSeat_L",
+      "Composite_wing_L",
+      "Wing_blue_leading_L",
+      "Fixed_root_R",
+      "Fixed_root_blue_R",
+      "BraceWingSeat_R",
+      "Composite_wing_R",
+      "Wing_blue_leading_R"
+    ],
+    "normalOnlyChanges": [],
+    "protectedMainHingeNodes": [
+      {
+        "name": "WingPivot_L",
+        "positionsEqual": true,
+        "normalsEqual": true,
+        "maximumMatrixDifference": 0,
+        "parentEqual": true
+      },
+      {
+        "name": "RootCarrierBridge_L",
+        "positionsEqual": true,
+        "normalsEqual": true,
+        "maximumMatrixDifference": 0,
+        "parentEqual": true
+      },
+      {
+        "name": "RootCarrierMoving_L",
+        "positionsEqual": true,
+        "normalsEqual": true,
+        "maximumMatrixDifference": 0,
+        "parentEqual": true
+      },
+      {
+        "name": "RootCarrierThrust_L",
+        "positionsEqual": true,
+        "normalsEqual": true,
+        "maximumMatrixDifference": 0,
+        "parentEqual": true
+      },
+      {
+        "name": "RootAxisStart_L",
+        "positionsEqual": true,
+        "normalsEqual": true,
+        "maximumMatrixDifference": 0,
+        "parentEqual": true
+      },
+      {
+        "name": "RootAxisEnd_L",
+        "positionsEqual": true,
+        "normalsEqual": true,
+        "maximumMatrixDifference": 0,
+        "parentEqual": true
+      },
+      {
+        "name": "RootHingeShaft_L",
+        "positionsEqual": true,
+        "normalsEqual": true,
+        "maximumMatrixDifference": 0,
+        "parentEqual": true
+      },
+      {
+        "name": "RootBearingCenter_L_Front",
+        "positionsEqual": true,
+        "normalsEqual": true,
+        "maximumMatrixDifference": 0,
+        "parentEqual": true
+      },
+      {
+        "name": "RootBearingFixed_L_Front",
+        "positionsEqual": true,
+        "normalsEqual": true,
+        "maximumMatrixDifference": 0,
+        "parentEqual": true
+      },
+      {
+        "name": "RootBearingSeal_L_Front",
+        "positionsEqual": true,
+        "normalsEqual": true,
+        "maximumMatrixDifference": 0,
+        "parentEqual": true
+      },
+      {
+        "name": "RootBearingCenter_L_Rear",
+        "positionsEqual": true,
+        "normalsEqual": true,
+        "maximumMatrixDifference": 0,
+        "parentEqual": true
+      },
+      {
+        "name": "RootBearingFixed_L_Rear",
+        "positionsEqual": true,
+        "normalsEqual": true,
+        "maximumMatrixDifference": 0,
+        "parentEqual": true
+      },
+      {
+        "name": "RootBearingSeal_L_Rear",
+        "positionsEqual": true,
+        "normalsEqual": true,
+        "maximumMatrixDifference": 0,
+        "parentEqual": true
+      },
+      {
+        "name": "RootFixedBearingPedestal_L",
+        "positionsEqual": true,
+        "normalsEqual": true,
+        "maximumMatrixDifference": 0,
+        "parentEqual": true
+      },
+      {
+        "name": "RootHingeEndcap_L-0148",
+        "positionsEqual": true,
+        "normalsEqual": true,
+        "maximumMatrixDifference": 0,
+        "parentEqual": true
+      },
+      {
+        "name": "RootHingeEndcap_L0148",
+        "positionsEqual": true,
+        "normalsEqual": true,
+        "maximumMatrixDifference": 0,
+        "parentEqual": true
+      },
+      {
+        "name": "WingPivot_R",
+        "positionsEqual": true,
+        "normalsEqual": true,
+        "maximumMatrixDifference": 0,
+        "parentEqual": true
+      },
+      {
+        "name": "RootCarrierBridge_R",
+        "positionsEqual": true,
+        "normalsEqual": true,
+        "maximumMatrixDifference": 0,
+        "parentEqual": true
+      },
+      {
+        "name": "RootCarrierMoving_R",
+        "positionsEqual": true,
+        "normalsEqual": true,
+        "maximumMatrixDifference": 0,
+        "parentEqual": true
+      },
+      {
+        "name": "RootCarrierThrust_R",
+        "positionsEqual": true,
+        "normalsEqual": true,
+        "maximumMatrixDifference": 0,
+        "parentEqual": true
+      },
+      {
+        "name": "RootAxisStart_R",
+        "positionsEqual": true,
+        "normalsEqual": true,
+        "maximumMatrixDifference": 0,
+        "parentEqual": true
+      },
+      {
+        "name": "RootAxisEnd_R",
+        "positionsEqual": true,
+        "normalsEqual": true,
+        "maximumMatrixDifference": 0,
+        "parentEqual": true
+      },
+      {
+        "name": "RootHingeShaft_R",
+        "positionsEqual": true,
+        "normalsEqual": true,
+        "maximumMatrixDifference": 0,
+        "parentEqual": true
+      },
+      {
+        "name": "RootBearingCenter_R_Front",
+        "positionsEqual": true,
+        "normalsEqual": true,
+        "maximumMatrixDifference": 0,
+        "parentEqual": true
+      },
+      {
+        "name": "RootBearingFixed_R_Front",
+        "positionsEqual": true,
+        "normalsEqual": true,
+        "maximumMatrixDifference": 0,
+        "parentEqual": true
+      },
+      {
+        "name": "RootBearingSeal_R_Front",
+        "positionsEqual": true,
+        "normalsEqual": true,
+        "maximumMatrixDifference": 0,
+        "parentEqual": true
+      },
+      {
+        "name": "RootBearingCenter_R_Rear",
+        "positionsEqual": true,
+        "normalsEqual": true,
+        "maximumMatrixDifference": 0,
+        "parentEqual": true
+      },
+      {
+        "name": "RootBearingFixed_R_Rear",
+        "positionsEqual": true,
+        "normalsEqual": true,
+        "maximumMatrixDifference": 0,
+        "parentEqual": true
+      },
+      {
+        "name": "RootBearingSeal_R_Rear",
+        "positionsEqual": true,
+        "normalsEqual": true,
+        "maximumMatrixDifference": 0,
+        "parentEqual": true
+      },
+      {
+        "name": "RootFixedBearingPedestal_R",
+        "positionsEqual": true,
+        "normalsEqual": true,
+        "maximumMatrixDifference": 0,
+        "parentEqual": true
+      },
+      {
+        "name": "RootHingeEndcap_R-0148",
+        "positionsEqual": true,
+        "normalsEqual": true,
+        "maximumMatrixDifference": 0,
+        "parentEqual": true
+      },
+      {
+        "name": "RootHingeEndcap_R0148",
+        "positionsEqual": true,
+        "normalsEqual": true,
+        "maximumMatrixDifference": 0,
+        "parentEqual": true
+      },
+      {
+        "name": "RootBearingHousing_L",
+        "positionsEqual": true,
+        "normalsEqual": true,
+        "maximumMatrixDifference": 0,
+        "parentEqual": true
+      },
+      {
+        "name": "RootBearingHousing_R",
+        "positionsEqual": true,
+        "normalsEqual": true,
+        "maximumMatrixDifference": 0,
+        "parentEqual": true
+      }
+    ],
+    "addedNodes": [],
+    "removedNodes": [],
+    "sourceTransformChanges": [],
+    "runtimeEncodingTransformChanges": [
+      "BraceWingSeat_L",
+      "Wing_blue_leading_L",
+      "BraceWingSeat_R",
+      "Wing_blue_leading_R"
+    ],
+    "animationChanges": [],
+    "untouchedMeshes": 273,
+    "exactUnchangedSourceAndRuntimeMeshes": true
+  },
+  "inheritance": {
+    "passed": true,
+    "modelVersion": 23,
+    "runtimeSha256": "01e19eaacd6e9035568f603f49492e02de345808b287b8d951b780a86378ca89",
+    "sourceSha256": "80ce0d237f5266077b5c34f4fc63e062a01d47c682be252eeedcf1cbb4f9f085",
+    "baseline": {
+      "summaryPath": "qa/v23/baseline/verification-v22-summary.json",
+      "summarySha256": "d610424f1524c9b0ca141d18335138bd109caae2f03d260d570279d72f98026e",
+      "runtimeSha256": "61765f19e221a3eafdc6e527dac37eb6603e48bcc7c9918c8eab49f28d810b0b",
+      "sourceSha256": "e0fb4b201ccf97952a5dc4d512738c5cdb358c095b8512e3b043547dab935c47"
+    },
+    "unchangedMeshCount": 273,
+    "changedMeshes": [
+      "Fixed_root_L",
+      "Fixed_root_R",
+      "Composite_wing_L",
+      "Composite_wing_R",
+      "Fixed_root_blue_L",
+      "Fixed_root_blue_R",
+      "Wing_blue_leading_L",
+      "Wing_blue_leading_R",
+      "BraceWingSeat_L",
+      "BraceWingSeat_R"
+    ],
+    "exactSourceAndRuntimePositionNormalOrientedTopology": true,
+    "exactUnchangedParentsAndLocalTransforms": true,
+    "exactAnimationValuesAndTimes": true,
+    "unchangedPoseAndNarrowPhaseInputs": [
+      {
+        "path": "src/rig.ts",
+        "sha256": "4215cd44a02e36e62a2a7ccacd16a38b3fe9d82a727c0233af6d889caa56efb5"
+      },
+      {
+        "path": "src/motors.ts",
+        "sha256": "5297141cc670fd98034bd242e189f0d61681587db209a02da08fb73971c02824"
+      },
+      {
+        "path": "qa/v15/verification/audit-scene.mts",
+        "sha256": "1b297fc895974e516fae7481ef8ef290da03ce72f79557a61665c4e2bbb350b8"
+      },
+      {
+        "path": "qa/v7/triangle-contact.mjs",
+        "sha256": "c8c8bc4f141aff261dbb0bac493fb9e7b4066cae9e1eb95f41cdd9b7718700bb"
+      },
+      {
+        "path": "qa/v9/solid-contact.mjs",
+        "sha256": "a9f5e45e51adbd938f2656777ebdef213c8bce77f569651449d42bf574432308"
+      },
+      {
+        "path": "qa/v11/rotor-envelope-geometry.mjs",
+        "sha256": "7a653b45fc9e2e178c3c424dda7dfb803a2bba56912bc930a897f2bbab3ac64e"
+      },
+      {
+        "path": "qa/v22/verification/support-geometry.mts",
+        "sha256": "f03e7becf95bea23ad901b37ba7189ff2f77ac64cb2f7685e2f52d301601311e"
+      }
+    ],
+    "evidence": [
+      {
+        "stage": "hollow-bay",
+        "path": "qa/v22/verification/final/hollow-bay-report.json",
+        "sha256": "d92d8dc7ed059cafff885c3e856caae14f8e77a0f8c717751fd4ea09ce89c31a",
+        "scope": "Unchanged fuselage/bay geometry only",
+        "rerun": false
+      },
+      {
+        "stage": "local-drive",
+        "path": "qa/v22/verification/final/local-drive-report.json",
+        "sha256": "51e14f23665e992d7e79ddd52b26d3f1b651ce8517b012a91d76a58d7c2d594a",
+        "scope": "Only mesh pairs with neither member in the ten declared V23 changes; all changed-related pairs are freshly checked",
+        "rerun": false
+      },
+      {
+        "stage": "drive-interfaces",
+        "path": "qa/v22/verification/final/drive-interfaces-report.json",
+        "sha256": "fea9d89d826fd4f7178099904f2ff544959e097982f0331126e33ce796400de9",
+        "scope": "Unchanged internal-drive finite interfaces only",
+        "rerun": false
+      },
+      {
+        "stage": "runtime-motion",
+        "path": "qa/v22/verification/final/runtime-motion-report.json",
+        "sha256": "bddde8af32806418d800b58be5355ffd169247b50d5a576d96241543fdae4ee9",
+        "scope": "Only mesh pairs with neither member in the ten declared V23 changes; all changed-related pairs are freshly checked",
+        "rerun": false
+      },
+      {
+        "stage": "runtime-self-clearance",
+        "path": "qa/v22/verification/final/runtime-self-clearance-report.json",
+        "sha256": "9109a14fa2978cc7632c9cacf91475dad0dcffdbfe99f3e210cfbfb0e15085df",
+        "scope": "Only mesh pairs with neither member in the ten declared V23 changes; all changed-related pairs are freshly checked",
+        "rerun": false
+      },
+      {
+        "stage": "runtime-shaft-clearance",
+        "path": "qa/v22/verification/final/runtime-shaft-clearance-report.json",
+        "sha256": "a937e454d76f3fdab5663dc51b3089a3a546fbd7d28dd79160368782ce78a9c0",
+        "scope": "Only mesh pairs with neither member in the ten declared V23 changes; all changed-related pairs are freshly checked",
+        "rerun": false
+      },
+      {
+        "stage": "fast",
+        "path": "qa/v22/verification/final/fast-report.json",
+        "sha256": "e779e92fe8d5cd85e1cc4f1437021d82260fbdd473398ea778dfb9ff427ca189",
+        "scope": "Only mesh pairs with neither member in the ten declared V23 changes; all changed-related pairs are freshly checked",
+        "rerun": false
+      },
+      {
+        "stage": "wing",
+        "path": "qa/v22/verification/final/wing-report.json",
+        "sha256": "2cc39b4afe4c6a1328fe1d8585586511a9085892de8e41703292d64635875a79",
+        "scope": "Only mesh pairs with neither member in the ten declared V23 changes; all changed-related pairs are freshly checked",
+        "rerun": false
+      },
+      {
+        "stage": "spin",
+        "path": "qa/v22/verification/final/spin-report.json",
+        "sha256": "dcb67d603ea8d3ad9957e46b7b29dedf80ed3dd21d9d647580722985f99c8bb3",
+        "scope": "Only mesh pairs with neither member in the ten declared V23 changes; all changed-related pairs are freshly checked",
+        "rerun": false
+      },
+      {
+        "stage": "details",
+        "path": "qa/v22/verification/final/details-report.json",
+        "sha256": "543a3d6cff261ecd1436dc6c5443f1cf2962c2861b3863cf906490c422f3331a",
+        "scope": "Only mesh pairs with neither member in the ten declared V23 changes; all changed-related pairs are freshly checked",
+        "rerun": false
+      },
+      {
+        "stage": "rotor-envelope",
+        "path": "qa/v22/verification/final/rotor-envelope-report.json",
+        "sha256": "ae3af3f7b6aec81817f4d8d3aec1d18592ea979f75d4533bc52cca733066fad1",
+        "scope": "Only mesh pairs with neither member in the ten declared V23 changes; all changed-related pairs are freshly checked",
+        "rerun": false
+      }
+    ],
+    "claim": "Inherited historical passes are not reruns or whole-current-model passes. Complete original global states and full changed-to-all pair coverage are new V23 gates.",
+    "limitations": [
+      "Unchanged-pair inheritance relies on the exact-equality gates and unchanged production pose solver/algorithms; changed mesh attachments and all changed-related motion pairs require fresh validation."
+    ]
+  },
+  "seam": [
+    {
+      "encoding": "source",
+      "side": "L",
+      "baselineMeanAxisGap": 0.02400000486992127,
+      "candidateMeanAxisGap": 0.006002087517153728,
+      "mainSeamReductionFraction": 0.7499263818304922,
+      "mainSeam": [
+        {
+          "region": "main-seam",
+          "sampleCount": 617,
+          "minimumAxisGap": 0.023999905969321333,
+          "maximumAxisGap": 0.024007319038934716,
+          "meanAxisGap": 0.02400000486992127
+        },
+        {
+          "region": "main-seam",
+          "sampleCount": 972,
+          "minimumAxisGap": 0.005963708149518743,
+          "maximumAxisGap": 0.007127078500921424,
+          "meanAxisGap": 0.006001768053907017
+        }
+      ],
+      "endRelief": {
+        "region": "smooth-end-relief",
+        "sampleCount": 1,
+        "minimumAxisGap": 0.006312605792956338,
+        "maximumAxisGap": 0.006312605792956338,
+        "meanAxisGap": 0.006312605792956338
+      },
+      "daylight": [
+        {
+          "worldZ": 1.12,
+          "before": 0,
+          "after": 0
+        },
+        {
+          "worldZ": 1.18,
+          "before": 0.031,
+          "after": 0
+        },
+        {
+          "worldZ": 1.24,
+          "before": 0.02125,
+          "after": 0
+        },
+        {
+          "worldZ": 1.3,
+          "before": 0,
+          "after": 0
+        },
+        {
+          "worldZ": 1.36,
+          "before": 0.001,
+          "after": 0
+        },
+        {
+          "worldZ": 1.42,
+          "before": 0,
+          "after": 0
+        },
+        {
+          "worldZ": 1.48,
+          "before": 0,
+          "after": 0
+        }
+      ]
+    },
+    {
+      "encoding": "source",
+      "side": "R",
+      "baselineMeanAxisGap": 0.023999998741319077,
+      "candidateMeanAxisGap": 0.006001975778189863,
+      "mainSeamReductionFraction": 0.7499309892527231,
+      "mainSeam": [
+        {
+          "region": "main-seam",
+          "sampleCount": 616,
+          "minimumAxisGap": 0.023999912869572593,
+          "maximumAxisGap": 0.024001143979436756,
+          "meanAxisGap": 0.023999998741319077
+        },
+        {
+          "region": "main-seam",
+          "sampleCount": 971,
+          "minimumAxisGap": 0.005994813881503358,
+          "maximumAxisGap": 0.007127223006169192,
+          "meanAxisGap": 0.0060016559431775515
+        }
+      ],
+      "endRelief": {
+        "region": "smooth-end-relief",
+        "sampleCount": 1,
+        "minimumAxisGap": 0.006312535575144107,
+        "maximumAxisGap": 0.006312535575144107,
+        "meanAxisGap": 0.006312535575144107
+      },
+      "daylight": [
+        {
+          "worldZ": 1.12,
+          "before": 0,
+          "after": 0
+        },
+        {
+          "worldZ": 1.18,
+          "before": 0.031,
+          "after": 0
+        },
+        {
+          "worldZ": 1.24,
+          "before": 0.02125,
+          "after": 0
+        },
+        {
+          "worldZ": 1.3,
+          "before": 0,
+          "after": 0
+        },
+        {
+          "worldZ": 1.36,
+          "before": 0.001,
+          "after": 0
+        },
+        {
+          "worldZ": 1.42,
+          "before": 0,
+          "after": 0
+        },
+        {
+          "worldZ": 1.48,
+          "before": 0,
+          "after": 0
+        }
+      ]
+    },
+    {
+      "encoding": "runtime",
+      "side": "L",
+      "baselineMeanAxisGap": 0.024000004869921238,
+      "candidateMeanAxisGap": 0.006002087517153733,
+      "mainSeamReductionFraction": 0.7499263818304918,
+      "mainSeam": [
+        {
+          "region": "main-seam",
+          "sampleCount": 617,
+          "minimumAxisGap": 0.023999905969321556,
+          "maximumAxisGap": 0.024007319038934938,
+          "meanAxisGap": 0.024000004869921238
+        },
+        {
+          "region": "main-seam",
+          "sampleCount": 972,
+          "minimumAxisGap": 0.005963708149518743,
+          "maximumAxisGap": 0.007127078500921202,
+          "meanAxisGap": 0.006001768053907022
+        }
+      ],
+      "endRelief": {
+        "region": "smooth-end-relief",
+        "sampleCount": 1,
+        "minimumAxisGap": 0.0063126057929565604,
+        "maximumAxisGap": 0.0063126057929565604,
+        "meanAxisGap": 0.0063126057929565604
+      },
+      "daylight": [
+        {
+          "worldZ": 1.12,
+          "before": 0,
+          "after": 0
+        },
+        {
+          "worldZ": 1.18,
+          "before": 0.031,
+          "after": 0
+        },
+        {
+          "worldZ": 1.24,
+          "before": 0.02125,
+          "after": 0
+        },
+        {
+          "worldZ": 1.3,
+          "before": 0,
+          "after": 0
+        },
+        {
+          "worldZ": 1.36,
+          "before": 0.001,
+          "after": 0
+        },
+        {
+          "worldZ": 1.42,
+          "before": 0,
+          "after": 0
+        },
+        {
+          "worldZ": 1.48,
+          "before": 0,
+          "after": 0
+        }
+      ]
+    },
+    {
+      "encoding": "runtime",
+      "side": "R",
+      "baselineMeanAxisGap": 0.02399999874131913,
+      "candidateMeanAxisGap": 0.006001975778189885,
+      "mainSeamReductionFraction": 0.7499309892527227,
+      "mainSeam": [
+        {
+          "region": "main-seam",
+          "sampleCount": 616,
+          "minimumAxisGap": 0.02399991286957237,
+          "maximumAxisGap": 0.024001143979436534,
+          "meanAxisGap": 0.02399999874131913
+        },
+        {
+          "region": "main-seam",
+          "sampleCount": 971,
+          "minimumAxisGap": 0.005994813881503358,
+          "maximumAxisGap": 0.007127223006169414,
+          "meanAxisGap": 0.006001655943177575
+        }
+      ],
+      "endRelief": {
+        "region": "smooth-end-relief",
+        "sampleCount": 1,
+        "minimumAxisGap": 0.006312535575144329,
+        "maximumAxisGap": 0.006312535575144329,
+        "meanAxisGap": 0.006312535575144329
+      },
+      "daylight": [
+        {
+          "worldZ": 1.12,
+          "before": 0,
+          "after": 0
+        },
+        {
+          "worldZ": 1.18,
+          "before": 0.031,
+          "after": 0
+        },
+        {
+          "worldZ": 1.24,
+          "before": 0.02125,
+          "after": 0
+        },
+        {
+          "worldZ": 1.3,
+          "before": 0,
+          "after": 0
+        },
+        {
+          "worldZ": 1.36,
+          "before": 0.001,
+          "after": 0
+        },
+        {
+          "worldZ": 1.42,
+          "before": 0,
+          "after": 0
+        },
+        {
+          "worldZ": 1.48,
+          "before": 0,
+          "after": 0
+        }
+      ]
+    }
+  ],
+  "clearanceSurvey": [
+    {
+      "source": "assets/blender/xp4-source.glb",
+      "poses": 13,
+      "minimumSampledSurfaceDistance": 0.005368855407705786
+    },
+    {
+      "source": "public/models/xp4.glb",
+      "poses": 13,
+      "minimumSampledSurfaceDistance": 0.005368855407705786
+    }
+  ],
+  "seatReattachment": [
+    {
+      "side": "L",
+      "changedBottomRingVertices": 45,
+      "preservedVertices": 147,
+      "maximumDisplacement": 0.00040525197982788086
+    },
+    {
+      "side": "R",
+      "changedBottomRingVertices": 45,
+      "preservedVertices": 147,
+      "maximumDisplacement": 0.00040525197982788086
+    }
+  ],
+  "support": [
+    {
+      "source": "assets/blender/xp4-source.glb",
+      "meshCount": 283,
+      "visibleMeshCount": 283,
+      "interfaces": 322,
+      "newlyMeasuredInterfaces": 36,
+      "inheritedInterfaces": 286,
+      "allMeshPhysicalPaths": true,
+      "fullCoverageReport": "qa/v23/verification/final/support-report.json"
+    },
+    {
+      "source": "public/models/xp4.glb",
+      "meshCount": 283,
+      "visibleMeshCount": 283,
+      "interfaces": 322,
+      "newlyMeasuredInterfaces": 36,
+      "inheritedInterfaces": 286,
+      "allMeshPhysicalPaths": true,
+      "fullCoverageReport": "qa/v23/verification/final/support-report.json"
+    }
+  ],
+  "wingAnchor": [
+    {
+      "source": "assets/blender/xp4-source.glb",
+      "mainWingAnglesDegrees": [
+        {
+          "side": "L",
+          "degrees": 119.99999999999999
+        },
+        {
+          "side": "R",
+          "degrees": 119.99999999999999
+        }
+      ],
+      "rows": [
+        {
+          "side": "L",
+          "newCenter": [
+            -0.8903027800072909,
+            -0.18419396985104539,
+            0.9620011062788344
+          ],
+          "newLocalGltf": [
+            0.4596972167491916,
+            0.03580617159605026,
+            -0.3379988670349122
+          ],
+          "expectedLocalGltf": [
+            0.45969725856807764,
+            0.03580632777801959,
+            -0.33799887117646427
+          ],
+          "geometricBallToAnchorError": 5.364417798858832e-10,
+          "ballProjection": {
+            "renderPixel": [
+              840.6504670584732,
+              367.8935975864405
+            ],
+            "referencePixel": [
+              190.9999835966136,
+              452.00012720984296
+            ]
+          },
+          "referenceProjectionErrorPixels": 0.00012826307041067579,
+          "surfaceProjection": {
+            "renderPixel": [
+              840.6504585493583,
+              393.59876762858437
+            ],
+            "referencePixel": [
+              190.99997956551496,
+              464.11394775346736
+            ]
+          },
+          "ballHeightAboveSurface": 0.03132298158607063,
+          "seatContact": {
+            "sampleCount": 267,
+            "spanTriangleArea": 0.0006061431175138608,
+            "observedBounds": [
+              [
+                0.4351972341537478,
+                0.48419725894928023
+              ],
+              [
+                -0.00014933560305505078,
+                0.006797136583675922
+              ],
+              [
+                -0.3623940795660021,
+                -0.3134988546371461
+              ]
+            ]
+          }
+        },
+        {
+          "side": "R",
+          "newCenter": [
+            0.890302777826786,
+            -0.18419370055198678,
+            0.9620010554790497
+          ],
+          "newLocalGltf": [
+            -0.45969724655151356,
+            0.03580629825592038,
+            -0.3379988968372346
+          ],
+          "expectedLocalGltf": [
+            -0.45969725856807764,
+            0.03580632777801959,
+            -0.33799887117646427
+          ],
+          "geometricBallToAnchorError": 5.364417798858767e-10,
+          "ballProjection": {
+            "renderPixel": [
+              840.6504860195591,
+              367.89341434053716
+            ],
+            "referencePixel": [
+              190.99999257921738,
+              452.00004085336354
+            ]
+          },
+          "referenceProjectionErrorPixels": 0.000041521865656158325,
+          "surfaceProjection": {
+            "renderPixel": [
+              840.6504866034433,
+              393.59869425694444
+            ],
+            "referencePixel": [
+              190.99999285582598,
+              464.1139131763423
+            ]
+          },
+          "ballHeightAboveSurface": 0.03132311217143599,
+          "seatContact": {
+            "sampleCount": 267,
+            "spanTriangleArea": 0.0006061430691396127,
+            "observedBounds": [
+              [
+                -0.4841972589492797,
+                -0.43519723415374745
+              ],
+              [
+                -0.0001493356030551063,
+                0.006797136583675922
+              ],
+              [
+                -0.362394079566002,
+                -0.3134988546371461
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "source": "public/models/xp4.glb",
+      "mainWingAnglesDegrees": [
+        {
+          "side": "L",
+          "degrees": 119.99999999999999
+        },
+        {
+          "side": "R",
+          "degrees": 119.99999999999999
+        }
+      ],
+      "rows": [
+        {
+          "side": "L",
+          "newCenter": [
+            -0.8903027800072909,
+            -0.1841939698510454,
+            0.9620011062788345
+          ],
+          "newLocalGltf": [
+            0.4596972167491916,
+            0.03580617159605026,
+            -0.3379988670349122
+          ],
+          "expectedLocalGltf": [
+            0.45969725856807764,
+            0.03580632777801959,
+            -0.33799887117646427
+          ],
+          "geometricBallToAnchorError": 5.364417798858997e-10,
+          "ballProjection": {
+            "renderPixel": [
+              840.6504670584732,
+              367.8935975864404
+            ],
+            "referencePixel": [
+              190.9999835966136,
+              452.00012720984296
+            ]
+          },
+          "referenceProjectionErrorPixels": 0.00012826307041067579,
+          "surfaceProjection": {
+            "renderPixel": [
+              840.6504585493583,
+              393.59876762858437
+            ],
+            "referencePixel": [
+              190.99997956551496,
+              464.11394775346736
+            ]
+          },
+          "ballHeightAboveSurface": 0.0313229815860706,
+          "seatContact": {
+            "sampleCount": 267,
+            "spanTriangleArea": 0.0006061441402356543,
+            "observedBounds": [
+              [
+                0.4351972341537478,
+                0.48419725894928023
+              ],
+              [
+                -0.00014922188553626037,
+                0.0067974454479652335
+              ],
+              [
+                -0.362394200892205,
+                -0.3134988546371461
+              ]
+            ]
+          }
+        },
+        {
+          "side": "R",
+          "newCenter": [
+            0.890302777826786,
+            -0.18419370055198678,
+            0.9620010554790497
+          ],
+          "newLocalGltf": [
+            -0.45969724655151356,
+            0.03580629825592038,
+            -0.3379988968372346
+          ],
+          "expectedLocalGltf": [
+            -0.45969725856807764,
+            0.03580632777801959,
+            -0.33799887117646427
+          ],
+          "geometricBallToAnchorError": 5.364417798858767e-10,
+          "ballProjection": {
+            "renderPixel": [
+              840.6504860195591,
+              367.89341434053716
+            ],
+            "referencePixel": [
+              190.99999257921738,
+              452.00004085336354
+            ]
+          },
+          "referenceProjectionErrorPixels": 0.000041521865656158325,
+          "surfaceProjection": {
+            "renderPixel": [
+              840.6504866034433,
+              393.59869425694444
+            ],
+            "referencePixel": [
+              190.99999285582598,
+              464.1139131763423
+            ]
+          },
+          "ballHeightAboveSurface": 0.03132311217143599,
+          "seatContact": {
+            "sampleCount": 267,
+            "spanTriangleArea": 0.0006061441402356516,
+            "observedBounds": [
+              [
+                -0.4841972589492797,
+                -0.43519723415374745
+              ],
+              [
+                -0.00014919208321392818,
+                0.006797475250287649
+              ],
+              [
+                -0.3623942008922051,
+                -0.3134988546371461
+              ]
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "fairings": [
+    {
+      "source": "assets/blender/xp4-source.glb",
+      "rows": [
+        {
+          "name": "RootFairingFixed_L",
+          "parent": "Scene",
+          "closed": true,
+          "components": 1,
+          "materialVolume": 0.00008766663064362881,
+          "radialEnvelope": 0.05400006126429826,
+          "axialSeamMin": 0.0014999003310270237,
+          "maximumProfileOffset": 0.13550000860235098,
+          "radialMaterialThicknessRange": [
+            0.002541564458663277,
+            0.002935855545071253
+          ],
+          "contacts": [
+            {
+              "pair": [
+                "RootFairingFixed_L",
+                "Fixed_root_L"
+              ],
+              "finiteSamples": 2531,
+              "spanTriangleArea": 0.0037395067293743748,
+              "observedBounds": [
+                [
+                  -1.4026743173599243,
+                  -1.2826680739720662
+                ],
+                [
+                  -0.24232138196627298,
+                  -0.18284884095191956
+                ],
+                [
+                  1.2473256587982178,
+                  1.367331902186076
+                ]
+              ]
+            },
+            {
+              "pair": [
+                "RootFairingFixed_L",
+                "RootFixedBearingPedestal_L"
+              ],
+              "finiteSamples": 591,
+              "spanTriangleArea": 0.0003657661732232558,
+              "observedBounds": [
+                [
+                  -1.2991130352020264,
+                  -1.2767224311828613
+                ],
+                [
+                  -0.22741830348968506,
+                  -0.19190629571676254
+                ],
+                [
+                  1.3217124938964844,
+                  1.3580336561494535
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "name": "RootFairingMoving_L",
+          "parent": "WingPivot_L",
+          "closed": true,
+          "components": 1,
+          "materialVolume": 0.000059012096117770546,
+          "radialEnvelope": 0.05400000911053527,
+          "axialSeamMin": 0.0014999957579721057,
+          "maximumProfileOffset": 0.08350000260859808,
+          "radialMaterialThicknessRange": [
+            0.00233827212596098,
+            0.002838109378635406
+          ],
+          "contacts": [
+            {
+              "pair": [
+                "RootFairingMoving_L",
+                "Composite_wing_L"
+              ],
+              "finiteSamples": 2414,
+              "spanTriangleArea": 0.0027925538816893445,
+              "observedBounds": [
+                [
+                  -0.07608312865098266,
+                  0.02715391479432605
+                ],
+                [
+                  -0.02715810481458905,
+                  0.018439329539736093
+                ],
+                [
+                  -0.07603788375854492,
+                  0.028333716094494088
+                ]
+              ]
+            },
+            {
+              "pair": [
+                "RootFairingMoving_L",
+                "RootCarrierBridge_L"
+              ],
+              "finiteSamples": 236,
+              "spanTriangleArea": 0.00027568041991940685,
+              "observedBounds": [
+                [
+                  -0.06641330190536432,
+                  -0.04778097944864412
+                ],
+                [
+                  -0.03229882817373861,
+                  -0.0007186318929888746
+                ],
+                [
+                  0.0031199809163808823,
+                  0.0243412697798131
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "name": "RootFairingFixed_R",
+          "parent": "Scene",
+          "closed": true,
+          "components": 1,
+          "materialVolume": 0.00008766662593334184,
+          "radialEnvelope": 0.054000059598703826,
+          "axialSeamMin": 0.00149990367813305,
+          "maximumProfileOffset": 0.13550000860235198,
+          "radialMaterialThicknessRange": [
+            0.002541560162156488,
+            0.002935856554082898
+          ],
+          "contacts": [
+            {
+              "pair": [
+                "RootFairingFixed_R",
+                "Fixed_root_R"
+              ],
+              "finiteSamples": 2546,
+              "spanTriangleArea": 0.0037649110638600485,
+              "observedBounds": [
+                [
+                  1.2827132940292358,
+                  1.4026743173599243
+                ],
+                [
+                  -0.24232138196627298,
+                  -0.18196704983711243
+                ],
+                [
+                  1.2473256587982178,
+                  1.367331902186076
+                ]
+              ]
+            },
+            {
+              "pair": [
+                "RootFairingFixed_R",
+                "RootFixedBearingPedestal_R"
+              ],
+              "finiteSamples": 591,
+              "spanTriangleArea": 0.00040282535724000005,
+              "observedBounds": [
+                [
+                  1.2767224311828613,
+                  1.2991130352020264
+                ],
+                [
+                  -0.22741830348968506,
+                  -0.19198968261480331
+                ],
+                [
+                  1.3217124938964844,
+                  1.3580569292129534
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "name": "RootFairingMoving_R",
+          "parent": "WingPivot_R",
+          "closed": true,
+          "components": 1,
+          "materialVolume": 0.000059012096116435595,
+          "radialEnvelope": 0.054000009110535,
+          "axialSeamMin": 0.0014999957579722514,
+          "maximumProfileOffset": 0.08350000260859804,
+          "radialMaterialThicknessRange": [
+            0.0023382721259609454,
+            0.00283810937863542
+          ],
+          "contacts": [
+            {
+              "pair": [
+                "RootFairingMoving_R",
+                "Composite_wing_R"
+              ],
+              "finiteSamples": 2431,
+              "spanTriangleArea": 0.002668292733696559,
+              "observedBounds": [
+                [
+                  -0.02715391479432583,
+                  0.07603788375854492
+                ],
+                [
+                  -0.02715810481458905,
+                  0.018439329539736093
+                ],
+                [
+                  -0.0760831286509831,
+                  0.028333716094493866
+                ]
+              ]
+            },
+            {
+              "pair": [
+                "RootFairingMoving_R",
+                "RootCarrierBridge_R"
+              ],
+              "finiteSamples": 239,
+              "spanTriangleArea": 0.00027568046749132337,
+              "observedBounds": [
+                [
+                  0.047331595743902,
+                  0.06627224155732203
+                ],
+                [
+                  -0.032318277744457446,
+                  -0.0007187132050827105
+                ],
+                [
+                  0.0031199809163808823,
+                  0.02400736110196533
+                ]
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": "public/models/xp4.glb",
+      "rows": [
+        {
+          "name": "RootFairingFixed_L",
+          "parent": "Scene",
+          "closed": true,
+          "components": 1,
+          "materialVolume": 0.00008766663064362543,
+          "radialEnvelope": 0.05400006126429826,
+          "axialSeamMin": 0.0014999003310270237,
+          "maximumProfileOffset": 0.13550000860235098,
+          "radialMaterialThicknessRange": [
+            0.0025415644586632563,
+            0.002935855545071267
+          ],
+          "contacts": [
+            {
+              "pair": [
+                "RootFairingFixed_L",
+                "Fixed_root_L"
+              ],
+              "finiteSamples": 2531,
+              "spanTriangleArea": 0.003894317709354943,
+              "observedBounds": [
+                [
+                  -1.4026743173599243,
+                  -1.2826680739720662
+                ],
+                [
+                  -0.24232138196627298,
+                  -0.18284884095191956
+                ],
+                [
+                  1.2473256587982178,
+                  1.367331902186076
+                ]
+              ]
+            },
+            {
+              "pair": [
+                "RootFairingFixed_L",
+                "RootFixedBearingPedestal_L"
+              ],
+              "finiteSamples": 591,
+              "spanTriangleArea": 0.00034961880430454376,
+              "observedBounds": [
+                [
+                  -1.2991130352020264,
+                  -1.2767224311828613
+                ],
+                [
+                  -0.22741830348968506,
+                  -0.19190629571676254
+                ],
+                [
+                  1.3217124938964844,
+                  1.3580336646643312
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "name": "RootFairingMoving_L",
+          "parent": "WingPivot_L",
+          "closed": true,
+          "components": 1,
+          "materialVolume": 0.00005901209611729699,
+          "radialEnvelope": 0.05400000911053527,
+          "axialSeamMin": 0.0014999957579721057,
+          "maximumProfileOffset": 0.08350000260859808,
+          "radialMaterialThicknessRange": [
+            0.002338272125960994,
+            0.002838109378635406
+          ],
+          "contacts": [
+            {
+              "pair": [
+                "RootFairingMoving_L",
+                "Composite_wing_L"
+              ],
+              "finiteSamples": 2414,
+              "spanTriangleArea": 0.0026682927336965745,
+              "observedBounds": [
+                [
+                  -0.07608312865098266,
+                  0.02715391479432605
+                ],
+                [
+                  -0.02715810481458905,
+                  0.018439329539736093
+                ],
+                [
+                  -0.07603788375854492,
+                  0.028333716094494088
+                ]
+              ]
+            },
+            {
+              "pair": [
+                "RootFairingMoving_L",
+                "RootCarrierBridge_L"
+              ],
+              "finiteSamples": 236,
+              "spanTriangleArea": 0.00018180426018752063,
+              "observedBounds": [
+                [
+                  -0.0664132668324795,
+                  -0.04778105577611025
+                ],
+                [
+                  -0.03229891865597653,
+                  -0.0007186130892509468
+                ],
+                [
+                  0.0031199809163808823,
+                  0.02434118817013875
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "name": "RootFairingFixed_R",
+          "parent": "Scene",
+          "closed": true,
+          "components": 1,
+          "materialVolume": 0.00008766662593333825,
+          "radialEnvelope": 0.054000059598703826,
+          "axialSeamMin": 0.00149990367813305,
+          "maximumProfileOffset": 0.13550000860235198,
+          "radialMaterialThicknessRange": [
+            0.002541560162156488,
+            0.002935856554082898
+          ],
+          "contacts": [
+            {
+              "pair": [
+                "RootFairingFixed_R",
+                "Fixed_root_R"
+              ],
+              "finiteSamples": 2546,
+              "spanTriangleArea": 0.0036671722157494598,
+              "observedBounds": [
+                [
+                  1.2827132940292358,
+                  1.4026743173599243
+                ],
+                [
+                  -0.24232138196627298,
+                  -0.18196704983711243
+                ],
+                [
+                  1.2473256587982178,
+                  1.367331902186076
+                ]
+              ]
+            },
+            {
+              "pair": [
+                "RootFairingFixed_R",
+                "RootFixedBearingPedestal_R"
+              ],
+              "finiteSamples": 591,
+              "spanTriangleArea": 0.00033259131591304467,
+              "observedBounds": [
+                [
+                  1.2767224311828613,
+                  1.2991130352020264
+                ],
+                [
+                  -0.22741830348968506,
+                  -0.19198968261480331
+                ],
+                [
+                  1.3217124938964844,
+                  1.358056823214395
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "name": "RootFairingMoving_R",
+          "parent": "WingPivot_R",
+          "closed": true,
+          "components": 1,
+          "materialVolume": 0.00005901209611882043,
+          "radialEnvelope": 0.054000009110535,
+          "axialSeamMin": 0.0014999957579722514,
+          "maximumProfileOffset": 0.08350000260859804,
+          "radialMaterialThicknessRange": [
+            0.0023382721259609385,
+            0.0028381093786354165
+          ],
+          "contacts": [
+            {
+              "pair": [
+                "RootFairingMoving_R",
+                "Composite_wing_R"
+              ],
+              "finiteSamples": 2431,
+              "spanTriangleArea": 0.0026790257750563275,
+              "observedBounds": [
+                [
+                  -0.02715391479432583,
+                  0.07603788375854492
+                ],
+                [
+                  -0.02715810481458905,
+                  0.018439329539736093
+                ],
+                [
+                  -0.0760831286509831,
+                  0.028333716094493866
+                ]
+              ]
+            },
+            {
+              "pair": [
+                "RootFairingMoving_R",
+                "RootCarrierBridge_R"
+              ],
+              "finiteSamples": 239,
+              "spanTriangleArea": 0.0001612578035922829,
+              "observedBounds": [
+                [
+                  0.04733145433071484,
+                  0.06627237986003709
+                ],
+                [
+                  -0.032318491552628115,
+                  -0.0007187016645649191
+                ],
+                [
+                  0.0031199809163808823,
+                  0.024007008832344745
+                ]
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "exportedDriveWinding": [
+    {
+      "source": "assets/blender/xp4-source.glb",
+      "sha256": "80ce0d237f5266077b5c34f4fc63e062a01d47c682be252eeedcf1cbb4f9f085",
+      "lead": 0.032,
+      "rows": [
+        {
+          "name": "Drive_ScrewRotor",
+          "keyframes": 6371,
+          "fractionalChecks": 19110,
+          "maxKeyQerror": 8.881784197001252e-16,
+          "maxMidQerror": 6.661338147750939e-16,
+          "maximumActualStep": 0.13895569964247417,
+          "maxIncrementError": 1.3253069738872192e-7,
+          "maxAccumulationError": 8.181972077636601e-8,
+          "finalAccumulatedRadians": -1.1868717814111918e-13,
+          "absoluteAngularPathRadians": 388.59099707197856,
+          "expectedAbsoluteAngularPathRadians": 388.59099707193855,
+          "completeOutstrokeTurns": 30.923089012503624,
+          "segments": [
+            {
+              "from": 0,
+              "to": 3.2916667461395264,
+              "actualRadians": -194.29549853598922,
+              "expectedRadians": -194.29549853596927,
+              "actualTurns": -30.9230890125068
+            },
+            {
+              "from": 3.2916667461395264,
+              "to": 4.958333492279053,
+              "actualRadians": 0,
+              "expectedRadians": 0,
+              "actualTurns": 0
+            },
+            {
+              "from": 4.958333492279053,
+              "to": 8.291666984558105,
+              "actualRadians": 194.2954985359891,
+              "expectedRadians": 194.29549853596927,
+              "actualTurns": 30.923089012506782
+            }
+          ]
+        },
+        {
+          "name": "Drive_MotorRotor",
+          "keyframes": 6371,
+          "fractionalChecks": 19110,
+          "maxKeyQerror": 8.881784197001252e-16,
+          "maxMidQerror": 8.881784197001252e-16,
+          "maximumActualStep": 0.4168669879810551,
+          "maxIncrementError": 1.3783006952428067e-7,
+          "maxAccumulationError": 7.999790341273183e-8,
+          "finalAccumulatedRadians": 5.361056650693419e-13,
+          "absoluteAngularPathRadians": 1165.7729911517226,
+          "expectedAbsoluteAngularPathRadians": 1165.7729912158156,
+          "completeOutstrokeTurns": 92.76926703751087,
+          "segments": [
+            {
+              "from": 0,
+              "to": 3.2916667461395264,
+              "actualRadians": -582.8864955758603,
+              "expectedRadians": -582.8864956079078,
+              "actualTurns": -92.76926703241035
+            },
+            {
+              "from": 3.2916667461395264,
+              "to": 4.958333492279053,
+              "actualRadians": 0,
+              "expectedRadians": 0,
+              "actualTurns": 0
+            },
+            {
+              "from": 4.958333492279053,
+              "to": 8.291666984558105,
+              "actualRadians": 582.8864955758609,
+              "expectedRadians": 582.8864956079078,
+              "actualTurns": 92.76926703241044
+            }
+          ]
+        },
+        {
+          "name": "Drive_PlanetRotor_0",
+          "keyframes": 6371,
+          "fractionalChecks": 19110,
+          "maxKeyQerror": 8.881784197001252e-16,
+          "maxMidQerror": 6.661338147750939e-16,
+          "maximumActualStep": 0.5558226506281847,
+          "maxIncrementError": 1.4833888223320102e-7,
+          "maxAccumulationError": 8.135765483530122e-8,
+          "finalAccumulatedRadians": 2.9415098828922126e-13,
+          "absoluteAngularPathRadians": 1554.3639883141361,
+          "expectedAbsoluteAngularPathRadians": 1554.3639882877542,
+          "completeOutstrokeTurns": 123.6923560500145,
+          "segments": [
+            {
+              "from": 0,
+              "to": 3.2916667461395264,
+              "actualRadians": 777.1819941570651,
+              "expectedRadians": 777.1819941438771,
+              "actualTurns": 123.69235605211344
+            },
+            {
+              "from": 3.2916667461395264,
+              "to": 4.958333492279053,
+              "actualRadians": 0,
+              "expectedRadians": 0,
+              "actualTurns": 0
+            },
+            {
+              "from": 4.958333492279053,
+              "to": 8.291666984558105,
+              "actualRadians": -777.1819941570648,
+              "expectedRadians": -777.1819941438771,
+              "actualTurns": -123.69235605211338
+            }
+          ]
+        },
+        {
+          "name": "Drive_PlanetRotor_1",
+          "keyframes": 6371,
+          "fractionalChecks": 19110,
+          "maxKeyQerror": 8.881784197001252e-16,
+          "maxMidQerror": 6.661338147750939e-16,
+          "maximumActualStep": 0.5558226506281847,
+          "maxIncrementError": 1.4833888223320102e-7,
+          "maxAccumulationError": 8.135765483530122e-8,
+          "finalAccumulatedRadians": 2.9415098828922126e-13,
+          "absoluteAngularPathRadians": 1554.3639883141361,
+          "expectedAbsoluteAngularPathRadians": 1554.3639882877542,
+          "completeOutstrokeTurns": 123.6923560500145,
+          "segments": [
+            {
+              "from": 0,
+              "to": 3.2916667461395264,
+              "actualRadians": 777.1819941570651,
+              "expectedRadians": 777.1819941438771,
+              "actualTurns": 123.69235605211344
+            },
+            {
+              "from": 3.2916667461395264,
+              "to": 4.958333492279053,
+              "actualRadians": 0,
+              "expectedRadians": 0,
+              "actualTurns": 0
+            },
+            {
+              "from": 4.958333492279053,
+              "to": 8.291666984558105,
+              "actualRadians": -777.1819941570648,
+              "expectedRadians": -777.1819941438771,
+              "actualTurns": -123.69235605211338
+            }
+          ]
+        },
+        {
+          "name": "Drive_PlanetRotor_2",
+          "keyframes": 6371,
+          "fractionalChecks": 19110,
+          "maxKeyQerror": 8.881784197001252e-16,
+          "maxMidQerror": 6.661338147750939e-16,
+          "maximumActualStep": 0.5558226506281847,
+          "maxIncrementError": 1.4833888223320102e-7,
+          "maxAccumulationError": 8.135765483530122e-8,
+          "finalAccumulatedRadians": 2.9415098828922126e-13,
+          "absoluteAngularPathRadians": 1554.3639883141361,
+          "expectedAbsoluteAngularPathRadians": 1554.3639882877542,
+          "completeOutstrokeTurns": 123.6923560500145,
+          "segments": [
+            {
+              "from": 0,
+              "to": 3.2916667461395264,
+              "actualRadians": 777.1819941570651,
+              "expectedRadians": 777.1819941438771,
+              "actualTurns": 123.69235605211344
+            },
+            {
+              "from": 3.2916667461395264,
+              "to": 4.958333492279053,
+              "actualRadians": 0,
+              "expectedRadians": 0,
+              "actualTurns": 0
+            },
+            {
+              "from": 4.958333492279053,
+              "to": 8.291666984558105,
+              "actualRadians": -777.1819941570648,
+              "expectedRadians": -777.1819941438771,
+              "actualTurns": -123.69235605211338
+            }
+          ]
+        }
+      ],
+      "maximumKeyPhaseError": 8.881784197001252e-16,
+      "maximumMidpointPhaseError": 8.881784197001252e-16,
+      "maximumResolvableExpectedStep": 0.5558226220929328,
+      "secondaryMotorClip": {
+        "name": "TRANSWING_Motors_Start_Stop",
+        "rows": [
+          {
+            "name": "Drive_ScrewRotor",
+            "keyframes": 673,
+            "totalPhaseChecks": 2689,
+            "maximumQerror": 0
+          },
+          {
+            "name": "Drive_MotorRotor",
+            "keyframes": 673,
+            "totalPhaseChecks": 2689,
+            "maximumQerror": 0
+          },
+          {
+            "name": "Drive_PlanetRotor_0",
+            "keyframes": 673,
+            "totalPhaseChecks": 2689,
+            "maximumQerror": 0
+          },
+          {
+            "name": "Drive_PlanetRotor_1",
+            "keyframes": 673,
+            "totalPhaseChecks": 2689,
+            "maximumQerror": 0
+          },
+          {
+            "name": "Drive_PlanetRotor_2",
+            "keyframes": 673,
+            "totalPhaseChecks": 2689,
+            "maximumQerror": 0
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "source": "public/models/xp4.glb",
+      "sha256": "01e19eaacd6e9035568f603f49492e02de345808b287b8d951b780a86378ca89",
+      "lead": 0.032,
+      "rows": [
+        {
+          "name": "Drive_ScrewRotor",
+          "keyframes": 6371,
+          "fractionalChecks": 19110,
+          "maxKeyQerror": 8.881784197001252e-16,
+          "maxMidQerror": 6.661338147750939e-16,
+          "maximumActualStep": 0.13895569964247417,
+          "maxIncrementError": 1.3253069738872192e-7,
+          "maxAccumulationError": 8.181972077636601e-8,
+          "finalAccumulatedRadians": -1.1868717814111918e-13,
+          "absoluteAngularPathRadians": 388.59099707197856,
+          "expectedAbsoluteAngularPathRadians": 388.59099707193855,
+          "completeOutstrokeTurns": 30.923089012503624,
+          "segments": [
+            {
+              "from": 0,
+              "to": 3.2916667461395264,
+              "actualRadians": -194.29549853598922,
+              "expectedRadians": -194.29549853596927,
+              "actualTurns": -30.9230890125068
+            },
+            {
+              "from": 3.2916667461395264,
+              "to": 4.958333492279053,
+              "actualRadians": 0,
+              "expectedRadians": 0,
+              "actualTurns": 0
+            },
+            {
+              "from": 4.958333492279053,
+              "to": 8.291666984558105,
+              "actualRadians": 194.2954985359891,
+              "expectedRadians": 194.29549853596927,
+              "actualTurns": 30.923089012506782
+            }
+          ]
+        },
+        {
+          "name": "Drive_MotorRotor",
+          "keyframes": 6371,
+          "fractionalChecks": 19110,
+          "maxKeyQerror": 8.881784197001252e-16,
+          "maxMidQerror": 8.881784197001252e-16,
+          "maximumActualStep": 0.4168669879810551,
+          "maxIncrementError": 1.3783006952428067e-7,
+          "maxAccumulationError": 7.999790341273183e-8,
+          "finalAccumulatedRadians": 5.361056650693419e-13,
+          "absoluteAngularPathRadians": 1165.7729911517226,
+          "expectedAbsoluteAngularPathRadians": 1165.7729912158156,
+          "completeOutstrokeTurns": 92.76926703751087,
+          "segments": [
+            {
+              "from": 0,
+              "to": 3.2916667461395264,
+              "actualRadians": -582.8864955758603,
+              "expectedRadians": -582.8864956079078,
+              "actualTurns": -92.76926703241035
+            },
+            {
+              "from": 3.2916667461395264,
+              "to": 4.958333492279053,
+              "actualRadians": 0,
+              "expectedRadians": 0,
+              "actualTurns": 0
+            },
+            {
+              "from": 4.958333492279053,
+              "to": 8.291666984558105,
+              "actualRadians": 582.8864955758609,
+              "expectedRadians": 582.8864956079078,
+              "actualTurns": 92.76926703241044
+            }
+          ]
+        },
+        {
+          "name": "Drive_PlanetRotor_0",
+          "keyframes": 6371,
+          "fractionalChecks": 19110,
+          "maxKeyQerror": 8.881784197001252e-16,
+          "maxMidQerror": 6.661338147750939e-16,
+          "maximumActualStep": 0.5558226506281847,
+          "maxIncrementError": 1.4833888223320102e-7,
+          "maxAccumulationError": 8.135765483530122e-8,
+          "finalAccumulatedRadians": 2.9415098828922126e-13,
+          "absoluteAngularPathRadians": 1554.3639883141361,
+          "expectedAbsoluteAngularPathRadians": 1554.3639882877542,
+          "completeOutstrokeTurns": 123.6923560500145,
+          "segments": [
+            {
+              "from": 0,
+              "to": 3.2916667461395264,
+              "actualRadians": 777.1819941570651,
+              "expectedRadians": 777.1819941438771,
+              "actualTurns": 123.69235605211344
+            },
+            {
+              "from": 3.2916667461395264,
+              "to": 4.958333492279053,
+              "actualRadians": 0,
+              "expectedRadians": 0,
+              "actualTurns": 0
+            },
+            {
+              "from": 4.958333492279053,
+              "to": 8.291666984558105,
+              "actualRadians": -777.1819941570648,
+              "expectedRadians": -777.1819941438771,
+              "actualTurns": -123.69235605211338
+            }
+          ]
+        },
+        {
+          "name": "Drive_PlanetRotor_1",
+          "keyframes": 6371,
+          "fractionalChecks": 19110,
+          "maxKeyQerror": 8.881784197001252e-16,
+          "maxMidQerror": 6.661338147750939e-16,
+          "maximumActualStep": 0.5558226506281847,
+          "maxIncrementError": 1.4833888223320102e-7,
+          "maxAccumulationError": 8.135765483530122e-8,
+          "finalAccumulatedRadians": 2.9415098828922126e-13,
+          "absoluteAngularPathRadians": 1554.3639883141361,
+          "expectedAbsoluteAngularPathRadians": 1554.3639882877542,
+          "completeOutstrokeTurns": 123.6923560500145,
+          "segments": [
+            {
+              "from": 0,
+              "to": 3.2916667461395264,
+              "actualRadians": 777.1819941570651,
+              "expectedRadians": 777.1819941438771,
+              "actualTurns": 123.69235605211344
+            },
+            {
+              "from": 3.2916667461395264,
+              "to": 4.958333492279053,
+              "actualRadians": 0,
+              "expectedRadians": 0,
+              "actualTurns": 0
+            },
+            {
+              "from": 4.958333492279053,
+              "to": 8.291666984558105,
+              "actualRadians": -777.1819941570648,
+              "expectedRadians": -777.1819941438771,
+              "actualTurns": -123.69235605211338
+            }
+          ]
+        },
+        {
+          "name": "Drive_PlanetRotor_2",
+          "keyframes": 6371,
+          "fractionalChecks": 19110,
+          "maxKeyQerror": 8.881784197001252e-16,
+          "maxMidQerror": 6.661338147750939e-16,
+          "maximumActualStep": 0.5558226506281847,
+          "maxIncrementError": 1.4833888223320102e-7,
+          "maxAccumulationError": 8.135765483530122e-8,
+          "finalAccumulatedRadians": 2.9415098828922126e-13,
+          "absoluteAngularPathRadians": 1554.3639883141361,
+          "expectedAbsoluteAngularPathRadians": 1554.3639882877542,
+          "completeOutstrokeTurns": 123.6923560500145,
+          "segments": [
+            {
+              "from": 0,
+              "to": 3.2916667461395264,
+              "actualRadians": 777.1819941570651,
+              "expectedRadians": 777.1819941438771,
+              "actualTurns": 123.69235605211344
+            },
+            {
+              "from": 3.2916667461395264,
+              "to": 4.958333492279053,
+              "actualRadians": 0,
+              "expectedRadians": 0,
+              "actualTurns": 0
+            },
+            {
+              "from": 4.958333492279053,
+              "to": 8.291666984558105,
+              "actualRadians": -777.1819941570648,
+              "expectedRadians": -777.1819941438771,
+              "actualTurns": -123.69235605211338
+            }
+          ]
+        }
+      ],
+      "maximumKeyPhaseError": 8.881784197001252e-16,
+      "maximumMidpointPhaseError": 8.881784197001252e-16,
+      "maximumResolvableExpectedStep": 0.5558226220929328,
+      "secondaryMotorClip": {
+        "name": "TRANSWING_Motors_Start_Stop",
+        "rows": [
+          {
+            "name": "Drive_ScrewRotor",
+            "keyframes": 673,
+            "totalPhaseChecks": 2689,
+            "maximumQerror": 0
+          },
+          {
+            "name": "Drive_MotorRotor",
+            "keyframes": 673,
+            "totalPhaseChecks": 2689,
+            "maximumQerror": 0
+          },
+          {
+            "name": "Drive_PlanetRotor_0",
+            "keyframes": 673,
+            "totalPhaseChecks": 2689,
+            "maximumQerror": 0
+          },
+          {
+            "name": "Drive_PlanetRotor_1",
+            "keyframes": 673,
+            "totalPhaseChecks": 2689,
+            "maximumQerror": 0
+          },
+          {
+            "name": "Drive_PlanetRotor_2",
+            "keyframes": 673,
+            "totalPhaseChecks": 2689,
+            "maximumQerror": 0
+          }
+        ]
+      },
+      "passed": true
+    }
+  ],
+  "coverage": {
+    "wholeModelSamples": 1937,
+    "wholeModelUniqueInputs": 1893,
+    "relativePairScope": "All pairs involving any declared changed mesh freshly tested at unchanged original states; exact-identity unchanged pairs explicitly inherited",
+    "changedMeshDetailedSamples": [
+      {
+        "source": "assets/blender/xp4-source.glb",
+        "samples": 766,
+        "relativePairs": 2157
+      },
+      {
+        "source": "public/models/xp4.glb",
+        "samples": 766,
+        "relativePairs": 2157
+      }
+    ],
+    "rotorEnvelopeSamples": 521,
+    "inspectionCycles": 80,
+    "actualSdkHttpSseChecks": [
+      "无查看器接受不冒报应用",
+      "load-before-ready先接受后真实模型应用",
+      "真实Python 1800RPM/0.1s连续10步: endpoint保真相同，实际GLB连续曝光15时间区间方向正确，applied确认主节点调用，显示TTL不推进仿真",
+      "Python SDK控制四电机、六舵面、舱盖且真实GLB应用",
+      "V22真实SDK驱动0/.125/.5/.875/1/0/.5转换：共用横梁/丝杠/驱动电机、定长杆端与独立电机状态实际应用",
+      "外控屏蔽本地时钟，重复绘制不推进",
+      "非法复合补丁原子拒绝及SDK序号恢复",
+      "重复命令幂等，序号内容冲突拒绝",
+      "断连冻结、带Last-Event-ID重连只应用缺失事件",
+      "正反重复seek安全重建与86400秒边界",
+      "reset完整清理",
+      "独占会话拒绝抢占、释放消息可跨协议解析",
+      "桥退出、控制权复位、销毁后无应用",
+      "协议JSON确定性回放"
+    ],
+    "linkage": [
+      {
+        "source": "public/models/xp4.glb",
+        "poses": 1001,
+        "monotonicSamples": 10001,
+        "maxLengthError": 9.923692045887833e-8,
+        "maxEndpointError": 9.923692111856108e-8,
+        "maxBackwardStep": 0
+      },
+      {
+        "source": "assets/blender/xp4-source.glb",
+        "poses": 1001,
+        "monotonicSamples": 10001,
+        "maxLengthError": 9.923692045887833e-8,
+        "maxEndpointError": 9.923692111856108e-8,
+        "maxBackwardStep": 0
+      }
+    ]
+  },
+  "sourceChecks": {
+    "source-solids-v23": {
+      "path": "assets/source-solids-v23.json",
+      "sha256": "da5a3812100f292a9bf8036a87a3a35d027a9404268a3ef886daf997f3bcf6cf",
+      "passed": true
+    },
+    "source-kinematics-v23": {
+      "path": "assets/source-kinematics-v23.json",
+      "sha256": "d810af0e2b180249b16c9dd13da4dbd40efb132017b9117b6c0325c9f1ce6000",
+      "passed": true
+    },
+    "source-motor-animation-v23": {
+      "path": "assets/source-motor-animation-v23.json",
+      "sha256": "b9fcc1f04f61acfcd00ee5d0a4e318fc485c04afb153ec28a9b421f4c67d3a17",
+      "passed": true
+    },
+    "source-native-drive-v23": {
+      "path": "assets/source-native-drive-v23.json",
+      "sha256": "9126c0d9563394284ed2122805a41dc059959efc1ee7d05a8741a67b56355ffc",
+      "passed": true
+    },
+    "source-runtime-geometry-v23": {
+      "path": "assets/source-runtime-geometry-v23.json",
+      "sha256": "99c680f097b35e4800586957a1e77936186b147b6b752d25e2e19d1179c5e44f",
+      "passed": true
+    },
+    "generator-reproducibility-v23": {
+      "path": "assets/generator-reproducibility-v23.json",
+      "sha256": "20e27616e3da82272a9f4330c91d0ed60f48dd0cf9cd48061a0578d9a04a5080",
+      "passed": true
+    },
+    "regenerated-runtime-geometry-v23": {
+      "path": "assets/regenerated-runtime-geometry-v23.json",
+      "sha256": "7ac3a928bc4455f2f6c6f610071adf2928a1adb7782e7bda89b1651ba1e1346d",
+      "passed": true
+    }
+  },
+  "regeneration": {
+    "nodes": 348,
+    "operationalExtras": 197
+  },
+  "limitations": [
+    "Finite pose, surface, ray and material samples do not establish continuous clearance, manufacturing tolerances, load/strength/fatigue, aerodynamics or airworthiness.",
+    "All distances use uncalibrated concept-model units. Main seam is approximately75% narrower; the local smooth trailing-tip relief is explicitly separate.",
+    "Historical unchanged-pair results are inherited after exact source and decoded runtime geometry/normals/topology/TRS/animation proof; they are not described as reruns.",
+    "Fourteen existing fixed-interface observation regions are explicitly revised and remeasured as changed skin engages retained supports; original SAT/material/finite-area thresholds are retained.",
+    "Actual SDK/HTTP/SSE/production GLB verification is distinct from browser/WebGL/touch/device testing."
+  ]
+}

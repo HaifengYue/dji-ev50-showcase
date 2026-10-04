@@ -1,0 +1,132 @@
+{
+  "passed": true,
+  "runtimeSha256": "313b014ec70b409175b34a08f66ec56820a51ea094085ce1eef96fc444ce4b2b",
+  "fixture": {
+    "label": "regression: disappearing quantized paint representative",
+    "wing": 0.030555555555555555,
+    "fold": [
+      0,
+      0.25,
+      0.75,
+      1
+    ],
+    "phase": [
+      0.77,
+      0,
+      0,
+      0
+    ]
+  },
+  "mesh": "Wing_blue_leading_L",
+  "missingOldRepresentatives": [
+    {
+      "triangleIndex": 0,
+      "vertexIndex": 0
+    }
+  ],
+  "oldErrorReproducedAndRejected": true,
+  "openPaintRemainsOpen": true,
+  "componentCount": 1,
+  "containmentStillPerformed": true,
+  "thresholdsUnchanged": {
+    "relativeDegeneracy": 1.4210854715202004e-14,
+    "weld": 1e-12,
+    "materialBoundary": 1e-8,
+    "SAT": 1e-9
+  },
+  "refreshes": [
+    {
+      "mesh": "Wing_blue_leading_L",
+      "pose": {
+        "label": "regression: disappearing quantized paint representative",
+        "wing": 0.030555555555555555,
+        "fold": [
+          0,
+          0.25,
+          0.75,
+          1
+        ],
+        "phase": [
+          0.77,
+          0,
+          0,
+          0
+        ]
+      },
+      "previousComponentCount": 1,
+      "currentComponentCount": 1,
+      "currentTriangleCount": 3904,
+      "currentSkippedRelativeDegenerate": 4,
+      "missingPreviousRepresentatives": [
+        {
+          "triangleIndex": 0,
+          "vertexIndex": 0
+        }
+      ],
+      "currentClosed": false,
+      "policy": "Current actual triangle soup; unchanged1e-12 welding. No missing material representative or unresolved classification is ignored."
+    },
+    {
+      "mesh": "Wing_blue_leading_L",
+      "pose": {
+        "label": "regression: disappearing quantized paint representative",
+        "wing": 0.030555555555555555,
+        "fold": [
+          0,
+          0.25,
+          0.75,
+          1
+        ],
+        "phase": [
+          0.77,
+          0,
+          0,
+          0
+        ]
+      },
+      "previousComponentCount": 1,
+      "currentComponentCount": 1,
+      "currentTriangleCount": 3904,
+      "currentSkippedRelativeDegenerate": 4,
+      "missingPreviousRepresentatives": [
+        {
+          "triangleIndex": 0,
+          "vertexIndex": 0
+        }
+      ],
+      "currentClosed": false,
+      "policy": "Current actual triangle soup; unchanged1e-12 welding. No missing material representative or unresolved classification is ignored."
+    },
+    {
+      "mesh": "Wing_blue_leading_L",
+      "pose": {
+        "label": "regression: disappearing quantized paint representative",
+        "wing": 0.030555555555555555,
+        "fold": [
+          0,
+          0.25,
+          0.75,
+          1
+        ],
+        "phase": [
+          0.77,
+          0,
+          0,
+          0
+        ]
+      },
+      "previousComponentCount": 1,
+      "currentComponentCount": 1,
+      "currentTriangleCount": 3904,
+      "currentSkippedRelativeDegenerate": 4,
+      "missingPreviousRepresentatives": [
+        {
+          "triangleIndex": 0,
+          "vertexIndex": 0
+        }
+      ],
+      "currentClosed": false,
+      "policy": "Current actual triangle soup; unchanged1e-12 welding. No missing material representative or unresolved classification is ignored."
+    }
+  ]
+}

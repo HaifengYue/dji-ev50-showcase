@@ -1,0 +1,169 @@
+{
+  "passed": true,
+  "modelVersion": 24,
+  "regeneratedSourcePath": "qa/regenerated/assets/blender/xp4-source.glb",
+  "generatorHashes": [
+    {
+      "file": "generate_transwing.py",
+      "sha256": "8c36f6cf13c72f4404ee616d1d4c65ec42c2318294f7a2a8910b8fb125a0cc31",
+      "rebuiltScriptIdentical": true
+    },
+    {
+      "file": "wing_seam.py",
+      "sha256": "d7a8ae4faed9f154d314ff89220094c89899f13e2e5f483ac0b99d05e8ec3e02",
+      "rebuiltScriptIdentical": true
+    },
+    {
+      "file": "output_slot_profile.py",
+      "sha256": "e93f43e2edb3e31ec72b2f527700dd19e582221aba6703928851043ef3799d2d",
+      "rebuiltScriptIdentical": true
+    },
+    {
+      "file": "preserved_surfaces.py",
+      "sha256": "4e7d66d3991317311a91251920e7841f9d35db50d411d80613798c576bf1e18e",
+      "rebuiltScriptIdentical": true
+    },
+    {
+      "file": "slot_topology.py",
+      "sha256": "a58e6a868b17fe4898e9f42bdc9b810b6b50f974f8161b23597a0fd3d1cbcdef",
+      "rebuiltScriptIdentical": true
+    },
+    {
+      "file": "drive_layout.py",
+      "sha256": "53efe7cadef9f79d87d884f5b1981b9eca775f3de80c58eee98ee3d803e57d69",
+      "rebuiltScriptIdentical": true
+    },
+    {
+      "file": "data/preserved-front-surfaces.blend",
+      "sha256": "69c73ce46be035abb655b03a9608523ce38f3695ed3f0bbdc5b5436cc488451c",
+      "rebuiltScriptIdentical": true
+    },
+    {
+      "file": "data/preserved-front-surfaces.json",
+      "sha256": "50af15b925da72edc69bcb8fb3fb138d0c21aba95705053bb29a7da5d30dbc9c",
+      "rebuiltScriptIdentical": true
+    },
+    {
+      "file": "airframe_accessories.py",
+      "sha256": "d730864a644b729eb47fe11f81cdb7122df4b654b4cf8409432723ed35f3ca17",
+      "rebuiltScriptIdentical": true
+    },
+    {
+      "file": "airframe_refinements.py",
+      "sha256": "9904ff1896b61584990962827b2a4c43d9a4ca84baa5095b0c4b02a9886aa6fb",
+      "rebuiltScriptIdentical": true
+    },
+    {
+      "file": "wing_surfaces.py",
+      "sha256": "4be94d46d7ba231537e84cfdf61a72d1c6d0313c5fec1f30c0deb7004ef4ab54",
+      "rebuiltScriptIdentical": true
+    },
+    {
+      "file": "central_wing_attachment.py",
+      "sha256": "2503291ec4f7d785bab4d93e19b9d3a54605d572aa89b85cedfdedd1448a3979",
+      "rebuiltScriptIdentical": true
+    },
+    {
+      "file": "embedded_joint_surfaces.py",
+      "sha256": "bfa1e6d506b50f97f6a8230c4340c1dd94a777e7497a61691f9687a3f848c8b4",
+      "rebuiltScriptIdentical": true
+    },
+    {
+      "file": "propeller_shape.py",
+      "sha256": "51ee268df416fdc03304d9d5af397a1a3ef7d451cd6ab6b94ca6e9ca9f5a2636",
+      "rebuiltScriptIdentical": true
+    },
+    {
+      "file": "rotor_handedness.py",
+      "sha256": "a2efa85830f31a7e842e8b90719bdd9a06f80a283a7f17fbfa007a0affa84ff9",
+      "rebuiltScriptIdentical": true
+    },
+    {
+      "file": "linkage_geometry.py",
+      "sha256": "d9aa27b5722a68ccfbe788353f85fbe10ae47705675dfa9e7ea678dae484edb6",
+      "rebuiltScriptIdentical": true
+    },
+    {
+      "file": "internal_drive.py",
+      "sha256": "830c67029a739bf27507f0bb6c5b47cf28be0b30116906060f0314ae709e8bb8",
+      "rebuiltScriptIdentical": true
+    },
+    {
+      "file": "output_slot_geometry.py",
+      "sha256": "abb198cb363578773acc15bd04aaab4da2bf9507c6da0b99ef97db36ea703c5b",
+      "rebuiltScriptIdentical": true
+    },
+    {
+      "file": "joint_fairings.py",
+      "sha256": "9ef7df580cbd7a88997078c2274290f4c11b6a2a698ceab7169d970117e3bccb",
+      "rebuiltScriptIdentical": true
+    },
+    {
+      "file": "surface_finish.py",
+      "sha256": "49e7a9fd1a52ae3fdd5ab816b6e3c0c880dffd4fba9aee2b5e520967b5b5d5d5",
+      "rebuiltScriptIdentical": true
+    },
+    {
+      "file": "data/red-target-mapping.json",
+      "sha256": "2ecc32a1099f0dfad215442daa9bce1598b860d54f8020fed1377916fe5991e6",
+      "rebuiltScriptIdentical": true
+    },
+    {
+      "file": "data/red-target-footprint.json",
+      "sha256": "4235ff1718d1bcb1b321f3c5b626af1d53f243c8501d99965333b1a8b7da0b26",
+      "rebuiltScriptIdentical": true
+    },
+    {
+      "file": "joint_endcaps.py",
+      "sha256": "19c9cb606bd4f0c1ce86aa88106af3374ebe5b9c7159bcc61f90e21909790b2f",
+      "rebuiltScriptIdentical": true
+    },
+    {
+      "file": "hinge_supports.py",
+      "sha256": "3ceb9cce86a638191d0efa4b83c2f941e39909db42af2c5bd9596ae6ea6da83d",
+      "rebuiltScriptIdentical": true
+    },
+    {
+      "file": "control_supports.py",
+      "sha256": "28505aee0d5eb2b8f36afef2a63a8bbf4a15cfa209212eb948d8718f7a2109de",
+      "rebuiltScriptIdentical": true
+    },
+    {
+      "file": "surface_supports.py",
+      "sha256": "905a56f30e75b821a63a2edd15ee9b88d14409e626a4d15e28b9bf89e4f537a5",
+      "rebuiltScriptIdentical": true
+    },
+    {
+      "file": "kinematics.py",
+      "sha256": "922f96fe80759337d26c5f00a002f1a93313297dadd84fff82e577c7b9e8b4e1",
+      "rebuiltScriptIdentical": true
+    },
+    {
+      "file": "export-transition.py",
+      "sha256": "667cc4fd5a2bd300d19c19f6104892aa80e964b3ab1fd547431c1e1d947fb9a3",
+      "rebuiltScriptIdentical": true
+    },
+    {
+      "file": "compress-model.mjs",
+      "sha256": "25b5ae1d4a5e604ec3358e5cc94ad85d1575041ac09a21380c309b7c718825a6",
+      "rebuiltScriptIdentical": true
+    },
+    {
+      "file": "data/fixed-root-paint-encoding.json",
+      "sha256": "b112619e432e67b31d605f847d31dab716ce3c5bcbaf334c20985b9d2fe124e2",
+      "rebuiltScriptIdentical": true
+    }
+  ],
+  "sourceSha256": "14deba2a8cb20fb13c6cc05f8c4c09d441285b9754b014499942ad39992f7ce4",
+  "regeneratedSha256": "969b3efec68c93f496a77957c6dbcd10c226a3c3ae948f97de0f3ebfd8d7c1df",
+  "sourceBytes": 7322536,
+  "regeneratedBytes": 7322536,
+  "byteIdentical": false,
+  "meshes": 283,
+  "renderedTriangles": 227746,
+  "meshTransformsEqual": true,
+  "vertexAndNormalMultisetsEqualAtDecimalPlaces": 8,
+  "orientedTriangleMultisetsEqual": true,
+  "animationTrackDataEqual": true,
+  "notes": "全新目录程序化重建；跨进程GLB包装及去重顺序可变化。逐命名网格的变换、顶点法线集合、有向三角拓扑和动作轨道必须相同。保存的Blender重新导出另行要求字节一致。"
+}

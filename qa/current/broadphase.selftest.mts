@@ -1,0 +1,5 @@
+import assert from 'node:assert/strict';import fs from 'node:fs';import * as T from 'three';import {conservativeBoxesOverlap} from './broadphase.mts';import {createWorldTriangles,intersectMeshTriangles} from '../lib/triangle-contact.mjs';
+const a=new T.Mesh(new T.BoxGeometry(1,1,1)),b=new T.Mesh(new T.BoxGeometry(1,1,1));b.position.x=1+5e-10;a.updateMatrixWorld();b.updateMatrixWorld();const ab=new T.Box3().setFromObject(a),bb=new T.Box3().setFromObject(b);
+assert.equal(ab.intersectsBox(bb),false);assert.equal(conservativeBoxesOverlap(ab,bb),true);assert.equal(intersectMeshTriangles(createWorldTriangles(a),createWorldTriangles(b),{epsilon:1e-9}).intersects,true);
+b.position.x=1+2e-9;b.updateMatrixWorld();assert.equal(conservativeBoxesOverlap(ab,new T.Box3().setFromObject(b)),false);
+const r={passed:true,SATEpsilon:1e-9,halfEpsilonGapRetained:true,doubleEpsilonGapRejected:true};if(process.env.QA_OUT)fs.writeFileSync(process.env.QA_OUT,JSON.stringify(r,null,2)+'\n');console.log(JSON.stringify(r));

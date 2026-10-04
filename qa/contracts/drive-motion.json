@@ -1,0 +1,98 @@
+{
+  "version": 22,
+  "slider": "BraceSpreader",
+  "sliderAxis": [0, 0, -1],
+  "lead": 0.032,
+  "rotations": [
+    {
+      "name": "Drive_ScrewRotor",
+      "localAxis": [0, 0, -1],
+      "ratio": -1
+    },
+    {
+      "name": "Drive_MotorRotor",
+      "localAxis": [0, 0, -1],
+      "ratio": -3
+    },
+    {
+      "name": "Drive_PlanetRotor_0",
+      "localAxis": [0, 0, -1],
+      "ratio": 4,
+      "parent": "Drive_ScrewRotor"
+    },
+    {
+      "name": "Drive_PlanetRotor_1",
+      "localAxis": [0, 0, -1],
+      "ratio": 4,
+      "parent": "Drive_ScrewRotor"
+    },
+    {
+      "name": "Drive_PlanetRotor_2",
+      "localAxis": [0, 0, -1],
+      "ratio": 4,
+      "parent": "Drive_ScrewRotor"
+    }
+  ],
+  "rigidNodes": [
+    "Drive_Crossbeam",
+    "Drive_OutputWeb",
+    "Drive_NutCarriage",
+    "Drive_GuideBridge_L",
+    "Drive_GuideBridge_R",
+    "Drive_GuideBushing_L",
+    "Drive_GuideBushing_R",
+    "Drive_NutInternalThread",
+    "BraceBodyCarriage_L",
+    "BraceBodyCarriage_R",
+    "BraceBody_L",
+    "BraceBody_R"
+  ],
+  "fixedNodes": [
+    "Drive_MotorHousing",
+    "Drive_ReductionHousing",
+    "Drive_MotorGearboxAdapter",
+    "Drive_MotorMount",
+    "Drive_MotorSaddle_L",
+    "Drive_MotorSaddle_R",
+    "Drive_GuideRail_L",
+    "Drive_GuideRail_R",
+    "Drive_MotorFoot_L",
+    "Drive_MotorFoot_R",
+    "Drive_FrontSupport",
+    "Drive_FrontScrewPedestal",
+    "Drive_FrontScrewBearing",
+    "Drive_FrontGuidePedestal_L",
+    "Drive_FrontGuideSeat_L",
+    "Drive_FrontFoot_L",
+    "Drive_FrontTravelStop_L",
+    "Drive_FrontGuidePedestal_R",
+    "Drive_FrontGuideSeat_R",
+    "Drive_FrontFoot_R",
+    "Drive_FrontTravelStop_R",
+    "Drive_RearSupport",
+    "Drive_RearScrewPedestal",
+    "Drive_RearScrewBearing",
+    "Drive_RearGuidePedestal_L",
+    "Drive_RearGuideSeat_L",
+    "Drive_RearFoot_L",
+    "Drive_RearTravelStop_L",
+    "Drive_RearGuidePedestal_R",
+    "Drive_RearGuideSeat_R",
+    "Drive_RearFoot_R",
+    "Drive_RearTravelStop_R",
+    "Drive_RingGear"
+  ],
+  "reviewNote": "V22 red-target longer travel retains independently reviewed lead .032, motor:screw 3:1, fixed ring and three planetary ratios; exported phases and winding independently audited",
+  "planetary": {
+    "sunTeeth": 12,
+    "ringTeeth": 24,
+    "planetTeeth": 6,
+    "orbitRadius": 0.015,
+    "sunPitchRadius": 0.01,
+    "ringPitchRadius": 0.02,
+    "planetPitchRadius": 0.005,
+    "carrierRatio": -1,
+    "sunRatio": -3,
+    "relativePlanetRatio": 4
+  }
+}

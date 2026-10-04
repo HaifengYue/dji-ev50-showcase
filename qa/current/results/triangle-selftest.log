@@ -1,0 +1,19 @@
+✔ coplanar overlap, containment, separation with overlapping AABBs, edge/vertex contact (16.396148ms)
+✔ noncoplanar crossing, disjoint with overlapping AABBs, vertex and edge touching (3.63717ms)
+✔ parallel planes, specified tolerance and oblique coplanar separation (0.543601ms)
+✔ zero-area triangles are excluded but very small valid triangles survive (1.145012ms)
+✔ Int16 normalized attributes decode before world transforms and remain unchanged (1.803146ms)
+✔ interleaved normalized attributes, rotations and reflected scales are decoded (0.781928ms)
+✔ world AABB guard rejects impossible witnesses and witness data verifies independently (0.681661ms)
+✔ reject unsupported deformations and invalid options rather than silently auditing wrong geometry (0.830782ms)
+✔ 10,000 seeded noncoplanar triangle pairs agree with independent segment/barycentric oracle (233.360538ms)
+✔ BVH enumerates exactly the brute-force contact pair set and honors witness limits (19.691062ms)
+✔ AnimationMixer sampled matrixWorld changes affect rigid-mesh contacts (2.615338ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 422.609927

@@ -1,0 +1,11 @@
+{
+  "全部通过": true,
+  "测试数": 56,
+  "失败数": 0,
+  "异常数": 0,
+  "说明": "只验证合成工程的打包、安全、冻结依赖、阶段证据、单包完整性和非删除写入逻辑；不代表真实模型、前端、浏览器或设备验收通过。合成临时目录保留，不删除任何目录或文件。",
+  "脚本SHA256": {
+    "scripts/package_project.py": "673cf75e53f3ee0b370d120ac020f306d83ffe9391ddcc7f58f3a4ac0b994da2",
+    "scripts/test_package_project.py": "f8e0d5edc870cdb1fd2baa30ac251133f238b71e5f4317a4b869d56c649c8535"
+  }
+}

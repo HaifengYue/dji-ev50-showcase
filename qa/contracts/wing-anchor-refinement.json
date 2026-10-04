@@ -1,0 +1,225 @@
+{
+  "version": 22,
+  "reviewed": true,
+  "hingePlacement": {
+    "anchorLocalGltf": {
+      "R": [-0.45969725856807764, 0.03580632777801959, -0.33799887117646427],
+      "L": [0.45969725856807764, 0.03580632777801959, -0.33799887117646427]
+    },
+    "seatRadius": 0.0245,
+    "referencePixel": [191, 452],
+    "redPixelBounds": [179, 438, 207, 468],
+    "maximumReferenceProjectionErrorPixels": 1.0,
+    "interpretation": "Actual ball center projected onto broad hand-drawn mark, selected from surface-footprint and ball-center alternatives; screenshot does not establish metrological CAD accuracy"
+  },
+  "geometryChanges": [
+    "Fuselage",
+    "Dorsal_hatch_main",
+    "BraceBodyCarriage_L",
+    "BraceBodyCarriage_R",
+    "Drive_NutInternalThread",
+    "ActuatorSideSlot_L",
+    "ActuatorSideSlot_R",
+    "Lower_fuselage_join",
+    "Lower_fuselage_join001",
+    "Lower_fuselage_join002",
+    "Lower_fuselage_join003",
+    "BraceBallPin_L_Wing",
+    "BraceWingSeat_L",
+    "BraceRod_mesh_L",
+    "BraceRodEye_L_Root",
+    "BraceBallPin_R_Wing",
+    "BraceWingSeat_R",
+    "BraceRod_mesh_R",
+    "BraceRodEye_R_Root",
+    "CargoHoodShell",
+    "Drive_LeadScrewCore",
+    "Drive_LeadScrewThread",
+    "Drive_OutputCoupling",
+    "Drive_PlanetCarrier",
+    "Drive_PlanetPin_0",
+    "Drive_PlanetPin_1",
+    "Drive_PlanetPin_2",
+    "Drive_PlanetRetainer_0_Front",
+    "Drive_PlanetRetainer_0_Rear",
+    "Drive_PlanetRetainer_1_Front",
+    "Drive_PlanetRetainer_1_Rear",
+    "Drive_PlanetRetainer_2_Front",
+    "Drive_PlanetRetainer_2_Rear",
+    "Drive_PlanetGear_0",
+    "Drive_PlanetGear_1",
+    "Drive_PlanetGear_2",
+    "Drive_MotorRotorDisc",
+    "Drive_MotorShaft",
+    "Drive_SunGear",
+    "Drive_MotorHousing",
+    "Drive_ReductionHousing",
+    "Drive_MotorGearboxAdapter",
+    "Drive_RingGear",
+    "Drive_FrontScrewBearing",
+    "Drive_FrontGuideSeat_L",
+    "Drive_FrontGuideSeat_R",
+    "Drive_GuideRail_L",
+    "Drive_GuideRail_R",
+    "Drive_FrontFoot_L",
+    "Drive_FrontFoot_R",
+    "Drive_MotorFoot_L",
+    "Drive_MotorFoot_R",
+    "Drive_FrontTravelStop_L",
+    "Drive_FrontTravelStop_R"
+  ],
+  "normalOnlyChanges": [
+    "Fixed_root_blue_L",
+    "Fixed_root_blue_R",
+    "Wing_blue_leading_L",
+    "Wing_blue_leading_R"
+  ],
+  "transformChanges": [
+    "BraceSpreader",
+    "BraceBallPin_L_Body",
+    "BraceBallPin_R_Body",
+    "BraceBodyCarriage_L",
+    "BraceBodyCarriage_R",
+    "Drive_Crossbeam",
+    "Drive_GuideBridge_L",
+    "Drive_GuideBridge_R",
+    "Drive_OutputWeb",
+    "ActuatorSideSlot_L",
+    "ActuatorSideSlot_R",
+    "BraceBall_L_Wing",
+    "BraceBallPin_L_Wing",
+    "BraceWing_L",
+    "BraceRod_L",
+    "BraceRod_mesh_L",
+    "BraceRodEyeNeck_L_Body",
+    "BraceRodEyeNeck_L_Root",
+    "BraceRodFerrule_L_Body",
+    "BraceRodFerrule_L_Root",
+    "BraceBall_R_Wing",
+    "BraceBallPin_R_Wing",
+    "BraceWing_R",
+    "BraceRod_R",
+    "BraceRod_mesh_R",
+    "BraceRodEyeNeck_R_Body",
+    "BraceRodEyeNeck_R_Root",
+    "BraceRodFerrule_R_Body",
+    "BraceRodFerrule_R_Root",
+    "Drive_ScrewRotor",
+    "Drive_CouplingWitness",
+    "Drive_LeadScrewCore",
+    "Drive_PlanetCarrier",
+    "Drive_PlanetPin_0",
+    "Drive_PlanetPin_1",
+    "Drive_PlanetPin_2",
+    "Drive_PlanetRotor_0",
+    "Drive_PlanetRotor_1",
+    "Drive_PlanetRotor_2",
+    "Drive_MotorRotor",
+    "Drive_MotorRotorDisc",
+    "Drive_MotorShaft",
+    "Drive_MotorWitness",
+    "Drive_MotorMount",
+    "Drive_MotorSaddle_L",
+    "Drive_MotorSaddle_R",
+    "Drive_FrontSupport",
+    "Drive_FrontScrewPedestal",
+    "Drive_FrontGuidePedestal_L",
+    "Drive_FrontGuidePedestal_R",
+    "Drive_GuideRail_L",
+    "Drive_GuideRail_R"
+  ],
+  "addedNodes": [
+    "RootFairingMoving_L",
+    "RootFairingMoving_R",
+    "RootFairingFixed_L",
+    "RootFairingFixed_R"
+  ],
+  "removedNodes": [],
+  "parentChanges": [],
+  "animationChangeNodes": [
+    "BraceSpreader",
+    "BraceRod_L",
+    "BraceRod_R",
+    "Drive_ScrewRotor",
+    "Drive_MotorRotor",
+    "Drive_PlanetRotor_0",
+    "Drive_PlanetRotor_1",
+    "Drive_PlanetRotor_2"
+  ],
+  "animationTimelineChangeNodes": [
+    "Drive_ScrewRotor",
+    "Drive_MotorRotor",
+    "Drive_PlanetRotor_0",
+    "Drive_PlanetRotor_1",
+    "Drive_PlanetRotor_2"
+  ],
+  "protectedNodePrefixes": [
+    "RootAxis",
+    "RootHingeShaft",
+    "RootHingeEndcap",
+    "RootBearing",
+    "RootCarrier",
+    "RootFixedBearingPedestal",
+    "WingPivot"
+  ],
+  "numericOnlyGeometryChanges": [
+    {
+      "name": "CargoHoodShell",
+      "maximumPositionError": 3e-8
+    },
+    {
+      "name": "BraceBodyCarriage_L",
+      "maximumPositionError": 8e-7
+    },
+    {
+      "name": "BraceBodyCarriage_R",
+      "maximumPositionError": 8e-7
+    }
+  ],
+  "numericOnlyTransformChanges": [
+    {
+      "name": "BraceBallPin_L_Body",
+      "maximumMatrixDifference": 6e-8
+    },
+    {
+      "name": "BraceBallPin_R_Body",
+      "maximumMatrixDifference": 6e-8
+    },
+    {
+      "name": "BraceBodyCarriage_L",
+      "maximumMatrixDifference": 6e-8
+    },
+    {
+      "name": "BraceBodyCarriage_R",
+      "maximumMatrixDifference": 6e-8
+    },
+    {
+      "name": "Drive_Crossbeam",
+      "maximumMatrixDifference": 6e-8
+    },
+    {
+      "name": "Drive_GuideBridge_L",
+      "maximumMatrixDifference": 6e-8
+    },
+    {
+      "name": "Drive_GuideBridge_R",
+      "maximumMatrixDifference": 6e-8
+    },
+    {
+      "name": "Drive_OutputWeb",
+      "maximumMatrixDifference": 6e-8
+    }
+  ],
+  "reviewNote": "Independently reviewed red-ball placement, real long-stroke actuator reconfiguration, exact four normal-only skins, four hollow fairings, bounded numerical changes in CargoHoodShell and two carriages, actual reprojected dorsal/lower seams, and bounded lower former-bay exterior retriangulation. No main-hinge changes, deletions, hierarchy changes or unrelated animation changes. Source/runtime physical gates remain separately mandatory.",
+  "sourceSha256": "e0fb4b201ccf97952a5dc4d512738c5cdb358c095b8512e3b043547dab935c47",
+  "fuselageExteriorRetriangulation": {
+    "blenderYRange": [0.72, 2.055],
+    "rayAngleRangeRadians": [3.141592653589793, 6.283185307179586],
+    "maximumAbsoluteRadialDifference": 2e-5,
+    "reason": "Original analytic loft retained, with explicitly measured lower former-bay exterior facet retriangulation from changed Boolean slot/cavity layout. Bidirectional difference is a bounded shape change, not Float32 identity and not a collision/support exemption.",
+    "denseMeasuredMaximumOutward": 1.6520659065280552e-5,
+    "denseMeasuredMaximumInward": 1.4758916646595566e-5,
+    "measurementEvidence": "qa/v22/verification/exterior-retriangulation-evidence.json",
+    "acceptanceBoundary": "New independently reviewed concept-appearance shape-deviation bound for this V22 change, not preservation of the earlier 1e-6 comparison criterion. Original failed criterion and complete dense measurements are retained."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "formatVersion": 1,
+  "passed": true,
+  "referenceSha256": "c336364b318c85bb7fa6ddf1e45ede1ea5a78b1dc33ae74cd41c346ebabb7905",
+  "acceptedSummarySha256": "402af8c2e54ebd1fe5693d89d999a3546b5267975defcd92d377d8ef2d278f32",
+  "sourceValidator": {
+    "path": "qa/v23/verification/verify-rotor-envelope.mts",
+    "sha256": "5d55fcd489db086ac18f5d301166a1f4c13d30d2c4e6a2285d94586bdd037be3"
+  },
+  "acceptedInputLock": {
+    "path": "qa/v24/baseline/input-lock.json",
+    "sha256": "750286f6e85bd3716d75dc31125bef3c5b51a3d5664ea150090bccfd13116137"
+  },
+  "historicalReport": {
+    "path": "qa/v23/verification/final/rotor-envelope-report.json",
+    "sha256": "d69d45d53c721ae7e8ff1ea4c6c73d2b17dc19a8c2a0e31cc53726a67acdf2f1"
+  },
+  "group": {
+    "id": "rotor-envelope",
+    "stateCount": 521,
+    "stateParametersSha256": "fce0a93b0dc4dc398ac5d8a1d13f66815cb919701aa87795e78eee82b912b4f9"
+  },
+  "proof": "在原工作树读取并核对冻结的旧完整包络验证器，AST仅提取实际姿态构造循环；与已捕获矩阵参照的521姿态逐值、顺序及默认值相同。这里只补强原始姿态来源，不重新声明捕获矩阵或碰撞重跑。"
+}

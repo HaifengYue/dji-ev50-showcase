@@ -1,0 +1,18 @@
+import fs from 'node:fs';
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { MeshoptDecoder } from 'three/examples/jsm/libs/meshopt_decoder.module.js';
+const bytes=fs.readFileSync('public/models/xp4.glb');
+const loader=new GLTFLoader();loader.setMeshoptDecoder(MeshoptDecoder);
+const gltf=await loader.parseAsync(bytes.buffer.slice(bytes.byteOffset,bytes.byteOffset+bytes.byteLength),'');
+const model=gltf.scene;model.updateMatrixWorld(true);
+let meshes=0,triangles=0;model.traverse(o=>{if(o.isMesh){meshes++;triangles+=(o.geometry.index?o.geometry.index.count:o.geometry.attributes.position.count)/3;}});
+const hover=new THREE.Box3().setFromObject(model);
+const L=model.getObjectByName('WingPivot_L'),R=model.getObjectByName('WingPivot_R');
+if(!L||!R)throw Error('缺少整翼铰链节点');
+L.quaternion.premultiply(new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1,1,1).normalize(),Math.PI*2/3));
+R.quaternion.premultiply(new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(-1,1,1).normalize(),-Math.PI*2/3));
+model.updateMatrixWorld(true);const cruise=new THREE.Box3().setFromObject(model);
+const result={passed:true,runtimeBytes:bytes.length,renderedMeshes:meshes,renderedTriangles:triangles,hoverBounds:{min:hover.min.toArray(),max:hover.max.toArray(),size:hover.getSize(new THREE.Vector3()).toArray()},cruiseBounds:{min:cruise.min.toArray(),max:cruise.max.toArray(),size:cruise.getSize(new THREE.Vector3()).toArray()}};
+if(!Number.isFinite(hover.min.y)||triangles<=0||cruise.getSize(new THREE.Vector3()).x<hover.getSize(new THREE.Vector3()).x)throw Error('解码网格几何无效');
+fs.writeFileSync('qa/frontend/glb-loader-report.json',JSON.stringify(result,null,2));console.log(JSON.stringify(result,null,2));

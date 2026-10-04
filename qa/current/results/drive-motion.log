@@ -1,0 +1,941 @@
+Drive audit source assets/blender/xp4-source.glb
+Drive audit source public/models/xp4.glb
+{
+  "passed": true,
+  "contractPath": "qa/contracts/drive-motion.json",
+  "contract": {
+    "version": 22,
+    "slider": "BraceSpreader",
+    "sliderAxis": [
+      0,
+      0,
+      -1
+    ],
+    "lead": 0.032,
+    "rotations": [
+      {
+        "name": "Drive_ScrewRotor",
+        "localAxis": [
+          0,
+          0,
+          -1
+        ],
+        "ratio": -1
+      },
+      {
+        "name": "Drive_MotorRotor",
+        "localAxis": [
+          0,
+          0,
+          -1
+        ],
+        "ratio": -3
+      },
+      {
+        "name": "Drive_PlanetRotor_0",
+        "localAxis": [
+          0,
+          0,
+          -1
+        ],
+        "ratio": 4,
+        "parent": "Drive_ScrewRotor"
+      },
+      {
+        "name": "Drive_PlanetRotor_1",
+        "localAxis": [
+          0,
+          0,
+          -1
+        ],
+        "ratio": 4,
+        "parent": "Drive_ScrewRotor"
+      },
+      {
+        "name": "Drive_PlanetRotor_2",
+        "localAxis": [
+          0,
+          0,
+          -1
+        ],
+        "ratio": 4,
+        "parent": "Drive_ScrewRotor"
+      }
+    ],
+    "rigidNodes": [
+      "Drive_Crossbeam",
+      "Drive_OutputWeb",
+      "Drive_NutCarriage",
+      "Drive_GuideBridge_L",
+      "Drive_GuideBridge_R",
+      "Drive_GuideBushing_L",
+      "Drive_GuideBushing_R",
+      "Drive_NutInternalThread",
+      "BraceBodyCarriage_L",
+      "BraceBodyCarriage_R",
+      "BraceBody_L",
+      "BraceBody_R"
+    ],
+    "fixedNodes": [
+      "Drive_MotorHousing",
+      "Drive_ReductionHousing",
+      "Drive_MotorGearboxAdapter",
+      "Drive_MotorMount",
+      "Drive_MotorSaddle_L",
+      "Drive_MotorSaddle_R",
+      "Drive_GuideRail_L",
+      "Drive_GuideRail_R",
+      "Drive_MotorFoot_L",
+      "Drive_MotorFoot_R",
+      "Drive_FrontSupport",
+      "Drive_FrontScrewPedestal",
+      "Drive_FrontScrewBearing",
+      "Drive_FrontGuidePedestal_L",
+      "Drive_FrontGuideSeat_L",
+      "Drive_FrontFoot_L",
+      "Drive_FrontTravelStop_L",
+      "Drive_FrontGuidePedestal_R",
+      "Drive_FrontGuideSeat_R",
+      "Drive_FrontFoot_R",
+      "Drive_FrontTravelStop_R",
+      "Drive_RearSupport",
+      "Drive_RearScrewPedestal",
+      "Drive_RearScrewBearing",
+      "Drive_RearGuidePedestal_L",
+      "Drive_RearGuideSeat_L",
+      "Drive_RearFoot_L",
+      "Drive_RearTravelStop_L",
+      "Drive_RearGuidePedestal_R",
+      "Drive_RearGuideSeat_R",
+      "Drive_RearFoot_R",
+      "Drive_RearTravelStop_R",
+      "Drive_RingGear"
+    ],
+    "reviewNote": "V22 red-target longer travel retains independently reviewed lead .032, motor:screw 3:1, fixed ring and three planetary ratios; exported phases and winding independently audited",
+    "planetary": {
+      "sunTeeth": 12,
+      "ringTeeth": 24,
+      "planetTeeth": 6,
+      "orbitRadius": 0.015,
+      "sunPitchRadius": 0.01,
+      "ringPitchRadius": 0.02,
+      "planetPitchRadius": 0.005,
+      "carrierRatio": -1,
+      "sunRatio": -3,
+      "relativePlanetRatio": 4
+    }
+  },
+  "reports": [
+    {
+      "source": "assets/blender/xp4-source.glb",
+      "sha256": "14deba2a8cb20fb13c6cc05f8c4c09d441285b9754b014499942ad39992f7ce4",
+      "samples": 1001,
+      "disconnectedBeamFaultRejected": true,
+      "incorrectScrewAngleFaultRejected": true,
+      "maximumStepAngle": 0.9383667465148164,
+      "accumulated": [
+        {
+          "name": "Drive_ScrewRotor",
+          "actual": -194.29551467474045,
+          "expected": -194.29551467474045,
+          "error": 0
+        },
+        {
+          "name": "Drive_MotorRotor",
+          "actual": -582.8865440242213,
+          "expected": -582.8865440242213,
+          "error": 0
+        },
+        {
+          "name": "Drive_PlanetRotor_0",
+          "actual": 777.1820586989617,
+          "expected": 777.1820586989618,
+          "error": 1.1368683772161603e-13
+        },
+        {
+          "name": "Drive_PlanetRotor_1",
+          "actual": 777.1820586989617,
+          "expected": 777.1820586989618,
+          "error": 1.1368683772161603e-13
+        },
+        {
+          "name": "Drive_PlanetRotor_2",
+          "actual": 777.1820586989617,
+          "expected": 777.1820586989618,
+          "error": 1.1368683772161603e-13
+        }
+      ],
+      "selectedStates": [
+        {
+          "unfold": 0,
+          "travel": -2.220446049250313e-16,
+          "rows": [
+            {
+              "name": "Drive_ScrewRotor",
+              "expectedUnwrappedRadians": 4.3598356225107894e-14,
+              "quaternion": [
+                0,
+                0,
+                0.000003679771885803491,
+                0.9999999999932296
+              ],
+              "qerror": 0
+            },
+            {
+              "name": "Drive_MotorRotor",
+              "expectedUnwrappedRadians": 1.307950686753237e-13,
+              "quaternion": [
+                0,
+                0,
+                0.000011039315656812551,
+                0.9999999999390667
+              ],
+              "qerror": 0
+            },
+            {
+              "name": "Drive_PlanetRotor_0",
+              "expectedUnwrappedRadians": -1.7439342490043158e-13,
+              "quaternion": [
+                0,
+                0,
+                -0.000014719087541719161,
+                0.9999999998916742
+              ],
+              "qerror": 0
+            },
+            {
+              "name": "Drive_PlanetRotor_1",
+              "expectedUnwrappedRadians": -1.7439342490043158e-13,
+              "quaternion": [
+                0,
+                0,
+                -0.000014719087541719161,
+                0.9999999998916742
+              ],
+              "qerror": 0
+            },
+            {
+              "name": "Drive_PlanetRotor_2",
+              "expectedUnwrappedRadians": -1.7439342490043158e-13,
+              "quaternion": [
+                0,
+                0,
+                -0.000014719087541719161,
+                0.9999999998916742
+              ],
+              "qerror": 0
+            }
+          ],
+          "slider": [
+            0,
+            -0.019999999552965164,
+            -0.9104610085487364
+          ]
+        },
+        {
+          "unfold": 0.25,
+          "travel": 0.23677658218066044,
+          "rows": [
+            {
+              "name": "Drive_ScrewRotor",
+              "expectedUnwrappedRadians": -46.49097319505392,
+              "quaternion": [
+                0,
+                0,
+                -0.9503447064943903,
+                -0.3111991947902357
+              ],
+              "qerror": 0
+            },
+            {
+              "name": "Drive_MotorRotor",
+              "expectedUnwrappedRadians": -139.47291958516175,
+              "quaternion": [
+                0,
+                0,
+                0.5822004065921756,
+                0.8130453164270153
+              ],
+              "qerror": 0
+            },
+            {
+              "name": "Drive_PlanetRotor_0",
+              "expectedUnwrappedRadians": 185.96389278021567,
+              "quaternion": [
+                0,
+                0,
+                0.9538536103445027,
+                0.3002720267236992
+              ],
+              "qerror": -2.220446049250313e-16
+            },
+            {
+              "name": "Drive_PlanetRotor_1",
+              "expectedUnwrappedRadians": 185.96389278021567,
+              "quaternion": [
+                0,
+                0,
+                0.9538536103445027,
+                0.3002720267236992
+              ],
+              "qerror": -2.220446049250313e-16
+            },
+            {
+              "name": "Drive_PlanetRotor_2",
+              "expectedUnwrappedRadians": 185.96389278021567,
+              "quaternion": [
+                0,
+                0,
+                0.9538536103445027,
+                0.3002720267236992
+              ],
+              "qerror": -2.220446049250313e-16
+            }
+          ],
+          "slider": [
+            0,
+            -0.019999999552965164,
+            -1.147237590729397
+          ]
+        },
+        {
+          "unfold": 0.5,
+          "travel": 0.5284838193425254,
+          "rows": [
+            {
+              "name": "Drive_ScrewRotor",
+              "expectedUnwrappedRadians": -103.76755527422208,
+              "quaternion": [
+                0,
+                0,
+                0.9988719668361408,
+                -0.04748466983037432
+              ],
+              "qerror": 0
+            },
+            {
+              "name": "Drive_MotorRotor",
+              "expectedUnwrappedRadians": -311.3026658226662,
+              "quaternion": [
+                0,
+                0,
+                -0.9898629652895914,
+                0.1420257369215075
+              ],
+              "qerror": 0
+            },
+            {
+              "name": "Drive_PlanetRotor_0",
+              "expectedUnwrappedRadians": 415.0702210968883,
+              "quaternion": [
+                0,
+                0,
+                -0.18886884326424336,
+                0.9820023218119327
+              ],
+              "qerror": 0
+            },
+            {
+              "name": "Drive_PlanetRotor_1",
+              "expectedUnwrappedRadians": 415.0702210968883,
+              "quaternion": [
+                0,
+                0,
+                -0.18886884326424336,
+                0.9820023218119327
+              ],
+              "qerror": 0
+            },
+            {
+              "name": "Drive_PlanetRotor_2",
+              "expectedUnwrappedRadians": 415.0702210968883,
+              "quaternion": [
+                0,
+                0,
+                -0.18886884326424336,
+                0.9820023218119327
+              ],
+              "qerror": 0
+            }
+          ],
+          "slider": [
+            0,
+            -0.019999999552965164,
+            -1.438944827891262
+          ]
+        },
+        {
+          "unfold": 0.75,
+          "travel": 0.8057903947355451,
+          "rows": [
+            {
+              "name": "Drive_ScrewRotor",
+              "expectedUnwrappedRadians": -158.2165740271505,
+              "quaternion": [
+                0,
+                0,
+                -0.5383469780194646,
+                -0.8427232827312356
+              ],
+              "qerror": 0
+            },
+            {
+              "name": "Drive_MotorRotor",
+              "expectedUnwrappedRadians": -474.6497220814515,
+              "quaternion": [
+                0,
+                0,
+                -0.9909515001588829,
+                0.13422043187555138
+              ],
+              "qerror": 0
+            },
+            {
+              "name": "Drive_PlanetRotor_0",
+              "expectedUnwrappedRadians": 632.866296108602,
+              "quaternion": [
+                0,
+                0,
+                -0.7628407373526662,
+                -0.646586428434158
+              ],
+              "qerror": 0
+            },
+            {
+              "name": "Drive_PlanetRotor_1",
+              "expectedUnwrappedRadians": 632.866296108602,
+              "quaternion": [
+                0,
+                0,
+                -0.7628407373526662,
+                -0.646586428434158
+              ],
+              "qerror": 0
+            },
+            {
+              "name": "Drive_PlanetRotor_2",
+              "expectedUnwrappedRadians": 632.866296108602,
+              "quaternion": [
+                0,
+                0,
+                -0.7628407373526662,
+                -0.646586428434158
+              ],
+              "qerror": 0
+            }
+          ],
+          "slider": [
+            0,
+            -0.019999999552965164,
+            -1.7162514032842817
+          ]
+        },
+        {
+          "unfold": 1,
+          "travel": 0.9895389305942024,
+          "rows": [
+            {
+              "name": "Drive_ScrewRotor",
+              "expectedUnwrappedRadians": -194.2955146747404,
+              "quaternion": [
+                0,
+                0,
+                0.23926737982060103,
+                -0.9709537172047822
+              ],
+              "qerror": 0
+            },
+            {
+              "name": "Drive_MotorRotor",
+              "expectedUnwrappedRadians": -582.8865440242212,
+              "quaternion": [
+                0,
+                0,
+                0.6630109823135851,
+                -0.7486096695418614
+              ],
+              "qerror": 0
+            },
+            {
+              "name": "Drive_PlanetRotor_0",
+              "expectedUnwrappedRadians": 777.1820586989616,
+              "quaternion": [
+                0,
+                0,
+                0.8228708519646172,
+                0.568228440846659
+              ],
+              "qerror": 0
+            },
+            {
+              "name": "Drive_PlanetRotor_1",
+              "expectedUnwrappedRadians": 777.1820586989616,
+              "quaternion": [
+                0,
+                0,
+                0.8228708519646172,
+                0.568228440846659
+              ],
+              "qerror": 0
+            },
+            {
+              "name": "Drive_PlanetRotor_2",
+              "expectedUnwrappedRadians": 777.1820586989616,
+              "quaternion": [
+                0,
+                0,
+                0.8228708519646172,
+                0.568228440846659
+              ],
+              "qerror": 0
+            }
+          ],
+          "slider": [
+            0,
+            -0.019999999552965164,
+            -1.899999939142939
+          ]
+        }
+      ],
+      "baked": {
+        "samples": 797,
+        "arbitrarySubframeDriveChecks": 1593,
+        "maxBakedDriveError": 8.881784197001252e-16,
+        "trackCount": 18,
+        "maxPosition": 7.559635718669956e-7,
+        "maxQuaternion": 2.8611366609254674e-9,
+        "selectedStates": [
+          {
+            "frame": 0,
+            "unfold": 0
+          },
+          {
+            "frame": 49.75,
+            "unfold": 0.6902518740910963
+          },
+          {
+            "frame": 99.5,
+            "unfold": 1
+          },
+          {
+            "frame": 149.25,
+            "unfold": 0.6791919555664062
+          },
+          {
+            "frame": 199,
+            "unfold": 0
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "source": "public/models/xp4.glb",
+      "sha256": "313b014ec70b409175b34a08f66ec56820a51ea094085ce1eef96fc444ce4b2b",
+      "samples": 1001,
+      "disconnectedBeamFaultRejected": true,
+      "incorrectScrewAngleFaultRejected": true,
+      "maximumStepAngle": 0.9383667465148164,
+      "accumulated": [
+        {
+          "name": "Drive_ScrewRotor",
+          "actual": -194.29551467474045,
+          "expected": -194.29551467474045,
+          "error": 0
+        },
+        {
+          "name": "Drive_MotorRotor",
+          "actual": -582.8865440242213,
+          "expected": -582.8865440242213,
+          "error": 0
+        },
+        {
+          "name": "Drive_PlanetRotor_0",
+          "actual": 777.1820586989617,
+          "expected": 777.1820586989618,
+          "error": 1.1368683772161603e-13
+        },
+        {
+          "name": "Drive_PlanetRotor_1",
+          "actual": 777.1820586989617,
+          "expected": 777.1820586989618,
+          "error": 1.1368683772161603e-13
+        },
+        {
+          "name": "Drive_PlanetRotor_2",
+          "actual": 777.1820586989617,
+          "expected": 777.1820586989618,
+          "error": 1.1368683772161603e-13
+        }
+      ],
+      "selectedStates": [
+        {
+          "unfold": 0,
+          "travel": -2.220446049250313e-16,
+          "rows": [
+            {
+              "name": "Drive_ScrewRotor",
+              "expectedUnwrappedRadians": 4.3598356225107894e-14,
+              "quaternion": [
+                0,
+                0,
+                0.000003679771885803491,
+                0.9999999999932296
+              ],
+              "qerror": 0
+            },
+            {
+              "name": "Drive_MotorRotor",
+              "expectedUnwrappedRadians": 1.307950686753237e-13,
+              "quaternion": [
+                0,
+                0,
+                0.000011039315656812551,
+                0.9999999999390667
+              ],
+              "qerror": 0
+            },
+            {
+              "name": "Drive_PlanetRotor_0",
+              "expectedUnwrappedRadians": -1.7439342490043158e-13,
+              "quaternion": [
+                0,
+                0,
+                -0.000014719087541719161,
+                0.9999999998916742
+              ],
+              "qerror": 0
+            },
+            {
+              "name": "Drive_PlanetRotor_1",
+              "expectedUnwrappedRadians": -1.7439342490043158e-13,
+              "quaternion": [
+                0,
+                0,
+                -0.000014719087541719161,
+                0.9999999998916742
+              ],
+              "qerror": 0
+            },
+            {
+              "name": "Drive_PlanetRotor_2",
+              "expectedUnwrappedRadians": -1.7439342490043158e-13,
+              "quaternion": [
+                0,
+                0,
+                -0.000014719087541719161,
+                0.9999999998916742
+              ],
+              "qerror": 0
+            }
+          ],
+          "slider": [
+            0,
+            -0.019999999552965164,
+            -0.9104610085487364
+          ]
+        },
+        {
+          "unfold": 0.25,
+          "travel": 0.23677658218066044,
+          "rows": [
+            {
+              "name": "Drive_ScrewRotor",
+              "expectedUnwrappedRadians": -46.49097319505392,
+              "quaternion": [
+                0,
+                0,
+                -0.9503447064943903,
+                -0.3111991947902357
+              ],
+              "qerror": 0
+            },
+            {
+              "name": "Drive_MotorRotor",
+              "expectedUnwrappedRadians": -139.47291958516175,
+              "quaternion": [
+                0,
+                0,
+                0.5822004065921756,
+                0.8130453164270153
+              ],
+              "qerror": 0
+            },
+            {
+              "name": "Drive_PlanetRotor_0",
+              "expectedUnwrappedRadians": 185.96389278021567,
+              "quaternion": [
+                0,
+                0,
+                0.9538536103445027,
+                0.3002720267236992
+              ],
+              "qerror": -2.220446049250313e-16
+            },
+            {
+              "name": "Drive_PlanetRotor_1",
+              "expectedUnwrappedRadians": 185.96389278021567,
+              "quaternion": [
+                0,
+                0,
+                0.9538536103445027,
+                0.3002720267236992
+              ],
+              "qerror": -2.220446049250313e-16
+            },
+            {
+              "name": "Drive_PlanetRotor_2",
+              "expectedUnwrappedRadians": 185.96389278021567,
+              "quaternion": [
+                0,
+                0,
+                0.9538536103445027,
+                0.3002720267236992
+              ],
+              "qerror": -2.220446049250313e-16
+            }
+          ],
+          "slider": [
+            0,
+            -0.019999999552965164,
+            -1.147237590729397
+          ]
+        },
+        {
+          "unfold": 0.5,
+          "travel": 0.5284838193425254,
+          "rows": [
+            {
+              "name": "Drive_ScrewRotor",
+              "expectedUnwrappedRadians": -103.76755527422208,
+              "quaternion": [
+                0,
+                0,
+                0.9988719668361408,
+                -0.04748466983037432
+              ],
+              "qerror": 0
+            },
+            {
+              "name": "Drive_MotorRotor",
+              "expectedUnwrappedRadians": -311.3026658226662,
+              "quaternion": [
+                0,
+                0,
+                -0.9898629652895914,
+                0.1420257369215075
+              ],
+              "qerror": 0
+            },
+            {
+              "name": "Drive_PlanetRotor_0",
+              "expectedUnwrappedRadians": 415.0702210968883,
+              "quaternion": [
+                0,
+                0,
+                -0.18886884326424336,
+                0.9820023218119327
+              ],
+              "qerror": 0
+            },
+            {
+              "name": "Drive_PlanetRotor_1",
+              "expectedUnwrappedRadians": 415.0702210968883,
+              "quaternion": [
+                0,
+                0,
+                -0.18886884326424336,
+                0.9820023218119327
+              ],
+              "qerror": 0
+            },
+            {
+              "name": "Drive_PlanetRotor_2",
+              "expectedUnwrappedRadians": 415.0702210968883,
+              "quaternion": [
+                0,
+                0,
+                -0.18886884326424336,
+                0.9820023218119327
+              ],
+              "qerror": 0
+            }
+          ],
+          "slider": [
+            0,
+            -0.019999999552965164,
+            -1.438944827891262
+          ]
+        },
+        {
+          "unfold": 0.75,
+          "travel": 0.8057903947355451,
+          "rows": [
+            {
+              "name": "Drive_ScrewRotor",
+              "expectedUnwrappedRadians": -158.2165740271505,
+              "quaternion": [
+                0,
+                0,
+                -0.5383469780194646,
+                -0.8427232827312356
+              ],
+              "qerror": 0
+            },
+            {
+              "name": "Drive_MotorRotor",
+              "expectedUnwrappedRadians": -474.6497220814515,
+              "quaternion": [
+                0,
+                0,
+                -0.9909515001588829,
+                0.13422043187555138
+              ],
+              "qerror": 0
+            },
+            {
+              "name": "Drive_PlanetRotor_0",
+              "expectedUnwrappedRadians": 632.866296108602,
+              "quaternion": [
+                0,
+                0,
+                -0.7628407373526662,
+                -0.646586428434158
+              ],
+              "qerror": 0
+            },
+            {
+              "name": "Drive_PlanetRotor_1",
+              "expectedUnwrappedRadians": 632.866296108602,
+              "quaternion": [
+                0,
+                0,
+                -0.7628407373526662,
+                -0.646586428434158
+              ],
+              "qerror": 0
+            },
+            {
+              "name": "Drive_PlanetRotor_2",
+              "expectedUnwrappedRadians": 632.866296108602,
+              "quaternion": [
+                0,
+                0,
+                -0.7628407373526662,
+                -0.646586428434158
+              ],
+              "qerror": 0
+            }
+          ],
+          "slider": [
+            0,
+            -0.019999999552965164,
+            -1.7162514032842817
+          ]
+        },
+        {
+          "unfold": 1,
+          "travel": 0.9895389305942024,
+          "rows": [
+            {
+              "name": "Drive_ScrewRotor",
+              "expectedUnwrappedRadians": -194.2955146747404,
+              "quaternion": [
+                0,
+                0,
+                0.23926737982060103,
+                -0.9709537172047822
+              ],
+              "qerror": 0
+            },
+            {
+              "name": "Drive_MotorRotor",
+              "expectedUnwrappedRadians": -582.8865440242212,
+              "quaternion": [
+                0,
+                0,
+                0.6630109823135851,
+                -0.7486096695418614
+              ],
+              "qerror": 0
+            },
+            {
+              "name": "Drive_PlanetRotor_0",
+              "expectedUnwrappedRadians": 777.1820586989616,
+              "quaternion": [
+                0,
+                0,
+                0.8228708519646172,
+                0.568228440846659
+              ],
+              "qerror": 0
+            },
+            {
+              "name": "Drive_PlanetRotor_1",
+              "expectedUnwrappedRadians": 777.1820586989616,
+              "quaternion": [
+                0,
+                0,
+                0.8228708519646172,
+                0.568228440846659
+              ],
+              "qerror": 0
+            },
+            {
+              "name": "Drive_PlanetRotor_2",
+              "expectedUnwrappedRadians": 777.1820586989616,
+              "quaternion": [
+                0,
+                0,
+                0.8228708519646172,
+                0.568228440846659
+              ],
+              "qerror": 0
+            }
+          ],
+          "slider": [
+            0,
+            -0.019999999552965164,
+            -1.899999939142939
+          ]
+        }
+      ],
+      "baked": {
+        "samples": 797,
+        "arbitrarySubframeDriveChecks": 1593,
+        "maxBakedDriveError": 8.881784197001252e-16,
+        "trackCount": 18,
+        "maxPosition": 7.559635718669956e-7,
+        "maxQuaternion": 2.8611366609254674e-9,
+        "selectedStates": [
+          {
+            "frame": 0,
+            "unfold": 0
+          },
+          {
+            "frame": 49.75,
+            "unfold": 0.6902518740910963
+          },
+          {
+            "frame": 99.5,
+            "unfold": 1
+          },
+          {
+            "frame": 149.25,
+            "unfold": 0.6791919555664062
+          },
+          {
+            "frame": 199,
+            "unfold": 0
+          }
+        ]
+      },
+      "passed": true
+    }
+  ],
+  "limitations": [
+    "1001 ordered poses resolve winding; non-sequential repeats and independent rotor reset check deterministic drive states",
+    "797 actual exported quarter-frame states compare world transforms with runtime; 1593 eighth-frame states check baked slider/rotation synchronization, including between keyframes; no continuous collision claim",
+    "Lead and ratios are concept visualization parameters, not production actuator selection, contact stress, torque or speed feasibility"
+  ]
+}

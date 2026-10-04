@@ -1,0 +1,3283 @@
+{
+  "passed": true,
+  "source": "public/models/xp4.glb",
+  "sha256": "61765f19e221a3eafdc6e527dac37eb6603e48bcc7c9918c8eab49f28d810b0b",
+  "pass": "fast",
+  "sampleCount": 30,
+  "states": [
+    {
+      "label": "四桨同步粗门槛",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "surfaces": {},
+      "hatch": 0
+    },
+    {
+      "label": "四桨同步粗门槛",
+      "wing": 0,
+      "fold": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "phase": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "surfaces": {},
+      "hatch": 0
+    },
+    {
+      "label": "四桨同步粗门槛",
+      "wing": 0,
+      "fold": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "phase": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "surfaces": {},
+      "hatch": 0
+    },
+    {
+      "label": "四桨同步粗门槛",
+      "wing": 0.125,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "surfaces": {},
+      "hatch": 0
+    },
+    {
+      "label": "四桨同步粗门槛",
+      "wing": 0.125,
+      "fold": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "phase": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "surfaces": {},
+      "hatch": 0
+    },
+    {
+      "label": "四桨同步粗门槛",
+      "wing": 0.125,
+      "fold": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "phase": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "surfaces": {},
+      "hatch": 0
+    },
+    {
+      "label": "四桨同步粗门槛",
+      "wing": 0.25,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "surfaces": {},
+      "hatch": 0
+    },
+    {
+      "label": "四桨同步粗门槛",
+      "wing": 0.25,
+      "fold": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "phase": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "surfaces": {},
+      "hatch": 0
+    },
+    {
+      "label": "四桨同步粗门槛",
+      "wing": 0.25,
+      "fold": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "phase": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "surfaces": {},
+      "hatch": 0
+    },
+    {
+      "label": "四桨同步粗门槛",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "surfaces": {},
+      "hatch": 0
+    },
+    {
+      "label": "四桨同步粗门槛",
+      "wing": 0.5,
+      "fold": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "phase": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "surfaces": {},
+      "hatch": 0
+    },
+    {
+      "label": "四桨同步粗门槛",
+      "wing": 0.5,
+      "fold": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "phase": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "surfaces": {},
+      "hatch": 0
+    },
+    {
+      "label": "四桨同步粗门槛",
+      "wing": 0.75,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "surfaces": {},
+      "hatch": 0
+    },
+    {
+      "label": "四桨同步粗门槛",
+      "wing": 0.75,
+      "fold": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "phase": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "surfaces": {},
+      "hatch": 0
+    },
+    {
+      "label": "四桨同步粗门槛",
+      "wing": 0.75,
+      "fold": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "phase": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "surfaces": {},
+      "hatch": 0
+    },
+    {
+      "label": "四桨同步粗门槛",
+      "wing": 0.875,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "surfaces": {},
+      "hatch": 0
+    },
+    {
+      "label": "四桨同步粗门槛",
+      "wing": 0.875,
+      "fold": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "phase": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "surfaces": {},
+      "hatch": 0
+    },
+    {
+      "label": "四桨同步粗门槛",
+      "wing": 0.875,
+      "fold": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "phase": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "surfaces": {},
+      "hatch": 0
+    },
+    {
+      "label": "四桨同步粗门槛",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "surfaces": {},
+      "hatch": 0
+    },
+    {
+      "label": "四桨同步粗门槛",
+      "wing": 1,
+      "fold": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "phase": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "surfaces": {},
+      "hatch": 0
+    },
+    {
+      "label": "四桨同步粗门槛",
+      "wing": 1,
+      "fold": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "phase": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "surfaces": {},
+      "hatch": 0
+    },
+    {
+      "label": "四桨不同步",
+      "wing": 0,
+      "fold": [
+        0,
+        0.25,
+        0.75,
+        1
+      ],
+      "phase": [
+        0.17,
+        0,
+        0,
+        0
+      ],
+      "surfaces": {},
+      "hatch": 0
+    },
+    {
+      "label": "六舵面和货舱极限",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        1.3,
+        0,
+        2.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面和货舱极限",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        1.3,
+        0,
+        2.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "四桨不同步",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0.25,
+        0.75,
+        1
+      ],
+      "phase": [
+        0.17,
+        0,
+        0,
+        0
+      ],
+      "surfaces": {},
+      "hatch": 0
+    },
+    {
+      "label": "六舵面和货舱极限",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        1.3,
+        0,
+        2.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面和货舱极限",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        1.3,
+        0,
+        2.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "四桨不同步",
+      "wing": 1,
+      "fold": [
+        0,
+        0.25,
+        0.75,
+        1
+      ],
+      "phase": [
+        0.17,
+        0,
+        0,
+        0
+      ],
+      "surfaces": {},
+      "hatch": 0
+    },
+    {
+      "label": "六舵面和货舱极限",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        1.3,
+        0,
+        2.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面和货舱极限",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        1.3,
+        0,
+        2.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    }
+  ],
+  "relativePairCount": 32934,
+  "groups": {
+    "固定机体": [
+      "Fuselage",
+      "Dorsal_hatch_main",
+      "Hatch_fastener_main",
+      "Hatch_fastener_main001",
+      "Hatch_fastener_main002",
+      "Hatch_fastener_main003",
+      "Tail_boom_join",
+      "Dorsal_small_receiver",
+      "Tail_receiver",
+      "Dorsal_antenna",
+      "Ventral_antenna",
+      "Ventral_antenna001",
+      "Ventral_small_sensor",
+      "Ventral_tail_tab",
+      "ActuatorSideSlot_L",
+      "ActuatorSideSlot_R",
+      "Lower_fuselage_join",
+      "Lower_fuselage_join001",
+      "Lower_fuselage_join002",
+      "Lower_fuselage_join003",
+      "V_tail_L",
+      "V_tail_blue_leading_L",
+      "Tail_root_fastener_L",
+      "Tail_root_fastener_L001",
+      "Fixed_root_L",
+      "Fixed_root_blue_L",
+      "RootHingeShaft_L",
+      "RootBearingFixed_L_Front",
+      "RootBearingSeal_L_Front",
+      "RootBearingFixed_L_Rear",
+      "RootBearingSeal_L_Rear",
+      "RootFixedBearingPedestal_L",
+      "Root_access_cover_L",
+      "RootHingeEndcap_L-0148",
+      "RootHingeEndcap_L0148",
+      "V_tail_R",
+      "V_tail_blue_leading_R",
+      "Tail_root_fastener_R",
+      "Tail_root_fastener_R001",
+      "Fixed_root_R",
+      "Fixed_root_blue_R",
+      "RootHingeShaft_R",
+      "RootBearingFixed_R_Front",
+      "RootBearingSeal_R_Front",
+      "RootBearingFixed_R_Rear",
+      "RootBearingSeal_R_Rear",
+      "RootFixedBearingPedestal_R",
+      "Root_access_cover_R",
+      "RootHingeEndcap_R-0148",
+      "RootHingeEndcap_R0148",
+      "ControlFlexureFixed_Tail_L",
+      "ControlFlexureFixed_Tail_R",
+      "CargoOpeningLip",
+      "CargoLatchFixed_R",
+      "CargoLatchPin_R",
+      "CargoLatchFixed_L",
+      "CargoLatchPin_L",
+      "Pitot_probe_foot",
+      "Pitot_probe_mount",
+      "Pitot_probe_tube",
+      "Drive_MotorHousing",
+      "Drive_ReductionHousing",
+      "Drive_MotorGearboxAdapter",
+      "Drive_RingGear",
+      "Drive_MotorMount",
+      "Drive_MotorSaddle_L",
+      "Drive_MotorSaddle_R",
+      "Drive_FrontSupport",
+      "Drive_FrontScrewPedestal",
+      "Drive_FrontScrewBearing",
+      "Drive_FrontGuidePedestal_L",
+      "Drive_FrontGuideSeat_L",
+      "Drive_FrontGuidePedestal_R",
+      "Drive_FrontGuideSeat_R",
+      "Drive_RearSupport",
+      "Drive_RearScrewPedestal",
+      "Drive_RearScrewBearing",
+      "Drive_RearGuidePedestal_L",
+      "Drive_RearGuideSeat_L",
+      "Drive_RearGuidePedestal_R",
+      "Drive_RearGuideSeat_R",
+      "Drive_GuideRail_L",
+      "Drive_GuideRail_R",
+      "Drive_FrontFoot_L",
+      "Drive_FrontFoot_R",
+      "Drive_RearFoot_L",
+      "Drive_RearFoot_R",
+      "Drive_MotorFoot_L",
+      "Drive_MotorFoot_R",
+      "Drive_FrontTravelStop_L",
+      "Drive_FrontTravelStop_R",
+      "Drive_RearTravelStop_L",
+      "Drive_RearTravelStop_R",
+      "RootBearingHousing_L",
+      "RootBearingHousing_R",
+      "CargoHingeFixedSeat",
+      "CargoHingePin",
+      "CargoHingeCap_L",
+      "CargoHingeCap_R",
+      "ControlHingeFixed_Tail_L",
+      "ControlHingeFixed_Tail_R",
+      "RootFairingFixed_L",
+      "RootFairingFixed_R"
+    ],
+    "BraceSpreader": [
+      "BraceBall_L_Body",
+      "BraceBall_R_Body",
+      "BraceBallPin_L_Body",
+      "BraceBallPin_R_Body",
+      "BraceBodyCarriage_L",
+      "BraceBodyCarriage_R",
+      "Drive_Crossbeam",
+      "Drive_GuideBridge_L",
+      "Drive_GuideBridge_R",
+      "Drive_GuideBushing_L",
+      "Drive_GuideBushing_R",
+      "Drive_NutCarriage",
+      "Drive_NutInternalThread",
+      "Drive_OutputWeb"
+    ],
+    "WingPivot_L": [
+      "BraceBall_L_Wing",
+      "BraceBallPin_L_Wing",
+      "BraceWingSeat_L",
+      "Composite_wing_L",
+      "ControlFlexureFixed_L_Inboard",
+      "ControlFlexureFixed_L_Outboard",
+      "ControlHingeFixed_L_Inboard",
+      "ControlHingeFixed_L_Outboard",
+      "Cowl_boundary_L_Front",
+      "Cowl_boundary_L_Rear",
+      "Landing_wear_tip_L_Front",
+      "Landing_wear_tip_L_Rear",
+      "Motor_cowl_L_Front",
+      "Motor_cowl_L_Rear",
+      "Motor_spindle_L_Front",
+      "Motor_spindle_L_Rear",
+      "MotorFrontBearing_L_Front",
+      "MotorFrontBearing_L_Rear",
+      "Nacelle_L_Front",
+      "Nacelle_L_Rear",
+      "Pod_mount_seam_L_Front",
+      "Pod_mount_seam_L_Front001",
+      "Pod_mount_seam_L_Rear",
+      "Pod_mount_seam_L_Rear001",
+      "Pod_U_access_panel_L_Front",
+      "Pod_U_access_panel_L_Front001",
+      "Pod_U_access_panel_L_Rear",
+      "Pod_U_access_panel_L_Rear001",
+      "Pod_wing_saddle_L_Front",
+      "Pod_wing_saddle_L_Rear",
+      "RootCarrierBridge_L",
+      "RootCarrierMoving_L",
+      "RootCarrierThrust_L",
+      "RootFairingMoving_L",
+      "Wing_blue_angular_panel_L",
+      "Wing_blue_leading_L",
+      "Wing_service_panel_L",
+      "Wing_service_panel_L001"
+    ],
+    "ControlPivot_L_Inboard": [
+      "ControlFlexureMoving_L_Inboard",
+      "ControlHingeMoving_L_Inboard",
+      "ControlHorn_L_Inboard",
+      "ControlSurface_L_Inboard"
+    ],
+    "ControlPivot_L_Outboard": [
+      "ControlFlexureMoving_L_Outboard",
+      "ControlHingeMoving_L_Outboard",
+      "ControlHorn_L_Outboard",
+      "ControlSurface_L_Outboard"
+    ],
+    "Prop_L_Front": [
+      "Blade_hinge_arm_L_Front_A",
+      "Blade_hinge_arm_L_Front_B",
+      "Blade_hinge_pin_L_Front_A",
+      "Blade_hinge_pin_L_Front_B",
+      "Spinner_L_Front"
+    ],
+    "BladeFold_L_Front_A": [
+      "Blade_L_Front_A"
+    ],
+    "BladeFold_L_Front_B": [
+      "Blade_L_Front_B"
+    ],
+    "Prop_L_Rear": [
+      "Blade_hinge_arm_L_Rear_A",
+      "Blade_hinge_arm_L_Rear_B",
+      "Blade_hinge_pin_L_Rear_A",
+      "Blade_hinge_pin_L_Rear_B",
+      "Spinner_L_Rear"
+    ],
+    "BladeFold_L_Rear_A": [
+      "Blade_L_Rear_A"
+    ],
+    "BladeFold_L_Rear_B": [
+      "Blade_L_Rear_B"
+    ],
+    "BraceRod_L": [
+      "BraceRod_mesh_L",
+      "BraceRodEye_L_Body",
+      "BraceRodEye_L_Root",
+      "BraceRodEyeNeck_L_Body",
+      "BraceRodEyeNeck_L_Root",
+      "BraceRodFerrule_L_Body",
+      "BraceRodFerrule_L_Root"
+    ],
+    "WingPivot_R": [
+      "BraceBall_R_Wing",
+      "BraceBallPin_R_Wing",
+      "BraceWingSeat_R",
+      "Composite_wing_R",
+      "ControlFlexureFixed_R_Inboard",
+      "ControlFlexureFixed_R_Outboard",
+      "ControlHingeFixed_R_Inboard",
+      "ControlHingeFixed_R_Outboard",
+      "Cowl_boundary_R_Front",
+      "Cowl_boundary_R_Rear",
+      "Landing_wear_tip_R_Front",
+      "Landing_wear_tip_R_Rear",
+      "Motor_cowl_R_Front",
+      "Motor_cowl_R_Rear",
+      "Motor_spindle_R_Front",
+      "Motor_spindle_R_Rear",
+      "MotorFrontBearing_R_Front",
+      "MotorFrontBearing_R_Rear",
+      "Nacelle_R_Front",
+      "Nacelle_R_Rear",
+      "Pod_mount_seam_R_Front",
+      "Pod_mount_seam_R_Front001",
+      "Pod_mount_seam_R_Rear",
+      "Pod_mount_seam_R_Rear001",
+      "Pod_U_access_panel_R_Front",
+      "Pod_U_access_panel_R_Front001",
+      "Pod_U_access_panel_R_Rear",
+      "Pod_U_access_panel_R_Rear001",
+      "Pod_wing_saddle_R_Front",
+      "Pod_wing_saddle_R_Rear",
+      "RootCarrierBridge_R",
+      "RootCarrierMoving_R",
+      "RootCarrierThrust_R",
+      "RootFairingMoving_R",
+      "Wing_blue_angular_panel_R",
+      "Wing_blue_leading_R",
+      "Wing_service_panel_R",
+      "Wing_service_panel_R001"
+    ],
+    "ControlPivot_R_Inboard": [
+      "ControlFlexureMoving_R_Inboard",
+      "ControlHingeMoving_R_Inboard",
+      "ControlHorn_R_Inboard",
+      "ControlSurface_R_Inboard"
+    ],
+    "ControlPivot_R_Outboard": [
+      "ControlFlexureMoving_R_Outboard",
+      "ControlHingeMoving_R_Outboard",
+      "ControlHorn_R_Outboard",
+      "ControlSurface_R_Outboard"
+    ],
+    "Prop_R_Front": [
+      "Blade_hinge_arm_R_Front_A",
+      "Blade_hinge_arm_R_Front_B",
+      "Blade_hinge_pin_R_Front_A",
+      "Blade_hinge_pin_R_Front_B",
+      "Spinner_R_Front"
+    ],
+    "BladeFold_R_Front_A": [
+      "Blade_R_Front_A"
+    ],
+    "BladeFold_R_Front_B": [
+      "Blade_R_Front_B"
+    ],
+    "Prop_R_Rear": [
+      "Blade_hinge_arm_R_Rear_A",
+      "Blade_hinge_arm_R_Rear_B",
+      "Blade_hinge_pin_R_Rear_A",
+      "Blade_hinge_pin_R_Rear_B",
+      "Spinner_R_Rear"
+    ],
+    "BladeFold_R_Rear_A": [
+      "Blade_R_Rear_A"
+    ],
+    "BladeFold_R_Rear_B": [
+      "Blade_R_Rear_B"
+    ],
+    "BraceRod_R": [
+      "BraceRod_mesh_R",
+      "BraceRodEye_R_Body",
+      "BraceRodEye_R_Root",
+      "BraceRodEyeNeck_R_Body",
+      "BraceRodEyeNeck_R_Root",
+      "BraceRodFerrule_R_Body",
+      "BraceRodFerrule_R_Root"
+    ],
+    "ControlPivot_Tail_L": [
+      "ControlFlexureMoving_Tail_L",
+      "ControlHingeMoving_Tail_L",
+      "ControlSurface_Tail_L"
+    ],
+    "ControlPivot_Tail_R": [
+      "ControlFlexureMoving_Tail_R",
+      "ControlHingeMoving_Tail_R",
+      "ControlSurface_Tail_R"
+    ],
+    "CargoHoodPivot": [
+      "CargoHingeMovingSeat_L",
+      "CargoHingeMovingSeat_R",
+      "CargoHoodShell",
+      "CargoLatchMoving_L",
+      "CargoLatchMoving_R"
+    ],
+    "Drive_ScrewRotor": [
+      "Drive_CouplingWitness",
+      "Drive_LeadScrewCore",
+      "Drive_LeadScrewThread",
+      "Drive_OutputCoupling",
+      "Drive_PlanetCarrier",
+      "Drive_PlanetPin_0",
+      "Drive_PlanetPin_1",
+      "Drive_PlanetPin_2",
+      "Drive_PlanetRetainer_0_Front",
+      "Drive_PlanetRetainer_0_Rear",
+      "Drive_PlanetRetainer_1_Front",
+      "Drive_PlanetRetainer_1_Rear",
+      "Drive_PlanetRetainer_2_Front",
+      "Drive_PlanetRetainer_2_Rear"
+    ],
+    "Drive_PlanetRotor_0": [
+      "Drive_PlanetGear_0"
+    ],
+    "Drive_PlanetRotor_1": [
+      "Drive_PlanetGear_1"
+    ],
+    "Drive_PlanetRotor_2": [
+      "Drive_PlanetGear_2"
+    ],
+    "Drive_MotorRotor": [
+      "Drive_MotorRotorDisc",
+      "Drive_MotorShaft",
+      "Drive_MotorWitness",
+      "Drive_SunGear"
+    ]
+  },
+  "sameRigidPairsSkipped": 6969,
+  "criticalOpen": [],
+  "broadHits": 13456,
+  "triangleSATTests": 29520913,
+  "containTests": 13456,
+  "contacts": [],
+  "unresolved": [
+    {
+      "container": "Lower_fuselage_join",
+      "contained": "BraceRod_mesh_L",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 30
+    },
+    {
+      "container": "Lower_fuselage_join002",
+      "contained": "BraceRod_mesh_R",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 30
+    },
+    {
+      "container": "Wing_blue_leading_L",
+      "contained": "V_tail_L",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 12
+    },
+    {
+      "container": "V_tail_blue_leading_L",
+      "contained": "Composite_wing_L",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 12
+    },
+    {
+      "container": "V_tail_blue_leading_L",
+      "contained": "Blade_L_Rear_A",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 1
+    },
+    {
+      "container": "Wing_blue_leading_L",
+      "contained": "V_tail_blue_leading_L",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 12
+    },
+    {
+      "container": "V_tail_blue_leading_L",
+      "contained": "Wing_blue_leading_L",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 12
+    },
+    {
+      "container": "V_tail_blue_leading_L",
+      "contained": "ControlFlexureMoving_Tail_L",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 30
+    },
+    {
+      "container": "V_tail_blue_leading_L",
+      "contained": "ControlHingeMoving_Tail_L",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 30
+    },
+    {
+      "container": "V_tail_blue_leading_L",
+      "contained": "ControlSurface_Tail_L",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 30
+    },
+    {
+      "container": "Fixed_root_blue_L",
+      "contained": "Composite_wing_L",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 30
+    },
+    {
+      "container": "Fixed_root_blue_L",
+      "contained": "BraceRod_mesh_L",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 6
+    },
+    {
+      "container": "Fixed_root_blue_L",
+      "contained": "CargoHoodShell",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 30
+    },
+    {
+      "container": "Pod_mount_seam_L_Front",
+      "contained": "BraceRod_mesh_L",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 6
+    },
+    {
+      "container": "Pod_mount_seam_L_Front001",
+      "contained": "BraceRod_mesh_L",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 6
+    },
+    {
+      "container": "Wing_blue_angular_panel_L",
+      "contained": "BraceRod_mesh_L",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 6
+    },
+    {
+      "container": "Wing_blue_leading_R",
+      "contained": "V_tail_R",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 12
+    },
+    {
+      "container": "V_tail_blue_leading_R",
+      "contained": "Composite_wing_R",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 12
+    },
+    {
+      "container": "V_tail_blue_leading_R",
+      "contained": "Blade_R_Rear_B",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 1
+    },
+    {
+      "container": "Wing_blue_leading_R",
+      "contained": "V_tail_blue_leading_R",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 12
+    },
+    {
+      "container": "V_tail_blue_leading_R",
+      "contained": "Wing_blue_leading_R",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 12
+    },
+    {
+      "container": "V_tail_blue_leading_R",
+      "contained": "ControlFlexureMoving_Tail_R",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 30
+    },
+    {
+      "container": "V_tail_blue_leading_R",
+      "contained": "ControlHingeMoving_Tail_R",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 30
+    },
+    {
+      "container": "V_tail_blue_leading_R",
+      "contained": "ControlSurface_Tail_R",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 30
+    },
+    {
+      "container": "Fixed_root_blue_R",
+      "contained": "Composite_wing_R",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 30
+    },
+    {
+      "container": "Fixed_root_blue_R",
+      "contained": "BraceRod_mesh_R",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 6
+    },
+    {
+      "container": "Fixed_root_blue_R",
+      "contained": "CargoHoodShell",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 30
+    },
+    {
+      "container": "Pod_mount_seam_R_Front",
+      "contained": "BraceRod_mesh_R",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 6
+    },
+    {
+      "container": "Pod_mount_seam_R_Front001",
+      "contained": "BraceRod_mesh_R",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 6
+    },
+    {
+      "container": "Wing_blue_angular_panel_R",
+      "contained": "BraceRod_mesh_R",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 6
+    },
+    {
+      "container": "Wing_blue_angular_panel_L",
+      "contained": "ControlFlexureMoving_L_Inboard",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.125,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 18
+    },
+    {
+      "container": "Wing_blue_angular_panel_L",
+      "contained": "ControlHingeMoving_L_Inboard",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.125,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 18
+    },
+    {
+      "container": "Wing_blue_angular_panel_L",
+      "contained": "ControlHorn_L_Inboard",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.125,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 18
+    },
+    {
+      "container": "Wing_blue_angular_panel_L",
+      "contained": "ControlSurface_L_Inboard",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.125,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 18
+    },
+    {
+      "container": "Wing_blue_leading_L",
+      "contained": "ControlFlexureMoving_L_Outboard",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.125,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 15
+    },
+    {
+      "container": "Wing_blue_leading_L",
+      "contained": "ControlHingeMoving_L_Outboard",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.125,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 12
+    },
+    {
+      "container": "Wing_blue_leading_L",
+      "contained": "ControlSurface_L_Outboard",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.125,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 15
+    },
+    {
+      "container": "Wing_blue_angular_panel_R",
+      "contained": "ControlFlexureMoving_R_Inboard",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.125,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 18
+    },
+    {
+      "container": "Wing_blue_angular_panel_R",
+      "contained": "ControlHingeMoving_R_Inboard",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.125,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 18
+    },
+    {
+      "container": "Wing_blue_angular_panel_R",
+      "contained": "ControlHorn_R_Inboard",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.125,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 18
+    },
+    {
+      "container": "Wing_blue_angular_panel_R",
+      "contained": "ControlSurface_R_Inboard",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.125,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 18
+    },
+    {
+      "container": "Wing_blue_leading_R",
+      "contained": "ControlFlexureMoving_R_Outboard",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.125,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 15
+    },
+    {
+      "container": "Wing_blue_leading_R",
+      "contained": "ControlHingeMoving_R_Outboard",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.125,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 12
+    },
+    {
+      "container": "Wing_blue_leading_R",
+      "contained": "ControlSurface_R_Outboard",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.125,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 15
+    },
+    {
+      "container": "Wing_blue_leading_L",
+      "contained": "Blade_L_Front_A",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.125,
+        "fold": [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 13
+    },
+    {
+      "container": "Wing_blue_leading_L",
+      "contained": "Blade_L_Front_B",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.125,
+        "fold": [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 7
+    },
+    {
+      "container": "Wing_blue_leading_R",
+      "contained": "Blade_R_Front_A",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.125,
+        "fold": [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 9
+    },
+    {
+      "container": "Wing_blue_leading_R",
+      "contained": "Blade_R_Front_B",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.125,
+        "fold": [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 13
+    },
+    {
+      "container": "Wing_blue_leading_L",
+      "contained": "Blade_L_Rear_A",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.125,
+        "fold": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 13
+    },
+    {
+      "container": "Wing_blue_leading_L",
+      "contained": "Blade_L_Rear_B",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.125,
+        "fold": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 13
+    },
+    {
+      "container": "Wing_blue_leading_R",
+      "contained": "Blade_R_Rear_A",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.125,
+        "fold": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 13
+    },
+    {
+      "container": "Wing_blue_leading_R",
+      "contained": "Blade_R_Rear_B",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.125,
+        "fold": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 13
+    },
+    {
+      "container": "Wing_blue_leading_L",
+      "contained": "ControlFlexureMoving_L_Inboard",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.25,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 15
+    },
+    {
+      "container": "Wing_blue_leading_L",
+      "contained": "ControlHingeMoving_L_Inboard",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.25,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 15
+    },
+    {
+      "container": "Wing_blue_leading_L",
+      "contained": "ControlSurface_L_Inboard",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.25,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 15
+    },
+    {
+      "container": "Wing_blue_leading_L",
+      "contained": "ControlHorn_L_Outboard",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.25,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 9
+    },
+    {
+      "container": "Wing_blue_leading_L",
+      "contained": "Blade_hinge_arm_L_Front_A",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.25,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 9
+    },
+    {
+      "container": "Wing_blue_leading_L",
+      "contained": "Blade_hinge_arm_L_Front_B",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.25,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 3
+    },
+    {
+      "container": "Wing_blue_leading_L",
+      "contained": "Blade_hinge_pin_L_Front_A",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.25,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 9
+    },
+    {
+      "container": "Wing_blue_leading_L",
+      "contained": "Blade_hinge_pin_L_Front_B",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.25,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 3
+    },
+    {
+      "container": "Wing_blue_leading_L",
+      "contained": "Spinner_L_Front",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.25,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 9
+    },
+    {
+      "container": "Wing_blue_leading_R",
+      "contained": "ControlFlexureMoving_R_Inboard",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.25,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 15
+    },
+    {
+      "container": "Wing_blue_leading_R",
+      "contained": "ControlHingeMoving_R_Inboard",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.25,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 15
+    },
+    {
+      "container": "Wing_blue_leading_R",
+      "contained": "ControlSurface_R_Inboard",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.25,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 15
+    },
+    {
+      "container": "Wing_blue_leading_R",
+      "contained": "ControlHorn_R_Outboard",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.25,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 9
+    },
+    {
+      "container": "Wing_blue_leading_R",
+      "contained": "Blade_hinge_arm_R_Front_A",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.25,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 3
+    },
+    {
+      "container": "Wing_blue_leading_R",
+      "contained": "Blade_hinge_arm_R_Front_B",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.25,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 9
+    },
+    {
+      "container": "Wing_blue_leading_R",
+      "contained": "Blade_hinge_pin_R_Front_A",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.25,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 3
+    },
+    {
+      "container": "Wing_blue_leading_R",
+      "contained": "Blade_hinge_pin_R_Front_B",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.25,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 9
+    },
+    {
+      "container": "Wing_blue_leading_R",
+      "contained": "Spinner_R_Front",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.25,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 9
+    },
+    {
+      "container": "Wing_blue_angular_panel_L",
+      "contained": "Blade_L_Front_A",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.25,
+        "fold": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 4
+    },
+    {
+      "container": "Wing_blue_angular_panel_R",
+      "contained": "Blade_R_Front_B",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.25,
+        "fold": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 6
+    },
+    {
+      "container": "Wing_blue_leading_L",
+      "contained": "ControlHorn_L_Inboard",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.5,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 9
+    },
+    {
+      "container": "Wing_blue_leading_L",
+      "contained": "Blade_hinge_arm_L_Rear_A",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.5,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 9
+    },
+    {
+      "container": "Wing_blue_leading_L",
+      "contained": "Blade_hinge_arm_L_Rear_B",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.5,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 9
+    },
+    {
+      "container": "Wing_blue_leading_L",
+      "contained": "Blade_hinge_pin_L_Rear_A",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.5,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 9
+    },
+    {
+      "container": "Wing_blue_leading_L",
+      "contained": "Blade_hinge_pin_L_Rear_B",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.5,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 7
+    },
+    {
+      "container": "Wing_blue_leading_L",
+      "contained": "Spinner_L_Rear",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.5,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 9
+    },
+    {
+      "container": "Wing_blue_leading_R",
+      "contained": "ControlHorn_R_Inboard",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.5,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 9
+    },
+    {
+      "container": "Wing_blue_leading_R",
+      "contained": "Blade_hinge_arm_R_Rear_A",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.5,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 9
+    },
+    {
+      "container": "Wing_blue_leading_R",
+      "contained": "Blade_hinge_arm_R_Rear_B",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.5,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 9
+    },
+    {
+      "container": "Wing_blue_leading_R",
+      "contained": "Blade_hinge_pin_R_Rear_A",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.5,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 9
+    },
+    {
+      "container": "Wing_blue_leading_R",
+      "contained": "Blade_hinge_pin_R_Rear_B",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.5,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 9
+    },
+    {
+      "container": "Wing_blue_leading_R",
+      "contained": "Spinner_R_Rear",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.5,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 9
+    },
+    {
+      "container": "Fixed_root_blue_L",
+      "contained": "Nacelle_L_Front",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.75,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 3
+    },
+    {
+      "container": "Fixed_root_blue_R",
+      "contained": "Nacelle_R_Front",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.75,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 3
+    },
+    {
+      "container": "Wing_blue_leading_L",
+      "contained": "Fixed_root_L",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.875,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 9
+    },
+    {
+      "container": "Wing_blue_leading_L",
+      "contained": "Fixed_root_blue_L",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.875,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 9
+    },
+    {
+      "container": "Fixed_root_blue_L",
+      "contained": "Wing_blue_leading_L",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.875,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 9
+    },
+    {
+      "container": "Wing_blue_leading_R",
+      "contained": "Fixed_root_R",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.875,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 9
+    },
+    {
+      "container": "Wing_blue_leading_R",
+      "contained": "Fixed_root_blue_R",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.875,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 9
+    },
+    {
+      "container": "Fixed_root_blue_R",
+      "contained": "Wing_blue_leading_R",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "四桨同步粗门槛",
+        "wing": 0.875,
+        "fold": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "phase": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "surfaces": {},
+        "hatch": 0
+      },
+      "samples": 9
+    },
+    {
+      "container": "Ventral_antenna001",
+      "contained": "CargoHoodShell",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "六舵面和货舱极限",
+        "wing": 0,
+        "fold": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "phase": [
+          1.3,
+          0,
+          2.7,
+          0
+        ],
+        "surfaces": {
+          "L_Inboard": -12,
+          "R_Inboard": 12,
+          "L_Outboard": -12,
+          "R_Outboard": 12,
+          "Tail_L": -12,
+          "Tail_R": 12
+        },
+        "hatch": 55
+      },
+      "samples": 6
+    },
+    {
+      "container": "V_tail_blue_leading_L",
+      "contained": "Blade_L_Rear_B",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "六舵面和货舱极限",
+        "wing": 0,
+        "fold": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "phase": [
+          1.3,
+          0,
+          2.7,
+          0
+        ],
+        "surfaces": {
+          "L_Inboard": -12,
+          "R_Inboard": 12,
+          "L_Outboard": -12,
+          "R_Outboard": 12,
+          "Tail_L": -12,
+          "Tail_R": 12
+        },
+        "hatch": 55
+      },
+      "samples": 2
+    },
+    {
+      "container": "Wing_blue_leading_R",
+      "contained": "ControlSurface_Tail_R",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "六舵面和货舱极限",
+        "wing": 0,
+        "fold": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "phase": [
+          1.3,
+          0,
+          2.7,
+          0
+        ],
+        "surfaces": {
+          "L_Inboard": -12,
+          "R_Inboard": 12,
+          "L_Outboard": -12,
+          "R_Outboard": 12,
+          "Tail_L": -12,
+          "Tail_R": 12
+        },
+        "hatch": 55
+      },
+      "samples": 1
+    },
+    {
+      "container": "Wing_blue_leading_L",
+      "contained": "ControlSurface_Tail_L",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "六舵面和货舱极限",
+        "wing": 0,
+        "fold": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "phase": [
+          1.3,
+          0,
+          2.7,
+          0
+        ],
+        "surfaces": {
+          "L_Inboard": 12,
+          "R_Inboard": -12,
+          "L_Outboard": 12,
+          "R_Outboard": -12,
+          "Tail_L": 12,
+          "Tail_R": -12
+        },
+        "hatch": 55
+      },
+      "samples": 1
+    }
+  ],
+  "limitations": [
+    "有限姿态采样，不是连续扫掠证明；独立四电机扩大状态空间，旧1597采样数不再代表覆盖",
+    "只排除实际同刚体祖先装配，所有四桨叶根、短叉、销孔参与相对实体检查",
+    "开放装饰仅作表面SAT，其不可解析包含方向明确保留；不作制造、气动、结构或飞行认证",
+    "原Float64 SAT/闭合实体算法，epsilon=1e-9；没有新增运动接触白名单"
+  ]
+}

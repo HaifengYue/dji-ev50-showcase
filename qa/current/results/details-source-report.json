@@ -1,0 +1,10228 @@
+{
+  "passed": true,
+  "source": "assets/blender/xp4-source.glb",
+  "sha256": "14deba2a8cb20fb13c6cc05f8c4c09d441285b9754b014499942ad39992f7ce4",
+  "pass": "details",
+  "sampleCount": 399,
+  "states": [
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 0.5,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": -12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": -12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": -12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": -12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": -12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": -12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "六舵面独立极限组合",
+      "wing": 1,
+      "fold": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "phase": [
+        0.3,
+        0,
+        1.7,
+        0
+      ],
+      "surfaces": {
+        "L_Inboard": 12,
+        "R_Inboard": 12,
+        "L_Outboard": 12,
+        "R_Outboard": 12,
+        "Tail_L": 12,
+        "Tail_R": 12
+      },
+      "hatch": 55
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 0,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "surfaces": {},
+      "hatch": 0
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 0,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        0.7853981633974483,
+        0,
+        1.0471975511965976
+      ],
+      "surfaces": {},
+      "hatch": 6.875
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 0,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        1.5707963267948966,
+        0,
+        2.0943951023931953
+      ],
+      "surfaces": {},
+      "hatch": 13.75
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 0,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        2.356194490192345,
+        0,
+        3.141592653589793
+      ],
+      "surfaces": {},
+      "hatch": 20.625
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 0,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        3.141592653589793,
+        0,
+        4.1887902047863905
+      ],
+      "surfaces": {},
+      "hatch": 27.5
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 0,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        3.9269908169872414,
+        0,
+        5.235987755982989
+      ],
+      "surfaces": {},
+      "hatch": 34.375
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 0,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        4.71238898038469,
+        0,
+        6.283185307179586
+      ],
+      "surfaces": {},
+      "hatch": 41.25
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 0,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        5.497787143782138,
+        0,
+        7.330382858376184
+      ],
+      "surfaces": {},
+      "hatch": 48.125
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 0,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        6.283185307179586,
+        0,
+        8.377580409572781
+      ],
+      "surfaces": {},
+      "hatch": 55
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 0.125,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "surfaces": {},
+      "hatch": 0
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 0.125,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        0.7853981633974483,
+        0,
+        1.0471975511965976
+      ],
+      "surfaces": {},
+      "hatch": 6.875
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 0.125,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        1.5707963267948966,
+        0,
+        2.0943951023931953
+      ],
+      "surfaces": {},
+      "hatch": 13.75
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 0.125,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        2.356194490192345,
+        0,
+        3.141592653589793
+      ],
+      "surfaces": {},
+      "hatch": 20.625
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 0.125,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        3.141592653589793,
+        0,
+        4.1887902047863905
+      ],
+      "surfaces": {},
+      "hatch": 27.5
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 0.125,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        3.9269908169872414,
+        0,
+        5.235987755982989
+      ],
+      "surfaces": {},
+      "hatch": 34.375
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 0.125,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        4.71238898038469,
+        0,
+        6.283185307179586
+      ],
+      "surfaces": {},
+      "hatch": 41.25
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 0.125,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        5.497787143782138,
+        0,
+        7.330382858376184
+      ],
+      "surfaces": {},
+      "hatch": 48.125
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 0.125,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        6.283185307179586,
+        0,
+        8.377580409572781
+      ],
+      "surfaces": {},
+      "hatch": 55
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 0.5,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "surfaces": {},
+      "hatch": 0
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 0.5,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        0.7853981633974483,
+        0,
+        1.0471975511965976
+      ],
+      "surfaces": {},
+      "hatch": 6.875
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 0.5,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        1.5707963267948966,
+        0,
+        2.0943951023931953
+      ],
+      "surfaces": {},
+      "hatch": 13.75
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 0.5,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        2.356194490192345,
+        0,
+        3.141592653589793
+      ],
+      "surfaces": {},
+      "hatch": 20.625
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 0.5,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        3.141592653589793,
+        0,
+        4.1887902047863905
+      ],
+      "surfaces": {},
+      "hatch": 27.5
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 0.5,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        3.9269908169872414,
+        0,
+        5.235987755982989
+      ],
+      "surfaces": {},
+      "hatch": 34.375
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 0.5,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        4.71238898038469,
+        0,
+        6.283185307179586
+      ],
+      "surfaces": {},
+      "hatch": 41.25
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 0.5,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        5.497787143782138,
+        0,
+        7.330382858376184
+      ],
+      "surfaces": {},
+      "hatch": 48.125
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 0.5,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        6.283185307179586,
+        0,
+        8.377580409572781
+      ],
+      "surfaces": {},
+      "hatch": 55
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 0.875,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "surfaces": {},
+      "hatch": 0
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 0.875,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        0.7853981633974483,
+        0,
+        1.0471975511965976
+      ],
+      "surfaces": {},
+      "hatch": 6.875
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 0.875,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        1.5707963267948966,
+        0,
+        2.0943951023931953
+      ],
+      "surfaces": {},
+      "hatch": 13.75
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 0.875,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        2.356194490192345,
+        0,
+        3.141592653589793
+      ],
+      "surfaces": {},
+      "hatch": 20.625
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 0.875,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        3.141592653589793,
+        0,
+        4.1887902047863905
+      ],
+      "surfaces": {},
+      "hatch": 27.5
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 0.875,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        3.9269908169872414,
+        0,
+        5.235987755982989
+      ],
+      "surfaces": {},
+      "hatch": 34.375
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 0.875,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        4.71238898038469,
+        0,
+        6.283185307179586
+      ],
+      "surfaces": {},
+      "hatch": 41.25
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 0.875,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        5.497787143782138,
+        0,
+        7.330382858376184
+      ],
+      "surfaces": {},
+      "hatch": 48.125
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 0.875,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        6.283185307179586,
+        0,
+        8.377580409572781
+      ],
+      "surfaces": {},
+      "hatch": 55
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 1,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "surfaces": {},
+      "hatch": 0
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 1,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        0.7853981633974483,
+        0,
+        1.0471975511965976
+      ],
+      "surfaces": {},
+      "hatch": 6.875
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 1,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        1.5707963267948966,
+        0,
+        2.0943951023931953
+      ],
+      "surfaces": {},
+      "hatch": 13.75
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 1,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        2.356194490192345,
+        0,
+        3.141592653589793
+      ],
+      "surfaces": {},
+      "hatch": 20.625
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 1,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        3.141592653589793,
+        0,
+        4.1887902047863905
+      ],
+      "surfaces": {},
+      "hatch": 27.5
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 1,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        3.9269908169872414,
+        0,
+        5.235987755982989
+      ],
+      "surfaces": {},
+      "hatch": 34.375
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 1,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        4.71238898038469,
+        0,
+        6.283185307179586
+      ],
+      "surfaces": {},
+      "hatch": 41.25
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 1,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        5.497787143782138,
+        0,
+        7.330382858376184
+      ],
+      "surfaces": {},
+      "hatch": 48.125
+    },
+    {
+      "label": "开舱行程与异步桨",
+      "wing": 1,
+      "fold": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "phase": [
+        0,
+        6.283185307179586,
+        0,
+        8.377580409572781
+      ],
+      "surfaces": {},
+      "hatch": 55
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Inboard": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Inboard": -9
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Inboard": -6
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Inboard": -3
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Inboard": 0
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Inboard": 3
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Inboard": 6
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Inboard": 9
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Inboard": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Inboard": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Inboard": -9
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Inboard": -6
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Inboard": -3
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Inboard": 0
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Inboard": 3
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Inboard": 6
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Inboard": 9
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Inboard": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Outboard": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Outboard": -9
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Outboard": -6
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Outboard": -3
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Outboard": 0
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Outboard": 3
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Outboard": 6
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Outboard": 9
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Outboard": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Outboard": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Outboard": -9
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Outboard": -6
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Outboard": -3
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Outboard": 0
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Outboard": 3
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Outboard": 6
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Outboard": 9
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Outboard": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_L": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_L": -9
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_L": -6
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_L": -3
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_L": 0
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_L": 3
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_L": 6
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_L": 9
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_L": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_R": -9
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_R": -6
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_R": -3
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_R": 0
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_R": 3
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_R": 6
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_R": 9
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Inboard": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Inboard": -9
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Inboard": -6
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Inboard": -3
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Inboard": 0
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Inboard": 3
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Inboard": 6
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Inboard": 9
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Inboard": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Inboard": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Inboard": -9
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Inboard": -6
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Inboard": -3
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Inboard": 0
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Inboard": 3
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Inboard": 6
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Inboard": 9
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Inboard": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Outboard": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Outboard": -9
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Outboard": -6
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Outboard": -3
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Outboard": 0
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Outboard": 3
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Outboard": 6
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Outboard": 9
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Outboard": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Outboard": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Outboard": -9
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Outboard": -6
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Outboard": -3
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Outboard": 0
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Outboard": 3
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Outboard": 6
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Outboard": 9
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Outboard": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_L": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_L": -9
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_L": -6
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_L": -3
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_L": 0
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_L": 3
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_L": 6
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_L": 9
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_L": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_R": -9
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_R": -6
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_R": -3
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_R": 0
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_R": 3
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_R": 6
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_R": 9
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 0.5,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_R": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Inboard": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Inboard": -9
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Inboard": -6
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Inboard": -3
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Inboard": 0
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Inboard": 3
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Inboard": 6
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Inboard": 9
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Inboard": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Inboard": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Inboard": -9
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Inboard": -6
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Inboard": -3
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Inboard": 0
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Inboard": 3
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Inboard": 6
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Inboard": 9
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Inboard": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Outboard": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Outboard": -9
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Outboard": -6
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Outboard": -3
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Outboard": 0
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Outboard": 3
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Outboard": 6
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Outboard": 9
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "L_Outboard": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Outboard": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Outboard": -9
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Outboard": -6
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Outboard": -3
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Outboard": 0
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Outboard": 3
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Outboard": 6
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Outboard": 9
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "R_Outboard": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_L": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_L": -9
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_L": -6
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_L": -3
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_L": 0
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_L": 3
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_L": 6
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_L": 9
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_L": 12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_R": -12
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_R": -9
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_R": -6
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_R": -3
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_R": 0
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_R": 3
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_R": 6
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_R": 9
+      },
+      "hatch": 0
+    },
+    {
+      "label": "各舵面中间行程",
+      "wing": 1,
+      "fold": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase": [
+        0.3,
+        0.7,
+        1.1,
+        1.5
+      ],
+      "surfaces": {
+        "Tail_R": 12
+      },
+      "hatch": 0
+    }
+  ],
+  "currentSnapshotTopologyRefreshes": [],
+  "exactPairCache": {
+    "freshNarrowPhasePairPoses": 542,
+    "exactTransformPairReuses": 39362,
+    "immutableGeometryIdentityAndVersionsAsserted": true,
+    "policy": "仅本轮不可变网格身份/属性/数组/版本与Float64世界矩阵完全相同才复用；任何几何变化直接失败，不能让原矩阵快照缓存失效"
+  },
+  "changedMeshes": [
+    "ActuatorSideSlot_L",
+    "ActuatorSideSlot_R",
+    "BraceBodyCarriage_L",
+    "BraceBodyCarriage_R",
+    "Drive_CouplingWitness",
+    "Drive_Crossbeam",
+    "Drive_FrontFoot_L",
+    "Drive_FrontFoot_R",
+    "Drive_FrontGuidePedestal_L",
+    "Drive_FrontGuidePedestal_R",
+    "Drive_FrontGuideSeat_L",
+    "Drive_FrontGuideSeat_R",
+    "Drive_FrontScrewBearing",
+    "Drive_FrontScrewPedestal",
+    "Drive_FrontSupport",
+    "Drive_FrontTravelStop_L",
+    "Drive_FrontTravelStop_R",
+    "Drive_GuideBridge_L",
+    "Drive_GuideBridge_R",
+    "Drive_GuideBushing_L",
+    "Drive_GuideBushing_R",
+    "Drive_GuideRail_L",
+    "Drive_GuideRail_R",
+    "Drive_LeadScrewCore",
+    "Drive_LeadScrewThread",
+    "Drive_MotorFoot_L",
+    "Drive_MotorFoot_R",
+    "Drive_MotorGearboxAdapter",
+    "Drive_MotorHousing",
+    "Drive_MotorMount",
+    "Drive_MotorRotorDisc",
+    "Drive_MotorSaddle_L",
+    "Drive_MotorSaddle_R",
+    "Drive_MotorShaft",
+    "Drive_MotorWitness",
+    "Drive_NutCarriage",
+    "Drive_NutInternalThread",
+    "Drive_OutputCoupling",
+    "Drive_OutputWeb",
+    "Drive_PlanetCarrier",
+    "Drive_PlanetGear_0",
+    "Drive_PlanetGear_1",
+    "Drive_PlanetGear_2",
+    "Drive_PlanetPin_0",
+    "Drive_PlanetPin_1",
+    "Drive_PlanetPin_2",
+    "Drive_PlanetRetainer_0_Front",
+    "Drive_PlanetRetainer_0_Rear",
+    "Drive_PlanetRetainer_1_Front",
+    "Drive_PlanetRetainer_1_Rear",
+    "Drive_PlanetRetainer_2_Front",
+    "Drive_PlanetRetainer_2_Rear",
+    "Drive_RearFoot_L",
+    "Drive_RearFoot_R",
+    "Drive_RearGuidePedestal_L",
+    "Drive_RearGuidePedestal_R",
+    "Drive_RearGuideSeat_L",
+    "Drive_RearGuideSeat_R",
+    "Drive_RearScrewBearing",
+    "Drive_RearScrewPedestal",
+    "Drive_RearSupport",
+    "Drive_RearTravelStop_L",
+    "Drive_RearTravelStop_R",
+    "Drive_ReductionHousing",
+    "Drive_RingGear",
+    "Drive_SunGear",
+    "Fuselage",
+    "Lower_fuselage_join",
+    "Lower_fuselage_join001",
+    "Lower_fuselage_join002",
+    "Lower_fuselage_join003",
+    "Tail_boom_join"
+  ],
+  "affectedScope": {
+    "currentMeshes": [
+      "ActuatorSideSlot_L",
+      "ActuatorSideSlot_R",
+      "Blade_L_Front_A",
+      "Blade_L_Front_B",
+      "Blade_L_Rear_A",
+      "Blade_L_Rear_B",
+      "Blade_R_Front_A",
+      "Blade_R_Front_B",
+      "Blade_R_Rear_A",
+      "Blade_R_Rear_B",
+      "Blade_hinge_arm_L_Front_A",
+      "Blade_hinge_arm_L_Front_B",
+      "Blade_hinge_arm_L_Rear_A",
+      "Blade_hinge_arm_L_Rear_B",
+      "Blade_hinge_arm_R_Front_A",
+      "Blade_hinge_arm_R_Front_B",
+      "Blade_hinge_arm_R_Rear_A",
+      "Blade_hinge_arm_R_Rear_B",
+      "Blade_hinge_pin_L_Front_A",
+      "Blade_hinge_pin_L_Front_B",
+      "Blade_hinge_pin_L_Rear_A",
+      "Blade_hinge_pin_L_Rear_B",
+      "Blade_hinge_pin_R_Front_A",
+      "Blade_hinge_pin_R_Front_B",
+      "Blade_hinge_pin_R_Rear_A",
+      "Blade_hinge_pin_R_Rear_B",
+      "BraceBallPin_L_Body",
+      "BraceBallPin_L_Wing",
+      "BraceBallPin_R_Body",
+      "BraceBallPin_R_Wing",
+      "BraceBall_L_Body",
+      "BraceBall_L_Wing",
+      "BraceBall_R_Body",
+      "BraceBall_R_Wing",
+      "BraceBodyCarriage_L",
+      "BraceBodyCarriage_R",
+      "BraceRodEyeNeck_L_Body",
+      "BraceRodEyeNeck_L_Root",
+      "BraceRodEyeNeck_R_Body",
+      "BraceRodEyeNeck_R_Root",
+      "BraceRodEye_L_Body",
+      "BraceRodEye_L_Root",
+      "BraceRodEye_R_Body",
+      "BraceRodEye_R_Root",
+      "BraceRodFerrule_L_Body",
+      "BraceRodFerrule_L_Root",
+      "BraceRodFerrule_R_Body",
+      "BraceRodFerrule_R_Root",
+      "BraceRod_mesh_L",
+      "BraceRod_mesh_R",
+      "BraceWingSeat_L",
+      "BraceWingSeat_R",
+      "CargoHingeCap_L",
+      "CargoHingeCap_R",
+      "CargoHingeFixedSeat",
+      "CargoHingeMovingSeat_L",
+      "CargoHingeMovingSeat_R",
+      "CargoHingePin",
+      "CargoHoodShell",
+      "CargoLatchFixed_L",
+      "CargoLatchFixed_R",
+      "CargoLatchMoving_L",
+      "CargoLatchMoving_R",
+      "CargoLatchPin_L",
+      "CargoLatchPin_R",
+      "CargoOpeningLip",
+      "Composite_wing_L",
+      "Composite_wing_R",
+      "ControlFlexureFixed_L_Inboard",
+      "ControlFlexureFixed_L_Outboard",
+      "ControlFlexureFixed_R_Inboard",
+      "ControlFlexureFixed_R_Outboard",
+      "ControlFlexureFixed_Tail_L",
+      "ControlFlexureFixed_Tail_R",
+      "ControlFlexureMoving_L_Inboard",
+      "ControlFlexureMoving_L_Outboard",
+      "ControlFlexureMoving_R_Inboard",
+      "ControlFlexureMoving_R_Outboard",
+      "ControlFlexureMoving_Tail_L",
+      "ControlFlexureMoving_Tail_R",
+      "ControlHingeFixed_L_Inboard",
+      "ControlHingeFixed_L_Outboard",
+      "ControlHingeFixed_R_Inboard",
+      "ControlHingeFixed_R_Outboard",
+      "ControlHingeFixed_Tail_L",
+      "ControlHingeFixed_Tail_R",
+      "ControlHingeMoving_L_Inboard",
+      "ControlHingeMoving_L_Outboard",
+      "ControlHingeMoving_R_Inboard",
+      "ControlHingeMoving_R_Outboard",
+      "ControlHingeMoving_Tail_L",
+      "ControlHingeMoving_Tail_R",
+      "ControlHorn_L_Inboard",
+      "ControlHorn_L_Outboard",
+      "ControlHorn_R_Inboard",
+      "ControlHorn_R_Outboard",
+      "ControlSurface_L_Inboard",
+      "ControlSurface_L_Outboard",
+      "ControlSurface_R_Inboard",
+      "ControlSurface_R_Outboard",
+      "ControlSurface_Tail_L",
+      "ControlSurface_Tail_R",
+      "Cowl_boundary_L_Front",
+      "Cowl_boundary_L_Rear",
+      "Cowl_boundary_R_Front",
+      "Cowl_boundary_R_Rear",
+      "Dorsal_antenna",
+      "Dorsal_hatch_main",
+      "Dorsal_small_receiver",
+      "Drive_CouplingWitness",
+      "Drive_Crossbeam",
+      "Drive_FrontFoot_L",
+      "Drive_FrontFoot_R",
+      "Drive_FrontGuidePedestal_L",
+      "Drive_FrontGuidePedestal_R",
+      "Drive_FrontGuideSeat_L",
+      "Drive_FrontGuideSeat_R",
+      "Drive_FrontScrewBearing",
+      "Drive_FrontScrewPedestal",
+      "Drive_FrontSupport",
+      "Drive_FrontTravelStop_L",
+      "Drive_FrontTravelStop_R",
+      "Drive_GuideBridge_L",
+      "Drive_GuideBridge_R",
+      "Drive_GuideBushing_L",
+      "Drive_GuideBushing_R",
+      "Drive_GuideRail_L",
+      "Drive_GuideRail_R",
+      "Drive_LeadScrewCore",
+      "Drive_LeadScrewThread",
+      "Drive_MotorFoot_L",
+      "Drive_MotorFoot_R",
+      "Drive_MotorGearboxAdapter",
+      "Drive_MotorHousing",
+      "Drive_MotorMount",
+      "Drive_MotorRotorDisc",
+      "Drive_MotorSaddle_L",
+      "Drive_MotorSaddle_R",
+      "Drive_MotorShaft",
+      "Drive_MotorWitness",
+      "Drive_NutCarriage",
+      "Drive_NutInternalThread",
+      "Drive_OutputCoupling",
+      "Drive_OutputWeb",
+      "Drive_PlanetCarrier",
+      "Drive_PlanetGear_0",
+      "Drive_PlanetGear_1",
+      "Drive_PlanetGear_2",
+      "Drive_PlanetPin_0",
+      "Drive_PlanetPin_1",
+      "Drive_PlanetPin_2",
+      "Drive_PlanetRetainer_0_Front",
+      "Drive_PlanetRetainer_0_Rear",
+      "Drive_PlanetRetainer_1_Front",
+      "Drive_PlanetRetainer_1_Rear",
+      "Drive_PlanetRetainer_2_Front",
+      "Drive_PlanetRetainer_2_Rear",
+      "Drive_RearFoot_L",
+      "Drive_RearFoot_R",
+      "Drive_RearGuidePedestal_L",
+      "Drive_RearGuidePedestal_R",
+      "Drive_RearGuideSeat_L",
+      "Drive_RearGuideSeat_R",
+      "Drive_RearScrewBearing",
+      "Drive_RearScrewPedestal",
+      "Drive_RearSupport",
+      "Drive_RearTravelStop_L",
+      "Drive_RearTravelStop_R",
+      "Drive_ReductionHousing",
+      "Drive_RingGear",
+      "Drive_SunGear",
+      "Fixed_root_L",
+      "Fixed_root_R",
+      "Fixed_root_blue_L",
+      "Fixed_root_blue_R",
+      "Fuselage",
+      "Hatch_fastener_main",
+      "Hatch_fastener_main001",
+      "Hatch_fastener_main002",
+      "Hatch_fastener_main003",
+      "Landing_wear_tip_L_Front",
+      "Landing_wear_tip_L_Rear",
+      "Landing_wear_tip_R_Front",
+      "Landing_wear_tip_R_Rear",
+      "Lower_fuselage_join",
+      "Lower_fuselage_join001",
+      "Lower_fuselage_join002",
+      "Lower_fuselage_join003",
+      "MotorFrontBearing_L_Front",
+      "MotorFrontBearing_L_Rear",
+      "MotorFrontBearing_R_Front",
+      "MotorFrontBearing_R_Rear",
+      "Motor_cowl_L_Front",
+      "Motor_cowl_L_Rear",
+      "Motor_cowl_R_Front",
+      "Motor_cowl_R_Rear",
+      "Motor_spindle_L_Front",
+      "Motor_spindle_L_Rear",
+      "Motor_spindle_R_Front",
+      "Motor_spindle_R_Rear",
+      "Nacelle_L_Front",
+      "Nacelle_L_Rear",
+      "Nacelle_R_Front",
+      "Nacelle_R_Rear",
+      "Pitot_probe_foot",
+      "Pitot_probe_mount",
+      "Pitot_probe_tube",
+      "Pod_U_access_panel_L_Front",
+      "Pod_U_access_panel_L_Front001",
+      "Pod_U_access_panel_L_Rear",
+      "Pod_U_access_panel_L_Rear001",
+      "Pod_U_access_panel_R_Front",
+      "Pod_U_access_panel_R_Front001",
+      "Pod_U_access_panel_R_Rear",
+      "Pod_U_access_panel_R_Rear001",
+      "Pod_mount_seam_L_Front",
+      "Pod_mount_seam_L_Front001",
+      "Pod_mount_seam_L_Rear",
+      "Pod_mount_seam_L_Rear001",
+      "Pod_mount_seam_R_Front",
+      "Pod_mount_seam_R_Front001",
+      "Pod_mount_seam_R_Rear",
+      "Pod_mount_seam_R_Rear001",
+      "Pod_wing_saddle_L_Front",
+      "Pod_wing_saddle_L_Rear",
+      "Pod_wing_saddle_R_Front",
+      "Pod_wing_saddle_R_Rear",
+      "RootBearingFixed_L_Front",
+      "RootBearingFixed_L_Rear",
+      "RootBearingFixed_R_Front",
+      "RootBearingFixed_R_Rear",
+      "RootBearingHousing_L",
+      "RootBearingHousing_R",
+      "RootBearingSeal_L_Front",
+      "RootBearingSeal_L_Rear",
+      "RootBearingSeal_R_Front",
+      "RootBearingSeal_R_Rear",
+      "RootCarrierBridge_L",
+      "RootCarrierBridge_R",
+      "RootCarrierMoving_L",
+      "RootCarrierMoving_R",
+      "RootCarrierThrust_L",
+      "RootCarrierThrust_R",
+      "RootFairingFixed_L",
+      "RootFairingFixed_R",
+      "RootFairingMoving_L",
+      "RootFairingMoving_R",
+      "RootFixedBearingPedestal_L",
+      "RootFixedBearingPedestal_R",
+      "RootHingeEndcap_L-0148",
+      "RootHingeEndcap_L0148",
+      "RootHingeEndcap_R-0148",
+      "RootHingeEndcap_R0148",
+      "RootHingeShaft_L",
+      "RootHingeShaft_R",
+      "Root_access_cover_L",
+      "Root_access_cover_R",
+      "Spinner_L_Front",
+      "Spinner_L_Rear",
+      "Spinner_R_Front",
+      "Spinner_R_Rear",
+      "Tail_boom_join",
+      "Tail_receiver",
+      "Tail_root_fastener_L",
+      "Tail_root_fastener_L001",
+      "Tail_root_fastener_R",
+      "Tail_root_fastener_R001",
+      "V_tail_L",
+      "V_tail_R",
+      "V_tail_blue_leading_L",
+      "V_tail_blue_leading_R",
+      "Ventral_antenna",
+      "Ventral_antenna001",
+      "Ventral_small_sensor",
+      "Ventral_tail_tab",
+      "Wing_blue_angular_panel_L",
+      "Wing_blue_angular_panel_R",
+      "Wing_blue_leading_L",
+      "Wing_blue_leading_R",
+      "Wing_service_panel_L",
+      "Wing_service_panel_L001",
+      "Wing_service_panel_R",
+      "Wing_service_panel_R001"
+    ],
+    "geometryChangedMeshes": [
+      "ActuatorSideSlot_L",
+      "ActuatorSideSlot_R",
+      "BraceBodyCarriage_L",
+      "BraceBodyCarriage_R",
+      "Drive_FrontFoot_L",
+      "Drive_FrontFoot_R",
+      "Drive_FrontGuidePedestal_L",
+      "Drive_FrontGuidePedestal_R",
+      "Drive_FrontGuideSeat_L",
+      "Drive_FrontGuideSeat_R",
+      "Drive_FrontScrewBearing",
+      "Drive_FrontScrewPedestal",
+      "Drive_FrontTravelStop_L",
+      "Drive_FrontTravelStop_R",
+      "Drive_GuideBushing_L",
+      "Drive_GuideBushing_R",
+      "Drive_MotorFoot_L",
+      "Drive_MotorFoot_R",
+      "Drive_MotorGearboxAdapter",
+      "Drive_MotorHousing",
+      "Drive_NutCarriage",
+      "Drive_NutInternalThread",
+      "Drive_OutputWeb",
+      "Drive_RearFoot_L",
+      "Drive_RearFoot_R",
+      "Drive_RearGuidePedestal_L",
+      "Drive_RearGuidePedestal_R",
+      "Drive_RearGuideSeat_L",
+      "Drive_RearGuideSeat_R",
+      "Drive_RearScrewBearing",
+      "Drive_RearScrewPedestal",
+      "Drive_RearTravelStop_L",
+      "Drive_RearTravelStop_R",
+      "Drive_ReductionHousing",
+      "Fuselage",
+      "Lower_fuselage_join",
+      "Lower_fuselage_join001",
+      "Lower_fuselage_join002",
+      "Lower_fuselage_join003",
+      "Tail_boom_join"
+    ],
+    "declaredMotionAffectedMeshes": [
+      "BraceBodyCarriage_L",
+      "BraceBodyCarriage_R",
+      "Drive_CouplingWitness",
+      "Drive_Crossbeam",
+      "Drive_FrontFoot_L",
+      "Drive_FrontFoot_R",
+      "Drive_FrontGuidePedestal_L",
+      "Drive_FrontGuidePedestal_R",
+      "Drive_FrontGuideSeat_L",
+      "Drive_FrontGuideSeat_R",
+      "Drive_FrontScrewBearing",
+      "Drive_FrontScrewPedestal",
+      "Drive_FrontSupport",
+      "Drive_FrontTravelStop_L",
+      "Drive_FrontTravelStop_R",
+      "Drive_GuideBridge_L",
+      "Drive_GuideBridge_R",
+      "Drive_GuideBushing_L",
+      "Drive_GuideBushing_R",
+      "Drive_GuideRail_L",
+      "Drive_GuideRail_R",
+      "Drive_LeadScrewCore",
+      "Drive_LeadScrewThread",
+      "Drive_MotorFoot_L",
+      "Drive_MotorFoot_R",
+      "Drive_MotorGearboxAdapter",
+      "Drive_MotorHousing",
+      "Drive_MotorMount",
+      "Drive_MotorRotorDisc",
+      "Drive_MotorSaddle_L",
+      "Drive_MotorSaddle_R",
+      "Drive_MotorShaft",
+      "Drive_MotorWitness",
+      "Drive_NutCarriage",
+      "Drive_NutInternalThread",
+      "Drive_OutputCoupling",
+      "Drive_OutputWeb",
+      "Drive_PlanetCarrier",
+      "Drive_PlanetGear_0",
+      "Drive_PlanetGear_1",
+      "Drive_PlanetGear_2",
+      "Drive_PlanetPin_0",
+      "Drive_PlanetPin_1",
+      "Drive_PlanetPin_2",
+      "Drive_PlanetRetainer_0_Front",
+      "Drive_PlanetRetainer_0_Rear",
+      "Drive_PlanetRetainer_1_Front",
+      "Drive_PlanetRetainer_1_Rear",
+      "Drive_PlanetRetainer_2_Front",
+      "Drive_PlanetRetainer_2_Rear",
+      "Drive_RearFoot_L",
+      "Drive_RearFoot_R",
+      "Drive_RearGuidePedestal_L",
+      "Drive_RearGuidePedestal_R",
+      "Drive_RearGuideSeat_L",
+      "Drive_RearGuideSeat_R",
+      "Drive_RearScrewBearing",
+      "Drive_RearScrewPedestal",
+      "Drive_RearSupport",
+      "Drive_RearTravelStop_L",
+      "Drive_RearTravelStop_R",
+      "Drive_ReductionHousing",
+      "Drive_RingGear",
+      "Drive_SunGear"
+    ],
+    "transformedAncestorDescendants": [
+      {
+        "ancestor": "BraceBodyCarriage_L",
+        "meshDescendants": [
+          "BraceBodyCarriage_L"
+        ]
+      },
+      {
+        "ancestor": "BraceBodyCarriage_R",
+        "meshDescendants": [
+          "BraceBodyCarriage_R"
+        ]
+      },
+      {
+        "ancestor": "Drive_Crossbeam",
+        "meshDescendants": [
+          "Drive_Crossbeam"
+        ]
+      },
+      {
+        "ancestor": "Drive_FrontGuidePedestal_L",
+        "meshDescendants": [
+          "Drive_FrontGuidePedestal_L"
+        ]
+      },
+      {
+        "ancestor": "Drive_FrontGuidePedestal_R",
+        "meshDescendants": [
+          "Drive_FrontGuidePedestal_R"
+        ]
+      },
+      {
+        "ancestor": "Drive_FrontScrewPedestal",
+        "meshDescendants": [
+          "Drive_FrontScrewPedestal"
+        ]
+      },
+      {
+        "ancestor": "Drive_FrontSupport",
+        "meshDescendants": [
+          "Drive_FrontSupport"
+        ]
+      },
+      {
+        "ancestor": "Drive_GuideBridge_L",
+        "meshDescendants": [
+          "Drive_GuideBridge_L"
+        ]
+      },
+      {
+        "ancestor": "Drive_GuideBridge_R",
+        "meshDescendants": [
+          "Drive_GuideBridge_R"
+        ]
+      },
+      {
+        "ancestor": "Drive_GuideRail_L",
+        "meshDescendants": [
+          "Drive_GuideRail_L"
+        ]
+      },
+      {
+        "ancestor": "Drive_GuideRail_R",
+        "meshDescendants": [
+          "Drive_GuideRail_R"
+        ]
+      },
+      {
+        "ancestor": "Drive_MotorMount",
+        "meshDescendants": [
+          "Drive_MotorMount"
+        ]
+      },
+      {
+        "ancestor": "Drive_MotorRotor",
+        "meshDescendants": [
+          "Drive_MotorRotorDisc",
+          "Drive_MotorShaft",
+          "Drive_MotorWitness",
+          "Drive_SunGear"
+        ]
+      },
+      {
+        "ancestor": "Drive_MotorSaddle_L",
+        "meshDescendants": [
+          "Drive_MotorSaddle_L"
+        ]
+      },
+      {
+        "ancestor": "Drive_MotorSaddle_R",
+        "meshDescendants": [
+          "Drive_MotorSaddle_R"
+        ]
+      },
+      {
+        "ancestor": "Drive_OutputWeb",
+        "meshDescendants": [
+          "Drive_OutputWeb"
+        ]
+      },
+      {
+        "ancestor": "Drive_RearGuidePedestal_L",
+        "meshDescendants": [
+          "Drive_RearGuidePedestal_L"
+        ]
+      },
+      {
+        "ancestor": "Drive_RearGuidePedestal_R",
+        "meshDescendants": [
+          "Drive_RearGuidePedestal_R"
+        ]
+      },
+      {
+        "ancestor": "Drive_RearScrewPedestal",
+        "meshDescendants": [
+          "Drive_RearScrewPedestal"
+        ]
+      },
+      {
+        "ancestor": "Drive_RearSupport",
+        "meshDescendants": [
+          "Drive_RearSupport"
+        ]
+      },
+      {
+        "ancestor": "Drive_RingGear",
+        "meshDescendants": [
+          "Drive_RingGear"
+        ]
+      },
+      {
+        "ancestor": "Drive_ScrewRotor",
+        "meshDescendants": [
+          "Drive_CouplingWitness",
+          "Drive_LeadScrewCore",
+          "Drive_LeadScrewThread",
+          "Drive_OutputCoupling",
+          "Drive_PlanetCarrier",
+          "Drive_PlanetGear_0",
+          "Drive_PlanetGear_1",
+          "Drive_PlanetGear_2",
+          "Drive_PlanetPin_0",
+          "Drive_PlanetPin_1",
+          "Drive_PlanetPin_2",
+          "Drive_PlanetRetainer_0_Front",
+          "Drive_PlanetRetainer_0_Rear",
+          "Drive_PlanetRetainer_1_Front",
+          "Drive_PlanetRetainer_1_Rear",
+          "Drive_PlanetRetainer_2_Front",
+          "Drive_PlanetRetainer_2_Rear"
+        ]
+      },
+      {
+        "ancestor": "Lower_fuselage_join",
+        "meshDescendants": [
+          "Lower_fuselage_join"
+        ]
+      },
+      {
+        "ancestor": "Lower_fuselage_join001",
+        "meshDescendants": [
+          "Lower_fuselage_join001"
+        ]
+      },
+      {
+        "ancestor": "Lower_fuselage_join002",
+        "meshDescendants": [
+          "Lower_fuselage_join002"
+        ]
+      },
+      {
+        "ancestor": "Lower_fuselage_join003",
+        "meshDescendants": [
+          "Lower_fuselage_join003"
+        ]
+      },
+      {
+        "ancestor": "Tail_boom_join",
+        "meshDescendants": [
+          "Tail_boom_join"
+        ]
+      }
+    ],
+    "rerunMeshes": [
+      "ActuatorSideSlot_L",
+      "ActuatorSideSlot_R",
+      "BraceBodyCarriage_L",
+      "BraceBodyCarriage_R",
+      "Drive_CouplingWitness",
+      "Drive_Crossbeam",
+      "Drive_FrontFoot_L",
+      "Drive_FrontFoot_R",
+      "Drive_FrontGuidePedestal_L",
+      "Drive_FrontGuidePedestal_R",
+      "Drive_FrontGuideSeat_L",
+      "Drive_FrontGuideSeat_R",
+      "Drive_FrontScrewBearing",
+      "Drive_FrontScrewPedestal",
+      "Drive_FrontSupport",
+      "Drive_FrontTravelStop_L",
+      "Drive_FrontTravelStop_R",
+      "Drive_GuideBridge_L",
+      "Drive_GuideBridge_R",
+      "Drive_GuideBushing_L",
+      "Drive_GuideBushing_R",
+      "Drive_GuideRail_L",
+      "Drive_GuideRail_R",
+      "Drive_LeadScrewCore",
+      "Drive_LeadScrewThread",
+      "Drive_MotorFoot_L",
+      "Drive_MotorFoot_R",
+      "Drive_MotorGearboxAdapter",
+      "Drive_MotorHousing",
+      "Drive_MotorMount",
+      "Drive_MotorRotorDisc",
+      "Drive_MotorSaddle_L",
+      "Drive_MotorSaddle_R",
+      "Drive_MotorShaft",
+      "Drive_MotorWitness",
+      "Drive_NutCarriage",
+      "Drive_NutInternalThread",
+      "Drive_OutputCoupling",
+      "Drive_OutputWeb",
+      "Drive_PlanetCarrier",
+      "Drive_PlanetGear_0",
+      "Drive_PlanetGear_1",
+      "Drive_PlanetGear_2",
+      "Drive_PlanetPin_0",
+      "Drive_PlanetPin_1",
+      "Drive_PlanetPin_2",
+      "Drive_PlanetRetainer_0_Front",
+      "Drive_PlanetRetainer_0_Rear",
+      "Drive_PlanetRetainer_1_Front",
+      "Drive_PlanetRetainer_1_Rear",
+      "Drive_PlanetRetainer_2_Front",
+      "Drive_PlanetRetainer_2_Rear",
+      "Drive_RearFoot_L",
+      "Drive_RearFoot_R",
+      "Drive_RearGuidePedestal_L",
+      "Drive_RearGuidePedestal_R",
+      "Drive_RearGuideSeat_L",
+      "Drive_RearGuideSeat_R",
+      "Drive_RearScrewBearing",
+      "Drive_RearScrewPedestal",
+      "Drive_RearSupport",
+      "Drive_RearTravelStop_L",
+      "Drive_RearTravelStop_R",
+      "Drive_ReductionHousing",
+      "Drive_RingGear",
+      "Drive_SunGear",
+      "Fuselage",
+      "Lower_fuselage_join",
+      "Lower_fuselage_join001",
+      "Lower_fuselage_join002",
+      "Lower_fuselage_join003",
+      "Tail_boom_join"
+    ],
+    "inheritanceCandidates": [
+      "Blade_L_Front_A",
+      "Blade_L_Front_B",
+      "Blade_L_Rear_A",
+      "Blade_L_Rear_B",
+      "Blade_R_Front_A",
+      "Blade_R_Front_B",
+      "Blade_R_Rear_A",
+      "Blade_R_Rear_B",
+      "Blade_hinge_arm_L_Front_A",
+      "Blade_hinge_arm_L_Front_B",
+      "Blade_hinge_arm_L_Rear_A",
+      "Blade_hinge_arm_L_Rear_B",
+      "Blade_hinge_arm_R_Front_A",
+      "Blade_hinge_arm_R_Front_B",
+      "Blade_hinge_arm_R_Rear_A",
+      "Blade_hinge_arm_R_Rear_B",
+      "Blade_hinge_pin_L_Front_A",
+      "Blade_hinge_pin_L_Front_B",
+      "Blade_hinge_pin_L_Rear_A",
+      "Blade_hinge_pin_L_Rear_B",
+      "Blade_hinge_pin_R_Front_A",
+      "Blade_hinge_pin_R_Front_B",
+      "Blade_hinge_pin_R_Rear_A",
+      "Blade_hinge_pin_R_Rear_B",
+      "BraceBallPin_L_Body",
+      "BraceBallPin_L_Wing",
+      "BraceBallPin_R_Body",
+      "BraceBallPin_R_Wing",
+      "BraceBall_L_Body",
+      "BraceBall_L_Wing",
+      "BraceBall_R_Body",
+      "BraceBall_R_Wing",
+      "BraceRodEyeNeck_L_Body",
+      "BraceRodEyeNeck_L_Root",
+      "BraceRodEyeNeck_R_Body",
+      "BraceRodEyeNeck_R_Root",
+      "BraceRodEye_L_Body",
+      "BraceRodEye_L_Root",
+      "BraceRodEye_R_Body",
+      "BraceRodEye_R_Root",
+      "BraceRodFerrule_L_Body",
+      "BraceRodFerrule_L_Root",
+      "BraceRodFerrule_R_Body",
+      "BraceRodFerrule_R_Root",
+      "BraceRod_mesh_L",
+      "BraceRod_mesh_R",
+      "BraceWingSeat_L",
+      "BraceWingSeat_R",
+      "CargoHingeCap_L",
+      "CargoHingeCap_R",
+      "CargoHingeFixedSeat",
+      "CargoHingeMovingSeat_L",
+      "CargoHingeMovingSeat_R",
+      "CargoHingePin",
+      "CargoHoodShell",
+      "CargoLatchFixed_L",
+      "CargoLatchFixed_R",
+      "CargoLatchMoving_L",
+      "CargoLatchMoving_R",
+      "CargoLatchPin_L",
+      "CargoLatchPin_R",
+      "CargoOpeningLip",
+      "Composite_wing_L",
+      "Composite_wing_R",
+      "ControlFlexureFixed_L_Inboard",
+      "ControlFlexureFixed_L_Outboard",
+      "ControlFlexureFixed_R_Inboard",
+      "ControlFlexureFixed_R_Outboard",
+      "ControlFlexureFixed_Tail_L",
+      "ControlFlexureFixed_Tail_R",
+      "ControlFlexureMoving_L_Inboard",
+      "ControlFlexureMoving_L_Outboard",
+      "ControlFlexureMoving_R_Inboard",
+      "ControlFlexureMoving_R_Outboard",
+      "ControlFlexureMoving_Tail_L",
+      "ControlFlexureMoving_Tail_R",
+      "ControlHingeFixed_L_Inboard",
+      "ControlHingeFixed_L_Outboard",
+      "ControlHingeFixed_R_Inboard",
+      "ControlHingeFixed_R_Outboard",
+      "ControlHingeFixed_Tail_L",
+      "ControlHingeFixed_Tail_R",
+      "ControlHingeMoving_L_Inboard",
+      "ControlHingeMoving_L_Outboard",
+      "ControlHingeMoving_R_Inboard",
+      "ControlHingeMoving_R_Outboard",
+      "ControlHingeMoving_Tail_L",
+      "ControlHingeMoving_Tail_R",
+      "ControlHorn_L_Inboard",
+      "ControlHorn_L_Outboard",
+      "ControlHorn_R_Inboard",
+      "ControlHorn_R_Outboard",
+      "ControlSurface_L_Inboard",
+      "ControlSurface_L_Outboard",
+      "ControlSurface_R_Inboard",
+      "ControlSurface_R_Outboard",
+      "ControlSurface_Tail_L",
+      "ControlSurface_Tail_R",
+      "Cowl_boundary_L_Front",
+      "Cowl_boundary_L_Rear",
+      "Cowl_boundary_R_Front",
+      "Cowl_boundary_R_Rear",
+      "Dorsal_antenna",
+      "Dorsal_hatch_main",
+      "Dorsal_small_receiver",
+      "Fixed_root_L",
+      "Fixed_root_R",
+      "Fixed_root_blue_L",
+      "Fixed_root_blue_R",
+      "Hatch_fastener_main",
+      "Hatch_fastener_main001",
+      "Hatch_fastener_main002",
+      "Hatch_fastener_main003",
+      "Landing_wear_tip_L_Front",
+      "Landing_wear_tip_L_Rear",
+      "Landing_wear_tip_R_Front",
+      "Landing_wear_tip_R_Rear",
+      "MotorFrontBearing_L_Front",
+      "MotorFrontBearing_L_Rear",
+      "MotorFrontBearing_R_Front",
+      "MotorFrontBearing_R_Rear",
+      "Motor_cowl_L_Front",
+      "Motor_cowl_L_Rear",
+      "Motor_cowl_R_Front",
+      "Motor_cowl_R_Rear",
+      "Motor_spindle_L_Front",
+      "Motor_spindle_L_Rear",
+      "Motor_spindle_R_Front",
+      "Motor_spindle_R_Rear",
+      "Nacelle_L_Front",
+      "Nacelle_L_Rear",
+      "Nacelle_R_Front",
+      "Nacelle_R_Rear",
+      "Pitot_probe_foot",
+      "Pitot_probe_mount",
+      "Pitot_probe_tube",
+      "Pod_U_access_panel_L_Front",
+      "Pod_U_access_panel_L_Front001",
+      "Pod_U_access_panel_L_Rear",
+      "Pod_U_access_panel_L_Rear001",
+      "Pod_U_access_panel_R_Front",
+      "Pod_U_access_panel_R_Front001",
+      "Pod_U_access_panel_R_Rear",
+      "Pod_U_access_panel_R_Rear001",
+      "Pod_mount_seam_L_Front",
+      "Pod_mount_seam_L_Front001",
+      "Pod_mount_seam_L_Rear",
+      "Pod_mount_seam_L_Rear001",
+      "Pod_mount_seam_R_Front",
+      "Pod_mount_seam_R_Front001",
+      "Pod_mount_seam_R_Rear",
+      "Pod_mount_seam_R_Rear001",
+      "Pod_wing_saddle_L_Front",
+      "Pod_wing_saddle_L_Rear",
+      "Pod_wing_saddle_R_Front",
+      "Pod_wing_saddle_R_Rear",
+      "RootBearingFixed_L_Front",
+      "RootBearingFixed_L_Rear",
+      "RootBearingFixed_R_Front",
+      "RootBearingFixed_R_Rear",
+      "RootBearingHousing_L",
+      "RootBearingHousing_R",
+      "RootBearingSeal_L_Front",
+      "RootBearingSeal_L_Rear",
+      "RootBearingSeal_R_Front",
+      "RootBearingSeal_R_Rear",
+      "RootCarrierBridge_L",
+      "RootCarrierBridge_R",
+      "RootCarrierMoving_L",
+      "RootCarrierMoving_R",
+      "RootCarrierThrust_L",
+      "RootCarrierThrust_R",
+      "RootFairingFixed_L",
+      "RootFairingFixed_R",
+      "RootFairingMoving_L",
+      "RootFairingMoving_R",
+      "RootFixedBearingPedestal_L",
+      "RootFixedBearingPedestal_R",
+      "RootHingeEndcap_L-0148",
+      "RootHingeEndcap_L0148",
+      "RootHingeEndcap_R-0148",
+      "RootHingeEndcap_R0148",
+      "RootHingeShaft_L",
+      "RootHingeShaft_R",
+      "Root_access_cover_L",
+      "Root_access_cover_R",
+      "Spinner_L_Front",
+      "Spinner_L_Rear",
+      "Spinner_R_Front",
+      "Spinner_R_Rear",
+      "Tail_receiver",
+      "Tail_root_fastener_L",
+      "Tail_root_fastener_L001",
+      "Tail_root_fastener_R",
+      "Tail_root_fastener_R001",
+      "V_tail_L",
+      "V_tail_R",
+      "V_tail_blue_leading_L",
+      "V_tail_blue_leading_R",
+      "Ventral_antenna",
+      "Ventral_antenna001",
+      "Ventral_small_sensor",
+      "Ventral_tail_tab",
+      "Wing_blue_angular_panel_L",
+      "Wing_blue_angular_panel_R",
+      "Wing_blue_leading_L",
+      "Wing_blue_leading_R",
+      "Wing_service_panel_L",
+      "Wing_service_panel_L001",
+      "Wing_service_panel_R",
+      "Wing_service_panel_R001"
+    ]
+  },
+  "unchangedRelativePairsInherited": 18730,
+  "relativePairCount": 14204,
+  "groups": {
+    "固定机体": [
+      "Fuselage",
+      "Dorsal_hatch_main",
+      "Hatch_fastener_main",
+      "Hatch_fastener_main001",
+      "Hatch_fastener_main002",
+      "Hatch_fastener_main003",
+      "Tail_boom_join",
+      "Dorsal_small_receiver",
+      "Tail_receiver",
+      "Dorsal_antenna",
+      "Ventral_antenna",
+      "Ventral_antenna001",
+      "Ventral_small_sensor",
+      "Ventral_tail_tab",
+      "ActuatorSideSlot_L",
+      "ActuatorSideSlot_R",
+      "Lower_fuselage_join",
+      "Lower_fuselage_join001",
+      "Lower_fuselage_join002",
+      "Lower_fuselage_join003",
+      "V_tail_L",
+      "V_tail_blue_leading_L",
+      "Tail_root_fastener_L",
+      "Tail_root_fastener_L001",
+      "Fixed_root_L",
+      "Fixed_root_blue_L",
+      "RootHingeShaft_L",
+      "RootBearingFixed_L_Front",
+      "RootBearingSeal_L_Front",
+      "RootBearingFixed_L_Rear",
+      "RootBearingSeal_L_Rear",
+      "RootFixedBearingPedestal_L",
+      "Root_access_cover_L",
+      "RootHingeEndcap_L-0148",
+      "RootHingeEndcap_L0148",
+      "V_tail_R",
+      "V_tail_blue_leading_R",
+      "Tail_root_fastener_R",
+      "Tail_root_fastener_R001",
+      "Fixed_root_R",
+      "Fixed_root_blue_R",
+      "RootHingeShaft_R",
+      "RootBearingFixed_R_Front",
+      "RootBearingSeal_R_Front",
+      "RootBearingFixed_R_Rear",
+      "RootBearingSeal_R_Rear",
+      "RootFixedBearingPedestal_R",
+      "Root_access_cover_R",
+      "RootHingeEndcap_R-0148",
+      "RootHingeEndcap_R0148",
+      "ControlFlexureFixed_Tail_L",
+      "ControlFlexureFixed_Tail_R",
+      "CargoOpeningLip",
+      "CargoLatchFixed_R",
+      "CargoLatchPin_R",
+      "CargoLatchFixed_L",
+      "CargoLatchPin_L",
+      "Pitot_probe_foot",
+      "Pitot_probe_mount",
+      "Pitot_probe_tube",
+      "Drive_MotorHousing",
+      "Drive_ReductionHousing",
+      "Drive_MotorGearboxAdapter",
+      "Drive_RingGear",
+      "Drive_MotorMount",
+      "Drive_MotorSaddle_L",
+      "Drive_MotorSaddle_R",
+      "Drive_FrontSupport",
+      "Drive_FrontScrewPedestal",
+      "Drive_FrontScrewBearing",
+      "Drive_FrontGuidePedestal_L",
+      "Drive_FrontGuideSeat_L",
+      "Drive_FrontGuidePedestal_R",
+      "Drive_FrontGuideSeat_R",
+      "Drive_RearSupport",
+      "Drive_RearScrewPedestal",
+      "Drive_RearScrewBearing",
+      "Drive_RearGuidePedestal_L",
+      "Drive_RearGuideSeat_L",
+      "Drive_RearGuidePedestal_R",
+      "Drive_RearGuideSeat_R",
+      "Drive_GuideRail_L",
+      "Drive_GuideRail_R",
+      "Drive_FrontFoot_L",
+      "Drive_FrontFoot_R",
+      "Drive_RearFoot_L",
+      "Drive_RearFoot_R",
+      "Drive_MotorFoot_L",
+      "Drive_MotorFoot_R",
+      "Drive_FrontTravelStop_L",
+      "Drive_FrontTravelStop_R",
+      "Drive_RearTravelStop_L",
+      "Drive_RearTravelStop_R",
+      "RootBearingHousing_L",
+      "RootBearingHousing_R",
+      "CargoHingeFixedSeat",
+      "CargoHingePin",
+      "CargoHingeCap_L",
+      "CargoHingeCap_R",
+      "ControlHingeFixed_Tail_L",
+      "ControlHingeFixed_Tail_R",
+      "RootFairingFixed_L",
+      "RootFairingFixed_R"
+    ],
+    "BraceSpreader": [
+      "BraceBall_L_Body",
+      "BraceBall_R_Body",
+      "BraceBallPin_L_Body",
+      "BraceBallPin_R_Body",
+      "BraceBodyCarriage_L",
+      "BraceBodyCarriage_R",
+      "Drive_Crossbeam",
+      "Drive_GuideBridge_L",
+      "Drive_GuideBridge_R",
+      "Drive_GuideBushing_L",
+      "Drive_GuideBushing_R",
+      "Drive_NutCarriage",
+      "Drive_NutInternalThread",
+      "Drive_OutputWeb"
+    ],
+    "WingPivot_L": [
+      "BraceBall_L_Wing",
+      "BraceBallPin_L_Wing",
+      "BraceWingSeat_L",
+      "Composite_wing_L",
+      "ControlFlexureFixed_L_Inboard",
+      "ControlFlexureFixed_L_Outboard",
+      "ControlHingeFixed_L_Inboard",
+      "ControlHingeFixed_L_Outboard",
+      "Cowl_boundary_L_Front",
+      "Cowl_boundary_L_Rear",
+      "Landing_wear_tip_L_Front",
+      "Landing_wear_tip_L_Rear",
+      "Motor_cowl_L_Front",
+      "Motor_cowl_L_Rear",
+      "Motor_spindle_L_Front",
+      "Motor_spindle_L_Rear",
+      "MotorFrontBearing_L_Front",
+      "MotorFrontBearing_L_Rear",
+      "Nacelle_L_Front",
+      "Nacelle_L_Rear",
+      "Pod_mount_seam_L_Front",
+      "Pod_mount_seam_L_Front001",
+      "Pod_mount_seam_L_Rear",
+      "Pod_mount_seam_L_Rear001",
+      "Pod_U_access_panel_L_Front",
+      "Pod_U_access_panel_L_Front001",
+      "Pod_U_access_panel_L_Rear",
+      "Pod_U_access_panel_L_Rear001",
+      "Pod_wing_saddle_L_Front",
+      "Pod_wing_saddle_L_Rear",
+      "RootCarrierBridge_L",
+      "RootCarrierMoving_L",
+      "RootCarrierThrust_L",
+      "RootFairingMoving_L",
+      "Wing_blue_angular_panel_L",
+      "Wing_blue_leading_L",
+      "Wing_service_panel_L",
+      "Wing_service_panel_L001"
+    ],
+    "ControlPivot_L_Inboard": [
+      "ControlFlexureMoving_L_Inboard",
+      "ControlHingeMoving_L_Inboard",
+      "ControlHorn_L_Inboard",
+      "ControlSurface_L_Inboard"
+    ],
+    "ControlPivot_L_Outboard": [
+      "ControlFlexureMoving_L_Outboard",
+      "ControlHingeMoving_L_Outboard",
+      "ControlHorn_L_Outboard",
+      "ControlSurface_L_Outboard"
+    ],
+    "Prop_L_Front": [
+      "Blade_hinge_arm_L_Front_A",
+      "Blade_hinge_arm_L_Front_B",
+      "Blade_hinge_pin_L_Front_A",
+      "Blade_hinge_pin_L_Front_B",
+      "Spinner_L_Front"
+    ],
+    "BladeFold_L_Front_A": [
+      "Blade_L_Front_A"
+    ],
+    "BladeFold_L_Front_B": [
+      "Blade_L_Front_B"
+    ],
+    "Prop_L_Rear": [
+      "Blade_hinge_arm_L_Rear_A",
+      "Blade_hinge_arm_L_Rear_B",
+      "Blade_hinge_pin_L_Rear_A",
+      "Blade_hinge_pin_L_Rear_B",
+      "Spinner_L_Rear"
+    ],
+    "BladeFold_L_Rear_A": [
+      "Blade_L_Rear_A"
+    ],
+    "BladeFold_L_Rear_B": [
+      "Blade_L_Rear_B"
+    ],
+    "BraceRod_L": [
+      "BraceRod_mesh_L",
+      "BraceRodEye_L_Body",
+      "BraceRodEye_L_Root",
+      "BraceRodEyeNeck_L_Body",
+      "BraceRodEyeNeck_L_Root",
+      "BraceRodFerrule_L_Body",
+      "BraceRodFerrule_L_Root"
+    ],
+    "WingPivot_R": [
+      "BraceBall_R_Wing",
+      "BraceBallPin_R_Wing",
+      "BraceWingSeat_R",
+      "Composite_wing_R",
+      "ControlFlexureFixed_R_Inboard",
+      "ControlFlexureFixed_R_Outboard",
+      "ControlHingeFixed_R_Inboard",
+      "ControlHingeFixed_R_Outboard",
+      "Cowl_boundary_R_Front",
+      "Cowl_boundary_R_Rear",
+      "Landing_wear_tip_R_Front",
+      "Landing_wear_tip_R_Rear",
+      "Motor_cowl_R_Front",
+      "Motor_cowl_R_Rear",
+      "Motor_spindle_R_Front",
+      "Motor_spindle_R_Rear",
+      "MotorFrontBearing_R_Front",
+      "MotorFrontBearing_R_Rear",
+      "Nacelle_R_Front",
+      "Nacelle_R_Rear",
+      "Pod_mount_seam_R_Front",
+      "Pod_mount_seam_R_Front001",
+      "Pod_mount_seam_R_Rear",
+      "Pod_mount_seam_R_Rear001",
+      "Pod_U_access_panel_R_Front",
+      "Pod_U_access_panel_R_Front001",
+      "Pod_U_access_panel_R_Rear",
+      "Pod_U_access_panel_R_Rear001",
+      "Pod_wing_saddle_R_Front",
+      "Pod_wing_saddle_R_Rear",
+      "RootCarrierBridge_R",
+      "RootCarrierMoving_R",
+      "RootCarrierThrust_R",
+      "RootFairingMoving_R",
+      "Wing_blue_angular_panel_R",
+      "Wing_blue_leading_R",
+      "Wing_service_panel_R",
+      "Wing_service_panel_R001"
+    ],
+    "ControlPivot_R_Inboard": [
+      "ControlFlexureMoving_R_Inboard",
+      "ControlHingeMoving_R_Inboard",
+      "ControlHorn_R_Inboard",
+      "ControlSurface_R_Inboard"
+    ],
+    "ControlPivot_R_Outboard": [
+      "ControlFlexureMoving_R_Outboard",
+      "ControlHingeMoving_R_Outboard",
+      "ControlHorn_R_Outboard",
+      "ControlSurface_R_Outboard"
+    ],
+    "Prop_R_Front": [
+      "Blade_hinge_arm_R_Front_A",
+      "Blade_hinge_arm_R_Front_B",
+      "Blade_hinge_pin_R_Front_A",
+      "Blade_hinge_pin_R_Front_B",
+      "Spinner_R_Front"
+    ],
+    "BladeFold_R_Front_A": [
+      "Blade_R_Front_A"
+    ],
+    "BladeFold_R_Front_B": [
+      "Blade_R_Front_B"
+    ],
+    "Prop_R_Rear": [
+      "Blade_hinge_arm_R_Rear_A",
+      "Blade_hinge_arm_R_Rear_B",
+      "Blade_hinge_pin_R_Rear_A",
+      "Blade_hinge_pin_R_Rear_B",
+      "Spinner_R_Rear"
+    ],
+    "BladeFold_R_Rear_A": [
+      "Blade_R_Rear_A"
+    ],
+    "BladeFold_R_Rear_B": [
+      "Blade_R_Rear_B"
+    ],
+    "BraceRod_R": [
+      "BraceRod_mesh_R",
+      "BraceRodEye_R_Body",
+      "BraceRodEye_R_Root",
+      "BraceRodEyeNeck_R_Body",
+      "BraceRodEyeNeck_R_Root",
+      "BraceRodFerrule_R_Body",
+      "BraceRodFerrule_R_Root"
+    ],
+    "ControlPivot_Tail_L": [
+      "ControlFlexureMoving_Tail_L",
+      "ControlHingeMoving_Tail_L",
+      "ControlSurface_Tail_L"
+    ],
+    "ControlPivot_Tail_R": [
+      "ControlFlexureMoving_Tail_R",
+      "ControlHingeMoving_Tail_R",
+      "ControlSurface_Tail_R"
+    ],
+    "CargoHoodPivot": [
+      "CargoHingeMovingSeat_L",
+      "CargoHingeMovingSeat_R",
+      "CargoHoodShell",
+      "CargoLatchMoving_L",
+      "CargoLatchMoving_R"
+    ],
+    "Drive_ScrewRotor": [
+      "Drive_CouplingWitness",
+      "Drive_LeadScrewCore",
+      "Drive_LeadScrewThread",
+      "Drive_OutputCoupling",
+      "Drive_PlanetCarrier",
+      "Drive_PlanetPin_0",
+      "Drive_PlanetPin_1",
+      "Drive_PlanetPin_2",
+      "Drive_PlanetRetainer_0_Front",
+      "Drive_PlanetRetainer_0_Rear",
+      "Drive_PlanetRetainer_1_Front",
+      "Drive_PlanetRetainer_1_Rear",
+      "Drive_PlanetRetainer_2_Front",
+      "Drive_PlanetRetainer_2_Rear"
+    ],
+    "Drive_PlanetRotor_0": [
+      "Drive_PlanetGear_0"
+    ],
+    "Drive_PlanetRotor_1": [
+      "Drive_PlanetGear_1"
+    ],
+    "Drive_PlanetRotor_2": [
+      "Drive_PlanetGear_2"
+    ],
+    "Drive_MotorRotor": [
+      "Drive_MotorRotorDisc",
+      "Drive_MotorShaft",
+      "Drive_MotorWitness",
+      "Drive_SunGear"
+    ]
+  },
+  "sameRigidPairsSkipped": 6969,
+  "criticalOpen": [],
+  "broadHits": 39904,
+  "triangleSATTests": 491283,
+  "containTests": 542,
+  "contacts": [],
+  "unresolved": [
+    {
+      "container": "Lower_fuselage_join",
+      "contained": "BraceRod_mesh_L",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "六舵面独立极限组合",
+        "wing": 0,
+        "fold": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "phase": [
+          0.3,
+          0,
+          1.7,
+          0
+        ],
+        "surfaces": {
+          "L_Inboard": -12,
+          "R_Inboard": -12,
+          "L_Outboard": -12,
+          "R_Outboard": -12,
+          "Tail_L": -12,
+          "Tail_R": -12
+        },
+        "hatch": 0
+      },
+      "samples": 399
+    },
+    {
+      "container": "Lower_fuselage_join002",
+      "contained": "BraceRod_mesh_R",
+      "reason": "开放或非流形容器",
+      "firstState": {
+        "label": "六舵面独立极限组合",
+        "wing": 0,
+        "fold": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "phase": [
+          0.3,
+          0,
+          1.7,
+          0
+        ],
+        "surfaces": {
+          "L_Inboard": -12,
+          "R_Inboard": -12,
+          "L_Outboard": -12,
+          "R_Outboard": -12,
+          "Tail_L": -12,
+          "Tail_R": -12
+        },
+        "hatch": 0
+      },
+      "samples": 399
+    }
+  ],
+  "limitations": [
+    "V24 重跑所有涉及明确改动件的相对配对；其它配对只在源/运行精确几何、姿态逻辑和动画恒等证明后显式继承 V23 通过证据。原全部姿态不减少；有限采样不是连续扫掠证明",
+    "只排除实际同刚体祖先装配，所有四桨叶根、短叉、销孔参与相对实体检查",
+    "开放装饰仅作表面SAT，其不可解析包含方向明确保留；不作制造、气动、结构或飞行认证",
+    "原Float64 SAT/闭合实体算法，epsilon=1e-9；没有新增运动接触白名单"
+  ]
+}

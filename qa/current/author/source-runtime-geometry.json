@@ -1,0 +1,132 @@
+{
+  "modelVersion": 24,
+  "passed": true,
+  "sourceBlend": "assets/blender/xp4.blend",
+  "sourceBlendSha256": "0dc4feb2a628dad23f1e82d122167a08154b7f72f301bc5f5fc8e59c210b6857",
+  "currentSource": "assets/blender/xp4-source.glb",
+  "currentSourceSha256": "14deba2a8cb20fb13c6cc05f8c4c09d441285b9754b014499942ad39992f7ce4",
+  "currentSourceBytes": 7322536,
+  "acceptedRuntime": "public/models/xp4.glb",
+  "acceptedRuntimeSha256": "313b014ec70b409175b34a08f66ec56820a51ea094085ce1eef96fc444ce4b2b",
+  "acceptedRuntimeBytes": 2437828,
+  "reexportSha256": "14deba2a8cb20fb13c6cc05f8c4c09d441285b9754b014499942ad39992f7ce4",
+  "reexportByteIdentical": true,
+  "meshes": 283,
+  "maxBidirectionalVertexDeviation": 0.00004555174800278227,
+  "positionTolerance": 0.0003,
+  "maxWorldNormalAngularErrorRadians": 0.00043245008440037126,
+  "normalAngleToleranceRadians": 0.015,
+  "normalMatchPositionTolerance": 0.0001,
+  "materialDifferences": [],
+  "checks": [
+    {
+      "clipName": "TRANSWING_Hover_Cruise_Hover",
+      "time": 0,
+      "meshes": 283,
+      "maxBidirectionalVertexDeviation": 0.000045551744912815376
+    },
+    {
+      "clipName": "TRANSWING_Hover_Cruise_Hover",
+      "time": 1,
+      "meshes": 283,
+      "maxBidirectionalVertexDeviation": 0.00004555174782726912
+    },
+    {
+      "clipName": "TRANSWING_Hover_Cruise_Hover",
+      "time": 2,
+      "meshes": 283,
+      "maxBidirectionalVertexDeviation": 0.000045551745373904205
+    },
+    {
+      "clipName": "TRANSWING_Hover_Cruise_Hover",
+      "time": 3.2916666666666665,
+      "meshes": 283,
+      "maxBidirectionalVertexDeviation": 0.000045551744912847367
+    },
+    {
+      "clipName": "TRANSWING_Hover_Cruise_Hover",
+      "time": 4.958333333333333,
+      "meshes": 283,
+      "maxBidirectionalVertexDeviation": 0.00004555174491282917
+    },
+    {
+      "clipName": "TRANSWING_Hover_Cruise_Hover",
+      "time": 6.1,
+      "meshes": 283,
+      "maxBidirectionalVertexDeviation": 0.000045551745049614456
+    },
+    {
+      "clipName": "TRANSWING_Hover_Cruise_Hover",
+      "time": 7.5,
+      "meshes": 283,
+      "maxBidirectionalVertexDeviation": 0.00004555174800278227
+    },
+    {
+      "clipName": "TRANSWING_Hover_Cruise_Hover",
+      "time": 8.291666666666666,
+      "meshes": 283,
+      "maxBidirectionalVertexDeviation": 0.00004555174491293723
+    },
+    {
+      "clipName": "TRANSWING_Motors_Start_Stop",
+      "time": 0,
+      "meshes": 283,
+      "maxBidirectionalVertexDeviation": 0.000045551744912815376
+    },
+    {
+      "clipName": "TRANSWING_Motors_Start_Stop",
+      "time": 0.5,
+      "meshes": 283,
+      "maxBidirectionalVertexDeviation": 0.000045551744912815376
+    },
+    {
+      "clipName": "TRANSWING_Motors_Start_Stop",
+      "time": 1,
+      "meshes": 283,
+      "maxBidirectionalVertexDeviation": 0.000045551744912815376
+    },
+    {
+      "clipName": "TRANSWING_Motors_Start_Stop",
+      "time": 1.5,
+      "meshes": 283,
+      "maxBidirectionalVertexDeviation": 0.000045551744912815376
+    },
+    {
+      "clipName": "TRANSWING_Motors_Start_Stop",
+      "time": 2.5,
+      "meshes": 283,
+      "maxBidirectionalVertexDeviation": 0.000045551744912815376
+    },
+    {
+      "clipName": "TRANSWING_Motors_Start_Stop",
+      "time": 4,
+      "meshes": 283,
+      "maxBidirectionalVertexDeviation": 0.000045551744912815376
+    },
+    {
+      "clipName": "TRANSWING_Motors_Start_Stop",
+      "time": 5,
+      "meshes": 283,
+      "maxBidirectionalVertexDeviation": 0.000045551744912815376
+    },
+    {
+      "clipName": "TRANSWING_Motors_Start_Stop",
+      "time": 5.5,
+      "meshes": 283,
+      "maxBidirectionalVertexDeviation": 0.000045551744912815376
+    },
+    {
+      "clipName": "TRANSWING_Motors_Start_Stop",
+      "time": 6.5,
+      "meshes": 283,
+      "maxBidirectionalVertexDeviation": 0.000045551744912815376
+    },
+    {
+      "clipName": "TRANSWING_Motors_Start_Stop",
+      "time": 7,
+      "meshes": 283,
+      "maxBidirectionalVertexDeviation": 0.000045551744912815376
+    }
+  ],
+  "limitations": "两个实际动作共18个采样；对照源与运行时双向世界顶点、近邻顶点法线及PBR材质，另检查重新导出字节一致。不替代连续干涉证明、浏览器检查或硬件性能测试。"
+}

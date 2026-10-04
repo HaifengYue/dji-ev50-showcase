@@ -1,0 +1,520 @@
+{
+  "passed": true,
+  "runtimeSha256": "313b014ec70b409175b34a08f66ec56820a51ea094085ce1eef96fc444ce4b2b",
+  "cycles": [
+    {
+      "cycle": 0,
+      "unfold": 0,
+      "exploded": true,
+      "restored": true
+    },
+    {
+      "cycle": 1,
+      "unfold": 0.125,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 2,
+      "unfold": 0.5,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 3,
+      "unfold": 0.875,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 4,
+      "unfold": 1,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 5,
+      "unfold": 0.25,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 6,
+      "unfold": 0,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 7,
+      "unfold": 0.125,
+      "exploded": true,
+      "restored": true
+    },
+    {
+      "cycle": 8,
+      "unfold": 0.5,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 9,
+      "unfold": 0.875,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 10,
+      "unfold": 1,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 11,
+      "unfold": 0.25,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 12,
+      "unfold": 0,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 13,
+      "unfold": 0.125,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 14,
+      "unfold": 0.5,
+      "exploded": true,
+      "restored": true
+    },
+    {
+      "cycle": 15,
+      "unfold": 0.875,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 16,
+      "unfold": 1,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 17,
+      "unfold": 0.25,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 18,
+      "unfold": 0,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 19,
+      "unfold": 0.125,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 20,
+      "unfold": 0.5,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 21,
+      "unfold": 0.875,
+      "exploded": true,
+      "restored": true
+    },
+    {
+      "cycle": 22,
+      "unfold": 1,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 23,
+      "unfold": 0.25,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 24,
+      "unfold": 0,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 25,
+      "unfold": 0.125,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 26,
+      "unfold": 0.5,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 27,
+      "unfold": 0.875,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 28,
+      "unfold": 1,
+      "exploded": true,
+      "restored": true
+    },
+    {
+      "cycle": 29,
+      "unfold": 0.25,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 30,
+      "unfold": 0,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 31,
+      "unfold": 0.125,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 32,
+      "unfold": 0.5,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 33,
+      "unfold": 0.875,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 34,
+      "unfold": 1,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 35,
+      "unfold": 0.25,
+      "exploded": true,
+      "restored": true
+    },
+    {
+      "cycle": 36,
+      "unfold": 0,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 37,
+      "unfold": 0.125,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 38,
+      "unfold": 0.5,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 39,
+      "unfold": 0.875,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 40,
+      "unfold": 1,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 41,
+      "unfold": 0.25,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 42,
+      "unfold": 0,
+      "exploded": true,
+      "restored": true
+    },
+    {
+      "cycle": 43,
+      "unfold": 0.125,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 44,
+      "unfold": 0.5,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 45,
+      "unfold": 0.875,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 46,
+      "unfold": 1,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 47,
+      "unfold": 0.25,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 48,
+      "unfold": 0,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 49,
+      "unfold": 0.125,
+      "exploded": true,
+      "restored": true
+    },
+    {
+      "cycle": 50,
+      "unfold": 0.5,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 51,
+      "unfold": 0.875,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 52,
+      "unfold": 1,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 53,
+      "unfold": 0.25,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 54,
+      "unfold": 0,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 55,
+      "unfold": 0.125,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 56,
+      "unfold": 0.5,
+      "exploded": true,
+      "restored": true
+    },
+    {
+      "cycle": 57,
+      "unfold": 0.875,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 58,
+      "unfold": 1,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 59,
+      "unfold": 0.25,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 60,
+      "unfold": 0,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 61,
+      "unfold": 0.125,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 62,
+      "unfold": 0.5,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 63,
+      "unfold": 0.875,
+      "exploded": true,
+      "restored": true
+    },
+    {
+      "cycle": 64,
+      "unfold": 1,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 65,
+      "unfold": 0.25,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 66,
+      "unfold": 0,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 67,
+      "unfold": 0.125,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 68,
+      "unfold": 0.5,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 69,
+      "unfold": 0.875,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 70,
+      "unfold": 1,
+      "exploded": true,
+      "restored": true
+    },
+    {
+      "cycle": 71,
+      "unfold": 0.25,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 72,
+      "unfold": 0,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 73,
+      "unfold": 0.125,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 74,
+      "unfold": 0.5,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 75,
+      "unfold": 0.875,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 76,
+      "unfold": 1,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 77,
+      "unfold": 0.25,
+      "exploded": true,
+      "restored": true
+    },
+    {
+      "cycle": 78,
+      "unfold": 0,
+      "exploded": false,
+      "restored": true
+    },
+    {
+      "cycle": 79,
+      "unfold": 0.125,
+      "exploded": false,
+      "restored": true
+    }
+  ],
+  "acceptedInspectionCode": {
+    "originalPath": "src/internalDriveInspection.ts",
+    "path": "src/internalDriveInspection.ts",
+    "sha256": "1a5fae23375a81475b43b9fe8d16bcce506a3b76663b1bba3ba9b288ad6f6a42",
+    "acceptedOriginalSha256": "1a5fae23375a81475b43b9fe8d16bcce506a3b76663b1bba3ba9b288ad6f6a42",
+    "exactReversiblePathMigration": true
+  },
+  "objectCount": 349,
+  "onlyHiddenNames": [
+    "Fuselage",
+    "ActuatorSideSlot_L",
+    "ActuatorSideSlot_R",
+    "Drive_ReductionHousing",
+    "Dorsal_hatch_main",
+    "Hatch_fastener_main",
+    "Hatch_fastener_main001",
+    "Hatch_fastener_main002",
+    "Hatch_fastener_main003",
+    "Tail_boom_join",
+    "Lower_fuselage_join",
+    "Lower_fuselage_join001",
+    "Lower_fuselage_join002",
+    "Lower_fuselage_join003",
+    "Dorsal_small_receiver",
+    "Tail_receiver"
+  ],
+  "materialAndGeometryIdentityPreserved": true,
+  "positionQuaternionScalePreserved": true,
+  "preexistingVisibilityRestored": true,
+  "disposeWhileActiveRestored": true,
+  "limitations": [
+    "Actual GLB/production Three.js lifecycle, repeat enter/leave and interrupted disposal; no WebGL/browser/React event dispatch or UI clicks",
+    "App mode routing and Python view ownership verified separately in source unit tests; these checks do not represent a browser end-to-end test"
+  ]
+}

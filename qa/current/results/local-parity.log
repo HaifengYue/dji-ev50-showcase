@@ -1,0 +1,4667 @@
+{
+  "passed": true,
+  "sources": [
+    {
+      "source": "assets/blender/xp4-source.glb",
+      "sha256": "14deba2a8cb20fb13c6cc05f8c4c09d441285b9754b014499942ad39992f7ce4"
+    },
+    {
+      "source": "public/models/xp4.glb",
+      "sha256": "313b014ec70b409175b34a08f66ec56820a51ea094085ce1eef96fc444ce4b2b"
+    }
+  ],
+  "linkageMeshCount": 161,
+  "driveRestTransforms": [
+    {
+      "name": "Drive_ScrewRotor",
+      "sourceQuaternion": [
+        0,
+        0,
+        0.0000036797719076275826,
+        1
+      ],
+      "runtimeQuaternion": [
+        0,
+        0,
+        0.0000036797719076275826,
+        1
+      ],
+      "exact": true
+    },
+    {
+      "name": "Drive_MotorRotor",
+      "sourceQuaternion": [
+        0,
+        0,
+        0.000011039315722882748,
+        1
+      ],
+      "runtimeQuaternion": [
+        0,
+        0,
+        0.000011039315722882748,
+        1
+      ],
+      "exact": true
+    },
+    {
+      "name": "Drive_PlanetRotor_0",
+      "sourceQuaternion": [
+        0,
+        0,
+        -0.00001471908763051033,
+        1
+      ],
+      "runtimeQuaternion": [
+        0,
+        0,
+        -0.00001471908763051033,
+        1
+      ],
+      "exact": true
+    },
+    {
+      "name": "Drive_PlanetRotor_1",
+      "sourceQuaternion": [
+        0,
+        0,
+        -0.00001471908763051033,
+        1
+      ],
+      "runtimeQuaternion": [
+        0,
+        0,
+        -0.00001471908763051033,
+        1
+      ],
+      "exact": true
+    },
+    {
+      "name": "Drive_PlanetRotor_2",
+      "sourceQuaternion": [
+        0,
+        0,
+        -0.00001471908763051033,
+        1
+      ],
+      "runtimeQuaternion": [
+        0,
+        0,
+        -0.00001471908763051033,
+        1
+      ],
+      "exact": true
+    }
+  ],
+  "poses": [
+    {
+      "unfold": 0,
+      "meshes": [
+        {
+          "name": "ActuatorSideSlot_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ActuatorSideSlot_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Blade_hinge_arm_L_Front_A",
+          "maxBidirectionalWorldVertexError": 0.0000013530452066648083
+        },
+        {
+          "name": "Blade_hinge_arm_L_Front_B",
+          "maxBidirectionalWorldVertexError": 0.0000013530452206184913
+        },
+        {
+          "name": "Blade_hinge_arm_L_Rear_A",
+          "maxBidirectionalWorldVertexError": 0.0000013530452067295178
+        },
+        {
+          "name": "Blade_hinge_arm_L_Rear_B",
+          "maxBidirectionalWorldVertexError": 0.0000013530452206184913
+        },
+        {
+          "name": "Blade_hinge_arm_R_Front_A",
+          "maxBidirectionalWorldVertexError": 0.0000013530448812938976
+        },
+        {
+          "name": "Blade_hinge_arm_R_Front_B",
+          "maxBidirectionalWorldVertexError": 0.0000013530448812938976
+        },
+        {
+          "name": "Blade_hinge_arm_R_Rear_A",
+          "maxBidirectionalWorldVertexError": 0.0000013886303989608698
+        },
+        {
+          "name": "Blade_hinge_arm_R_Rear_B",
+          "maxBidirectionalWorldVertexError": 0.0000013886303990286864
+        },
+        {
+          "name": "Blade_hinge_pin_L_Front_A",
+          "maxBidirectionalWorldVertexError": 9.511252802257765e-7
+        },
+        {
+          "name": "Blade_hinge_pin_L_Front_B",
+          "maxBidirectionalWorldVertexError": 9.511252802633621e-7
+        },
+        {
+          "name": "Blade_hinge_pin_L_Rear_A",
+          "maxBidirectionalWorldVertexError": 9.511252802633621e-7
+        },
+        {
+          "name": "Blade_hinge_pin_L_Rear_B",
+          "maxBidirectionalWorldVertexError": 9.511252802633621e-7
+        },
+        {
+          "name": "Blade_hinge_pin_R_Front_A",
+          "maxBidirectionalWorldVertexError": 9.511250262571002e-7
+        },
+        {
+          "name": "Blade_hinge_pin_R_Front_B",
+          "maxBidirectionalWorldVertexError": 9.511250262195144e-7
+        },
+        {
+          "name": "Blade_hinge_pin_R_Rear_A",
+          "maxBidirectionalWorldVertexError": 9.511250262571002e-7
+        },
+        {
+          "name": "Blade_hinge_pin_R_Rear_B",
+          "maxBidirectionalWorldVertexError": 9.511250261819288e-7
+        },
+        {
+          "name": "BraceBallPin_L_Body",
+          "maxBidirectionalWorldVertexError": 5.254049180566528e-7
+        },
+        {
+          "name": "BraceBallPin_L_Wing",
+          "maxBidirectionalWorldVertexError": 4.1164597973555344e-7
+        },
+        {
+          "name": "BraceBallPin_R_Body",
+          "maxBidirectionalWorldVertexError": 5.254049180459529e-7
+        },
+        {
+          "name": "BraceBallPin_R_Wing",
+          "maxBidirectionalWorldVertexError": 4.1164586931217416e-7
+        },
+        {
+          "name": "BraceBall_L_Body",
+          "maxBidirectionalWorldVertexError": 4.0781473480727716e-7
+        },
+        {
+          "name": "BraceBall_L_Wing",
+          "maxBidirectionalWorldVertexError": 4.0781484048739444e-7
+        },
+        {
+          "name": "BraceBall_R_Body",
+          "maxBidirectionalWorldVertexError": 4.0781473480727716e-7
+        },
+        {
+          "name": "BraceBall_R_Wing",
+          "maxBidirectionalWorldVertexError": 4.078147348085494e-7
+        },
+        {
+          "name": "BraceBodyCarriage_L",
+          "maxBidirectionalWorldVertexError": 5.4994205276344e-7
+        },
+        {
+          "name": "BraceBodyCarriage_R",
+          "maxBidirectionalWorldVertexError": 5.4994205276344e-7
+        },
+        {
+          "name": "BraceRodEyeNeck_L_Body",
+          "maxBidirectionalWorldVertexError": 2.751448508604502e-7
+        },
+        {
+          "name": "BraceRodEyeNeck_L_Root",
+          "maxBidirectionalWorldVertexError": 2.7628070231016657e-7
+        },
+        {
+          "name": "BraceRodEyeNeck_R_Body",
+          "maxBidirectionalWorldVertexError": 2.7514485087085054e-7
+        },
+        {
+          "name": "BraceRodEyeNeck_R_Root",
+          "maxBidirectionalWorldVertexError": 2.7628070239088664e-7
+        },
+        {
+          "name": "BraceRodEye_L_Body",
+          "maxBidirectionalWorldVertexError": 6.801156635121475e-7
+        },
+        {
+          "name": "BraceRodEye_L_Root",
+          "maxBidirectionalWorldVertexError": 7.053216406200396e-7
+        },
+        {
+          "name": "BraceRodEye_R_Body",
+          "maxBidirectionalWorldVertexError": 6.801156635023197e-7
+        },
+        {
+          "name": "BraceRodEye_R_Root",
+          "maxBidirectionalWorldVertexError": 7.053216405206547e-7
+        },
+        {
+          "name": "BraceRodFerrule_L_Body",
+          "maxBidirectionalWorldVertexError": 5.131324531442763e-7
+        },
+        {
+          "name": "BraceRodFerrule_L_Root",
+          "maxBidirectionalWorldVertexError": 5.102710966263424e-7
+        },
+        {
+          "name": "BraceRodFerrule_R_Body",
+          "maxBidirectionalWorldVertexError": 5.131324531385811e-7
+        },
+        {
+          "name": "BraceRodFerrule_R_Root",
+          "maxBidirectionalWorldVertexError": 5.102710966425103e-7
+        },
+        {
+          "name": "BraceRod_mesh_L",
+          "maxBidirectionalWorldVertexError": 0.000029401492980714822
+        },
+        {
+          "name": "BraceRod_mesh_R",
+          "maxBidirectionalWorldVertexError": 0.0000294014929807736
+        },
+        {
+          "name": "BraceWingSeat_L",
+          "maxBidirectionalWorldVertexError": 5.509849475881421e-7
+        },
+        {
+          "name": "BraceWingSeat_R",
+          "maxBidirectionalWorldVertexError": 5.341705809816368e-7
+        },
+        {
+          "name": "CargoHingeCap_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoHingeCap_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoHingeFixedSeat",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoHingeMovingSeat_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoHingeMovingSeat_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoHingePin",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoLatchFixed_L",
+          "maxBidirectionalWorldVertexError": 4.628324881006243e-7
+        },
+        {
+          "name": "CargoLatchFixed_R",
+          "maxBidirectionalWorldVertexError": 4.7657475207332533e-7
+        },
+        {
+          "name": "CargoLatchMoving_L",
+          "maxBidirectionalWorldVertexError": 6.077007774087798e-7
+        },
+        {
+          "name": "CargoLatchMoving_R",
+          "maxBidirectionalWorldVertexError": 5.729234209376326e-7
+        },
+        {
+          "name": "CargoLatchPin_L",
+          "maxBidirectionalWorldVertexError": 3.687113851022481e-7
+        },
+        {
+          "name": "CargoLatchPin_R",
+          "maxBidirectionalWorldVertexError": 3.6885587915155756e-7
+        },
+        {
+          "name": "ControlFlexureFixed_L_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureFixed_L_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureFixed_R_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureFixed_R_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureFixed_Tail_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureFixed_Tail_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_L_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_L_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_R_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_R_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_Tail_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_Tail_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_L_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_L_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_R_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_R_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_Tail_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_Tail_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_L_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_L_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_R_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_R_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_Tail_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_Tail_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHorn_L_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHorn_L_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHorn_R_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHorn_R_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Dorsal_antenna",
+          "maxBidirectionalWorldVertexError": 0.0000017474197192981832
+        },
+        {
+          "name": "Drive_CouplingWitness",
+          "maxBidirectionalWorldVertexError": 2.6376818110442927e-9
+        },
+        {
+          "name": "Drive_Crossbeam",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontFoot_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontFoot_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontGuidePedestal_L",
+          "maxBidirectionalWorldVertexError": 1.1295700899707568e-16
+        },
+        {
+          "name": "Drive_FrontGuidePedestal_R",
+          "maxBidirectionalWorldVertexError": 1.1295700899707568e-16
+        },
+        {
+          "name": "Drive_FrontGuideSeat_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontGuideSeat_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontScrewBearing",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontScrewPedestal",
+          "maxBidirectionalWorldVertexError": 1.148722306938917e-16
+        },
+        {
+          "name": "Drive_FrontSupport",
+          "maxBidirectionalWorldVertexError": 2.6488775828717528e-8
+        },
+        {
+          "name": "Drive_FrontTravelStop_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontTravelStop_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_GuideBridge_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_GuideBridge_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_GuideBushing_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_GuideBushing_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_GuideRail_L",
+          "maxBidirectionalWorldVertexError": 1.1292847621493234e-7
+        },
+        {
+          "name": "Drive_GuideRail_R",
+          "maxBidirectionalWorldVertexError": 1.1292847621493234e-7
+        },
+        {
+          "name": "Drive_LeadScrewCore",
+          "maxBidirectionalWorldVertexError": 1.342935715140956e-7
+        },
+        {
+          "name": "Drive_LeadScrewThread",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorFoot_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorFoot_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorGearboxAdapter",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorHousing",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorMount",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorRotorDisc",
+          "maxBidirectionalWorldVertexError": 8.302871480331224e-9
+        },
+        {
+          "name": "Drive_MotorSaddle_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorSaddle_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorShaft",
+          "maxBidirectionalWorldVertexError": 5.9425342775666305e-9
+        },
+        {
+          "name": "Drive_MotorWitness",
+          "maxBidirectionalWorldVertexError": 2.1626463145342952e-9
+        },
+        {
+          "name": "Drive_NutCarriage",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_NutInternalThread",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_OutputCoupling",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_OutputWeb",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetCarrier",
+          "maxBidirectionalWorldVertexError": 6.787175854220792e-9
+        },
+        {
+          "name": "Drive_PlanetGear_0",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetGear_1",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetGear_2",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetPin_0",
+          "maxBidirectionalWorldVertexError": 4.733432471657636e-9
+        },
+        {
+          "name": "Drive_PlanetPin_1",
+          "maxBidirectionalWorldVertexError": 4.733432471657632e-9
+        },
+        {
+          "name": "Drive_PlanetPin_2",
+          "maxBidirectionalWorldVertexError": 4.733432471657632e-9
+        },
+        {
+          "name": "Drive_PlanetRetainer_0_Front",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetRetainer_0_Rear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetRetainer_1_Front",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetRetainer_1_Rear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetRetainer_2_Front",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetRetainer_2_Rear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearFoot_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearFoot_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearGuidePedestal_L",
+          "maxBidirectionalWorldVertexError": 2.2215299868541707e-16
+        },
+        {
+          "name": "Drive_RearGuidePedestal_R",
+          "maxBidirectionalWorldVertexError": 2.2215299868541707e-16
+        },
+        {
+          "name": "Drive_RearGuideSeat_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearGuideSeat_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearScrewBearing",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearScrewPedestal",
+          "maxBidirectionalWorldVertexError": 2.231868554647719e-16
+        },
+        {
+          "name": "Drive_RearSupport",
+          "maxBidirectionalWorldVertexError": 2.6488775828717528e-8
+        },
+        {
+          "name": "Drive_RearTravelStop_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearTravelStop_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_ReductionHousing",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RingGear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_SunGear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Landing_wear_tip_L_Front",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Landing_wear_tip_L_Rear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Landing_wear_tip_R_Front",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Landing_wear_tip_R_Rear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Pod_wing_saddle_L_Front",
+          "maxBidirectionalWorldVertexError": 0.000004926478100106558
+        },
+        {
+          "name": "Pod_wing_saddle_L_Rear",
+          "maxBidirectionalWorldVertexError": 0.000004908547807875004
+        },
+        {
+          "name": "Pod_wing_saddle_R_Front",
+          "maxBidirectionalWorldVertexError": 0.000004958786556149614
+        },
+        {
+          "name": "Pod_wing_saddle_R_Rear",
+          "maxBidirectionalWorldVertexError": 0.000004958786556149614
+        },
+        {
+          "name": "RootBearingHousing_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "RootBearingHousing_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "RootFairingFixed_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "RootFairingFixed_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "RootFairingMoving_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "RootFairingMoving_R",
+          "maxBidirectionalWorldVertexError": 0
+        }
+      ],
+      "maxBidirectionalWorldVertexError": 0.0000294014929807736
+    },
+    {
+      "unfold": 0.125,
+      "meshes": [
+        {
+          "name": "ActuatorSideSlot_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ActuatorSideSlot_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Blade_hinge_arm_L_Front_A",
+          "maxBidirectionalWorldVertexError": 0.0000013530451542949177
+        },
+        {
+          "name": "Blade_hinge_arm_L_Front_B",
+          "maxBidirectionalWorldVertexError": 0.0000013530451659660394
+        },
+        {
+          "name": "Blade_hinge_arm_L_Rear_A",
+          "maxBidirectionalWorldVertexError": 0.0000013530451542100238
+        },
+        {
+          "name": "Blade_hinge_arm_L_Rear_B",
+          "maxBidirectionalWorldVertexError": 0.0000013530451660335668
+        },
+        {
+          "name": "Blade_hinge_arm_R_Front_A",
+          "maxBidirectionalWorldVertexError": 0.0000013530448813401933
+        },
+        {
+          "name": "Blade_hinge_arm_R_Front_B",
+          "maxBidirectionalWorldVertexError": 0.0000013530448813061013
+        },
+        {
+          "name": "Blade_hinge_arm_R_Rear_A",
+          "maxBidirectionalWorldVertexError": 0.0000013886303990624242
+        },
+        {
+          "name": "Blade_hinge_arm_R_Rear_B",
+          "maxBidirectionalWorldVertexError": 0.0000013886303989456251
+        },
+        {
+          "name": "Blade_hinge_pin_L_Front_A",
+          "maxBidirectionalWorldVertexError": 9.511252391940135e-7
+        },
+        {
+          "name": "Blade_hinge_pin_L_Front_B",
+          "maxBidirectionalWorldVertexError": 9.511252391940135e-7
+        },
+        {
+          "name": "Blade_hinge_pin_L_Rear_A",
+          "maxBidirectionalWorldVertexError": 9.511252391358059e-7
+        },
+        {
+          "name": "Blade_hinge_pin_L_Rear_B",
+          "maxBidirectionalWorldVertexError": 9.511252391940135e-7
+        },
+        {
+          "name": "Blade_hinge_pin_R_Front_A",
+          "maxBidirectionalWorldVertexError": 9.51125026210051e-7
+        },
+        {
+          "name": "Blade_hinge_pin_R_Front_B",
+          "maxBidirectionalWorldVertexError": 9.51125026210051e-7
+        },
+        {
+          "name": "Blade_hinge_pin_R_Rear_A",
+          "maxBidirectionalWorldVertexError": 9.51125026210051e-7
+        },
+        {
+          "name": "Blade_hinge_pin_R_Rear_B",
+          "maxBidirectionalWorldVertexError": 9.511250261891884e-7
+        },
+        {
+          "name": "BraceBallPin_L_Body",
+          "maxBidirectionalWorldVertexError": 5.254049180881731e-7
+        },
+        {
+          "name": "BraceBallPin_L_Wing",
+          "maxBidirectionalWorldVertexError": 4.1164596201988037e-7
+        },
+        {
+          "name": "BraceBallPin_R_Body",
+          "maxBidirectionalWorldVertexError": 5.254049180774733e-7
+        },
+        {
+          "name": "BraceBallPin_R_Wing",
+          "maxBidirectionalWorldVertexError": 4.116458694028461e-7
+        },
+        {
+          "name": "BraceBall_L_Body",
+          "maxBidirectionalWorldVertexError": 4.0781473480727716e-7
+        },
+        {
+          "name": "BraceBall_L_Wing",
+          "maxBidirectionalWorldVertexError": 4.0781482345737547e-7
+        },
+        {
+          "name": "BraceBall_R_Body",
+          "maxBidirectionalWorldVertexError": 4.0781473480727716e-7
+        },
+        {
+          "name": "BraceBall_R_Wing",
+          "maxBidirectionalWorldVertexError": 4.078147345177206e-7
+        },
+        {
+          "name": "BraceBodyCarriage_L",
+          "maxBidirectionalWorldVertexError": 5.499420526904719e-7
+        },
+        {
+          "name": "BraceBodyCarriage_R",
+          "maxBidirectionalWorldVertexError": 5.499420526904719e-7
+        },
+        {
+          "name": "BraceRodEyeNeck_L_Body",
+          "maxBidirectionalWorldVertexError": 2.751448508348783e-7
+        },
+        {
+          "name": "BraceRodEyeNeck_L_Root",
+          "maxBidirectionalWorldVertexError": 2.762807023567159e-7
+        },
+        {
+          "name": "BraceRodEyeNeck_R_Body",
+          "maxBidirectionalWorldVertexError": 2.751448508788209e-7
+        },
+        {
+          "name": "BraceRodEyeNeck_R_Root",
+          "maxBidirectionalWorldVertexError": 2.7628070232910876e-7
+        },
+        {
+          "name": "BraceRodEye_L_Body",
+          "maxBidirectionalWorldVertexError": 6.801156635322582e-7
+        },
+        {
+          "name": "BraceRodEye_L_Root",
+          "maxBidirectionalWorldVertexError": 7.053216410440416e-7
+        },
+        {
+          "name": "BraceRodEye_R_Body",
+          "maxBidirectionalWorldVertexError": 6.801156636133173e-7
+        },
+        {
+          "name": "BraceRodEye_R_Root",
+          "maxBidirectionalWorldVertexError": 7.053216407067432e-7
+        },
+        {
+          "name": "BraceRodFerrule_L_Body",
+          "maxBidirectionalWorldVertexError": 5.131324531527387e-7
+        },
+        {
+          "name": "BraceRodFerrule_L_Root",
+          "maxBidirectionalWorldVertexError": 5.102710966465868e-7
+        },
+        {
+          "name": "BraceRodFerrule_R_Body",
+          "maxBidirectionalWorldVertexError": 5.131324531595361e-7
+        },
+        {
+          "name": "BraceRodFerrule_R_Root",
+          "maxBidirectionalWorldVertexError": 5.102710966784518e-7
+        },
+        {
+          "name": "BraceRod_mesh_L",
+          "maxBidirectionalWorldVertexError": 0.000029401492980605067
+        },
+        {
+          "name": "BraceRod_mesh_R",
+          "maxBidirectionalWorldVertexError": 0.000029401492980705373
+        },
+        {
+          "name": "BraceWingSeat_L",
+          "maxBidirectionalWorldVertexError": 5.509849248561327e-7
+        },
+        {
+          "name": "BraceWingSeat_R",
+          "maxBidirectionalWorldVertexError": 5.341705810038569e-7
+        },
+        {
+          "name": "CargoHingeCap_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoHingeCap_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoHingeFixedSeat",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoHingeMovingSeat_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoHingeMovingSeat_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoHingePin",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoLatchFixed_L",
+          "maxBidirectionalWorldVertexError": 4.628324881006243e-7
+        },
+        {
+          "name": "CargoLatchFixed_R",
+          "maxBidirectionalWorldVertexError": 4.7657475207332533e-7
+        },
+        {
+          "name": "CargoLatchMoving_L",
+          "maxBidirectionalWorldVertexError": 6.077007774087798e-7
+        },
+        {
+          "name": "CargoLatchMoving_R",
+          "maxBidirectionalWorldVertexError": 5.729234209376326e-7
+        },
+        {
+          "name": "CargoLatchPin_L",
+          "maxBidirectionalWorldVertexError": 3.687113851022481e-7
+        },
+        {
+          "name": "CargoLatchPin_R",
+          "maxBidirectionalWorldVertexError": 3.6885587915155756e-7
+        },
+        {
+          "name": "ControlFlexureFixed_L_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureFixed_L_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureFixed_R_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureFixed_R_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureFixed_Tail_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureFixed_Tail_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_L_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_L_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_R_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_R_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_Tail_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_Tail_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_L_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_L_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_R_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_R_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_Tail_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_Tail_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_L_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_L_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_R_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_R_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_Tail_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_Tail_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHorn_L_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHorn_L_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHorn_R_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHorn_R_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Dorsal_antenna",
+          "maxBidirectionalWorldVertexError": 0.0000017474197192981832
+        },
+        {
+          "name": "Drive_CouplingWitness",
+          "maxBidirectionalWorldVertexError": 2.6376818092337217e-9
+        },
+        {
+          "name": "Drive_Crossbeam",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontFoot_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontFoot_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontGuidePedestal_L",
+          "maxBidirectionalWorldVertexError": 1.1295700899707568e-16
+        },
+        {
+          "name": "Drive_FrontGuidePedestal_R",
+          "maxBidirectionalWorldVertexError": 1.1295700899707568e-16
+        },
+        {
+          "name": "Drive_FrontGuideSeat_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontGuideSeat_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontScrewBearing",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontScrewPedestal",
+          "maxBidirectionalWorldVertexError": 1.148722306938917e-16
+        },
+        {
+          "name": "Drive_FrontSupport",
+          "maxBidirectionalWorldVertexError": 2.6488775828717528e-8
+        },
+        {
+          "name": "Drive_FrontTravelStop_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontTravelStop_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_GuideBridge_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_GuideBridge_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_GuideBushing_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_GuideBushing_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_GuideRail_L",
+          "maxBidirectionalWorldVertexError": 1.1292847621493234e-7
+        },
+        {
+          "name": "Drive_GuideRail_R",
+          "maxBidirectionalWorldVertexError": 1.1292847621493234e-7
+        },
+        {
+          "name": "Drive_LeadScrewCore",
+          "maxBidirectionalWorldVertexError": 1.342935715093557e-7
+        },
+        {
+          "name": "Drive_LeadScrewThread",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorFoot_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorFoot_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorGearboxAdapter",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorHousing",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorMount",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorRotorDisc",
+          "maxBidirectionalWorldVertexError": 8.302871481457663e-9
+        },
+        {
+          "name": "Drive_MotorSaddle_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorSaddle_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorShaft",
+          "maxBidirectionalWorldVertexError": 5.942534268798546e-9
+        },
+        {
+          "name": "Drive_MotorWitness",
+          "maxBidirectionalWorldVertexError": 2.1626463157193113e-9
+        },
+        {
+          "name": "Drive_NutCarriage",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_NutInternalThread",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_OutputCoupling",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_OutputWeb",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetCarrier",
+          "maxBidirectionalWorldVertexError": 6.787175862029578e-9
+        },
+        {
+          "name": "Drive_PlanetGear_0",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetGear_1",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetGear_2",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetPin_0",
+          "maxBidirectionalWorldVertexError": 4.733432468014504e-9
+        },
+        {
+          "name": "Drive_PlanetPin_1",
+          "maxBidirectionalWorldVertexError": 4.733432468448834e-9
+        },
+        {
+          "name": "Drive_PlanetPin_2",
+          "maxBidirectionalWorldVertexError": 4.733432468883163e-9
+        },
+        {
+          "name": "Drive_PlanetRetainer_0_Front",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetRetainer_0_Rear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetRetainer_1_Front",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetRetainer_1_Rear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetRetainer_2_Front",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetRetainer_2_Rear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearFoot_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearFoot_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearGuidePedestal_L",
+          "maxBidirectionalWorldVertexError": 2.2215299868541707e-16
+        },
+        {
+          "name": "Drive_RearGuidePedestal_R",
+          "maxBidirectionalWorldVertexError": 2.2215299868541707e-16
+        },
+        {
+          "name": "Drive_RearGuideSeat_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearGuideSeat_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearScrewBearing",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearScrewPedestal",
+          "maxBidirectionalWorldVertexError": 2.231868554647719e-16
+        },
+        {
+          "name": "Drive_RearSupport",
+          "maxBidirectionalWorldVertexError": 2.6488775828717528e-8
+        },
+        {
+          "name": "Drive_RearTravelStop_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearTravelStop_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_ReductionHousing",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RingGear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_SunGear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Landing_wear_tip_L_Front",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Landing_wear_tip_L_Rear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Landing_wear_tip_R_Front",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Landing_wear_tip_R_Rear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Pod_wing_saddle_L_Front",
+          "maxBidirectionalWorldVertexError": 0.0000049264779642291235
+        },
+        {
+          "name": "Pod_wing_saddle_L_Rear",
+          "maxBidirectionalWorldVertexError": 0.000004908547674831924
+        },
+        {
+          "name": "Pod_wing_saddle_R_Front",
+          "maxBidirectionalWorldVertexError": 0.0000049587865561373835
+        },
+        {
+          "name": "Pod_wing_saddle_R_Rear",
+          "maxBidirectionalWorldVertexError": 0.000004958786556053077
+        },
+        {
+          "name": "RootBearingHousing_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "RootBearingHousing_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "RootFairingFixed_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "RootFairingFixed_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "RootFairingMoving_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "RootFairingMoving_R",
+          "maxBidirectionalWorldVertexError": 0
+        }
+      ],
+      "maxBidirectionalWorldVertexError": 0.000029401492980705373
+    },
+    {
+      "unfold": 0.25,
+      "meshes": [
+        {
+          "name": "ActuatorSideSlot_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ActuatorSideSlot_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Blade_hinge_arm_L_Front_A",
+          "maxBidirectionalWorldVertexError": 0.000001353045097982281
+        },
+        {
+          "name": "Blade_hinge_arm_L_Front_B",
+          "maxBidirectionalWorldVertexError": 0.0000013530451076609072
+        },
+        {
+          "name": "Blade_hinge_arm_L_Rear_A",
+          "maxBidirectionalWorldVertexError": 0.000001353045097982281
+        },
+        {
+          "name": "Blade_hinge_arm_L_Rear_B",
+          "maxBidirectionalWorldVertexError": 0.000001353045107405175
+        },
+        {
+          "name": "Blade_hinge_arm_R_Front_A",
+          "maxBidirectionalWorldVertexError": 0.0000013530448812304587
+        },
+        {
+          "name": "Blade_hinge_arm_R_Front_B",
+          "maxBidirectionalWorldVertexError": 0.0000013530448812737099
+        },
+        {
+          "name": "Blade_hinge_arm_R_Rear_A",
+          "maxBidirectionalWorldVertexError": 0.0000013886303993257612
+        },
+        {
+          "name": "Blade_hinge_arm_R_Rear_B",
+          "maxBidirectionalWorldVertexError": 0.0000013886303990530831
+        },
+        {
+          "name": "Blade_hinge_pin_L_Front_A",
+          "maxBidirectionalWorldVertexError": 9.511251954822215e-7
+        },
+        {
+          "name": "Blade_hinge_pin_L_Front_B",
+          "maxBidirectionalWorldVertexError": 9.511251956525123e-7
+        },
+        {
+          "name": "Blade_hinge_pin_L_Rear_A",
+          "maxBidirectionalWorldVertexError": 9.511251953611497e-7
+        },
+        {
+          "name": "Blade_hinge_pin_L_Rear_B",
+          "maxBidirectionalWorldVertexError": 9.511251955502263e-7
+        },
+        {
+          "name": "Blade_hinge_pin_R_Front_A",
+          "maxBidirectionalWorldVertexError": 9.511250262158484e-7
+        },
+        {
+          "name": "Blade_hinge_pin_R_Front_B",
+          "maxBidirectionalWorldVertexError": 9.511250263151915e-7
+        },
+        {
+          "name": "Blade_hinge_pin_R_Rear_A",
+          "maxBidirectionalWorldVertexError": 9.511250264122493e-7
+        },
+        {
+          "name": "Blade_hinge_pin_R_Rear_B",
+          "maxBidirectionalWorldVertexError": 9.511250264122493e-7
+        },
+        {
+          "name": "BraceBallPin_L_Body",
+          "maxBidirectionalWorldVertexError": 5.254049180881731e-7
+        },
+        {
+          "name": "BraceBallPin_L_Wing",
+          "maxBidirectionalWorldVertexError": 4.116459427276787e-7
+        },
+        {
+          "name": "BraceBallPin_R_Body",
+          "maxBidirectionalWorldVertexError": 5.254049180774733e-7
+        },
+        {
+          "name": "BraceBallPin_R_Wing",
+          "maxBidirectionalWorldVertexError": 4.116458694272027e-7
+        },
+        {
+          "name": "BraceBall_L_Body",
+          "maxBidirectionalWorldVertexError": 4.0781473480727716e-7
+        },
+        {
+          "name": "BraceBall_L_Wing",
+          "maxBidirectionalWorldVertexError": 4.078148055425362e-7
+        },
+        {
+          "name": "BraceBall_R_Body",
+          "maxBidirectionalWorldVertexError": 4.0781473480727716e-7
+        },
+        {
+          "name": "BraceBall_R_Wing",
+          "maxBidirectionalWorldVertexError": 4.078147347618919e-7
+        },
+        {
+          "name": "BraceBodyCarriage_L",
+          "maxBidirectionalWorldVertexError": 5.499420526904719e-7
+        },
+        {
+          "name": "BraceBodyCarriage_R",
+          "maxBidirectionalWorldVertexError": 5.499420526904719e-7
+        },
+        {
+          "name": "BraceRodEyeNeck_L_Body",
+          "maxBidirectionalWorldVertexError": 2.7514485093710016e-7
+        },
+        {
+          "name": "BraceRodEyeNeck_L_Root",
+          "maxBidirectionalWorldVertexError": 2.7628070234712415e-7
+        },
+        {
+          "name": "BraceRodEyeNeck_R_Body",
+          "maxBidirectionalWorldVertexError": 2.751448508464669e-7
+        },
+        {
+          "name": "BraceRodEyeNeck_R_Root",
+          "maxBidirectionalWorldVertexError": 2.7628070226117466e-7
+        },
+        {
+          "name": "BraceRodEye_L_Body",
+          "maxBidirectionalWorldVertexError": 6.801156636074944e-7
+        },
+        {
+          "name": "BraceRodEye_L_Root",
+          "maxBidirectionalWorldVertexError": 7.053216407545687e-7
+        },
+        {
+          "name": "BraceRodEye_R_Body",
+          "maxBidirectionalWorldVertexError": 6.80115663513641e-7
+        },
+        {
+          "name": "BraceRodEye_R_Root",
+          "maxBidirectionalWorldVertexError": 7.05321640796785e-7
+        },
+        {
+          "name": "BraceRodFerrule_L_Body",
+          "maxBidirectionalWorldVertexError": 5.131324531783045e-7
+        },
+        {
+          "name": "BraceRodFerrule_L_Root",
+          "maxBidirectionalWorldVertexError": 5.102710966911162e-7
+        },
+        {
+          "name": "BraceRodFerrule_R_Body",
+          "maxBidirectionalWorldVertexError": 5.131324531904308e-7
+        },
+        {
+          "name": "BraceRodFerrule_R_Root",
+          "maxBidirectionalWorldVertexError": 5.102710966626943e-7
+        },
+        {
+          "name": "BraceRod_mesh_L",
+          "maxBidirectionalWorldVertexError": 0.000029401492980732884
+        },
+        {
+          "name": "BraceRod_mesh_R",
+          "maxBidirectionalWorldVertexError": 0.00002940149298074155
+        },
+        {
+          "name": "BraceWingSeat_L",
+          "maxBidirectionalWorldVertexError": 5.509849003680689e-7
+        },
+        {
+          "name": "BraceWingSeat_R",
+          "maxBidirectionalWorldVertexError": 5.34170581068185e-7
+        },
+        {
+          "name": "CargoHingeCap_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoHingeCap_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoHingeFixedSeat",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoHingeMovingSeat_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoHingeMovingSeat_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoHingePin",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoLatchFixed_L",
+          "maxBidirectionalWorldVertexError": 4.628324881006243e-7
+        },
+        {
+          "name": "CargoLatchFixed_R",
+          "maxBidirectionalWorldVertexError": 4.7657475207332533e-7
+        },
+        {
+          "name": "CargoLatchMoving_L",
+          "maxBidirectionalWorldVertexError": 6.077007774087798e-7
+        },
+        {
+          "name": "CargoLatchMoving_R",
+          "maxBidirectionalWorldVertexError": 5.729234209376326e-7
+        },
+        {
+          "name": "CargoLatchPin_L",
+          "maxBidirectionalWorldVertexError": 3.687113851022481e-7
+        },
+        {
+          "name": "CargoLatchPin_R",
+          "maxBidirectionalWorldVertexError": 3.6885587915155756e-7
+        },
+        {
+          "name": "ControlFlexureFixed_L_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureFixed_L_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureFixed_R_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureFixed_R_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureFixed_Tail_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureFixed_Tail_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_L_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_L_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_R_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_R_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_Tail_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_Tail_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_L_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_L_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_R_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_R_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_Tail_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_Tail_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_L_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_L_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_R_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_R_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_Tail_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_Tail_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHorn_L_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHorn_L_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHorn_R_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHorn_R_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Dorsal_antenna",
+          "maxBidirectionalWorldVertexError": 0.0000017474197192981832
+        },
+        {
+          "name": "Drive_CouplingWitness",
+          "maxBidirectionalWorldVertexError": 2.637681801685479e-9
+        },
+        {
+          "name": "Drive_Crossbeam",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontFoot_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontFoot_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontGuidePedestal_L",
+          "maxBidirectionalWorldVertexError": 1.1295700899707568e-16
+        },
+        {
+          "name": "Drive_FrontGuidePedestal_R",
+          "maxBidirectionalWorldVertexError": 1.1295700899707568e-16
+        },
+        {
+          "name": "Drive_FrontGuideSeat_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontGuideSeat_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontScrewBearing",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontScrewPedestal",
+          "maxBidirectionalWorldVertexError": 1.148722306938917e-16
+        },
+        {
+          "name": "Drive_FrontSupport",
+          "maxBidirectionalWorldVertexError": 2.6488775828717528e-8
+        },
+        {
+          "name": "Drive_FrontTravelStop_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontTravelStop_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_GuideBridge_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_GuideBridge_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_GuideBushing_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_GuideBushing_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_GuideRail_L",
+          "maxBidirectionalWorldVertexError": 1.1292847621493234e-7
+        },
+        {
+          "name": "Drive_GuideRail_R",
+          "maxBidirectionalWorldVertexError": 1.1292847621493234e-7
+        },
+        {
+          "name": "Drive_LeadScrewCore",
+          "maxBidirectionalWorldVertexError": 1.3429357151098303e-7
+        },
+        {
+          "name": "Drive_LeadScrewThread",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorFoot_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorFoot_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorGearboxAdapter",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorHousing",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorMount",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorRotorDisc",
+          "maxBidirectionalWorldVertexError": 8.30287148021246e-9
+        },
+        {
+          "name": "Drive_MotorSaddle_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorSaddle_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorShaft",
+          "maxBidirectionalWorldVertexError": 5.9425342721823936e-9
+        },
+        {
+          "name": "Drive_MotorWitness",
+          "maxBidirectionalWorldVertexError": 2.1626463161378787e-9
+        },
+        {
+          "name": "Drive_NutCarriage",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_NutInternalThread",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_OutputCoupling",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_OutputWeb",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetCarrier",
+          "maxBidirectionalWorldVertexError": 6.787175861190175e-9
+        },
+        {
+          "name": "Drive_PlanetGear_0",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetGear_1",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetGear_2",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetPin_0",
+          "maxBidirectionalWorldVertexError": 4.733432470491771e-9
+        },
+        {
+          "name": "Drive_PlanetPin_1",
+          "maxBidirectionalWorldVertexError": 4.733432466354193e-9
+        },
+        {
+          "name": "Drive_PlanetPin_2",
+          "maxBidirectionalWorldVertexError": 4.733432470491771e-9
+        },
+        {
+          "name": "Drive_PlanetRetainer_0_Front",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetRetainer_0_Rear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetRetainer_1_Front",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetRetainer_1_Rear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetRetainer_2_Front",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetRetainer_2_Rear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearFoot_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearFoot_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearGuidePedestal_L",
+          "maxBidirectionalWorldVertexError": 2.2215299868541707e-16
+        },
+        {
+          "name": "Drive_RearGuidePedestal_R",
+          "maxBidirectionalWorldVertexError": 2.2215299868541707e-16
+        },
+        {
+          "name": "Drive_RearGuideSeat_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearGuideSeat_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearScrewBearing",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearScrewPedestal",
+          "maxBidirectionalWorldVertexError": 2.231868554647719e-16
+        },
+        {
+          "name": "Drive_RearSupport",
+          "maxBidirectionalWorldVertexError": 2.6488775828717528e-8
+        },
+        {
+          "name": "Drive_RearTravelStop_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearTravelStop_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_ReductionHousing",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RingGear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_SunGear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Landing_wear_tip_L_Front",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Landing_wear_tip_L_Rear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Landing_wear_tip_R_Front",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Landing_wear_tip_R_Rear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Pod_wing_saddle_L_Front",
+          "maxBidirectionalWorldVertexError": 0.000004926477818378762
+        },
+        {
+          "name": "Pod_wing_saddle_L_Rear",
+          "maxBidirectionalWorldVertexError": 0.000004908547532002091
+        },
+        {
+          "name": "Pod_wing_saddle_R_Front",
+          "maxBidirectionalWorldVertexError": 0.0000049587865560685095
+        },
+        {
+          "name": "Pod_wing_saddle_R_Rear",
+          "maxBidirectionalWorldVertexError": 0.000004958786556045056
+        },
+        {
+          "name": "RootBearingHousing_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "RootBearingHousing_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "RootFairingFixed_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "RootFairingFixed_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "RootFairingMoving_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "RootFairingMoving_R",
+          "maxBidirectionalWorldVertexError": 0
+        }
+      ],
+      "maxBidirectionalWorldVertexError": 0.00002940149298074155
+    },
+    {
+      "unfold": 0.5,
+      "meshes": [
+        {
+          "name": "ActuatorSideSlot_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ActuatorSideSlot_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Blade_hinge_arm_L_Front_A",
+          "maxBidirectionalWorldVertexError": 0.0000013530449896983596
+        },
+        {
+          "name": "Blade_hinge_arm_L_Front_B",
+          "maxBidirectionalWorldVertexError": 0.0000013530449943749757
+        },
+        {
+          "name": "Blade_hinge_arm_L_Rear_A",
+          "maxBidirectionalWorldVertexError": 0.0000013530449896684238
+        },
+        {
+          "name": "Blade_hinge_arm_L_Rear_B",
+          "maxBidirectionalWorldVertexError": 0.0000013530449943428776
+        },
+        {
+          "name": "Blade_hinge_arm_R_Front_A",
+          "maxBidirectionalWorldVertexError": 0.000001353044881501001
+        },
+        {
+          "name": "Blade_hinge_arm_R_Front_B",
+          "maxBidirectionalWorldVertexError": 0.0000013530448812526365
+        },
+        {
+          "name": "Blade_hinge_arm_R_Rear_A",
+          "maxBidirectionalWorldVertexError": 0.0000013886303988930532
+        },
+        {
+          "name": "Blade_hinge_arm_R_Rear_B",
+          "maxBidirectionalWorldVertexError": 0.0000013886303989415716
+        },
+        {
+          "name": "Blade_hinge_pin_L_Front_A",
+          "maxBidirectionalWorldVertexError": 9.511251110669731e-7
+        },
+        {
+          "name": "Blade_hinge_pin_L_Front_B",
+          "maxBidirectionalWorldVertexError": 9.511251110490975e-7
+        },
+        {
+          "name": "Blade_hinge_pin_L_Rear_A",
+          "maxBidirectionalWorldVertexError": 9.511251109959743e-7
+        },
+        {
+          "name": "Blade_hinge_pin_L_Rear_B",
+          "maxBidirectionalWorldVertexError": 9.511251109915053e-7
+        },
+        {
+          "name": "Blade_hinge_pin_R_Front_A",
+          "maxBidirectionalWorldVertexError": 9.511250262571427e-7
+        },
+        {
+          "name": "Blade_hinge_pin_R_Front_B",
+          "maxBidirectionalWorldVertexError": 9.511250262571427e-7
+        },
+        {
+          "name": "Blade_hinge_pin_R_Rear_A",
+          "maxBidirectionalWorldVertexError": 9.511250261905703e-7
+        },
+        {
+          "name": "Blade_hinge_pin_R_Rear_B",
+          "maxBidirectionalWorldVertexError": 9.511250261861439e-7
+        },
+        {
+          "name": "BraceBallPin_L_Body",
+          "maxBidirectionalWorldVertexError": 5.254049180881731e-7
+        },
+        {
+          "name": "BraceBallPin_L_Wing",
+          "maxBidirectionalWorldVertexError": 4.1164590614175693e-7
+        },
+        {
+          "name": "BraceBallPin_R_Body",
+          "maxBidirectionalWorldVertexError": 5.254049180774733e-7
+        },
+        {
+          "name": "BraceBallPin_R_Wing",
+          "maxBidirectionalWorldVertexError": 4.1164586942264446e-7
+        },
+        {
+          "name": "BraceBall_L_Body",
+          "maxBidirectionalWorldVertexError": 4.0781473480727716e-7
+        },
+        {
+          "name": "BraceBall_L_Wing",
+          "maxBidirectionalWorldVertexError": 4.0781477016822507e-7
+        },
+        {
+          "name": "BraceBall_R_Body",
+          "maxBidirectionalWorldVertexError": 4.0781473480727716e-7
+        },
+        {
+          "name": "BraceBall_R_Wing",
+          "maxBidirectionalWorldVertexError": 4.0781473480869546e-7
+        },
+        {
+          "name": "BraceBodyCarriage_L",
+          "maxBidirectionalWorldVertexError": 5.499420526904719e-7
+        },
+        {
+          "name": "BraceBodyCarriage_R",
+          "maxBidirectionalWorldVertexError": 5.499420526904719e-7
+        },
+        {
+          "name": "BraceRodEyeNeck_L_Body",
+          "maxBidirectionalWorldVertexError": 2.7514485083756977e-7
+        },
+        {
+          "name": "BraceRodEyeNeck_L_Root",
+          "maxBidirectionalWorldVertexError": 2.762807023220417e-7
+        },
+        {
+          "name": "BraceRodEyeNeck_R_Body",
+          "maxBidirectionalWorldVertexError": 2.7514485090319656e-7
+        },
+        {
+          "name": "BraceRodEyeNeck_R_Root",
+          "maxBidirectionalWorldVertexError": 2.762807023513973e-7
+        },
+        {
+          "name": "BraceRodEye_L_Body",
+          "maxBidirectionalWorldVertexError": 6.801156636311305e-7
+        },
+        {
+          "name": "BraceRodEye_L_Root",
+          "maxBidirectionalWorldVertexError": 7.053216407385106e-7
+        },
+        {
+          "name": "BraceRodEye_R_Body",
+          "maxBidirectionalWorldVertexError": 6.801156635105087e-7
+        },
+        {
+          "name": "BraceRodEye_R_Root",
+          "maxBidirectionalWorldVertexError": 7.053216407679296e-7
+        },
+        {
+          "name": "BraceRodFerrule_L_Body",
+          "maxBidirectionalWorldVertexError": 5.131324531661279e-7
+        },
+        {
+          "name": "BraceRodFerrule_L_Root",
+          "maxBidirectionalWorldVertexError": 5.102710966104511e-7
+        },
+        {
+          "name": "BraceRodFerrule_R_Body",
+          "maxBidirectionalWorldVertexError": 5.131324531608815e-7
+        },
+        {
+          "name": "BraceRodFerrule_R_Root",
+          "maxBidirectionalWorldVertexError": 5.102710966524938e-7
+        },
+        {
+          "name": "BraceRod_mesh_L",
+          "maxBidirectionalWorldVertexError": 0.00002940149298069347
+        },
+        {
+          "name": "BraceRod_mesh_R",
+          "maxBidirectionalWorldVertexError": 0.000029401492980800562
+        },
+        {
+          "name": "BraceWingSeat_L",
+          "maxBidirectionalWorldVertexError": 5.509848534710824e-7
+        },
+        {
+          "name": "BraceWingSeat_R",
+          "maxBidirectionalWorldVertexError": 5.341705809424125e-7
+        },
+        {
+          "name": "CargoHingeCap_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoHingeCap_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoHingeFixedSeat",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoHingeMovingSeat_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoHingeMovingSeat_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoHingePin",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoLatchFixed_L",
+          "maxBidirectionalWorldVertexError": 4.628324881006243e-7
+        },
+        {
+          "name": "CargoLatchFixed_R",
+          "maxBidirectionalWorldVertexError": 4.7657475207332533e-7
+        },
+        {
+          "name": "CargoLatchMoving_L",
+          "maxBidirectionalWorldVertexError": 6.077007774087798e-7
+        },
+        {
+          "name": "CargoLatchMoving_R",
+          "maxBidirectionalWorldVertexError": 5.729234209376326e-7
+        },
+        {
+          "name": "CargoLatchPin_L",
+          "maxBidirectionalWorldVertexError": 3.687113851022481e-7
+        },
+        {
+          "name": "CargoLatchPin_R",
+          "maxBidirectionalWorldVertexError": 3.6885587915155756e-7
+        },
+        {
+          "name": "ControlFlexureFixed_L_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureFixed_L_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureFixed_R_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureFixed_R_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureFixed_Tail_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureFixed_Tail_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_L_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_L_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_R_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_R_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_Tail_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_Tail_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_L_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_L_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_R_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_R_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_Tail_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_Tail_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_L_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_L_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_R_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_R_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_Tail_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_Tail_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHorn_L_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHorn_L_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHorn_R_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHorn_R_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Dorsal_antenna",
+          "maxBidirectionalWorldVertexError": 0.0000017474197192981832
+        },
+        {
+          "name": "Drive_CouplingWitness",
+          "maxBidirectionalWorldVertexError": 2.6376818076241205e-9
+        },
+        {
+          "name": "Drive_Crossbeam",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontFoot_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontFoot_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontGuidePedestal_L",
+          "maxBidirectionalWorldVertexError": 1.1295700899707568e-16
+        },
+        {
+          "name": "Drive_FrontGuidePedestal_R",
+          "maxBidirectionalWorldVertexError": 1.1295700899707568e-16
+        },
+        {
+          "name": "Drive_FrontGuideSeat_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontGuideSeat_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontScrewBearing",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontScrewPedestal",
+          "maxBidirectionalWorldVertexError": 1.148722306938917e-16
+        },
+        {
+          "name": "Drive_FrontSupport",
+          "maxBidirectionalWorldVertexError": 2.6488775828717528e-8
+        },
+        {
+          "name": "Drive_FrontTravelStop_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontTravelStop_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_GuideBridge_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_GuideBridge_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_GuideBushing_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_GuideBushing_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_GuideRail_L",
+          "maxBidirectionalWorldVertexError": 1.1292847621493234e-7
+        },
+        {
+          "name": "Drive_GuideRail_R",
+          "maxBidirectionalWorldVertexError": 1.1292847621493234e-7
+        },
+        {
+          "name": "Drive_LeadScrewCore",
+          "maxBidirectionalWorldVertexError": 1.3429357151665418e-7
+        },
+        {
+          "name": "Drive_LeadScrewThread",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorFoot_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorFoot_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorGearboxAdapter",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorHousing",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorMount",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorRotorDisc",
+          "maxBidirectionalWorldVertexError": 8.302871484618167e-9
+        },
+        {
+          "name": "Drive_MotorSaddle_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorSaddle_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorShaft",
+          "maxBidirectionalWorldVertexError": 5.9425342790083666e-9
+        },
+        {
+          "name": "Drive_MotorWitness",
+          "maxBidirectionalWorldVertexError": 2.162646317512579e-9
+        },
+        {
+          "name": "Drive_NutCarriage",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_NutInternalThread",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_OutputCoupling",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_OutputWeb",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetCarrier",
+          "maxBidirectionalWorldVertexError": 6.787175859726186e-9
+        },
+        {
+          "name": "Drive_PlanetGear_0",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetGear_1",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetGear_2",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetPin_0",
+          "maxBidirectionalWorldVertexError": 4.733432466999004e-9
+        },
+        {
+          "name": "Drive_PlanetPin_1",
+          "maxBidirectionalWorldVertexError": 4.733432466999004e-9
+        },
+        {
+          "name": "Drive_PlanetPin_2",
+          "maxBidirectionalWorldVertexError": 4.733432466999004e-9
+        },
+        {
+          "name": "Drive_PlanetRetainer_0_Front",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetRetainer_0_Rear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetRetainer_1_Front",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetRetainer_1_Rear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetRetainer_2_Front",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetRetainer_2_Rear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearFoot_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearFoot_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearGuidePedestal_L",
+          "maxBidirectionalWorldVertexError": 2.2215299868541707e-16
+        },
+        {
+          "name": "Drive_RearGuidePedestal_R",
+          "maxBidirectionalWorldVertexError": 2.2215299868541707e-16
+        },
+        {
+          "name": "Drive_RearGuideSeat_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearGuideSeat_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearScrewBearing",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearScrewPedestal",
+          "maxBidirectionalWorldVertexError": 2.231868554647719e-16
+        },
+        {
+          "name": "Drive_RearSupport",
+          "maxBidirectionalWorldVertexError": 2.6488775828717528e-8
+        },
+        {
+          "name": "Drive_RearTravelStop_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearTravelStop_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_ReductionHousing",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RingGear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_SunGear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Landing_wear_tip_L_Front",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Landing_wear_tip_L_Rear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Landing_wear_tip_R_Front",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Landing_wear_tip_R_Rear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Pod_wing_saddle_L_Front",
+          "maxBidirectionalWorldVertexError": 0.0000049264775367011485
+        },
+        {
+          "name": "Pod_wing_saddle_L_Rear",
+          "maxBidirectionalWorldVertexError": 0.0000049085472562001285
+        },
+        {
+          "name": "Pod_wing_saddle_R_Front",
+          "maxBidirectionalWorldVertexError": 0.000004958786555894082
+        },
+        {
+          "name": "Pod_wing_saddle_R_Rear",
+          "maxBidirectionalWorldVertexError": 0.0000049587865564297
+        },
+        {
+          "name": "RootBearingHousing_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "RootBearingHousing_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "RootFairingFixed_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "RootFairingFixed_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "RootFairingMoving_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "RootFairingMoving_R",
+          "maxBidirectionalWorldVertexError": 0
+        }
+      ],
+      "maxBidirectionalWorldVertexError": 0.000029401492980800562
+    },
+    {
+      "unfold": 0.75,
+      "meshes": [
+        {
+          "name": "ActuatorSideSlot_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ActuatorSideSlot_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Blade_hinge_arm_L_Front_A",
+          "maxBidirectionalWorldVertexError": 0.0000013530449103220348
+        },
+        {
+          "name": "Blade_hinge_arm_L_Front_B",
+          "maxBidirectionalWorldVertexError": 0.0000013530449116702993
+        },
+        {
+          "name": "Blade_hinge_arm_L_Rear_A",
+          "maxBidirectionalWorldVertexError": 0.0000013530449103715828
+        },
+        {
+          "name": "Blade_hinge_arm_L_Rear_B",
+          "maxBidirectionalWorldVertexError": 0.0000013530449116702993
+        },
+        {
+          "name": "Blade_hinge_arm_R_Front_A",
+          "maxBidirectionalWorldVertexError": 0.0000013530448815594774
+        },
+        {
+          "name": "Blade_hinge_arm_R_Front_B",
+          "maxBidirectionalWorldVertexError": 0.000001353044881325317
+        },
+        {
+          "name": "Blade_hinge_arm_R_Rear_A",
+          "maxBidirectionalWorldVertexError": 0.00000138863039906727
+        },
+        {
+          "name": "Blade_hinge_arm_R_Rear_B",
+          "maxBidirectionalWorldVertexError": 0.000001388630399096559
+        },
+        {
+          "name": "Blade_hinge_pin_L_Front_A",
+          "maxBidirectionalWorldVertexError": 9.511250488503156e-7
+        },
+        {
+          "name": "Blade_hinge_pin_L_Front_B",
+          "maxBidirectionalWorldVertexError": 9.511250488503156e-7
+        },
+        {
+          "name": "Blade_hinge_pin_L_Rear_A",
+          "maxBidirectionalWorldVertexError": 9.511250488503156e-7
+        },
+        {
+          "name": "Blade_hinge_pin_L_Rear_B",
+          "maxBidirectionalWorldVertexError": 9.511250488503156e-7
+        },
+        {
+          "name": "Blade_hinge_pin_R_Front_A",
+          "maxBidirectionalWorldVertexError": 9.511250261203833e-7
+        },
+        {
+          "name": "Blade_hinge_pin_R_Front_B",
+          "maxBidirectionalWorldVertexError": 9.511250261203833e-7
+        },
+        {
+          "name": "Blade_hinge_pin_R_Rear_A",
+          "maxBidirectionalWorldVertexError": 9.511250261701054e-7
+        },
+        {
+          "name": "Blade_hinge_pin_R_Rear_B",
+          "maxBidirectionalWorldVertexError": 9.511250264615278e-7
+        },
+        {
+          "name": "BraceBallPin_L_Body",
+          "maxBidirectionalWorldVertexError": 5.254049180881731e-7
+        },
+        {
+          "name": "BraceBallPin_L_Wing",
+          "maxBidirectionalWorldVertexError": 4.116458792234695e-7
+        },
+        {
+          "name": "BraceBallPin_R_Body",
+          "maxBidirectionalWorldVertexError": 5.254049180774733e-7
+        },
+        {
+          "name": "BraceBallPin_R_Wing",
+          "maxBidirectionalWorldVertexError": 4.1164586939815044e-7
+        },
+        {
+          "name": "BraceBall_L_Body",
+          "maxBidirectionalWorldVertexError": 4.0781473480727716e-7
+        },
+        {
+          "name": "BraceBall_L_Wing",
+          "maxBidirectionalWorldVertexError": 4.078147442327267e-7
+        },
+        {
+          "name": "BraceBall_R_Body",
+          "maxBidirectionalWorldVertexError": 4.0781473480727716e-7
+        },
+        {
+          "name": "BraceBall_R_Wing",
+          "maxBidirectionalWorldVertexError": 4.078147346981882e-7
+        },
+        {
+          "name": "BraceBodyCarriage_L",
+          "maxBidirectionalWorldVertexError": 5.499420526904719e-7
+        },
+        {
+          "name": "BraceBodyCarriage_R",
+          "maxBidirectionalWorldVertexError": 5.499420526904719e-7
+        },
+        {
+          "name": "BraceRodEyeNeck_L_Body",
+          "maxBidirectionalWorldVertexError": 2.751448508695793e-7
+        },
+        {
+          "name": "BraceRodEyeNeck_L_Root",
+          "maxBidirectionalWorldVertexError": 2.762807023691046e-7
+        },
+        {
+          "name": "BraceRodEyeNeck_R_Body",
+          "maxBidirectionalWorldVertexError": 2.751448509462623e-7
+        },
+        {
+          "name": "BraceRodEyeNeck_R_Root",
+          "maxBidirectionalWorldVertexError": 2.762807023707229e-7
+        },
+        {
+          "name": "BraceRodEye_L_Body",
+          "maxBidirectionalWorldVertexError": 6.801156635727677e-7
+        },
+        {
+          "name": "BraceRodEye_L_Root",
+          "maxBidirectionalWorldVertexError": 7.053216407235267e-7
+        },
+        {
+          "name": "BraceRodEye_R_Body",
+          "maxBidirectionalWorldVertexError": 6.801156636131268e-7
+        },
+        {
+          "name": "BraceRodEye_R_Root",
+          "maxBidirectionalWorldVertexError": 7.053216406079675e-7
+        },
+        {
+          "name": "BraceRodFerrule_L_Body",
+          "maxBidirectionalWorldVertexError": 5.131324531607725e-7
+        },
+        {
+          "name": "BraceRodFerrule_L_Root",
+          "maxBidirectionalWorldVertexError": 5.102710966183212e-7
+        },
+        {
+          "name": "BraceRodFerrule_R_Body",
+          "maxBidirectionalWorldVertexError": 5.131324531701602e-7
+        },
+        {
+          "name": "BraceRodFerrule_R_Root",
+          "maxBidirectionalWorldVertexError": 5.10271096698732e-7
+        },
+        {
+          "name": "BraceRod_mesh_L",
+          "maxBidirectionalWorldVertexError": 0.00002940149298067522
+        },
+        {
+          "name": "BraceRod_mesh_R",
+          "maxBidirectionalWorldVertexError": 0.000029401492980654178
+        },
+        {
+          "name": "BraceWingSeat_L",
+          "maxBidirectionalWorldVertexError": 5.509848189649145e-7
+        },
+        {
+          "name": "BraceWingSeat_R",
+          "maxBidirectionalWorldVertexError": 5.341705810816235e-7
+        },
+        {
+          "name": "CargoHingeCap_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoHingeCap_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoHingeFixedSeat",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoHingeMovingSeat_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoHingeMovingSeat_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoHingePin",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoLatchFixed_L",
+          "maxBidirectionalWorldVertexError": 4.628324881006243e-7
+        },
+        {
+          "name": "CargoLatchFixed_R",
+          "maxBidirectionalWorldVertexError": 4.7657475207332533e-7
+        },
+        {
+          "name": "CargoLatchMoving_L",
+          "maxBidirectionalWorldVertexError": 6.077007774087798e-7
+        },
+        {
+          "name": "CargoLatchMoving_R",
+          "maxBidirectionalWorldVertexError": 5.729234209376326e-7
+        },
+        {
+          "name": "CargoLatchPin_L",
+          "maxBidirectionalWorldVertexError": 3.687113851022481e-7
+        },
+        {
+          "name": "CargoLatchPin_R",
+          "maxBidirectionalWorldVertexError": 3.6885587915155756e-7
+        },
+        {
+          "name": "ControlFlexureFixed_L_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureFixed_L_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureFixed_R_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureFixed_R_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureFixed_Tail_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureFixed_Tail_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_L_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_L_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_R_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_R_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_Tail_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_Tail_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_L_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_L_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_R_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_R_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_Tail_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_Tail_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_L_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_L_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_R_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_R_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_Tail_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_Tail_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHorn_L_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHorn_L_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHorn_R_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHorn_R_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Dorsal_antenna",
+          "maxBidirectionalWorldVertexError": 0.0000017474197192981832
+        },
+        {
+          "name": "Drive_CouplingWitness",
+          "maxBidirectionalWorldVertexError": 2.637681807823369e-9
+        },
+        {
+          "name": "Drive_Crossbeam",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontFoot_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontFoot_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontGuidePedestal_L",
+          "maxBidirectionalWorldVertexError": 1.1295700899707568e-16
+        },
+        {
+          "name": "Drive_FrontGuidePedestal_R",
+          "maxBidirectionalWorldVertexError": 1.1295700899707568e-16
+        },
+        {
+          "name": "Drive_FrontGuideSeat_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontGuideSeat_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontScrewBearing",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontScrewPedestal",
+          "maxBidirectionalWorldVertexError": 1.148722306938917e-16
+        },
+        {
+          "name": "Drive_FrontSupport",
+          "maxBidirectionalWorldVertexError": 2.6488775828717528e-8
+        },
+        {
+          "name": "Drive_FrontTravelStop_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontTravelStop_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_GuideBridge_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_GuideBridge_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_GuideBushing_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_GuideBushing_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_GuideRail_L",
+          "maxBidirectionalWorldVertexError": 1.1292847621493234e-7
+        },
+        {
+          "name": "Drive_GuideRail_R",
+          "maxBidirectionalWorldVertexError": 1.1292847621493234e-7
+        },
+        {
+          "name": "Drive_LeadScrewCore",
+          "maxBidirectionalWorldVertexError": 1.3429357151456455e-7
+        },
+        {
+          "name": "Drive_LeadScrewThread",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorFoot_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorFoot_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorGearboxAdapter",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorHousing",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorMount",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorRotorDisc",
+          "maxBidirectionalWorldVertexError": 8.30287148444594e-9
+        },
+        {
+          "name": "Drive_MotorSaddle_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorSaddle_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorShaft",
+          "maxBidirectionalWorldVertexError": 5.942534275539518e-9
+        },
+        {
+          "name": "Drive_MotorWitness",
+          "maxBidirectionalWorldVertexError": 2.1626463094233584e-9
+        },
+        {
+          "name": "Drive_NutCarriage",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_NutInternalThread",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_OutputCoupling",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_OutputWeb",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetCarrier",
+          "maxBidirectionalWorldVertexError": 6.787175857353326e-9
+        },
+        {
+          "name": "Drive_PlanetGear_0",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetGear_1",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetGear_2",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetPin_0",
+          "maxBidirectionalWorldVertexError": 4.733432466823572e-9
+        },
+        {
+          "name": "Drive_PlanetPin_1",
+          "maxBidirectionalWorldVertexError": 4.733432466823572e-9
+        },
+        {
+          "name": "Drive_PlanetPin_2",
+          "maxBidirectionalWorldVertexError": 4.733432466823572e-9
+        },
+        {
+          "name": "Drive_PlanetRetainer_0_Front",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetRetainer_0_Rear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetRetainer_1_Front",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetRetainer_1_Rear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetRetainer_2_Front",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetRetainer_2_Rear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearFoot_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearFoot_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearGuidePedestal_L",
+          "maxBidirectionalWorldVertexError": 2.2215299868541707e-16
+        },
+        {
+          "name": "Drive_RearGuidePedestal_R",
+          "maxBidirectionalWorldVertexError": 2.2215299868541707e-16
+        },
+        {
+          "name": "Drive_RearGuideSeat_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearGuideSeat_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearScrewBearing",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearScrewPedestal",
+          "maxBidirectionalWorldVertexError": 2.231868554647719e-16
+        },
+        {
+          "name": "Drive_RearSupport",
+          "maxBidirectionalWorldVertexError": 2.6488775828717528e-8
+        },
+        {
+          "name": "Drive_RearTravelStop_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearTravelStop_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_ReductionHousing",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RingGear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_SunGear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Landing_wear_tip_L_Front",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Landing_wear_tip_L_Rear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Landing_wear_tip_R_Front",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Landing_wear_tip_R_Rear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Pod_wing_saddle_L_Front",
+          "maxBidirectionalWorldVertexError": 0.00000492647733052624
+        },
+        {
+          "name": "Pod_wing_saddle_L_Rear",
+          "maxBidirectionalWorldVertexError": 0.000004908547054266722
+        },
+        {
+          "name": "Pod_wing_saddle_R_Front",
+          "maxBidirectionalWorldVertexError": 0.00000495878655613201
+        },
+        {
+          "name": "Pod_wing_saddle_R_Rear",
+          "maxBidirectionalWorldVertexError": 0.000004958786556137932
+        },
+        {
+          "name": "RootBearingHousing_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "RootBearingHousing_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "RootFairingFixed_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "RootFairingFixed_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "RootFairingMoving_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "RootFairingMoving_R",
+          "maxBidirectionalWorldVertexError": 0
+        }
+      ],
+      "maxBidirectionalWorldVertexError": 0.00002940149298067522
+    },
+    {
+      "unfold": 0.875,
+      "meshes": [
+        {
+          "name": "ActuatorSideSlot_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ActuatorSideSlot_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Blade_hinge_arm_L_Front_A",
+          "maxBidirectionalWorldVertexError": 0.0000013530448885291159
+        },
+        {
+          "name": "Blade_hinge_arm_L_Front_B",
+          "maxBidirectionalWorldVertexError": 0.000001353044889316917
+        },
+        {
+          "name": "Blade_hinge_arm_L_Rear_A",
+          "maxBidirectionalWorldVertexError": 0.0000013530448887450269
+        },
+        {
+          "name": "Blade_hinge_arm_L_Rear_B",
+          "maxBidirectionalWorldVertexError": 0.0000013530448893212674
+        },
+        {
+          "name": "Blade_hinge_arm_R_Front_A",
+          "maxBidirectionalWorldVertexError": 0.0000013530448812958852
+        },
+        {
+          "name": "Blade_hinge_arm_R_Front_B",
+          "maxBidirectionalWorldVertexError": 0.0000013530448814883413
+        },
+        {
+          "name": "Blade_hinge_arm_R_Rear_A",
+          "maxBidirectionalWorldVertexError": 0.0000013886303991997193
+        },
+        {
+          "name": "Blade_hinge_arm_R_Rear_B",
+          "maxBidirectionalWorldVertexError": 0.0000013886303995788782
+        },
+        {
+          "name": "Blade_hinge_pin_L_Front_A",
+          "maxBidirectionalWorldVertexError": 9.511250319930299e-7
+        },
+        {
+          "name": "Blade_hinge_pin_L_Front_B",
+          "maxBidirectionalWorldVertexError": 9.511250319930299e-7
+        },
+        {
+          "name": "Blade_hinge_pin_L_Rear_A",
+          "maxBidirectionalWorldVertexError": 9.511250319930299e-7
+        },
+        {
+          "name": "Blade_hinge_pin_L_Rear_B",
+          "maxBidirectionalWorldVertexError": 9.511250319930299e-7
+        },
+        {
+          "name": "Blade_hinge_pin_R_Front_A",
+          "maxBidirectionalWorldVertexError": 9.511250263086924e-7
+        },
+        {
+          "name": "Blade_hinge_pin_R_Front_B",
+          "maxBidirectionalWorldVertexError": 9.511250263086924e-7
+        },
+        {
+          "name": "Blade_hinge_pin_R_Rear_A",
+          "maxBidirectionalWorldVertexError": 9.511250263086924e-7
+        },
+        {
+          "name": "Blade_hinge_pin_R_Rear_B",
+          "maxBidirectionalWorldVertexError": 9.511250260882683e-7
+        },
+        {
+          "name": "BraceBallPin_L_Body",
+          "maxBidirectionalWorldVertexError": 5.254049180881731e-7
+        },
+        {
+          "name": "BraceBallPin_L_Wing",
+          "maxBidirectionalWorldVertexError": 4.116458718781028e-7
+        },
+        {
+          "name": "BraceBallPin_R_Body",
+          "maxBidirectionalWorldVertexError": 5.254049180774733e-7
+        },
+        {
+          "name": "BraceBallPin_R_Wing",
+          "maxBidirectionalWorldVertexError": 4.116458692689368e-7
+        },
+        {
+          "name": "BraceBall_L_Body",
+          "maxBidirectionalWorldVertexError": 4.0781473480727716e-7
+        },
+        {
+          "name": "BraceBall_L_Wing",
+          "maxBidirectionalWorldVertexError": 4.0781473718218485e-7
+        },
+        {
+          "name": "BraceBall_R_Body",
+          "maxBidirectionalWorldVertexError": 4.0781473480727716e-7
+        },
+        {
+          "name": "BraceBall_R_Wing",
+          "maxBidirectionalWorldVertexError": 4.0781473479914776e-7
+        },
+        {
+          "name": "BraceBodyCarriage_L",
+          "maxBidirectionalWorldVertexError": 5.499420526904719e-7
+        },
+        {
+          "name": "BraceBodyCarriage_R",
+          "maxBidirectionalWorldVertexError": 5.499420526904719e-7
+        },
+        {
+          "name": "BraceRodEyeNeck_L_Body",
+          "maxBidirectionalWorldVertexError": 2.751448508808494e-7
+        },
+        {
+          "name": "BraceRodEyeNeck_L_Root",
+          "maxBidirectionalWorldVertexError": 2.762807023956618e-7
+        },
+        {
+          "name": "BraceRodEyeNeck_R_Body",
+          "maxBidirectionalWorldVertexError": 2.751448508990183e-7
+        },
+        {
+          "name": "BraceRodEyeNeck_R_Root",
+          "maxBidirectionalWorldVertexError": 2.7628070237429924e-7
+        },
+        {
+          "name": "BraceRodEye_L_Body",
+          "maxBidirectionalWorldVertexError": 6.801156634825201e-7
+        },
+        {
+          "name": "BraceRodEye_L_Root",
+          "maxBidirectionalWorldVertexError": 7.05321640754069e-7
+        },
+        {
+          "name": "BraceRodEye_R_Body",
+          "maxBidirectionalWorldVertexError": 6.801156635624747e-7
+        },
+        {
+          "name": "BraceRodEye_R_Root",
+          "maxBidirectionalWorldVertexError": 7.053216406779437e-7
+        },
+        {
+          "name": "BraceRodFerrule_L_Body",
+          "maxBidirectionalWorldVertexError": 5.131324531792399e-7
+        },
+        {
+          "name": "BraceRodFerrule_L_Root",
+          "maxBidirectionalWorldVertexError": 5.102710966098827e-7
+        },
+        {
+          "name": "BraceRodFerrule_R_Body",
+          "maxBidirectionalWorldVertexError": 5.131324531592103e-7
+        },
+        {
+          "name": "BraceRodFerrule_R_Root",
+          "maxBidirectionalWorldVertexError": 5.102710966325532e-7
+        },
+        {
+          "name": "BraceRod_mesh_L",
+          "maxBidirectionalWorldVertexError": 0.000029401492980655452
+        },
+        {
+          "name": "BraceRod_mesh_R",
+          "maxBidirectionalWorldVertexError": 0.00002940149298071397
+        },
+        {
+          "name": "BraceWingSeat_L",
+          "maxBidirectionalWorldVertexError": 5.509848094835387e-7
+        },
+        {
+          "name": "BraceWingSeat_R",
+          "maxBidirectionalWorldVertexError": 5.341705810334758e-7
+        },
+        {
+          "name": "CargoHingeCap_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoHingeCap_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoHingeFixedSeat",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoHingeMovingSeat_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoHingeMovingSeat_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoHingePin",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoLatchFixed_L",
+          "maxBidirectionalWorldVertexError": 4.628324881006243e-7
+        },
+        {
+          "name": "CargoLatchFixed_R",
+          "maxBidirectionalWorldVertexError": 4.7657475207332533e-7
+        },
+        {
+          "name": "CargoLatchMoving_L",
+          "maxBidirectionalWorldVertexError": 6.077007774087798e-7
+        },
+        {
+          "name": "CargoLatchMoving_R",
+          "maxBidirectionalWorldVertexError": 5.729234209376326e-7
+        },
+        {
+          "name": "CargoLatchPin_L",
+          "maxBidirectionalWorldVertexError": 3.687113851022481e-7
+        },
+        {
+          "name": "CargoLatchPin_R",
+          "maxBidirectionalWorldVertexError": 3.6885587915155756e-7
+        },
+        {
+          "name": "ControlFlexureFixed_L_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureFixed_L_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureFixed_R_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureFixed_R_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureFixed_Tail_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureFixed_Tail_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_L_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_L_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_R_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_R_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_Tail_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_Tail_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_L_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_L_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_R_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_R_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_Tail_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_Tail_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_L_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_L_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_R_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_R_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_Tail_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_Tail_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHorn_L_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHorn_L_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHorn_R_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHorn_R_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Dorsal_antenna",
+          "maxBidirectionalWorldVertexError": 0.0000017474197192981832
+        },
+        {
+          "name": "Drive_CouplingWitness",
+          "maxBidirectionalWorldVertexError": 2.637681809318771e-9
+        },
+        {
+          "name": "Drive_Crossbeam",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontFoot_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontFoot_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontGuidePedestal_L",
+          "maxBidirectionalWorldVertexError": 1.1295700899707568e-16
+        },
+        {
+          "name": "Drive_FrontGuidePedestal_R",
+          "maxBidirectionalWorldVertexError": 1.1295700899707568e-16
+        },
+        {
+          "name": "Drive_FrontGuideSeat_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontGuideSeat_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontScrewBearing",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontScrewPedestal",
+          "maxBidirectionalWorldVertexError": 1.148722306938917e-16
+        },
+        {
+          "name": "Drive_FrontSupport",
+          "maxBidirectionalWorldVertexError": 2.6488775828717528e-8
+        },
+        {
+          "name": "Drive_FrontTravelStop_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontTravelStop_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_GuideBridge_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_GuideBridge_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_GuideBushing_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_GuideBushing_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_GuideRail_L",
+          "maxBidirectionalWorldVertexError": 1.1292847621493234e-7
+        },
+        {
+          "name": "Drive_GuideRail_R",
+          "maxBidirectionalWorldVertexError": 1.1292847621493234e-7
+        },
+        {
+          "name": "Drive_LeadScrewCore",
+          "maxBidirectionalWorldVertexError": 1.3429357151213616e-7
+        },
+        {
+          "name": "Drive_LeadScrewThread",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorFoot_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorFoot_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorGearboxAdapter",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorHousing",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorMount",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorRotorDisc",
+          "maxBidirectionalWorldVertexError": 8.302871484860838e-9
+        },
+        {
+          "name": "Drive_MotorSaddle_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorSaddle_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorShaft",
+          "maxBidirectionalWorldVertexError": 5.942534271480111e-9
+        },
+        {
+          "name": "Drive_MotorWitness",
+          "maxBidirectionalWorldVertexError": 2.1626463153361455e-9
+        },
+        {
+          "name": "Drive_NutCarriage",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_NutInternalThread",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_OutputCoupling",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_OutputWeb",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetCarrier",
+          "maxBidirectionalWorldVertexError": 6.787175858250144e-9
+        },
+        {
+          "name": "Drive_PlanetGear_0",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetGear_1",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetGear_2",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetPin_0",
+          "maxBidirectionalWorldVertexError": 4.7334324649438224e-9
+        },
+        {
+          "name": "Drive_PlanetPin_1",
+          "maxBidirectionalWorldVertexError": 4.7334324649438224e-9
+        },
+        {
+          "name": "Drive_PlanetPin_2",
+          "maxBidirectionalWorldVertexError": 4.733432464824724e-9
+        },
+        {
+          "name": "Drive_PlanetRetainer_0_Front",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetRetainer_0_Rear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetRetainer_1_Front",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetRetainer_1_Rear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetRetainer_2_Front",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetRetainer_2_Rear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearFoot_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearFoot_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearGuidePedestal_L",
+          "maxBidirectionalWorldVertexError": 2.2215299868541707e-16
+        },
+        {
+          "name": "Drive_RearGuidePedestal_R",
+          "maxBidirectionalWorldVertexError": 2.2215299868541707e-16
+        },
+        {
+          "name": "Drive_RearGuideSeat_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearGuideSeat_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearScrewBearing",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearScrewPedestal",
+          "maxBidirectionalWorldVertexError": 2.231868554647719e-16
+        },
+        {
+          "name": "Drive_RearSupport",
+          "maxBidirectionalWorldVertexError": 2.6488775828717528e-8
+        },
+        {
+          "name": "Drive_RearTravelStop_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearTravelStop_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_ReductionHousing",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RingGear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_SunGear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Landing_wear_tip_L_Front",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Landing_wear_tip_L_Rear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Landing_wear_tip_R_Front",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Landing_wear_tip_R_Rear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Pod_wing_saddle_L_Front",
+          "maxBidirectionalWorldVertexError": 0.000004926477274238444
+        },
+        {
+          "name": "Pod_wing_saddle_L_Rear",
+          "maxBidirectionalWorldVertexError": 0.000004908546999132615
+        },
+        {
+          "name": "Pod_wing_saddle_R_Front",
+          "maxBidirectionalWorldVertexError": 0.000004958786555934379
+        },
+        {
+          "name": "Pod_wing_saddle_R_Rear",
+          "maxBidirectionalWorldVertexError": 0.0000049587865561878565
+        },
+        {
+          "name": "RootBearingHousing_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "RootBearingHousing_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "RootFairingFixed_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "RootFairingFixed_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "RootFairingMoving_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "RootFairingMoving_R",
+          "maxBidirectionalWorldVertexError": 0
+        }
+      ],
+      "maxBidirectionalWorldVertexError": 0.00002940149298071397
+    },
+    {
+      "unfold": 1,
+      "meshes": [
+        {
+          "name": "ActuatorSideSlot_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ActuatorSideSlot_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Blade_hinge_arm_L_Front_A",
+          "maxBidirectionalWorldVertexError": 0.000001353044881510543
+        },
+        {
+          "name": "Blade_hinge_arm_L_Front_B",
+          "maxBidirectionalWorldVertexError": 0.000001353044881299218
+        },
+        {
+          "name": "Blade_hinge_arm_L_Rear_A",
+          "maxBidirectionalWorldVertexError": 0.000001353044881510543
+        },
+        {
+          "name": "Blade_hinge_arm_L_Rear_B",
+          "maxBidirectionalWorldVertexError": 0.0000013530448813473924
+        },
+        {
+          "name": "Blade_hinge_arm_R_Front_A",
+          "maxBidirectionalWorldVertexError": 0.0000013530448813586071
+        },
+        {
+          "name": "Blade_hinge_arm_R_Front_B",
+          "maxBidirectionalWorldVertexError": 0.0000013530448813942058
+        },
+        {
+          "name": "Blade_hinge_arm_R_Rear_A",
+          "maxBidirectionalWorldVertexError": 0.0000013886303990633727
+        },
+        {
+          "name": "Blade_hinge_arm_R_Rear_B",
+          "maxBidirectionalWorldVertexError": 0.0000013886303990633727
+        },
+        {
+          "name": "Blade_hinge_pin_L_Front_A",
+          "maxBidirectionalWorldVertexError": 9.511250261131083e-7
+        },
+        {
+          "name": "Blade_hinge_pin_L_Front_B",
+          "maxBidirectionalWorldVertexError": 9.511250261228932e-7
+        },
+        {
+          "name": "Blade_hinge_pin_L_Rear_A",
+          "maxBidirectionalWorldVertexError": 9.511250261131083e-7
+        },
+        {
+          "name": "Blade_hinge_pin_L_Rear_B",
+          "maxBidirectionalWorldVertexError": 9.511250261131083e-7
+        },
+        {
+          "name": "Blade_hinge_pin_R_Front_A",
+          "maxBidirectionalWorldVertexError": 9.511250264743116e-7
+        },
+        {
+          "name": "Blade_hinge_pin_R_Front_B",
+          "maxBidirectionalWorldVertexError": 9.511250264743116e-7
+        },
+        {
+          "name": "Blade_hinge_pin_R_Rear_A",
+          "maxBidirectionalWorldVertexError": 9.511250264743116e-7
+        },
+        {
+          "name": "Blade_hinge_pin_R_Rear_B",
+          "maxBidirectionalWorldVertexError": 9.511250264743116e-7
+        },
+        {
+          "name": "BraceBallPin_L_Body",
+          "maxBidirectionalWorldVertexError": 5.254049180881731e-7
+        },
+        {
+          "name": "BraceBallPin_L_Wing",
+          "maxBidirectionalWorldVertexError": 4.1164586931671473e-7
+        },
+        {
+          "name": "BraceBallPin_R_Body",
+          "maxBidirectionalWorldVertexError": 5.254049180774733e-7
+        },
+        {
+          "name": "BraceBallPin_R_Wing",
+          "maxBidirectionalWorldVertexError": 4.116458693031198e-7
+        },
+        {
+          "name": "BraceBall_L_Body",
+          "maxBidirectionalWorldVertexError": 4.0781473480727716e-7
+        },
+        {
+          "name": "BraceBall_L_Wing",
+          "maxBidirectionalWorldVertexError": 4.0781473489733534e-7
+        },
+        {
+          "name": "BraceBall_R_Body",
+          "maxBidirectionalWorldVertexError": 4.0781473480727716e-7
+        },
+        {
+          "name": "BraceBall_R_Wing",
+          "maxBidirectionalWorldVertexError": 4.078147348259343e-7
+        },
+        {
+          "name": "BraceBodyCarriage_L",
+          "maxBidirectionalWorldVertexError": 5.499420526904719e-7
+        },
+        {
+          "name": "BraceBodyCarriage_R",
+          "maxBidirectionalWorldVertexError": 5.499420526904719e-7
+        },
+        {
+          "name": "BraceRodEyeNeck_L_Body",
+          "maxBidirectionalWorldVertexError": 2.751448509508266e-7
+        },
+        {
+          "name": "BraceRodEyeNeck_L_Root",
+          "maxBidirectionalWorldVertexError": 2.762807023217406e-7
+        },
+        {
+          "name": "BraceRodEyeNeck_R_Body",
+          "maxBidirectionalWorldVertexError": 2.751448509125891e-7
+        },
+        {
+          "name": "BraceRodEyeNeck_R_Root",
+          "maxBidirectionalWorldVertexError": 2.7628070229398257e-7
+        },
+        {
+          "name": "BraceRodEye_L_Body",
+          "maxBidirectionalWorldVertexError": 6.801156635797497e-7
+        },
+        {
+          "name": "BraceRodEye_L_Root",
+          "maxBidirectionalWorldVertexError": 7.05321640618886e-7
+        },
+        {
+          "name": "BraceRodEye_R_Body",
+          "maxBidirectionalWorldVertexError": 6.801156635505215e-7
+        },
+        {
+          "name": "BraceRodEye_R_Root",
+          "maxBidirectionalWorldVertexError": 7.05321640775846e-7
+        },
+        {
+          "name": "BraceRodFerrule_L_Body",
+          "maxBidirectionalWorldVertexError": 5.131324531950383e-7
+        },
+        {
+          "name": "BraceRodFerrule_L_Root",
+          "maxBidirectionalWorldVertexError": 5.102710966164297e-7
+        },
+        {
+          "name": "BraceRodFerrule_R_Body",
+          "maxBidirectionalWorldVertexError": 5.131324531833563e-7
+        },
+        {
+          "name": "BraceRodFerrule_R_Root",
+          "maxBidirectionalWorldVertexError": 5.102710965980301e-7
+        },
+        {
+          "name": "BraceRod_mesh_L",
+          "maxBidirectionalWorldVertexError": 0.000029401492980644186
+        },
+        {
+          "name": "BraceRod_mesh_R",
+          "maxBidirectionalWorldVertexError": 0.000029401492980716052
+        },
+        {
+          "name": "BraceWingSeat_L",
+          "maxBidirectionalWorldVertexError": 5.509848064916282e-7
+        },
+        {
+          "name": "BraceWingSeat_R",
+          "maxBidirectionalWorldVertexError": 5.34170580931872e-7
+        },
+        {
+          "name": "CargoHingeCap_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoHingeCap_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoHingeFixedSeat",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoHingeMovingSeat_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoHingeMovingSeat_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoHingePin",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "CargoLatchFixed_L",
+          "maxBidirectionalWorldVertexError": 4.628324881006243e-7
+        },
+        {
+          "name": "CargoLatchFixed_R",
+          "maxBidirectionalWorldVertexError": 4.7657475207332533e-7
+        },
+        {
+          "name": "CargoLatchMoving_L",
+          "maxBidirectionalWorldVertexError": 6.077007774087798e-7
+        },
+        {
+          "name": "CargoLatchMoving_R",
+          "maxBidirectionalWorldVertexError": 5.729234209376326e-7
+        },
+        {
+          "name": "CargoLatchPin_L",
+          "maxBidirectionalWorldVertexError": 3.687113851022481e-7
+        },
+        {
+          "name": "CargoLatchPin_R",
+          "maxBidirectionalWorldVertexError": 3.6885587915155756e-7
+        },
+        {
+          "name": "ControlFlexureFixed_L_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureFixed_L_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureFixed_R_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureFixed_R_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureFixed_Tail_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureFixed_Tail_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_L_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_L_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_R_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_R_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_Tail_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlFlexureMoving_Tail_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_L_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_L_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_R_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_R_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_Tail_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeFixed_Tail_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_L_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_L_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_R_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_R_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_Tail_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHingeMoving_Tail_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHorn_L_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHorn_L_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHorn_R_Inboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "ControlHorn_R_Outboard",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Dorsal_antenna",
+          "maxBidirectionalWorldVertexError": 0.0000017474197192981832
+        },
+        {
+          "name": "Drive_CouplingWitness",
+          "maxBidirectionalWorldVertexError": 2.637681807044847e-9
+        },
+        {
+          "name": "Drive_Crossbeam",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontFoot_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontFoot_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontGuidePedestal_L",
+          "maxBidirectionalWorldVertexError": 1.1295700899707568e-16
+        },
+        {
+          "name": "Drive_FrontGuidePedestal_R",
+          "maxBidirectionalWorldVertexError": 1.1295700899707568e-16
+        },
+        {
+          "name": "Drive_FrontGuideSeat_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontGuideSeat_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontScrewBearing",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontScrewPedestal",
+          "maxBidirectionalWorldVertexError": 1.148722306938917e-16
+        },
+        {
+          "name": "Drive_FrontSupport",
+          "maxBidirectionalWorldVertexError": 2.6488775828717528e-8
+        },
+        {
+          "name": "Drive_FrontTravelStop_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_FrontTravelStop_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_GuideBridge_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_GuideBridge_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_GuideBushing_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_GuideBushing_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_GuideRail_L",
+          "maxBidirectionalWorldVertexError": 1.1292847621493234e-7
+        },
+        {
+          "name": "Drive_GuideRail_R",
+          "maxBidirectionalWorldVertexError": 1.1292847621493234e-7
+        },
+        {
+          "name": "Drive_LeadScrewCore",
+          "maxBidirectionalWorldVertexError": 1.3429357151749327e-7
+        },
+        {
+          "name": "Drive_LeadScrewThread",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorFoot_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorFoot_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorGearboxAdapter",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorHousing",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorMount",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorRotorDisc",
+          "maxBidirectionalWorldVertexError": 8.302871483635307e-9
+        },
+        {
+          "name": "Drive_MotorSaddle_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorSaddle_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_MotorShaft",
+          "maxBidirectionalWorldVertexError": 5.9425342731001695e-9
+        },
+        {
+          "name": "Drive_MotorWitness",
+          "maxBidirectionalWorldVertexError": 2.1626463142666266e-9
+        },
+        {
+          "name": "Drive_NutCarriage",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_NutInternalThread",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_OutputCoupling",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_OutputWeb",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetCarrier",
+          "maxBidirectionalWorldVertexError": 6.787175853735454e-9
+        },
+        {
+          "name": "Drive_PlanetGear_0",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetGear_1",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetGear_2",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetPin_0",
+          "maxBidirectionalWorldVertexError": 4.7334324702004005e-9
+        },
+        {
+          "name": "Drive_PlanetPin_1",
+          "maxBidirectionalWorldVertexError": 4.733432470057916e-9
+        },
+        {
+          "name": "Drive_PlanetPin_2",
+          "maxBidirectionalWorldVertexError": 4.7334324702004005e-9
+        },
+        {
+          "name": "Drive_PlanetRetainer_0_Front",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetRetainer_0_Rear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetRetainer_1_Front",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetRetainer_1_Rear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetRetainer_2_Front",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_PlanetRetainer_2_Rear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearFoot_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearFoot_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearGuidePedestal_L",
+          "maxBidirectionalWorldVertexError": 2.2215299868541707e-16
+        },
+        {
+          "name": "Drive_RearGuidePedestal_R",
+          "maxBidirectionalWorldVertexError": 2.2215299868541707e-16
+        },
+        {
+          "name": "Drive_RearGuideSeat_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearGuideSeat_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearScrewBearing",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearScrewPedestal",
+          "maxBidirectionalWorldVertexError": 2.231868554647719e-16
+        },
+        {
+          "name": "Drive_RearSupport",
+          "maxBidirectionalWorldVertexError": 2.6488775828717528e-8
+        },
+        {
+          "name": "Drive_RearTravelStop_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RearTravelStop_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_ReductionHousing",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_RingGear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Drive_SunGear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Landing_wear_tip_L_Front",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Landing_wear_tip_L_Rear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Landing_wear_tip_R_Front",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Landing_wear_tip_R_Rear",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "Pod_wing_saddle_L_Front",
+          "maxBidirectionalWorldVertexError": 0.0000049264772551632465
+        },
+        {
+          "name": "Pod_wing_saddle_L_Rear",
+          "maxBidirectionalWorldVertexError": 0.000004908546980539194
+        },
+        {
+          "name": "Pod_wing_saddle_R_Front",
+          "maxBidirectionalWorldVertexError": 0.000004958786556187472
+        },
+        {
+          "name": "Pod_wing_saddle_R_Rear",
+          "maxBidirectionalWorldVertexError": 0.000004958786556170892
+        },
+        {
+          "name": "RootBearingHousing_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "RootBearingHousing_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "RootFairingFixed_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "RootFairingFixed_R",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "RootFairingMoving_L",
+          "maxBidirectionalWorldVertexError": 0
+        },
+        {
+          "name": "RootFairingMoving_R",
+          "maxBidirectionalWorldVertexError": 0
+        }
+      ],
+      "maxBidirectionalWorldVertexError": 0.000029401492980716052
+    }
+  ],
+  "maximumError": 0.000029401492980800562,
+  "positionTolerance": 0.0003,
+  "animationComparisons": [
+    {
+      "clip": "TRANSWING_Hover_Cruise_Hover",
+      "tracks": 18,
+      "maxSampleError": 0
+    },
+    {
+      "clip": "TRANSWING_Motors_Start_Stop",
+      "tracks": 26,
+      "maxSampleError": 0
+    }
+  ],
+  "limitations": [
+    "All actual internal drive and linkage meshes in 7 poses, exact parent/material contracts and both complete animation track sets",
+    "0.0003 vertex-neighbor bound is preserved source-compression verification bound, not collision epsilon",
+    "Whole-airframe source re-export parity checked separately by model generation verification"
+  ]
+}

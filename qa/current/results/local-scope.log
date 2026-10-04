@@ -1,0 +1,669 @@
+{
+  "passed": true,
+  "source": "assets/blender/xp4-source.glb",
+  "sha256": "14deba2a8cb20fb13c6cc05f8c4c09d441285b9754b014499942ad39992f7ce4",
+  "baselineSha256": "80ce0d237f5266077b5c34f4fc63e062a01d47c682be252eeedcf1cbb4f9f085",
+  "referenceArtifact": {
+    "path": "qa/reference/source-protected-surfaces.json",
+    "sha256": "6234bf10e2401339ab1dcd3d242a3ae98a7d33f39e9cd1b5609460f172bf7d0a"
+  },
+  "domain": {
+    "minimumAbsX": 0.074,
+    "maximumAbsX": 0.3,
+    "longitudinalY": [
+      0.76416,
+      2.1
+    ],
+    "verticalZ": [
+      -0.2,
+      0.22
+    ],
+    "reviewStatus": "预检采用最初实际中央底板保护界限 .074；.092仅是外环参数门槛"
+  },
+  "rows": [
+    {
+      "name": "Fuselage",
+      "outsideOriginalVertices": 5914,
+      "preservedOutsideOriginalVertices": 5914,
+      "newOutsideSubdivisionVertices": 53,
+      "unchangedOutsideOrientedTriangles": false,
+      "maximumOutsideSurfaceDifference": 6.5242145712920045e-9,
+      "outsideSurfaceSamples": 1680,
+      "worstOutsideSamples": [
+        {
+          "point": [
+            0.06656365096569061,
+            -0.028792623430490494,
+            -1.1624326705932617
+          ],
+          "direction": "after-to-before",
+          "distance": 6.5242145712920045e-9
+        },
+        {
+          "point": [
+            0.06656365096569061,
+            -0.028792623430490494,
+            -1.1624326705932617
+          ],
+          "direction": "after-to-before",
+          "distance": 6.5242145712920045e-9
+        },
+        {
+          "point": [
+            0.06656365096569061,
+            -0.028792623430490494,
+            -1.1624326705932617
+          ],
+          "direction": "after-to-before",
+          "distance": 6.5242145712920045e-9
+        },
+        {
+          "point": [
+            0.06656365096569061,
+            -0.028792623430490494,
+            -1.1624326705932617
+          ],
+          "direction": "after-to-before",
+          "distance": 6.5242145712920045e-9
+        },
+        {
+          "point": [
+            -0.07282842695713043,
+            -0.029127582907676697,
+            -1.2102910280227661
+          ],
+          "direction": "after-to-before",
+          "distance": 5.451936955640828e-9
+        },
+        {
+          "point": [
+            -0.07282842695713043,
+            -0.029127582907676697,
+            -1.2102910280227661
+          ],
+          "direction": "after-to-before",
+          "distance": 5.451936955640828e-9
+        },
+        {
+          "point": [
+            -0.07282842695713043,
+            -0.029127582907676697,
+            -1.2102910280227661
+          ],
+          "direction": "after-to-before",
+          "distance": 5.451936955640828e-9
+        },
+        {
+          "point": [
+            0.07282842695713043,
+            -0.029127582907676697,
+            -1.2102910280227661
+          ],
+          "direction": "after-to-before",
+          "distance": 5.451936955640828e-9
+        }
+      ],
+      "fullPatchCoverage": {
+        "passed": true,
+        "epsilon": 0.000001,
+        "beforeToAfter": {
+          "passed": true,
+          "epsilon": 0.000001,
+          "method": "Closed domain clipping; convex target-triangle neighborhood certificates over full polygon partitions",
+          "stats": {
+            "sourceTriangles": 2888,
+            "protectedPatches": 392,
+            "targetTriangleCandidates": 8430,
+            "convexCertificates": 2083,
+            "certificateVertices": 5393,
+            "wholeFragmentRescanCertificates": 44,
+            "coveragePasses": 392,
+            "largestResidualSet": 12,
+            "failedPatches": 0
+          },
+          "failures": []
+        },
+        "afterToBefore": {
+          "passed": true,
+          "epsilon": 0.000001,
+          "method": "Closed domain clipping; convex target-triangle neighborhood certificates over full polygon partitions",
+          "stats": {
+            "sourceTriangles": 5380,
+            "protectedPatches": 557,
+            "targetTriangleCandidates": 7572,
+            "convexCertificates": 1745,
+            "certificateVertices": 4072,
+            "wholeFragmentRescanCertificates": 11,
+            "coveragePasses": 557,
+            "largestResidualSet": 13,
+            "failedPatches": 0
+          },
+          "failures": []
+        }
+      },
+      "beforeOutsideTriangles": 11575,
+      "afterOutsideTriangles": 11630,
+      "beforeHash": "978f8dbb69dd40efa27614bb9647fecb3aede2bfcc723cc56512f03066f71a1f",
+      "afterHash": "1d9cbe5692d21e69b7815c15c3c9627b20a0e474664420c20f8bef62187a864b",
+      "passed": true
+    },
+    {
+      "name": "ActuatorSideSlot_L",
+      "outsideOriginalVertices": 0,
+      "preservedOutsideOriginalVertices": 0,
+      "newOutsideSubdivisionVertices": 0,
+      "unchangedOutsideOrientedTriangles": true,
+      "maximumOutsideSurfaceDifference": 0,
+      "outsideSurfaceSamples": 0,
+      "worstOutsideSamples": [],
+      "fullPatchCoverage": {
+        "passed": true,
+        "epsilon": 0.000001,
+        "beforeToAfter": {
+          "passed": true,
+          "epsilon": 0.000001,
+          "method": "Closed domain clipping; convex target-triangle neighborhood certificates over full polygon partitions",
+          "stats": {
+            "sourceTriangles": 40,
+            "protectedPatches": 0,
+            "targetTriangleCandidates": 0,
+            "convexCertificates": 0,
+            "certificateVertices": 0,
+            "wholeFragmentRescanCertificates": 0,
+            "coveragePasses": 0,
+            "largestResidualSet": 0,
+            "failedPatches": 0
+          },
+          "failures": []
+        },
+        "afterToBefore": {
+          "passed": true,
+          "epsilon": 0.000001,
+          "method": "Closed domain clipping; convex target-triangle neighborhood certificates over full polygon partitions",
+          "stats": {
+            "sourceTriangles": 56,
+            "protectedPatches": 0,
+            "targetTriangleCandidates": 0,
+            "convexCertificates": 0,
+            "certificateVertices": 0,
+            "wholeFragmentRescanCertificates": 0,
+            "coveragePasses": 0,
+            "largestResidualSet": 0,
+            "failedPatches": 0
+          },
+          "failures": []
+        }
+      },
+      "beforeOutsideTriangles": 0,
+      "afterOutsideTriangles": 0,
+      "beforeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "afterHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "passed": true
+    },
+    {
+      "name": "ActuatorSideSlot_R",
+      "outsideOriginalVertices": 0,
+      "preservedOutsideOriginalVertices": 0,
+      "newOutsideSubdivisionVertices": 0,
+      "unchangedOutsideOrientedTriangles": true,
+      "maximumOutsideSurfaceDifference": 0,
+      "outsideSurfaceSamples": 0,
+      "worstOutsideSamples": [],
+      "fullPatchCoverage": {
+        "passed": true,
+        "epsilon": 0.000001,
+        "beforeToAfter": {
+          "passed": true,
+          "epsilon": 0.000001,
+          "method": "Closed domain clipping; convex target-triangle neighborhood certificates over full polygon partitions",
+          "stats": {
+            "sourceTriangles": 46,
+            "protectedPatches": 0,
+            "targetTriangleCandidates": 0,
+            "convexCertificates": 0,
+            "certificateVertices": 0,
+            "wholeFragmentRescanCertificates": 0,
+            "coveragePasses": 0,
+            "largestResidualSet": 0,
+            "failedPatches": 0
+          },
+          "failures": []
+        },
+        "afterToBefore": {
+          "passed": true,
+          "epsilon": 0.000001,
+          "method": "Closed domain clipping; convex target-triangle neighborhood certificates over full polygon partitions",
+          "stats": {
+            "sourceTriangles": 62,
+            "protectedPatches": 0,
+            "targetTriangleCandidates": 0,
+            "convexCertificates": 0,
+            "certificateVertices": 0,
+            "wholeFragmentRescanCertificates": 0,
+            "coveragePasses": 0,
+            "largestResidualSet": 0,
+            "failedPatches": 0
+          },
+          "failures": []
+        }
+      },
+      "beforeOutsideTriangles": 0,
+      "afterOutsideTriangles": 0,
+      "beforeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "afterHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "passed": true
+    },
+    {
+      "name": "Lower_fuselage_join001",
+      "outsideOriginalVertices": 0,
+      "preservedOutsideOriginalVertices": 0,
+      "newOutsideSubdivisionVertices": 0,
+      "unchangedOutsideOrientedTriangles": true,
+      "maximumOutsideSurfaceDifference": 0,
+      "outsideSurfaceSamples": 0,
+      "worstOutsideSamples": [],
+      "fullPatchCoverage": {
+        "passed": true,
+        "epsilon": 0.000001,
+        "beforeToAfter": {
+          "passed": true,
+          "epsilon": 0.000001,
+          "method": "Closed domain clipping; convex target-triangle neighborhood certificates over full polygon partitions",
+          "stats": {
+            "sourceTriangles": 12,
+            "protectedPatches": 0,
+            "targetTriangleCandidates": 0,
+            "convexCertificates": 0,
+            "certificateVertices": 0,
+            "wholeFragmentRescanCertificates": 0,
+            "coveragePasses": 0,
+            "largestResidualSet": 0,
+            "failedPatches": 0
+          },
+          "failures": []
+        },
+        "afterToBefore": {
+          "passed": true,
+          "epsilon": 0.000001,
+          "method": "Closed domain clipping; convex target-triangle neighborhood certificates over full polygon partitions",
+          "stats": {
+            "sourceTriangles": 84,
+            "protectedPatches": 0,
+            "targetTriangleCandidates": 0,
+            "convexCertificates": 0,
+            "certificateVertices": 0,
+            "wholeFragmentRescanCertificates": 0,
+            "coveragePasses": 0,
+            "largestResidualSet": 0,
+            "failedPatches": 0
+          },
+          "failures": []
+        }
+      },
+      "beforeOutsideTriangles": 0,
+      "afterOutsideTriangles": 0,
+      "beforeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "afterHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "passed": true
+    },
+    {
+      "name": "Lower_fuselage_join003",
+      "outsideOriginalVertices": 0,
+      "preservedOutsideOriginalVertices": 0,
+      "newOutsideSubdivisionVertices": 0,
+      "unchangedOutsideOrientedTriangles": true,
+      "maximumOutsideSurfaceDifference": 0,
+      "outsideSurfaceSamples": 0,
+      "worstOutsideSamples": [],
+      "fullPatchCoverage": {
+        "passed": true,
+        "epsilon": 0.000001,
+        "beforeToAfter": {
+          "passed": true,
+          "epsilon": 0.000001,
+          "method": "Closed domain clipping; convex target-triangle neighborhood certificates over full polygon partitions",
+          "stats": {
+            "sourceTriangles": 12,
+            "protectedPatches": 0,
+            "targetTriangleCandidates": 0,
+            "convexCertificates": 0,
+            "certificateVertices": 0,
+            "wholeFragmentRescanCertificates": 0,
+            "coveragePasses": 0,
+            "largestResidualSet": 0,
+            "failedPatches": 0
+          },
+          "failures": []
+        },
+        "afterToBefore": {
+          "passed": true,
+          "epsilon": 0.000001,
+          "method": "Closed domain clipping; convex target-triangle neighborhood certificates over full polygon partitions",
+          "stats": {
+            "sourceTriangles": 84,
+            "protectedPatches": 0,
+            "targetTriangleCandidates": 0,
+            "convexCertificates": 0,
+            "certificateVertices": 0,
+            "wholeFragmentRescanCertificates": 0,
+            "coveragePasses": 0,
+            "largestResidualSet": 0,
+            "failedPatches": 0
+          },
+          "failures": []
+        }
+      },
+      "beforeOutsideTriangles": 0,
+      "afterOutsideTriangles": 0,
+      "beforeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "afterHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "passed": true
+    },
+    {
+      "name": "Lower_fuselage_join",
+      "outsideOriginalVertices": 20,
+      "preservedOutsideOriginalVertices": 20,
+      "newOutsideSubdivisionVertices": 8,
+      "unchangedOutsideOrientedTriangles": false,
+      "maximumOutsideSurfaceDifference": 4.96032240002604e-9,
+      "outsideSurfaceSamples": 92,
+      "worstOutsideSamples": [
+        {
+          "point": [
+            -0.22340530157089233,
+            -0.021443810313940048,
+            -0.7641599774360657
+          ],
+          "direction": "after-to-before",
+          "distance": 4.96032240002604e-9
+        },
+        {
+          "point": [
+            -0.22340530157089233,
+            -0.021443810313940048,
+            -0.7641599774360657
+          ],
+          "direction": "after-to-before",
+          "distance": 4.96032240002604e-9
+        },
+        {
+          "point": [
+            -0.22340530157089233,
+            -0.021443810313940048,
+            -0.7641599774360657
+          ],
+          "direction": "after-to-before",
+          "distance": 4.96032240002604e-9
+        },
+        {
+          "point": [
+            -0.22340530157089233,
+            -0.021443810313940048,
+            -0.7641599774360657
+          ],
+          "direction": "after-to-before",
+          "distance": 4.96032240002604e-9
+        },
+        {
+          "point": [
+            -0.22340530157089233,
+            -0.021443810313940048,
+            -0.7641599774360657
+          ],
+          "direction": "after-to-before",
+          "distance": 4.96032240002604e-9
+        },
+        {
+          "point": [
+            -0.22037799656391144,
+            -0.018424537032842636,
+            -0.7641599774360657
+          ],
+          "direction": "after-to-before",
+          "distance": 4.195962752565564e-9
+        },
+        {
+          "point": [
+            -0.22037799656391144,
+            -0.018424537032842636,
+            -0.7641599774360657
+          ],
+          "direction": "after-to-before",
+          "distance": 4.195962752565564e-9
+        },
+        {
+          "point": [
+            -0.22037799656391144,
+            -0.018424537032842636,
+            -0.7641599774360657
+          ],
+          "direction": "after-to-before",
+          "distance": 4.195962752565564e-9
+        }
+      ],
+      "fullPatchCoverage": {
+        "passed": true,
+        "epsilon": 0.000001,
+        "beforeToAfter": {
+          "passed": true,
+          "epsilon": 0.000001,
+          "method": "Closed domain clipping; convex target-triangle neighborhood certificates over full polygon partitions",
+          "stats": {
+            "sourceTriangles": 8,
+            "protectedPatches": 8,
+            "targetTriangleCandidates": 199,
+            "convexCertificates": 82,
+            "certificateVertices": 195,
+            "wholeFragmentRescanCertificates": 0,
+            "coveragePasses": 8,
+            "largestResidualSet": 7,
+            "failedPatches": 0
+          },
+          "failures": []
+        },
+        "afterToBefore": {
+          "passed": true,
+          "epsilon": 0.000001,
+          "method": "Closed domain clipping; convex target-triangle neighborhood certificates over full polygon partitions",
+          "stats": {
+            "sourceTriangles": 72,
+            "protectedPatches": 28,
+            "targetTriangleCandidates": 239,
+            "convexCertificates": 111,
+            "certificateVertices": 276,
+            "wholeFragmentRescanCertificates": 0,
+            "coveragePasses": 28,
+            "largestResidualSet": 6,
+            "failedPatches": 0
+          },
+          "failures": []
+        }
+      },
+      "beforeOutsideTriangles": 32,
+      "afterOutsideTriangles": 44,
+      "beforeHash": "5c5d370602b0f7260ba7a7580a2231171d610112ae31d918993f198793c342de",
+      "afterHash": "f79dad0b68529ed91bc65fabdecdb06467e62fa5bb7732e14e17c69bdeb728c4",
+      "passed": true
+    },
+    {
+      "name": "Lower_fuselage_join002",
+      "outsideOriginalVertices": 20,
+      "preservedOutsideOriginalVertices": 20,
+      "newOutsideSubdivisionVertices": 8,
+      "unchangedOutsideOrientedTriangles": false,
+      "maximumOutsideSurfaceDifference": 5.613230828207377e-9,
+      "outsideSurfaceSamples": 92,
+      "worstOutsideSamples": [
+        {
+          "point": [
+            0.22076863050460815,
+            -0.018814248964190483,
+            -0.7641599774360657
+          ],
+          "direction": "after-to-before",
+          "distance": 5.613230828207377e-9
+        },
+        {
+          "point": [
+            0.22076863050460815,
+            -0.018814248964190483,
+            -0.7641599774360657
+          ],
+          "direction": "after-to-before",
+          "distance": 5.613230828207377e-9
+        },
+        {
+          "point": [
+            0.22076863050460815,
+            -0.018814248964190483,
+            -0.7641599774360657
+          ],
+          "direction": "after-to-before",
+          "distance": 5.613230828207377e-9
+        },
+        {
+          "point": [
+            0.22076863050460815,
+            -0.018814248964190483,
+            -0.7641599774360657
+          ],
+          "direction": "after-to-before",
+          "distance": 5.613230828207377e-9
+        },
+        {
+          "point": [
+            0.22076863050460815,
+            -0.018814248964190483,
+            -0.7641599774360657
+          ],
+          "direction": "after-to-before",
+          "distance": 5.613230828207377e-9
+        },
+        {
+          "point": [
+            0.22076863050460815,
+            -0.018814248964190483,
+            -0.7641599774360657
+          ],
+          "direction": "after-to-before",
+          "distance": 5.613230828207377e-9
+        },
+        {
+          "point": [
+            0.22340530157089233,
+            -0.021443810313940048,
+            -0.7641599774360657
+          ],
+          "direction": "after-to-before",
+          "distance": 4.959363978519636e-9
+        },
+        {
+          "point": [
+            0.22340530157089233,
+            -0.021443810313940048,
+            -0.7641599774360657
+          ],
+          "direction": "after-to-before",
+          "distance": 4.959363978519636e-9
+        }
+      ],
+      "fullPatchCoverage": {
+        "passed": true,
+        "epsilon": 0.000001,
+        "beforeToAfter": {
+          "passed": true,
+          "epsilon": 0.000001,
+          "method": "Closed domain clipping; convex target-triangle neighborhood certificates over full polygon partitions",
+          "stats": {
+            "sourceTriangles": 8,
+            "protectedPatches": 8,
+            "targetTriangleCandidates": 198,
+            "convexCertificates": 101,
+            "certificateVertices": 292,
+            "wholeFragmentRescanCertificates": 1,
+            "coveragePasses": 8,
+            "largestResidualSet": 6,
+            "failedPatches": 0
+          },
+          "failures": []
+        },
+        "afterToBefore": {
+          "passed": true,
+          "epsilon": 0.000001,
+          "method": "Closed domain clipping; convex target-triangle neighborhood certificates over full polygon partitions",
+          "stats": {
+            "sourceTriangles": 72,
+            "protectedPatches": 28,
+            "targetTriangleCandidates": 239,
+            "convexCertificates": 110,
+            "certificateVertices": 311,
+            "wholeFragmentRescanCertificates": 0,
+            "coveragePasses": 28,
+            "largestResidualSet": 4,
+            "failedPatches": 0
+          },
+          "failures": []
+        }
+      },
+      "beforeOutsideTriangles": 32,
+      "afterOutsideTriangles": 44,
+      "beforeHash": "41ec3167838883972883ebf7eda6e7e1f531a9cd3ac0452028b6fe1e053d70a2",
+      "afterHash": "e47b666dd52c9c998d7b74de7757d9e071d4f87db695d28f20183d02c6f9b404",
+      "passed": true
+    },
+    {
+      "name": "Tail_boom_join",
+      "outsideOriginalVertices": 84,
+      "preservedOutsideOriginalVertices": 84,
+      "newOutsideSubdivisionVertices": 0,
+      "unchangedOutsideOrientedTriangles": true,
+      "maximumOutsideSurfaceDifference": 0,
+      "outsideSurfaceSamples": 0,
+      "worstOutsideSamples": [],
+      "fullPatchCoverage": {
+        "passed": true,
+        "epsilon": 0.000001,
+        "beforeToAfter": {
+          "passed": true,
+          "epsilon": 0.000001,
+          "method": "Closed domain clipping; convex target-triangle neighborhood certificates over full polygon partitions",
+          "stats": {
+            "sourceTriangles": 80,
+            "protectedPatches": 0,
+            "targetTriangleCandidates": 0,
+            "convexCertificates": 0,
+            "certificateVertices": 0,
+            "wholeFragmentRescanCertificates": 0,
+            "coveragePasses": 0,
+            "largestResidualSet": 0,
+            "failedPatches": 0
+          },
+          "failures": []
+        },
+        "afterToBefore": {
+          "passed": true,
+          "epsilon": 0.000001,
+          "method": "Closed domain clipping; convex target-triangle neighborhood certificates over full polygon partitions",
+          "stats": {
+            "sourceTriangles": 80,
+            "protectedPatches": 0,
+            "targetTriangleCandidates": 0,
+            "convexCertificates": 0,
+            "certificateVertices": 0,
+            "wholeFragmentRescanCertificates": 0,
+            "coveragePasses": 0,
+            "largestResidualSet": 0,
+            "failedPatches": 0
+          },
+          "failures": []
+        }
+      },
+      "beforeOutsideTriangles": 148,
+      "afterOutsideTriangles": 148,
+      "beforeHash": "f8c52e26b5e48b27ba7056c52d484b87a16bd94acde42ac7d15a4f616856e70e",
+      "afterHash": "f8c52e26b5e48b27ba7056c52d484b87a16bd94acde42ac7d15a4f616856e70e",
+      "passed": true
+    }
+  ],
+  "failures": []
+}

@@ -1,0 +1,491 @@
+{
+  "scope": "当前完整生产模型与原生产机构姿态的离线原生渲染；不含历史对照或原始用户截图",
+  "runtimeSha256": "313b014ec70b409175b34a08f66ec56820a51ea094085ce1eef96fc444ce4b2b",
+  "sourceSha256": "14deba2a8cb20fb13c6cc05f8c4c09d441285b9754b014499942ad39992f7ce4",
+  "manifestSha256": "5c75a42613bd42c5229204236b6a3605cf59f0190f8d4e7fdb8cb6611ffa04d9",
+  "rigSha256": "4215cd44a02e36e62a2a7ccacd16a38b3fe9d82a727c0233af6d889caa56efb5",
+  "inputHashMeaning": "渲染时规范生产源文件的哈希；交付工程迁移后的文本文件以代码迁移映射为准。运行与源 GLB 保持字节一致。",
+  "productionInputHashes": {
+    "public/models/xp4.glb": "313b014ec70b409175b34a08f66ec56820a51ea094085ce1eef96fc444ce4b2b",
+    "assets/blender/xp4-source.glb": "14deba2a8cb20fb13c6cc05f8c4c09d441285b9754b014499942ad39992f7ce4",
+    "assets/blender/xp4.blend": "0dc4feb2a628dad23f1e82d122167a08154b7f72f301bc5f5fc8e59c210b6857",
+    "public/models/manifest.json": "5c75a42613bd42c5229204236b6a3605cf59f0190f8d4e7fdb8cb6611ffa04d9",
+    "src/rig.ts": "4215cd44a02e36e62a2a7ccacd16a38b3fe9d82a727c0233af6d889caa56efb5",
+    "src/motors.ts": "5297141cc670fd98034bd242e189f0d61681587db209a02da08fb73971c02824",
+    "src/details.ts": "6b6a967e411a72e5bea6f44badb89f33746c01e5e1d770ce91d962a1d4cb1a66",
+    "src/sceneLighting.ts": "00584eba19c175341efb5893b5b53a09b560232dd371381acde8c502f8752150",
+    "src/internalDriveInspection.ts": "1a5fae23375a81475b43b9fe8d16bcce506a3b76663b1bba3ba9b288ad6f6a42"
+  },
+  "media": [
+    {
+      "file": "FUSELAGE_SLOT_DETAILS.jpg",
+      "bytes": 265803,
+      "sha256": "a81197fb7e4c8cb513d17ee0617ab5139f6439201a07d3861aa8c91550ebf647"
+    },
+    {
+      "file": "FUSELAGE_SLOT_STROKE.jpg",
+      "bytes": 325536,
+      "sha256": "09d46919d64313414ea3ffc750d62f960335248bb4a79db714be2a3c09aa7aeb"
+    },
+    {
+      "file": "AIRFRAME_OVERVIEW.jpg",
+      "bytes": 352560,
+      "sha256": "50d565b18b475db5edad970341007e12bd760f850e6dccb9f9f8dd3363d94a58"
+    },
+    {
+      "file": "FUSELAGE_SLOT_MOTION.mp4",
+      "bytes": 587900,
+      "sha256": "fd6d0f845d4f6be794b423109780a3440124b664b187b457fa28a5566f7a321a",
+      "frames": 80,
+      "fps": 16,
+      "seconds": 5,
+      "actualUniquePoses": 41,
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "width": 1440,
+            "height": 792,
+            "r_frame_rate": "16/1",
+            "nb_frames": "80"
+          }
+        ],
+        "format": {
+          "duration": "5.000000"
+        }
+      },
+      "completeDecodePassed": true
+    }
+  ],
+  "totalMediaBytes": 1531799,
+  "within2MiBBudget": true,
+  "rendering": {
+    "renderer": {
+      "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "version": "4.5 (Compatibility Profile) Mesa 25.0.7-2+deb13u1",
+      "vendor": "Mesa"
+    },
+    "actualUniqueMotionPoses": 41,
+    "staticPoses": [
+      0,
+      0.5,
+      1
+    ],
+    "captures": 162,
+    "meshInstancesPerCapture": 283,
+    "allMeshDrawSubmissionsChecked": true,
+    "sameRuntimeHashAcrossAllCurrentCaptures": true,
+    "imageDecodePassed": true,
+    "completeVideoDecodePassed": true,
+    "video": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 792,
+          "r_frame_rate": "16/1",
+          "nb_frames": "80"
+        }
+      ],
+      "format": {
+        "duration": "5.000000"
+      }
+    },
+    "cameraDefinitions": {
+      "side-near": {
+        "position": [
+          8,
+          -0.75,
+          -3
+        ],
+        "target": [
+          0,
+          0.005,
+          -1.31
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 0.5,
+        "meshSet": "exterior",
+        "resolution": [
+          1500,
+          480
+        ]
+      },
+      "side-level": {
+        "position": [
+          8,
+          -0.06,
+          -1.38
+        ],
+        "target": [
+          0,
+          0.005,
+          -1.38
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 0.5,
+        "meshSet": "exterior",
+        "resolution": [
+          1500,
+          480
+        ]
+      },
+      "underbody": {
+        "position": [
+          6,
+          -5,
+          -2.4
+        ],
+        "target": [
+          0,
+          0.02,
+          -1.38
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 0.7,
+        "meshSet": "exterior",
+        "resolution": [
+          1500,
+          650
+        ]
+      },
+      "front-oblique": {
+        "position": [
+          6,
+          -2,
+          3
+        ],
+        "target": [
+          0,
+          0.02,
+          -1.38
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 0.8,
+        "meshSet": "exterior",
+        "resolution": [
+          1500,
+          650
+        ]
+      },
+      "whole": {
+        "position": [
+          12,
+          7,
+          14
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 9.0,
+        "meshSet": "exterior",
+        "resolution": [
+          1200,
+          900
+        ]
+      },
+      "whole-top": {
+        "position": [
+          0,
+          8,
+          0
+        ],
+        "target": [
+          0,
+          -0.3,
+          0
+        ],
+        "up": [
+          0,
+          0,
+          1
+        ],
+        "scale": 8.5,
+        "meshSet": "exterior",
+        "resolution": [
+          1200,
+          900
+        ]
+      },
+      "underbody-left": {
+        "position": [
+          -6,
+          -5,
+          -2.4
+        ],
+        "target": [
+          0,
+          0.02,
+          -1.38
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 0.7,
+        "meshSet": "exterior",
+        "resolution": [
+          1500,
+          650
+        ]
+      },
+      "rear-oblique": {
+        "position": [
+          6,
+          -2,
+          -6
+        ],
+        "target": [
+          0,
+          0.02,
+          -1.38
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 0.75,
+        "meshSet": "exterior",
+        "resolution": [
+          1500,
+          650
+        ]
+      },
+      "support-inspection": {
+        "position": [
+          5,
+          -2,
+          -0.25
+        ],
+        "target": [
+          0,
+          -0.015,
+          -1.17
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 0.92,
+        "meshSet": "exterior",
+        "resolution": [
+          1600,
+          750
+        ],
+        "translucentNames": [
+          "Fuselage",
+          "Dorsal_hatch_main",
+          "Hatch_fastener_main",
+          "Hatch_fastener_main001",
+          "Hatch_fastener_main002",
+          "Hatch_fastener_main003",
+          "Tail_boom_join",
+          "Dorsal_small_receiver",
+          "Tail_receiver",
+          "ActuatorSideSlot_L",
+          "ActuatorSideSlot_R",
+          "Lower_fuselage_join",
+          "Lower_fuselage_join001",
+          "Lower_fuselage_join002",
+          "Lower_fuselage_join003",
+          "Drive_ReductionHousing"
+        ],
+        "shellOpacity": 0.28,
+        "treatment": "支承脚与舱底连接检查；仅指定机壳28%不透明，全部实际网格保留；不是碰撞证明"
+      },
+      "motor-foot-contact": {
+        "position": [
+          3,
+          1.002,
+          0.8500000000000001
+        ],
+        "target": [
+          0,
+          0.0020000000000000018,
+          -0.45
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 0.3,
+        "meshSet": "exterior",
+        "resolution": [
+          800,
+          650
+        ],
+        "translucentNames": [
+          "Fuselage",
+          "Dorsal_hatch_main",
+          "Hatch_fastener_main",
+          "Hatch_fastener_main001",
+          "Hatch_fastener_main002",
+          "Hatch_fastener_main003",
+          "Tail_boom_join",
+          "Dorsal_small_receiver",
+          "Tail_receiver",
+          "ActuatorSideSlot_L",
+          "ActuatorSideSlot_R",
+          "Lower_fuselage_join",
+          "Lower_fuselage_join001",
+          "Lower_fuselage_join002",
+          "Lower_fuselage_join003",
+          "Drive_ReductionHousing"
+        ],
+        "shellOpacity": 0.28,
+        "treatment": "支承脚与舱底连接检查；仅指定机壳28%不透明，全部实际网格保留；不是碰撞证明",
+        "contactPrefix": "Drive_MotorFoot_"
+      },
+      "front-foot-contact": {
+        "position": [
+          3,
+          0.992,
+          0.4700000000000001
+        ],
+        "target": [
+          0,
+          -0.008,
+          -0.83
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 0.25,
+        "meshSet": "exterior",
+        "resolution": [
+          800,
+          650
+        ],
+        "translucentNames": [
+          "Fuselage",
+          "Dorsal_hatch_main",
+          "Hatch_fastener_main",
+          "Hatch_fastener_main001",
+          "Hatch_fastener_main002",
+          "Hatch_fastener_main003",
+          "Tail_boom_join",
+          "Dorsal_small_receiver",
+          "Tail_receiver",
+          "ActuatorSideSlot_L",
+          "ActuatorSideSlot_R",
+          "Lower_fuselage_join",
+          "Lower_fuselage_join001",
+          "Lower_fuselage_join002",
+          "Lower_fuselage_join003",
+          "Drive_ReductionHousing"
+        ],
+        "shellOpacity": 0.28,
+        "treatment": "支承脚与舱底连接检查；仅指定机壳28%不透明，全部实际网格保留；不是碰撞证明",
+        "contactPrefix": "Drive_FrontFoot_"
+      },
+      "rear-foot-contact": {
+        "position": [
+          3,
+          1.032,
+          -0.6819999999999999
+        ],
+        "target": [
+          0,
+          0.032,
+          -1.982
+        ],
+        "up": [
+          0,
+          1,
+          0
+        ],
+        "scale": 0.16,
+        "meshSet": "exterior",
+        "resolution": [
+          800,
+          650
+        ],
+        "translucentNames": [
+          "Fuselage",
+          "Dorsal_hatch_main",
+          "Hatch_fastener_main",
+          "Hatch_fastener_main001",
+          "Hatch_fastener_main002",
+          "Hatch_fastener_main003",
+          "Tail_boom_join",
+          "Dorsal_small_receiver",
+          "Tail_receiver",
+          "ActuatorSideSlot_L",
+          "ActuatorSideSlot_R",
+          "Lower_fuselage_join",
+          "Lower_fuselage_join001",
+          "Lower_fuselage_join002",
+          "Lower_fuselage_join003",
+          "Drive_ReductionHousing"
+        ],
+        "shellOpacity": 0.28,
+        "treatment": "支承脚与舱底连接检查；仅指定机壳28%不透明，全部实际网格保留；不是碰撞证明",
+        "contactPrefix": "Drive_RearFoot_"
+      }
+    },
+    "materials": "外观使用原生产材质；明确标注的支承连接检查机位将指定机壳设为28%不透明，全部实际几何保留。生产光照值与 ACES，标准材质 GGX 和区域反射为明确近似 脚底局部检查仅将真实舱底原三角改为不透明材质，严格分区且没有新增几何，细节见CONTACT_READABILITY.json。",
+    "baseCaptures": 159,
+    "additionalMaterialPartitionCaptures": 3
+  },
+  "framing": {
+    "wholeAirframe": {
+      "passed": true,
+      "captures": 47,
+      "minimumBorderPixels": 19.359148691481213
+    },
+    "outputSlotAndSupportRegions": {
+      "passed": true,
+      "captures": 112,
+      "minimumBorderPixels": 29.41004013941928
+    }
+  },
+  "limitations": [
+    "没有用户截图相机精确配准",
+    "完整网格保留；外观保留真实遮挡，支承检查按图注明确设定机壳不透明度；取景检查不保证每个顶点可见",
+    "不是浏览器或手机验收；不含浏览器 PMREM、阴影贴图与雾效",
+    "概念重建，不是原厂 CAD、制造、载荷、动力学或连续无碰撞认证",
+    "直线度、厚度与净距以独立几何验收为准，未根据像素估算"
+  ],
+  "contactReadabilityRefinement": {
+    "report": "CONTACT_READABILITY.json",
+    "sha256": "1bb2ec4f30bfb1b41c511144291da45cc1b604a40084c504fd95096782097170",
+    "scope": "三个脚底近景只将原Fuselage宿主三角恢复不透明，未新增、删除或移动几何；原三角严格分区恰好绘制一次。",
+    "sameFinalRuntimeHash": true,
+    "additionalCaptures": 3,
+    "physicalMeshes": 283,
+    "materialDrawBatchesPerCapture": 284,
+    "allPositionNormalMatrixAndOrientedTriangleDataPreserved": true,
+    "sameHashSixSupportWitnessTrianglesVerified": true
+  }
+}

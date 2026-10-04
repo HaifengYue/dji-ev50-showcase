@@ -1,0 +1,8 @@
+import {acceptedReference,verifyOriginalCode} from './reference-records.mjs';
+/** 用户授权的新布局范围与原物理限值的独立复审入口。 */
+import fs from 'node:fs';import crypto from 'node:crypto';import assert from 'node:assert/strict';import{reviewContractValues}from'./reviewed-contract-logic.mjs';
+const read=p=>JSON.parse(fs.readFileSync(p,'utf8')),sha=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
+const b=acceptedReference().data.acceptedManifest,n=read('public/models/manifest.json'),c=read('qa/contracts/fuselage-slot-refinement.json'),s=read('qa/contracts/supports.json'),prior=read('qa/contracts/reference-supports.json');
+assert.equal(c.sourceSha256,sha('assets/blender/xp4-source.glb'));assert.equal(c.runtimeSha256,sha('public/models/xp4.glb'));assert.equal(s.reviewSourceSha256,c.sourceSha256);
+const ref=acceptedReference().data;for(const p of ['src/rig.ts','src/internalDriveInspection.ts']){const expected=ref.codeFingerprints.find(r=>r.originalPath===p);assert(expected);verifyOriginalCode(p,expected.sha256);}
+const review=reviewContractValues(b,n,c,s,prior),r={passed:true,modelVersion:24,runtimeSha256:c.runtimeSha256,sourceSha256:c.sourceSha256,reviewedContractSha256:sha('qa/contracts/fuselage-slot-refinement.json'),supportContractSha256:sha('qa/contracts/supports.json'),reviewedChanges:c.geometryChanges,sourceTransformChanges:c.transformChanges,runtimeTransformChanges:c.runtimeTransformChanges,runtimeEncodingTransformChanges:c.runtimeEncodingTransformChanges,...review};fs.writeFileSync(process.env.QA_OUT??'qa/current/reviewed-contract-report.json',JSON.stringify(r,null,2)+'\n');console.log(r);

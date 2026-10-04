@@ -1,0 +1,28 @@
+/** 复审用户授权的局部低置驱动与直槽范围；界限和固定接口坐标可随几何重作，碰撞/孔隙/材料阈值不得偷放宽。 */
+import assert from 'node:assert/strict';
+const clone=x=>JSON.parse(JSON.stringify(x)),sameNames=(a,b)=>assert.deepEqual([...a].sort(),[...b].sort());
+const slotName=n=>n==='Fuselage'||n==='Tail_boom_join'||/^ActuatorSideSlot_[LR]$/.test(n)||/^Lower_fuselage_join\d*$/.test(n);
+const driveName=n=>/^Drive_/.test(n)||/^BraceBodyCarriage_[LR]$/.test(n);
+const idOf=d=>'fixed:'+d.pair.slice().sort().join('/');
+export function reviewContractValues(b,n,c,s,prior){
+ assert.equal(n.version,24);assert.equal(c.reviewed,true);assert.equal(s.reviewed,true);
+ for(const key of ['removedNodes','addedNodes','parentChanges','animationTimelineChangeNodes'])assert.deepEqual(c[key],[],key+'本轮不得变化');
+ assert(c.geometryChanges.every(name=>slotName(name)||driveName(name)),'几何变化超出授权机构/机腹范围');assert((c.normalOnlyChanges??[]).every(name=>slotName(name)||driveName(name)));
+ assert(c.transformChanges.every(driveName),'仅低置驱动及直输出件可改变源局部TRS');assert((c.animationChangeNodes??[]).every(n=>/^Drive_/.test(n)),'其它动作不允许变化');
+ sameNames(c.runtimeTransformChanges??c.runtimeEncodingTransformChanges,[...new Set([...c.transformChanges,...c.runtimeEncodingTransformChanges])]);assert(c.runtimeEncodingTransformChanges.every(n=>c.geometryChanges.includes(n)),'编码重基只能来自声明的实际改动几何');
+ for(const row of c.extrasChanges??[]){assert(driveName(row.name));assert(row.properties.every(p=>['driveRole','purpose','straightOutputEndpointsLocal','straightOutputRadius'].includes(p.key)),'功能轴/相位/导程元数据不可改变');}
+ assert.equal(n.rootInterface.axisHalfGap,.003);assert.equal(n.mechanism.rootClearance,.006);for(const key of ['rootInterface','wingSeamRefinement'])assert.deepEqual(n[key],b[key]);
+ const mechanism=x=>{const{version,slotEnvelopeBlender,...v}=x;return v;};assert.deepEqual(mechanism(n.mechanism),mechanism(b.mechanism),'球心、轴、杆长与滑架公式不得改变');
+ const linkage=x=>{const{bodyOutput,changedNodes,...v}=x;return v;};assert.deepEqual(linkage(n.linkageSimplification),linkage(b.linkageSimplification));
+ const drive=x=>{const{version,screwAxisHeightBlender,loweredLayout,fixedAttachmentInterfaces,cavity,...v}=x;return v;};assert.deepEqual(drive(n.internalDrive),drive(b.internalDrive),'传动轴方向、导程、齿比、相位、行程或孔隙改变');
+ const cavity=x=>{const{materialVolumeBefore,materialVolumeAfter,removedVolume,actualOutputSlotEnvelope,...v}=x;return v;};assert.deepEqual(cavity(n.internalDrive.cavity),cavity(b.internalDrive.cavity),'空腔实体方法/径向壁厚/采样不得改变');assert.deepEqual(n.internalDrive.cavity.actualOutputSlotEnvelope.stroke,b.internalDrive.cavity.actualOutputSlotEnvelope.stroke);for(const k of ['centerX','width','bottomZ','topZ','actualRoundedOutlineRightXY'])assert.deepEqual(n.internalDrive.cavity.actualOutputSlotEnvelope[k],n.mechanism.slotEnvelopeBlender[k]);
+ assert(n.internalDrive.screwAxisHeightBlender<b.internalDrive.screwAxisHeightBlender);assert.equal(n.internalDrive.screwAxisHeightBlender,n.internalDrive.loweredLayout.axisZ);assert.equal(n.internalDrive.loweredLayout.bodyBallAndWingTrajectoryUnchanged,true);
+ for(const k of ['newNodes','nominalWallThickness','outerRadius','serviceSeamAxialGap','movingRangeDegrees'])assert.deepEqual(n.fairingRefinements[k],b.fairingRefinements[k]);assert.deepEqual(n.jointRefinements.newCollisionExemptions,[]);
+ for(const k of ['classification','decorations','incidentalContacts'])assert.deepEqual(s[k],prior[k],k+'不可借低置机构放宽原接合/装饰/碰撞规则');
+ const oldFixed=new Map(prior.fixed.map(x=>[x.id,x])),nowFixed=new Map(s.fixed.map(x=>[x.id,x])),authored=new Set(n.internalDrive.fixedAttachmentInterfaces.map(idOf)),changedFixed=[];
+ assert.equal(nowFixed.size,s.fixed.length);for(const [id,old]of oldFixed){const next=nowFixed.get(id);assert(next,'原固定接口丢失 '+id);const allowed=old.pair.some(driveName)||/^fixed:Fuselage\/Lower_fuselage_join(?:001|003)$/.test(id);if(!allowed){assert.deepEqual(next,old,id);continue;}assert.equal(next.minimumContactArea,old.minimumContactArea,'旧最小材料接触面积不得降低 '+id);assert.deepEqual(next.pair,old.pair);assert.equal(next.frame??null,old.frame??null);if(old.cylinder){assert(next.cylinder,'原有限圆柱域不可去掉');for(const k of ['axis','range','minimumRadius','radius'])assert.deepEqual(next.cylinder[k],old.cylinder[k],id+'圆柱域半径/轴向限不得放宽');}if(JSON.stringify(next)!==JSON.stringify(old))changedFixed.push(id);}
+ for(const [id,row]of nowFixed){if(!oldFixed.has(id)){assert(authored.has(id)&&row.pair.every(driveName),'新增固定域必须是明确的低置驱动实际安装界面');assert(row.minimumContactArea>=1e-12);changedFixed.push(id);}for(const region of row.regions??[row]){assert(region.min?.length===3&&region.max?.length===3,'有限接合域缺失');assert(region.min.every((v,k)=>Number.isFinite(v)&&Number.isFinite(region.max[k])&&v<region.max[k]),'接合域必须有限且非零');}}
+ const fits=new Map(s.fits.map(x=>[x.id,x]));sameNames([...fits.keys()],prior.fits.map(x=>x.id));const changedFitCenters=[];
+ for(const old of prior.fits){const next=fits.get(old.id),a=clone(old),v=clone(next);if(['slider-guide:L','slider-guide:R','screw-bearing:Front','screw-bearing:Rear','drive-motor-bearing'].includes(old.id)){assert.deepEqual([v.center[0],v.center[2]],[a.center[0],a.center[2]]);const expected=old.id.startsWith('slider-guide:')?n.internalDrive.loweredLayout.guideAxisZ+.02:n.internalDrive.loweredLayout.axisZ;assert(Math.abs(v.center[1]-expected)<=1e-15,'孔射线轴高不对应真实低置设计');delete a.center;delete v.center;changedFitCenters.push(old.id);}assert.deepEqual(v,a,'孔径、净隙、采样站位/角度等物理限值不可放宽 '+old.id);}
+ return {driveLowered:n.internalDrive.loweredLayout,phaseStrokeRatioAndAxisDirectionPreserved:true,wingProfileAndSeamPreserved:true,oldMinimumMaterialAreasPreserved:true,allBoreRadiusGapAndSamplingLimitsPreserved:true,changedFixedInterfaceIds:changedFixed,relocatedFitCenters:changedFitCenters,newCollisionExemptions:[]};
+}

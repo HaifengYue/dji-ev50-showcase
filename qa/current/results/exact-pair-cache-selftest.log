@@ -1,0 +1,1 @@
+{"passed":true,"cases":["相同矩阵复用","机器精度矩阵变化重新计算","返回同矩阵复用","不同零件对不共享","属性版本变化拒绝","替换同版本顶点属性拒绝"],"stats":{"freshNarrowPhasePairPoses":3,"exactTransformPairReuses":2,"immutableGeometryIdentityAndVersionsAsserted":true,"policy":"仅本轮不可变网格身份/属性/数组/版本与Float64世界矩阵完全相同才复用；任何几何变化直接失败，不能让原矩阵快照缓存失效"}}

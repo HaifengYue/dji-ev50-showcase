@@ -1,0 +1,13 @@
+{
+  "version": 24,
+  "sourceBlendSha256": "5c5d73d4d7c84d70284854abc4e71a50a3c9bcf744ea8b22144a801e800dbe82",
+  "dataSha256": "69c73ce46be035abb655b03a9608523ce38f3695ed3f0bbdc5b5436cc488451c",
+  "meshes": {
+    "Fuselage": "Fuselage",
+    "CargoHoodShell": "Fuselage.001",
+    "Dorsal_hatch_main": "Dorsal_hatch_main",
+    "Lower_fuselage_join": "Lower_fuselage_join",
+    "Lower_fuselage_join.002": "Lower_fuselage_join.002"
+  },
+  "use": "保留原前部完整三角与未改舱盖/前装饰线；仅以原loop_triangles平面修复中央保护底板的三个受影响扇形，不复制旧工程或机构"
+}

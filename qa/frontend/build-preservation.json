@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "beforeCount": 0,
+  "afterCount": 9,
+  "removedPaths": [],
+  "currentDistributionFiles": [
+    "dist/assets/index-Clgw5HCR.js",
+    "dist/assets/index-DYws8zB-.css",
+    "dist/assets/scene-CAbU1Meg.js",
+    "dist/assets/three-D1MzFUPS.js",
+    "dist/examples/python-full-flow.json",
+    "dist/index.html",
+    "dist/models/manifest.json",
+    "dist/models/nacelle-system-concept.glb",
+    "dist/models/xp4.glb"
+  ],
+  "retainedHistoricalPaths": [],
+  "说明": "允许更新同名文件，但不允许删除构建前已有文件；未引用旧包保留在目录中，不进入当前构建闭包。"
+}

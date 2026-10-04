@@ -1,0 +1,50 @@
+{
+  "formatVersion": 1,
+  "sourceInputs": [
+    {
+      "encoding": "source",
+      "sha256": "80ce0d237f5266077b5c34f4fc63e062a01d47c682be252eeedcf1cbb4f9f085"
+    },
+    {
+      "encoding": "runtime",
+      "sha256": "01e19eaacd6e9035568f603f49492e02de345808b287b8d951b780a86378ca89"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "qa/reference/accepted-reference.json",
+      "sha256": "e7f43d2efe883537163a0fbe525099fc2989ffc60f963e6ff29705edd8b594aa",
+      "bytes": 1628693,
+      "originalPath": "qa/v24/reference/accepted-reference.json"
+    },
+    {
+      "path": "qa/reference/source-protected-surfaces.json",
+      "sha256": "6234bf10e2401339ab1dcd3d242a3ae98a7d33f39e9cd1b5609460f172bf7d0a",
+      "bytes": 2290780,
+      "originalPath": "qa/v24/reference/source-protected-surfaces.json"
+    },
+    {
+      "path": "qa/reference/accepted-motion-reference.json",
+      "originalPath": "qa/v24/reference/accepted-motion-reference.json",
+      "sha256": "c336364b318c85bb7fa6ddf1e45ede1ea5a78b1dc33ae74cd41c346ebabb7905",
+      "bytes": 3108040
+    },
+    {
+      "path": "qa/reference/accepted-motion-grid-origin.json",
+      "sha256": "15b71f3be182a2e38f6738d9b2727088235100bb598f73416f2393d55b8fa795",
+      "bytes": 1171,
+      "originalPath": "qa/v24/reference/accepted-motion-grid-origin.json"
+    },
+    {
+      "path": "qa/reference/motion-method-origin.json",
+      "sha256": "ed04822c5a89200a719e79bb44a1cc66cbdd57cd3a6eb90430d0c4e6aad6de19",
+      "bytes": 3524,
+      "originalPath": "qa/v24/reference/motion-method-origin.json"
+    }
+  ],
+  "notIncluded": [
+    "旧完整Blender工程",
+    "旧完整整机GLB",
+    "历史视觉或原始用户截图"
+  ]
+}

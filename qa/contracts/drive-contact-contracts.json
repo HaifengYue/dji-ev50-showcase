@@ -1,0 +1,605 @@
+[
+  {
+    "pair": ["Drive_Crossbeam", "BraceBodyCarriage_L"],
+    "frame": "BraceSpreader",
+    "min": [-0.1271, 0.0879, 0.0019],
+    "max": [-0.1129, 0.1021, 0.0161],
+    "reason": "crossbeam seats directly into the unchanged output column",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_Crossbeam", "BraceBodyCarriage_R"],
+    "frame": "BraceSpreader",
+    "min": [0.1129, 0.0879, 0.0019],
+    "max": [0.1271, 0.1021, 0.0161],
+    "reason": "crossbeam seats directly into the unchanged output column",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_Crossbeam", "Drive_OutputWeb"],
+    "frame": "BraceSpreader",
+    "min": [-0.0131, 0.0919, 0.0019],
+    "max": [0.0131, 0.1021, 0.0161],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_OutputWeb", "Drive_NutCarriage"],
+    "frame": "BraceSpreader",
+    "min": [-0.0131, 0.1268, -0.0061],
+    "max": [0.0131, 0.1361, 0.0241],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_GuideBridge_L", "Drive_OutputWeb"],
+    "frame": "BraceSpreader",
+    "min": [-0.013000000000000001, 0.1179, -0.0061],
+    "max": [0.003, 0.1271, 0.0241],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_GuideBridge_L", "Drive_GuideBushing_L"],
+    "frame": "BraceSpreader",
+    "min": [-0.0591, 0.1258, -0.0071],
+    "max": [-0.030899999999999997, 0.1271, 0.0251],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_GuideBridge_R", "Drive_OutputWeb"],
+    "frame": "BraceSpreader",
+    "min": [-0.003, 0.1179, -0.0061],
+    "max": [0.013000000000000001, 0.1271, 0.0241],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_GuideBridge_R", "Drive_GuideBushing_R"],
+    "frame": "BraceSpreader",
+    "min": [0.030899999999999997, 0.1258, -0.0071],
+    "max": [0.0591, 0.1271, 0.0251],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_LeadScrewCore", "Drive_LeadScrewThread"],
+    "frame": "Drive_ScrewRotor",
+    "min": [-0.0081, -0.0081, -1.9541],
+    "max": [0.0081, 0.0081, -0.8509],
+    "reason": "same rotating rigid shaft, thread roots overlap core",
+    "type": "fixed",
+    "cylinder": {
+      "center": [0, 0, 0],
+      "axis": [0, 0, -1],
+      "range": [0.8509, 1.9541],
+      "minimumRadius": 0.0074,
+      "radius": 0.0081
+    }
+  },
+  {
+    "pair": ["Drive_NutCarriage", "Drive_NutInternalThread"],
+    "frame": "BraceSpreader",
+    "min": [-0.013, 0.139, -0.017],
+    "max": [0.013, 0.165, 0.035],
+    "reason": "female thread outer root fixed into bored nut wall",
+    "type": "fixed",
+    "cylinder": {
+      "center": [0, 0.152, 0],
+      "axis": [0, 0, -1],
+      "range": [-0.035, 0.017],
+      "minimumRadius": 0.0119,
+      "radius": 0.0129
+    }
+  },
+  {
+    "pair": ["Drive_OutputCoupling", "Drive_LeadScrewCore"],
+    "frame": "Drive_ScrewRotor",
+    "min": [-0.0081, -0.0081, -0.6692],
+    "max": [0.0081, 0.0081, -0.6448],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed",
+    "cylinder": {
+      "center": [0, 0, 0],
+      "axis": [0, 0, -1],
+      "range": [0.6448, 0.6692],
+      "minimumRadius": 0.0077,
+      "radius": 0.0081
+    }
+  },
+  {
+    "pair": ["Drive_CouplingWitness", "Drive_OutputCoupling"],
+    "frame": "Drive_ScrewRotor",
+    "min": [0.0119, -0.0021, -0.6692],
+    "max": [0.0161, 0.0021, -0.6448],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_MotorShaft", "Drive_MotorRotorDisc"],
+    "frame": "Drive_MotorRotor",
+    "min": [-0.0081, -0.0081, -0.3782],
+    "max": [0.0081, 0.0081, -0.3618],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_MotorWitness", "Drive_MotorRotorDisc"],
+    "frame": "Drive_MotorRotor",
+    "min": [0.0229, -0.0021, -0.3782],
+    "max": [0.0271, 0.0021, -0.3618],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_MotorHousing", "Drive_MotorGearboxAdapter"],
+    "frame": null,
+    "min": [-0.0391, 0.0929, -0.5191],
+    "max": [0.0391, 0.1711, -0.5179],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed",
+    "cylinder": {
+      "center": [0, 0.132, 0],
+      "axis": [0, 0, -1],
+      "range": [0.5179, 0.5191],
+      "minimumRadius": 0.0328,
+      "radius": 0.0391
+    }
+  },
+  {
+    "pair": ["Drive_ReductionHousing", "Drive_MotorGearboxAdapter"],
+    "frame": null,
+    "min": [-0.0371, 0.0949, -0.5342],
+    "max": [0.0371, 0.1691, -0.5318],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed",
+    "cylinder": {
+      "center": [0, 0.132, 0],
+      "axis": [0, 0, -1],
+      "range": [0.5318, 0.5342],
+      "minimumRadius": 0.0298,
+      "radius": 0.0371
+    }
+  },
+  {
+    "pair": ["Drive_SunGear", "Drive_MotorShaft"],
+    "frame": "Drive_MotorRotor",
+    "min": [-0.0081, -0.0081, -0.5911],
+    "max": [0.0081, 0.0081, -0.5729],
+    "reason": "sun gear hub press-fit to motor shaft",
+    "type": "fixed",
+    "cylinder": {
+      "center": [0, 0, 0],
+      "axis": [0, 0, -1],
+      "range": [0.5729, 0.5911],
+      "minimumRadius": 0.0076,
+      "radius": 0.0081
+    }
+  },
+  {
+    "pair": ["Drive_RingGear", "Drive_ReductionHousing"],
+    "frame": null,
+    "min": [-0.0305, 0.1015, -0.5971],
+    "max": [0.0305, 0.1625, -0.5729],
+    "reason": "fixed outer ring-gear rim seated in fixed gearbox housing",
+    "type": "fixed",
+    "cylinder": {
+      "center": [0, 0.132, 0],
+      "axis": [0, 0, -1],
+      "range": [0.5729, 0.5971],
+      "minimumRadius": 0.0298,
+      "radius": 0.0305
+    }
+  },
+  {
+    "pair": ["Drive_PlanetCarrier", "Drive_LeadScrewCore"],
+    "frame": "Drive_ScrewRotor",
+    "min": [-0.0081, -0.0081, -0.6161],
+    "max": [0.0081, 0.0081, -0.6069],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_PlanetPin_0", "Drive_PlanetCarrier"],
+    "frame": "Drive_ScrewRotor",
+    "min": [0.013399999999999999, -0.0016, -0.6151],
+    "max": [0.0166, 0.0016, -0.6069],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_PlanetRetainer_0_Front", "Drive_PlanetPin_0"],
+    "frame": "Drive_ScrewRotor",
+    "min": [0.013399999999999999, -0.0016, -0.5710999999999999],
+    "max": [0.0166, 0.0016, -0.5689],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_PlanetRetainer_0_Rear", "Drive_PlanetPin_0"],
+    "frame": "Drive_ScrewRotor",
+    "min": [0.013399999999999999, -0.0016, -0.6011],
+    "max": [0.0166, 0.0016, -0.5989],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_PlanetPin_1", "Drive_PlanetCarrier"],
+    "frame": "Drive_ScrewRotor",
+    "min": [-0.009099999999999997, 0.011390381056766579, -0.6151],
+    "max": [-0.005899999999999996, 0.01459038105676658, -0.6069],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_PlanetRetainer_1_Front", "Drive_PlanetPin_1"],
+    "frame": "Drive_ScrewRotor",
+    "min": [-0.009099999999999997, 0.011390381056766579, -0.5710999999999999],
+    "max": [-0.005899999999999996, 0.01459038105676658, -0.5689],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_PlanetRetainer_1_Rear", "Drive_PlanetPin_1"],
+    "frame": "Drive_ScrewRotor",
+    "min": [-0.009099999999999997, 0.011390381056766579, -0.6011],
+    "max": [-0.005899999999999996, 0.01459038105676658, -0.5989],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_PlanetPin_2", "Drive_PlanetCarrier"],
+    "frame": "Drive_ScrewRotor",
+    "min": [-0.009100000000000007, -0.014590381056766575, -0.6151],
+    "max": [-0.005900000000000007, -0.011390381056766574, -0.6069],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_PlanetRetainer_2_Front", "Drive_PlanetPin_2"],
+    "frame": "Drive_ScrewRotor",
+    "min": [-0.009100000000000007, -0.014590381056766575, -0.5710999999999999],
+    "max": [-0.005900000000000007, -0.011390381056766574, -0.5689],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_PlanetRetainer_2_Rear", "Drive_PlanetPin_2"],
+    "frame": "Drive_ScrewRotor",
+    "min": [-0.009100000000000007, -0.014590381056766575, -0.6011],
+    "max": [-0.005900000000000007, -0.011390381056766574, -0.5989],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_MotorSaddle_L", "Drive_MotorHousing"],
+    "frame": null,
+    "min": [-0.041100000000000005, 0.0929, -0.4751],
+    "max": [-0.0269, 0.1146, -0.4249],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_MotorSaddle_L", "Drive_MotorMount"],
+    "frame": null,
+    "min": [-0.041100000000000005, 0.0879, -0.4751],
+    "max": [-0.0269, 0.0926, -0.4249],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_MotorSaddle_R", "Drive_MotorHousing"],
+    "frame": null,
+    "min": [0.0269, 0.0929, -0.4751],
+    "max": [0.041100000000000005, 0.1146, -0.4249],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_MotorSaddle_R", "Drive_MotorMount"],
+    "frame": null,
+    "min": [0.0269, 0.0879, -0.4751],
+    "max": [0.041100000000000005, 0.0926, -0.4249],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_FrontSupport", "Drive_FrontScrewPedestal"],
+    "frame": null,
+    "min": [-0.0091, 0.0769, -0.8391],
+    "max": [0.0091, 0.0911, -0.8209],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_FrontScrewPedestal", "Drive_FrontScrewBearing"],
+    "frame": null,
+    "min": [-0.0091, 0.1098, -0.8391],
+    "max": [0.0091, 0.1162, -0.8209],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_FrontSupport", "Drive_FrontGuidePedestal_L"],
+    "frame": null,
+    "min": [-0.0521, 0.0769, -0.8371],
+    "max": [-0.037899999999999996, 0.0911, -0.8229],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_FrontGuidePedestal_L", "Drive_FrontGuideSeat_L"],
+    "frame": null,
+    "min": [-0.0521, 0.1038, -0.8371],
+    "max": [-0.037899999999999996, 0.1092, -0.8229],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_FrontSupport", "Drive_FrontGuidePedestal_R"],
+    "frame": null,
+    "min": [0.037899999999999996, 0.0769, -0.8371],
+    "max": [0.0521, 0.0911, -0.8229],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_FrontGuidePedestal_R", "Drive_FrontGuideSeat_R"],
+    "frame": null,
+    "min": [0.037899999999999996, 0.1038, -0.8371],
+    "max": [0.0521, 0.1092, -0.8229],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_RearSupport", "Drive_RearScrewPedestal"],
+    "frame": null,
+    "min": [-0.0091, 0.0769, -1.9911],
+    "max": [0.0091, 0.0911, -1.9728999999999999],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_RearScrewPedestal", "Drive_RearScrewBearing"],
+    "frame": null,
+    "min": [-0.0091, 0.1098, -1.9911],
+    "max": [0.0091, 0.1162, -1.9728999999999999],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_RearSupport", "Drive_RearGuidePedestal_L"],
+    "frame": null,
+    "min": [-0.0521, 0.0769, -1.9891],
+    "max": [-0.037899999999999996, 0.0911, -1.9748999999999999],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_RearGuidePedestal_L", "Drive_RearGuideSeat_L"],
+    "frame": null,
+    "min": [-0.0521, 0.1038, -1.9891],
+    "max": [-0.037899999999999996, 0.1092, -1.9748999999999999],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_RearSupport", "Drive_RearGuidePedestal_R"],
+    "frame": null,
+    "min": [0.037899999999999996, 0.0769, -1.9891],
+    "max": [0.0521, 0.0911, -1.9748999999999999],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_RearGuidePedestal_R", "Drive_RearGuideSeat_R"],
+    "frame": null,
+    "min": [0.037899999999999996, 0.1038, -1.9891],
+    "max": [0.0521, 0.1092, -1.9748999999999999],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_GuideRail_L", "Drive_FrontGuideSeat_L"],
+    "frame": null,
+    "min": [-0.053599999999999995, 0.1114, -0.8415999999999999],
+    "max": [-0.0364, 0.1286, -0.8184],
+    "reason": "finite interference seat between fixed rail and fixed support",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_GuideRail_L", "Drive_RearGuideSeat_L"],
+    "frame": null,
+    "min": [-0.053599999999999995, 0.1114, -1.9936],
+    "max": [-0.0364, 0.1286, -1.9704],
+    "reason": "finite interference seat between fixed rail and fixed support",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_GuideRail_R", "Drive_FrontGuideSeat_R"],
+    "frame": null,
+    "min": [0.0364, 0.1114, -0.8415999999999999],
+    "max": [0.053599999999999995, 0.1286, -0.8184],
+    "reason": "finite interference seat between fixed rail and fixed support",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_GuideRail_R", "Drive_RearGuideSeat_R"],
+    "frame": null,
+    "min": [0.0364, 0.1114, -1.9936],
+    "max": [0.053599999999999995, 0.1286, -1.9704],
+    "reason": "finite interference seat between fixed rail and fixed support",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_FrontFoot_L", "Fuselage"],
+    "frame": null,
+    "min": [-0.0712, -0.059542746710777285, -0.8371999999999999],
+    "max": [-0.0568, -0.05689661712646484, -0.8228],
+    "reason": "conformal foot embedded .0006 into real finite-thickness inner floor",
+    "type": "fixed",
+    "cylinder": {
+      "center": [-0.064, 0, -0.83],
+      "axis": [0, 1, 0],
+      "range": [-0.059542746710777285, -0.05689661712646484],
+      "minimumRadius": 0,
+      "radius": 0.0072
+    }
+  },
+  {
+    "pair": ["Drive_FrontFoot_L", "Drive_FrontSupport"],
+    "frame": null,
+    "min": [-0.0712, 0.0768, -0.8371999999999999],
+    "max": [-0.0568, 0.0912, -0.8228],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_FrontFoot_R", "Fuselage"],
+    "frame": null,
+    "min": [0.0568, -0.05954043703079224, -0.8371999999999999],
+    "max": [0.0712, -0.056892638516426085, -0.8228],
+    "reason": "conformal foot embedded .0006 into real finite-thickness inner floor",
+    "type": "fixed",
+    "cylinder": {
+      "center": [0.064, 0, -0.83],
+      "axis": [0, 1, 0],
+      "range": [-0.05954043703079224, -0.056892638516426085],
+      "minimumRadius": 0,
+      "radius": 0.0072
+    }
+  },
+  {
+    "pair": ["Drive_FrontFoot_R", "Drive_FrontSupport"],
+    "frame": null,
+    "min": [0.0568, 0.0768, -0.8371999999999999],
+    "max": [0.0712, 0.0912, -0.8228],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_RearFoot_L", "Fuselage"],
+    "frame": null,
+    "min": [-0.0712, 0.025968319308757783, -1.9892],
+    "max": [-0.0568, 0.0313482569038868, -1.9747999999999999],
+    "reason": "conformal foot embedded .0006 into real finite-thickness inner floor",
+    "type": "fixed",
+    "cylinder": {
+      "center": [-0.064, 0, -1.982],
+      "axis": [0, 1, 0],
+      "range": [0.025968319308757783, 0.0313482569038868],
+      "minimumRadius": 0,
+      "radius": 0.0072
+    }
+  },
+  {
+    "pair": ["Drive_RearFoot_L", "Drive_RearSupport"],
+    "frame": null,
+    "min": [-0.0712, 0.0768, -1.9892],
+    "max": [-0.0568, 0.0912, -1.9747999999999999],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_RearFoot_R", "Fuselage"],
+    "frame": null,
+    "min": [0.0568, 0.02596425874233246, -1.9892],
+    "max": [0.0712, 0.03134273229837418, -1.9747999999999999],
+    "reason": "conformal foot embedded .0006 into real finite-thickness inner floor",
+    "type": "fixed",
+    "cylinder": {
+      "center": [0.064, 0, -1.982],
+      "axis": [0, 1, 0],
+      "range": [0.02596425874233246, 0.03134273229837418],
+      "minimumRadius": 0,
+      "radius": 0.0072
+    }
+  },
+  {
+    "pair": ["Drive_RearFoot_R", "Drive_RearSupport"],
+    "frame": null,
+    "min": [0.0568, 0.0768, -1.9892],
+    "max": [0.0712, 0.0912, -1.9747999999999999],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_MotorFoot_L", "Fuselage"],
+    "frame": null,
+    "min": [-0.0452, -0.08847454326152801, -0.4572],
+    "max": [-0.0308, -0.08629039437770844, -0.4428],
+    "reason": "conformal foot embedded .0006 into real finite-thickness inner floor",
+    "type": "fixed",
+    "cylinder": {
+      "center": [-0.038, 0, -0.45],
+      "axis": [0, 1, 0],
+      "range": [-0.08847454326152801, -0.08629039437770844],
+      "minimumRadius": 0,
+      "radius": 0.0072
+    }
+  },
+  {
+    "pair": ["Drive_MotorFoot_L", "Drive_MotorMount"],
+    "frame": null,
+    "min": [-0.0452, 0.0768, -0.4572],
+    "max": [-0.0308, 0.0912, -0.4428],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_MotorFoot_R", "Fuselage"],
+    "frame": null,
+    "min": [0.0308, -0.08847332136631011, -0.4572],
+    "max": [0.0452, -0.08628957481384278, -0.4428],
+    "reason": "conformal foot embedded .0006 into real finite-thickness inner floor",
+    "type": "fixed",
+    "cylinder": {
+      "center": [0.038, 0, -0.45],
+      "axis": [0, 1, 0],
+      "range": [-0.08847332136631011, -0.08628957481384278],
+      "minimumRadius": 0,
+      "radius": 0.0072
+    }
+  },
+  {
+    "pair": ["Drive_MotorFoot_R", "Drive_MotorMount"],
+    "frame": null,
+    "min": [0.0308, 0.0768, -0.4572],
+    "max": [0.0452, 0.0912, -0.4428],
+    "reason": "finite rigid mounting overlap",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_FrontTravelStop_L", "Drive_GuideRail_L"],
+    "frame": null,
+    "min": [-0.053599999999999995, 0.1114, -0.8735609710668882],
+    "max": [-0.0364, 0.1286, -0.8653609710668883],
+    "reason": "fixed guide-rail stop collar",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_FrontTravelStop_R", "Drive_GuideRail_R"],
+    "frame": null,
+    "min": [0.0364, 0.1114, -0.8735609710668882],
+    "max": [0.053599999999999995, 0.1286, -0.8653609710668883],
+    "reason": "fixed guide-rail stop collar",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_RearTravelStop_L", "Drive_GuideRail_L"],
+    "frame": null,
+    "min": [-0.053599999999999995, 0.1114, -1.9511],
+    "max": [-0.0364, 0.1286, -1.9429],
+    "reason": "fixed guide-rail stop collar",
+    "type": "fixed"
+  },
+  {
+    "pair": ["Drive_RearTravelStop_R", "Drive_GuideRail_R"],
+    "frame": null,
+    "min": [0.0364, 0.1114, -1.9511],
+    "max": [0.053599999999999995, 0.1286, -1.9429],
+    "reason": "fixed guide-rail stop collar",
+    "type": "fixed"
+  }
+]

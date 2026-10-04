@@ -1,0 +1,40 @@
+{
+  "description": "仅复制当前模型成片与当前证据；不复制内部对比、旧版本内容或嵌套准备/逐帧目录",
+  "files": [
+    {
+      "file": "FUSELAGE_SLOT_DETAILS.jpg",
+      "bytes": 265803,
+      "sha256": "a81197fb7e4c8cb513d17ee0617ab5139f6439201a07d3861aa8c91550ebf647"
+    },
+    {
+      "file": "FUSELAGE_SLOT_STROKE.jpg",
+      "bytes": 325536,
+      "sha256": "09d46919d64313414ea3ffc750d62f960335248bb4a79db714be2a3c09aa7aeb"
+    },
+    {
+      "file": "AIRFRAME_OVERVIEW.jpg",
+      "bytes": 352560,
+      "sha256": "50d565b18b475db5edad970341007e12bd760f850e6dccb9f9f8dd3363d94a58"
+    },
+    {
+      "file": "FUSELAGE_SLOT_MOTION.mp4",
+      "bytes": 587900,
+      "sha256": "fd6d0f845d4f6be794b423109780a3440124b664b187b457fa28a5566f7a321a"
+    },
+    {
+      "file": "RENDER_EVIDENCE.json",
+      "bytes": 12828,
+      "sha256": "9f8a7e5ef4470a0ed4338a14c3f669c34aa61a5910fa93a83bbee3d307e8bd5a"
+    },
+    {
+      "file": "README_CURRENT.md",
+      "bytes": 2454,
+      "sha256": "eec1c29dbdb56e34c212abe19ba26a0c50c85def9686f556398d6d83b4035a0d"
+    },
+    {
+      "file": "CONTACT_READABILITY.json",
+      "bytes": 7757,
+      "sha256": "1bb2ec4f30bfb1b41c511144291da45cc1b604a40084c504fd95096782097170"
+    }
+  ]
+}

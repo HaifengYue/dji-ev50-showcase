@@ -1,0 +1,24 @@
+# 本机依赖、缓存和可复算中间输出；不执行清理或删除。
+node_modules/
+scripts/node_modules/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.tsbuildinfo
+*.blend1
+.DS_Store
+.env
+.env.*
+
+# 当前生成暂存与独立重建窗口不当作另一套源码发布。
+assets/build/
+assets/previews/
+qa/regenerated/
+qa/current/author/*.glb
+qa/current/decoded/
+qa/visual/frames/
+qa/visual/scenes/
+
+# 准备期适配自测输出保留本地；正式同名自测在最终结果目录统一登记。
+qa/current/adapter-checks/

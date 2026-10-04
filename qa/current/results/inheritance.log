@@ -1,0 +1,6 @@
+{
+  passed: true,
+  exactInheritedMeshes: 211,
+  declaredRerunMeshes: 72,
+  inheritedReports: 25
+}

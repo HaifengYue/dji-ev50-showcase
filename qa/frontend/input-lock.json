@@ -1,0 +1,348 @@
+{
+  "files": [
+    {
+      "path": "assets/blender/nacelle-system-concept-source.glb",
+      "sha256": "e1ce4da42d21aa46f055dab338430b7516617366faa6cf850f906a6a031187bd"
+    },
+    {
+      "path": "assets/blender/xp4-source.glb",
+      "sha256": "14deba2a8cb20fb13c6cc05f8c4c09d441285b9754b014499942ad39992f7ce4"
+    },
+    {
+      "path": "dist/assets/index-Clgw5HCR.js",
+      "sha256": "69bcf67ba6f6cad6d7c769c5c7d493079d72c219a57c83141092f30d8b05ab0e"
+    },
+    {
+      "path": "dist/assets/index-DYws8zB-.css",
+      "sha256": "fba6b7194d90582b5c53ae1cc417c785b1a7064e8f3c4442fd5a0883d5e28a2a"
+    },
+    {
+      "path": "dist/assets/scene-CAbU1Meg.js",
+      "sha256": "75aa17c801875503926381edec9e54805ee8865773eb384391bf22f40e1935cb"
+    },
+    {
+      "path": "dist/assets/three-D1MzFUPS.js",
+      "sha256": "e7f26150336dfdd9fb8d5f62a3e2e98575a6e9b19f468dbe5382ca4b663181c7"
+    },
+    {
+      "path": "dist/examples/python-full-flow.json",
+      "sha256": "cf8e29405e950e9ec15c7744908040eed2bc62b4d7dc1bd198f2b6abd4deaf13"
+    },
+    {
+      "path": "dist/index.html",
+      "sha256": "eb45b58b5fa4aac5faff010590745b32b20db1f737d74c52d4cb6cb52b1543fd"
+    },
+    {
+      "path": "dist/models/manifest.json",
+      "sha256": "5c75a42613bd42c5229204236b6a3605cf59f0190f8d4e7fdb8cb6611ffa04d9"
+    },
+    {
+      "path": "dist/models/nacelle-system-concept.glb",
+      "sha256": "55f0d778657593e8745ecd0711f5720c3d6f98abb91b9ffab0875eeef8d08996"
+    },
+    {
+      "path": "dist/models/xp4.glb",
+      "sha256": "313b014ec70b409175b34a08f66ec56820a51ea094085ce1eef96fc444ce4b2b"
+    },
+    {
+      "path": "examples/python/drive_trajectory.py",
+      "sha256": "2b3c357fe1049980fd563b33b56856d04016990e6676a2ac525be9497a87721a"
+    },
+    {
+      "path": "examples/python/full_flow.json",
+      "sha256": "cf8e29405e950e9ec15c7744908040eed2bc62b4d7dc1bd198f2b6abd4deaf13"
+    },
+    {
+      "path": "examples/python/full_flow.py",
+      "sha256": "e7ac339f326543fde64dbae8c3b7c106d184fe8afccfb343eefcb4bf4ea07579"
+    },
+    {
+      "path": "examples/python/independent_motors.py",
+      "sha256": "cb08605ba7bbc151684c6874ac8fa8d81562d2ca736e931e4471cae65425b2f5"
+    },
+    {
+      "path": "index.html",
+      "sha256": "363abb6025fd0a264e4e469e17a1b62c426615601cb86926a6ff0e9aeee37bb1"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "8ca282ddba0bc23d4de0e6db5888de6b3b855a0597ac9c8296c4ddef78ce1ff4"
+    },
+    {
+      "path": "package.json",
+      "sha256": "fbe6744094bcd133ce0e77df6c80bebe050803faff65366f62fd47bafdf0c827"
+    },
+    {
+      "path": "public/examples/python-full-flow.json",
+      "sha256": "cf8e29405e950e9ec15c7744908040eed2bc62b4d7dc1bd198f2b6abd4deaf13"
+    },
+    {
+      "path": "public/models/manifest.json",
+      "sha256": "5c75a42613bd42c5229204236b6a3605cf59f0190f8d4e7fdb8cb6611ffa04d9"
+    },
+    {
+      "path": "public/models/nacelle-system-concept.glb",
+      "sha256": "55f0d778657593e8745ecd0711f5720c3d6f98abb91b9ffab0875eeef8d08996"
+    },
+    {
+      "path": "public/models/xp4.glb",
+      "sha256": "313b014ec70b409175b34a08f66ec56820a51ea094085ce1eef96fc444ce4b2b"
+    },
+    {
+      "path": "python/tests/protocol_events.json",
+      "sha256": "3fc7abfd1574ff2f55dec6947ce2635dbc94528172d3f97129c11f69856a9441"
+    },
+    {
+      "path": "python/tests/test_bridge.py",
+      "sha256": "a65e17bb90d9f4f5dab421d25e01d2f088d5b9c574b5780a7a73d6b81b68aa99"
+    },
+    {
+      "path": "python/tests/test_http.py",
+      "sha256": "888c4b1b723dcd079e975e8d9852af427ac98df0cd4877e56668811843b83cfb"
+    },
+    {
+      "path": "python/tests/test_protocol.py",
+      "sha256": "b9bd662913227e6e2c38c49aac879430acf546733ada92fcb94315e13195b054"
+    },
+    {
+      "path": "python/transwing_sim/__init__.py",
+      "sha256": "bdd3c58cb2cf935ffa54b8bc195769549ebbe1b5a274011127a653f9e0765c84"
+    },
+    {
+      "path": "python/transwing_sim/client.py",
+      "sha256": "355b5f7418afa4cbaa87d915d92b466426a27c438bc780df981cf44ed0061afa"
+    },
+    {
+      "path": "python/transwing_sim/protocol.py",
+      "sha256": "a177aa5239f1d25237e7e1687a7de675f7fe34bb2bf78df50bc897389508d62e"
+    },
+    {
+      "path": "python/transwing_sim/recording.py",
+      "sha256": "930f6fcfe6054ffe4c33118ed5c2c1eb057427ed1dbc82f2da56c25101f1430a"
+    },
+    {
+      "path": "python/transwing_sim/server.py",
+      "sha256": "55ad32a30638c87f1db04bcee8c6ccfec4297685208a14943f38575bd0d008ed"
+    },
+    {
+      "path": "qa/flight-regression.test.ts",
+      "sha256": "7cea2cb247f2220b7c8dd635e791efbcc71b949ad50fb4042785f2f2826d5f24"
+    },
+    {
+      "path": "qa/frontend/run.py",
+      "sha256": "8f7fee89da5de28d7b09f68c6196ea5bc52cce2bd1e63a54202ddc2e37327bc4"
+    },
+    {
+      "path": "qa/glb-loader-check.mjs",
+      "sha256": "3e614d0dc7fe40e45dd1e4181a06a72a7e3fa2ff79066f93fff038dd8c4e1819"
+    },
+    {
+      "path": "qa/lib/compact-geometry.mjs",
+      "sha256": "2f018a4c4546aae1371e8f4a8de0498446a5cfccb10c5c0aa7233003cd3032a5"
+    },
+    {
+      "path": "qa/lib/runtime-concept-compression-check.mts",
+      "sha256": "3cc2d192dc19185ad52112e8428ef24f5b56747f508c5c44fcbd6f29f6befefb"
+    },
+    {
+      "path": "qa/lib/runtime-detail-controls.mts",
+      "sha256": "f9d34ad29c00eb31e3bcee9d405473d60c4ecb6aee254abe539e3fa3cf842728"
+    },
+    {
+      "path": "qa/lib/runtime-geometry.mts",
+      "sha256": "3f464fb9f2a8b4b97d033b372aa0254a75e76dbc61c0c15ed102edec1f81e704"
+    },
+    {
+      "path": "qa/lib/runtime-motor-motion.mts",
+      "sha256": "c188a447acf2281e86fa13d888fd26b9a37065244d91b31ab13205955bfe2eee"
+    },
+    {
+      "path": "qa/lib/runtime-rotor-motion.mts",
+      "sha256": "6a11997a0329c82e8463fa9c1517756a8699eed19d05489ab580bed6053ec91e"
+    },
+    {
+      "path": "qa/lib/runtime-self-clearance.mts",
+      "sha256": "4fc6b4d9350e8d0d98e676c48d422f634ddfe6fc4fed02352de398ca0840dda8"
+    },
+    {
+      "path": "qa/lib/runtime-shaft-clearance.mts",
+      "sha256": "7191718c010a9b73ebb91bab47eb742d3fa102dc5e3039f3efe6283a4e5853cb"
+    },
+    {
+      "path": "qa/lib/runtime-ui-source-check.mts",
+      "sha256": "17ad58939975ae0dc5795f8102cffec07ec5473365f495b6de0a1b3bc83b6b46"
+    },
+    {
+      "path": "qa/lib/solid-contact.mjs",
+      "sha256": "ce7e6268a2b923be64a714716989206c325d283936f28cb7a72d98d2433f023d"
+    },
+    {
+      "path": "qa/lib/triangle-contact.mjs",
+      "sha256": "c8c8bc4f141aff261dbb0bac493fb9e7b4066cae9e1eb95f41cdd9b7718700bb"
+    },
+    {
+      "path": "src/App.tsx",
+      "sha256": "b6786ac27629d279821fce1e36c7d8c8d4b9ce89340c43d4a4318c4e15f0397b"
+    },
+    {
+      "path": "src/DetailPanel.tsx",
+      "sha256": "5377da7b364d1c94eed0cc2cfc82c7f053a1ebe8270966040eeaa3f234c66c96"
+    },
+    {
+      "path": "src/InternalDrivePanel.tsx",
+      "sha256": "befbd976df707aadeae47a916f364dd1b8e6e4f4af80e6165c34a21bf14a26ab"
+    },
+    {
+      "path": "src/Scene.tsx",
+      "sha256": "0a7354b91bfaab621fcd2d26f0543682b5ef19aa004988a0033cfa4c987248fd"
+    },
+    {
+      "path": "src/SimulationPanel.tsx",
+      "sha256": "53f21dd089b77a300d7e1d39068b1c73c61b8a4916443add2418e2307d78dc22"
+    },
+    {
+      "path": "src/cameraNavigation.test.ts",
+      "sha256": "a524e204e7521cea1b09b7f69a9e8cf79b91c3418ce2beaef0e23e0124066578"
+    },
+    {
+      "path": "src/cameraNavigation.ts",
+      "sha256": "7329027c4188edb1f387e00b621ab9b710777aaf3eb6753ee04f411a7cb5e78c"
+    },
+    {
+      "path": "src/details.test.ts",
+      "sha256": "afe85890b306d7ff99f3da1dba5d8ac6ce2bf5811990310eec87fb7ab93348b5"
+    },
+    {
+      "path": "src/details.ts",
+      "sha256": "6b6a967e411a72e5bea6f44badb89f33746c01e5e1d770ce91d962a1d4cb1a66"
+    },
+    {
+      "path": "src/experience.test.ts",
+      "sha256": "b7d6b8147ce3bd0f05621c53c7fea5bfed5e44c674092fa2f184efec8ed921a5"
+    },
+    {
+      "path": "src/experience.ts",
+      "sha256": "d4afe57fbd401cbcba996cebc0e2d56771b425d4ad2df79e696158cb8822f105"
+    },
+    {
+      "path": "src/flight.test.ts",
+      "sha256": "ebb7d4c5752755bfac8b676bb9b5602f83c08d19c46555f454e4d1bda5172328"
+    },
+    {
+      "path": "src/flight.ts",
+      "sha256": "00f3e09ac2579f6c7ca484a07692d191548821cb35b37509b61aafcb0ad9800a"
+    },
+    {
+      "path": "src/inspection.test.ts",
+      "sha256": "d909d27763778f96a70a73203eb4645d3bca5be307bc33bf33f072d649b766c5"
+    },
+    {
+      "path": "src/inspection.ts",
+      "sha256": "6169f60df2ca81abcf361b42fbdb751e7e7e50362cdae0bd4d0c9e000d599ca4"
+    },
+    {
+      "path": "src/internalDriveInspection.test.ts",
+      "sha256": "d3c6994875df5e15c79f66286371b93c6637ddbb2bbd65690276804375462c9b"
+    },
+    {
+      "path": "src/internalDriveInspection.ts",
+      "sha256": "1a5fae23375a81475b43b9fe8d16bcce506a3b76663b1bba3ba9b288ad6f6a42"
+    },
+    {
+      "path": "src/internalDriveMotion.test.ts",
+      "sha256": "d5aeb0c535155acbaf94bc3496a343c3c882bc21e7d3dd21e79805daae35c994"
+    },
+    {
+      "path": "src/main.tsx",
+      "sha256": "0149f7a69d4d5aeb746722160f8fbcd57defdf78e80e1fe3d9038dc76f84361e"
+    },
+    {
+      "path": "src/model.test.ts",
+      "sha256": "fd92504fe470553cb29101b8a36e67b877411decb16d8466fc415ba4aae8d1f3"
+    },
+    {
+      "path": "src/motors.ts",
+      "sha256": "5297141cc670fd98034bd242e189f0d61681587db209a02da08fb73971c02824"
+    },
+    {
+      "path": "src/recordingLoader.ts",
+      "sha256": "3ff3d85e8c6a5a0285b76ed1044454ef045b8a903d0404df3e565bcfdaeca54d"
+    },
+    {
+      "path": "src/rig.test.ts",
+      "sha256": "7663ccba45f9bb4c8359645f007c82121d70a4889860db256572ae17f2eaba8c"
+    },
+    {
+      "path": "src/rig.ts",
+      "sha256": "4215cd44a02e36e62a2a7ccacd16a38b3fe9d82a727c0233af6d889caa56efb5"
+    },
+    {
+      "path": "src/rotor-geometry.test.ts",
+      "sha256": "156bb77284a3287c9473384a1c291b3e2e66a82e71831fae107f60dd8e4b43e1"
+    },
+    {
+      "path": "src/rotor.test.ts",
+      "sha256": "a5381b168d324f316e96542370b9f4b989ba9000adb09998e2315e4b85577f05"
+    },
+    {
+      "path": "src/rotorExposure.ts",
+      "sha256": "478cb4cddd2027e41dc74134ca808c9eff47b72ed949219d2464d951d1ae303e"
+    },
+    {
+      "path": "src/rotorExposureProfile.test.ts",
+      "sha256": "fb59f56dfd8c89597e1d7f294383cab3cff8ef119c2b388b87bd909bd63dfb17"
+    },
+    {
+      "path": "src/rotorExposureProfile.ts",
+      "sha256": "a8e1c9fc3ba86e3d80a749a4a9d2ea8207a3501ab9b292fcc691a39cdf1e2a24"
+    },
+    {
+      "path": "src/rotorPresentation.test.ts",
+      "sha256": "cc1606501b5f6bca4b3eb9333694ee3c8f31f628faa4ce4c2f83404d77f0193b"
+    },
+    {
+      "path": "src/rotorVisibility.test.ts",
+      "sha256": "d3a3294b7dac76cf8dcb0596ee2d1d881507bdee601d6ee311624399ad45fc34"
+    },
+    {
+      "path": "src/runtime.test.ts",
+      "sha256": "c3a69b23dc6f470d9fb93911b813997b010b127807dad4d0e446159b07873a18"
+    },
+    {
+      "path": "src/sceneLighting.ts",
+      "sha256": "00584eba19c175341efb5893b5b53a09b560232dd371381acde8c502f8752150"
+    },
+    {
+      "path": "src/simulation.test.ts",
+      "sha256": "ee34ddb0a3615087e000ca2c92f77fc120bc76d119a62a0e6f5918440887d76f"
+    },
+    {
+      "path": "src/simulation.ts",
+      "sha256": "db34291fe2bca396f94c77d359900ea05da1ab148b8d0c5cac05eb3d933e4e34"
+    },
+    {
+      "path": "src/simulationBridge.ts",
+      "sha256": "2bfac4d7037ba9513aff8c6f51689c98112c230ec5b244d76044dd3059e426d8"
+    },
+    {
+      "path": "src/style.css",
+      "sha256": "051ad2a8260e947686b0fd46f0cc3d9cabbd3fe64f0cb51978769635038275be"
+    },
+    {
+      "path": "src/tilt.test.ts",
+      "sha256": "792ed40d569d083f6f582b29f9b03995647c0e441679cb59463206a12a8a8cc5"
+    },
+    {
+      "path": "src/tilt.ts",
+      "sha256": "aaad954b22fda6719b3a4fee829271ad212dc5c9a7d354c163e8f64731cd7327"
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "713b3d770d95aa35bbd97ac64dca82b0d6f6c7b9cf1ae5c11808051a8762ba1a"
+    },
+    {
+      "path": "vite.config.ts",
+      "sha256": "0f2ea1904c7a1b7a123207f1d01cad2e27c15ecaf09f9b9c9fa241c28e563871"
+    }
+  ]
+}

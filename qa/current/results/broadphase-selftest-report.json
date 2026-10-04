@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "SATEpsilon": 1e-9,
+  "halfEpsilonGapRetained": true,
+  "doubleEpsilonGapRejected": true
+}

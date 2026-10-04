@@ -1,0 +1,3834 @@
+{
+  "modelVersion": 24,
+  "passed": true,
+  "runtimeSha256": "313b014ec70b409175b34a08f66ec56820a51ea094085ce1eef96fc444ce4b2b",
+  "sourceSha256": "14deba2a8cb20fb13c6cc05f8c4c09d441285b9754b014499942ad39992f7ce4",
+  "sourceBlendSha256": "0dc4feb2a628dad23f1e82d122167a08154b7f72f301bc5f5fc8e59c210b6857",
+  "inputLockFiles": 211,
+  "inputStability": true,
+  "stages": [
+    {
+      "name": "reviewed-contract",
+      "exitCode": 0
+    },
+    {
+      "name": "regenerated-contract",
+      "exitCode": 0
+    },
+    {
+      "name": "preservation",
+      "exitCode": 0
+    },
+    {
+      "name": "runtime-preservation",
+      "exitCode": 0
+    },
+    {
+      "name": "motion-reference-selftest",
+      "exitCode": 0
+    },
+    {
+      "name": "motion-identity",
+      "exitCode": 0
+    },
+    {
+      "name": "inheritance",
+      "exitCode": 0
+    },
+    {
+      "name": "affected-scope-selftest",
+      "exitCode": 0
+    },
+    {
+      "name": "patch-coverage-selftest",
+      "exitCode": 0
+    },
+    {
+      "name": "local-scope",
+      "exitCode": 0
+    },
+    {
+      "name": "slot-section-selftest",
+      "exitCode": 0
+    },
+    {
+      "name": "slot-boundary-vertices-selftest",
+      "exitCode": 0
+    },
+    {
+      "name": "slot-geometry",
+      "exitCode": 0
+    },
+    {
+      "name": "straight-output-selftest",
+      "exitCode": 0
+    },
+    {
+      "name": "straight-output-geometry",
+      "exitCode": 0
+    },
+    {
+      "name": "snapshot-topology-selftest",
+      "exitCode": 0
+    },
+    {
+      "name": "decoration-topology-selftest",
+      "exitCode": 0
+    },
+    {
+      "name": "solids",
+      "exitCode": 0
+    },
+    {
+      "name": "support-selftest",
+      "exitCode": 0
+    },
+    {
+      "name": "support",
+      "exitCode": 0
+    },
+    {
+      "name": "inspection",
+      "exitCode": 0
+    },
+    {
+      "name": "linkage",
+      "exitCode": 0
+    },
+    {
+      "name": "baked-winding",
+      "exitCode": 0
+    },
+    {
+      "name": "drive-motion",
+      "exitCode": 0
+    },
+    {
+      "name": "local-parity",
+      "exitCode": 0
+    },
+    {
+      "name": "triangle-selftest",
+      "exitCode": 0
+    },
+    {
+      "name": "solid-selftest",
+      "exitCode": 0
+    },
+    {
+      "name": "broadphase-selftest",
+      "exitCode": 0
+    },
+    {
+      "name": "exact-pair-cache-selftest",
+      "exitCode": 0
+    },
+    {
+      "name": "fast-source",
+      "exitCode": 0
+    },
+    {
+      "name": "wing-source",
+      "exitCode": 0
+    },
+    {
+      "name": "spin-source",
+      "exitCode": 0
+    },
+    {
+      "name": "details-source",
+      "exitCode": 0
+    },
+    {
+      "name": "local-motion-source",
+      "exitCode": 0
+    },
+    {
+      "name": "rotor-envelope-source",
+      "exitCode": 0
+    },
+    {
+      "name": "fast-runtime",
+      "exitCode": 0
+    },
+    {
+      "name": "wing-runtime",
+      "exitCode": 0
+    },
+    {
+      "name": "spin-runtime",
+      "exitCode": 0
+    },
+    {
+      "name": "details-runtime",
+      "exitCode": 0
+    },
+    {
+      "name": "local-motion-runtime",
+      "exitCode": 0
+    },
+    {
+      "name": "rotor-envelope-runtime",
+      "exitCode": 0
+    },
+    {
+      "name": "exported-motor-clip",
+      "exitCode": 0
+    },
+    {
+      "name": "python-render",
+      "exitCode": 0
+    },
+    {
+      "name": "input-stability",
+      "exitCode": 0
+    }
+  ],
+  "scope": {
+    "geometryChanges": [
+      "ActuatorSideSlot_L",
+      "ActuatorSideSlot_R",
+      "BraceBodyCarriage_L",
+      "BraceBodyCarriage_R",
+      "Drive_FrontFoot_L",
+      "Drive_FrontFoot_R",
+      "Drive_FrontGuidePedestal_L",
+      "Drive_FrontGuidePedestal_R",
+      "Drive_FrontGuideSeat_L",
+      "Drive_FrontGuideSeat_R",
+      "Drive_FrontScrewBearing",
+      "Drive_FrontScrewPedestal",
+      "Drive_FrontTravelStop_L",
+      "Drive_FrontTravelStop_R",
+      "Drive_GuideBushing_L",
+      "Drive_GuideBushing_R",
+      "Drive_MotorFoot_L",
+      "Drive_MotorFoot_R",
+      "Drive_MotorGearboxAdapter",
+      "Drive_MotorHousing",
+      "Drive_NutCarriage",
+      "Drive_NutInternalThread",
+      "Drive_OutputWeb",
+      "Drive_RearFoot_L",
+      "Drive_RearFoot_R",
+      "Drive_RearGuidePedestal_L",
+      "Drive_RearGuidePedestal_R",
+      "Drive_RearGuideSeat_L",
+      "Drive_RearGuideSeat_R",
+      "Drive_RearScrewBearing",
+      "Drive_RearScrewPedestal",
+      "Drive_RearTravelStop_L",
+      "Drive_RearTravelStop_R",
+      "Drive_ReductionHousing",
+      "Fuselage",
+      "Lower_fuselage_join",
+      "Lower_fuselage_join001",
+      "Lower_fuselage_join002",
+      "Lower_fuselage_join003",
+      "Tail_boom_join"
+    ],
+    "normalOnlyChanges": [],
+    "protectedMainHingeNodes": 34,
+    "addedNodes": [],
+    "removedNodes": [],
+    "sourceTransformChanges": [
+      "BraceBodyCarriage_L",
+      "BraceBodyCarriage_R",
+      "Drive_Crossbeam",
+      "Drive_FrontGuidePedestal_L",
+      "Drive_FrontGuidePedestal_R",
+      "Drive_FrontScrewPedestal",
+      "Drive_FrontSupport",
+      "Drive_GuideBridge_L",
+      "Drive_GuideBridge_R",
+      "Drive_GuideRail_L",
+      "Drive_GuideRail_R",
+      "Drive_MotorMount",
+      "Drive_MotorRotor",
+      "Drive_MotorSaddle_L",
+      "Drive_MotorSaddle_R",
+      "Drive_OutputWeb",
+      "Drive_RearGuidePedestal_L",
+      "Drive_RearGuidePedestal_R",
+      "Drive_RearScrewPedestal",
+      "Drive_RearSupport",
+      "Drive_RingGear",
+      "Drive_ScrewRotor"
+    ],
+    "runtimeTransformChanges": [
+      "BraceBodyCarriage_L",
+      "BraceBodyCarriage_R",
+      "Drive_Crossbeam",
+      "Drive_FrontGuidePedestal_L",
+      "Drive_FrontGuidePedestal_R",
+      "Drive_FrontScrewPedestal",
+      "Drive_FrontSupport",
+      "Drive_GuideBridge_L",
+      "Drive_GuideBridge_R",
+      "Drive_GuideRail_L",
+      "Drive_GuideRail_R",
+      "Drive_MotorMount",
+      "Drive_MotorRotor",
+      "Drive_MotorSaddle_L",
+      "Drive_MotorSaddle_R",
+      "Drive_OutputWeb",
+      "Drive_RearGuidePedestal_L",
+      "Drive_RearGuidePedestal_R",
+      "Drive_RearScrewPedestal",
+      "Drive_RearSupport",
+      "Drive_RingGear",
+      "Drive_ScrewRotor",
+      "Lower_fuselage_join",
+      "Lower_fuselage_join001",
+      "Lower_fuselage_join002",
+      "Lower_fuselage_join003",
+      "Tail_boom_join"
+    ],
+    "runtimeEncodingTransformChanges": [
+      "Tail_boom_join",
+      "Lower_fuselage_join",
+      "Lower_fuselage_join001",
+      "Lower_fuselage_join002",
+      "Lower_fuselage_join003"
+    ],
+    "sourceExtrasChanges": [
+      {
+        "name": "BraceBodyCarriage_L",
+        "properties": [
+          {
+            "key": "purpose",
+            "beforePresent": true,
+            "before": "V18 integrated longitudinal slider output, body pin mounts inward/upward",
+            "afterPresent": true,
+            "after": "低位共同滑架的单根直斜输出件；原球心、球销及杆长保持"
+          },
+          {
+            "key": "straightOutputEndpointsLocal",
+            "beforePresent": false,
+            "before": null,
+            "afterPresent": true,
+            "after": [
+              [
+                -0.14004190266132355,
+                -0.009227613918483257,
+                0.020408956333994865
+              ],
+              [
+                -0.11999999731779099,
+                -0.008999999612569809,
+                0.06700000166893005
+              ]
+            ]
+          },
+          {
+            "key": "straightOutputRadius",
+            "beforePresent": false,
+            "before": null,
+            "afterPresent": true,
+            "after": 0.007
+          }
+        ]
+      },
+      {
+        "name": "BraceBodyCarriage_R",
+        "properties": [
+          {
+            "key": "purpose",
+            "beforePresent": true,
+            "before": "V18 integrated longitudinal slider output, body pin mounts inward/upward",
+            "afterPresent": true,
+            "after": "低位共同滑架的单根直斜输出件；原球心、球销及杆长保持"
+          },
+          {
+            "key": "straightOutputEndpointsLocal",
+            "beforePresent": false,
+            "before": null,
+            "afterPresent": true,
+            "after": [
+              [
+                0.14004190266132355,
+                -0.009227613918483257,
+                0.020408956333994865
+              ],
+              [
+                0.11999999731779099,
+                -0.008999999612569809,
+                0.06700000166893005
+              ]
+            ]
+          },
+          {
+            "key": "straightOutputRadius",
+            "beforePresent": false,
+            "before": null,
+            "afterPresent": true,
+            "after": 0.007
+          }
+        ]
+      },
+      {
+        "name": "Drive_Crossbeam",
+        "properties": [
+          {
+            "key": "driveRole",
+            "beforePresent": true,
+            "before": "shared rigid crossbeam",
+            "afterPresent": true,
+            "after": "低位同步横梁"
+          }
+        ]
+      },
+      {
+        "name": "Drive_FrontFoot_L",
+        "properties": [
+          {
+            "key": "driveRole",
+            "beforePresent": true,
+            "before": "conformal finite-area foot seated into inner cavity floor",
+            "afterPresent": true,
+            "after": "按真实内底板贴合的低置有限支承脚"
+          }
+        ]
+      },
+      {
+        "name": "Drive_FrontFoot_R",
+        "properties": [
+          {
+            "key": "driveRole",
+            "beforePresent": true,
+            "before": "conformal finite-area foot seated into inner cavity floor",
+            "afterPresent": true,
+            "after": "按真实内底板贴合的低置有限支承脚"
+          }
+        ]
+      },
+      {
+        "name": "Drive_GuideBridge_L",
+        "properties": [
+          {
+            "key": "driveRole",
+            "beforePresent": true,
+            "before": "rigid anti-rotation bridge",
+            "afterPresent": true,
+            "after": "低位导套安装桥"
+          }
+        ]
+      },
+      {
+        "name": "Drive_GuideBridge_R",
+        "properties": [
+          {
+            "key": "driveRole",
+            "beforePresent": true,
+            "before": "rigid anti-rotation bridge",
+            "afterPresent": true,
+            "after": "低位导套安装桥"
+          }
+        ]
+      },
+      {
+        "name": "Drive_GuideBushing_L",
+        "properties": [
+          {
+            "key": "driveRole",
+            "beforePresent": true,
+            "before": "travelling guide bushing with real clearance bore",
+            "afterPresent": true,
+            "after": "与下移导轨同轴的真实有孔导套"
+          }
+        ]
+      },
+      {
+        "name": "Drive_GuideBushing_R",
+        "properties": [
+          {
+            "key": "driveRole",
+            "beforePresent": true,
+            "before": "travelling guide bushing with real clearance bore",
+            "afterPresent": true,
+            "after": "与下移导轨同轴的真实有孔导套"
+          }
+        ]
+      },
+      {
+        "name": "Drive_GuideRail_L",
+        "properties": [
+          {
+            "key": "driveRole",
+            "beforePresent": true,
+            "before": "fixed precision guide rail",
+            "afterPresent": true,
+            "after": "低置固定导轨，与移动导套同轴"
+          }
+        ]
+      },
+      {
+        "name": "Drive_GuideRail_R",
+        "properties": [
+          {
+            "key": "driveRole",
+            "beforePresent": true,
+            "before": "fixed precision guide rail",
+            "afterPresent": true,
+            "after": "低置固定导轨，与移动导套同轴"
+          }
+        ]
+      },
+      {
+        "name": "Drive_MotorFoot_L",
+        "properties": [
+          {
+            "key": "driveRole",
+            "beforePresent": true,
+            "before": "conformal finite-area foot seated into inner cavity floor",
+            "afterPresent": true,
+            "after": "按真实内底板贴合的低置有限支承脚"
+          }
+        ]
+      },
+      {
+        "name": "Drive_MotorFoot_R",
+        "properties": [
+          {
+            "key": "driveRole",
+            "beforePresent": true,
+            "before": "conformal finite-area foot seated into inner cavity floor",
+            "afterPresent": true,
+            "after": "按真实内底板贴合的低置有限支承脚"
+          }
+        ]
+      },
+      {
+        "name": "Drive_NutCarriage",
+        "properties": [
+          {
+            "key": "driveRole",
+            "beforePresent": true,
+            "before": "travelling screw nut with genuine bore",
+            "afterPresent": true,
+            "after": "带真实通孔的平移螺母"
+          }
+        ]
+      },
+      {
+        "name": "Drive_OutputWeb",
+        "properties": [
+          {
+            "key": "driveRole",
+            "beforePresent": true,
+            "before": "rigid nut-to-crossbeam web",
+            "afterPresent": true,
+            "after": "螺母下方低鞍座，避开丝杠与中心通孔"
+          }
+        ]
+      },
+      {
+        "name": "Drive_RearFoot_L",
+        "properties": [
+          {
+            "key": "driveRole",
+            "beforePresent": true,
+            "before": "conformal finite-area foot seated into inner cavity floor",
+            "afterPresent": true,
+            "after": "按真实内底板贴合的低置有限支承脚"
+          }
+        ]
+      },
+      {
+        "name": "Drive_RearFoot_R",
+        "properties": [
+          {
+            "key": "driveRole",
+            "beforePresent": true,
+            "before": "conformal finite-area foot seated into inner cavity floor",
+            "afterPresent": true,
+            "after": "按真实内底板贴合的低置有限支承脚"
+          }
+        ]
+      }
+    ],
+    "runtimeExtrasChanges": [
+      {
+        "name": "BraceBodyCarriage_L",
+        "properties": [
+          {
+            "key": "purpose",
+            "beforePresent": true,
+            "before": "V18 integrated longitudinal slider output, body pin mounts inward/upward",
+            "afterPresent": true,
+            "after": "低位共同滑架的单根直斜输出件；原球心、球销及杆长保持"
+          },
+          {
+            "key": "straightOutputEndpointsLocal",
+            "beforePresent": false,
+            "before": null,
+            "afterPresent": true,
+            "after": [
+              [
+                -0.14004190266132355,
+                -0.009227613918483257,
+                0.020408956333994865
+              ],
+              [
+                -0.11999999731779099,
+                -0.008999999612569809,
+                0.06700000166893005
+              ]
+            ]
+          },
+          {
+            "key": "straightOutputRadius",
+            "beforePresent": false,
+            "before": null,
+            "afterPresent": true,
+            "after": 0.007
+          }
+        ]
+      },
+      {
+        "name": "BraceBodyCarriage_R",
+        "properties": [
+          {
+            "key": "purpose",
+            "beforePresent": true,
+            "before": "V18 integrated longitudinal slider output, body pin mounts inward/upward",
+            "afterPresent": true,
+            "after": "低位共同滑架的单根直斜输出件；原球心、球销及杆长保持"
+          },
+          {
+            "key": "straightOutputEndpointsLocal",
+            "beforePresent": false,
+            "before": null,
+            "afterPresent": true,
+            "after": [
+              [
+                0.14004190266132355,
+                -0.009227613918483257,
+                0.020408956333994865
+              ],
+              [
+                0.11999999731779099,
+                -0.008999999612569809,
+                0.06700000166893005
+              ]
+            ]
+          },
+          {
+            "key": "straightOutputRadius",
+            "beforePresent": false,
+            "before": null,
+            "afterPresent": true,
+            "after": 0.007
+          }
+        ]
+      },
+      {
+        "name": "Drive_Crossbeam",
+        "properties": [
+          {
+            "key": "driveRole",
+            "beforePresent": true,
+            "before": "shared rigid crossbeam",
+            "afterPresent": true,
+            "after": "低位同步横梁"
+          }
+        ]
+      },
+      {
+        "name": "Drive_FrontFoot_L",
+        "properties": [
+          {
+            "key": "driveRole",
+            "beforePresent": true,
+            "before": "conformal finite-area foot seated into inner cavity floor",
+            "afterPresent": true,
+            "after": "按真实内底板贴合的低置有限支承脚"
+          }
+        ]
+      },
+      {
+        "name": "Drive_FrontFoot_R",
+        "properties": [
+          {
+            "key": "driveRole",
+            "beforePresent": true,
+            "before": "conformal finite-area foot seated into inner cavity floor",
+            "afterPresent": true,
+            "after": "按真实内底板贴合的低置有限支承脚"
+          }
+        ]
+      },
+      {
+        "name": "Drive_GuideBridge_L",
+        "properties": [
+          {
+            "key": "driveRole",
+            "beforePresent": true,
+            "before": "rigid anti-rotation bridge",
+            "afterPresent": true,
+            "after": "低位导套安装桥"
+          }
+        ]
+      },
+      {
+        "name": "Drive_GuideBridge_R",
+        "properties": [
+          {
+            "key": "driveRole",
+            "beforePresent": true,
+            "before": "rigid anti-rotation bridge",
+            "afterPresent": true,
+            "after": "低位导套安装桥"
+          }
+        ]
+      },
+      {
+        "name": "Drive_GuideBushing_L",
+        "properties": [
+          {
+            "key": "driveRole",
+            "beforePresent": true,
+            "before": "travelling guide bushing with real clearance bore",
+            "afterPresent": true,
+            "after": "与下移导轨同轴的真实有孔导套"
+          }
+        ]
+      },
+      {
+        "name": "Drive_GuideBushing_R",
+        "properties": [
+          {
+            "key": "driveRole",
+            "beforePresent": true,
+            "before": "travelling guide bushing with real clearance bore",
+            "afterPresent": true,
+            "after": "与下移导轨同轴的真实有孔导套"
+          }
+        ]
+      },
+      {
+        "name": "Drive_GuideRail_L",
+        "properties": [
+          {
+            "key": "driveRole",
+            "beforePresent": true,
+            "before": "fixed precision guide rail",
+            "afterPresent": true,
+            "after": "低置固定导轨，与移动导套同轴"
+          }
+        ]
+      },
+      {
+        "name": "Drive_GuideRail_R",
+        "properties": [
+          {
+            "key": "driveRole",
+            "beforePresent": true,
+            "before": "fixed precision guide rail",
+            "afterPresent": true,
+            "after": "低置固定导轨，与移动导套同轴"
+          }
+        ]
+      },
+      {
+        "name": "Drive_MotorFoot_L",
+        "properties": [
+          {
+            "key": "driveRole",
+            "beforePresent": true,
+            "before": "conformal finite-area foot seated into inner cavity floor",
+            "afterPresent": true,
+            "after": "按真实内底板贴合的低置有限支承脚"
+          }
+        ]
+      },
+      {
+        "name": "Drive_MotorFoot_R",
+        "properties": [
+          {
+            "key": "driveRole",
+            "beforePresent": true,
+            "before": "conformal finite-area foot seated into inner cavity floor",
+            "afterPresent": true,
+            "after": "按真实内底板贴合的低置有限支承脚"
+          }
+        ]
+      },
+      {
+        "name": "Drive_NutCarriage",
+        "properties": [
+          {
+            "key": "driveRole",
+            "beforePresent": true,
+            "before": "travelling screw nut with genuine bore",
+            "afterPresent": true,
+            "after": "带真实通孔的平移螺母"
+          }
+        ]
+      },
+      {
+        "name": "Drive_OutputWeb",
+        "properties": [
+          {
+            "key": "driveRole",
+            "beforePresent": true,
+            "before": "rigid nut-to-crossbeam web",
+            "afterPresent": true,
+            "after": "螺母下方低鞍座，避开丝杠与中心通孔"
+          }
+        ]
+      },
+      {
+        "name": "Drive_RearFoot_L",
+        "properties": [
+          {
+            "key": "driveRole",
+            "beforePresent": true,
+            "before": "conformal finite-area foot seated into inner cavity floor",
+            "afterPresent": true,
+            "after": "按真实内底板贴合的低置有限支承脚"
+          }
+        ]
+      },
+      {
+        "name": "Drive_RearFoot_R",
+        "properties": [
+          {
+            "key": "driveRole",
+            "beforePresent": true,
+            "before": "conformal finite-area foot seated into inner cavity floor",
+            "afterPresent": true,
+            "after": "按真实内底板贴合的低置有限支承脚"
+          }
+        ]
+      }
+    ],
+    "animationChanges": [],
+    "geometryUnchangedMeshCount": 243,
+    "exactGeometryPreservationOutsideDeclaredScope": true,
+    "declaredRerunMeshes": [
+      "ActuatorSideSlot_L",
+      "ActuatorSideSlot_R",
+      "BraceBodyCarriage_L",
+      "BraceBodyCarriage_R",
+      "Drive_CouplingWitness",
+      "Drive_Crossbeam",
+      "Drive_FrontFoot_L",
+      "Drive_FrontFoot_R",
+      "Drive_FrontGuidePedestal_L",
+      "Drive_FrontGuidePedestal_R",
+      "Drive_FrontGuideSeat_L",
+      "Drive_FrontGuideSeat_R",
+      "Drive_FrontScrewBearing",
+      "Drive_FrontScrewPedestal",
+      "Drive_FrontSupport",
+      "Drive_FrontTravelStop_L",
+      "Drive_FrontTravelStop_R",
+      "Drive_GuideBridge_L",
+      "Drive_GuideBridge_R",
+      "Drive_GuideBushing_L",
+      "Drive_GuideBushing_R",
+      "Drive_GuideRail_L",
+      "Drive_GuideRail_R",
+      "Drive_LeadScrewCore",
+      "Drive_LeadScrewThread",
+      "Drive_MotorFoot_L",
+      "Drive_MotorFoot_R",
+      "Drive_MotorGearboxAdapter",
+      "Drive_MotorHousing",
+      "Drive_MotorMount",
+      "Drive_MotorRotorDisc",
+      "Drive_MotorSaddle_L",
+      "Drive_MotorSaddle_R",
+      "Drive_MotorShaft",
+      "Drive_MotorWitness",
+      "Drive_NutCarriage",
+      "Drive_NutInternalThread",
+      "Drive_OutputCoupling",
+      "Drive_OutputWeb",
+      "Drive_PlanetCarrier",
+      "Drive_PlanetGear_0",
+      "Drive_PlanetGear_1",
+      "Drive_PlanetGear_2",
+      "Drive_PlanetPin_0",
+      "Drive_PlanetPin_1",
+      "Drive_PlanetPin_2",
+      "Drive_PlanetRetainer_0_Front",
+      "Drive_PlanetRetainer_0_Rear",
+      "Drive_PlanetRetainer_1_Front",
+      "Drive_PlanetRetainer_1_Rear",
+      "Drive_PlanetRetainer_2_Front",
+      "Drive_PlanetRetainer_2_Rear",
+      "Drive_RearFoot_L",
+      "Drive_RearFoot_R",
+      "Drive_RearGuidePedestal_L",
+      "Drive_RearGuidePedestal_R",
+      "Drive_RearGuideSeat_L",
+      "Drive_RearGuideSeat_R",
+      "Drive_RearScrewBearing",
+      "Drive_RearScrewPedestal",
+      "Drive_RearSupport",
+      "Drive_RearTravelStop_L",
+      "Drive_RearTravelStop_R",
+      "Drive_ReductionHousing",
+      "Drive_RingGear",
+      "Drive_SunGear",
+      "Fuselage",
+      "Lower_fuselage_join",
+      "Lower_fuselage_join001",
+      "Lower_fuselage_join002",
+      "Lower_fuselage_join003",
+      "Tail_boom_join"
+    ],
+    "observedRerunMeshes": [
+      "ActuatorSideSlot_L",
+      "ActuatorSideSlot_R",
+      "BraceBodyCarriage_L",
+      "BraceBodyCarriage_R",
+      "Drive_CouplingWitness",
+      "Drive_Crossbeam",
+      "Drive_FrontFoot_L",
+      "Drive_FrontFoot_R",
+      "Drive_FrontGuidePedestal_L",
+      "Drive_FrontGuidePedestal_R",
+      "Drive_FrontGuideSeat_L",
+      "Drive_FrontGuideSeat_R",
+      "Drive_FrontScrewBearing",
+      "Drive_FrontScrewPedestal",
+      "Drive_FrontSupport",
+      "Drive_FrontTravelStop_L",
+      "Drive_FrontTravelStop_R",
+      "Drive_GuideBridge_L",
+      "Drive_GuideBridge_R",
+      "Drive_GuideBushing_L",
+      "Drive_GuideBushing_R",
+      "Drive_GuideRail_L",
+      "Drive_GuideRail_R",
+      "Drive_LeadScrewCore",
+      "Drive_LeadScrewThread",
+      "Drive_MotorFoot_L",
+      "Drive_MotorFoot_R",
+      "Drive_MotorGearboxAdapter",
+      "Drive_MotorHousing",
+      "Drive_MotorMount",
+      "Drive_MotorRotorDisc",
+      "Drive_MotorSaddle_L",
+      "Drive_MotorSaddle_R",
+      "Drive_MotorShaft",
+      "Drive_MotorWitness",
+      "Drive_NutCarriage",
+      "Drive_NutInternalThread",
+      "Drive_OutputCoupling",
+      "Drive_OutputWeb",
+      "Drive_PlanetCarrier",
+      "Drive_PlanetGear_0",
+      "Drive_PlanetGear_1",
+      "Drive_PlanetGear_2",
+      "Drive_PlanetPin_0",
+      "Drive_PlanetPin_1",
+      "Drive_PlanetPin_2",
+      "Drive_PlanetRetainer_0_Front",
+      "Drive_PlanetRetainer_0_Rear",
+      "Drive_PlanetRetainer_1_Front",
+      "Drive_PlanetRetainer_1_Rear",
+      "Drive_PlanetRetainer_2_Front",
+      "Drive_PlanetRetainer_2_Rear",
+      "Drive_RearFoot_L",
+      "Drive_RearFoot_R",
+      "Drive_RearGuidePedestal_L",
+      "Drive_RearGuidePedestal_R",
+      "Drive_RearGuideSeat_L",
+      "Drive_RearGuideSeat_R",
+      "Drive_RearScrewBearing",
+      "Drive_RearScrewPedestal",
+      "Drive_RearSupport",
+      "Drive_RearTravelStop_L",
+      "Drive_RearTravelStop_R",
+      "Drive_ReductionHousing",
+      "Drive_RingGear",
+      "Drive_SunGear",
+      "Fuselage",
+      "Lower_fuselage_join",
+      "Lower_fuselage_join001",
+      "Lower_fuselage_join002",
+      "Lower_fuselage_join003",
+      "Tail_boom_join"
+    ],
+    "exactInheritedMeshCount": 211,
+    "exactInheritedMeshes": [
+      "Blade_L_Front_A",
+      "Blade_L_Front_B",
+      "Blade_L_Rear_A",
+      "Blade_L_Rear_B",
+      "Blade_R_Front_A",
+      "Blade_R_Front_B",
+      "Blade_R_Rear_A",
+      "Blade_R_Rear_B",
+      "Blade_hinge_arm_L_Front_A",
+      "Blade_hinge_arm_L_Front_B",
+      "Blade_hinge_arm_L_Rear_A",
+      "Blade_hinge_arm_L_Rear_B",
+      "Blade_hinge_arm_R_Front_A",
+      "Blade_hinge_arm_R_Front_B",
+      "Blade_hinge_arm_R_Rear_A",
+      "Blade_hinge_arm_R_Rear_B",
+      "Blade_hinge_pin_L_Front_A",
+      "Blade_hinge_pin_L_Front_B",
+      "Blade_hinge_pin_L_Rear_A",
+      "Blade_hinge_pin_L_Rear_B",
+      "Blade_hinge_pin_R_Front_A",
+      "Blade_hinge_pin_R_Front_B",
+      "Blade_hinge_pin_R_Rear_A",
+      "Blade_hinge_pin_R_Rear_B",
+      "BraceBallPin_L_Body",
+      "BraceBallPin_L_Wing",
+      "BraceBallPin_R_Body",
+      "BraceBallPin_R_Wing",
+      "BraceBall_L_Body",
+      "BraceBall_L_Wing",
+      "BraceBall_R_Body",
+      "BraceBall_R_Wing",
+      "BraceRodEyeNeck_L_Body",
+      "BraceRodEyeNeck_L_Root",
+      "BraceRodEyeNeck_R_Body",
+      "BraceRodEyeNeck_R_Root",
+      "BraceRodEye_L_Body",
+      "BraceRodEye_L_Root",
+      "BraceRodEye_R_Body",
+      "BraceRodEye_R_Root",
+      "BraceRodFerrule_L_Body",
+      "BraceRodFerrule_L_Root",
+      "BraceRodFerrule_R_Body",
+      "BraceRodFerrule_R_Root",
+      "BraceRod_mesh_L",
+      "BraceRod_mesh_R",
+      "BraceWingSeat_L",
+      "BraceWingSeat_R",
+      "CargoHingeCap_L",
+      "CargoHingeCap_R",
+      "CargoHingeFixedSeat",
+      "CargoHingeMovingSeat_L",
+      "CargoHingeMovingSeat_R",
+      "CargoHingePin",
+      "CargoHoodShell",
+      "CargoLatchFixed_L",
+      "CargoLatchFixed_R",
+      "CargoLatchMoving_L",
+      "CargoLatchMoving_R",
+      "CargoLatchPin_L",
+      "CargoLatchPin_R",
+      "CargoOpeningLip",
+      "Composite_wing_L",
+      "Composite_wing_R",
+      "ControlFlexureFixed_L_Inboard",
+      "ControlFlexureFixed_L_Outboard",
+      "ControlFlexureFixed_R_Inboard",
+      "ControlFlexureFixed_R_Outboard",
+      "ControlFlexureFixed_Tail_L",
+      "ControlFlexureFixed_Tail_R",
+      "ControlFlexureMoving_L_Inboard",
+      "ControlFlexureMoving_L_Outboard",
+      "ControlFlexureMoving_R_Inboard",
+      "ControlFlexureMoving_R_Outboard",
+      "ControlFlexureMoving_Tail_L",
+      "ControlFlexureMoving_Tail_R",
+      "ControlHingeFixed_L_Inboard",
+      "ControlHingeFixed_L_Outboard",
+      "ControlHingeFixed_R_Inboard",
+      "ControlHingeFixed_R_Outboard",
+      "ControlHingeFixed_Tail_L",
+      "ControlHingeFixed_Tail_R",
+      "ControlHingeMoving_L_Inboard",
+      "ControlHingeMoving_L_Outboard",
+      "ControlHingeMoving_R_Inboard",
+      "ControlHingeMoving_R_Outboard",
+      "ControlHingeMoving_Tail_L",
+      "ControlHingeMoving_Tail_R",
+      "ControlHorn_L_Inboard",
+      "ControlHorn_L_Outboard",
+      "ControlHorn_R_Inboard",
+      "ControlHorn_R_Outboard",
+      "ControlSurface_L_Inboard",
+      "ControlSurface_L_Outboard",
+      "ControlSurface_R_Inboard",
+      "ControlSurface_R_Outboard",
+      "ControlSurface_Tail_L",
+      "ControlSurface_Tail_R",
+      "Cowl_boundary_L_Front",
+      "Cowl_boundary_L_Rear",
+      "Cowl_boundary_R_Front",
+      "Cowl_boundary_R_Rear",
+      "Dorsal_antenna",
+      "Dorsal_hatch_main",
+      "Dorsal_small_receiver",
+      "Fixed_root_L",
+      "Fixed_root_R",
+      "Fixed_root_blue_L",
+      "Fixed_root_blue_R",
+      "Hatch_fastener_main",
+      "Hatch_fastener_main001",
+      "Hatch_fastener_main002",
+      "Hatch_fastener_main003",
+      "Landing_wear_tip_L_Front",
+      "Landing_wear_tip_L_Rear",
+      "Landing_wear_tip_R_Front",
+      "Landing_wear_tip_R_Rear",
+      "MotorFrontBearing_L_Front",
+      "MotorFrontBearing_L_Rear",
+      "MotorFrontBearing_R_Front",
+      "MotorFrontBearing_R_Rear",
+      "Motor_cowl_L_Front",
+      "Motor_cowl_L_Rear",
+      "Motor_cowl_R_Front",
+      "Motor_cowl_R_Rear",
+      "Motor_spindle_L_Front",
+      "Motor_spindle_L_Rear",
+      "Motor_spindle_R_Front",
+      "Motor_spindle_R_Rear",
+      "Nacelle_L_Front",
+      "Nacelle_L_Rear",
+      "Nacelle_R_Front",
+      "Nacelle_R_Rear",
+      "Pitot_probe_foot",
+      "Pitot_probe_mount",
+      "Pitot_probe_tube",
+      "Pod_U_access_panel_L_Front",
+      "Pod_U_access_panel_L_Front001",
+      "Pod_U_access_panel_L_Rear",
+      "Pod_U_access_panel_L_Rear001",
+      "Pod_U_access_panel_R_Front",
+      "Pod_U_access_panel_R_Front001",
+      "Pod_U_access_panel_R_Rear",
+      "Pod_U_access_panel_R_Rear001",
+      "Pod_mount_seam_L_Front",
+      "Pod_mount_seam_L_Front001",
+      "Pod_mount_seam_L_Rear",
+      "Pod_mount_seam_L_Rear001",
+      "Pod_mount_seam_R_Front",
+      "Pod_mount_seam_R_Front001",
+      "Pod_mount_seam_R_Rear",
+      "Pod_mount_seam_R_Rear001",
+      "Pod_wing_saddle_L_Front",
+      "Pod_wing_saddle_L_Rear",
+      "Pod_wing_saddle_R_Front",
+      "Pod_wing_saddle_R_Rear",
+      "RootBearingFixed_L_Front",
+      "RootBearingFixed_L_Rear",
+      "RootBearingFixed_R_Front",
+      "RootBearingFixed_R_Rear",
+      "RootBearingHousing_L",
+      "RootBearingHousing_R",
+      "RootBearingSeal_L_Front",
+      "RootBearingSeal_L_Rear",
+      "RootBearingSeal_R_Front",
+      "RootBearingSeal_R_Rear",
+      "RootCarrierBridge_L",
+      "RootCarrierBridge_R",
+      "RootCarrierMoving_L",
+      "RootCarrierMoving_R",
+      "RootCarrierThrust_L",
+      "RootCarrierThrust_R",
+      "RootFairingFixed_L",
+      "RootFairingFixed_R",
+      "RootFairingMoving_L",
+      "RootFairingMoving_R",
+      "RootFixedBearingPedestal_L",
+      "RootFixedBearingPedestal_R",
+      "RootHingeEndcap_L-0148",
+      "RootHingeEndcap_L0148",
+      "RootHingeEndcap_R-0148",
+      "RootHingeEndcap_R0148",
+      "RootHingeShaft_L",
+      "RootHingeShaft_R",
+      "Root_access_cover_L",
+      "Root_access_cover_R",
+      "Spinner_L_Front",
+      "Spinner_L_Rear",
+      "Spinner_R_Front",
+      "Spinner_R_Rear",
+      "Tail_receiver",
+      "Tail_root_fastener_L",
+      "Tail_root_fastener_L001",
+      "Tail_root_fastener_R",
+      "Tail_root_fastener_R001",
+      "V_tail_L",
+      "V_tail_R",
+      "V_tail_blue_leading_L",
+      "V_tail_blue_leading_R",
+      "Ventral_antenna",
+      "Ventral_antenna001",
+      "Ventral_small_sensor",
+      "Ventral_tail_tab",
+      "Wing_blue_angular_panel_L",
+      "Wing_blue_angular_panel_R",
+      "Wing_blue_leading_L",
+      "Wing_blue_leading_R",
+      "Wing_service_panel_L",
+      "Wing_service_panel_L001",
+      "Wing_service_panel_R",
+      "Wing_service_panel_R001"
+    ],
+    "localDomain": {
+      "minimumAbsX": 0.074,
+      "maximumAbsX": 0.3,
+      "longitudinalY": [
+        0.76416,
+        2.1
+      ],
+      "verticalZ": [
+        -0.2,
+        0.22
+      ],
+      "reviewStatus": "预检采用最初实际中央底板保护界限 .074；.092仅是外环参数门槛"
+    }
+  },
+  "motionIdentity": {
+    "reportPath": "qa/current/results/motion-identity-report.json",
+    "reportSha256": "b57398ef77a5783e3ca89ad3a441774ff0c5bce916bb8185470d3c442f048055",
+    "referencePath": "qa/reference/accepted-motion-reference.json",
+    "referenceSha256": "c336364b318c85bb7fa6ddf1e45ede1ea5a78b1dc33ae74cd41c346ebabb7905",
+    "stateCount": 3224,
+    "stateParametersSha256": "fb8579ef71a944c0494deb97fdb5e50ae9cc8871532c44b715428b4dfd44b60a",
+    "sourceAndDecodedRuntimeCompared": true,
+    "integrityPassed": true,
+    "collisionAcceptanceEstablishedBySeparatePhysicalStages": true
+  },
+  "inheritance": {
+    "passed": true,
+    "modelVersion": 24,
+    "runtimeSha256": "313b014ec70b409175b34a08f66ec56820a51ea094085ce1eef96fc444ce4b2b",
+    "sourceSha256": "14deba2a8cb20fb13c6cc05f8c4c09d441285b9754b014499942ad39992f7ce4",
+    "baseline": {
+      "summaryPath": "qa/reference/evidence/accepted-summary-402af8c2e54e.json",
+      "summarySha256": "402af8c2e54ebd1fe5693d89d999a3546b5267975defcd92d377d8ef2d278f32",
+      "runtimeSha256": "01e19eaacd6e9035568f603f49492e02de345808b287b8d951b780a86378ca89",
+      "sourceSha256": "80ce0d237f5266077b5c34f4fc63e062a01d47c682be252eeedcf1cbb4f9f085"
+    },
+    "referenceArtifact": {
+      "path": "qa/reference/accepted-reference.json",
+      "sha256": "e7f43d2efe883537163a0fbe525099fc2989ffc60f963e6ff29705edd8b594aa"
+    },
+    "motionIdentityEvidence": {
+      "path": "qa/current/results/motion-identity-report.json",
+      "sha256": "b57398ef77a5783e3ca89ad3a441774ff0c5bce916bb8185470d3c442f048055",
+      "referencePath": "qa/reference/accepted-motion-reference.json",
+      "referenceSha256": "c336364b318c85bb7fa6ddf1e45ede1ea5a78b1dc33ae74cd41c346ebabb7905",
+      "stateCount": 3224,
+      "stateParametersSha256": "fb8579ef71a944c0494deb97fdb5e50ae9cc8871532c44b715428b4dfd44b60a"
+    },
+    "unchangedMeshCount": 211,
+    "exactInheritedMeshCount": 211,
+    "changedMeshes": [
+      "ActuatorSideSlot_L",
+      "ActuatorSideSlot_R",
+      "BraceBodyCarriage_L",
+      "BraceBodyCarriage_R",
+      "Drive_CouplingWitness",
+      "Drive_Crossbeam",
+      "Drive_FrontFoot_L",
+      "Drive_FrontFoot_R",
+      "Drive_FrontGuidePedestal_L",
+      "Drive_FrontGuidePedestal_R",
+      "Drive_FrontGuideSeat_L",
+      "Drive_FrontGuideSeat_R",
+      "Drive_FrontScrewBearing",
+      "Drive_FrontScrewPedestal",
+      "Drive_FrontSupport",
+      "Drive_FrontTravelStop_L",
+      "Drive_FrontTravelStop_R",
+      "Drive_GuideBridge_L",
+      "Drive_GuideBridge_R",
+      "Drive_GuideBushing_L",
+      "Drive_GuideBushing_R",
+      "Drive_GuideRail_L",
+      "Drive_GuideRail_R",
+      "Drive_LeadScrewCore",
+      "Drive_LeadScrewThread",
+      "Drive_MotorFoot_L",
+      "Drive_MotorFoot_R",
+      "Drive_MotorGearboxAdapter",
+      "Drive_MotorHousing",
+      "Drive_MotorMount",
+      "Drive_MotorRotorDisc",
+      "Drive_MotorSaddle_L",
+      "Drive_MotorSaddle_R",
+      "Drive_MotorShaft",
+      "Drive_MotorWitness",
+      "Drive_NutCarriage",
+      "Drive_NutInternalThread",
+      "Drive_OutputCoupling",
+      "Drive_OutputWeb",
+      "Drive_PlanetCarrier",
+      "Drive_PlanetGear_0",
+      "Drive_PlanetGear_1",
+      "Drive_PlanetGear_2",
+      "Drive_PlanetPin_0",
+      "Drive_PlanetPin_1",
+      "Drive_PlanetPin_2",
+      "Drive_PlanetRetainer_0_Front",
+      "Drive_PlanetRetainer_0_Rear",
+      "Drive_PlanetRetainer_1_Front",
+      "Drive_PlanetRetainer_1_Rear",
+      "Drive_PlanetRetainer_2_Front",
+      "Drive_PlanetRetainer_2_Rear",
+      "Drive_RearFoot_L",
+      "Drive_RearFoot_R",
+      "Drive_RearGuidePedestal_L",
+      "Drive_RearGuidePedestal_R",
+      "Drive_RearGuideSeat_L",
+      "Drive_RearGuideSeat_R",
+      "Drive_RearScrewBearing",
+      "Drive_RearScrewPedestal",
+      "Drive_RearSupport",
+      "Drive_RearTravelStop_L",
+      "Drive_RearTravelStop_R",
+      "Drive_ReductionHousing",
+      "Drive_RingGear",
+      "Drive_SunGear",
+      "Fuselage",
+      "Lower_fuselage_join",
+      "Lower_fuselage_join001",
+      "Lower_fuselage_join002",
+      "Lower_fuselage_join003",
+      "Tail_boom_join"
+    ],
+    "declaredRerunMeshes": [
+      "ActuatorSideSlot_L",
+      "ActuatorSideSlot_R",
+      "BraceBodyCarriage_L",
+      "BraceBodyCarriage_R",
+      "Drive_CouplingWitness",
+      "Drive_Crossbeam",
+      "Drive_FrontFoot_L",
+      "Drive_FrontFoot_R",
+      "Drive_FrontGuidePedestal_L",
+      "Drive_FrontGuidePedestal_R",
+      "Drive_FrontGuideSeat_L",
+      "Drive_FrontGuideSeat_R",
+      "Drive_FrontScrewBearing",
+      "Drive_FrontScrewPedestal",
+      "Drive_FrontSupport",
+      "Drive_FrontTravelStop_L",
+      "Drive_FrontTravelStop_R",
+      "Drive_GuideBridge_L",
+      "Drive_GuideBridge_R",
+      "Drive_GuideBushing_L",
+      "Drive_GuideBushing_R",
+      "Drive_GuideRail_L",
+      "Drive_GuideRail_R",
+      "Drive_LeadScrewCore",
+      "Drive_LeadScrewThread",
+      "Drive_MotorFoot_L",
+      "Drive_MotorFoot_R",
+      "Drive_MotorGearboxAdapter",
+      "Drive_MotorHousing",
+      "Drive_MotorMount",
+      "Drive_MotorRotorDisc",
+      "Drive_MotorSaddle_L",
+      "Drive_MotorSaddle_R",
+      "Drive_MotorShaft",
+      "Drive_MotorWitness",
+      "Drive_NutCarriage",
+      "Drive_NutInternalThread",
+      "Drive_OutputCoupling",
+      "Drive_OutputWeb",
+      "Drive_PlanetCarrier",
+      "Drive_PlanetGear_0",
+      "Drive_PlanetGear_1",
+      "Drive_PlanetGear_2",
+      "Drive_PlanetPin_0",
+      "Drive_PlanetPin_1",
+      "Drive_PlanetPin_2",
+      "Drive_PlanetRetainer_0_Front",
+      "Drive_PlanetRetainer_0_Rear",
+      "Drive_PlanetRetainer_1_Front",
+      "Drive_PlanetRetainer_1_Rear",
+      "Drive_PlanetRetainer_2_Front",
+      "Drive_PlanetRetainer_2_Rear",
+      "Drive_RearFoot_L",
+      "Drive_RearFoot_R",
+      "Drive_RearGuidePedestal_L",
+      "Drive_RearGuidePedestal_R",
+      "Drive_RearGuideSeat_L",
+      "Drive_RearGuideSeat_R",
+      "Drive_RearScrewBearing",
+      "Drive_RearScrewPedestal",
+      "Drive_RearSupport",
+      "Drive_RearTravelStop_L",
+      "Drive_RearTravelStop_R",
+      "Drive_ReductionHousing",
+      "Drive_RingGear",
+      "Drive_SunGear",
+      "Fuselage",
+      "Lower_fuselage_join",
+      "Lower_fuselage_join001",
+      "Lower_fuselage_join002",
+      "Lower_fuselage_join003",
+      "Tail_boom_join"
+    ],
+    "geometryChangedMeshes": [
+      "ActuatorSideSlot_L",
+      "ActuatorSideSlot_R",
+      "BraceBodyCarriage_L",
+      "BraceBodyCarriage_R",
+      "Drive_FrontFoot_L",
+      "Drive_FrontFoot_R",
+      "Drive_FrontGuidePedestal_L",
+      "Drive_FrontGuidePedestal_R",
+      "Drive_FrontGuideSeat_L",
+      "Drive_FrontGuideSeat_R",
+      "Drive_FrontScrewBearing",
+      "Drive_FrontScrewPedestal",
+      "Drive_FrontTravelStop_L",
+      "Drive_FrontTravelStop_R",
+      "Drive_GuideBushing_L",
+      "Drive_GuideBushing_R",
+      "Drive_MotorFoot_L",
+      "Drive_MotorFoot_R",
+      "Drive_MotorGearboxAdapter",
+      "Drive_MotorHousing",
+      "Drive_NutCarriage",
+      "Drive_NutInternalThread",
+      "Drive_OutputWeb",
+      "Drive_RearFoot_L",
+      "Drive_RearFoot_R",
+      "Drive_RearGuidePedestal_L",
+      "Drive_RearGuidePedestal_R",
+      "Drive_RearGuideSeat_L",
+      "Drive_RearGuideSeat_R",
+      "Drive_RearScrewBearing",
+      "Drive_RearScrewPedestal",
+      "Drive_RearTravelStop_L",
+      "Drive_RearTravelStop_R",
+      "Drive_ReductionHousing",
+      "Fuselage",
+      "Lower_fuselage_join",
+      "Lower_fuselage_join001",
+      "Lower_fuselage_join002",
+      "Lower_fuselage_join003",
+      "Tail_boom_join"
+    ],
+    "exactInheritedMeshes": [
+      "Blade_L_Front_A",
+      "Blade_L_Front_B",
+      "Blade_L_Rear_A",
+      "Blade_L_Rear_B",
+      "Blade_R_Front_A",
+      "Blade_R_Front_B",
+      "Blade_R_Rear_A",
+      "Blade_R_Rear_B",
+      "Blade_hinge_arm_L_Front_A",
+      "Blade_hinge_arm_L_Front_B",
+      "Blade_hinge_arm_L_Rear_A",
+      "Blade_hinge_arm_L_Rear_B",
+      "Blade_hinge_arm_R_Front_A",
+      "Blade_hinge_arm_R_Front_B",
+      "Blade_hinge_arm_R_Rear_A",
+      "Blade_hinge_arm_R_Rear_B",
+      "Blade_hinge_pin_L_Front_A",
+      "Blade_hinge_pin_L_Front_B",
+      "Blade_hinge_pin_L_Rear_A",
+      "Blade_hinge_pin_L_Rear_B",
+      "Blade_hinge_pin_R_Front_A",
+      "Blade_hinge_pin_R_Front_B",
+      "Blade_hinge_pin_R_Rear_A",
+      "Blade_hinge_pin_R_Rear_B",
+      "BraceBallPin_L_Body",
+      "BraceBallPin_L_Wing",
+      "BraceBallPin_R_Body",
+      "BraceBallPin_R_Wing",
+      "BraceBall_L_Body",
+      "BraceBall_L_Wing",
+      "BraceBall_R_Body",
+      "BraceBall_R_Wing",
+      "BraceRodEyeNeck_L_Body",
+      "BraceRodEyeNeck_L_Root",
+      "BraceRodEyeNeck_R_Body",
+      "BraceRodEyeNeck_R_Root",
+      "BraceRodEye_L_Body",
+      "BraceRodEye_L_Root",
+      "BraceRodEye_R_Body",
+      "BraceRodEye_R_Root",
+      "BraceRodFerrule_L_Body",
+      "BraceRodFerrule_L_Root",
+      "BraceRodFerrule_R_Body",
+      "BraceRodFerrule_R_Root",
+      "BraceRod_mesh_L",
+      "BraceRod_mesh_R",
+      "BraceWingSeat_L",
+      "BraceWingSeat_R",
+      "CargoHingeCap_L",
+      "CargoHingeCap_R",
+      "CargoHingeFixedSeat",
+      "CargoHingeMovingSeat_L",
+      "CargoHingeMovingSeat_R",
+      "CargoHingePin",
+      "CargoHoodShell",
+      "CargoLatchFixed_L",
+      "CargoLatchFixed_R",
+      "CargoLatchMoving_L",
+      "CargoLatchMoving_R",
+      "CargoLatchPin_L",
+      "CargoLatchPin_R",
+      "CargoOpeningLip",
+      "Composite_wing_L",
+      "Composite_wing_R",
+      "ControlFlexureFixed_L_Inboard",
+      "ControlFlexureFixed_L_Outboard",
+      "ControlFlexureFixed_R_Inboard",
+      "ControlFlexureFixed_R_Outboard",
+      "ControlFlexureFixed_Tail_L",
+      "ControlFlexureFixed_Tail_R",
+      "ControlFlexureMoving_L_Inboard",
+      "ControlFlexureMoving_L_Outboard",
+      "ControlFlexureMoving_R_Inboard",
+      "ControlFlexureMoving_R_Outboard",
+      "ControlFlexureMoving_Tail_L",
+      "ControlFlexureMoving_Tail_R",
+      "ControlHingeFixed_L_Inboard",
+      "ControlHingeFixed_L_Outboard",
+      "ControlHingeFixed_R_Inboard",
+      "ControlHingeFixed_R_Outboard",
+      "ControlHingeFixed_Tail_L",
+      "ControlHingeFixed_Tail_R",
+      "ControlHingeMoving_L_Inboard",
+      "ControlHingeMoving_L_Outboard",
+      "ControlHingeMoving_R_Inboard",
+      "ControlHingeMoving_R_Outboard",
+      "ControlHingeMoving_Tail_L",
+      "ControlHingeMoving_Tail_R",
+      "ControlHorn_L_Inboard",
+      "ControlHorn_L_Outboard",
+      "ControlHorn_R_Inboard",
+      "ControlHorn_R_Outboard",
+      "ControlSurface_L_Inboard",
+      "ControlSurface_L_Outboard",
+      "ControlSurface_R_Inboard",
+      "ControlSurface_R_Outboard",
+      "ControlSurface_Tail_L",
+      "ControlSurface_Tail_R",
+      "Cowl_boundary_L_Front",
+      "Cowl_boundary_L_Rear",
+      "Cowl_boundary_R_Front",
+      "Cowl_boundary_R_Rear",
+      "Dorsal_antenna",
+      "Dorsal_hatch_main",
+      "Dorsal_small_receiver",
+      "Fixed_root_L",
+      "Fixed_root_R",
+      "Fixed_root_blue_L",
+      "Fixed_root_blue_R",
+      "Hatch_fastener_main",
+      "Hatch_fastener_main001",
+      "Hatch_fastener_main002",
+      "Hatch_fastener_main003",
+      "Landing_wear_tip_L_Front",
+      "Landing_wear_tip_L_Rear",
+      "Landing_wear_tip_R_Front",
+      "Landing_wear_tip_R_Rear",
+      "MotorFrontBearing_L_Front",
+      "MotorFrontBearing_L_Rear",
+      "MotorFrontBearing_R_Front",
+      "MotorFrontBearing_R_Rear",
+      "Motor_cowl_L_Front",
+      "Motor_cowl_L_Rear",
+      "Motor_cowl_R_Front",
+      "Motor_cowl_R_Rear",
+      "Motor_spindle_L_Front",
+      "Motor_spindle_L_Rear",
+      "Motor_spindle_R_Front",
+      "Motor_spindle_R_Rear",
+      "Nacelle_L_Front",
+      "Nacelle_L_Rear",
+      "Nacelle_R_Front",
+      "Nacelle_R_Rear",
+      "Pitot_probe_foot",
+      "Pitot_probe_mount",
+      "Pitot_probe_tube",
+      "Pod_U_access_panel_L_Front",
+      "Pod_U_access_panel_L_Front001",
+      "Pod_U_access_panel_L_Rear",
+      "Pod_U_access_panel_L_Rear001",
+      "Pod_U_access_panel_R_Front",
+      "Pod_U_access_panel_R_Front001",
+      "Pod_U_access_panel_R_Rear",
+      "Pod_U_access_panel_R_Rear001",
+      "Pod_mount_seam_L_Front",
+      "Pod_mount_seam_L_Front001",
+      "Pod_mount_seam_L_Rear",
+      "Pod_mount_seam_L_Rear001",
+      "Pod_mount_seam_R_Front",
+      "Pod_mount_seam_R_Front001",
+      "Pod_mount_seam_R_Rear",
+      "Pod_mount_seam_R_Rear001",
+      "Pod_wing_saddle_L_Front",
+      "Pod_wing_saddle_L_Rear",
+      "Pod_wing_saddle_R_Front",
+      "Pod_wing_saddle_R_Rear",
+      "RootBearingFixed_L_Front",
+      "RootBearingFixed_L_Rear",
+      "RootBearingFixed_R_Front",
+      "RootBearingFixed_R_Rear",
+      "RootBearingHousing_L",
+      "RootBearingHousing_R",
+      "RootBearingSeal_L_Front",
+      "RootBearingSeal_L_Rear",
+      "RootBearingSeal_R_Front",
+      "RootBearingSeal_R_Rear",
+      "RootCarrierBridge_L",
+      "RootCarrierBridge_R",
+      "RootCarrierMoving_L",
+      "RootCarrierMoving_R",
+      "RootCarrierThrust_L",
+      "RootCarrierThrust_R",
+      "RootFairingFixed_L",
+      "RootFairingFixed_R",
+      "RootFairingMoving_L",
+      "RootFairingMoving_R",
+      "RootFixedBearingPedestal_L",
+      "RootFixedBearingPedestal_R",
+      "RootHingeEndcap_L-0148",
+      "RootHingeEndcap_L0148",
+      "RootHingeEndcap_R-0148",
+      "RootHingeEndcap_R0148",
+      "RootHingeShaft_L",
+      "RootHingeShaft_R",
+      "Root_access_cover_L",
+      "Root_access_cover_R",
+      "Spinner_L_Front",
+      "Spinner_L_Rear",
+      "Spinner_R_Front",
+      "Spinner_R_Rear",
+      "Tail_receiver",
+      "Tail_root_fastener_L",
+      "Tail_root_fastener_L001",
+      "Tail_root_fastener_R",
+      "Tail_root_fastener_R001",
+      "V_tail_L",
+      "V_tail_R",
+      "V_tail_blue_leading_L",
+      "V_tail_blue_leading_R",
+      "Ventral_antenna",
+      "Ventral_antenna001",
+      "Ventral_small_sensor",
+      "Ventral_tail_tab",
+      "Wing_blue_angular_panel_L",
+      "Wing_blue_angular_panel_R",
+      "Wing_blue_leading_L",
+      "Wing_blue_leading_R",
+      "Wing_service_panel_L",
+      "Wing_service_panel_L001",
+      "Wing_service_panel_R",
+      "Wing_service_panel_R001"
+    ],
+    "inheritanceEligibleMeshes": [
+      "Blade_L_Front_A",
+      "Blade_L_Front_B",
+      "Blade_L_Rear_A",
+      "Blade_L_Rear_B",
+      "Blade_R_Front_A",
+      "Blade_R_Front_B",
+      "Blade_R_Rear_A",
+      "Blade_R_Rear_B",
+      "Blade_hinge_arm_L_Front_A",
+      "Blade_hinge_arm_L_Front_B",
+      "Blade_hinge_arm_L_Rear_A",
+      "Blade_hinge_arm_L_Rear_B",
+      "Blade_hinge_arm_R_Front_A",
+      "Blade_hinge_arm_R_Front_B",
+      "Blade_hinge_arm_R_Rear_A",
+      "Blade_hinge_arm_R_Rear_B",
+      "Blade_hinge_pin_L_Front_A",
+      "Blade_hinge_pin_L_Front_B",
+      "Blade_hinge_pin_L_Rear_A",
+      "Blade_hinge_pin_L_Rear_B",
+      "Blade_hinge_pin_R_Front_A",
+      "Blade_hinge_pin_R_Front_B",
+      "Blade_hinge_pin_R_Rear_A",
+      "Blade_hinge_pin_R_Rear_B",
+      "BraceBallPin_L_Body",
+      "BraceBallPin_L_Wing",
+      "BraceBallPin_R_Body",
+      "BraceBallPin_R_Wing",
+      "BraceBall_L_Body",
+      "BraceBall_L_Wing",
+      "BraceBall_R_Body",
+      "BraceBall_R_Wing",
+      "BraceRodEyeNeck_L_Body",
+      "BraceRodEyeNeck_L_Root",
+      "BraceRodEyeNeck_R_Body",
+      "BraceRodEyeNeck_R_Root",
+      "BraceRodEye_L_Body",
+      "BraceRodEye_L_Root",
+      "BraceRodEye_R_Body",
+      "BraceRodEye_R_Root",
+      "BraceRodFerrule_L_Body",
+      "BraceRodFerrule_L_Root",
+      "BraceRodFerrule_R_Body",
+      "BraceRodFerrule_R_Root",
+      "BraceRod_mesh_L",
+      "BraceRod_mesh_R",
+      "BraceWingSeat_L",
+      "BraceWingSeat_R",
+      "CargoHingeCap_L",
+      "CargoHingeCap_R",
+      "CargoHingeFixedSeat",
+      "CargoHingeMovingSeat_L",
+      "CargoHingeMovingSeat_R",
+      "CargoHingePin",
+      "CargoHoodShell",
+      "CargoLatchFixed_L",
+      "CargoLatchFixed_R",
+      "CargoLatchMoving_L",
+      "CargoLatchMoving_R",
+      "CargoLatchPin_L",
+      "CargoLatchPin_R",
+      "CargoOpeningLip",
+      "Composite_wing_L",
+      "Composite_wing_R",
+      "ControlFlexureFixed_L_Inboard",
+      "ControlFlexureFixed_L_Outboard",
+      "ControlFlexureFixed_R_Inboard",
+      "ControlFlexureFixed_R_Outboard",
+      "ControlFlexureFixed_Tail_L",
+      "ControlFlexureFixed_Tail_R",
+      "ControlFlexureMoving_L_Inboard",
+      "ControlFlexureMoving_L_Outboard",
+      "ControlFlexureMoving_R_Inboard",
+      "ControlFlexureMoving_R_Outboard",
+      "ControlFlexureMoving_Tail_L",
+      "ControlFlexureMoving_Tail_R",
+      "ControlHingeFixed_L_Inboard",
+      "ControlHingeFixed_L_Outboard",
+      "ControlHingeFixed_R_Inboard",
+      "ControlHingeFixed_R_Outboard",
+      "ControlHingeFixed_Tail_L",
+      "ControlHingeFixed_Tail_R",
+      "ControlHingeMoving_L_Inboard",
+      "ControlHingeMoving_L_Outboard",
+      "ControlHingeMoving_R_Inboard",
+      "ControlHingeMoving_R_Outboard",
+      "ControlHingeMoving_Tail_L",
+      "ControlHingeMoving_Tail_R",
+      "ControlHorn_L_Inboard",
+      "ControlHorn_L_Outboard",
+      "ControlHorn_R_Inboard",
+      "ControlHorn_R_Outboard",
+      "ControlSurface_L_Inboard",
+      "ControlSurface_L_Outboard",
+      "ControlSurface_R_Inboard",
+      "ControlSurface_R_Outboard",
+      "ControlSurface_Tail_L",
+      "ControlSurface_Tail_R",
+      "Cowl_boundary_L_Front",
+      "Cowl_boundary_L_Rear",
+      "Cowl_boundary_R_Front",
+      "Cowl_boundary_R_Rear",
+      "Dorsal_antenna",
+      "Dorsal_hatch_main",
+      "Dorsal_small_receiver",
+      "Fixed_root_L",
+      "Fixed_root_R",
+      "Fixed_root_blue_L",
+      "Fixed_root_blue_R",
+      "Hatch_fastener_main",
+      "Hatch_fastener_main001",
+      "Hatch_fastener_main002",
+      "Hatch_fastener_main003",
+      "Landing_wear_tip_L_Front",
+      "Landing_wear_tip_L_Rear",
+      "Landing_wear_tip_R_Front",
+      "Landing_wear_tip_R_Rear",
+      "MotorFrontBearing_L_Front",
+      "MotorFrontBearing_L_Rear",
+      "MotorFrontBearing_R_Front",
+      "MotorFrontBearing_R_Rear",
+      "Motor_cowl_L_Front",
+      "Motor_cowl_L_Rear",
+      "Motor_cowl_R_Front",
+      "Motor_cowl_R_Rear",
+      "Motor_spindle_L_Front",
+      "Motor_spindle_L_Rear",
+      "Motor_spindle_R_Front",
+      "Motor_spindle_R_Rear",
+      "Nacelle_L_Front",
+      "Nacelle_L_Rear",
+      "Nacelle_R_Front",
+      "Nacelle_R_Rear",
+      "Pitot_probe_foot",
+      "Pitot_probe_mount",
+      "Pitot_probe_tube",
+      "Pod_U_access_panel_L_Front",
+      "Pod_U_access_panel_L_Front001",
+      "Pod_U_access_panel_L_Rear",
+      "Pod_U_access_panel_L_Rear001",
+      "Pod_U_access_panel_R_Front",
+      "Pod_U_access_panel_R_Front001",
+      "Pod_U_access_panel_R_Rear",
+      "Pod_U_access_panel_R_Rear001",
+      "Pod_mount_seam_L_Front",
+      "Pod_mount_seam_L_Front001",
+      "Pod_mount_seam_L_Rear",
+      "Pod_mount_seam_L_Rear001",
+      "Pod_mount_seam_R_Front",
+      "Pod_mount_seam_R_Front001",
+      "Pod_mount_seam_R_Rear",
+      "Pod_mount_seam_R_Rear001",
+      "Pod_wing_saddle_L_Front",
+      "Pod_wing_saddle_L_Rear",
+      "Pod_wing_saddle_R_Front",
+      "Pod_wing_saddle_R_Rear",
+      "RootBearingFixed_L_Front",
+      "RootBearingFixed_L_Rear",
+      "RootBearingFixed_R_Front",
+      "RootBearingFixed_R_Rear",
+      "RootBearingHousing_L",
+      "RootBearingHousing_R",
+      "RootBearingSeal_L_Front",
+      "RootBearingSeal_L_Rear",
+      "RootBearingSeal_R_Front",
+      "RootBearingSeal_R_Rear",
+      "RootCarrierBridge_L",
+      "RootCarrierBridge_R",
+      "RootCarrierMoving_L",
+      "RootCarrierMoving_R",
+      "RootCarrierThrust_L",
+      "RootCarrierThrust_R",
+      "RootFairingFixed_L",
+      "RootFairingFixed_R",
+      "RootFairingMoving_L",
+      "RootFairingMoving_R",
+      "RootFixedBearingPedestal_L",
+      "RootFixedBearingPedestal_R",
+      "RootHingeEndcap_L-0148",
+      "RootHingeEndcap_L0148",
+      "RootHingeEndcap_R-0148",
+      "RootHingeEndcap_R0148",
+      "RootHingeShaft_L",
+      "RootHingeShaft_R",
+      "Root_access_cover_L",
+      "Root_access_cover_R",
+      "Spinner_L_Front",
+      "Spinner_L_Rear",
+      "Spinner_R_Front",
+      "Spinner_R_Rear",
+      "Tail_receiver",
+      "Tail_root_fastener_L",
+      "Tail_root_fastener_L001",
+      "Tail_root_fastener_R",
+      "Tail_root_fastener_R001",
+      "V_tail_L",
+      "V_tail_R",
+      "V_tail_blue_leading_L",
+      "V_tail_blue_leading_R",
+      "Ventral_antenna",
+      "Ventral_antenna001",
+      "Ventral_small_sensor",
+      "Ventral_tail_tab",
+      "Wing_blue_angular_panel_L",
+      "Wing_blue_angular_panel_R",
+      "Wing_blue_leading_L",
+      "Wing_blue_leading_R",
+      "Wing_service_panel_L",
+      "Wing_service_panel_L001",
+      "Wing_service_panel_R",
+      "Wing_service_panel_R001"
+    ],
+    "changedMotionMeshes": [
+      "BraceBodyCarriage_L",
+      "BraceBodyCarriage_R",
+      "Drive_CouplingWitness",
+      "Drive_Crossbeam",
+      "Drive_FrontGuidePedestal_L",
+      "Drive_FrontGuidePedestal_R",
+      "Drive_FrontScrewPedestal",
+      "Drive_FrontSupport",
+      "Drive_GuideBridge_L",
+      "Drive_GuideBridge_R",
+      "Drive_GuideRail_L",
+      "Drive_GuideRail_R",
+      "Drive_LeadScrewCore",
+      "Drive_LeadScrewThread",
+      "Drive_MotorMount",
+      "Drive_MotorRotorDisc",
+      "Drive_MotorSaddle_L",
+      "Drive_MotorSaddle_R",
+      "Drive_MotorShaft",
+      "Drive_MotorWitness",
+      "Drive_OutputCoupling",
+      "Drive_OutputWeb",
+      "Drive_PlanetCarrier",
+      "Drive_PlanetGear_0",
+      "Drive_PlanetGear_1",
+      "Drive_PlanetGear_2",
+      "Drive_PlanetPin_0",
+      "Drive_PlanetPin_1",
+      "Drive_PlanetPin_2",
+      "Drive_PlanetRetainer_0_Front",
+      "Drive_PlanetRetainer_0_Rear",
+      "Drive_PlanetRetainer_1_Front",
+      "Drive_PlanetRetainer_1_Rear",
+      "Drive_PlanetRetainer_2_Front",
+      "Drive_PlanetRetainer_2_Rear",
+      "Drive_RearGuidePedestal_L",
+      "Drive_RearGuidePedestal_R",
+      "Drive_RearScrewPedestal",
+      "Drive_RearSupport",
+      "Drive_RingGear",
+      "Drive_SunGear",
+      "Lower_fuselage_join",
+      "Lower_fuselage_join001",
+      "Lower_fuselage_join002",
+      "Lower_fuselage_join003",
+      "Tail_boom_join"
+    ],
+    "observedRerunMeshes": [
+      "ActuatorSideSlot_L",
+      "ActuatorSideSlot_R",
+      "BraceBodyCarriage_L",
+      "BraceBodyCarriage_R",
+      "Drive_CouplingWitness",
+      "Drive_Crossbeam",
+      "Drive_FrontFoot_L",
+      "Drive_FrontFoot_R",
+      "Drive_FrontGuidePedestal_L",
+      "Drive_FrontGuidePedestal_R",
+      "Drive_FrontGuideSeat_L",
+      "Drive_FrontGuideSeat_R",
+      "Drive_FrontScrewBearing",
+      "Drive_FrontScrewPedestal",
+      "Drive_FrontSupport",
+      "Drive_FrontTravelStop_L",
+      "Drive_FrontTravelStop_R",
+      "Drive_GuideBridge_L",
+      "Drive_GuideBridge_R",
+      "Drive_GuideBushing_L",
+      "Drive_GuideBushing_R",
+      "Drive_GuideRail_L",
+      "Drive_GuideRail_R",
+      "Drive_LeadScrewCore",
+      "Drive_LeadScrewThread",
+      "Drive_MotorFoot_L",
+      "Drive_MotorFoot_R",
+      "Drive_MotorGearboxAdapter",
+      "Drive_MotorHousing",
+      "Drive_MotorMount",
+      "Drive_MotorRotorDisc",
+      "Drive_MotorSaddle_L",
+      "Drive_MotorSaddle_R",
+      "Drive_MotorShaft",
+      "Drive_MotorWitness",
+      "Drive_NutCarriage",
+      "Drive_NutInternalThread",
+      "Drive_OutputCoupling",
+      "Drive_OutputWeb",
+      "Drive_PlanetCarrier",
+      "Drive_PlanetGear_0",
+      "Drive_PlanetGear_1",
+      "Drive_PlanetGear_2",
+      "Drive_PlanetPin_0",
+      "Drive_PlanetPin_1",
+      "Drive_PlanetPin_2",
+      "Drive_PlanetRetainer_0_Front",
+      "Drive_PlanetRetainer_0_Rear",
+      "Drive_PlanetRetainer_1_Front",
+      "Drive_PlanetRetainer_1_Rear",
+      "Drive_PlanetRetainer_2_Front",
+      "Drive_PlanetRetainer_2_Rear",
+      "Drive_RearFoot_L",
+      "Drive_RearFoot_R",
+      "Drive_RearGuidePedestal_L",
+      "Drive_RearGuidePedestal_R",
+      "Drive_RearGuideSeat_L",
+      "Drive_RearGuideSeat_R",
+      "Drive_RearScrewBearing",
+      "Drive_RearScrewPedestal",
+      "Drive_RearSupport",
+      "Drive_RearTravelStop_L",
+      "Drive_RearTravelStop_R",
+      "Drive_ReductionHousing",
+      "Drive_RingGear",
+      "Drive_SunGear",
+      "Fuselage",
+      "Lower_fuselage_join",
+      "Lower_fuselage_join001",
+      "Lower_fuselage_join002",
+      "Lower_fuselage_join003",
+      "Tail_boom_join"
+    ],
+    "exactInheritedSourceAndDecodedRuntimeGeometry": true,
+    "exactInheritedOrderedFloat64WorldMatrices": true,
+    "exactInheritedActiveAncestryAndGroups": true,
+    "allUnexpectedGeometryTransformAndAnimationChangesRejected": true,
+    "allUnexpectedMetadataChangesRejected": true,
+    "pairInheritanceRule": "both-endpoints-in-exactInheritedMeshes",
+    "unchangedPoseAndNarrowPhaseInputs": [
+      {
+        "originalPath": "src/rig.ts",
+        "path": "src/rig.ts",
+        "sha256": "4215cd44a02e36e62a2a7ccacd16a38b3fe9d82a727c0233af6d889caa56efb5",
+        "acceptedOriginalSha256": "4215cd44a02e36e62a2a7ccacd16a38b3fe9d82a727c0233af6d889caa56efb5",
+        "exactReversiblePathMigration": true
+      },
+      {
+        "originalPath": "src/motors.ts",
+        "path": "src/motors.ts",
+        "sha256": "5297141cc670fd98034bd242e189f0d61681587db209a02da08fb73971c02824",
+        "acceptedOriginalSha256": "5297141cc670fd98034bd242e189f0d61681587db209a02da08fb73971c02824",
+        "exactReversiblePathMigration": true
+      },
+      {
+        "originalPath": "src/internalDriveInspection.ts",
+        "path": "src/internalDriveInspection.ts",
+        "sha256": "1a5fae23375a81475b43b9fe8d16bcce506a3b76663b1bba3ba9b288ad6f6a42",
+        "acceptedOriginalSha256": "1a5fae23375a81475b43b9fe8d16bcce506a3b76663b1bba3ba9b288ad6f6a42",
+        "exactReversiblePathMigration": true
+      },
+      {
+        "originalPath": "qa/v15/verification/audit-scene.mts",
+        "path": "qa/lib/pose-audit.mts",
+        "sha256": "6e5325f19d431d2d122ed2a6bffa130e26aef1f32157cda306c032e6029c5daf",
+        "acceptedOriginalSha256": "1b297fc895974e516fae7481ef8ef290da03ce72f79557a61665c4e2bbb350b8",
+        "exactReversiblePathMigration": true
+      },
+      {
+        "originalPath": "qa/v23/verification/audit-scene.mts",
+        "path": "qa/lib/snapshot-audit.mts",
+        "sha256": "d4a334e7966bd8ff2e2cc5af12036ff3fce345016c0f5785ec9561f1f93b9eb4",
+        "acceptedOriginalSha256": "8210c0072db319eee29fc7ccbc091d7f98a454b7743bd4ef2635dd2ef75c3c0e",
+        "exactReversiblePathMigration": true
+      },
+      {
+        "originalPath": "qa/v7/triangle-contact.mjs",
+        "path": "qa/lib/triangle-contact.mjs",
+        "sha256": "c8c8bc4f141aff261dbb0bac493fb9e7b4066cae9e1eb95f41cdd9b7718700bb",
+        "acceptedOriginalSha256": "c8c8bc4f141aff261dbb0bac493fb9e7b4066cae9e1eb95f41cdd9b7718700bb",
+        "exactReversiblePathMigration": true
+      },
+      {
+        "originalPath": "qa/v9/solid-contact.mjs",
+        "path": "qa/lib/solid-contact.mjs",
+        "sha256": "ce7e6268a2b923be64a714716989206c325d283936f28cb7a72d98d2433f023d",
+        "acceptedOriginalSha256": "a9f5e45e51adbd938f2656777ebdef213c8bce77f569651449d42bf574432308",
+        "exactReversiblePathMigration": true
+      },
+      {
+        "originalPath": "qa/v11/rotor-envelope-geometry.mjs",
+        "path": "qa/lib/rotor-envelope-geometry.mjs",
+        "sha256": "7a653b45fc9e2e178c3c424dda7dfb803a2bba56912bc930a897f2bbab3ac64e",
+        "acceptedOriginalSha256": "7a653b45fc9e2e178c3c424dda7dfb803a2bba56912bc930a897f2bbab3ac64e",
+        "exactReversiblePathMigration": true
+      },
+      {
+        "originalPath": "qa/v22/verification/support-geometry.mts",
+        "path": "qa/lib/support-geometry.mts",
+        "sha256": "f64d208497747da4bf41867654d7121d6efaec05f62c6f5f2a69971281bb3cb2",
+        "acceptedOriginalSha256": "f03e7becf95bea23ad901b37ba7189ff2f77ac64cb2f7685e2f52d301601311e",
+        "exactReversiblePathMigration": true
+      }
+    ],
+    "evidence": [
+      {
+        "stage": "fast",
+        "path": "qa/reference/evidence/fast-report-ebc793742aee.json",
+        "originalPath": "qa/v23/verification/final/fast-report.json",
+        "sha256": "ebc793742aee17f464531a982e468a3dccfcd36f99316b762989ad2b2e153ab9",
+        "scope": "仅两端均在 exactInheritedMeshes 且双编码几何/有序世界矩阵/祖先身份完全相同的历史有限配对；保守影响域另行重跑",
+        "rerun": false
+      },
+      {
+        "stage": "wing",
+        "path": "qa/reference/evidence/wing-report-0739f61dd0f9.json",
+        "originalPath": "qa/v23/verification/final/wing-report.json",
+        "sha256": "0739f61dd0f9671ca6f8de50d2fa89045a5a4ad12aeb873b1869d8968b0fa964",
+        "scope": "仅两端均在 exactInheritedMeshes 且双编码几何/有序世界矩阵/祖先身份完全相同的历史有限配对；保守影响域另行重跑",
+        "rerun": false
+      },
+      {
+        "stage": "spin",
+        "path": "qa/reference/evidence/spin-report-f9ba3ac4ff02.json",
+        "originalPath": "qa/v23/verification/final/spin-report.json",
+        "sha256": "f9ba3ac4ff0251f5870a98338915b4dc5568731256a2684c8872d8ccca1e3040",
+        "scope": "仅两端均在 exactInheritedMeshes 且双编码几何/有序世界矩阵/祖先身份完全相同的历史有限配对；保守影响域另行重跑",
+        "rerun": false
+      },
+      {
+        "stage": "details",
+        "path": "qa/reference/evidence/details-report-799d284184dc.json",
+        "originalPath": "qa/v23/verification/final/details-report.json",
+        "sha256": "799d284184dc76e01a4b938adfe23aa794a8a8b97aa17432798058cbd7260c0c",
+        "scope": "仅两端均在 exactInheritedMeshes 且双编码几何/有序世界矩阵/祖先身份完全相同的历史有限配对；保守影响域另行重跑",
+        "rerun": false
+      },
+      {
+        "stage": "rotor-envelope",
+        "path": "qa/reference/evidence/rotor-envelope-report-d69d45d53c72.json",
+        "originalPath": "qa/v23/verification/final/rotor-envelope-report.json",
+        "sha256": "d69d45d53c721ae7e8ff1ea4c6c73d2b17dc19a8c2a0e31cc53726a67acdf2f1",
+        "scope": "仅两端均在 exactInheritedMeshes 且双编码几何/有序世界矩阵/祖先身份完全相同的历史有限配对；保守影响域另行重跑",
+        "rerun": false
+      },
+      {
+        "stage": "seam-motion",
+        "path": "qa/reference/evidence/seam-motion-report-58fbe7d28e91.json",
+        "originalPath": "qa/v23/verification/final/seam-motion-report.json",
+        "sha256": "58fbe7d28e913da87092d8b3df28b30a6c7646571c43ada45fbb8eb082a95c72",
+        "scope": "仅两端均在 exactInheritedMeshes 且双编码几何/有序世界矩阵/祖先身份完全相同的历史有限配对；保守影响域另行重跑",
+        "rerun": false
+      },
+      {
+        "stage": "wing-anchor",
+        "path": "qa/reference/evidence/wing-anchor-report-5323f2289021.json",
+        "originalPath": "qa/v23/verification/final/wing-anchor-report.json",
+        "sha256": "5323f22890210b200e4a521b2859f4986cc6be651123168368a20e2e03bf1463",
+        "scope": "仅两端均在 exactInheritedMeshes 且双编码几何/有序世界矩阵/祖先身份完全相同的历史有限配对；保守影响域另行重跑",
+        "rerun": false
+      },
+      {
+        "stage": "fairings",
+        "path": "qa/reference/evidence/fairings-report-fb0cc1b2ecda.json",
+        "originalPath": "qa/v23/verification/final/fairings-report.json",
+        "sha256": "fb0cc1b2ecda04afc4b9660ddb2ca739090bbf9d183462a23ae2a20456e4a0f4",
+        "scope": "仅两端均在 exactInheritedMeshes 且双编码几何/有序世界矩阵/祖先身份完全相同的历史有限配对；保守影响域另行重跑",
+        "rerun": false
+      },
+      {
+        "stage": "seat-reattachment",
+        "path": "qa/reference/evidence/seat-reattachment-report-570e5aae92be.json",
+        "originalPath": "qa/v23/verification/final/seat-reattachment-report.json",
+        "sha256": "570e5aae92bebcc55508438b65e999ee3256c7fcdbb848bff038467eaf35c16e",
+        "scope": "仅两端均在 exactInheritedMeshes 且双编码几何/有序世界矩阵/祖先身份完全相同的历史有限配对；保守影响域另行重跑",
+        "rerun": false
+      },
+      {
+        "stage": "linkage",
+        "path": "qa/reference/evidence/linkage-report-b3bad92f745c.json",
+        "originalPath": "qa/v23/verification/final/linkage-report.json",
+        "sha256": "b3bad92f745c8efb39a0dc878af5da7db3999a5493eeac48e5437086302818a6",
+        "scope": "仅两端均在 exactInheritedMeshes 且双编码几何/有序世界矩阵/祖先身份完全相同的历史有限配对；保守影响域另行重跑",
+        "rerun": false
+      },
+      {
+        "stage": "drive-motion",
+        "path": "qa/reference/evidence/drive-motion-report-1ff6f31465d8.json",
+        "originalPath": "qa/v23/verification/final/drive-motion-report.json",
+        "sha256": "1ff6f31465d8d514ede54a495b064e9710489331680b82cdc7f32bd4d6f6e5ec",
+        "scope": "仅两端均在 exactInheritedMeshes 且双编码几何/有序世界矩阵/祖先身份完全相同的历史有限配对；保守影响域另行重跑",
+        "rerun": false
+      },
+      {
+        "stage": "baked-winding",
+        "path": "qa/reference/evidence/baked-winding-report-29778f8fb70f.json",
+        "originalPath": "qa/v23/verification/final/baked-winding-report.json",
+        "sha256": "29778f8fb70ffde890d0b2ad031d956706ebf4a572f439bd6ef1a647ccc67473",
+        "scope": "仅两端均在 exactInheritedMeshes 且双编码几何/有序世界矩阵/祖先身份完全相同的历史有限配对；保守影响域另行重跑",
+        "rerun": false
+      },
+      {
+        "stage": "exported-motor-clip",
+        "path": "qa/reference/evidence/exported-motor-clip-report-8a7c2937bdfc.json",
+        "originalPath": "qa/v23/verification/final/exported-motor-clip-report.json",
+        "sha256": "8a7c2937bdfc0b76eb53999279eab10dfd44bf53822856eb496fdc594f7ead78",
+        "scope": "仅两端均在 exactInheritedMeshes 且双编码几何/有序世界矩阵/祖先身份完全相同的历史有限配对；保守影响域另行重跑",
+        "rerun": false
+      },
+      {
+        "stage": "hollow-bay",
+        "path": "qa/reference/evidence/hollow-bay-report-d92d8dc7ed05.json",
+        "sha256": "d92d8dc7ed059cafff885c3e856caae14f8e77a0f8c717751fd4ea09ce89c31a",
+        "scope": "核对原始继承链字节；仅限双方均属于当前双编码精确继承名单，绝不代表本轮重新执行",
+        "rerun": false,
+        "originalPath": "qa/v22/verification/final/hollow-bay-report.json"
+      },
+      {
+        "stage": "local-drive",
+        "path": "qa/reference/evidence/local-drive-report-51e14f23665e.json",
+        "sha256": "51e14f23665e992d7e79ddd52b26d3f1b651ce8517b012a91d76a58d7c2d594a",
+        "scope": "核对原始继承链字节；仅限双方均属于当前双编码精确继承名单，绝不代表本轮重新执行",
+        "rerun": false,
+        "originalPath": "qa/v22/verification/final/local-drive-report.json"
+      },
+      {
+        "stage": "drive-interfaces",
+        "path": "qa/reference/evidence/drive-interfaces-report-fea9d89d826f.json",
+        "sha256": "fea9d89d826fd4f7178099904f2ff544959e097982f0331126e33ce796400de9",
+        "scope": "核对原始继承链字节；仅限双方均属于当前双编码精确继承名单，绝不代表本轮重新执行",
+        "rerun": false,
+        "originalPath": "qa/v22/verification/final/drive-interfaces-report.json"
+      },
+      {
+        "stage": "runtime-motion",
+        "path": "qa/reference/evidence/runtime-motion-report-bddde8af3280.json",
+        "sha256": "bddde8af32806418d800b58be5355ffd169247b50d5a576d96241543fdae4ee9",
+        "scope": "核对原始继承链字节；仅限双方均属于当前双编码精确继承名单，绝不代表本轮重新执行",
+        "rerun": false,
+        "originalPath": "qa/v22/verification/final/runtime-motion-report.json"
+      },
+      {
+        "stage": "runtime-self-clearance",
+        "path": "qa/reference/evidence/runtime-self-clearance-report-9109a14fa297.json",
+        "sha256": "9109a14fa2978cc7632c9cacf91475dad0dcffdbfe99f3e210cfbfb0e15085df",
+        "scope": "核对原始继承链字节；仅限双方均属于当前双编码精确继承名单，绝不代表本轮重新执行",
+        "rerun": false,
+        "originalPath": "qa/v22/verification/final/runtime-self-clearance-report.json"
+      },
+      {
+        "stage": "runtime-shaft-clearance",
+        "path": "qa/reference/evidence/runtime-shaft-clearance-report-a937e454d76f.json",
+        "sha256": "a937e454d76f3fdab5663dc51b3089a3a546fbd7d28dd79160368782ce78a9c0",
+        "scope": "核对原始继承链字节；仅限双方均属于当前双编码精确继承名单，绝不代表本轮重新执行",
+        "rerun": false,
+        "originalPath": "qa/v22/verification/final/runtime-shaft-clearance-report.json"
+      },
+      {
+        "stage": "fast",
+        "path": "qa/reference/evidence/fast-report-e779e92fe8d5.json",
+        "sha256": "e779e92fe8d5cd85e1cc4f1437021d82260fbdd473398ea778dfb9ff427ca189",
+        "scope": "核对原始继承链字节；仅限双方均属于当前双编码精确继承名单，绝不代表本轮重新执行",
+        "rerun": false,
+        "originalPath": "qa/v22/verification/final/fast-report.json"
+      },
+      {
+        "stage": "wing",
+        "path": "qa/reference/evidence/wing-report-2cc39b4afe4c.json",
+        "sha256": "2cc39b4afe4c6a1328fe1d8585586511a9085892de8e41703292d64635875a79",
+        "scope": "核对原始继承链字节；仅限双方均属于当前双编码精确继承名单，绝不代表本轮重新执行",
+        "rerun": false,
+        "originalPath": "qa/v22/verification/final/wing-report.json"
+      },
+      {
+        "stage": "spin",
+        "path": "qa/reference/evidence/spin-report-dcb67d603ea8.json",
+        "sha256": "dcb67d603ea8d3ad9957e46b7b29dedf80ed3dd21d9d647580722985f99c8bb3",
+        "scope": "核对原始继承链字节；仅限双方均属于当前双编码精确继承名单，绝不代表本轮重新执行",
+        "rerun": false,
+        "originalPath": "qa/v22/verification/final/spin-report.json"
+      },
+      {
+        "stage": "details",
+        "path": "qa/reference/evidence/details-report-543a3d6cff26.json",
+        "sha256": "543a3d6cff261ecd1436dc6c5443f1cf2962c2861b3863cf906490c422f3331a",
+        "scope": "核对原始继承链字节；仅限双方均属于当前双编码精确继承名单，绝不代表本轮重新执行",
+        "rerun": false,
+        "originalPath": "qa/v22/verification/final/details-report.json"
+      },
+      {
+        "stage": "rotor-envelope",
+        "path": "qa/reference/evidence/rotor-envelope-report-ae3af3f7b6ae.json",
+        "sha256": "ae3af3f7b6aec81817f4d8d3aec1d18592ea979f75d4533bc52cca733066fad1",
+        "scope": "核对原始继承链字节；仅限双方均属于当前双编码精确继承名单，绝不代表本轮重新执行",
+        "rerun": false,
+        "originalPath": "qa/v22/verification/final/rotor-envelope-report.json"
+      },
+      {
+        "stage": "accepted-inheritance-chain",
+        "path": "qa/reference/evidence/inheritance-report-9d4656358c42.json",
+        "originalPath": "qa/v23/verification/final/inheritance-report.json",
+        "sha256": "9d4656358c4295bb984d4953cd89342e090f6d41e8ee03476d9081be40d4248b",
+        "scope": "原始明确继承链，未改称重跑",
+        "rerun": false
+      }
+    ],
+    "claim": "只有两端均具备源/解码运行几何、全部3224个有序Float64世界矩阵及活动祖先联合精确恒等的历史有限配对才继承；几何或保守运动影响域全部另行重新验收",
+    "limitations": [
+      "运动身份完整性 passed 不等于碰撞验收通过；本报告不宣称全机TRS或动画值全部未改",
+      "旧通过不能替代当前影响域物理重跑；有限姿态继承不是连续运动、制造或飞行安全证明"
+    ]
+  },
+  "slot": [
+    {
+      "source": "qa/reference/source-protected-surfaces.json",
+      "sha256": "6234bf10e2401339ab1dcd3d242a3ae98a7d33f39e9cd1b5609460f172bf7d0a",
+      "baseline": true,
+      "acceptedReferenceModelSha256": "80ce0d237f5266077b5c34f4fc63e062a01d47c682be252eeedcf1cbb4f9f085",
+      "samples": 225,
+      "longitudinalRangeBlender": [
+        0.9,
+        1.93
+      ],
+      "actualVertexEdges": null,
+      "lines": {
+        "upperL": {
+          "points": 224,
+          "origin": [
+            -0.15823522546518531,
+            1.4139736162966356,
+            0.044860228668758835
+          ],
+          "direction": [
+            0.07995972462200905,
+            0.9884095774193618,
+            0.12904630837048903
+          ],
+          "maximumDeviation": 0.030563788907910998,
+          "rmsDeviation": 0.015689084420125714
+        },
+        "upperR": {
+          "points": 224,
+          "origin": [
+            0.15823526547746644,
+            1.4139736162966356,
+            0.04485770169448166
+          ],
+          "direction": [
+            -0.07995945673355444,
+            0.9884089624995915,
+            0.12905118414550015
+          ],
+          "maximumDeviation": 0.030565105928160405,
+          "rmsDeviation": 0.015689935029562823
+        },
+        "lowerL": {
+          "points": 224,
+          "origin": [
+            -0.09550168603053395,
+            1.4139736162966356,
+            -0.006417987887773144
+          ],
+          "direction": [
+            -0.000009698000423617795,
+            0.9959441918673945,
+            0.08997314372384269
+          ],
+          "maximumDeviation": 0.0057796747140177315,
+          "rmsDeviation": 0.0026360943535199614
+        },
+        "lowerR": {
+          "points": 224,
+          "origin": [
+            0.09550168603053395,
+            1.4139736162966356,
+            -0.006417618451175903
+          ],
+          "direction": [
+            0.000009697997096244738,
+            0.9959438501600605,
+            0.08997692612166625
+          ],
+          "maximumDeviation": 0.005760477577986355,
+          "rmsDeviation": 0.0026351094179684078
+        }
+      },
+      "minimumSampledSkinThickness": 0.00007720045991080338
+    },
+    {
+      "source": "assets/blender/xp4-source.glb",
+      "sha256": "14deba2a8cb20fb13c6cc05f8c4c09d441285b9754b014499942ad39992f7ce4",
+      "baseline": false,
+      "acceptedReferenceModelSha256": null,
+      "samples": 225,
+      "longitudinalRangeBlender": [
+        0.9,
+        1.93
+      ],
+      "actualVertexEdges": {
+        "lowerL": {
+          "points": 13,
+          "maximumDeviation": 5.2235508835041244e-9,
+          "identification": {
+            "plane": {
+              "normalBlender": [
+                1,
+                0,
+                0
+              ],
+              "constant": 0.0955
+            },
+            "nominalZUsed": false,
+            "wallTriangleIndices": [
+              11429,
+              11430,
+              11431,
+              14062,
+              14063,
+              14064,
+              14065,
+              14066,
+              14067,
+              14068,
+              14069,
+              14070,
+              14071,
+              14072,
+              14073,
+              14074,
+              14075,
+              14076,
+              14077,
+              14078,
+              14079,
+              14080,
+              14081,
+              14082,
+              14083,
+              14084,
+              14085,
+              14086,
+              14087,
+              15589,
+              16005,
+              16895,
+              17747,
+              17765,
+              17779,
+              17780,
+              17781,
+              17782,
+              17783,
+              17791
+            ],
+            "actualWallFaces": 40,
+            "maximumSelectedFacePlaneResidual": 1.788139358804841e-10,
+            "coplanarRejectedNormals": [],
+            "unionInteriorEdgeCount": 42,
+            "boundaryEdgeCount": 36,
+            "actualUnionBoundaryEdges": 34,
+            "identifiableSkinBoundaryEdges": 34,
+            "excludedCapCrossEdges": [
+              "5603/6870",
+              "4843/7723"
+            ]
+          }
+        },
+        "lowerR": {
+          "points": 13,
+          "maximumDeviation": 5.2235508835041244e-9,
+          "identification": {
+            "plane": {
+              "normalBlender": [
+                1,
+                0,
+                0
+              ],
+              "constant": -0.0955
+            },
+            "nominalZUsed": false,
+            "wallTriangleIndices": [
+              11766,
+              11767,
+              11768,
+              14517,
+              14518,
+              14519,
+              14520,
+              14521,
+              14522,
+              14523,
+              14524,
+              14525,
+              14526,
+              14527,
+              14528,
+              14529,
+              14530,
+              14531,
+              14532,
+              14533,
+              14534,
+              14535,
+              14536,
+              14537,
+              14538,
+              14539,
+              14540,
+              14541,
+              14542,
+              14543,
+              16301,
+              16707,
+              17784,
+              17785,
+              17786,
+              17809,
+              17810,
+              17831,
+              17832,
+              17833
+            ],
+            "actualWallFaces": 40,
+            "maximumSelectedFacePlaneResidual": 1.788139358804841e-10,
+            "coplanarRejectedNormals": [],
+            "unionInteriorEdgeCount": 41,
+            "boundaryEdgeCount": 38,
+            "actualUnionBoundaryEdges": 36,
+            "identifiableSkinBoundaryEdges": 36,
+            "excludedCapCrossEdges": [
+              "5621/7453",
+              "4859/7841"
+            ]
+          }
+        },
+        "upperL": {
+          "points": 13,
+          "maximumDeviation": 8.067982229807085e-9,
+          "identification": {
+            "plane": {
+              "normalBlender": [
+                0.9962876243047384,
+                -0.08608698889623467,
+                0
+              ],
+              "constant": 0.28171725298908257
+            },
+            "nominalZUsed": false,
+            "wallTriangleIndices": [
+              11193,
+              11194,
+              11195,
+              11196,
+              11197,
+              13898,
+              13899,
+              13900,
+              13901,
+              13902,
+              13903,
+              13904,
+              13905,
+              13906,
+              13907,
+              13908,
+              13909,
+              13910,
+              13911,
+              13912,
+              13913,
+              13914,
+              13915,
+              13916,
+              13917,
+              13918,
+              13919,
+              13920,
+              13921,
+              13922,
+              13923,
+              13924,
+              13925,
+              13926,
+              14594,
+              14595,
+              14596,
+              14597,
+              14598
+            ],
+            "actualWallFaces": 39,
+            "maximumSelectedFacePlaneResidual": 1.6863724006836204e-8,
+            "coplanarRejectedNormals": [
+              15207,
+              15467,
+              15584,
+              16390
+            ],
+            "unionInteriorEdgeCount": 38,
+            "boundaryEdgeCount": 41,
+            "actualUnionBoundaryEdges": 39,
+            "identifiableSkinBoundaryEdges": 37,
+            "excludedCapCrossEdges": [
+              "5581/6537",
+              "6530/7695"
+            ]
+          }
+        },
+        "upperR": {
+          "points": 13,
+          "maximumDeviation": 8.067982229807085e-9,
+          "identification": {
+            "plane": {
+              "normalBlender": [
+                0.9962876243047384,
+                0.08608698889623467,
+                0
+              ],
+              "constant": -0.28171725298908257
+            },
+            "nominalZUsed": false,
+            "wallTriangleIndices": [
+              11558,
+              11559,
+              11560,
+              14325,
+              14326,
+              14327,
+              14328,
+              14329,
+              14330,
+              14331,
+              14332,
+              14333,
+              14334,
+              14335,
+              14336,
+              14337,
+              14338,
+              14339,
+              14340,
+              14341,
+              14342,
+              14343,
+              14344,
+              14345,
+              14346,
+              14347,
+              14348,
+              14349,
+              14350,
+              14351,
+              14352,
+              14353,
+              14354,
+              14591,
+              14592,
+              14593,
+              16046,
+              16437
+            ],
+            "actualWallFaces": 38,
+            "maximumSelectedFacePlaneResidual": 1.6863724006836204e-8,
+            "coplanarRejectedNormals": [
+              15332,
+              15509,
+              15924,
+              15925
+            ],
+            "unionInteriorEdgeCount": 39,
+            "boundaryEdgeCount": 36,
+            "actualUnionBoundaryEdges": 34,
+            "identifiableSkinBoundaryEdges": 31,
+            "excludedCapCrossEdges": [
+              "5645/7122",
+              "7542/7805"
+            ]
+          }
+        }
+      },
+      "lines": {
+        "upperL": {
+          "points": 225,
+          "origin": [
+            -0.16050000167635906,
+            1.415,
+            0.04464837937623676
+          ],
+          "direction": [
+            0.08576949849196916,
+            0.9926133334432315,
+            0.08580421550921555
+          ],
+          "maximumDeviation": 1.2478431555667102e-7,
+          "rmsDeviation": 8.989630703508817e-9
+        },
+        "upperR": {
+          "points": 225,
+          "origin": [
+            0.16050000118142946,
+            1.415,
+            0.044648379056070324
+          ],
+          "direction": [
+            -0.08576950132107891,
+            0.9926133333580245,
+            0.08580421366695616
+          ],
+          "maximumDeviation": 9.844714797846839e-9,
+          "rmsDeviation": 3.2867665513483825e-9
+        },
+        "lowerL": {
+          "points": 225,
+          "origin": [
+            -0.09549999982118607,
+            1.415,
+            -0.010351621097588097
+          ],
+          "direction": [
+            0,
+            0.9962846352817077,
+            0.08612157396143393
+          ],
+          "maximumDeviation": 5.2772011023202725e-9,
+          "rmsDeviation": 2.3081303220083905e-9
+        },
+        "lowerR": {
+          "points": 225,
+          "origin": [
+            0.09549999982118607,
+            1.415,
+            -0.010351621097588097
+          ],
+          "direction": [
+            0,
+            0.9962846352817077,
+            0.08612157396143393
+          ],
+          "maximumDeviation": 5.2772010988508256e-9,
+          "rmsDeviation": 2.3081303219833204e-9
+        }
+      },
+      "minimumSampledSkinThickness": 0.0014332317406883233
+    },
+    {
+      "source": "public/models/xp4.glb",
+      "sha256": "313b014ec70b409175b34a08f66ec56820a51ea094085ce1eef96fc444ce4b2b",
+      "baseline": false,
+      "acceptedReferenceModelSha256": null,
+      "samples": 225,
+      "longitudinalRangeBlender": [
+        0.9,
+        1.93
+      ],
+      "actualVertexEdges": {
+        "lowerL": {
+          "points": 13,
+          "maximumDeviation": 5.2235508835041244e-9,
+          "identification": {
+            "plane": {
+              "normalBlender": [
+                1,
+                0,
+                0
+              ],
+              "constant": 0.0955
+            },
+            "nominalZUsed": false,
+            "wallTriangleIndices": [
+              15948,
+              15949,
+              15950,
+              15951,
+              15952,
+              15953,
+              15954,
+              15955,
+              15956,
+              15957,
+              15958,
+              15959,
+              15960,
+              15961,
+              15962,
+              15963,
+              15964,
+              15965,
+              15966,
+              16010,
+              16011,
+              16012,
+              16013,
+              16014,
+              16015,
+              16016,
+              16017,
+              16018,
+              16019,
+              16020,
+              16021,
+              16022,
+              16023,
+              16024,
+              16025,
+              16026,
+              16027,
+              16028,
+              17188,
+              17189
+            ],
+            "actualWallFaces": 40,
+            "maximumSelectedFacePlaneResidual": 1.788139358804841e-10,
+            "coplanarRejectedNormals": [
+              15994,
+              17579
+            ],
+            "unionInteriorEdgeCount": 42,
+            "boundaryEdgeCount": 36,
+            "actualUnionBoundaryEdges": 34,
+            "identifiableSkinBoundaryEdges": 34,
+            "excludedCapCrossEdges": [
+              "2964/8270",
+              "1126/6701"
+            ]
+          }
+        },
+        "lowerR": {
+          "points": 13,
+          "maximumDeviation": 5.2235508835041244e-9,
+          "identification": {
+            "plane": {
+              "normalBlender": [
+                1,
+                0,
+                0
+              ],
+              "constant": -0.0955
+            },
+            "nominalZUsed": false,
+            "wallTriangleIndices": [
+              12189,
+              12190,
+              12191,
+              12192,
+              12193,
+              12194,
+              12195,
+              12196,
+              12197,
+              12198,
+              12199,
+              12200,
+              12201,
+              12202,
+              12203,
+              12204,
+              12205,
+              12206,
+              12207,
+              12208,
+              12212,
+              12213,
+              12214,
+              12215,
+              12216,
+              12218,
+              12220,
+              12221,
+              12225,
+              12226,
+              12227,
+              12228,
+              12229,
+              17535,
+              17536,
+              17537,
+              17691,
+              17692,
+              17693,
+              17694
+            ],
+            "actualWallFaces": 40,
+            "maximumSelectedFacePlaneResidual": 1.788139358804841e-10,
+            "coplanarRejectedNormals": [
+              16838,
+              16839,
+              16840,
+              17518,
+              17519,
+              17520
+            ],
+            "unionInteriorEdgeCount": 41,
+            "boundaryEdgeCount": 38,
+            "actualUnionBoundaryEdges": 36,
+            "identifiableSkinBoundaryEdges": 36,
+            "excludedCapCrossEdges": [
+              "1219/6337",
+              "2157/6370"
+            ]
+          }
+        },
+        "upperL": {
+          "points": 13,
+          "maximumDeviation": 8.067982229807085e-9,
+          "identification": {
+            "plane": {
+              "normalBlender": [
+                0.9962876243047384,
+                -0.08608698889623467,
+                0
+              ],
+              "constant": 0.28171725298908257
+            },
+            "nominalZUsed": false,
+            "wallTriangleIndices": [
+              13352,
+              13358,
+              13359,
+              13360,
+              13425,
+              13427,
+              13428,
+              13429,
+              13430,
+              15259,
+              15260,
+              15262,
+              15263,
+              15265,
+              15425,
+              15426,
+              15427,
+              15428,
+              15429,
+              15430,
+              15431,
+              15432,
+              15433,
+              15434,
+              15435,
+              15436,
+              15437,
+              15438,
+              15439,
+              15440,
+              15441,
+              15442,
+              16754,
+              16755,
+              16756,
+              16757,
+              16758,
+              16759,
+              16760
+            ],
+            "actualWallFaces": 39,
+            "maximumSelectedFacePlaneResidual": 1.6863724006836204e-8,
+            "coplanarRejectedNormals": [
+              13357,
+              15248,
+              15258,
+              15266,
+              15421
+            ],
+            "unionInteriorEdgeCount": 38,
+            "boundaryEdgeCount": 41,
+            "actualUnionBoundaryEdges": 39,
+            "identifiableSkinBoundaryEdges": 37,
+            "excludedCapCrossEdges": [
+              "3222/7016",
+              "7276/8037"
+            ]
+          }
+        },
+        "upperR": {
+          "points": 13,
+          "maximumDeviation": 8.067982229807085e-9,
+          "identification": {
+            "plane": {
+              "normalBlender": [
+                0.9962876243047384,
+                0.08608698889623467,
+                0
+              ],
+              "constant": -0.28171725298908257
+            },
+            "nominalZUsed": false,
+            "wallTriangleIndices": [
+              4006,
+              16381,
+              16382,
+              16390,
+              16391,
+              16392,
+              16395,
+              16606,
+              16607,
+              16608,
+              16609,
+              16610,
+              16611,
+              16612,
+              16613,
+              16614,
+              16615,
+              16616,
+              16617,
+              16618,
+              16619,
+              16620,
+              16621,
+              16622,
+              16623,
+              16624,
+              16625,
+              16626,
+              16627,
+              16628,
+              16629,
+              16630,
+              16764,
+              16765,
+              16766,
+              16767,
+              16768,
+              16769
+            ],
+            "actualWallFaces": 38,
+            "maximumSelectedFacePlaneResidual": 1.6863724006836204e-8,
+            "coplanarRejectedNormals": [
+              16386,
+              16389,
+              16393,
+              16399,
+              16401
+            ],
+            "unionInteriorEdgeCount": 39,
+            "boundaryEdgeCount": 36,
+            "actualUnionBoundaryEdges": 34,
+            "identifiableSkinBoundaryEdges": 31,
+            "excludedCapCrossEdges": [
+              "7637/7920",
+              "1602/8434"
+            ]
+          }
+        }
+      },
+      "lines": {
+        "upperL": {
+          "points": 225,
+          "origin": [
+            -0.16050000167635906,
+            1.415,
+            0.04464837937623676
+          ],
+          "direction": [
+            0.08576949849196916,
+            0.9926133334432315,
+            0.08580421550921555
+          ],
+          "maximumDeviation": 1.2478431555667102e-7,
+          "rmsDeviation": 8.989630703424928e-9
+        },
+        "upperR": {
+          "points": 225,
+          "origin": [
+            0.16050000118142946,
+            1.415,
+            0.044648379056070324
+          ],
+          "direction": [
+            -0.08576950132107891,
+            0.9926133333580245,
+            0.08580421366695616
+          ],
+          "maximumDeviation": 9.844714797846839e-9,
+          "rmsDeviation": 3.2867665515541693e-9
+        },
+        "lowerL": {
+          "points": 225,
+          "origin": [
+            -0.09549999982118607,
+            1.415,
+            -0.010351621097588097
+          ],
+          "direction": [
+            0,
+            0.9962846352817077,
+            0.08612157396143393
+          ],
+          "maximumDeviation": 5.2772011023202725e-9,
+          "rmsDeviation": 2.3081303220089253e-9
+        },
+        "lowerR": {
+          "points": 225,
+          "origin": [
+            0.09549999982118607,
+            1.415,
+            -0.010351621097588097
+          ],
+          "direction": [
+            0,
+            0.9962846352817077,
+            0.08612157396143393
+          ],
+          "maximumDeviation": 5.2772011023202725e-9,
+          "rmsDeviation": 2.3081303220250715e-9
+        }
+      },
+      "minimumSampledSkinThickness": 0.0014332317406883233
+    }
+  ],
+  "straightOutputs": [
+    {
+      "source": "assets/blender/xp4-source.glb",
+      "sha256": "14deba2a8cb20fb13c6cc05f8c4c09d441285b9754b014499942ad39992f7ce4",
+      "rows": [
+        {
+          "name": "BraceBodyCarriage_L",
+          "passed": true,
+          "counts": {
+            "decodedVertices": 386,
+            "uniqueActualVertices": 144,
+            "triangles": 284,
+            "invalidVertices": 0,
+            "invalidTriangles": 0,
+            "zeroAreaTriangles": 0
+          },
+          "topology": {
+            "closed": true,
+            "weldEpsilon": 1e-12,
+            "vertexCount": 144,
+            "edgeCount": 426,
+            "boundaryEdgeCount": 0,
+            "nonmanifoldEdgeCount": 0,
+            "componentCount": 1,
+            "representatives": [
+              {
+                "triangleIndex": 0,
+                "vertexIndex": 0
+              }
+            ]
+          },
+          "endpointDeviations": [
+            2.2503463037446412e-8,
+            1.4716206288515731e-8
+          ],
+          "centerlineMaximumDeviation": 5.376554563758716e-17,
+          "volume": 0.000007694048730237328,
+          "volumeRatio": 0.9854510639845573,
+          "actualSections": 17
+        },
+        {
+          "name": "BraceBodyCarriage_R",
+          "passed": true,
+          "counts": {
+            "decodedVertices": 386,
+            "uniqueActualVertices": 144,
+            "triangles": 284,
+            "invalidVertices": 0,
+            "invalidTriangles": 0,
+            "zeroAreaTriangles": 0
+          },
+          "topology": {
+            "closed": true,
+            "weldEpsilon": 1e-12,
+            "vertexCount": 144,
+            "edgeCount": 426,
+            "boundaryEdgeCount": 0,
+            "nonmanifoldEdgeCount": 0,
+            "componentCount": 1,
+            "representatives": [
+              {
+                "triangleIndex": 0,
+                "vertexIndex": 0
+              }
+            ]
+          },
+          "endpointDeviations": [
+            2.2503463037446412e-8,
+            1.4716206288515731e-8
+          ],
+          "centerlineMaximumDeviation": 4.251103591563109e-17,
+          "volume": 0.000007694048730237325,
+          "volumeRatio": 0.9854510639845568,
+          "actualSections": 17
+        }
+      ]
+    },
+    {
+      "source": "public/models/xp4.glb",
+      "sha256": "313b014ec70b409175b34a08f66ec56820a51ea094085ce1eef96fc444ce4b2b",
+      "rows": [
+        {
+          "name": "BraceBodyCarriage_L",
+          "passed": true,
+          "counts": {
+            "decodedVertices": 336,
+            "uniqueActualVertices": 144,
+            "triangles": 284,
+            "invalidVertices": 0,
+            "invalidTriangles": 0,
+            "zeroAreaTriangles": 0
+          },
+          "topology": {
+            "closed": true,
+            "weldEpsilon": 1e-12,
+            "vertexCount": 144,
+            "edgeCount": 426,
+            "boundaryEdgeCount": 0,
+            "nonmanifoldEdgeCount": 0,
+            "componentCount": 1,
+            "representatives": [
+              {
+                "triangleIndex": 0,
+                "vertexIndex": 0
+              }
+            ]
+          },
+          "endpointDeviations": [
+            2.1304741642822675e-8,
+            1.588588178764396e-8
+          ],
+          "centerlineMaximumDeviation": 2.042583441573251e-17,
+          "volume": 0.000007694100632310954,
+          "volumeRatio": 0.9854577115839513,
+          "actualSections": 17
+        },
+        {
+          "name": "BraceBodyCarriage_R",
+          "passed": true,
+          "counts": {
+            "decodedVertices": 336,
+            "uniqueActualVertices": 144,
+            "triangles": 284,
+            "invalidVertices": 0,
+            "invalidTriangles": 0,
+            "zeroAreaTriangles": 0
+          },
+          "topology": {
+            "closed": true,
+            "weldEpsilon": 1e-12,
+            "vertexCount": 144,
+            "edgeCount": 426,
+            "boundaryEdgeCount": 0,
+            "nonmanifoldEdgeCount": 0,
+            "componentCount": 1,
+            "representatives": [
+              {
+                "triangleIndex": 0,
+                "vertexIndex": 0
+              }
+            ]
+          },
+          "endpointDeviations": [
+            2.1304741642702053e-8,
+            1.588588178862407e-8
+          ],
+          "centerlineMaximumDeviation": 2.010318353853627e-17,
+          "volume": 0.000007694100632310952,
+          "volumeRatio": 0.9854577115839511,
+          "actualSections": 17
+        }
+      ]
+    }
+  ],
+  "support": [
+    {
+      "source": "assets/blender/xp4-source.glb",
+      "meshCount": 283,
+      "visibleMeshCount": 283,
+      "interfaces": 331,
+      "newlyMeasuredInterfaces": 115,
+      "inheritedInterfaces": 216,
+      "allMeshPhysicalPaths": true,
+      "fullCoverageReport": "qa/current/results/support-report.json"
+    },
+    {
+      "source": "public/models/xp4.glb",
+      "meshCount": 283,
+      "visibleMeshCount": 283,
+      "interfaces": 331,
+      "newlyMeasuredInterfaces": 115,
+      "inheritedInterfaces": 216,
+      "allMeshPhysicalPaths": true,
+      "fullCoverageReport": "qa/current/results/support-report.json"
+    }
+  ],
+  "exportedDriveWinding": [
+    {
+      "source": "assets/blender/xp4-source.glb",
+      "sha256": "14deba2a8cb20fb13c6cc05f8c4c09d441285b9754b014499942ad39992f7ce4",
+      "lead": 0.032,
+      "rows": [
+        {
+          "name": "Drive_ScrewRotor",
+          "keyframes": 6371,
+          "fractionalChecks": 19110,
+          "maxKeyQerror": 8.881784197001252e-16,
+          "maxMidQerror": 6.661338147750939e-16,
+          "maximumActualStep": 0.13895569964247417,
+          "maxIncrementError": 1.3253069738872192e-7,
+          "maxAccumulationError": 8.181972077636601e-8,
+          "finalAccumulatedRadians": -1.1868717814111918e-13,
+          "absoluteAngularPathRadians": 388.59099707197856,
+          "expectedAbsoluteAngularPathRadians": 388.59099707193855,
+          "completeOutstrokeTurns": 30.923089012503624,
+          "segments": [
+            {
+              "from": 0,
+              "to": 3.2916667461395264,
+              "actualRadians": -194.29549853598922,
+              "expectedRadians": -194.29549853596927,
+              "actualTurns": -30.9230890125068
+            },
+            {
+              "from": 3.2916667461395264,
+              "to": 4.958333492279053,
+              "actualRadians": 0,
+              "expectedRadians": 0,
+              "actualTurns": 0
+            },
+            {
+              "from": 4.958333492279053,
+              "to": 8.291666984558105,
+              "actualRadians": 194.2954985359891,
+              "expectedRadians": 194.29549853596927,
+              "actualTurns": 30.923089012506782
+            }
+          ]
+        },
+        {
+          "name": "Drive_MotorRotor",
+          "keyframes": 6371,
+          "fractionalChecks": 19110,
+          "maxKeyQerror": 8.881784197001252e-16,
+          "maxMidQerror": 8.881784197001252e-16,
+          "maximumActualStep": 0.4168669879810551,
+          "maxIncrementError": 1.3783006952428067e-7,
+          "maxAccumulationError": 7.999790341273183e-8,
+          "finalAccumulatedRadians": 5.361056650693419e-13,
+          "absoluteAngularPathRadians": 1165.7729911517226,
+          "expectedAbsoluteAngularPathRadians": 1165.7729912158156,
+          "completeOutstrokeTurns": 92.76926703751087,
+          "segments": [
+            {
+              "from": 0,
+              "to": 3.2916667461395264,
+              "actualRadians": -582.8864955758603,
+              "expectedRadians": -582.8864956079078,
+              "actualTurns": -92.76926703241035
+            },
+            {
+              "from": 3.2916667461395264,
+              "to": 4.958333492279053,
+              "actualRadians": 0,
+              "expectedRadians": 0,
+              "actualTurns": 0
+            },
+            {
+              "from": 4.958333492279053,
+              "to": 8.291666984558105,
+              "actualRadians": 582.8864955758609,
+              "expectedRadians": 582.8864956079078,
+              "actualTurns": 92.76926703241044
+            }
+          ]
+        },
+        {
+          "name": "Drive_PlanetRotor_0",
+          "keyframes": 6371,
+          "fractionalChecks": 19110,
+          "maxKeyQerror": 8.881784197001252e-16,
+          "maxMidQerror": 6.661338147750939e-16,
+          "maximumActualStep": 0.5558226506281847,
+          "maxIncrementError": 1.4833888223320102e-7,
+          "maxAccumulationError": 8.135765483530122e-8,
+          "finalAccumulatedRadians": 2.9415098828922126e-13,
+          "absoluteAngularPathRadians": 1554.3639883141361,
+          "expectedAbsoluteAngularPathRadians": 1554.3639882877542,
+          "completeOutstrokeTurns": 123.6923560500145,
+          "segments": [
+            {
+              "from": 0,
+              "to": 3.2916667461395264,
+              "actualRadians": 777.1819941570651,
+              "expectedRadians": 777.1819941438771,
+              "actualTurns": 123.69235605211344
+            },
+            {
+              "from": 3.2916667461395264,
+              "to": 4.958333492279053,
+              "actualRadians": 0,
+              "expectedRadians": 0,
+              "actualTurns": 0
+            },
+            {
+              "from": 4.958333492279053,
+              "to": 8.291666984558105,
+              "actualRadians": -777.1819941570648,
+              "expectedRadians": -777.1819941438771,
+              "actualTurns": -123.69235605211338
+            }
+          ]
+        },
+        {
+          "name": "Drive_PlanetRotor_1",
+          "keyframes": 6371,
+          "fractionalChecks": 19110,
+          "maxKeyQerror": 8.881784197001252e-16,
+          "maxMidQerror": 6.661338147750939e-16,
+          "maximumActualStep": 0.5558226506281847,
+          "maxIncrementError": 1.4833888223320102e-7,
+          "maxAccumulationError": 8.135765483530122e-8,
+          "finalAccumulatedRadians": 2.9415098828922126e-13,
+          "absoluteAngularPathRadians": 1554.3639883141361,
+          "expectedAbsoluteAngularPathRadians": 1554.3639882877542,
+          "completeOutstrokeTurns": 123.6923560500145,
+          "segments": [
+            {
+              "from": 0,
+              "to": 3.2916667461395264,
+              "actualRadians": 777.1819941570651,
+              "expectedRadians": 777.1819941438771,
+              "actualTurns": 123.69235605211344
+            },
+            {
+              "from": 3.2916667461395264,
+              "to": 4.958333492279053,
+              "actualRadians": 0,
+              "expectedRadians": 0,
+              "actualTurns": 0
+            },
+            {
+              "from": 4.958333492279053,
+              "to": 8.291666984558105,
+              "actualRadians": -777.1819941570648,
+              "expectedRadians": -777.1819941438771,
+              "actualTurns": -123.69235605211338
+            }
+          ]
+        },
+        {
+          "name": "Drive_PlanetRotor_2",
+          "keyframes": 6371,
+          "fractionalChecks": 19110,
+          "maxKeyQerror": 8.881784197001252e-16,
+          "maxMidQerror": 6.661338147750939e-16,
+          "maximumActualStep": 0.5558226506281847,
+          "maxIncrementError": 1.4833888223320102e-7,
+          "maxAccumulationError": 8.135765483530122e-8,
+          "finalAccumulatedRadians": 2.9415098828922126e-13,
+          "absoluteAngularPathRadians": 1554.3639883141361,
+          "expectedAbsoluteAngularPathRadians": 1554.3639882877542,
+          "completeOutstrokeTurns": 123.6923560500145,
+          "segments": [
+            {
+              "from": 0,
+              "to": 3.2916667461395264,
+              "actualRadians": 777.1819941570651,
+              "expectedRadians": 777.1819941438771,
+              "actualTurns": 123.69235605211344
+            },
+            {
+              "from": 3.2916667461395264,
+              "to": 4.958333492279053,
+              "actualRadians": 0,
+              "expectedRadians": 0,
+              "actualTurns": 0
+            },
+            {
+              "from": 4.958333492279053,
+              "to": 8.291666984558105,
+              "actualRadians": -777.1819941570648,
+              "expectedRadians": -777.1819941438771,
+              "actualTurns": -123.69235605211338
+            }
+          ]
+        }
+      ],
+      "maximumKeyPhaseError": 8.881784197001252e-16,
+      "maximumMidpointPhaseError": 8.881784197001252e-16,
+      "maximumResolvableExpectedStep": 0.5558226220929328,
+      "secondaryMotorClip": {
+        "name": "TRANSWING_Motors_Start_Stop",
+        "rows": [
+          {
+            "name": "Drive_ScrewRotor",
+            "keyframes": 673,
+            "totalPhaseChecks": 2689,
+            "maximumQerror": 0
+          },
+          {
+            "name": "Drive_MotorRotor",
+            "keyframes": 673,
+            "totalPhaseChecks": 2689,
+            "maximumQerror": 0
+          },
+          {
+            "name": "Drive_PlanetRotor_0",
+            "keyframes": 673,
+            "totalPhaseChecks": 2689,
+            "maximumQerror": 0
+          },
+          {
+            "name": "Drive_PlanetRotor_1",
+            "keyframes": 673,
+            "totalPhaseChecks": 2689,
+            "maximumQerror": 0
+          },
+          {
+            "name": "Drive_PlanetRotor_2",
+            "keyframes": 673,
+            "totalPhaseChecks": 2689,
+            "maximumQerror": 0
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "source": "public/models/xp4.glb",
+      "sha256": "313b014ec70b409175b34a08f66ec56820a51ea094085ce1eef96fc444ce4b2b",
+      "lead": 0.032,
+      "rows": [
+        {
+          "name": "Drive_ScrewRotor",
+          "keyframes": 6371,
+          "fractionalChecks": 19110,
+          "maxKeyQerror": 8.881784197001252e-16,
+          "maxMidQerror": 6.661338147750939e-16,
+          "maximumActualStep": 0.13895569964247417,
+          "maxIncrementError": 1.3253069738872192e-7,
+          "maxAccumulationError": 8.181972077636601e-8,
+          "finalAccumulatedRadians": -1.1868717814111918e-13,
+          "absoluteAngularPathRadians": 388.59099707197856,
+          "expectedAbsoluteAngularPathRadians": 388.59099707193855,
+          "completeOutstrokeTurns": 30.923089012503624,
+          "segments": [
+            {
+              "from": 0,
+              "to": 3.2916667461395264,
+              "actualRadians": -194.29549853598922,
+              "expectedRadians": -194.29549853596927,
+              "actualTurns": -30.9230890125068
+            },
+            {
+              "from": 3.2916667461395264,
+              "to": 4.958333492279053,
+              "actualRadians": 0,
+              "expectedRadians": 0,
+              "actualTurns": 0
+            },
+            {
+              "from": 4.958333492279053,
+              "to": 8.291666984558105,
+              "actualRadians": 194.2954985359891,
+              "expectedRadians": 194.29549853596927,
+              "actualTurns": 30.923089012506782
+            }
+          ]
+        },
+        {
+          "name": "Drive_MotorRotor",
+          "keyframes": 6371,
+          "fractionalChecks": 19110,
+          "maxKeyQerror": 8.881784197001252e-16,
+          "maxMidQerror": 8.881784197001252e-16,
+          "maximumActualStep": 0.4168669879810551,
+          "maxIncrementError": 1.3783006952428067e-7,
+          "maxAccumulationError": 7.999790341273183e-8,
+          "finalAccumulatedRadians": 5.361056650693419e-13,
+          "absoluteAngularPathRadians": 1165.7729911517226,
+          "expectedAbsoluteAngularPathRadians": 1165.7729912158156,
+          "completeOutstrokeTurns": 92.76926703751087,
+          "segments": [
+            {
+              "from": 0,
+              "to": 3.2916667461395264,
+              "actualRadians": -582.8864955758603,
+              "expectedRadians": -582.8864956079078,
+              "actualTurns": -92.76926703241035
+            },
+            {
+              "from": 3.2916667461395264,
+              "to": 4.958333492279053,
+              "actualRadians": 0,
+              "expectedRadians": 0,
+              "actualTurns": 0
+            },
+            {
+              "from": 4.958333492279053,
+              "to": 8.291666984558105,
+              "actualRadians": 582.8864955758609,
+              "expectedRadians": 582.8864956079078,
+              "actualTurns": 92.76926703241044
+            }
+          ]
+        },
+        {
+          "name": "Drive_PlanetRotor_0",
+          "keyframes": 6371,
+          "fractionalChecks": 19110,
+          "maxKeyQerror": 8.881784197001252e-16,
+          "maxMidQerror": 6.661338147750939e-16,
+          "maximumActualStep": 0.5558226506281847,
+          "maxIncrementError": 1.4833888223320102e-7,
+          "maxAccumulationError": 8.135765483530122e-8,
+          "finalAccumulatedRadians": 2.9415098828922126e-13,
+          "absoluteAngularPathRadians": 1554.3639883141361,
+          "expectedAbsoluteAngularPathRadians": 1554.3639882877542,
+          "completeOutstrokeTurns": 123.6923560500145,
+          "segments": [
+            {
+              "from": 0,
+              "to": 3.2916667461395264,
+              "actualRadians": 777.1819941570651,
+              "expectedRadians": 777.1819941438771,
+              "actualTurns": 123.69235605211344
+            },
+            {
+              "from": 3.2916667461395264,
+              "to": 4.958333492279053,
+              "actualRadians": 0,
+              "expectedRadians": 0,
+              "actualTurns": 0
+            },
+            {
+              "from": 4.958333492279053,
+              "to": 8.291666984558105,
+              "actualRadians": -777.1819941570648,
+              "expectedRadians": -777.1819941438771,
+              "actualTurns": -123.69235605211338
+            }
+          ]
+        },
+        {
+          "name": "Drive_PlanetRotor_1",
+          "keyframes": 6371,
+          "fractionalChecks": 19110,
+          "maxKeyQerror": 8.881784197001252e-16,
+          "maxMidQerror": 6.661338147750939e-16,
+          "maximumActualStep": 0.5558226506281847,
+          "maxIncrementError": 1.4833888223320102e-7,
+          "maxAccumulationError": 8.135765483530122e-8,
+          "finalAccumulatedRadians": 2.9415098828922126e-13,
+          "absoluteAngularPathRadians": 1554.3639883141361,
+          "expectedAbsoluteAngularPathRadians": 1554.3639882877542,
+          "completeOutstrokeTurns": 123.6923560500145,
+          "segments": [
+            {
+              "from": 0,
+              "to": 3.2916667461395264,
+              "actualRadians": 777.1819941570651,
+              "expectedRadians": 777.1819941438771,
+              "actualTurns": 123.69235605211344
+            },
+            {
+              "from": 3.2916667461395264,
+              "to": 4.958333492279053,
+              "actualRadians": 0,
+              "expectedRadians": 0,
+              "actualTurns": 0
+            },
+            {
+              "from": 4.958333492279053,
+              "to": 8.291666984558105,
+              "actualRadians": -777.1819941570648,
+              "expectedRadians": -777.1819941438771,
+              "actualTurns": -123.69235605211338
+            }
+          ]
+        },
+        {
+          "name": "Drive_PlanetRotor_2",
+          "keyframes": 6371,
+          "fractionalChecks": 19110,
+          "maxKeyQerror": 8.881784197001252e-16,
+          "maxMidQerror": 6.661338147750939e-16,
+          "maximumActualStep": 0.5558226506281847,
+          "maxIncrementError": 1.4833888223320102e-7,
+          "maxAccumulationError": 8.135765483530122e-8,
+          "finalAccumulatedRadians": 2.9415098828922126e-13,
+          "absoluteAngularPathRadians": 1554.3639883141361,
+          "expectedAbsoluteAngularPathRadians": 1554.3639882877542,
+          "completeOutstrokeTurns": 123.6923560500145,
+          "segments": [
+            {
+              "from": 0,
+              "to": 3.2916667461395264,
+              "actualRadians": 777.1819941570651,
+              "expectedRadians": 777.1819941438771,
+              "actualTurns": 123.69235605211344
+            },
+            {
+              "from": 3.2916667461395264,
+              "to": 4.958333492279053,
+              "actualRadians": 0,
+              "expectedRadians": 0,
+              "actualTurns": 0
+            },
+            {
+              "from": 4.958333492279053,
+              "to": 8.291666984558105,
+              "actualRadians": -777.1819941570648,
+              "expectedRadians": -777.1819941438771,
+              "actualTurns": -123.69235605211338
+            }
+          ]
+        }
+      ],
+      "maximumKeyPhaseError": 8.881784197001252e-16,
+      "maximumMidpointPhaseError": 8.881784197001252e-16,
+      "maximumResolvableExpectedStep": 0.5558226220929328,
+      "secondaryMotorClip": {
+        "name": "TRANSWING_Motors_Start_Stop",
+        "rows": [
+          {
+            "name": "Drive_ScrewRotor",
+            "keyframes": 673,
+            "totalPhaseChecks": 2689,
+            "maximumQerror": 0
+          },
+          {
+            "name": "Drive_MotorRotor",
+            "keyframes": 673,
+            "totalPhaseChecks": 2689,
+            "maximumQerror": 0
+          },
+          {
+            "name": "Drive_PlanetRotor_0",
+            "keyframes": 673,
+            "totalPhaseChecks": 2689,
+            "maximumQerror": 0
+          },
+          {
+            "name": "Drive_PlanetRotor_1",
+            "keyframes": 673,
+            "totalPhaseChecks": 2689,
+            "maximumQerror": 0
+          },
+          {
+            "name": "Drive_PlanetRotor_2",
+            "keyframes": 673,
+            "totalPhaseChecks": 2689,
+            "maximumQerror": 0
+          }
+        ]
+      },
+      "passed": true
+    }
+  ],
+  "coverage": {
+    "source": {
+      "wholeModelInputStates": 1937,
+      "changedMeshDetailedSamples": 766,
+      "relativePairs": 14204,
+      "rotorEnvelopeSamples": 521,
+      "triangleSATTests": 56952623,
+      "declaredRerunMeshCount": 72,
+      "completeOrderedPoseGroups": {
+        "fast": {
+          "stateCount": 30,
+          "stateParametersSha256": "b239bbb2e88abfbfeca2a52bd7a001c1d509eb5891d61c590ba13a966887ec35"
+        },
+        "wing": {
+          "stateCount": 836,
+          "stateParametersSha256": "d52f5b572829f2e56d65aea140d883231091a8ce27a0e3f080c0c1fa7dfd927b"
+        },
+        "spin": {
+          "stateCount": 672,
+          "stateParametersSha256": "185414f63d8f3baa91191613936bff32e14c3a6defb4575556c214acd87263dd"
+        },
+        "details": {
+          "stateCount": 399,
+          "stateParametersSha256": "54b3e3b4e721c874355578e9b94e03cb20cd566c448c52a9919855aa0b2e5fd2"
+        },
+        "seam-motion": {
+          "stateCount": 766,
+          "stateParametersSha256": "c446f24aaee7db738fa99ee60d4ff5cf7db6ca35f69af9c39317aad302b8a38c"
+        },
+        "rotor-envelope": {
+          "stateCount": 521,
+          "stateParametersSha256": "fce0a93b0dc4dc398ac5d8a1d13f66815cb919701aa87795e78eee82b912b4f9"
+        }
+      }
+    },
+    "runtime": {
+      "wholeModelInputStates": 1937,
+      "changedMeshDetailedSamples": 766,
+      "relativePairs": 14204,
+      "rotorEnvelopeSamples": 521,
+      "triangleSATTests": 56953345,
+      "declaredRerunMeshCount": 72,
+      "completeOrderedPoseGroups": {
+        "fast": {
+          "stateCount": 30,
+          "stateParametersSha256": "b239bbb2e88abfbfeca2a52bd7a001c1d509eb5891d61c590ba13a966887ec35"
+        },
+        "wing": {
+          "stateCount": 836,
+          "stateParametersSha256": "d52f5b572829f2e56d65aea140d883231091a8ce27a0e3f080c0c1fa7dfd927b"
+        },
+        "spin": {
+          "stateCount": 672,
+          "stateParametersSha256": "185414f63d8f3baa91191613936bff32e14c3a6defb4575556c214acd87263dd"
+        },
+        "details": {
+          "stateCount": 399,
+          "stateParametersSha256": "54b3e3b4e721c874355578e9b94e03cb20cd566c448c52a9919855aa0b2e5fd2"
+        },
+        "seam-motion": {
+          "stateCount": 766,
+          "stateParametersSha256": "c446f24aaee7db738fa99ee60d4ff5cf7db6ca35f69af9c39317aad302b8a38c"
+        },
+        "rotor-envelope": {
+          "stateCount": 521,
+          "stateParametersSha256": "fce0a93b0dc4dc398ac5d8a1d13f66815cb919701aa87795e78eee82b912b4f9"
+        }
+      }
+    }
+  },
+  "inspectionCycles": 80,
+  "actualSdkHttpSseChecks": [
+    "无查看器接受不冒报应用",
+    "load-before-ready先接受后真实模型应用",
+    "真实Python 1800RPM/0.1s连续10步: endpoint保真相同，实际GLB连续曝光15时间区间方向正确，applied确认主节点调用，显示TTL不推进仿真",
+    "Python SDK控制四电机、六舵面、舱盖且真实GLB应用",
+    "V22真实SDK驱动0/.125/.5/.875/1/0/.5转换：共用横梁/丝杠/驱动电机、定长杆端与独立电机状态实际应用",
+    "外控屏蔽本地时钟，重复绘制不推进",
+    "非法复合补丁原子拒绝及SDK序号恢复",
+    "重复命令幂等，序号内容冲突拒绝",
+    "断连冻结、带Last-Event-ID重连只应用缺失事件",
+    "正反重复seek安全重建与86400秒边界",
+    "reset完整清理",
+    "独占会话拒绝抢占、释放消息可跨协议解析",
+    "桥退出、控制权复位、销毁后无应用",
+    "协议JSON确定性回放"
+  ],
+  "linkage": [
+    {
+      "source": "public/models/xp4.glb",
+      "poses": 1001,
+      "monotonicSamples": 10001,
+      "maxLengthError": 9.923692045887833e-8,
+      "maxEndpointError": 9.923692111856108e-8,
+      "maxBackwardStep": 0
+    },
+    {
+      "source": "assets/blender/xp4-source.glb",
+      "poses": 1001,
+      "monotonicSamples": 10001,
+      "maxLengthError": 9.923692045887833e-8,
+      "maxEndpointError": 9.923692111856108e-8,
+      "maxBackwardStep": 0
+    }
+  ],
+  "sourceChecks": {
+    "source-solids": {
+      "path": "qa/current/author/source-solids.json",
+      "sha256": "31698c4ff58b34bfd332f89bbf91e97bb5d72ed8ad025f953789c9a418b5da3e",
+      "passed": true
+    },
+    "source-kinematics": {
+      "path": "qa/current/author/source-kinematics.json",
+      "sha256": "fee7e7350a3d645b19193df61871890917c5b99721dd833ba4e2d07e88f726e8",
+      "passed": true
+    },
+    "source-motor-animation": {
+      "path": "qa/current/author/source-motor-animation.json",
+      "sha256": "481819c9c2670791c131edea8f8e31d9bda5da1b8e57d57bfec065eaae6784a9",
+      "passed": true
+    },
+    "source-native-drive": {
+      "path": "qa/current/author/source-native-drive.json",
+      "sha256": "5c8f6ad17b2806ea7732e732148f76a3d51983c2673e851103596e307a0f5b70",
+      "passed": true
+    },
+    "source-runtime-geometry": {
+      "path": "qa/current/author/source-runtime-geometry.json",
+      "sha256": "96893c6892dd8f29e4970bbe3ab5df4478bbc9a2f4a05bee919c41dfcfe1566e",
+      "passed": true
+    },
+    "generator-reproducibility": {
+      "path": "qa/current/author/generator-reproducibility.json",
+      "sha256": "5a30382a816912af7f51684d56fadd5a175a1041a50a78a8d5b54ec5765fcc81",
+      "passed": true
+    },
+    "regenerated-runtime-geometry": {
+      "path": "qa/current/author/regenerated-runtime-geometry.json",
+      "sha256": "a618ecd4ccc4835ad905c1b2298d92788d71ce6c990ddc57dc4d11a5d08b0228",
+      "passed": true
+    },
+    "regeneration-exact": {
+      "path": "qa/current/author/regeneration-exact.json",
+      "sha256": "32329d0dadf6344fb179fea067472b86b293ebb35b6c3b48fde90db687b499ed",
+      "passed": true
+    }
+  },
+  "regeneration": {
+    "nodes": 348,
+    "operationalExtras": 197
+  },
+  "limitations": [
+    "有限姿态、表面、射线和材料样本不构成连续净空、制造公差、载荷、强度、疲劳、气动或适航认证",
+    "距离均为未由原厂标定的概念模型单位；短圆端不计入长边线拟合，但另作实体闭合检查",
+    "只有双端源/解码运行几何、法线、拓扑、全部有序Float64世界矩阵与活动祖先精确恒等的历史有限配对才明确继承；全部保守运动影响域另行重跑，不宣称全机TRS或动画值未改",
+    "实际 SDK/HTTP/SSE/生产 GLB 检查与浏览器/WebGL/触控/设备性能测试不同"
+  ]
+}

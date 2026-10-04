@@ -1,0 +1,2093 @@
+{
+  "passed": true,
+  "bothSourceAndRuntimeChecked": true,
+  "reports": [
+    {
+      "source": "assets/blender/xp4-source.glb",
+      "kind": "source",
+      "sha256": "14deba2a8cb20fb13c6cc05f8c4c09d441285b9754b014499942ad39992f7ce4",
+      "sceneMeshCount": 283,
+      "rows": [
+        {
+          "name": "BraceBodyCarriage_L",
+          "coordinateFrame": "BraceSpreader 实际局部坐标，glTF [X,Z,-Y] 对应 Blender [X,Y,Z]",
+          "declaredExtrasOnly": {
+            "endpointsBlender": [
+              [
+                -0.14004190266132355,
+                -0.009227613918483257,
+                0.020408956333994865
+              ],
+              [
+                -0.11999999731779099,
+                -0.008999999612569809,
+                0.06700000166893005
+              ]
+            ],
+            "radius": 0.007
+          },
+          "actualGeometry": {
+            "encoding": 0.000001,
+            "thresholds": {
+              "topologyWeld": 1e-12,
+              "triangleArea": 1e-18,
+              "solidVolume": 1e-10,
+              "unchangedCollisionSAT": 1e-9,
+              "minimumInteriorRadiusRatio": 0.98,
+              "minimumInteriorAreaRatio": 0.97,
+              "minimumVolumeRatio": 0.94
+            },
+            "declaration": {
+              "endpoints": [
+                [
+                  -0.14004190266132355,
+                  0.020408956333994865,
+                  0.009227613918483257
+                ],
+                [
+                  -0.11999999731779099,
+                  0.06700000166893005,
+                  0.008999999612569809
+                ]
+              ],
+              "radius": 0.007
+            },
+            "passed": true,
+            "failures": [],
+            "counts": {
+              "decodedVertices": 386,
+              "uniqueActualVertices": 144,
+              "triangles": 284,
+              "invalidVertices": 0,
+              "invalidTriangles": 0,
+              "zeroAreaTriangles": 0
+            },
+            "topology": {
+              "closed": true,
+              "weldEpsilon": 1e-12,
+              "vertexCount": 144,
+              "edgeCount": 426,
+              "boundaryEdgeCount": 0,
+              "nonmanifoldEdgeCount": 0,
+              "componentCount": 1,
+              "representatives": [
+                {
+                  "triangleIndex": 0,
+                  "vertexIndex": 0
+                }
+              ]
+            },
+            "inconsistentEdges": 0,
+            "minTriangleArea": 3.165728600145096e-7,
+            "signedVolume": 0.000007694048730237328,
+            "volume": 0.000007694048730237328,
+            "idealVolume": 0.000007807641608429883,
+            "volumeRatio": 0.9854510639845573,
+            "volumeDeficitRatio": 0.014548936015442715,
+            "envelope": {
+              "minimumParameter": 2.0109872463547514e-9,
+              "maximumParameter": 0.05071938059784228,
+              "expectedLength": 0.05071937779067642,
+              "maximumRadialDistance": 0.0070000231920378875,
+              "maximumRadialExcess": 2.3192037887365125e-8,
+              "endpointExtentDeviation": 2.807165853935256e-9
+            },
+            "actualVertexPrincipalAxis": {
+              "origin": [
+                -0.13002094626426686,
+                0.04370447993278501,
+                0.00911378860473633
+              ],
+              "direction": [
+                0.39515283448766036,
+                0.9186044302296111,
+                -0.004487556005143441
+              ],
+              "maximumDeviation": 0.007000001138235067,
+              "rmsDeviation": 0.006578955013422861
+            },
+            "independentAxisEndpointDeviations": [
+              2.244934760388694e-8,
+              1.4415437246539935e-8
+            ],
+            "centerline": {
+              "origin": [
+                -0.1300209472162192,
+                0.043704477719799316,
+                0.009113788615547186
+              ],
+              "direction": [
+                0.39515283292988146,
+                0.9186044308917087,
+                -0.004487557644079458
+              ],
+              "maximumDeviation": 5.376554563758716e-17,
+              "rmsDeviation": 3.2320787098047137e-17
+            },
+            "measuredEndpoints": [
+              [
+                -0.14004189933078653,
+                0.020408956981805178,
+                0.009227591672276532
+              ],
+              [
+                -0.11999999319774735,
+                0.06700000288376487,
+                0.008999985537196126
+              ]
+            ],
+            "endpointDeviations": [
+              2.2503463037446412e-8,
+              1.4716206288515731e-8
+            ],
+            "sections": [
+              {
+                "fraction": 0.08,
+                "station": -0.02130214108115747,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  3.605651597498546e-11,
+                  -3.491319634636335e-11
+                ],
+                "area": 0.00015218564318299479,
+                "selfIntersections": 0,
+                "minimumRadius": 0.00694011497321158,
+                "maximumRadius": 0.0070000011098209185,
+                "actualCenter": [
+                  -0.13843854765995833,
+                  0.02413623874815351,
+                  0.009209383190780336
+                ],
+                "expectedAxisDeviation": 2.1769960237456706e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.1325,
+                "station": -0.01863937374714699,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  3.1549438386191586e-11,
+                  -3.054904700598725e-11
+                ],
+                "area": 0.00015218564318299484,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006940114973211578,
+                "maximumRadius": 0.007000001109820918,
+                "actualCenter": [
+                  -0.13738634760449095,
+                  0.026582268619609238,
+                  0.009197433868876191
+                ],
+                "expectedAxisDeviation": 2.1348071368351153e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.185,
+                "station": -0.015976606413136515,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  2.704236024661669e-11,
+                  -2.6184897433703374e-11
+                ],
+                "area": 0.00015218564318299476,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006940114973211578,
+                "maximumRadius": 0.007000001109820917,
+                "actualCenter": [
+                  -0.13633414754902357,
+                  0.02902829849106496,
+                  0.009185484546972048
+                ],
+                "expectedAxisDeviation": 2.092651131645612e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.2375,
+                "station": -0.01331383907912604,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  2.253528239692654e-11,
+                  -2.1820748535401554e-11
+                ],
+                "area": 0.00015218564318299479,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006940114973211577,
+                "maximumRadius": 0.007000001109820918,
+                "actualCenter": [
+                  -0.13528194749355618,
+                  0.03147432836252069,
+                  0.009173535225067904
+                ],
+                "expectedAxisDeviation": 2.050530036466289e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.29,
+                "station": -0.010651071745115563,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  1.802820453274216e-11,
+                  -1.7456599593617024e-11
+                ],
+                "area": 0.00015218564318299473,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006940114973211577,
+                "maximumRadius": 0.007000001109820918,
+                "actualCenter": [
+                  -0.1342297474380888,
+                  0.03392035823397642,
+                  0.00916158590316376
+                ],
+                "expectedAxisDeviation": 2.0084460473698653e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.3425,
+                "station": -0.007988304411105082,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  1.352112666855777e-11,
+                  -1.3092450195263986e-11
+                ],
+                "area": 0.00015218564318299476,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006940114973211578,
+                "maximumRadius": 0.007000001109820918,
+                "actualCenter": [
+                  -0.13317754738262141,
+                  0.03636638810543215,
+                  0.009149636581259618
+                ],
+                "expectedAxisDeviation": 1.966401546926804e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.395,
+                "station": -0.005325537077094607,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  9.01404861594828e-12,
+                  -8.728300934606208e-12
+                ],
+                "area": 0.00015218564318299484,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006940114973211578,
+                "maximumRadius": 0.007000001109820918,
+                "actualCenter": [
+                  -0.132125347327154,
+                  0.03881241797688787,
+                  0.009137687259355473
+                ],
+                "expectedAxisDeviation": 1.9243991240121546e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.4475,
+                "station": -0.002662769743084128,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  4.506970896706282e-12,
+                  -4.364151594230128e-12
+                ],
+                "area": 0.00015218564318299476,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006940114973211578,
+                "maximumRadius": 0.007000001109820917,
+                "actualCenter": [
+                  -0.13107314727168662,
+                  0.04125844784834361,
+                  0.00912573793745133
+                ],
+                "expectedAxisDeviation": 1.8824415939181152e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.5,
+                "station": -2.4090736523707523e-9,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  -1.0725736286932277e-16,
+                  -2.210371329401584e-18
+                ],
+                "area": 0.00015218564318299476,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006940114973211579,
+                "maximumRadius": 0.007000001109820918,
+                "actualCenter": [
+                  -0.13002094721621926,
+                  0.04370447771979932,
+                  0.009113788615547184
+                ],
+                "expectedAxisDeviation": 1.8405320276048896e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.5525,
+                "station": 0.002662764924936823,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  -4.507184715708586e-12,
+                  4.364147260452899e-12
+                ],
+                "area": 0.00015218564318299476,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006940114973211577,
+                "maximumRadius": 0.007000001109820917,
+                "actualCenter": [
+                  -0.12896874716075185,
+                  0.04615050759125505,
+                  0.009101839293643041
+                ],
+                "expectedAxisDeviation": 1.79867377806241e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.605,
+                "station": 0.005325532258947302,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  -9.014262855283498e-12,
+                  8.728295676821296e-12
+                ],
+                "area": 0.00015218564318299476,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006940114973211578,
+                "maximumRadius": 0.007000001109820918,
+                "actualCenter": [
+                  -0.12791654710528447,
+                  0.04859653746271078,
+                  0.009089889971738898
+                ],
+                "expectedAxisDeviation": 1.7568705124403377e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.6575,
+                "station": 0.007988299592957781,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  -1.3521340733962124e-11,
+                  1.3092446046288294e-11
+                ],
+                "area": 0.00015218564318299476,
+                "selfIntersections": 0,
+                "minimumRadius": 0.00694011497321158,
+                "maximumRadius": 0.007000001109820916,
+                "actualCenter": [
+                  -0.12686434704981706,
+                  0.05104256733416651,
+                  0.009077940649834753
+                ],
+                "expectedAxisDeviation": 1.7151262522326004e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.71,
+                "station": 0.010651066926968256,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  -1.802841826477903e-11,
+                  1.7456594437291773e-11
+                ],
+                "area": 0.00015218564318299476,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006940114973211578,
+                "maximumRadius": 0.007000001109820918,
+                "actualCenter": [
+                  -0.12581214699434967,
+                  0.05348859720562223,
+                  0.00906599132793061
+                ],
+                "expectedAxisDeviation": 1.673445411880833e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.7625,
+                "station": 0.013313834260978732,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  -2.2535496244917324e-11,
+                  2.1820744085670422e-11
+                ],
+                "area": 0.00015218564318299476,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006940114973211579,
+                "maximumRadius": 0.007000001109820917,
+                "actualCenter": [
+                  -0.12475994693888229,
+                  0.05593462707707796,
+                  0.009054042006026466
+                ],
+                "expectedAxisDeviation": 1.6318328517445886e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.815,
+                "station": 0.015976601594989207,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  -2.7042573855452525e-11,
+                  2.618489316152664e-11
+                ],
+                "area": 0.00015218564318299484,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006940114973211578,
+                "maximumRadius": 0.007000001109820917,
+                "actualCenter": [
+                  -0.12370774688341492,
+                  0.058380656948533685,
+                  0.009042092684122323
+                ],
+                "expectedAxisDeviation": 1.5902939314239477e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.8674999999999999,
+                "station": 0.018639368928999683,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  -3.154965195516828e-11,
+                  3.054904254991489e-11
+                ],
+                "area": 0.00015218564318299484,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006940114973211579,
+                "maximumRadius": 0.007000001109820917,
+                "actualCenter": [
+                  -0.12265554682794752,
+                  0.060826686819989415,
+                  0.009030143362218178
+                ],
+                "expectedAxisDeviation": 1.5488345768296024e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.9199999999999999,
+                "station": 0.021302136263010165,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  -3.605672991356522e-11,
+                  3.4913191190491035e-11
+                ],
+                "area": 0.0001521856431829948,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006940114973211579,
+                "maximumRadius": 0.007000001109820918,
+                "actualCenter": [
+                  -0.12160334677248012,
+                  0.06327271669144513,
+                  0.009018194040314035
+                ],
+                "expectedAxisDeviation": 1.5074613521024233e-8,
+                "passed": true
+              }
+            ],
+            "limitations": [
+              "中心线与圆截面为17个内部真实截面量测；全表面直圆柱包络由所有实际顶点保证",
+              "闭合拓扑与非零体积本身不是任意三维自交的完备证明；本检验另排除截面自交，但不声称制造或强度认证",
+              "本检验不证明球销/横梁的有限材料连接，也不替代独立全行程碰撞门槛"
+            ]
+          },
+          "passed": true
+        },
+        {
+          "name": "BraceBodyCarriage_R",
+          "coordinateFrame": "BraceSpreader 实际局部坐标，glTF [X,Z,-Y] 对应 Blender [X,Y,Z]",
+          "declaredExtrasOnly": {
+            "endpointsBlender": [
+              [
+                0.14004190266132355,
+                -0.009227613918483257,
+                0.020408956333994865
+              ],
+              [
+                0.11999999731779099,
+                -0.008999999612569809,
+                0.06700000166893005
+              ]
+            ],
+            "radius": 0.007
+          },
+          "actualGeometry": {
+            "encoding": 0.000001,
+            "thresholds": {
+              "topologyWeld": 1e-12,
+              "triangleArea": 1e-18,
+              "solidVolume": 1e-10,
+              "unchangedCollisionSAT": 1e-9,
+              "minimumInteriorRadiusRatio": 0.98,
+              "minimumInteriorAreaRatio": 0.97,
+              "minimumVolumeRatio": 0.94
+            },
+            "declaration": {
+              "endpoints": [
+                [
+                  0.14004190266132355,
+                  0.020408956333994865,
+                  0.009227613918483257
+                ],
+                [
+                  0.11999999731779099,
+                  0.06700000166893005,
+                  0.008999999612569809
+                ]
+              ],
+              "radius": 0.007
+            },
+            "passed": true,
+            "failures": [],
+            "counts": {
+              "decodedVertices": 386,
+              "uniqueActualVertices": 144,
+              "triangles": 284,
+              "invalidVertices": 0,
+              "invalidTriangles": 0,
+              "zeroAreaTriangles": 0
+            },
+            "topology": {
+              "closed": true,
+              "weldEpsilon": 1e-12,
+              "vertexCount": 144,
+              "edgeCount": 426,
+              "boundaryEdgeCount": 0,
+              "nonmanifoldEdgeCount": 0,
+              "componentCount": 1,
+              "representatives": [
+                {
+                  "triangleIndex": 0,
+                  "vertexIndex": 0
+                }
+              ]
+            },
+            "inconsistentEdges": 0,
+            "minTriangleArea": 3.165728600145096e-7,
+            "signedVolume": 0.000007694048730237325,
+            "volume": 0.000007694048730237325,
+            "idealVolume": 0.000007807641608429883,
+            "volumeRatio": 0.9854510639845568,
+            "volumeDeficitRatio": 0.014548936015443159,
+            "envelope": {
+              "minimumParameter": 2.0109872463547514e-9,
+              "maximumParameter": 0.05071938059784228,
+              "expectedLength": 0.05071937779067642,
+              "maximumRadialDistance": 0.0070000231920378875,
+              "maximumRadialExcess": 2.3192037887365125e-8,
+              "endpointExtentDeviation": 2.807165853935256e-9
+            },
+            "actualVertexPrincipalAxis": {
+              "origin": [
+                0.13002094626426697,
+                0.043704479932785055,
+                0.009113788604736335
+              ],
+              "direction": [
+                -0.39515283448766036,
+                0.9186044302296111,
+                -0.0044875560051434405
+              ],
+              "maximumDeviation": 0.007000001138235057,
+              "rmsDeviation": 0.006578955013422861
+            },
+            "independentAxisEndpointDeviations": [
+              2.2449347584263137e-8,
+              1.4415437213673523e-8
+            ],
+            "centerline": {
+              "origin": [
+                0.1300209472162192,
+                0.04370447771979932,
+                0.009113788615547186
+              ],
+              "direction": [
+                -0.3951528329298814,
+                0.9186044308917087,
+                -0.004487557644079452
+              ],
+              "maximumDeviation": 4.251103591563109e-17,
+              "rmsDeviation": 2.86201777182882e-17
+            },
+            "measuredEndpoints": [
+              [
+                0.14004189933078653,
+                0.020408956981805178,
+                0.009227591672276532
+              ],
+              [
+                0.11999999319774735,
+                0.06700000288376487,
+                0.008999985537196126
+              ]
+            ],
+            "endpointDeviations": [
+              2.2503463037446412e-8,
+              1.4716206288515731e-8
+            ],
+            "sections": [
+              {
+                "fraction": 0.08,
+                "station": -0.021302141081157463,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  -3.6056634769761966e-11,
+                  -3.491319050518535e-11
+                ],
+                "area": 0.00015218564318299473,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006940114973211577,
+                "maximumRadius": 0.007000001109820918,
+                "actualCenter": [
+                  0.13843854765995833,
+                  0.02413623874815351,
+                  0.009209383190780334
+                ],
+                "expectedAxisDeviation": 2.176996023917546e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.1325,
+                "station": -0.018639373747146984,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  -3.154955697804875e-11,
+                  -3.0549041650366236e-11
+                ],
+                "area": 0.0001521856431829948,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006940114973211577,
+                "maximumRadius": 0.007000001109820918,
+                "actualCenter": [
+                  0.13738634760449095,
+                  0.026582268619609238,
+                  0.009197433868876191
+                ],
+                "expectedAxisDeviation": 2.1348071368351153e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.185,
+                "station": -0.01597660641313651,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  -2.7042478780496904e-11,
+                  -2.6184892520156618e-11
+                ],
+                "area": 0.00015218564318299473,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006940114973211575,
+                "maximumRadius": 0.007000001109820918,
+                "actualCenter": [
+                  0.13633414754902357,
+                  0.029028298491064964,
+                  0.009185484546972048
+                ],
+                "expectedAxisDeviation": 2.0926511316263728e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.2375,
+                "station": -0.013313839079126033,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  -2.253540107574913e-11,
+                  -2.1820743273993078e-11
+                ],
+                "area": 0.00015218564318299479,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006940114973211576,
+                "maximumRadius": 0.007000001109820918,
+                "actualCenter": [
+                  0.13528194749355618,
+                  0.03147432836252069,
+                  0.009173535225067904
+                ],
+                "expectedAxisDeviation": 2.050530036466289e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.29,
+                "station": -0.010651071745115556,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  -1.8028323197070507e-11,
+                  -1.7456593759686137e-11
+                ],
+                "area": 0.00015218564318299479,
+                "selfIntersections": 0,
+                "minimumRadius": 0.0069401149732115745,
+                "maximumRadius": 0.007000001109820917,
+                "actualCenter": [
+                  0.1342297474380888,
+                  0.03392035823397642,
+                  0.00916158590316376
+                ],
+                "expectedAxisDeviation": 2.0084460473698653e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.3425,
+                "station": -0.007988304411105075,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  -1.3521245564793932e-11,
+                  -1.3092444216390717e-11
+                ],
+                "area": 0.00015218564318299479,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006940114973211574,
+                "maximumRadius": 0.007000001109820917,
+                "actualCenter": [
+                  0.13317754738262141,
+                  0.03636638810543215,
+                  0.009149636581259616
+                ],
+                "expectedAxisDeviation": 1.96640154709752e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.395,
+                "station": -0.0053255370770946,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  -9.01416791802312e-12,
+                  -8.728295542749591e-12
+                ],
+                "area": 0.00015218564318299479,
+                "selfIntersections": 0,
+                "minimumRadius": 0.0069401149732115745,
+                "maximumRadius": 0.007000001109820918,
+                "actualCenter": [
+                  0.132125347327154,
+                  0.03881241797688787,
+                  0.009137687259355473
+                ],
+                "expectedAxisDeviation": 1.9243991240121546e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.4475,
+                "station": -0.002662769743084121,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  -4.507089648000063e-12,
+                  -4.364145166035475e-12
+                ],
+                "area": 0.00015218564318299479,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006940114973211574,
+                "maximumRadius": 0.007000001109820916,
+                "actualCenter": [
+                  0.13107314727168662,
+                  0.04125844784834361,
+                  0.009125737937451327
+                ],
+                "expectedAxisDeviation": 1.882441594260255e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.5,
+                "station": -2.4090736454318584e-9,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  -1.2073700441911603e-17,
+                  3.3264276727715637e-18
+                ],
+                "area": 0.00015218564318299479,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006940114973211573,
+                "maximumRadius": 0.007000001109820917,
+                "actualCenter": [
+                  0.13002094721621923,
+                  0.04370447771979932,
+                  0.009113788615547184
+                ],
+                "expectedAxisDeviation": 1.840532028003132e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.5525,
+                "station": 0.00266276492493683,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  4.507065573070368e-12,
+                  4.364152271835762e-12
+                ],
+                "area": 0.00015218564318299487,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006940114973211574,
+                "maximumRadius": 0.007000001109820917,
+                "actualCenter": [
+                  0.12896874716075185,
+                  0.04615050759125505,
+                  0.009101839293643041
+                ],
+                "expectedAxisDeviation": 1.79867377806241e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.605,
+                "station": 0.005325532258947309,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  9.014143683656804e-12,
+                  8.728301126654866e-12
+                ],
+                "area": 0.0001521856431829948,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006940114973211574,
+                "maximumRadius": 0.007000001109820918,
+                "actualCenter": [
+                  0.12791654710528447,
+                  0.04859653746271078,
+                  0.009089889971738898
+                ],
+                "expectedAxisDeviation": 1.7568705124403377e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.6575,
+                "station": 0.007988299592957788,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  1.3521221417393049e-11,
+                  1.3092450883740301e-11
+                ],
+                "area": 0.00015218564318299479,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006940114973211574,
+                "maximumRadius": 0.007000001109820917,
+                "actualCenter": [
+                  0.12686434704981706,
+                  0.05104256733416651,
+                  0.009077940649834753
+                ],
+                "expectedAxisDeviation": 1.7151262522326004e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.71,
+                "station": 0.010651066926968263,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  1.802829956421507e-11,
+                  1.745660027846977e-11
+                ],
+                "area": 0.00015218564318299484,
+                "selfIntersections": 0,
+                "minimumRadius": 0.0069401149732115745,
+                "maximumRadius": 0.007000001109820917,
+                "actualCenter": [
+                  0.12581214699434967,
+                  0.05348859720562223,
+                  0.009065991327930609
+                ],
+                "expectedAxisDeviation": 1.673445412051917e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.7625,
+                "station": 0.013313834260978739,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  2.253537699357232e-11,
+                  2.1820749091617944e-11
+                ],
+                "area": 0.00015218564318299479,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006940114973211576,
+                "maximumRadius": 0.007000001109820917,
+                "actualCenter": [
+                  0.12475994693888229,
+                  0.05593462707707796,
+                  0.009054042006026466
+                ],
+                "expectedAxisDeviation": 1.6318328517445886e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.815,
+                "station": 0.015976601594989214,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  2.704245510053519e-11,
+                  2.618489893929236e-11
+                ],
+                "area": 0.0001521856431829948,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006940114973211576,
+                "maximumRadius": 0.007000001109820916,
+                "actualCenter": [
+                  0.12370774688341492,
+                  0.058380656948533685,
+                  0.009042092684122321
+                ],
+                "expectedAxisDeviation": 1.5902939315940507e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.8674999999999999,
+                "station": 0.01863936892899969,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  3.154953305893213e-11,
+                  3.054904817277344e-11
+                ],
+                "area": 0.00015218564318299479,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006940114973211576,
+                "maximumRadius": 0.007000001109820917,
+                "actualCenter": [
+                  0.12265554682794752,
+                  0.06082668681998941,
+                  0.009030143362218178
+                ],
+                "expectedAxisDeviation": 1.548834576907012e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.9199999999999999,
+                "station": 0.021302136263010172,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  3.6056610861516005e-11,
+                  3.4913196906203305e-11
+                ],
+                "area": 0.00015218564318299479,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006940114973211577,
+                "maximumRadius": 0.007000001109820917,
+                "actualCenter": [
+                  0.12160334677248014,
+                  0.06327271669144514,
+                  0.009018194040314035
+                ],
+                "expectedAxisDeviation": 1.507461351648841e-8,
+                "passed": true
+              }
+            ],
+            "limitations": [
+              "中心线与圆截面为17个内部真实截面量测；全表面直圆柱包络由所有实际顶点保证",
+              "闭合拓扑与非零体积本身不是任意三维自交的完备证明；本检验另排除截面自交，但不声称制造或强度认证",
+              "本检验不证明球销/横梁的有限材料连接，也不替代独立全行程碰撞门槛"
+            ]
+          },
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "source": "public/models/xp4.glb",
+      "kind": "runtime",
+      "sha256": "313b014ec70b409175b34a08f66ec56820a51ea094085ce1eef96fc444ce4b2b",
+      "sceneMeshCount": 283,
+      "rows": [
+        {
+          "name": "BraceBodyCarriage_L",
+          "coordinateFrame": "BraceSpreader 实际局部坐标，glTF [X,Z,-Y] 对应 Blender [X,Y,Z]",
+          "declaredExtrasOnly": {
+            "endpointsBlender": [
+              [
+                -0.14004190266132355,
+                -0.009227613918483257,
+                0.020408956333994865
+              ],
+              [
+                -0.11999999731779099,
+                -0.008999999612569809,
+                0.06700000166893005
+              ]
+            ],
+            "radius": 0.007
+          },
+          "actualGeometry": {
+            "encoding": 0.00006,
+            "thresholds": {
+              "topologyWeld": 1e-12,
+              "triangleArea": 1e-18,
+              "solidVolume": 1e-10,
+              "unchangedCollisionSAT": 1e-9,
+              "minimumInteriorRadiusRatio": 0.98,
+              "minimumInteriorAreaRatio": 0.97,
+              "minimumVolumeRatio": 0.94
+            },
+            "declaration": {
+              "endpoints": [
+                [
+                  -0.14004190266132355,
+                  0.020408956333994865,
+                  0.009227613918483257
+                ],
+                [
+                  -0.11999999731779099,
+                  0.06700000166893005,
+                  0.008999999612569809
+                ]
+              ],
+              "radius": 0.007
+            },
+            "passed": true,
+            "failures": [],
+            "counts": {
+              "decodedVertices": 336,
+              "uniqueActualVertices": 144,
+              "triangles": 284,
+              "invalidVertices": 0,
+              "invalidTriangles": 0,
+              "zeroAreaTriangles": 0
+            },
+            "topology": {
+              "closed": true,
+              "weldEpsilon": 1e-12,
+              "vertexCount": 144,
+              "edgeCount": 426,
+              "boundaryEdgeCount": 0,
+              "nonmanifoldEdgeCount": 0,
+              "componentCount": 1,
+              "representatives": [
+                {
+                  "triangleIndex": 0,
+                  "vertexIndex": 0
+                }
+              ]
+            },
+            "inconsistentEdges": 0,
+            "minTriangleArea": 3.1569524278824754e-7,
+            "signedVolume": 0.000007694100632310954,
+            "volume": 0.000007694100632310954,
+            "idealVolume": 0.000007807641608429883,
+            "volumeRatio": 0.9854577115839513,
+            "volumeDeficitRatio": 0.014542288416048654,
+            "envelope": {
+              "minimumParameter": 2.0587804082354978e-9,
+              "maximumParameter": 0.050719380550049126,
+              "expectedLength": 0.05071937779067642,
+              "maximumRadialDistance": 0.007000543905121003,
+              "maximumRadialExcess": 5.439051210028717e-7,
+              "endpointExtentDeviation": 2.75937270255433e-9
+            },
+            "actualVertexPrincipalAxis": {
+              "origin": [
+                -0.13002094626426694,
+                0.04370447993278503,
+                0.009113788604736326
+              ],
+              "direction": [
+                0.39515283701513804,
+                0.9186044289031263,
+                -0.004487604979148866
+              ],
+              "maximumDeviation": 0.007000527065527033,
+              "rmsDeviation": 0.006578982389154564
+            },
+            "independentAxisEndpointDeviations": [
+              2.1208075489787638e-8,
+              1.564174487787598e-8
+            ],
+            "centerline": {
+              "origin": [
+                -0.1300209472162196,
+                0.04370447771979852,
+                0.009113788615547305
+              ],
+              "direction": [
+                0.39515283688270875,
+                0.9186044289594122,
+                -0.004487605118477136
+              ],
+              "maximumDeviation": 2.042583441573251e-17,
+              "rmsDeviation": 1.0566601801617384e-17
+            },
+            "measuredEndpoints": [
+              [
+                -0.14004189941214337,
+                0.020408957074710788,
+                0.009227592875998029
+              ],
+              [
+                -0.11999999311639056,
+                0.06700000279085928,
+                0.00899998433347463
+              ]
+            ],
+            "endpointDeviations": [
+              2.1304741642822675e-8,
+              1.588588178764396e-8
+            ],
+            "sections": [
+              {
+                "fraction": 0.08,
+                "station": -0.021302141081158486,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  3.065202685240204e-12,
+                  -2.9680231365809097e-12
+                ],
+                "area": 0.00015218636852819443,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006939964815431982,
+                "maximumRadius": 0.007000527065499312,
+                "actualCenter": [
+                  -0.13843854774416242,
+                  0.02413623878931461,
+                  0.00920938420208666
+                ],
+                "expectedAxisDeviation": 2.0755117209533786e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.1325,
+                "station": -0.01863937374714799,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  2.68204914999734e-12,
+                  -2.5970200705782663e-12
+                ],
+                "area": 0.00015218636852819443,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006939964815431982,
+                "maximumRadius": 0.007000527065499312,
+                "actualCenter": [
+                  -0.13738634767816957,
+                  0.0265822686556251,
+                  0.009197434753769239
+                ],
+                "expectedAxisDeviation": 2.046022491116995e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.185,
+                "station": -0.015976606413137497,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  2.2988951219527246e-12,
+                  -2.226018635169651e-12
+                ],
+                "area": 0.0001521863685281945,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006939964815431982,
+                "maximumRadius": 0.007000527065499312,
+                "actualCenter": [
+                  -0.13633414761217674,
+                  0.029028298521935586,
+                  0.009185485305451819
+                ],
+                "expectedAxisDeviation": 2.016563703126095e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.2375,
+                "station": -0.013313839079127003,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  1.915741296826478e-12,
+                  -1.8550151850715257e-12
+                ],
+                "area": 0.00015218636852819446,
+                "selfIntersections": 0,
+                "minimumRadius": 0.0069399648154319805,
+                "maximumRadius": 0.007000527065499311,
+                "actualCenter": [
+                  -0.13528194754618386,
+                  0.03147432838824607,
+                  0.0091735358571344
+                ],
+                "expectedAxisDeviation": 1.9871367117846805e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.29,
+                "station": -0.010651071745116508,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  1.532587442711893e-12,
+                  -1.4840124524347723e-12
+                ],
+                "area": 0.0001521863685281945,
+                "selfIntersections": 0,
+                "minimumRadius": 0.00693996481543198,
+                "maximumRadius": 0.007000527065499311,
+                "actualCenter": [
+                  -0.134229747480191,
+                  0.03392035825455656,
+                  0.00916158640881698
+                ],
+                "expectedAxisDeviation": 1.957742950096714e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.3425,
+                "station": -0.007988304411106012,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  1.1494337480331687e-12,
+                  -1.1130103937768847e-12
+                ],
+                "area": 0.00015218636852819443,
+                "selfIntersections": 0,
+                "minimumRadius": 0.00693996481543198,
+                "maximumRadius": 0.007000527065499309,
+                "actualCenter": [
+                  -0.13317754741419818,
+                  0.036366388120867045,
+                  0.009149636960499561
+                ],
+                "expectedAxisDeviation": 1.928383937322087e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.395,
+                "station": -0.005325537077095516,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  7.662801403194588e-13,
+                  -7.420076466459622e-13
+                ],
+                "area": 0.0001521863685281945,
+                "selfIntersections": 0,
+                "minimumRadius": 0.00693996481543198,
+                "maximumRadius": 0.007000527065499309,
+                "actualCenter": [
+                  -0.13212534734820533,
+                  0.038812417987177536,
+                  0.009137687512182142
+                ],
+                "expectedAxisDeviation": 1.8990612859459162e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.4475,
+                "station": -0.002662769743085023,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  3.831263731698887e-13,
+                  -3.710055082701441e-13
+                ],
+                "area": 0.00015218636852819446,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006939964815431979,
+                "maximumRadius": 0.00700052706549931,
+                "actualCenter": [
+                  -0.13107314728221245,
+                  0.04125844785348802,
+                  0.009125738063864724
+                ],
+                "expectedAxisDeviation": 1.8697767067821698e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.5,
+                "station": -2.4090745266713842e-9,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  -2.7843298924984076e-17,
+                  -2.8009981870136245e-18
+                ],
+                "area": 0.00015218636852819454,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006939964815431979,
+                "maximumRadius": 0.0070005270654993085,
+                "actualCenter": [
+                  -0.1300209472162196,
+                  0.04370447771979851,
+                  0.009113788615547305
+                ],
+                "expectedAxisDeviation": 1.840532016248841e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.5525,
+                "station": 0.0026627649249359696,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  -3.8318134955345046e-13,
+                  3.710001200627648e-13
+                ],
+                "area": 0.00015218636852819452,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006939964815431978,
+                "maximumRadius": 0.0070005270654993085,
+                "actualCenter": [
+                  -0.12896874715022674,
+                  0.046150507586108995,
+                  0.009101839167229885
+                ],
+                "expectedAxisDeviation": 1.8113291470376197e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.605,
+                "station": 0.005325532258946462,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  -7.663351456913588e-13,
+                  7.420026751459458e-13
+                ],
+                "area": 0.00015218636852819452,
+                "selfIntersections": 0,
+                "minimumRadius": 0.00693996481543198,
+                "maximumRadius": 0.007000527065499308,
+                "actualCenter": [
+                  -0.1279165470842339,
+                  0.04859653745241948,
+                  0.009089889718912465
+                ],
+                "expectedAxisDeviation": 1.7821701548032672e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.6575,
+                "station": 0.007988299592956959,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  -1.1494886229575459e-12,
+                  1.1130045091442114e-12
+                ],
+                "area": 0.00015218636852819454,
+                "selfIntersections": 0,
+                "minimumRadius": 0.0069399648154319805,
+                "maximumRadius": 0.007000527065499308,
+                "actualCenter": [
+                  -0.12686434701824104,
+                  0.05104256731872997,
+                  0.009077940270595046
+                ],
+                "expectedAxisDeviation": 1.7530572287292737e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.71,
+                "station": 0.010651066926967455,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  -1.5326423973542006e-12,
+                  1.484007383099114e-12
+                ],
+                "area": 0.00015218636852819452,
+                "selfIntersections": 0,
+                "minimumRadius": 0.0069399648154319805,
+                "maximumRadius": 0.007000527065499308,
+                "actualCenter": [
+                  -0.12581214695224818,
+                  0.053488597185040454,
+                  0.009065990822277627
+                ],
+                "expectedAxisDeviation": 1.7239927029369862e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.7625,
+                "station": 0.013313834260977944,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  -1.91579627321004e-12,
+                  1.8550101229829522e-12
+                ],
+                "area": 0.00015218636852819446,
+                "selfIntersections": 0,
+                "minimumRadius": 0.0069399648154319805,
+                "maximumRadius": 0.007000527065499307,
+                "actualCenter": [
+                  -0.12475994688625532,
+                  0.055934627051350945,
+                  0.009054041373960207
+                ],
+                "expectedAxisDeviation": 1.6949790675141327e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.815,
+                "station": 0.01597660159498844,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  -2.2989499860064757e-12,
+                  2.226012779525317e-12
+                ],
+                "area": 0.0001521863685281945,
+                "selfIntersections": 0,
+                "minimumRadius": 0.00693996481543198,
+                "maximumRadius": 0.007000527065499307,
+                "actualCenter": [
+                  -0.12370774682026248,
+                  0.058380656917661436,
+                  0.009042091925642788
+                ],
+                "expectedAxisDeviation": 1.6660189801432504e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.8674999999999999,
+                "station": 0.018639368928998937,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  -2.6821038111327208e-12,
+                  2.5970148798539395e-12
+                ],
+                "area": 0.00015218636852819457,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006939964815431982,
+                "maximumRadius": 0.007000527065499305,
+                "actualCenter": [
+                  -0.12265554675426962,
+                  0.06082668678397192,
+                  0.00903014247732537
+                ],
+                "expectedAxisDeviation": 1.637115283602857e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.9199999999999999,
+                "station": 0.021302136263009433,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  -3.065257418846432e-12,
+                  2.9680176487261168e-12
+                ],
+                "area": 0.0001521863685281945,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006939964815431981,
+                "maximumRadius": 0.007000527065499305,
+                "actualCenter": [
+                  -0.12160334668827676,
+                  0.06327271665028239,
+                  0.009018193029007951
+                ],
+                "expectedAxisDeviation": 1.6082710184079512e-8,
+                "passed": true
+              }
+            ],
+            "limitations": [
+              "中心线与圆截面为17个内部真实截面量测；全表面直圆柱包络由所有实际顶点保证",
+              "闭合拓扑与非零体积本身不是任意三维自交的完备证明；本检验另排除截面自交，但不声称制造或强度认证",
+              "本检验不证明球销/横梁的有限材料连接，也不替代独立全行程碰撞门槛"
+            ]
+          },
+          "passed": true
+        },
+        {
+          "name": "BraceBodyCarriage_R",
+          "coordinateFrame": "BraceSpreader 实际局部坐标，glTF [X,Z,-Y] 对应 Blender [X,Y,Z]",
+          "declaredExtrasOnly": {
+            "endpointsBlender": [
+              [
+                0.14004190266132355,
+                -0.009227613918483257,
+                0.020408956333994865
+              ],
+              [
+                0.11999999731779099,
+                -0.008999999612569809,
+                0.06700000166893005
+              ]
+            ],
+            "radius": 0.007
+          },
+          "actualGeometry": {
+            "encoding": 0.00006,
+            "thresholds": {
+              "topologyWeld": 1e-12,
+              "triangleArea": 1e-18,
+              "solidVolume": 1e-10,
+              "unchangedCollisionSAT": 1e-9,
+              "minimumInteriorRadiusRatio": 0.98,
+              "minimumInteriorAreaRatio": 0.97,
+              "minimumVolumeRatio": 0.94
+            },
+            "declaration": {
+              "endpoints": [
+                [
+                  0.14004190266132355,
+                  0.020408956333994865,
+                  0.009227613918483257
+                ],
+                [
+                  0.11999999731779099,
+                  0.06700000166893005,
+                  0.008999999612569809
+                ]
+              ],
+              "radius": 0.007
+            },
+            "passed": true,
+            "failures": [],
+            "counts": {
+              "decodedVertices": 336,
+              "uniqueActualVertices": 144,
+              "triangles": 284,
+              "invalidVertices": 0,
+              "invalidTriangles": 0,
+              "zeroAreaTriangles": 0
+            },
+            "topology": {
+              "closed": true,
+              "weldEpsilon": 1e-12,
+              "vertexCount": 144,
+              "edgeCount": 426,
+              "boundaryEdgeCount": 0,
+              "nonmanifoldEdgeCount": 0,
+              "componentCount": 1,
+              "representatives": [
+                {
+                  "triangleIndex": 0,
+                  "vertexIndex": 0
+                }
+              ]
+            },
+            "inconsistentEdges": 0,
+            "minTriangleArea": 3.1569524278824754e-7,
+            "signedVolume": 0.000007694100632310952,
+            "volume": 0.000007694100632310952,
+            "idealVolume": 0.000007807641608429883,
+            "volumeRatio": 0.9854577115839511,
+            "volumeDeficitRatio": 0.014542288416048876,
+            "envelope": {
+              "minimumParameter": 2.0587804082354978e-9,
+              "maximumParameter": 0.050719380550049126,
+              "expectedLength": 0.05071937779067642,
+              "maximumRadialDistance": 0.007000543905121003,
+              "maximumRadialExcess": 5.439051210028717e-7,
+              "endpointExtentDeviation": 2.75937270255433e-9
+            },
+            "actualVertexPrincipalAxis": {
+              "origin": [
+                0.130020946264267,
+                0.043704479932785055,
+                0.009113788604736332
+              ],
+              "direction": [
+                -0.395152837015138,
+                0.9186044289031263,
+                -0.00448760497914886
+              ],
+              "maximumDeviation": 0.0070005270655270355,
+              "rmsDeviation": 0.006578982389154565
+            },
+            "independentAxisEndpointDeviations": [
+              2.1208075477071317e-8,
+              1.5641744858595764e-8
+            ],
+            "centerline": {
+              "origin": [
+                0.1300209472162196,
+                0.04370447771979852,
+                0.009113788615547305
+              ],
+              "direction": [
+                -0.3951528368827087,
+                0.9186044289594125,
+                -0.0044876051184771296
+              ],
+              "maximumDeviation": 2.010318353853627e-17,
+              "rmsDeviation": 1.0012203135836152e-17
+            },
+            "measuredEndpoints": [
+              [
+                0.14004189941214337,
+                0.020408957074710785,
+                0.009227592875998029
+              ],
+              [
+                0.11999999311639056,
+                0.0670000027908593,
+                0.00899998433347463
+              ]
+            ],
+            "endpointDeviations": [
+              2.1304741642702053e-8,
+              1.588588178862407e-8
+            ],
+            "sections": [
+              {
+                "fraction": 0.08,
+                "station": -0.021302141081158493,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  -3.0652631839022095e-12,
+                  -2.9680174983491126e-12
+                ],
+                "area": 0.00015218636852819446,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006939964815431981,
+                "maximumRadius": 0.007000527065499313,
+                "actualCenter": [
+                  0.13843854774416242,
+                  0.024136238789314608,
+                  0.009209384202086657
+                ],
+                "expectedAxisDeviation": 2.0755117211471735e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.1325,
+                "station": -0.018639373747147997,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  -2.6821100255077433e-12,
+                  -2.5970147874536133e-12
+                ],
+                "area": 0.00015218636852819446,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006939964815431981,
+                "maximumRadius": 0.007000527065499312,
+                "actualCenter": [
+                  0.13738634767816957,
+                  0.026582268655625095,
+                  0.009197434753769239
+                ],
+                "expectedAxisDeviation": 2.0460224911362652e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.185,
+                "station": -0.015976606413137504,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  -2.2989564902648784e-12,
+                  -2.226013011432023e-12
+                ],
+                "area": 0.00015218636852819452,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006939964815431981,
+                "maximumRadius": 0.007000527065499312,
+                "actualCenter": [
+                  0.13633414761217671,
+                  0.029028298521935583,
+                  0.009185485305451819
+                ],
+                "expectedAxisDeviation": 2.016563703499985e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.2375,
+                "station": -0.01331383907912701,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  -1.9158025781736176e-12,
+                  -1.855010409242793e-12
+                ],
+                "area": 0.00015218636852819443,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006939964815431981,
+                "maximumRadius": 0.007000527065499311,
+                "actualCenter": [
+                  0.13528194754618386,
+                  0.03147432838824607,
+                  0.0091735358571344
+                ],
+                "expectedAxisDeviation": 1.9871367117846805e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.29,
+                "station": -0.010651071745116515,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  -1.5326488255182164e-12,
+                  -1.4840075244172636e-12
+                ],
+                "area": 0.00015218636852819446,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006939964815431982,
+                "maximumRadius": 0.007000527065499311,
+                "actualCenter": [
+                  0.13422974748019104,
+                  0.03392035825455656,
+                  0.00916158640881698
+                ],
+                "expectedAxisDeviation": 1.9577429497158936e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.3425,
+                "station": -0.007988304411106019,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  -1.1494955946529046e-12,
+                  -1.1130050526755552e-12
+                ],
+                "area": 0.00015218636852819446,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006939964815431982,
+                "maximumRadius": 0.007000527065499311,
+                "actualCenter": [
+                  0.13317754741419818,
+                  0.03636638812086704,
+                  0.009149636960499561
+                ],
+                "expectedAxisDeviation": 1.9283839373774435e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.395,
+                "station": -0.005325537077095523,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  -7.663415376199515e-13,
+                  -7.420022765562946e-13
+                ],
+                "area": 0.00015218636852819446,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006939964815431982,
+                "maximumRadius": 0.00700052706549931,
+                "actualCenter": [
+                  0.13212534734820533,
+                  0.03881241798717753,
+                  0.009137687512182142
+                ],
+                "expectedAxisDeviation": 1.899061286004012e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.4475,
+                "station": -0.00266276974308503,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  -3.831884082138236e-13,
+                  -3.7099963088455633e-13
+                ],
+                "area": 0.00015218636852819446,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006939964815431982,
+                "maximumRadius": 0.00700052706549931,
+                "actualCenter": [
+                  0.13107314728221245,
+                  0.04125844785348801,
+                  0.009125738063864724
+                ],
+                "expectedAxisDeviation": 1.8697767068405916e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.5,
+                "station": -2.409074533610278e-9,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  -3.4525110900214516e-17,
+                  3.022034266454545e-18
+                ],
+                "area": 0.00015218636852819452,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006939964815431982,
+                "maximumRadius": 0.00700052706549931,
+                "actualCenter": [
+                  0.1300209472162196,
+                  0.043704477719798504,
+                  0.009113788615547304
+                ],
+                "expectedAxisDeviation": 1.84053201645162e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.5525,
+                "station": 0.0026627649249359626,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  3.831191550736551e-13,
+                  3.7100564958829323e-13
+                ],
+                "area": 0.0001521863685281945,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006939964815431983,
+                "maximumRadius": 0.0070005270654993085,
+                "actualCenter": [
+                  0.12896874715022674,
+                  0.046150507586108995,
+                  0.009101839167229885
+                ],
+                "expectedAxisDeviation": 1.8113291470376197e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.605,
+                "station": 0.005325532258946455,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  7.662727772815337e-13,
+                  7.420077154932655e-13
+                ],
+                "area": 0.00015218636852819452,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006939964815431984,
+                "maximumRadius": 0.007000527065499308,
+                "actualCenter": [
+                  0.1279165470842339,
+                  0.04859653745241948,
+                  0.009089889718912465
+                ],
+                "expectedAxisDeviation": 1.7821701548032672e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.6575,
+                "station": 0.007988299592956952,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  1.1494264212306664e-12,
+                  1.113010082152248e-12
+                ],
+                "area": 0.00015218636852819446,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006939964815431985,
+                "maximumRadius": 0.007000527065499308,
+                "actualCenter": [
+                  0.12686434701824104,
+                  0.05104256731872997,
+                  0.009077940270595046
+                ],
+                "expectedAxisDeviation": 1.7530572287292737e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.71,
+                "station": 0.010651066926967448,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  1.5325799057439386e-12,
+                  1.4840129796601752e-12
+                ],
+                "area": 0.00015218636852819443,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006939964815431985,
+                "maximumRadius": 0.007000527065499308,
+                "actualCenter": [
+                  0.12581214695224818,
+                  0.053488597185040454,
+                  0.009065990822277626
+                ],
+                "expectedAxisDeviation": 1.723992703108164e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.7625,
+                "station": 0.013313834260977937,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  1.915733687387677e-12,
+                  1.8550157974501712e-12
+                ],
+                "area": 0.00015218636852819452,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006939964815431983,
+                "maximumRadius": 0.007000527065499307,
+                "actualCenter": [
+                  0.12475994688625533,
+                  0.05593462705135094,
+                  0.009054041373960207
+                ],
+                "expectedAxisDeviation": 1.6949790673531905e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.815,
+                "station": 0.015976601594988434,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  2.298887367572232e-12,
+                  2.226018107944248e-12
+                ],
+                "area": 0.00015218636852819452,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006939964815431984,
+                "maximumRadius": 0.007000527065499305,
+                "actualCenter": [
+                  0.12370774682026246,
+                  0.05838065691766143,
+                  0.009042091925642788
+                ],
+                "expectedAxisDeviation": 1.6660189804848214e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.8674999999999999,
+                "station": 0.01863936892899893,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  2.682040685402559e-12,
+                  2.597020576062414e-12
+                ],
+                "area": 0.00015218636852819452,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006939964815431982,
+                "maximumRadius": 0.007000527065499305,
+                "actualCenter": [
+                  0.12265554675426962,
+                  0.06082668678397191,
+                  0.00903014247732537
+                ],
+                "expectedAxisDeviation": 1.6371152836756582e-8,
+                "passed": true
+              },
+              {
+                "fraction": 0.9199999999999999,
+                "station": 0.021302136263009426,
+                "stationAdjustments": 0,
+                "boundaryVertices": 48,
+                "closed": true,
+                "center": [
+                  3.065194798600418e-12,
+                  2.9680224589785014e-12
+                ],
+                "area": 0.0001521863685281945,
+                "selfIntersections": 0,
+                "minimumRadius": 0.006939964815431982,
+                "maximumRadius": 0.007000527065499305,
+                "actualCenter": [
+                  0.12160334668827677,
+                  0.0632727166502824,
+                  0.009018193029007951
+                ],
+                "expectedAxisDeviation": 1.6082710179685916e-8,
+                "passed": true
+              }
+            ],
+            "limitations": [
+              "中心线与圆截面为17个内部真实截面量测；全表面直圆柱包络由所有实际顶点保证",
+              "闭合拓扑与非零体积本身不是任意三维自交的完备证明；本检验另排除截面自交，但不声称制造或强度认证",
+              "本检验不证明球销/横梁的有限材料连接，也不替代独立全行程碰撞门槛"
+            ]
+          },
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "method": "先独立解码所有实际位置/索引并变换到输出滑架坐标，再用唯一真实顶点协方差恢复主轴，截全部实际三角面量测中心线；extras不充当几何证据",
+  "limitations": [
+    "只证明本次哈希的直输出件几何门槛；连接、全行程碰撞、原运动保留仍为独立必要门槛",
+    "未修改 SAT 1e-9、拓扑焊接1e-12、非零体积1e-10、三角面积1e-18"
+  ]
+}

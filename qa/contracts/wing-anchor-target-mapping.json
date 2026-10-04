@@ -1,0 +1,274 @@
+{
+  "sourceView": "V20 baseline right wing; matches original red-arrow screenshot crop",
+  "registration": {
+    "equation": "referenceX=sx*renderX+tx; referenceY=sy*renderY+ty",
+    "sx": 0.4737388873647556,
+    "sy": 0.4712600820676794,
+    "tx": -207.24883333032963,
+    "ty": 278.6265602190832,
+    "medianAbsoluteRGBResidual": 1.0,
+    "rmsRGBResidual": 5.826161171749382
+  },
+  "raycastModelSha256": "c3992cd770c503f05e062aeaf35522467183d085a3113eb9bde8852054b16d4d",
+  "camera": {
+    "position": [
+      2.137571695799112,
+      3.288572319330373,
+      -2.458572319330373
+    ],
+    "target": [
+      1.1,
+      -0.17,
+      1
+    ],
+    "up": [
+      0,
+      1,
+      0
+    ],
+    "scale": 0.66,
+    "meshSet": "exterior"
+  },
+  "renderSize": [
+    1200,
+    750
+  ],
+  "points": [
+    {
+      "label": "mark-center",
+      "referencePixel": [
+        191,
+        452
+      ],
+      "renderPixel": [
+        840.6505016838477,
+        367.8933276509042
+      ],
+      "hits": [
+        {
+          "node": "Composite_wing_R",
+          "distance": 5.06883009775505,
+          "worldGLTF": [
+            0.881632520466562,
+            -0.21309440877318186,
+            0.9909018653747372
+          ],
+          "wingLocalGLTF": [
+            -0.46836747953343805,
+            0.006905591226818136,
+            -0.3090981346252628
+          ],
+          "wingLocalBlender": [
+            -0.46836747953343805,
+            0.3090981346252628,
+            0.006905591226818136
+          ],
+          "triangle": 146
+        }
+      ]
+    },
+    {
+      "label": "red-tip-left",
+      "referencePixel": [
+        180,
+        451
+      ],
+      "renderPixel": [
+        817.4309596673812,
+        365.7713571338758
+      ],
+      "hits": [
+        {
+          "node": "Composite_wing_R",
+          "distance": 5.069417507982478,
+          "worldGLTF": [
+            0.9007109212373723,
+            -0.21215219423153675,
+            0.9984168092622441
+          ],
+          "wingLocalGLTF": [
+            -0.4492890787626278,
+            0.00784780576846325,
+            -0.30158319073775597
+          ],
+          "wingLocalBlender": [
+            -0.4492890787626278,
+            0.30158319073775597,
+            0.00784780576846325
+          ],
+          "triangle": 147
+        }
+      ]
+    },
+    {
+      "label": "red-tip-right",
+      "referencePixel": [
+        203,
+        451
+      ],
+      "renderPixel": [
+        865.9809111563565,
+        365.7713571338758
+      ],
+      "hits": [
+        {
+          "node": "Composite_wing_R",
+          "distance": 5.0715391926437245,
+          "worldGLTF": [
+            0.8593485119265183,
+            -0.21361979419948351,
+            0.9876077704340496
+          ],
+          "wingLocalGLTF": [
+            -0.4906514880734818,
+            0.006380205800516486,
+            -0.3123922295659505
+          ],
+          "wingLocalBlender": [
+            -0.4906514880734818,
+            0.3123922295659505,
+            0.006380205800516486
+          ],
+          "triangle": 145
+        }
+      ]
+    },
+    {
+      "label": "red-tip-top",
+      "referencePixel": [
+        191,
+        439
+      ],
+      "renderPixel": [
+        840.6505016838477,
+        340.307710929535
+      ],
+      "hits": [
+        {
+          "node": "Composite_wing_R",
+          "distance": 5.093218248665842,
+          "worldGLTF": [
+            0.8717465970621141,
+            -0.21243309450678316,
+            1.0238549433895643
+          ],
+          "wingLocalGLTF": [
+            -0.478253402937886,
+            0.007566905493216841,
+            -0.27614505661043576
+          ],
+          "wingLocalBlender": [
+            -0.478253402937886,
+            0.27614505661043576,
+            0.007566905493216841
+          ],
+          "triangle": 116
+        }
+      ]
+    },
+    {
+      "label": "red-tip-bottom",
+      "referencePixel": [
+        191,
+        464
+      ],
+      "renderPixel": [
+        840.6505016838477,
+        393.35697385524503
+      ],
+      "hits": [
+        {
+          "node": "Composite_wing_R",
+          "distance": 5.049011508772106,
+          "worldGLTF": [
+            0.8901990379100053,
+            -0.21556802042642564,
+            0.9623468072299266
+          ],
+          "wingLocalGLTF": [
+            -0.45980096208999477,
+            0.004431979573574357,
+            -0.33765319277007344
+          ],
+          "wingLocalBlender": [
+            -0.45980096208999477,
+            0.33765319277007344,
+            0.004431979573574357
+          ],
+          "triangle": 144
+        }
+      ]
+    },
+    {
+      "label": "arrow-nose",
+      "referencePixel": [
+        174,
+        450
+      ],
+      "renderPixel": [
+        804.7657549311268,
+        363.64938661684744
+      ],
+      "hits": [
+        {
+          "node": "Composite_wing_R",
+          "distance": 5.070919080891941,
+          "worldGLTF": [
+            0.9107035050736687,
+            -0.2118423192393819,
+            1.0038952581783405
+          ],
+          "wingLocalGLTF": [
+            -0.4392964949263314,
+            0.008157680760618097,
+            -0.2961047418216596
+          ],
+          "wingLocalBlender": [
+            -0.4392964949263314,
+            0.2961047418216596,
+            0.008157680760618097
+          ],
+          "triangle": 149
+        }
+      ]
+    },
+    {
+      "label": "old-ball",
+      "referencePixel": [
+        26,
+        473
+      ],
+      "renderPixel": [
+        492.3573714368513,
+        412.45470850850063
+      ],
+      "hits": [
+        {
+          "node": "Composite_wing_R",
+          "distance": 5.021743066470926,
+          "worldGLTF": [
+            1.1927698350287523,
+            -0.20884285670922376,
+            1.0204216803538908
+          ],
+          "wingLocalGLTF": [
+            -0.15723016497124775,
+            0.011157143290776245,
+            -0.27957831964610924
+          ],
+          "wingLocalBlender": [
+            -0.15723016497124775,
+            0.27957831964610924,
+            0.011157143290776245
+          ],
+          "triangle": 252
+        }
+      ]
+    }
+  ],
+  "sourceReferenceProvenance": {
+    "originalReferenceSha256": "aac6e3ed796e234fcaac87b2066643bc1102387214e1f9ed8d0f2c78e6941fc4",
+    "privateSourceExcluded": true,
+    "interpretationBoundary": "Distributed numerical gates verify final projection and chosen target, not repeat original private image interpretation from zero"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "modelVersion": 24,
+  "passed": true,
+  "fractionalSamples": 1001,
+  "frames": [
+    0,
+    199
+  ],
+  "fps": 24,
+  "source": "assets/blender/xp4.blend",
+  "sourceSha256": "0dc4feb2a628dad23f1e82d122167a08154b7f72f301bc5f5fc8e59c210b6857",
+  "runtimeSha256": "313b014ec70b409175b34a08f66ec56820a51ea094085ce1eef96fc444ce4b2b",
+  "sliderMonotonicDuringUnfold": true,
+  "sliderTravel": [
+    0.9104610085487366,
+    1.8999998569488525
+  ],
+  "wingAnchorDisplacement": {
+    "L": 0.97761611558579,
+    "R": 0.9776159707835107
+  },
+  "maxErrors": {
+    "braceEndpoint": 4.5406261304471e-06,
+    "braceLength": 3.310965745129124e-06,
+    "braceScale": 0.0,
+    "coaxialCenters": 5.268356063861754e-08,
+    "rotorEndpointAxes": 2.6856872505960487e-07,
+    "rootCurveDeviation": 9.888013356526993e-05
+  },
+  "braceLengths": {
+    "L": {
+      "min": 2.9582649867239845,
+      "max": 2.9582704847447507,
+      "relativeVariation": 1.858528830611661e-06
+    },
+    "R": {
+      "min": 2.9582649867239845,
+      "max": 2.958270353779647,
+      "relativeVariation": 1.81425791345724e-06
+    }
+  },
+  "limitations": "\u4ec5\u6838\u5bf9\u6e90\u52a8\u4f5c\u4e0e\u5750\u6807\uff1b\u538b\u7f29GLB\u72ec\u7acb\u7f51\u683c\u5e72\u6d89\u3001\u6e32\u67d3\u5916\u89c2\u53ca\u6d4f\u89c8\u5668\u64cd\u4f5c\u9700\u53e6\u884c\u68c0\u67e5\u3002"
+}

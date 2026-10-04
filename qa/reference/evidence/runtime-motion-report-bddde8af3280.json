@@ -1,0 +1,34 @@
+{
+  "modelVersion": 15,
+  "runtimeSha256": "61765f19e221a3eafdc6e527dac37eb6603e48bcc7c9918c8eab49f28d810b0b",
+  "passed": true,
+  "motorCount": 4,
+  "bladeCount": 8,
+  "poseChecks": 34553,
+  "pauseChecks": 80,
+  "independentMasks": 16,
+  "wingJumps": 80,
+  "interruptedSequences": 640,
+  "partitionChecks": 196,
+  "invalidAtomicChecks": 8,
+  "axisPlaneChecks": 24,
+  "stages": [
+    "accelerating",
+    "decelerating",
+    "folded",
+    "folding",
+    "indexing",
+    "running",
+    "unfolding"
+  ],
+  "faultsRejected": 0,
+  "limitations": [
+    "真实Node运行函数与实际GLB姿态，未执行浏览器、GPU、输入或帧率验收",
+    "四电机独立控制和有限时间步不构成飞控、气动、制造或连续碰撞认证",
+    "寻位阶段以受控低速机械归零；folded静止阶段无旋转，不能将indexing的rpm=0误称轴已停止运动"
+  ],
+  "faultInjection": {
+    "rejected": true,
+    "injected": "前桨带速收桨，与旧后桨范围无关"
+  }
+}

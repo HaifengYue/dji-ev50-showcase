@@ -1,0 +1,30 @@
+SECTION 1 / 225 qa/reference/source-protected-surfaces.json
+SECTION 26 / 225 qa/reference/source-protected-surfaces.json
+SECTION 51 / 225 qa/reference/source-protected-surfaces.json
+SECTION 76 / 225 qa/reference/source-protected-surfaces.json
+SECTION 101 / 225 qa/reference/source-protected-surfaces.json
+SECTION 126 / 225 qa/reference/source-protected-surfaces.json
+SECTION 151 / 225 qa/reference/source-protected-surfaces.json
+SECTION 176 / 225 qa/reference/source-protected-surfaces.json
+SECTION 201 / 225 qa/reference/source-protected-surfaces.json
+{"source":"qa/reference/source-protected-surfaces.json","lineDeviations":{"upperL":0.030563788907910998,"upperR":0.030565105928160405,"lowerL":0.0057796747140177315,"lowerR":0.005760477577986355},"failures":[{"station":1.5897315616607144,"side":"L","reason":"实际唇后材料皮厚不足 .001 或缺失","thickness":{"upper":0.0008939639407351818,"lower":0.006258212520274401,"upperRayZ":0.06010460077664297,"lowerRayX":-0.09349999982118606,"upperHits":[-0.14539396620571168,-0.1445000022649765,0.1445000022649765,0.14539396620571168],"lowerHits":[0.011724307206334503,0.017982519726608904,0.18751166145158682,0.1941136071763415]}},{"station":1.5897315616607144,"side":"R","reason":"实际唇后材料皮厚不足 .001 或缺失","thickness":{"upper":0.0008939639407351818,"lower":0.0062583772045355975,"upperRayZ":0.06010460077664297,"lowerRayX":0.09349999982118606,"upperHits":[-0.14539396620571168,-0.1445000022649765,0.1445000022649765,0.14539396620571168],"lowerHits":[0.011724307206334503,0.0179826844108701,0.18751166145158682,0.1941136071763415]}},{"station":1.5943297606517857,"side":"L","reason":"实际唇后材料皮厚不足 .001 或缺失","thickness":{"upper":0.0008345168945088355,"lower":0.006253627960834849,"upperRayZ":0.061572513507601026,"lowerRayX":-0.09349999982118606,"upperHits":[-0.14533451915948534,-0.1445000022649765,0.1445000022649765,0.14533451915948534],"lowerHits":[0.012064419601659633,0.018318047562494482,0.18706334087205595,0.19366208988209122]}},{"station":1.5943297606517857,"side":"R","reason":"实际唇后材料皮厚不足 .001 或缺失","thickness":{"upper":0.0008345168945088355,"lower":0.006253777603620432,"upperRayZ":0.061572513507601026,"lowerRayX":0.09349999982118606,"upperHits":[-0.14533451915948534,-0.1445000022649765,0.1445000022649765,0.14533451915948534],"lowerHits":[0.012064419601659633,0.018318197205280065,0.18706334087205595,0.19366208988209122]}},{"station":1.5989279596428572,"side":"L","reason":"实际唇后材料皮厚不足 .001 或缺失","thickness":{"upper":0.0008345168945088355,"lower":0.006249043401395293,"upperRayZ":0.06325413208424377,"lowerRayX":-0.09349999982118606,"upperHits":[-0.14533451915948534,-0.1445000022649765,0.1445000022649765,0.14533451915948534],"lowerHits":[0.012404531996984781,0.018653575398380074,0.18661502029252505,0.19321057258784086]}},{"station":1.5989279596428572,"side":"R","reason":"实际唇后材料皮厚不足 .001 或缺失","thickness":{"upper":0.0008345168945088355,"lower":0.006249178002705262,"upperRayZ":0.06325413208424377,"lowerRayX":0.09349999982118606,"upperHits":[-0.14533451915948534,-0.1445000022649765,0.1445000022649765,0.14533451915948534],"lowerHits":[0.012404531996984781,0.018653709999690044,0.18661502029252505,0.19321057258784086]}},{"station":1.6035261586339287,"side":"L","reason":"实际唇后材料皮厚不足 .001 或缺失","thickness":{"upper":0.0008345168945088355,"lower":0.006244458841955741,"upperRayZ":0.06493575066088653,"lowerRayX":-0.09349999982118606,"upperHits":[-0.14533451915948534,-0.1445000022649765,0.1445000022649765,0.14533451915948534],"lowerHits":[0.012744644392309929,0.01898910323426567,0.18616669971299418,0.19275905529359055]}},{"station":1.6035261586339287,"side":"R","reason":"实际唇后材料皮厚不足 .001 或缺失","thickness":{"upper":0.0008345168945088355,"lower":0.006244578401790097,"upperRayZ":0.06493575066088653,"lowerRayX":0.09349999982118606,"upperHits":[-0.14533451915948534,-0.1445000022649765,0.1445000022649765,0.14533451915948534],"lowerHits":[0.012744644392309929,0.018989222794100025,0.18616669971299418,0.19275905529359055]}}]}
+SECTION 1 / 225 assets/blender/xp4-source.glb
+SECTION 26 / 225 assets/blender/xp4-source.glb
+SECTION 51 / 225 assets/blender/xp4-source.glb
+SECTION 76 / 225 assets/blender/xp4-source.glb
+SECTION 101 / 225 assets/blender/xp4-source.glb
+SECTION 126 / 225 assets/blender/xp4-source.glb
+SECTION 151 / 225 assets/blender/xp4-source.glb
+SECTION 176 / 225 assets/blender/xp4-source.glb
+SECTION 201 / 225 assets/blender/xp4-source.glb
+{"source":"assets/blender/xp4-source.glb","passed":true,"lineDeviations":{"upperL":1.2478431555667102e-7,"upperR":9.844714797846839e-9,"lowerL":5.2772011023202725e-9,"lowerR":5.2772010988508256e-9},"failures":[]}
+SECTION 1 / 225 public/models/xp4.glb
+SECTION 26 / 225 public/models/xp4.glb
+SECTION 51 / 225 public/models/xp4.glb
+SECTION 76 / 225 public/models/xp4.glb
+SECTION 101 / 225 public/models/xp4.glb
+SECTION 126 / 225 public/models/xp4.glb
+SECTION 151 / 225 public/models/xp4.glb
+SECTION 176 / 225 public/models/xp4.glb
+SECTION 201 / 225 public/models/xp4.glb
+{"source":"public/models/xp4.glb","passed":true,"lineDeviations":{"upperL":1.2478431555667102e-7,"upperR":9.844714797846839e-9,"lowerL":5.2772011023202725e-9,"lowerR":5.2772011023202725e-9},"failures":[]}

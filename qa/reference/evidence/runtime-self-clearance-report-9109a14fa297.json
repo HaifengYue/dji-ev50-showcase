@@ -1,0 +1,126 @@
+{
+  "runtimeSha256": "61765f19e221a3eafdc6e527dac37eb6603e48bcc7c9918c8eab49f28d810b0b",
+  "passed": true,
+  "motorCount": 4,
+  "foldAnglesDegrees": [
+    0,
+    1,
+    7.5,
+    15,
+    22.5,
+    30,
+    45,
+    60,
+    75,
+    82.5,
+    89,
+    90
+  ],
+  "pairCount": 44,
+  "meshPairTests": 528,
+  "triangleSATTests": 2742527,
+  "contacts": [],
+  "unresolved": [],
+  "limitations": [
+    "真实GLB实际顶点、Float64三角SAT epsilon=1e-9及闭合实体包含；不放宽旧容差",
+    "局部有限折角不代替全模型运动和连续碰撞证明；没有浏览器验收"
+  ],
+  "faultInjection": {
+    "injected": "前桨叶根轴孔恢复实心，球半径仍为旧故障强度.017",
+    "rejected": true,
+    "contact": {
+      "foldDegrees": 0,
+      "blade": "Injected_solid_blade_root",
+      "target": "Blade_hinge_pin_L_Front_A",
+      "closed": true,
+      "intersects": true,
+      "surface": true,
+      "contained": 0,
+      "unresolved": [],
+      "triangleSATTests": 127,
+      "witness": {
+        "meshA": "Injected_solid_blade_root",
+        "meshB": "Blade_hinge_pin_L_Front_A",
+        "triangleA": {
+          "triangleIndex": 76,
+          "vertexIndices": [
+            48,
+            47,
+            61
+          ],
+          "vertices": [
+            [
+              -2.395030964006292,
+              0.9614747267310844,
+              1.5257679023884034
+            ],
+            [
+              -2.3911984477601074,
+              0.957454268363708,
+              1.5317046212237442
+            ],
+            [
+              -2.391999725302016,
+              0.9580003448525767,
+              1.5209994749526041
+            ]
+          ],
+          "bounds": {
+            "min": [
+              -2.395030964006292,
+              0.957454268363708,
+              1.5209994749526041
+            ],
+            "max": [
+              -2.3911984477601074,
+              0.9614747267310844,
+              1.5317046212237442
+            ]
+          }
+        },
+        "triangleB": {
+          "triangleIndex": 18,
+          "vertexIndices": [
+            13,
+            15,
+            17
+          ],
+          "vertices": [
+            [
+              -2.4352654952655577,
+              0.9169313610311917,
+              1.548230411655133
+            ],
+            [
+              -2.434119016858369,
+              0.9158810865381413,
+              1.5484228211139006
+            ],
+            [
+              -2.3697187992165243,
+              0.9802812565820802,
+              1.5162227167071856
+            ]
+          ],
+          "bounds": {
+            "min": [
+              -2.4352654952655577,
+              0.9158810865381413,
+              1.5162227167071856
+            ],
+            "max": [
+              -2.3697187992165243,
+              0.9802812565820802,
+              1.5484228211139006
+            ]
+          }
+        },
+        "coplanar": false,
+        "epsilon": 1e-9,
+        "maxSeparatingGap": -0.0010861556715669046,
+        "toleranceOnly": false,
+        "testedAxes": 17
+      }
+    }
+  }
+}

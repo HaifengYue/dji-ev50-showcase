@@ -1,0 +1,10 @@
+{
+  passed: true,
+  checks: [
+    'changed-parent descendant closure',
+    'exact unaffected eligibility',
+    'unexpected actual motion rejected',
+    'missing exact identity rejected',
+    'missing declared node rejected'
+  ]
+}

@@ -1,0 +1,2 @@
+Support geometry self-tests passed: winding/inverted orientation, shared-edge ray, connected component
+Locally flipped face rejected by directed edge cancellation
