@@ -9,12 +9,12 @@
       "sha256": "14deba2a8cb20fb13c6cc05f8c4c09d441285b9754b014499942ad39992f7ce4"
     },
     {
-      "path": "dist/assets/index-Clgw5HCR.js",
-      "sha256": "69bcf67ba6f6cad6d7c769c5c7d493079d72c219a57c83141092f30d8b05ab0e"
+      "path": "dist/assets/index-DI61ifvZ.css",
+      "sha256": "8aa45b2c5764b26519c26c8aa7ef2a56808a9528d46935acb8bcb4904274f1d0"
     },
     {
-      "path": "dist/assets/index-DYws8zB-.css",
-      "sha256": "fba6b7194d90582b5c53ae1cc417c785b1a7064e8f3c4442fd5a0883d5e28a2a"
+      "path": "dist/assets/index-alPU3kaS.js",
+      "sha256": "f249750d5a0cfb7575473e59a73fa7a67a46e464de8717b7b533ad7d3a48b044"
     },
     {
       "path": "dist/assets/scene-CAbU1Meg.js",
@@ -30,7 +30,7 @@
     },
     {
       "path": "dist/index.html",
-      "sha256": "eb45b58b5fa4aac5faff010590745b32b20db1f737d74c52d4cb6cb52b1543fd"
+      "sha256": "0575240102c9e1db5268a5249970af28398c52aec5aa330d4b6fd30fdbb9e9b4"
     },
     {
       "path": "dist/models/manifest.json",
@@ -170,7 +170,7 @@
     },
     {
       "path": "qa/lib/runtime-ui-source-check.mts",
-      "sha256": "17ad58939975ae0dc5795f8102cffec07ec5473365f495b6de0a1b3bc83b6b46"
+      "sha256": "954c0a5396f9d4c8eac2b99208cb817049b66ed57ccd84f2189bf3dcc66dabb3"
     },
     {
       "path": "qa/lib/solid-contact.mjs",
@@ -182,7 +182,7 @@
     },
     {
       "path": "src/App.tsx",
-      "sha256": "b6786ac27629d279821fce1e36c7d8c8d4b9ce89340c43d4a4318c4e15f0397b"
+      "sha256": "c75b976a76d44337839caecfa3afc9fe285dea89cbb5b5eb2a3354a7e0d40dfa"
     },
     {
       "path": "src/DetailPanel.tsx",
@@ -198,7 +198,7 @@
     },
     {
       "path": "src/SimulationPanel.tsx",
-      "sha256": "53f21dd089b77a300d7e1d39068b1c73c61b8a4916443add2418e2307d78dc22"
+      "sha256": "b6ef7b660442b2d7840fbeb4491883a6ff9fe63343b41ef6d39ccd08f6e89b6f"
     },
     {
       "path": "src/cameraNavigation.test.ts",
@@ -326,7 +326,7 @@
     },
     {
       "path": "src/style.css",
-      "sha256": "051ad2a8260e947686b0fd46f0cc3d9cabbd3fe64f0cb51978769635038275be"
+      "sha256": "1504ba34728897205a0c461e2d1d83500b122c7d48e18aeeaef4c408488ef07a"
     },
     {
       "path": "src/tilt.test.ts",
@@ -335,6 +335,14 @@
     {
       "path": "src/tilt.ts",
       "sha256": "aaad954b22fda6719b3a4fee829271ad212dc5c9a7d354c163e8f64731cd7327"
+    },
+    {
+      "path": "src/uiControl.test.ts",
+      "sha256": "723ba3c4622f32cfbb35712d5159ef43ee02f86493cb2b4dde59c34b7c5451c7"
+    },
+    {
+      "path": "src/uiControl.ts",
+      "sha256": "c5f7e26476a632fef02b8de5fd41e0e4affa71b4b9f451f00b0df444788ae493"
     },
     {
       "path": "tsconfig.json",

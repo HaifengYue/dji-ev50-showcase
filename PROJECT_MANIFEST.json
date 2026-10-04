@@ -10,20 +10,20 @@
     "scripts/test_package_project.py": "f8e0d5edc870cdb1fd2baa30ac251133f238b71e5f4317a4b869d56c649c8535"
   },
   "lockedInputs": 211,
-  "frontendLockedInputs": 86,
-  "combinedLockedInputs": 272,
+  "frontendLockedInputs": 88,
+  "combinedLockedInputs": 274,
   "inputLockPath": "qa/current/results/input-lock.json",
   "inputLockSha256": "ecad91762e6b598b9e7b8a97d2847c7d4f539aba86e9b8c0ea89e5003686c25a",
   "verificationSummaryPath": "qa/current/results/summary.json",
   "verificationSummarySha256": "78b136c86298d1106910cde5cc85cac50449c11cc13028d691be052ce345af7b",
   "frontendInputLockPath": "qa/frontend/input-lock.json",
-  "frontendInputLockSha256": "ba8b8b8023d29296029dceb7ccfbe3768eded2e825d2babcfd6794b4131040f6",
+  "frontendInputLockSha256": "3348c2cd9b2cead8b5b61d43b169d0b67ade112c965f17929b885d843f330cec",
   "frontendSummaryPath": "qa/frontend/summary.json",
-  "frontendSummarySha256": "1fdddf0d93ae4ed2d99aa3752ca9ee10d0301c44ee0936c7db65c6d72fa751da",
+  "frontendSummarySha256": "933e43dc2906aa40d9fd1b2a49663fa830771535d3b27a8174dc30167d9f9cb9",
   "buildPreservationPath": "qa/frontend/build-preservation.json",
-  "buildPreservationSha256": "ac2bb5c8c377a73ae89d116a5f9d18c8f1c580662768054beab55d7d27b8f3a5",
+  "buildPreservationSha256": "dcd08925aebd52bf2c9984cab72f18b066bffbf3d7116d1707e81d50311d72cf",
   "projectMetadataPath": "项目信息.json",
-  "projectMetadataSha256": "3b725be88a0738b6fe7cab8fb39ce6522b80344d0bdc3a0b74cea5e24490af98",
+  "projectMetadataSha256": "7090e266edbb6b89dc72f4f0a145d34b51114e94c9db4c5803884703f0076d96",
   "files": [
     {
       "path": ".gitignore",
@@ -34,9 +34,9 @@
     },
     {
       "path": "README.md",
-      "bytes": 4593,
-      "sha256": "56e330288cb061090ff24166dacc4f102317bcc736fda097eb34543e25fc8cb8",
-      "crc32": "caf7b0ed",
+      "bytes": 4731,
+      "sha256": "4746d44a3288256d1ef2c3b9e0de2210a83f4dd774eafba53a23577fd6e83de3",
+      "crc32": "34422f1a",
       "mode": "0644"
     },
     {
@@ -68,17 +68,17 @@
       "mode": "0644"
     },
     {
-      "path": "dist/assets/index-Clgw5HCR.js",
-      "bytes": 193501,
-      "sha256": "69bcf67ba6f6cad6d7c769c5c7d493079d72c219a57c83141092f30d8b05ab0e",
-      "crc32": "833b11dd",
+      "path": "dist/assets/index-DI61ifvZ.css",
+      "bytes": 24147,
+      "sha256": "8aa45b2c5764b26519c26c8aa7ef2a56808a9528d46935acb8bcb4904274f1d0",
+      "crc32": "abd7cdb6",
       "mode": "0644"
     },
     {
-      "path": "dist/assets/index-DYws8zB-.css",
-      "bytes": 35596,
-      "sha256": "fba6b7194d90582b5c53ae1cc417c785b1a7064e8f3c4442fd5a0883d5e28a2a",
-      "crc32": "da3681f2",
+      "path": "dist/assets/index-alPU3kaS.js",
+      "bytes": 195017,
+      "sha256": "f249750d5a0cfb7575473e59a73fa7a67a46e464de8717b7b533ad7d3a48b044",
+      "crc32": "aa52a6a5",
       "mode": "0644"
     },
     {
@@ -105,8 +105,8 @@
     {
       "path": "dist/index.html",
       "bytes": 834,
-      "sha256": "eb45b58b5fa4aac5faff010590745b32b20db1f737d74c52d4cb6cb52b1543fd",
-      "crc32": "a67496de",
+      "sha256": "0575240102c9e1db5268a5249970af28398c52aec5aa330d4b6fd30fdbb9e9b4",
+      "crc32": "b4efffec",
       "mode": "0644"
     },
     {
@@ -139,9 +139,9 @@
     },
     {
       "path": "docs/DELIVERY.md",
-      "bytes": 5116,
-      "sha256": "8fdd5425eb037d285b272b899188f67d92b5a9f9ec3c3dbb9daab948d6b3eccd",
-      "crc32": "8f0d0692",
+      "bytes": 5399,
+      "sha256": "751998363cadf8748abca695f582dc527336ed78c8b35adfa2ba9ba96257c632",
+      "crc32": "23362850",
       "mode": "0644"
     },
     {
@@ -153,9 +153,9 @@
     },
     {
       "path": "docs/NAVIGATION.md",
-      "bytes": 3977,
-      "sha256": "2e8d2ae5c531207d86d2b1c59e44fdcd171e17538043ac845dcd144194703165",
-      "crc32": "40045041",
+      "bytes": 5616,
+      "sha256": "5852990dafd3704a5cc29844ab4a0f333c8cff03dee2b78d3665150fc72345e4",
+      "crc32": "f6cf68bd",
       "mode": "0644"
     },
     {
@@ -167,9 +167,9 @@
     },
     {
       "path": "docs/PROJECT.md",
-      "bytes": 3946,
-      "sha256": "ff820a945d02d43917cf6055d9ef27e7accf105e804aac3acd0f5b0830224fc9",
-      "crc32": "b29014d5",
+      "bytes": 4094,
+      "sha256": "b27d30536f4be8c5770069a0a16b2b696a275006c8cba0b48ce87a093d6f9553",
+      "crc32": "7b43a8ac",
       "mode": "0644"
     },
     {
@@ -180,10 +180,17 @@
       "mode": "0644"
     },
     {
+      "path": "docs/UI_REDESIGN.md",
+      "bytes": 2941,
+      "sha256": "f7cfeb238796b859ff336c006ba827c3195095747b9735417e18db76e0194a29",
+      "crc32": "6c572aa1",
+      "mode": "0644"
+    },
+    {
       "path": "docs/VERIFICATION.md",
-      "bytes": 10408,
-      "sha256": "57a4982928732140d876619452cb9db9f5bfee3a63fd071ece405a6fbd034ace",
-      "crc32": "5473044b",
+      "bytes": 11137,
+      "sha256": "a5f58a1429a0db37736c064e243237dc744be6f5a202ddb7fdb29892751c742e",
+      "crc32": "7a4c6e52",
       "mode": "0644"
     },
     {
@@ -1420,23 +1427,23 @@
     },
     {
       "path": "qa/frontend/build-preservation.json",
-      "bytes": 623,
-      "sha256": "ac2bb5c8c377a73ae89d116a5f9d18c8f1c580662768054beab55d7d27b8f3a5",
-      "crc32": "d03c9ace",
+      "bytes": 739,
+      "sha256": "dcd08925aebd52bf2c9984cab72f18b066bffbf3d7116d1707e81d50311d72cf",
+      "crc32": "2459f873",
       "mode": "0644"
     },
     {
       "path": "qa/frontend/build.log",
       "bytes": 859,
-      "sha256": "6c4fd863b63cc8a3f73581dcbfc19f1316a6e9c0a779f446f0c83c867a79cb96",
-      "crc32": "a779e8f5",
+      "sha256": "0053f01862fc1bc21de21810ffd65f31d1bfb7c5d267e9fb2776d23419bb8335",
+      "crc32": "c9a57deb",
       "mode": "0644"
     },
     {
       "path": "qa/frontend/flight-loader.log",
       "bytes": 1461,
-      "sha256": "3ae5cae427ac1b20101f2f79b230eaeffd5191a5b6a1b3196b7f763641a49bb9",
-      "crc32": "d898c410",
+      "sha256": "2dfac18bd990cad9d41070b601e0131f406d0dcdf97c6441cf87f7a8ee23fec7",
+      "crc32": "ac203212",
       "mode": "0644"
     },
     {
@@ -1455,16 +1462,23 @@
     },
     {
       "path": "qa/frontend/input-lock.json",
-      "bytes": 11946,
-      "sha256": "ba8b8b8023d29296029dceb7ccfbe3768eded2e825d2babcfd6794b4131040f6",
-      "crc32": "5764592a",
+      "bytes": 12211,
+      "sha256": "3348c2cd9b2cead8b5b61d43b169d0b67ade112c965f17929b885d843f330cec",
+      "crc32": "4de0936a",
+      "mode": "0644"
+    },
+    {
+      "path": "qa/frontend/physical-evidence-reuse.json",
+      "bytes": 14611,
+      "sha256": "80a783b007fbbd5aafeb482a03ccb9248fc9b0067dfc4d3191501f0d95802074",
+      "crc32": "efc67775",
       "mode": "0644"
     },
     {
       "path": "qa/frontend/python.log",
       "bytes": 2993,
-      "sha256": "1d28ac7f183ea54a6e53f6847255a645c29198ab6332f0731e754431eb9cbade",
-      "crc32": "0fb8ced6",
+      "sha256": "2f5f4ac967956b2a025714911d8ec26470784deb3d764d097c33cb6212243576",
+      "crc32": "0d794ab0",
       "mode": "0644"
     },
     {
@@ -1477,15 +1491,29 @@
     {
       "path": "qa/frontend/summary.json",
       "bytes": 763,
-      "sha256": "1fdddf0d93ae4ed2d99aa3752ca9ee10d0301c44ee0936c7db65c6d72fa751da",
-      "crc32": "2409fac5",
+      "sha256": "933e43dc2906aa40d9fd1b2a49663fa830771535d3b27a8174dc30167d9f9cb9",
+      "crc32": "d46a1485",
+      "mode": "0644"
+    },
+    {
+      "path": "qa/frontend/ui-change-provenance.json",
+      "bytes": 4037,
+      "sha256": "b3a280ab9b45c1b0b78c18fe4960f378c8b658654d6b7c8e7cd5aee10ac392ac",
+      "crc32": "23682a79",
+      "mode": "0644"
+    },
+    {
+      "path": "qa/frontend/ui-source-report.json",
+      "bytes": 4588,
+      "sha256": "65809b9c8d2ebfbb1001743ee9d22fd4efb231a72ce6c0746db22a46af7baf7d",
+      "crc32": "0d9cd752",
       "mode": "0644"
     },
     {
       "path": "qa/frontend/unit.log",
-      "bytes": 15324,
-      "sha256": "7b74bb8a0503f0487aea27f04fd6325c0aa02ec4518e105abf7fd918e2c6774e",
-      "crc32": "c9b661ab",
+      "bytes": 16575,
+      "sha256": "cf4e4fdaa4c3faab0a878eab7628922757e25f305972b9bfa4e4f6d4fe320502",
+      "crc32": "16ebfe29",
       "mode": "0644"
     },
     {
@@ -1581,9 +1609,9 @@
     },
     {
       "path": "qa/lib/runtime-ui-source-check.mts",
-      "bytes": 4876,
-      "sha256": "17ad58939975ae0dc5795f8102cffec07ec5473365f495b6de0a1b3bc83b6b46",
-      "crc32": "e02087aa",
+      "bytes": 18544,
+      "sha256": "954c0a5396f9d4c8eac2b99208cb817049b66ed57ccd84f2189bf3dcc66dabb3",
+      "crc32": "35b57529",
       "mode": "0644"
     },
     {
@@ -2561,9 +2589,9 @@
     },
     {
       "path": "src/App.tsx",
-      "bytes": 48431,
-      "sha256": "b6786ac27629d279821fce1e36c7d8c8d4b9ce89340c43d4a4318c4e15f0397b",
-      "crc32": "d2090cf9",
+      "bytes": 51508,
+      "sha256": "c75b976a76d44337839caecfa3afc9fe285dea89cbb5b5eb2a3354a7e0d40dfa",
+      "crc32": "f67d5b9f",
       "mode": "0644"
     },
     {
@@ -2589,9 +2617,9 @@
     },
     {
       "path": "src/SimulationPanel.tsx",
-      "bytes": 11298,
-      "sha256": "53f21dd089b77a300d7e1d39068b1c73c61b8a4916443add2418e2307d78dc22",
-      "crc32": "d34858b5",
+      "bytes": 13801,
+      "sha256": "b6ef7b660442b2d7840fbeb4491883a6ff9fe63343b41ef6d39ccd08f6e89b6f",
+      "crc32": "5b183117",
       "mode": "0644"
     },
     {
@@ -2813,9 +2841,9 @@
     },
     {
       "path": "src/style.css",
-      "bytes": 45999,
-      "sha256": "051ad2a8260e947686b0fd46f0cc3d9cabbd3fe64f0cb51978769635038275be",
-      "crc32": "2ad471af",
+      "bytes": 30692,
+      "sha256": "1504ba34728897205a0c461e2d1d83500b122c7d48e18aeeaef4c408488ef07a",
+      "crc32": "3a67da40",
       "mode": "0644"
     },
     {
@@ -2830,6 +2858,20 @@
       "bytes": 2601,
       "sha256": "aaad954b22fda6719b3a4fee829271ad212dc5c9a7d354c163e8f64731cd7327",
       "crc32": "2f1e7f02",
+      "mode": "0644"
+    },
+    {
+      "path": "src/uiControl.test.ts",
+      "bytes": 12806,
+      "sha256": "723ba3c4622f32cfbb35712d5159ef43ee02f86493cb2b4dde59c34b7c5451c7",
+      "crc32": "e59751ad",
+      "mode": "0644"
+    },
+    {
+      "path": "src/uiControl.ts",
+      "bytes": 1272,
+      "sha256": "c5f7e26476a632fef02b8de5fd41e0e4affa71b4b9f451f00b0df444788ae493",
+      "crc32": "683196cd",
       "mode": "0644"
     },
     {
@@ -2848,16 +2890,16 @@
     },
     {
       "path": "下载说明.txt",
-      "bytes": 2092,
-      "sha256": "b9db24520e409c0dee2882fbfb7ea81ed15816d0f4ff746f99479cc94933b53a",
-      "crc32": "db9c12b8",
+      "bytes": 2227,
+      "sha256": "0a87b82d83536a1f77179a15d4f4c42c0a3eade23475fe60de95f362de4ded51",
+      "crc32": "e3032efc",
       "mode": "0644"
     },
     {
       "path": "项目信息.json",
-      "bytes": 3459,
-      "sha256": "3b725be88a0738b6fe7cab8fb39ce6522b80344d0bdc3a0b74cea5e24490af98",
-      "crc32": "44261bf5",
+      "bytes": 4267,
+      "sha256": "7090e266edbb6b89dc72f4f0a145d34b51114e94c9db4c5803884703f0076d96",
+      "crc32": "0ff62da6",
       "mode": "0644"
     }
   ]

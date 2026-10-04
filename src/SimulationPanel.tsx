@@ -1,8 +1,14 @@
-import { useEffect, useState, useSyncExternalStore } from "react";
+import {
+  useEffect,
+  useState,
+  useSyncExternalStore,
+  type ReactNode,
+} from "react";
 import { MOTOR_IDS, type MotorStage } from "./motors";
 import { SimulationRuntime } from "./simulation";
 import { SimulationBridge } from "./simulationBridge";
 import { RecordingLoader, readPythonExample } from "./recordingLoader";
+import { beginLocalControl } from "./uiControl";
 const names = {
   L_Front: "左前",
   R_Front: "右前",
@@ -24,12 +30,18 @@ export default function SimulationPanel({
   onManual,
   onExternal,
   onReset,
+  onDemo,
+  loader: sharedLoader,
+  children,
 }: {
   runtime: SimulationRuntime;
   bridge: SimulationBridge;
   onManual: () => void;
   onExternal?: () => void;
   onReset: () => void;
+  onDemo?: () => void;
+  loader?: RecordingLoader;
+  children?: ReactNode;
 }) {
   const snapshot = useSyncExternalStore(
     runtime.subscribe,
@@ -38,8 +50,11 @@ export default function SimulationPanel({
   );
   const [open, setOpen] = useState(true),
     [fileError, setFileError] = useState<string | null>(null),
-    [loading, setLoading] = useState(false);
-  const [loader] = useState(() => new RecordingLoader(runtime, bridge));
+    [, refreshImport] = useState(0);
+  const [ownLoader] = useState(() => new RecordingLoader(runtime, bridge));
+  const loader = sharedLoader ?? ownLoader;
+  const loading = loader.loading;
+  const setLoading = (_value: boolean) => refreshImport((value) => value + 1);
   const cancelImport = () => {
     loader.cancel();
     setLoading(false);
@@ -47,7 +62,12 @@ export default function SimulationPanel({
   useEffect(() => {
     const cancel = () => loader.cancel();
     const key = (event: KeyboardEvent) => {
-      if (event.key === "Escape") cancelImport();
+      if (
+        event.key === "Escape" &&
+        !event.defaultPrevented &&
+        !document.querySelector("[data-app-dialog]")
+      )
+        cancelImport();
     };
     window.addEventListener("popstate", cancel);
     window.addEventListener("pagehide", cancel);
@@ -63,8 +83,8 @@ export default function SimulationPanel({
     read: (signal: AbortSignal) => Promise<string>,
     autoplay = false,
   ) => {
-    setLoading(true);
     setFileError(null);
+    setLoading(true);
     try {
       await loader.load(read, onExternal ?? onManual, autoplay);
     } catch (error) {
@@ -74,8 +94,13 @@ export default function SimulationPanel({
     }
   };
   const manual = () => {
+    if (
+      runtime.getSnapshot().control !== "local" ||
+      runtime.getSnapshot().driver !== "manual"
+    )
+      return false;
     cancelImport();
-    onManual();
+    return true;
   };
   const local = snapshot.control === "local";
   const status =
@@ -97,28 +122,63 @@ export default function SimulationPanel({
     <section className="simulation-panel" aria-label="Python 仿真与四电机控制">
       <div className="simulation-heading">
         <div>
-          <span className="eyebrow">独立仿真接口 / V18</span>
-          <h2>四电机 · 可控视景</h2>
+          <span className="eyebrow">统一状态源 / 本地与 Python</span>
+          <h2>飞行仿真工作台</h2>
         </div>
-        <button
-          onClick={() => {
-            if (open) {
-              cancelImport();
-              if (!local) leave();
-            }
-            setOpen(!open);
-          }}
-          aria-expanded={open}
-        >
+        <button onClick={() => setOpen(!open)} aria-expanded={open}>
           {open ? "收起" : "展开"}
         </button>
       </div>
-      <p role="status">
-        {status} · {snapshot.ready ? "模型已就绪" : "模型载入中"} · 仿真时间{" "}
-        {snapshot.state.time.seconds.toFixed(2)} 秒
-      </p>
+      <div className="simulation-status">
+        <p role="status">
+          {status} · {snapshot.ready ? "模型已就绪" : "模型载入中"}
+        </p>
+        <span>
+          仿真时间 <strong>{snapshot.state.time.seconds.toFixed(2)}</strong> 秒
+        </span>
+      </div>
       {open && (
         <>
+          <div
+            className="source-selector"
+            role="group"
+            aria-label="本地控制来源"
+          >
+            <span>本地控制来源</span>
+            <button
+              disabled={!local}
+              aria-pressed={local && snapshot.driver === "demo"}
+              onClick={() => {
+                if (!beginLocalControl(runtime, bridge, loader, "demo")) return;
+                onDemo?.();
+              }}
+            >
+              连续飞行演示
+            </button>
+            <button
+              disabled={!local}
+              aria-pressed={local && snapshot.driver === "manual"}
+              onClick={() => {
+                if (!beginLocalControl(runtime, bridge, loader, "manual"))
+                  return;
+                onManual();
+              }}
+            >
+              手动四电机
+            </button>
+            <small>
+              {local
+                ? snapshot.driver === "demo"
+                  ? "飞行序列驱动位置、姿态、整翼与电机"
+                  : "飞行已暂停，四台电机可独立操作"
+                : "外部输入已锁定本地动作"}
+            </small>
+          </div>
+          {children}
+          <div className="integration-heading">
+            <h3>Python 接入与记录回放</h3>
+            <span>切换控制来源会停止当前本地演示</span>
+          </div>
           <div className="simulation-actions">
             <button
               disabled={!local}
@@ -218,6 +278,14 @@ export default function SimulationPanel({
             {snapshot.control === "replay" &&
               " 0.1× 将整个记录放慢十倍，RPM仍是仿真值；桨毂与桨叶同轴同步，便于检查旋向。"}
           </p>
+          <div className="integration-heading">
+            <h3>四电机状态</h3>
+            <span>
+              {local && snapshot.driver === "manual"
+                ? "手动控制已启用"
+                : "只读监看；选择“手动四电机”后可调整"}
+            </span>
+          </div>
           <div className="motor-grid">
             {MOTOR_IDS.map((id) => {
               const motor = snapshot.actuators[id],
@@ -230,11 +298,12 @@ export default function SimulationPanel({
                   </div>
                   <label>
                     <input
+                      aria-label={`${names[id]}电机启动`}
                       type="checkbox"
-                      disabled={!local}
+                      disabled={!local || snapshot.driver !== "manual"}
                       checked={command.enabled}
                       onChange={(event) => {
-                        manual();
+                        if (!manual()) return;
                         runtime.setLocal(
                           {
                             display: { exploded: false },
@@ -252,16 +321,17 @@ export default function SimulationPanel({
                     电机启动
                   </label>
                   <label>
-                    目标 {Math.round(command.targetRpm)} RPM
+                    {names[id]}目标 {Math.round(command.targetRpm)} RPM
                     <input
+                      aria-label={`${names[id]}电机目标转速`}
                       type="range"
                       min={0}
                       max={6000}
                       step={60}
-                      disabled={!local}
+                      disabled={!local || snapshot.driver !== "manual"}
                       value={Math.min(6000, command.targetRpm)}
                       onChange={(event) => {
-                        manual();
+                        if (!manual()) return;
                         runtime.setLocal(
                           {
                             display: { exploded: false },

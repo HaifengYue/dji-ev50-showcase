@@ -1,6 +1,6 @@
 # 最终验证与复验说明
 
-**结论：当前冻结工程的独立物理验收 44/44 阶段通过，前端与 Python 五阶段通过。** 模型、生成输入与验证依赖在正式执行期间未发生漂移。以下结论绑定本工程实际文件，不使用候选预检代替正式结果。
+**结论：本轮界面重构的前端与Python五阶段重新执行通过；既有独立物理44/44阶段结论按严格不变输入复用。** 本轮未执行新的物理长扫。逐项复核原211项实际输入、输入锁及88份原物理结果，全部与初始化交付快照逐字节相同；检查见 [物理证据复用](../qa/frontend/physical-evidence-reuse.json)。以下几何、作者与运动数值均为原正式执行结果，未改写成新的运行。
 
 - [物理验收汇总](../qa/current/results/summary.json)、[44 阶段原始状态](../qa/current/results/status.log)
 - [211 项实际依赖输入锁](../qa/current/results/input-lock.json)、[SHA-256 文本清单](../qa/current/results/input-sha256.txt)
@@ -88,9 +88,11 @@
 
 ## 前端、Python 与视觉
 
-[五阶段检查](../qa/frontend/summary.json)的单元测试、飞行/真实 GLB 加载、格式、非删除式构建、Python 测试全部退出 0：154 个源码测试、5 个飞行测试、26 个 Python 单测通过。86 项输入稳定，9 项当前构建资源完成登记；构建使用 `--emptyOutDir false`，未删除原有文件。
+[五阶段检查](../qa/frontend/summary.json)的单元测试、飞行/真实 GLB 加载、格式、非删除式构建、Python 测试全部退出 0：167 个源码测试、5 个飞行测试、26 个 Python 单测通过。88 项输入稳定，9 项当前构建资源完成登记；构建使用 `--emptyOutDir false`，构建前后12个磁盘文件全部保留，其中3个未引用历史bundle不进入当前交付。
 
 当前媒体由真实模型、实际遮挡与完整网格离屏渲染，来源见 [渲染证据](../qa/visual/RENDER_EVIDENCE.json)。内部透明检视和宿主面强调均明确标注；渲染不是净距或碰撞的数值证明。用户原始标注截图不在发布工程中。
+
+本轮新增13项UI用例覆盖真实runtime/竞态与纯函数、源码断言和React静态标记。另独立执行 [UI源码/SSR检查](../qa/frontend/ui-source-report.json)，通过AST核对实际层级、CSS约束和五种尺寸的源码估计。精确UI变更及初始化映射中4个后续修改文件见 [UI变更来源](../qa/frontend/ui-change-provenance.json)。这些测试不能证明实际浏览器焦点、点击或最终布局像素。
 
 真实浏览器交互、触控、手机/Windows 硬件性能、制造与结构认证不在本次已通过范围内。
 

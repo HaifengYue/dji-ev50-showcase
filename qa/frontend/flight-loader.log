@@ -3,11 +3,11 @@ npm warn Unknown env config "http-proxy". This will stop working in the next maj
 > transwing-studio@1.0.0 test:qa
 > node --import tsx --test qa/flight-regression.test.ts && node qa/glb-loader-check.mjs
 
-✔ 八个飞行阶段及最终待命均可到达 (3.488986ms)
-✔ 阶段边界的高度、位置、展开程度与旋翼转速连续 (1.173447ms)
-✔ 全部时间轴状态有限且展开程度与旋翼转速有界 (12.166436ms)
-✔ 十轮自动循环保持完整阶段顺序并在终点重复 (17.580257ms)
-✔ 非循环模式限制终点时间、停止旋翼并返回原点待命 (2.530936ms)
+✔ 八个飞行阶段及最终待命均可到达 (2.121247ms)
+✔ 阶段边界的高度、位置、展开程度与旋翼转速连续 (0.601462ms)
+✔ 全部时间轴状态有限且展开程度与旋翼转速有界 (12.409156ms)
+✔ 十轮自动循环保持完整阶段顺序并在终点重复 (17.513615ms)
+✔ 非循环模式限制终点时间、停止旋翼并返回原点待命 (0.158999ms)
 ℹ tests 5
 ℹ suites 0
 ℹ pass 5
@@ -15,7 +15,7 @@ npm warn Unknown env config "http-proxy". This will stop working in the next maj
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 189.517314
+ℹ duration_ms 199.963534
 {
   "passed": true,
   "runtimeBytes": 2437828,

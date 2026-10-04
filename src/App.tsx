@@ -36,6 +36,8 @@ import { SimulationRuntime } from "./simulation";
 import { SimulationBridge } from "./simulationBridge";
 import { MOTOR_IDS, newMotorCommands, type MotorCommands } from "./motors";
 import { Euler, Quaternion } from "three";
+import { RecordingLoader } from "./recordingLoader";
+import { beginLocalControl, escapeTarget } from "./uiControl";
 const variants = [
   {
     id: "xp4" as Variant,
@@ -116,6 +118,17 @@ export default function App() {
         viewerId: `viewer_${crypto.randomUUID().replaceAll("-", "")}`,
       }),
   );
+  const [loader] = useState(() => new RecordingLoader(runtime, bridge));
+  const [workspace, setWorkspace] = useState<"mechanism" | "simulation">(
+    "mechanism",
+  );
+  const [modal, setModal] = useState<"info" | "properties" | null>(null);
+  const [resetRequest, requestReset] = useState(0);
+  const modalReturnFocus = useRef<HTMLElement | null>(null);
+  const openModal = (kind: "info" | "properties") => {
+    modalReturnFocus.current = document.activeElement as HTMLElement;
+    setModal(kind);
+  };
   const [variant] = useState<Variant>("xp4"),
     [loop, setLoop] = useState(true),
     [rate, setRate] = useState(1),
@@ -129,7 +142,6 @@ export default function App() {
         window.matchMedia("(prefers-reduced-motion: reduce)").matches,
     ),
     [loaded, setLoaded] = useState(false),
-    [showInfo, setShowInfo] = useState(false),
     [menuOpen, setMenuOpen] = useState(false);
   const {
     state,
@@ -166,23 +178,31 @@ export default function App() {
   useEffect(() => {
     if (detailView || displayedExploded) setInternalDriveRequested(false);
   }, [detailView, displayedExploded]);
-  const dispatchTilt = (action: TiltAction) =>
-    dispatch({ type: "tilt", action });
+  const localInput = (driver: "demo" | "manual" = "demo") =>
+    beginLocalControl(runtime, bridge, loader, driver);
+  const dispatchTilt = (action: TiltAction) => {
+    if (localInput()) dispatch({ type: "tilt", action });
+  };
   const unfold = externallyControlled
     ? simulation.state.wingTilt
     : displayedUnfold(state);
   const flightView =
     externallyControlled || (!tiltMode && (time > 0 || playing));
-  const enterTilt = () => dispatch({ type: "enter-tilt" });
+  const enterTilt = () => {
+    if (localInput()) dispatch({ type: "enter-tilt" });
+  };
   const leaveTilt = () => {
+    if (!localInput()) return;
     setInternalDriveRequested(false);
     dispatch({ type: "leave-tilt" });
   };
   const inspectJoint = (side: "L" | "R" = "R") => {
+    if (!localInput()) return;
     setInternalDriveRequested(false);
     dispatch({ type: "joint", side });
   };
   const selectInspection = (view: CameraView) => {
+    if (!localInput()) return;
     setInternalDriveRequested(false);
     dispatch({ type: "inspect", view });
   };
@@ -196,8 +216,8 @@ export default function App() {
     setInternalDriveRequested(!internalDriveInspection);
   };
   const playFlight = () => {
+    if (!localInput()) return;
     setInternalDriveRequested(false);
-    runtime.setLocal({}, "demo");
     dispatch({ type: "play-flight" });
   };
   const phase = getFlight(time),
@@ -322,78 +342,76 @@ export default function App() {
   }, [runtime, bridge]);
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && internalDriveInspection && !showInfo) {
-        setInternalDriveRequested(false);
+      if (e.key === "Escape") {
+        const target = escapeTarget({
+          modal: !!modal,
+          menu: menuOpen,
+          drive: internalDriveInspection,
+          detail: !!detailView,
+        });
+        if (target) e.preventDefault();
+        if (target === "modal") setModal(null);
+        else if (target === "menu") setMenuOpen(false);
+        else if (target === "drive") setInternalDriveRequested(false);
+        else if (target === "detail") dispatch({ type: "close-detail" });
         return;
       }
-      if (externallyControlled) {
-        if (e.key === "Escape") {
-          void bridge.close();
-          setShowInfo(false);
-          setMenuOpen(false);
-        }
+      if (modal || menuOpen || runtime.getSnapshot().control !== "local")
         return;
-      }
-      if (showInfo && e.key !== "Escape") return;
       if (
-        e.code === "Space" &&
-        !(e.target as HTMLElement).isContentEditable &&
-        !["INPUT", "BUTTON", "SELECT", "TEXTAREA"].includes(
+        e.code !== "Space" ||
+        (e.target as HTMLElement).isContentEditable ||
+        ["INPUT", "BUTTON", "SELECT", "TEXTAREA", "SUMMARY", "A"].includes(
           (e.target as HTMLElement).tagName,
         )
-      ) {
-        e.preventDefault();
-        if (detailView) return;
-        if (tiltMode) {
-          dispatchTilt(
-            tilt.playing
-              ? { type: "pause" }
-              : {
-                  type: "begin",
-                  direction:
-                    tilt.progress >= 1
-                      ? -1
-                      : tilt.progress <= 0
-                        ? 1
-                        : tilt.direction,
-                },
-          );
-        } else {
-          playFlight();
-        }
-      }
-      if (e.key === "Escape") {
-        if (!showInfo && detailView) dispatch({ type: "close-detail" });
-        setShowInfo(false);
-        setMenuOpen(false);
-      }
+      )
+        return;
+      e.preventDefault();
+      if (detailView) return;
+      if (workspace === "mechanism") {
+        enterTilt();
+        dispatchTilt(
+          tilt.playing
+            ? { type: "pause" }
+            : {
+                type: "begin",
+                direction: unfold >= 1 ? -1 : unfold <= 0 ? 1 : tilt.direction,
+              },
+        );
+      } else if (runtime.getSnapshot().driver === "demo") playFlight();
     };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    window.addEventListener("keydown", onKey, true);
+    return () => window.removeEventListener("keydown", onKey, true);
   }, [
-    tiltMode,
-    tilt.playing,
-    tilt.direction,
-    tilt.progress,
-    showInfo,
-    time,
+    workspace,
+    tilt,
+    unfold,
+    modal,
+    menuOpen,
     detailView,
-    externallyControlled,
     internalDriveInspection,
+    playing,
   ]);
   useEffect(() => {
-    if (!showInfo) return;
-    const previous = document.activeElement as HTMLElement;
+    if (!modal) return;
+    const previous =
+      modalReturnFocus.current ?? (document.activeElement as HTMLElement);
     const before = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    document.querySelector<HTMLButtonElement>(".info-modal .close")?.focus();
+    const dialog = document.querySelector<HTMLElement>("[data-app-dialog]")!;
+    dialog.querySelector<HTMLButtonElement>(".close")?.focus();
     const trap = (e: KeyboardEvent) => {
       if (e.key !== "Tab") return;
       const nodes = Array.from(
-        document.querySelectorAll<HTMLElement>(
-          ".info-modal button,.info-modal a",
+        dialog.querySelectorAll<HTMLElement>(
+          'button:not(:disabled),a[href],input:not(:disabled),select:not(:disabled),textarea:not(:disabled),[tabindex="0"]',
         ),
       );
+      if (!nodes.length) {
+        e.preventDefault();
+        dialog.focus();
+        return;
+      }
       if (e.shiftKey && document.activeElement === nodes[0]) {
         e.preventDefault();
         nodes.at(-1)?.focus();
@@ -406,17 +424,25 @@ export default function App() {
     return () => {
       document.body.style.overflow = before;
       window.removeEventListener("keydown", trap);
-      previous?.focus();
+      if (previous?.isConnected) previous.focus();
     };
-  }, [showInfo]);
+  }, [modal]);
+  // 外控退出先由桥同步归还 runtime，随后在新渲染里复位受保护的 UI 状态。
+  useEffect(() => {
+    if (resetRequest && !externallyControlled) {
+      setInternalDriveRequested(false);
+      dispatch({ type: "reset" });
+    }
+  }, [resetRequest, externallyControlled]);
   const reset = () => {
     setInternalDriveRequested(false);
-    void bridge.close();
+    if (!localInput()) return;
+    runtime.resetLocal();
     dispatch({ type: "reset" });
   };
   const manualControl = () => {
     setPlaying(false);
-    dispatchTilt({ type: "pause" });
+    dispatch({ type: "tilt", action: { type: "pause" } });
     dispatch({ type: "close-detail" });
     setExploded(false);
     setAutoRotate(false);
@@ -424,284 +450,385 @@ export default function App() {
 
   return (
     <div className="app-shell">
-      <header className="topbar">
-        <a className="brand" href="#" aria-label="Transwing 首页">
-          <span className="brand-mark">
-            T<span>W</span>
-          </span>
-          <span>
-            TRANSWING<small>飞行形态研究室 / 整翼倾转</small>
-          </span>
-        </a>
-        <nav className={menuOpen ? "nav open" : "nav"} aria-label="主导航">
+      <div className="app-content" inert={!!modal}>
+        <header className="topbar">
           <a
+            className="brand"
             href="#experience"
-            className="active"
-            onClick={() => setMenuOpen(false)}
+            aria-label="Transwing 飞行研究室"
           >
-            交互体验 <span>01</span>
+            <span className="brand-mark">
+              T<span>W</span>
+            </span>
+            <span>
+              TRANSWING<small>整翼倾转 · 交互研究室</small>
+            </span>
           </a>
+          <nav
+            className={menuOpen ? "nav open" : "nav"}
+            aria-label="工作区导航"
+          >
+            <button
+              className={workspace === "mechanism" ? "active" : ""}
+              aria-pressed={workspace === "mechanism"}
+              onClick={() => {
+                setWorkspace("mechanism");
+                setMenuOpen(false);
+              }}
+            >
+              机构演示
+            </button>
+            <button
+              className={workspace === "simulation" ? "active" : ""}
+              aria-pressed={workspace === "simulation"}
+              onClick={() => {
+                setWorkspace("simulation");
+                setMenuOpen(false);
+              }}
+            >
+              仿真接口
+            </button>
+          </nav>
+          <div className="header-actions">
+            <button
+              className="property-trigger"
+              onClick={() => openModal("properties")}
+              aria-haspopup="dialog"
+            >
+              <Settings2 size={16} /> 飞行器属性
+            </button>
+            <button
+              className="research-trigger"
+              onClick={() => openModal("info")}
+              aria-haspopup="dialog"
+            >
+              研究说明 <ArrowUpRight size={15} />
+            </button>
+          </div>
           <button
-            onClick={() => {
-              setShowInfo(true);
-              setMenuOpen(false);
-            }}
+            className="mobile-menu icon-button"
+            aria-label="切换导航菜单"
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen(!menuOpen)}
           >
-            设计原理 <span>02</span>
+            <Menu size={20} />
           </button>
-          <a href="#airframes" onClick={() => setMenuOpen(false)}>
-            形态研究 <span>03</span>
-          </a>
-        </nav>
-        <div className="header-status">
-          <span className="status-dot" />
-          实时 3D 实验室
-        </div>
-        <button
-          className="mobile-menu icon-button"
-          aria-label="切换导航菜单"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          <Menu size={20} />
-        </button>
-      </header>
-      <main id="experience">
-        <section
-          className={`experience${inspection || internalDriveInspection ? " inspecting" : ""}${jointSide ? " joint-inspection" : ""}${detailView ? " detail-inspection" : ""}${internalDriveInspection ? " drive-inspection" : ""}${flightView ? " in-flight" : ""}${tiltMode ? " mechanism-active" : ""}`}
-          aria-label="交互飞行实验室"
-        >
-          <div className="scene">
-            <SceneBoundary resetKey={variant}>
-              <Scene
-                runtime={runtime}
-                variant={variant}
-                time={time}
-                tiltProgress={tiltMode ? tilt.progress : null}
-                wireframe={wireframe}
-                internalDriveInspection={internalDriveInspection}
-                exploded={simulation.state.display.exploded}
-                cameraView={cameraView}
-                cameraReset={cameraReset}
-                inspection={externallyControlled ? false : inspection}
-                jointSide={jointSide}
-                detailView={detailView}
-                detailPose={detailPose}
-                showAxes={showAxes}
-                flightView={flightView}
-                autoRotate={autoRotate}
-                lowQuality={lowQuality}
-                onLoaded={onLoaded}
-                onCloseDetail={() => dispatch({ type: "close-detail" })}
-                environment={environment}
-              />
-            </SceneBoundary>
-          </div>
-          <div className="scene-vignette" />
-          <div className="hero-copy" inert={externallyControlled}>
-            <div className="eyebrow">
-              <span /> 在形态之间，探索飞行的可能
+        </header>
+        <main id="experience">
+          <div className="workspace-heading">
+            <div>
+              <span className="eyebrow">P4 参考构型 / 交互视景</span>
+              <h1>
+                看见每一次形态转换<span>.</span>
+              </h1>
             </div>
-            <h1>
-              不止一种
-              <br />
-              飞行形态<span className="title-dot">.</span>
-            </h1>
-            <p>
-              垂直起降的自由。固定翼飞行的从容。
-              <br />
-              让整翼的每一次转动，连接两种可能。
-            </p>
-            <button
-              className="text-link"
-              onClick={() => {
-                enterTilt();
-                setJointSide(null);
-                setCameraView("perspective");
-                dispatchTilt({
-                  type: "begin",
-                  direction: unfold >= 1 ? -1 : 1,
-                });
-              }}
-            >
-              {unfold >= 1 ? "观看连续收拢" : "观看连续展开"}{" "}
-              <ArrowUpRight size={17} />
-            </button>
+            <p>自由观察机体，独立探索机构，或接入同一仿真状态。</p>
           </div>
-          <div className="scene-heading">
-            <span className="corner" />
-            <span>机体编号 / {model.index}</span>
-            <strong>{model.code}</strong>
-            <span className="concept-badge">{model.tag}</span>
-          </div>
-          <div className="vertical-label">倾斜铰链 / 整翼倾转技术</div>
-          <div className="model-label">
-            <span className="target-cross">+</span>
-            <span>
-              {model.name}
-              <small>
-                {unfold > 0.98
-                  ? "固定翼巡航构型"
-                  : unfold > 0.02
-                    ? "连续整翼转换"
-                    : "紧凑垂直起降构型"}
-              </small>
-            </span>
-            <div className="leader" />
-          </div>
-          <div className="scene-tools" aria-label="视图工具">
-            <button
-              disabled={externallyControlled}
-              className={
-                detailView
-                  ? "selected icon-button detail-entry"
-                  : "icon-button detail-entry"
-              }
-              aria-label="细节检查"
-              title="舵面、舱盖、探头与动力系统细节检查"
-              aria-pressed={!!detailView}
-              onClick={() =>
-                dispatch(
-                  detailView
-                    ? { type: "close-detail" }
-                    : { type: "detail", view: "wing" },
-                )
-              }
+          <div className="viewport-shell">
+            <div className="viewport-header">
+              <div className="viewport-title">
+                <span
+                  className={loaded ? "status-dot" : "status-dot loading"}
+                />
+                <strong>三维视景</strong>
+                <span>{loaded ? "模型已就绪" : "模型载入中"}</span>
+              </div>
+              <div
+                className="environment-toggle"
+                role="group"
+                aria-label="场景环境"
+              >
+                <button
+                  disabled={externallyControlled}
+                  className={environment === "hangar" ? "active" : ""}
+                  aria-pressed={environment === "hangar"}
+                  onClick={() => setEnvironment("hangar")}
+                >
+                  机库
+                </button>
+                <button
+                  disabled={externallyControlled}
+                  className={environment === "sky" ? "active" : ""}
+                  aria-pressed={environment === "sky"}
+                  onClick={() => setEnvironment("sky")}
+                >
+                  开阔天空
+                </button>
+              </div>
+            </div>
+            <section
+              className={`experience${inspection || internalDriveInspection ? " inspecting" : ""}${jointSide ? " joint-inspection" : ""}${detailView ? " detail-inspection" : ""}${internalDriveInspection ? " drive-inspection" : ""}${flightView ? " in-flight" : ""}${tiltMode ? " mechanism-active" : ""}${detailView || internalDriveInspection || (!externallyControlled && inspection) ? " has-inspector" : ""}`}
+              aria-label="交互飞行实验室"
             >
-              <Focus size={18} />
-              <span>细节</span>
-            </button>
-            <button
-              disabled={externallyControlled}
-              className={wireframe ? "selected icon-button" : "icon-button"}
-              aria-label="线框视图"
-              title="线框视图"
-              aria-pressed={wireframe}
-              onClick={() => setWireframe(!wireframe)}
-            >
-              <Box size={18} />
-            </button>
-            <button
-              className={
-                internalDriveInspection
-                  ? "selected icon-button drive-entry"
-                  : "icon-button drive-entry"
-              }
-              aria-label="内部驱动视图"
-              title="移开外壳，检查中央驱动与左右连杆；内部布局为概念重建"
-              aria-pressed={internalDriveInspection}
-              disabled={
-                externallyControlled && simulation.state.display.exploded
-              }
-              onClick={toggleInternalDrive}
-            >
-              <ScanLine size={18} />
-              <span>内部驱动</span>
-            </button>
-            <button
-              disabled={externallyControlled}
-              className={exploded ? "selected icon-button" : "icon-button"}
-              aria-label="结构拆解"
-              title="结构拆解：机翼与连杆接头分离，连杆不伸长"
-              aria-pressed={exploded}
-              onClick={() => {
-                setInternalDriveRequested(false);
-                setJointSide(null);
-                setExploded(!exploded);
-                setPlaying(false);
-                dispatchTilt({ type: "pause" });
-              }}
-            >
-              <Layers3 size={18} />
-            </button>
-            <button
-              disabled={externallyControlled}
-              className={autoRotate ? "selected icon-button" : "icon-button"}
-              aria-label="360度自动环绕"
-              title="360° 自动环绕"
-              aria-pressed={autoRotate}
-              onClick={() => {
-                setInternalDriveRequested(false);
-                enterTilt();
-                dispatchTilt({ type: "pause" });
-                setJointSide(null);
-                setInspection(false);
-                setAutoRotate(!autoRotate);
-              }}
-            >
-              <RotateCw size={18} />
-            </button>
-            <span />
-            <button
-              disabled={externallyControlled}
-              className="icon-button"
-              aria-label="恢复默认视角"
-              title="恢复默认视角"
-              onClick={() => {
-                setInternalDriveRequested(false);
-                setJointSide(null);
-                if (!tiltMode) setInspection(false);
-                setCameraView("perspective");
-                setCameraReset((n) => n + 1);
-                setAutoRotate(false);
-              }}
-            >
-              <Crosshair size={18} />
-            </button>
-          </div>
-          <div className="scene-bottom" inert={externallyControlled}>
-            <span>
-              <i className={loaded ? "status-dot" : "status-dot loading"} />
-              {loaded
-                ? internalDriveInspection
-                  ? "内部驱动 / 外壳暂时移开 · 同源机构联动"
-                  : exploded
-                    ? "拆解示意 / 机翼与连杆接头已分离"
-                    : detailView
-                      ? "细节检查 / 静态限幅示意"
-                      : inspection
-                        ? jointSide
-                          ? "关节与连杆 / 同步机构运动"
-                          : "正交检查 / 机体航向已固定"
-                        : "模型已就绪 / 拖动旋转 · 滚轮缩放 · 右键/双指平移"
-                : "正在载入原生三维模型"}
-            </span>
-            <div className="inspection-panel">
-              <div className="inspection-heading">
-                <span>多角度检查</span>
-                {inspection ? (
-                  <>
-                    <small>
-                      {internalDriveInspection
-                        ? "内部驱动 · 可自由旋转"
-                        : jointSide
-                          ? "关节特写"
-                          : cameraView === "top"
-                            ? "正交俯视 · 机头朝上"
-                            : "正交投影 · 同一机体"}
-                    </small>
-                    <button
-                      onClick={() => {
-                        setInternalDriveRequested(false);
-                        dispatchTilt({ type: "pause" });
-                        setJointSide(null);
-                        setInspection(false);
-                      }}
-                    >
-                      自由观察
-                    </button>
-                  </>
-                ) : (
-                  <small>选择视角，暂停并对齐机体</small>
+              <div className="scene">
+                <SceneBoundary resetKey={variant}>
+                  <Scene
+                    runtime={runtime}
+                    variant={variant}
+                    time={time}
+                    tiltProgress={tiltMode ? tilt.progress : null}
+                    wireframe={wireframe}
+                    internalDriveInspection={internalDriveInspection}
+                    exploded={simulation.state.display.exploded}
+                    cameraView={cameraView}
+                    cameraReset={cameraReset}
+                    inspection={externallyControlled ? false : inspection}
+                    jointSide={jointSide}
+                    detailView={detailView}
+                    detailPose={detailPose}
+                    showAxes={showAxes}
+                    flightView={flightView}
+                    autoRotate={autoRotate}
+                    lowQuality={lowQuality}
+                    onLoaded={onLoaded}
+                    onCloseDetail={() => dispatch({ type: "close-detail" })}
+                    environment={environment}
+                  />
+                </SceneBoundary>
+              </div>
+              {detailView && (
+                <DetailPanel
+                  view={detailView}
+                  pose={detailPose}
+                  onSelect={(view) => dispatch({ type: "detail", view })}
+                  onChange={(control, degrees) =>
+                    dispatch({ type: "detail-pose", control, degrees })
+                  }
+                  onClose={() => dispatch({ type: "close-detail" })}
+                  onNeutral={() => dispatch({ type: "detail-neutral" })}
+                />
+              )}
+              {internalDriveInspection && (
+                <InternalDrivePanel
+                  progress={unfold}
+                  external={externallyControlled}
+                  onClose={() => setInternalDriveRequested(false)}
+                />
+              )}
+              {!externallyControlled &&
+                inspection &&
+                !detailView &&
+                !internalDriveInspection && (
+                  <div className="inspection-context">
+                    <span>
+                      {jointSide
+                        ? `${jointSide === "R" ? "右" : "左"}侧翼根关节与连杆`
+                        : cameraView === "top"
+                          ? "正交俯视 · 机头朝上"
+                          : "整翼机构检查"}
+                    </span>
+                    <strong>
+                      {Math.round(unfold * 100)}
+                      <small>% 展开</small>
+                    </strong>
+                    <p>
+                      {jointSide
+                        ? "黑色连杆随翼端摆动，后端滑架同步移动。金色虚线为模型旋转轴，浅绿色弧线为 0–120° 运动范围。"
+                        : "机身航向固定。切换视角保留当前展开程度。"}
+                      {
+                        " 滚轮或双指缩放，右键或双指拖动平移；可将细节移到画面中央。"
+                      }
+                    </p>
+                    {!jointSide && (
+                      <div
+                        className="pose-presets"
+                        role="group"
+                        aria-label="检查形态预设"
+                      >
+                        {[
+                          { value: 0, label: "折叠" },
+                          { value: 0.5, label: "转换" },
+                          { value: 1, label: "巡航" },
+                        ].map(({ value, label }) => (
+                          <button
+                            key={value}
+                            aria-pressed={Math.abs(unfold - value) < 0.001}
+                            onClick={() => {
+                              enterTilt();
+                              dispatchTilt({ type: "scrub", progress: value });
+                            }}
+                          >
+                            {label}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                    {jointSide && (
+                      <>
+                        <div
+                          className="joint-side-switch"
+                          role="group"
+                          aria-label="检查哪侧关节"
+                        >
+                          <button
+                            aria-pressed={jointSide === "L"}
+                            onClick={() => inspectJoint("L")}
+                          >
+                            左关节
+                          </button>
+                          <button
+                            aria-pressed={jointSide === "R"}
+                            onClick={() => inspectJoint("R")}
+                          >
+                            右关节
+                          </button>
+                        </div>
+                        <label className="axis-toggle">
+                          <input
+                            type="checkbox"
+                            checked={showAxes}
+                            onChange={(e) => setShowAxes(e.target.checked)}
+                          />
+                          显示轴线与转角
+                        </label>
+                        <small>
+                          模型转角 {(unfold * 120).toFixed(1)}° · 理想化机构示意
+                        </small>
+                        <button
+                          className="joint-back"
+                          onClick={() => selectInspection("perspective")}
+                        >
+                          返回整机检查 ↗
+                        </button>
+                      </>
+                    )}
+                  </div>
                 )}
+            </section>
+            <div className="viewport-toolbar">
+              <div className="scene-tools" aria-label="视图工具">
+                <button
+                  disabled={externallyControlled}
+                  className={
+                    detailView
+                      ? "selected icon-button detail-entry"
+                      : "icon-button detail-entry"
+                  }
+                  aria-label="细节检查"
+                  title="舵面、舱盖、探头与动力系统细节检查"
+                  aria-pressed={!!detailView}
+                  onClick={() => {
+                    if (!localInput()) return;
+                    dispatch(
+                      detailView
+                        ? { type: "close-detail" }
+                        : { type: "detail", view: "wing" },
+                    );
+                  }}
+                >
+                  <Focus size={18} />
+                  <span>细节</span>
+                </button>
+                <button
+                  disabled={externallyControlled}
+                  className={wireframe ? "selected icon-button" : "icon-button"}
+                  aria-label="线框视图"
+                  title="线框视图"
+                  aria-pressed={wireframe}
+                  onClick={() => setWireframe(!wireframe)}
+                >
+                  <Box size={18} />
+                </button>
+                <button
+                  className={
+                    internalDriveInspection
+                      ? "selected icon-button drive-entry"
+                      : "icon-button drive-entry"
+                  }
+                  aria-label="内部驱动视图"
+                  title="移开外壳，检查中央驱动与左右连杆；内部布局为概念重建"
+                  aria-pressed={internalDriveInspection}
+                  disabled={
+                    externallyControlled && simulation.state.display.exploded
+                  }
+                  onClick={toggleInternalDrive}
+                >
+                  <ScanLine size={18} />
+                  <span>内部驱动</span>
+                </button>
+                <button
+                  disabled={externallyControlled}
+                  className={exploded ? "selected icon-button" : "icon-button"}
+                  aria-label="结构拆解"
+                  title="结构拆解：机翼与连杆接头分离，连杆不伸长"
+                  aria-pressed={exploded}
+                  onClick={() => {
+                    if (!localInput()) return;
+                    setInternalDriveRequested(false);
+                    setJointSide(null);
+                    setExploded(!exploded);
+                    setPlaying(false);
+                    dispatchTilt({ type: "pause" });
+                  }}
+                >
+                  <Layers3 size={18} />
+                </button>
+                <button
+                  disabled={externallyControlled}
+                  className={
+                    autoRotate ? "selected icon-button" : "icon-button"
+                  }
+                  aria-label="360度自动环绕"
+                  title="360° 自动环绕"
+                  aria-pressed={autoRotate}
+                  onClick={() => {
+                    if (!localInput()) return;
+                    setInternalDriveRequested(false);
+                    enterTilt();
+                    dispatchTilt({ type: "pause" });
+                    setJointSide(null);
+                    setInspection(false);
+                    setAutoRotate(!autoRotate);
+                  }}
+                >
+                  <RotateCw size={18} />
+                </button>
+                <span />
+                <button
+                  disabled={externallyControlled}
+                  className="icon-button"
+                  aria-label="恢复默认视角"
+                  title="恢复默认视角并返回自由观察"
+                  onClick={() => {
+                    if (!localInput(simulation.driver)) return;
+                    setInternalDriveRequested(false);
+                    setJointSide(null);
+                    setInspection(false);
+                    setCameraView("perspective");
+                    setCameraReset((n) => n + 1);
+                    setAutoRotate(false);
+                  }}
+                >
+                  <Crosshair size={18} />
+                </button>
               </div>
               <div
                 className="camera-presets"
                 role="group"
                 aria-label="多角度检查"
+                inert={externallyControlled}
               >
+                <button
+                  title="返回透视观察，可自由拖动旋转"
+                  aria-pressed={
+                    !inspection && !detailView && !internalDriveInspection
+                  }
+                  onClick={() => {
+                    if (!localInput(simulation.driver)) return;
+                    setInternalDriveRequested(false);
+                    dispatch({ type: "tilt", action: { type: "pause" } });
+                    setJointSide(null);
+                    setInspection(false);
+                    setCameraView("perspective");
+                    setCameraReset((value) => value + 1);
+                  }}
+                >
+                  自由观察
+                </button>
                 {INSPECTION_VIEWS.map(({ id, label, detail }) => (
                   <button
                     key={id}
+                    title={detail}
                     aria-pressed={
                       inspection &&
                       !jointSide &&
@@ -709,210 +836,152 @@ export default function App() {
                       !internalDriveInspection &&
                       cameraView === id
                     }
-                    title={detail}
-                    onClick={() => {
-                      selectInspection(id);
-                    }}
+                    onClick={() => selectInspection(id)}
                   >
                     {label}
                   </button>
                 ))}
               </div>
             </div>
-            <span className="scene-number">
-              场景 0{environment === "hangar" ? 1 : 2} <span>/</span>{" "}
-              {environment === "hangar" ? "机库" : "开阔天空"}
-            </span>
-          </div>
-          {detailView && (
-            <DetailPanel
-              view={detailView}
-              pose={detailPose}
-              onSelect={(view) => dispatch({ type: "detail", view })}
-              onChange={(control, degrees) =>
-                dispatch({ type: "detail-pose", control, degrees })
-              }
-              onClose={() => dispatch({ type: "close-detail" })}
-              onNeutral={() => dispatch({ type: "detail-neutral" })}
-            />
-          )}
-          {internalDriveInspection && (
-            <InternalDrivePanel
-              progress={unfold}
-              external={externallyControlled}
-              onClose={() => setInternalDriveRequested(false)}
-            />
-          )}
-          {inspection && !detailView && !internalDriveInspection && (
-            <div className="inspection-context">
-              <span>
-                {jointSide
-                  ? `${jointSide === "R" ? "右" : "左"}侧翼根关节与连杆`
-                  : cameraView === "top"
-                    ? "正交俯视 · 机头朝上"
-                    : "整翼机构检查"}
-              </span>
-              <strong>
-                {Math.round(unfold * 100)}
-                <small>% 展开</small>
-              </strong>
-              <p>
-                {jointSide
-                  ? "黑色连杆随翼端摆动，后端滑架同步移动。金色虚线为模型旋转轴，浅绿色弧线为 0–120° 运动范围。"
-                  : "机身航向固定。切换视角保留当前展开程度。"}
-                {" 滚轮或双指缩放，右键或双指拖动平移；可将细节移到画面中央。"}
-              </p>
-              {!jointSide && (
-                <div
-                  className="pose-presets"
-                  role="group"
-                  aria-label="检查形态预设"
-                >
-                  {[
-                    { value: 0, label: "折叠" },
-                    { value: 0.5, label: "转换" },
-                    { value: 1, label: "巡航" },
-                  ].map(({ value, label }) => (
-                    <button
-                      key={value}
-                      aria-pressed={Math.abs(unfold - value) < 0.001}
-                      onClick={() => {
-                        enterTilt();
-                        dispatchTilt({ type: "scrub", progress: value });
-                      }}
-                    >
-                      {label}
-                    </button>
-                  ))}
-                </div>
-              )}
-              {jointSide && (
-                <>
-                  <div
-                    className="joint-side-switch"
-                    role="group"
-                    aria-label="检查哪侧关节"
-                  >
-                    <button
-                      aria-pressed={jointSide === "L"}
-                      onClick={() => inspectJoint("L")}
-                    >
-                      左关节
-                    </button>
-                    <button
-                      aria-pressed={jointSide === "R"}
-                      onClick={() => inspectJoint("R")}
-                    >
-                      右关节
-                    </button>
-                  </div>
-                  <label className="axis-toggle">
-                    <input
-                      type="checkbox"
-                      checked={showAxes}
-                      onChange={(e) => setShowAxes(e.target.checked)}
-                    />
-                    显示轴线与转角
-                  </label>
-                  <small>
-                    模型转角 {(unfold * 120).toFixed(1)}° · 理想化机构示意
-                  </small>
-                  <button
-                    className="joint-back"
-                    onClick={() => selectInspection("perspective")}
-                  >
-                    返回整机检查 ↗
-                  </button>
-                </>
-              )}
+            <div className="viewport-status">
+              <span>拖动旋转 · 滚轮缩放 · 右键 / 双指平移</span>
+              <div>
+                <span data-testid="flight-phase">
+                  {externallyControlled
+                    ? simulation.control === "replay"
+                      ? "JSON 记录回放"
+                      : "Python 外部控制"
+                    : simulation.driver === "manual"
+                      ? "手动电机控制"
+                      : detailView
+                        ? "静态细节检查"
+                        : tiltMode
+                          ? tilt.playing
+                            ? tilt.direction === 1
+                              ? "连续展开中"
+                              : "连续收拢中"
+                            : "机构已暂停"
+                          : playing
+                            ? phase.phase.label
+                            : "待命 / 已暂停"}
+                </span>
+                <strong>
+                  {Math.round(unfold * 100)}% <small>整翼展开</small>
+                </strong>
+              </div>
             </div>
-          )}
+          </div>
           <div
-            className="scene-transport"
+            className="workspace-tabs"
             role="group"
-            aria-label="场景内倾转控制"
-            inert={externallyControlled}
+            aria-label="选择控制工作区"
           >
             <button
-              disabled={unfold >= 1}
-              onClick={() => {
-                enterTilt();
-                dispatchTilt({ type: "begin", direction: 1 });
-              }}
+              aria-pressed={workspace === "mechanism"}
+              aria-controls="mechanism-panel"
+              onClick={() => setWorkspace("mechanism")}
             >
-              <MoveUpRight size={15} />
-              展开
+              <MoveUpRight size={18} />
+              <span>
+                机构演示<small>形态 · 行程 · 连接</small>
+              </span>
             </button>
             <button
-              disabled={unfold <= 0}
-              onClick={() => {
-                enterTilt();
-                dispatchTilt({ type: "begin", direction: -1 });
-              }}
+              aria-pressed={workspace === "simulation"}
+              aria-controls="simulation-panel"
+              onClick={() => setWorkspace("simulation")}
             >
-              <RotateCcw size={15} />
-              收拢
+              <Settings2 size={18} />
+              <span>
+                仿真接口<small>连续飞行 · 四电机 · Python</small>
+              </span>
             </button>
-            <button
-              aria-label="暂停当前演示"
-              disabled={!playing && !tilt.playing}
-              onClick={() => {
-                setPlaying(false);
-                dispatchTilt({ type: "pause" });
-              }}
-            >
-              <Pause size={15} />
-            </button>
-            <span />
-            <button
-              aria-pressed={!!jointSide}
-              onClick={() => inspectJoint(jointSide ?? "R")}
-            >
-              <Focus size={15} />
-              关节特写
-            </button>
+            <span className="control-badge">
+              当前控制：
+              {externallyControlled
+                ? simulation.control === "replay"
+                  ? "JSON 回放"
+                  : "Python"
+                : simulation.driver === "manual"
+                  ? "手动电机"
+                  : "本地演示"}
+            </span>
           </div>
-          <div className="telemetry">
-            <div>
-              <span>飞行状态</span>
-              <strong data-testid="flight-phase">
-                {externallyControlled
-                  ? simulation.control === "replay"
-                    ? "Python记录回放"
-                    : "Python外部控制"
-                  : detailView
-                    ? "静态细节检查"
-                    : tiltMode
-                      ? tilt.playing
-                        ? tilt.direction === 1
-                          ? "连续展开中"
-                          : "连续收拢中"
-                        : unfold <= 0.001
-                          ? "折叠待命"
-                          : unfold >= 0.999
-                            ? "巡航构型"
-                            : "机构已暂停"
-                      : time >= TOTAL
-                        ? "飞行完成"
-                        : phase.phase.label}
-              </strong>
+          {workspace === "mechanism" && externallyControlled && (
+            <div className="ownership-notice" role="status">
+              当前由 {simulation.control === "replay" ? "JSON 回放" : "Python"}{" "}
+              控制。机构操作已锁定，切换页面不会中断输入。
+              <button onClick={() => setWorkspace("simulation")}>
+                前往仿真接口管理控制源 ↗
+              </button>
             </div>
+          )}
+          <section
+            className="tilt-console"
+            id="mechanism-panel"
+            hidden={workspace !== "mechanism"}
+            aria-label="独立机构演示"
+            inert={externallyControlled}
+          >
             <div>
-              <span>整翼展开进度</span>
-              <strong>
-                {Math.round(unfold * 100)}
-                <small>%</small>
-              </strong>
+              <span className="eyebrow">独立机构演示</span>
+              <h2>一个机体，两种可能</h2>
+              <p>
+                整翼与动力舱共同转动，定长连杆与滑架同步运动。选择形态，或用八秒连续转换看清每一次连接。
+              </p>
+              <div
+                className="mechanism-presets"
+                role="group"
+                aria-label="机构形态预设"
+              >
+                {[
+                  {
+                    progress: 0,
+                    title: "垂直起降",
+                    detail: "整翼收拢 · 升力向上",
+                  },
+                  {
+                    progress: 0.5,
+                    title: "整翼转换",
+                    detail: "倾斜铰链 · 连续转动",
+                  },
+                  {
+                    progress: 1,
+                    title: "固定翼巡航",
+                    detail: "翼面展开 · 推力向前",
+                  },
+                ].map((pose) => (
+                  <button
+                    key={pose.progress}
+                    aria-pressed={Math.abs(unfold - pose.progress) < 0.001}
+                    onClick={() => {
+                      enterTilt();
+                      dispatchTilt({ type: "scrub", progress: pose.progress });
+                    }}
+                  >
+                    <Silhouette fold={1 - pose.progress} />
+                    <strong>{pose.title}</strong>
+                    <small>{pose.detail}</small>
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div className="tilt-controls">
+              <label htmlFor="wing-tilt">
+                整翼展开进度{" "}
+                <strong data-testid="tilt-value">
+                  {Math.round(unfold * 100)}%
+                </strong>
+              </label>
               <input
-                className="scrubber scene-tilt-slider"
-                aria-label="场景内整翼展开进度"
-                disabled={externallyControlled}
-                aria-valuetext={`${Math.round(unfold * 100)}% 展开`}
+                id="wing-tilt"
+                className="scrubber"
                 type="range"
                 min="0"
                 max="100"
                 step="0.1"
                 value={unfold * 100}
+                aria-valuetext={`${Math.round(unfold * 100)}% 展开`}
                 onChange={(e) => {
                   enterTilt();
                   dispatchTilt({
@@ -924,441 +993,364 @@ export default function App() {
                   { "--progress": `${unfold * 100}%` } as React.CSSProperties
                 }
               />
-            </div>
-            <span className="telemetry-note">
-              {externallyControlled
-                ? "仿真输入 / 非实测遥测"
-                : "概念动画 / 非飞行遥测"}
-            </span>
-          </div>
-        </section>
-        <SimulationPanel
-          runtime={runtime}
-          bridge={bridge}
-          onManual={manualControl}
-          onExternal={() => dispatch({ type: "reset" })}
-          onReset={() => {
-            setInternalDriveRequested(false);
-            dispatch({ type: "reset" });
-          }}
-        />
-        <section
-          className="tilt-console"
-          aria-label="整翼倾转控制台"
-          inert={externallyControlled}
-        >
-          <div>
-            <span className="eyebrow">独立机构演示</span>
-            <h2>从折叠开始，看清每一次转动</h2>
-            <p>
-              默认收拢待命。整翼与动力舱共同转动，黑色连杆随翼端接头摆动，滑架沿机身同步移动。标准速度八秒展开或收拢，可随时暂停、反向，或进入关节特写检查连接。
-            </p>
-          </div>
-          <div className="tilt-controls">
-            <label htmlFor="wing-tilt">
-              整翼展开进度{" "}
-              <strong data-testid="tilt-value">
-                {Math.round(unfold * 100)}%
-              </strong>
-            </label>
-            <input
-              id="wing-tilt"
-              className="scrubber"
-              type="range"
-              min="0"
-              max="100"
-              step="0.1"
-              value={unfold * 100}
-              aria-valuetext={`${Math.round(unfold * 100)}% 展开`}
-              onChange={(e) => {
-                enterTilt();
-                dispatchTilt({
-                  type: "scrub",
-                  progress: Number(e.target.value) / 100,
-                });
-              }}
-              style={
-                { "--progress": `${unfold * 100}%` } as React.CSSProperties
-              }
-            />
-            <div className="tilt-endpoints">
-              <span>0% · 完全折叠 / 垂直起降</span>
-              <span>100% · 固定翼巡航</span>
-            </div>
-            <div className="tilt-actions">
-              <button
-                disabled={unfold >= 1}
-                onClick={() => {
-                  enterTilt();
-                  dispatchTilt({ type: "begin", direction: 1 });
-                }}
-              >
-                连续展开
-              </button>
-              <button
-                disabled={unfold <= 0}
-                onClick={() => {
-                  enterTilt();
-                  dispatchTilt({ type: "begin", direction: -1 });
-                }}
-              >
-                连续收拢
-              </button>
-              <button
-                disabled={!tiltMode || !tilt.playing}
-                onClick={() => dispatchTilt({ type: "pause" })}
-              >
-                暂停倾转
-              </button>
-              <button
-                onClick={() => {
-                  enterTilt();
-                  dispatchTilt({ type: "reset" });
-                }}
-              >
-                折叠复位
-              </button>
-              <button
-                aria-pressed={tilt.repeat}
-                onClick={() =>
-                  dispatchTilt({ type: "repeat", enabled: !tilt.repeat })
-                }
-              >
-                往返循环 {tilt.repeat ? "开" : "关"}
-              </button>
-            </div>
-            <div className="tilt-speed">
-              <label>
-                机构速度{" "}
-                <select
-                  aria-label="倾转播放速度"
-                  value={tilt.rate}
-                  onChange={(e) =>
-                    dispatchTilt({
-                      type: "rate",
-                      value: Number(e.target.value),
-                    })
+              <div className="tilt-endpoints">
+                <span>0% · 完全折叠 / 垂直起降</span>
+                <span>100% · 固定翼巡航</span>
+              </div>
+              <div className="tilt-actions">
+                <button
+                  disabled={unfold >= 1}
+                  onClick={() => {
+                    enterTilt();
+                    dispatchTilt({ type: "begin", direction: 1 });
+                  }}
+                >
+                  连续展开
+                </button>
+                <button
+                  disabled={unfold <= 0}
+                  onClick={() => {
+                    enterTilt();
+                    dispatchTilt({ type: "begin", direction: -1 });
+                  }}
+                >
+                  连续收拢
+                </button>
+                <button
+                  disabled={!tiltMode || !tilt.playing}
+                  onClick={() => dispatchTilt({ type: "pause" })}
+                >
+                  暂停倾转
+                </button>
+                <button
+                  onClick={() => {
+                    enterTilt();
+                    dispatchTilt({ type: "reset" });
+                  }}
+                >
+                  折叠复位
+                </button>
+                <button
+                  aria-pressed={tilt.repeat}
+                  onClick={() =>
+                    dispatchTilt({ type: "repeat", enabled: !tilt.repeat })
                   }
                 >
-                  <option value={0.5}>0.5× · 慢动作</option>
-                  <option value={1}>1× · 8 秒</option>
-                  <option value={2}>2×</option>
-                </select>
-              </label>
-              <span>
-                {tiltMode
-                  ? tilt.playing
-                    ? "正在运行 · 可直接反向"
-                    : "手动检查 · 空格继续"
-                  : "拖动滑块进入机构检查"}
-              </span>
-            </div>
-          </div>
-        </section>
-        <section
-          className="flight-console"
-          aria-label="飞行控制台"
-          inert={externallyControlled}
-        >
-          <div className="console-title">
-            <span className="eyebrow">连续飞行演示</span>
-            <h2>从地面，到天空</h2>
-            <p>{phase.phase.detail}</p>
-          </div>
-          <div className="sequence-panel">
-            <div className="playback">
-              <button
-                className="play-button"
-                data-testid="play-toggle"
-                aria-label={playing ? "暂停飞行" : "播放飞行"}
-                onClick={playFlight}
-              >
-                {playing ? (
-                  <Pause size={17} />
-                ) : (
-                  <Play size={17} fill="currentColor" />
-                )}
-                {playing
-                  ? "暂停飞行"
-                  : !tiltMode && time > 0 && time < TOTAL
-                    ? "继续飞行"
-                    : "开始完整飞行"}
-              </button>
-              <button
-                className="icon-button"
-                aria-label="重置飞行"
-                title="重置"
-                onClick={reset}
-              >
-                <RotateCcw size={17} />
-              </button>
-              <span className="playback-time">
-                {Math.floor(time).toString().padStart(2, "0")}{" "}
-                <span>/ {TOTAL} S</span>
-              </span>
-              <div className="playback-options">
-                <button
-                  className={loop ? "loop active" : "loop"}
-                  aria-pressed={loop}
-                  onClick={() => setLoop(!loop)}
-                >
-                  循环 {loop ? "开" : "关"}
+                  往返循环 {tilt.repeat ? "开" : "关"}
                 </button>
+              </div>
+              <button
+                className="joint-entry"
+                aria-pressed={!!jointSide}
+                onClick={() => inspectJoint(jointSide ?? "R")}
+              >
+                <Focus size={16} /> 关节特写
+              </button>
+              <div className="tilt-speed">
                 <label>
-                  速度
+                  机构速度{" "}
                   <select
-                    aria-label="播放速度"
-                    value={rate}
-                    onChange={(e) => setRate(Number(e.target.value))}
+                    aria-label="倾转播放速度"
+                    value={tilt.rate}
+                    onChange={(e) =>
+                      dispatchTilt({
+                        type: "rate",
+                        value: Number(e.target.value),
+                      })
+                    }
                   >
-                    <option value={0.5}>0.5×</option>
-                    <option value={1}>1×</option>
+                    <option value={0.5}>0.5× · 慢动作</option>
+                    <option value={1}>1× · 8 秒</option>
                     <option value={2}>2×</option>
                   </select>
                 </label>
+                <span>
+                  {tiltMode
+                    ? tilt.playing
+                      ? "正在运行 · 可直接反向"
+                      : "手动检查 · 空格继续"
+                    : "拖动滑块进入机构检查"}
+                </span>
               </div>
             </div>
-            <input
-              className="scrubber"
-              aria-label="飞行进度"
-              type="range"
-              min="0"
-              max={TOTAL}
-              step=".01"
-              value={time}
-              onChange={(e) => {
-                leaveTilt();
-                setInspection(false);
-                setExploded(false);
-                setTime(Number(e.target.value));
-                setPlaying(false);
-              }}
-              style={
-                {
-                  "--progress": `${(time / TOTAL) * 100}%`,
-                } as React.CSSProperties
-              }
-            />
-            <div className="phase-track">
-              {PHASES.map((p, i) => (
-                <button
-                  key={p.id}
-                  data-testid={`phase-${p.id}`}
-                  title={`播放${p.label}阶段`}
-                  className={
-                    phase.index === i
-                      ? "active"
-                      : phase.index > i
-                        ? "complete"
-                        : ""
-                  }
-                  onClick={() => {
-                    leaveTilt();
-                    setTime(phaseStart(i));
-                    setInspection(false);
-                    setExploded(false);
-                    setPlaying(true);
-                  }}
-                >
-                  <span className="phase-node" />
-                  <span>{p.label}</span>
-                  <small>0{i + 1}</small>
-                </button>
-              ))}
-            </div>
-          </div>
-        </section>
-        <section
-          className="airframes"
-          id="airframes"
-          inert={externallyControlled}
-        >
-          <div className="section-bar">
-            <div>
-              <span className="eyebrow">一个机体，两种可能</span>
-              <h2>同一机体，两种飞行形态</h2>
-            </div>
-            <div className="environment-toggle">
-              <button
-                className={environment === "hangar" ? "active" : ""}
-                onClick={() => setEnvironment("hangar")}
-              >
-                01 机库
-              </button>
-              <button
-                className={environment === "sky" ? "active" : ""}
-                onClick={() => setEnvironment("sky")}
-              >
-                02 开阔天空
-              </button>
-            </div>
-          </div>
-          <div className="variant-grid">
-            {[
-              {
-                title: "垂直起降",
-                code: "01 / 垂直起降",
-                phase: 2,
-                fold: 1,
-                detail: "整翼收拢 · 升力向上",
-              },
-              {
-                title: "整翼转换",
-                code: "02 / 整翼转换",
-                phase: 3,
-                fold: 0.5,
-                detail: "倾斜铰链 · 连续转动",
-              },
-              {
-                title: "固定翼巡航",
-                code: "03 / 固定翼巡航",
-                phase: 4,
-                fold: 0,
-                detail: "翼面展开 · 推力向前",
-              },
-            ].map((v) => (
-              <button
-                key={v.code}
-                className={`variant-card ${(v.phase === 0 ? unfold <= 0.02 : v.phase === 3 ? unfold > 0.02 && unfold < 0.98 : unfold >= 0.98) ? "selected" : ""}`}
-                aria-label={`查看${v.title}形态`}
-                onClick={() => {
-                  leaveTilt();
-                  setTime(phaseStart(v.phase) + (v.phase === 3 ? 4.5 : 0));
-                  setInspection(true);
+          </section>
+          <div hidden={workspace !== "simulation"} id="simulation-panel">
+            <SimulationPanel
+              runtime={runtime}
+              bridge={bridge}
+              loader={loader}
+              onManual={manualControl}
+              onDemo={() => {
+                if (localInput()) {
                   setPlaying(false);
-                  setExploded(false);
-                }}
+                  dispatchTilt({ type: "pause" });
+                }
+              }}
+              onExternal={() => {
+                setInternalDriveRequested(false);
+                dispatch({ type: "reset" });
+              }}
+              onReset={() => requestReset((value) => value + 1)}
+            >
+              <section
+                className="flight-console"
+                aria-label="飞行控制台"
+                inert={externallyControlled || simulation.driver !== "demo"}
               >
-                <div className="card-top">
-                  <span>{v.code}</span>
-                  <span>形态研究 ↗</span>
+                <div className="console-title">
+                  <span className="eyebrow">连续飞行演示 · 同源仿真驱动</span>
+                  <h3>从地面，到天空</h3>
+                  <p>{phase.phase.detail}</p>
                 </div>
-                <Silhouette fold={v.fold} />
-                <div className="card-title">
-                  <h3>{v.title}</h3>
-                  <ArrowUpRight size={20} />
+                <div className="sequence-panel">
+                  <div className="playback">
+                    <button
+                      className="play-button"
+                      data-testid="play-toggle"
+                      aria-label={playing ? "暂停飞行" : "播放飞行"}
+                      onClick={playFlight}
+                    >
+                      {playing ? (
+                        <Pause size={17} />
+                      ) : (
+                        <Play size={17} fill="currentColor" />
+                      )}
+                      {playing
+                        ? "暂停飞行"
+                        : !tiltMode && time > 0 && time < TOTAL
+                          ? "继续飞行"
+                          : "开始完整飞行"}
+                    </button>
+                    <button
+                      className="icon-button"
+                      aria-label="重置飞行"
+                      title="重置"
+                      onClick={reset}
+                    >
+                      <RotateCcw size={17} />
+                    </button>
+                    <span className="playback-time">
+                      {Math.floor(time).toString().padStart(2, "0")}{" "}
+                      <span>/ {TOTAL} S</span>
+                    </span>
+                    <div className="playback-options">
+                      <button
+                        className={loop ? "loop active" : "loop"}
+                        aria-pressed={loop}
+                        onClick={() => setLoop(!loop)}
+                      >
+                        循环 {loop ? "开" : "关"}
+                      </button>
+                      <label>
+                        速度
+                        <select
+                          aria-label="播放速度"
+                          value={rate}
+                          onChange={(e) => setRate(Number(e.target.value))}
+                        >
+                          <option value={0.5}>0.5×</option>
+                          <option value={1}>1×</option>
+                          <option value={2}>2×</option>
+                        </select>
+                      </label>
+                    </div>
+                  </div>
+                  <input
+                    className="scrubber"
+                    aria-label="飞行进度"
+                    type="range"
+                    min="0"
+                    max={TOTAL}
+                    step=".01"
+                    value={time}
+                    onChange={(e) => {
+                      if (!localInput()) return;
+                      leaveTilt();
+                      setInspection(false);
+                      setExploded(false);
+                      setTime(Number(e.target.value));
+                      setPlaying(false);
+                    }}
+                    style={
+                      {
+                        "--progress": `${(time / TOTAL) * 100}%`,
+                      } as React.CSSProperties
+                    }
+                  />
+                  <div className="phase-track">
+                    {PHASES.map((p, i) => (
+                      <button
+                        key={p.id}
+                        data-testid={`phase-${p.id}`}
+                        title={`播放${p.label}阶段`}
+                        className={
+                          phase.index === i
+                            ? "active"
+                            : phase.index > i
+                              ? "complete"
+                              : ""
+                        }
+                        onClick={() => {
+                          if (!localInput()) return;
+                          leaveTilt();
+                          setTime(phaseStart(i));
+                          setInspection(false);
+                          setExploded(false);
+                          setPlaying(true);
+                        }}
+                      >
+                        <span className="phase-node" />
+                        <span>{p.label}</span>
+                        <small>0{i + 1}</small>
+                      </button>
+                    ))}
+                  </div>
                 </div>
-                <div className="card-meta">
-                  <span>{v.detail}</span>
-                  <span>TRANSWING P4</span>
-                </div>
-              </button>
-            ))}
+              </section>
+            </SimulationPanel>
           </div>
-          <div className="variant-description">
-            <span className="description-index">
-              0{variants.findIndex((v) => v.id === variant) + 1} /
-            </span>
-            <p>{model.description}</p>
-            <span>四旋翼 · 整翼折叠 · 复合飞行</span>
-          </div>
-          <div className="spec-strip" aria-label="P4 厂商公开参数">
-            <div className="spec-context">
-              P4 公开参数<small>厂商 2025 资料 · 非动画测量</small>
-            </div>
-            {[
-              { value: "41", unit: "kg", label: "最大起飞重量" },
-              { value: "6.8", unit: "kg", label: "有效载荷" },
-              { value: "31", unit: "m/s", label: "巡航速度" },
-              { value: "70", unit: "min", label: "续航时间" },
-            ].map((s) => (
-              <div className="spec" key={s.label}>
-                <strong>
-                  {s.value}
-                  <small>{s.unit}</small>
-                </strong>
-                <span>{s.label}</span>
-              </div>
-            ))}
-          </div>
-        </section>
-      </main>
-      <footer>
-        <span>
-          TRANSWING <b>飞行研究室</b>{" "}
-          <span className="footer-separator">/</span> 独立交互概念研究
-        </span>
-        <button onClick={() => setShowInfo(true)}>
-          研究说明与资料 <ArrowUpRight size={13} />
-        </button>
-        <button
-          aria-pressed={lowQuality}
-          onClick={() => setLowQuality(!lowQuality)}
-        >
-          <Settings2 size={13} />
-          {lowQuality ? "节能画质" : "高质量渲染"}
-        </button>
-        <span>非官方产品 · 非工程仿真</span>
-      </footer>
-      {showInfo && (
-        <div className="modal-backdrop" onClick={() => setShowInfo(false)}>
+        </main>
+        <footer>
+          <span>TRANSWING · 独立交互概念研究</span>
+          <button onClick={() => openModal("info")}>
+            研究说明与资料 <ArrowUpRight size={13} />
+          </button>
+          <button
+            aria-pressed={lowQuality}
+            onClick={() => setLowQuality(!lowQuality)}
+          >
+            <Settings2 size={13} />
+            {lowQuality ? "节能画质" : "高质量渲染"}
+          </button>
+          <span>非官方产品 · 非工程仿真</span>
+        </footer>
+      </div>
+      {modal && (
+        <div className="modal-backdrop" onClick={() => setModal(null)}>
           <section
             className="info-modal"
+            data-app-dialog
             role="dialog"
             aria-modal="true"
-            aria-labelledby="info-title"
+            aria-labelledby="dialog-title"
+            tabIndex={-1}
             onClick={(e) => e.stopPropagation()}
           >
             <button
               className="close icon-button"
-              aria-label="关闭研究说明"
-              onClick={() => setShowInfo(false)}
+              aria-label={
+                modal === "properties" ? "关闭飞行器属性" : "关闭研究说明"
+              }
+              onClick={() => setModal(null)}
             >
               <X size={20} />
             </button>
-            <span className="eyebrow">设计研究 / 原理与资料</span>
-            <h2 id="info-title">
-              改变整翼的方向，
-              <br />
-              保留飞行的连续性。
-            </h2>
-            <p>
-              Transwing
-              的关键是整片机翼绕倾斜铰链折叠。垂直起降时，机翼向机身后方收拢，前缘向上；巡航时机翼展开，动力单元随机翼转向前方。机身整体保持平飞姿态。
-            </p>
-            <div className="info-grid">
-              <div>
-                <span>01</span>
-                <h3>整翼，而非只转动电机</h3>
-                <p>
-                  模型中的四个动力单元随左右整翼转动。转换使用连续四元数旋转。
+            {modal === "properties" ? (
+              <>
+                <span className="eyebrow">飞行器属性 / 参考资料</span>
+                <h2 id="dialog-title">TRANSWING P4</h2>
+                <p>{model.description}</p>
+                <div className="property-grid">
+                  {[
+                    { value: "41", unit: "kg", label: "最大起飞重量" },
+                    { value: "6.8", unit: "kg", label: "有效载荷" },
+                    { value: "31", unit: "m/s", label: "巡航速度" },
+                    { value: "70", unit: "min", label: "续航时间" },
+                  ].map((item) => (
+                    <div key={item.label}>
+                      <span>{item.label}</span>
+                      <strong>
+                        {item.value}
+                        <small>{item.unit}</small>
+                      </strong>
+                    </div>
+                  ))}
+                </div>
+                <p className="property-source">
+                  厂商 2025
+                  年公开资料；这些数值是参考信息，并非动画测量或模型仿真输出。
                 </p>
-              </div>
-              <div>
-                <span>02</span>
-                <h3>研究，不等同于工程参数</h3>
+                <dl className="property-details">
+                  <div>
+                    <dt>参考构型</dt>
+                    <dd>蓝白 P4 · 六舵面 · 分体前货舱盖</dd>
+                  </div>
+                  <div>
+                    <dt>机构原理</dt>
+                    <dd>倾斜铰链 · 整翼倾转 · 固定长度连杆</dd>
+                  </div>
+                  <div>
+                    <dt>演示边界</dt>
+                    <dd>内部布局、行程、转速与轨迹为概念约定</dd>
+                  </div>
+                </dl>
+                <a
+                  className="source-link"
+                  href="https://pterodynamics.com/media/PD_TranswingSpecs_2025.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  查看厂商公开规格 <ArrowUpRight size={16} />
+                </a>
+              </>
+            ) : (
+              <>
+                <span className="eyebrow">设计研究 / 原理与资料</span>
+                <h2 id="dialog-title">
+                  改变整翼的方向，
+                  <br />
+                  保留飞行的连续性。
+                </h2>
                 <p>
-                  模型为原创视觉重建。铰链尺寸、飞行时间与路径均用于交互演示。
+                  Transwing
+                  的关键是整片机翼绕倾斜铰链折叠。垂直起降时，机翼向机身后方收拢，前缘向上；巡航时机翼展开，动力单元随机翼转向前方。机身整体保持平飞姿态。
                 </p>
-              </div>
-            </div>
-            <p>
-              本作品仅展示一版依据公开资料重建的 P4 参考构型，并非 Pterodynamics
-              官方数字模型。固定长度连杆连接移动滑架与翼面偏轴接头，两端接头随姿态转动。
-              滑架行程、内部传动、模型 120°
-              转角、巡航旋翼停止时序与折桨均为理想化演示，并非厂商内部 CAD
-              或真实飞控逻辑。
-            </p>
-            <p>
-              当前动画展示外侧桨收起的双桨巡航工况。官方视频也介绍了四台电机共同工作、用于加速和爬升的模式，因此双桨巡航并非唯一实际工况。
-            </p>
-            <p>
-              细节检查中的六个舵面采用柔性铰接位置下的刚体偏转近似，±12°
-              与货舱盖 0–55°
-              均为模型检视范围。进入后暂停飞行、固定整翼展开；离开自动回中、关盖。每吊舱电机与电调的组成有公开手册依据，独立模块的形状和布置仍为概念示意。
-            </p>
-            <a
-              className="source-link"
-              href="https://pterodynamics.com/media/PD_TranswingSpecs_2025.pdf"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Pterodynamics 官方规格资料 <ArrowUpRight size={16} />
-            </a>
-            <p className="small-print">
-              使用方式：拖动查看 360° · 滚轮缩放 · 空格播放/暂停 · Esc
-              关闭说明或细节检查。多角度检查使用正交投影并固定机体航向，可配合时间轴检查同一机体的不同形态。低性能设备可启用节能画质。
-            </p>
+                <div className="info-grid">
+                  <div>
+                    <span>01</span>
+                    <h3>整翼，而非只转动电机</h3>
+                    <p>
+                      模型中的四个动力单元随左右整翼转动。转换使用连续四元数旋转。
+                    </p>
+                  </div>
+                  <div>
+                    <span>02</span>
+                    <h3>研究，不等同于工程参数</h3>
+                    <p>
+                      模型为原创视觉重建。铰链尺寸、飞行时间与路径均用于交互演示。
+                    </p>
+                  </div>
+                </div>
+                <p>
+                  本作品仅展示一版依据公开资料重建的 P4 参考构型，并非
+                  Pterodynamics
+                  官方数字模型。固定长度连杆连接移动滑架与翼面偏轴接头，两端接头随姿态转动。
+                  滑架行程、内部传动、模型 120°
+                  转角、巡航旋翼停止时序与折桨均为理想化演示，并非厂商内部 CAD
+                  或真实飞控逻辑。
+                </p>
+                <p>
+                  当前动画展示外侧桨收起的双桨巡航工况。官方视频也介绍了四台电机共同工作、用于加速和爬升的模式，因此双桨巡航并非唯一实际工况。
+                </p>
+                <p>
+                  细节检查中的六个舵面采用柔性铰接位置下的刚体偏转近似，±12°
+                  与货舱盖 0–55°
+                  均为模型检视范围。进入后暂停飞行、固定整翼展开；离开自动回中、关盖。每吊舱电机与电调的组成有公开手册依据，独立模块的形状和布置仍为概念示意。
+                </p>
+                <a
+                  className="source-link"
+                  href="https://pterodynamics.com/media/PD_TranswingSpecs_2025.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Pterodynamics 官方规格资料 <ArrowUpRight size={16} />
+                </a>
+                <p className="small-print">
+                  使用方式：拖动查看 360° · 滚轮缩放 · 空格播放/暂停 · Esc
+                  关闭说明或细节检查。多角度检查使用正交投影并固定机体航向，可配合时间轴检查同一机体的不同形态。低性能设备可启用节能画质。
+                </p>
+              </>
+            )}
           </section>
         </div>
       )}
