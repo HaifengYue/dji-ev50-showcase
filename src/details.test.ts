@@ -279,9 +279,9 @@ test("舱盖完整55度包络悬空检视不穿地板，退出恢复正常ground
 });
 
 test("互锁回归拒绝非法舱盖混控、飞行/拆解并行及任何一个残留偏转pivot", async () => {
-  const { verifyRuntimeDetailFaultInjection } =
-    await import("../qa/lib/runtime-detail-controls.mts");
-  const report = await verifyRuntimeDetailFaultInjection();
+  const { verifyRuntimeIndependentControlFaultInjection } =
+    await import("../qa/lib/runtime-independent-controls.mts");
+  const report = await verifyRuntimeIndependentControlFaultInjection();
   assert.equal(report.rejected, true);
   assert.equal(report.invalidControlMixRejected, true);
   assert.equal(report.runningFlightRejected, true);

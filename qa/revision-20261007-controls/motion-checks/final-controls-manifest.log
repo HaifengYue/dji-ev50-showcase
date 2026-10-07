@@ -1,0 +1,11 @@
+{
+  "version": 27,
+  "stage": "qa/revision-20261007-inset/baked-independent-controls-final",
+  "sourceSha256": "2f6d6a1a5a616351643233342a1e175b2483aa3785b50185aac104799ac84f4b",
+  "runtimeBytes": 4094144,
+  "budgetStatus": "WITHIN_EXPLICIT_V27_BUDGET",
+  "reviewStatus": "PIPELINE_CHECKS_PASSED_JOINT_GEOMETRY_AND_USER_REVIEW_PENDING",
+  "mainTreeWrites": false
+}
+CURRENT_EDGE_LINKAGE_MANIFEST /workspace/scratch/40bf3b17dbf8/transwing-new-annotations-20261007/control-surface-revision/transwing-studio/qa/revision-20261007-inset/baked-independent-controls-final/model-manifest.json
+CURRENT_CONTROLS_MANIFEST /workspace/scratch/40bf3b17dbf8/transwing-new-annotations-20261007/control-surface-revision/transwing-studio/qa/revision-20261007-inset/baked-independent-controls-final/model-manifest.json

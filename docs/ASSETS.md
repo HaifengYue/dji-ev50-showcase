@@ -1,12 +1,14 @@
 # Transwing 资产说明
 
-当前交付资产：
+当前父提交：1797d4b1a0d653f786552116a3e9063148b444de。
 
-- assets/blender/xp4.blend：39,514,764 字节，SHA256 74f4c082d150dedc160565eefbd5bc99ec0ff87999e86a835f7f4b62a32e4274
-- assets/blender/xp4-source.glb：10,920,584 字节，SHA256 db57f5fa421f10e5be27d236ad6d7733e354f3827d09d8d96f5adc55971e3be1
-- public/models/xp4.glb：4,035,036 字节，SHA256 334febcb77aa1a3f9eaead2c5931323093479664308b737362420d74d4b7f3dd；dist 中模型逐字节相同
-- 原生作者模型：qa/revision-20261007/candidate-inset-integrated-b-edge-linkage.blend，SHA256 f38764881b5c597cc3be98aab79a9b2ad932f6c8c07359d7f9f30c218969c084
+- 原生作者模型：qa/revision-20261007/candidate-inset-integrated-b-independent-controls-final.blend；SHA256 2f6d6a1a5a616351643233342a1e175b2483aa3785b50185aac104799ac84f4b
+- assets/blender/xp4.blend：39,673,708字节；SHA256 067371eed57fc432824f4a2f89b1be41110613a421e591810169e0d2a8ec5909
+- assets/blender/xp4-source.glb：11,082,648字节；SHA256 36dadf42ebbffbb81869ee8ddaecc69827dcaab0efdeee31cb87bb1fb6e1db2e
+- public/models/xp4.glb：4,094,144字节；SHA256 02970bbcc56ef8574643c12962b53917f52ca3d42eaab974660c080fd41ec250；dist中的模型逐字节相同
 
-运行体含 285 个网格所有者、352 个节点、287 个渲染 primitive、357,070 个三角形；177 个关键所有者均经身份检查。父版运行体为 3,696,884 字节，本轮增加 338,152 字节（9.15%）。批准的运行体预算为 4,200,000 字节，未因此降低几何精度或物理检查阈值。
+运行体含285个网格所有者、352节点、287渲染primitive和357,418个三角形；177个关键所有者保持源Float32几何和机构变换。上一版运行体4,035,036字节，本轮增加59,108字节，既有预算上限4,200,000字节。
 
-assets/baseline-20261007/xp4.blend 是冻结初始几何输入；assets/baseline-v25-20261007/xp4-runtime.glb 仅用于历史量化身份比较。历史构造锁与必要输入保留，当前完整锁为 REVISION_EDGE_LINKAGE_CONSTRUCTION_INPUTS.json。历史技术修订编号仅用于追溯。
+当前输入锁为REVISION_CONTROLS_CONSTRUCTION_INPUTS.json。旧171项构造输入逐字节保留，上一版局部几何配方仍完整存在。当前模型测试的父提交期望已更新，历史锁不应被解释为当前应用源文件全部不可变。
+
+assets/baseline-20261007/xp4.blend是冻结初始几何输入；assets/baseline-v25-20261007/xp4-runtime.glb仅作历史量化比较。当前成品不作为全链构造输入。旧修订编号用于技术追溯，不代表页面标题。

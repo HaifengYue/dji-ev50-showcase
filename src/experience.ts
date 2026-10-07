@@ -9,8 +9,8 @@ import {
 import type { CameraView } from "./inspection";
 import {
   NEUTRAL_DETAIL_POSE,
-  controlsForDetail,
-  normalizeDetailPose,
+  allowsDetailControl,
+  updateDetailPose,
   type DetailView,
   type DetailControl,
   type DetailPose,
@@ -198,16 +198,17 @@ export function experienceReducer(
     case "detail-pose":
       if (
         !state.detailView ||
-        !controlsForDetail(state.detailView).includes(action.control) ||
+        !allowsDetailControl(state.detailView, action.control) ||
         !Number.isFinite(action.degrees)
       )
         return state;
       return {
         ...state,
-        detailPose: normalizeDetailPose({
-          ...state.detailPose,
-          [action.control]: action.degrees,
-        }),
+        detailPose: updateDetailPose(
+          state.detailPose,
+          action.control,
+          action.degrees,
+        ),
       };
     case "detail-neutral":
       return { ...state, detailPose: NEUTRAL_DETAIL_POSE };

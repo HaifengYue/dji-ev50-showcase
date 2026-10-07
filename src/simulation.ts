@@ -7,15 +7,13 @@ import {
   type MotorStates,
   type MotorId,
 } from "./motors";
+import {
+  SURFACE_IDS,
+  resolveSurfacePatch,
+  type SurfacePatch,
+} from "./surfaces";
+export { SURFACE_IDS } from "./surfaces";
 export const PROTOCOL = "transwing.sim.v1" as const;
-export const SURFACE_IDS = [
-  "L_Inboard",
-  "R_Inboard",
-  "L_Outboard",
-  "R_Outboard",
-  "Tail_L",
-  "Tail_R",
-] as const;
 export type SimulationState = {
   owner: "ui" | "external";
   positionM: [number, number, number];
@@ -41,7 +39,7 @@ export type StatePatch = Omit<
       Partial<MotorCommands[(typeof MOTOR_IDS)[number]]>
     >
   >;
-  surfaces?: Partial<SimulationState["surfaces"]>;
+  surfaces?: SurfacePatch;
   display?: Partial<SimulationState["display"]>;
   time?: Partial<SimulationState["time"]>;
 };
@@ -161,7 +159,9 @@ export function applyStatePatch(
   ] as const)
     if (field in patch)
       (next as unknown as Record<string, unknown>)[field] = copy(patch[field]);
-  for (const field of ["surfaces", "display", "time"] as const)
+  if ("surfaces" in patch)
+    Object.assign(next.surfaces, resolveSurfacePatch(patch.surfaces));
+  for (const field of ["display", "time"] as const)
     if (field in patch) {
       const section = record(patch[field], field);
       keys(section, Object.keys(next[field]), field);
@@ -223,6 +223,8 @@ export function validateState(input: unknown): SimulationState {
     ["time", ["seconds", "mode", "paused"]],
   ] as const) {
     const value = record(patch[section], section);
+    // 完整快照只允许既有规范 ID；别名仅用于命令补丁。
+    keys(value, expected, section);
     if (expected.some((key) => !(key in value)))
       throw new Error(`${section} 完整状态缺少字段`);
   }

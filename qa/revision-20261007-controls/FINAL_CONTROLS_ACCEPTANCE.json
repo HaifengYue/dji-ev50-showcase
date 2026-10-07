@@ -1,0 +1,88 @@
+{
+  "schema": "transwing.independent-controls.acceptance.v1",
+  "status": "PASSED_WITH_EXPLICIT_SAMPLED_SCOPE_AND_INHERITED_LIMITATIONS",
+  "publishedParentCommit": "1797d4b1a0d653f786552116a3e9063148b444de",
+  "sourceSha256": "2f6d6a1a5a616351643233342a1e175b2483aa3785b50185aac104799ac84f4b",
+  "runtimeSha256": "02970bbcc56ef8574643c12962b53917f52ca3d42eaab974660c080fd41ec250",
+  "runtimeBytes": 4094144,
+  "parentRuntimeBytes": 4035036,
+  "runtimeBudgetBytes": 4200000,
+  "enlargement": {
+    "controls": [
+      "L_Inboard",
+      "R_Inboard"
+    ],
+    "spanRatio": 1.5,
+    "projectedAreaRatio": 1.506216391,
+    "originalStraightHingeLinesAndOuterEndsPreserved": true,
+    "outboardAndTailSizesUnchanged": true
+  },
+  "independentControlIds": [
+    "L_Inboard",
+    "R_Inboard",
+    "L_Outboard",
+    "R_Outboard",
+    "Tail_L",
+    "Tail_R"
+  ],
+  "angleLimitsDegrees": [
+    -12,
+    12
+  ],
+  "nativeChecks": {
+    "combinedControlTiltFoldPhaseStates": 14592,
+    "all64SixControlLimitCorners": true,
+    "tiltAngles": 19,
+    "foldFractions": 3,
+    "rotorPhaseSamples": 4,
+    "singleSurfaceInteriorStates": 150,
+    "wingMaterialPoses": 661,
+    "rotorFoldCases": 252,
+    "internalDrivePoses": 1201,
+    "internalContainmentPoses": 13,
+    "surfaceIntersections": 0,
+    "containedMaterial": 0,
+    "unresolved": 0,
+    "exactSafeRepeatedPairCache": true,
+    "continuousMotionCertified": false
+  },
+  "shell": {
+    "meshCount": 285,
+    "closedMeshCount": 265,
+    "openDecorativeMeshCount": 20,
+    "closedCountCoverage": "243 unchanged closed objects linked to baseline exact geometry, 12 changed control objects checked on final SHA, 8 U lines checked on final SHA, 2 new capped convex antennas verified closure/volume/contact",
+    "actualRepairs": "Two antenna end caps, eight panel outlines seated, four outline connection sequences untwisted after seating",
+    "functionalAndMotionGapsPreserved": true,
+    "airtightCertification": false
+  },
+  "regressions": {
+    "node": 187,
+    "lightQA": 5,
+    "python": 30,
+    "format": true,
+    "typescriptVite": true,
+    "glbLoad": true,
+    "browserGpuOrPhysicalMobileTested": false
+  },
+  "completeReconstruction": {
+    "passed": true,
+    "inputCount": 276,
+    "old171Unchanged": true,
+    "meshesExactlyEqual": 285,
+    "nodesExactlyEqual": 352,
+    "geometryDifferences": [],
+    "UVAndMaterialAndSmoothFlagsExactlyEqual": true,
+    "splitNormalsExactlyEqual": false,
+    "largestSplitNormalAngularDifferenceDegrees": 0.01922603116476945,
+    "seconds": 239.62,
+    "commands": 20,
+    "constructionUsedCurrentFinishedAsset": false
+  },
+  "limits": [
+    "Finite collision states, not continuous mathematical certification",
+    "Inherited feather edges, roof thin domain and dynamic hinge clearance remain scoped",
+    "Dimensions are concept u, not manufacturing millimeters",
+    "No strength/manufacturing/airworthiness certification"
+  ],
+  "publicationPerformed": false
+}

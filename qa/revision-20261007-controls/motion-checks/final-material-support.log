@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/40bf3b17dbf8/transwing-new-annotations-20261007/control-surface-revision/transwing-studio/scripts/revision_20261007/check_material.py", line 9, in <module>
+    o=bpy.data.objects[name];bm=bmesh.new();bm.from_mesh(o.data);bmesh.ops.triangulate(bm,faces=list(bm.faces));bm.normal_update();adj={v:set()for v in bm.verts}
+                                            ~~~~~~~~~~~~^^^^^^^^
+TypeError: expected 'Mesh' type found 'NoneType' instead
+
+Error: script failed, file: 'scripts/revision_20261007/check_material.py', exiting.
+Blender 4.3.2
+Read blend: "/workspace/scratch/40bf3b17dbf8/transwing-new-annotations-20261007/control-surface-revision/transwing-studio/qa/revision-20261007/candidate-inset-integrated-b-independent-controls-final.blend"
+
+Blender quit

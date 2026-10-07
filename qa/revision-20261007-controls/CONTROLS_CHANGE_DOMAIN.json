@@ -1,0 +1,115 @@
+{
+  "sourceSha256": "2f6d6a1a5a616351643233342a1e175b2483aa3785b50185aac104799ac84f4b",
+  "parentReferenceSha256": "cbf95cd8844dc114555ccdc638fb0afde1800236a5c297542b72a4cd44c1c34a",
+  "changedNodes": {
+    "Composite_wing_L": [
+      "geometrySha256",
+      "vertices",
+      "polygons"
+    ],
+    "Composite_wing_R": [
+      "geometrySha256",
+      "vertices",
+      "polygons"
+    ],
+    "ControlAxisStart_L_Inboard": [
+      "matrixBasis"
+    ],
+    "ControlAxisStart_R_Inboard": [
+      "matrixBasis"
+    ],
+    "ControlFlexureFixed_L_Inboard": [
+      "matrixBasis",
+      "geometrySha256"
+    ],
+    "ControlFlexureFixed_R_Inboard": [
+      "matrixBasis",
+      "geometrySha256"
+    ],
+    "ControlFlexureMoving_L_Inboard": [
+      "geometrySha256"
+    ],
+    "ControlFlexureMoving_R_Inboard": [
+      "geometrySha256"
+    ],
+    "ControlHingeFixed_L_Inboard": [
+      "matrixBasis",
+      "geometrySha256"
+    ],
+    "ControlHingeFixed_R_Inboard": [
+      "matrixBasis",
+      "geometrySha256"
+    ],
+    "ControlHingeMoving_L_Inboard": [
+      "geometrySha256"
+    ],
+    "ControlHingeMoving_R_Inboard": [
+      "geometrySha256"
+    ],
+    "ControlHorn_L_Inboard": [
+      "matrixBasis"
+    ],
+    "ControlHorn_R_Inboard": [
+      "matrixBasis"
+    ],
+    "ControlPivot_L_Inboard": [
+      "matrixBasis"
+    ],
+    "ControlPivot_R_Inboard": [
+      "matrixBasis"
+    ],
+    "ControlSurface_L_Inboard": [
+      "geometrySha256",
+      "vertices",
+      "polygons"
+    ],
+    "ControlSurface_R_Inboard": [
+      "geometrySha256",
+      "vertices",
+      "polygons"
+    ],
+    "Pod_U_access_panel_L_Front": [
+      "geometrySha256",
+      "polygons"
+    ],
+    "Pod_U_access_panel_L_Front.001": [
+      "geometrySha256",
+      "polygons"
+    ],
+    "Pod_U_access_panel_L_Rear": [
+      "geometrySha256",
+      "polygons"
+    ],
+    "Pod_U_access_panel_L_Rear.001": [
+      "geometrySha256",
+      "polygons"
+    ],
+    "Pod_U_access_panel_R_Front": [
+      "geometrySha256",
+      "polygons"
+    ],
+    "Pod_U_access_panel_R_Front.001": [
+      "geometrySha256",
+      "polygons"
+    ],
+    "Pod_U_access_panel_R_Rear": [
+      "geometrySha256",
+      "polygons"
+    ],
+    "Pod_U_access_panel_R_Rear.001": [
+      "geometrySha256",
+      "polygons"
+    ],
+    "Ventral_antenna": [
+      "geometrySha256",
+      "polygons"
+    ],
+    "Ventral_antenna.001": [
+      "geometrySha256",
+      "polygons"
+    ]
+  },
+  "unexpectedChangedNodes": [],
+  "passed": true,
+  "previousWingRootContoursLinkageAxesAllNacellesDriveAndOtherFourControlsProtected": true
+}

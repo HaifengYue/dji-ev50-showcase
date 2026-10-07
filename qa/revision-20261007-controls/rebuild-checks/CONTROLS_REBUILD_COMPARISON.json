@@ -1,0 +1,9 @@
+{
+  "sourceSha256": "b073fb527ba3b4a270248928a47ecff45ed111999307c3820d5999220def7cb6",
+  "referenceSha256": "87386977598401949ac8f7c7aabae3cf80bd7487d9a79178981625421d5ecc12",
+  "passed": true,
+  "meshCount": 285,
+  "nodeCount": 352,
+  "differences": [],
+  "method": "Every stored Float32 vertex, every oriented polygon and material, parent/local basis/parent inverse; packaging and recalculated split normals excluded"
+}

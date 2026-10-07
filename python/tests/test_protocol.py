@@ -6,7 +6,7 @@ from pathlib import Path
 import unittest
 
 from transwing_sim import Recording, snapshot_to_patch
-from transwing_sim.protocol import MOTOR_IDS, PROTOCOL, ProtocolError, apply_command, apply_patch, initial_state, validate_recording
+from transwing_sim.protocol import MOTOR_IDS, SURFACE_IDS, PROTOCOL, ProtocolError, apply_command, apply_patch, initial_state, validate_recording
 
 
 class ProtocolTests(unittest.TestCase):
@@ -51,6 +51,39 @@ class ProtocolTests(unittest.TestCase):
             apply_patch(state, {"display": {"exploded": True}})
         result = apply_patch(state, {"display": {"exploded": True}, "motors": {"L_Rear": {"targetRpm": 0, "enabled": False}}})
         self.assertTrue(result["display"]["exploded"])
+
+    def test_independent_surfaces_group_precedence_and_partial_updates(self):
+        for surface_id in SURFACE_IDS:
+            result = apply_patch(initial_state(), {"surfaces": {surface_id: 7}, "hatchDeg": 22})
+            self.assertEqual(result["surfaces"], {key: 7 if key == surface_id else 0 for key in SURFACE_IDS})
+            self.assertEqual(result["hatchDeg"], 22)
+        pairs = [("L_Inboard", 0), ("inboard_L", 4), ("inboard", 10), ("outboard_R", -3), ("tail", 6)]
+        expected = dict(zip(SURFACE_IDS, [0, 10, 0, -3, 6, 6]))
+        for items in (pairs, list(reversed(pairs))):
+            result = apply_patch(initial_state(), {"surfaces": dict(items)})
+            self.assertEqual(result["surfaces"], expected)
+            updated = apply_patch(result, {"surfaces": {"tail_L": 0}})
+            self.assertEqual(updated["surfaces"], {**expected, "Tail_L": 0})
+            self.assertEqual(result["surfaces"], expected)
+
+    def test_invalid_shadowed_group_or_leaf_rejects_whole_patch(self):
+        for invalid in (None, True, "5", float("nan"), float("inf"), -float("inf"), -12.01, 12.01):
+            state = apply_patch(initial_state(), {"surfaces": {"L_Inboard": 2, "Tail_R": -3}, "hatchDeg": 22})
+            before = copy.deepcopy(state)
+            for patch in ({"inboard": invalid, "L_Inboard": 1, "R_Inboard": 2}, {"L_Inboard": 8, "Tail_R": invalid}):
+                with self.subTest(invalid=invalid, patch=patch), self.assertRaises(ProtocolError):
+                    apply_patch(state, {"wingTilt": 1, "surfaces": patch})
+                self.assertEqual(state, before)
+
+    def test_recording_surface_helpers_seek_and_reset(self):
+        record = Recording().set_surfaces(inboard=8, inboard_L=0, tail_R=-5).set_surface("L_Outboard", 3)
+        expected = dict(zip(SURFACE_IDS, [0, 8, 3, 0, 0, -5]))
+        self.assertEqual(record.state["surfaces"], expected)
+        record.step(.1).seek(.05, {"surfaces": {"tail_L": 4}})
+        self.assertEqual(record.state["surfaces"], {**expected, "Tail_L": 4})
+        record.reset()
+        self.assertEqual(record.state["surfaces"], initial_state()["surfaces"])
+        validate_recording(record.as_dict())
 
     def test_clock_seek_pause_reset(self):
         state = initial_state("external")

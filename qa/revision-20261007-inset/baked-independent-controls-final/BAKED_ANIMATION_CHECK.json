@@ -1,0 +1,2969 @@
+{
+  "schema": "transwing.v27-integrated-baked-animation.v1",
+  "revision": 27,
+  "passed": true,
+  "pipelineTrialOnly": true,
+  "browserPixelsTested": false,
+  "appearanceAccepted": false,
+  "jointMaterialAcceptanceImplied": false,
+  "thresholds": {
+    "visibleEyeBallDistance": 0.00002,
+    "propHubToRealAxisDistance": 0.000002,
+    "driveQuaternionError": 1e-10,
+    "threadPhaseDriftRadians": 0.00005
+  },
+  "files": [
+    {
+      "filename": "xp4-source.glb",
+      "passed": true,
+      "sha256": "36dadf42ebbffbb81869ee8ddaecc69827dcaab0efdeee31cb87bb1fb6e1db2e",
+      "persistedMechanism": {
+        "actualRightPivot": [
+          1.5001282691955566,
+          -1.4448717832565308,
+          -0.22012822329998016
+        ],
+        "wingAnchorRightCruise": [
+          1.059999942779541,
+          -1.0399999618530273,
+          -0.17669521272182465
+        ],
+        "bodyAnchorRightCruise": [
+          0.16,
+          1.9,
+          -0.02
+        ],
+        "rigidRodLength": 3.0786610396187717,
+        "actualTravel": {
+          "samples": 4001,
+          "minimumY": 0.8409326081856277,
+          "maximumY": 1.9000001249111587,
+          "hoverY": 0.8409326081856277,
+          "cruiseY": 1.9000001249111587,
+          "minimumAtUnfold": 0,
+          "maximumAtUnfold": 1,
+          "continuousExtremaProof": false
+        }
+      },
+      "hierarchy": [
+        {
+          "node": "Composite_wing_L",
+          "parent": "WingPivot_L"
+        },
+        {
+          "node": "WingLowerClosure_L",
+          "parent": "WingPivot_L"
+        },
+        {
+          "node": "RootCarrierMoving_L",
+          "parent": "WingPivot_L"
+        },
+        {
+          "node": "RootCarrierThrust_L",
+          "parent": "WingPivot_L"
+        },
+        {
+          "node": "RootCarrierBridge_L",
+          "parent": "WingPivot_L"
+        },
+        {
+          "node": "BraceWing_L",
+          "parent": "WingPivot_L"
+        },
+        {
+          "node": "BraceWingSeat_L",
+          "parent": "WingPivot_L"
+        },
+        {
+          "node": "BraceBall_L_Wing",
+          "parent": "WingPivot_L"
+        },
+        {
+          "node": "BraceBall_L_Body",
+          "parent": "BraceSpreader"
+        },
+        {
+          "node": "BraceBody_L",
+          "parent": "BraceSpreader"
+        },
+        {
+          "node": "BraceRodEye_L_Body",
+          "parent": "BraceRod_L"
+        },
+        {
+          "node": "BraceRodEye_L_Root",
+          "parent": "BraceRod_L"
+        },
+        {
+          "node": "MotorAxisStart_L_Front",
+          "parent": "WingPivot_L"
+        },
+        {
+          "node": "MotorAxisEnd_L_Front",
+          "parent": "WingPivot_L"
+        },
+        {
+          "node": "Prop_L_Front",
+          "parent": "WingPivot_L"
+        },
+        {
+          "node": "BladeFold_L_Front_A",
+          "parent": "Prop_L_Front"
+        },
+        {
+          "node": "BladeFold_L_Front_B",
+          "parent": "Prop_L_Front"
+        },
+        {
+          "node": "MotorAxisStart_L_Rear",
+          "parent": "WingPivot_L"
+        },
+        {
+          "node": "MotorAxisEnd_L_Rear",
+          "parent": "WingPivot_L"
+        },
+        {
+          "node": "Prop_L_Rear",
+          "parent": "WingPivot_L"
+        },
+        {
+          "node": "BladeFold_L_Rear_A",
+          "parent": "Prop_L_Rear"
+        },
+        {
+          "node": "BladeFold_L_Rear_B",
+          "parent": "Prop_L_Rear"
+        },
+        {
+          "node": "Composite_wing_R",
+          "parent": "WingPivot_R"
+        },
+        {
+          "node": "WingLowerClosure_R",
+          "parent": "WingPivot_R"
+        },
+        {
+          "node": "RootCarrierMoving_R",
+          "parent": "WingPivot_R"
+        },
+        {
+          "node": "RootCarrierThrust_R",
+          "parent": "WingPivot_R"
+        },
+        {
+          "node": "RootCarrierBridge_R",
+          "parent": "WingPivot_R"
+        },
+        {
+          "node": "BraceWing_R",
+          "parent": "WingPivot_R"
+        },
+        {
+          "node": "BraceWingSeat_R",
+          "parent": "WingPivot_R"
+        },
+        {
+          "node": "BraceBall_R_Wing",
+          "parent": "WingPivot_R"
+        },
+        {
+          "node": "BraceBall_R_Body",
+          "parent": "BraceSpreader"
+        },
+        {
+          "node": "BraceBody_R",
+          "parent": "BraceSpreader"
+        },
+        {
+          "node": "BraceRodEye_R_Body",
+          "parent": "BraceRod_R"
+        },
+        {
+          "node": "BraceRodEye_R_Root",
+          "parent": "BraceRod_R"
+        },
+        {
+          "node": "MotorAxisStart_R_Front",
+          "parent": "WingPivot_R"
+        },
+        {
+          "node": "MotorAxisEnd_R_Front",
+          "parent": "WingPivot_R"
+        },
+        {
+          "node": "Prop_R_Front",
+          "parent": "WingPivot_R"
+        },
+        {
+          "node": "BladeFold_R_Front_A",
+          "parent": "Prop_R_Front"
+        },
+        {
+          "node": "BladeFold_R_Front_B",
+          "parent": "Prop_R_Front"
+        },
+        {
+          "node": "MotorAxisStart_R_Rear",
+          "parent": "WingPivot_R"
+        },
+        {
+          "node": "MotorAxisEnd_R_Rear",
+          "parent": "WingPivot_R"
+        },
+        {
+          "node": "Prop_R_Rear",
+          "parent": "WingPivot_R"
+        },
+        {
+          "node": "BladeFold_R_Rear_A",
+          "parent": "Prop_R_Rear"
+        },
+        {
+          "node": "BladeFold_R_Rear_B",
+          "parent": "Prop_R_Rear"
+        },
+        {
+          "node": "Drive_Crossbeam",
+          "parent": "BraceSpreader"
+        },
+        {
+          "node": "Drive_NutCarriage",
+          "parent": "BraceSpreader"
+        },
+        {
+          "node": "Drive_NutInternalThread",
+          "parent": "BraceSpreader"
+        },
+        {
+          "node": "Drive_GuideBushing_L",
+          "parent": "BraceSpreader"
+        },
+        {
+          "node": "Drive_GuideBushing_R",
+          "parent": "BraceSpreader"
+        },
+        {
+          "node": "Drive_OutputWeb",
+          "parent": "BraceSpreader"
+        },
+        {
+          "node": "Drive_LeadScrewThread",
+          "parent": "Drive_ScrewRotor"
+        },
+        {
+          "node": "Drive_PlanetRotor_0",
+          "parent": "Drive_ScrewRotor"
+        },
+        {
+          "node": "Drive_PlanetRotor_1",
+          "parent": "Drive_ScrewRotor"
+        },
+        {
+          "node": "Drive_PlanetRotor_2",
+          "parent": "Drive_ScrewRotor"
+        }
+      ],
+      "clips": [
+        {
+          "name": "TRANSWING_Hover_Cruise_Hover",
+          "channels": 18,
+          "duration": 8.291666984558105,
+          "samples": 5859,
+          "maximumVisibleEyeBallDistance": 0.000005304531537361694,
+          "maximumPropHubToRealAxisDistance": 1.0867649735959488e-7,
+          "maximumDriveQuaternionError": 8.881784197001252e-16,
+          "maximumThreadPhaseDriftRadians": 8.566390530262424e-8,
+          "maximumMechanismPointError": 0.000009118031030933414,
+          "maximumWingQuaternionError": 2.883493444016949e-11,
+          "maximumEndpointMotorQuaternionError": 0,
+          "maximumEndpointFoldQuaternionError": 3.552713678800501e-15,
+          "maximumMotorQuaternionError": 0,
+          "maximumFoldQuaternionError": 0,
+          "stationaryFoldChecks": 0,
+          "motorPoseReference": null,
+          "actualSliderYRange": [
+            0.8409326672554016,
+            1.9000000953674319
+          ],
+          "driveTracks": [
+            {
+              "name": "Drive_ScrewRotor",
+              "keys": 6371,
+              "maximumKeyAngle": 0.15032670548193133
+            },
+            {
+              "name": "Drive_MotorRotor",
+              "keys": 6371,
+              "maximumKeyAngle": 0.45097764749344177
+            },
+            {
+              "name": "Drive_PlanetRotor_0",
+              "keys": 6371,
+              "maximumKeyAngle": 0.6013036733072998
+            },
+            {
+              "name": "Drive_PlanetRotor_1",
+              "keys": 6371,
+              "maximumKeyAngle": 0.6013036733072998
+            },
+            {
+              "name": "Drive_PlanetRotor_2",
+              "keys": 6371,
+              "maximumKeyAngle": 0.6013036733072998
+            }
+          ],
+          "threadPhase": {
+            "method": "All loaded mesh triangles bounded in screw-frame atan2(x,y)+2*pi*z/lead; actual mesh witnesses track that phase during playback",
+            "lead": 0.032,
+            "centerSeparation": 3.14159252006254,
+            "restPhaseResidual": 1.3352725325432857e-7,
+            "conservativeMaterialBandGapRadians": 1.1258527497866249,
+            "bands": [
+              {
+                "node": "Drive_LeadScrewThread",
+                "center": 2.3455000040510368,
+                "band": [
+                  -1.007811557339711,
+                  1.0078118009566128
+                ],
+                "minimumTriangleRadius": 0.007435890880483022,
+                "uniqueVertices": 3532,
+                "triangles": 7060,
+                "phaseWitnesses": 13
+              },
+              {
+                "node": "Drive_NutInternalThread",
+                "center": -0.7960925160115033,
+                "band": [
+                  -1.0079279401805883,
+                  1.0079279693193024
+                ],
+                "minimumTriangleRadius": 0.009121289329633697,
+                "uniqueVertices": 136,
+                "triangles": 268,
+                "phaseWitnesses": 13
+              }
+            ],
+            "scope": "Actual candidate GLB rest geometry and sampled playback only; no whole-aircraft collision, manufacturing or appearance acceptance"
+          },
+          "endpoints": [
+            {
+              "frame": 0,
+              "time": 0,
+              "unfold": 0,
+              "sliderPosition": [
+                0,
+                -0.019999999552965164,
+                -0.8409326672554016
+              ],
+              "wingR": [
+                -0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "screw": [
+                0,
+                0,
+                0.000005799161499453476,
+                1
+              ],
+              "motorState": null,
+              "bladeQuaternions": {
+                "L_Front_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Front_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Rear_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Rear_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Front_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Front_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Rear_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Rear_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            },
+            {
+              "frame": 79,
+              "time": 3.2916666666666665,
+              "unfold": 1,
+              "sliderPosition": [
+                0,
+                -0.019999999552965164,
+                -1.9000000952828493
+              ],
+              "wingR": [
+                -1.380994776526555e-10,
+                1.380994776526555e-10,
+                1.380994776526555e-10,
+                1
+              ],
+              "screw": [
+                0,
+                0,
+                -0.29661848348177955,
+                -0.9549960518680314
+              ],
+              "motorState": null,
+              "bladeQuaternions": {
+                "L_Front_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Front_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Rear_A": [
+                  0,
+                  0,
+                  0.7071068278425722,
+                  0.7071067103276584
+                ],
+                "L_Rear_B": [
+                  0,
+                  0,
+                  -0.7071068278425722,
+                  0.7071067103276584
+                ],
+                "R_Front_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Front_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Rear_A": [
+                  0,
+                  0,
+                  0.7071068278425722,
+                  0.7071067103276584
+                ],
+                "R_Rear_B": [
+                  0,
+                  0,
+                  -0.7071068278425722,
+                  0.7071067103276584
+                ]
+              }
+            },
+            {
+              "frame": 119,
+              "time": 4.958333333333333,
+              "unfold": 1,
+              "sliderPosition": [
+                0,
+                -0.019999999552965164,
+                -1.9000000953674316
+              ],
+              "wingR": [
+                0,
+                0,
+                0,
+                1
+              ],
+              "screw": [
+                0,
+                0,
+                -0.2966184914112091,
+                -0.9549960494041443
+              ],
+              "motorState": null,
+              "bladeQuaternions": {
+                "L_Front_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Front_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Rear_A": [
+                  0,
+                  0,
+                  0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "L_Rear_B": [
+                  0,
+                  0,
+                  -0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "R_Front_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Front_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Rear_A": [
+                  0,
+                  0,
+                  0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "R_Rear_B": [
+                  0,
+                  0,
+                  -0.7071068286895752,
+                  0.7071067094802856
+                ]
+              }
+            },
+            {
+              "frame": 199,
+              "time": 8.291666666666666,
+              "unfold": 0,
+              "sliderPosition": [
+                0,
+                -0.019999999552965164,
+                -0.8409326680793787
+              ],
+              "wingR": [
+                -0.4999999997307978,
+                0.4999999997307978,
+                0.4999999997307978,
+                0.5000000008076066
+              ],
+              "screw": [
+                0,
+                0,
+                0.000005880055259430938,
+                0.9999999999995193
+              ],
+              "motorState": null,
+              "bladeQuaternions": {
+                "L_Front_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Front_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Rear_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Rear_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Front_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Front_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Rear_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Rear_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            },
+            {
+              "frame": 199,
+              "time": 8.291666984558105,
+              "unfold": 0,
+              "sliderPosition": [
+                0,
+                -0.019999999552965164,
+                -0.8409326672554016
+              ],
+              "wingR": [
+                -0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "screw": [
+                0,
+                0,
+                0.000005799161499453476,
+                1
+              ],
+              "motorState": null,
+              "bladeQuaternions": {
+                "L_Front_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Front_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Rear_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Rear_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Front_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Front_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Rear_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Rear_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "TRANSWING_Motors_Start_Stop",
+          "channels": 26,
+          "duration": 7,
+          "samples": 5313,
+          "maximumVisibleEyeBallDistance": 5.337077004268153e-7,
+          "maximumPropHubToRealAxisDistance": 1.0867644447540335e-7,
+          "maximumDriveQuaternionError": 1.1102230246251565e-16,
+          "maximumThreadPhaseDriftRadians": 2.853273173286652e-14,
+          "maximumMechanismPointError": 1.1831247238894388e-7,
+          "maximumWingQuaternionError": 8.43769498715119e-15,
+          "maximumEndpointMotorQuaternionError": 8.596456879672587e-13,
+          "maximumEndpointFoldQuaternionError": 3.552713678800501e-15,
+          "maximumMotorQuaternionError": 1.1826095658307167e-12,
+          "maximumFoldQuaternionError": 4.773959005888173e-15,
+          "stationaryFoldChecks": 18208,
+          "motorPoseReference": "Independent analytical values at the frozen 673 Float32 quarter-frame knots, with linear angle interpolation matching glTF quaternion SLERP",
+          "actualSliderYRange": [
+            0.8409326672554015,
+            0.8409326672554017
+          ],
+          "driveTracks": [
+            {
+              "name": "Drive_ScrewRotor",
+              "keys": 673,
+              "maximumKeyAngle": 0
+            },
+            {
+              "name": "Drive_MotorRotor",
+              "keys": 673,
+              "maximumKeyAngle": 0
+            },
+            {
+              "name": "Drive_PlanetRotor_0",
+              "keys": 673,
+              "maximumKeyAngle": 0
+            },
+            {
+              "name": "Drive_PlanetRotor_1",
+              "keys": 673,
+              "maximumKeyAngle": 0
+            },
+            {
+              "name": "Drive_PlanetRotor_2",
+              "keys": 673,
+              "maximumKeyAngle": 0
+            }
+          ],
+          "threadPhase": {
+            "method": "All loaded mesh triangles bounded in screw-frame atan2(x,y)+2*pi*z/lead; actual mesh witnesses track that phase during playback",
+            "lead": 0.032,
+            "centerSeparation": 3.14159252006254,
+            "restPhaseResidual": 1.3352725325432857e-7,
+            "conservativeMaterialBandGapRadians": 1.1258527497866249,
+            "bands": [
+              {
+                "node": "Drive_LeadScrewThread",
+                "center": 2.3455000040510368,
+                "band": [
+                  -1.007811557339711,
+                  1.0078118009566128
+                ],
+                "minimumTriangleRadius": 0.007435890880483022,
+                "uniqueVertices": 3532,
+                "triangles": 7060,
+                "phaseWitnesses": 13
+              },
+              {
+                "node": "Drive_NutInternalThread",
+                "center": -0.7960925160115033,
+                "band": [
+                  -1.0079279401805883,
+                  1.0079279693193024
+                ],
+                "minimumTriangleRadius": 0.009121289329633697,
+                "uniqueVertices": 136,
+                "triangles": 268,
+                "phaseWitnesses": 13
+              }
+            ],
+            "scope": "Actual candidate GLB rest geometry and sampled playback only; no whole-aircraft collision, manufacturing or appearance acceptance"
+          },
+          "endpoints": [
+            {
+              "frame": 0,
+              "time": 0,
+              "unfold": 0,
+              "sliderPosition": [
+                0,
+                -0.019999999552965164,
+                -0.8409326672554016
+              ],
+              "wingR": [
+                -0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "screw": [
+                0,
+                0,
+                0.000005799161499453476,
+                1
+              ],
+              "motorState": {
+                "fold": 1,
+                "phase": 0
+              },
+              "bladeQuaternions": {
+                "L_Front_A": [
+                  0,
+                  0,
+                  0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "L_Front_B": [
+                  0,
+                  0,
+                  -0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "L_Rear_A": [
+                  0,
+                  0,
+                  0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "L_Rear_B": [
+                  0,
+                  0,
+                  -0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "R_Front_A": [
+                  0,
+                  0,
+                  0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "R_Front_B": [
+                  0,
+                  0,
+                  -0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "R_Rear_A": [
+                  0,
+                  0,
+                  0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "R_Rear_B": [
+                  0,
+                  0,
+                  -0.7071068286895752,
+                  0.7071067094802856
+                ]
+              }
+            },
+            {
+              "frame": 12,
+              "time": 0.5,
+              "unfold": 0,
+              "sliderPosition": [
+                0,
+                -0.019999999552965164,
+                -0.8409326672554016
+              ],
+              "wingR": [
+                -0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "screw": [
+                0,
+                0,
+                0.000005799161499453476,
+                1
+              ],
+              "motorState": {
+                "fold": 1,
+                "phase": 0
+              },
+              "bladeQuaternions": {
+                "L_Front_A": [
+                  0,
+                  0,
+                  0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "L_Front_B": [
+                  0,
+                  0,
+                  -0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "L_Rear_A": [
+                  0,
+                  0,
+                  0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "L_Rear_B": [
+                  0,
+                  0,
+                  -0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "R_Front_A": [
+                  0,
+                  0,
+                  0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "R_Front_B": [
+                  0,
+                  0,
+                  -0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "R_Rear_A": [
+                  0,
+                  0,
+                  0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "R_Rear_B": [
+                  0,
+                  0,
+                  -0.7071068286895752,
+                  0.7071067094802856
+                ]
+              }
+            },
+            {
+              "frame": 36,
+              "time": 1.5,
+              "unfold": 0,
+              "sliderPosition": [
+                0,
+                -0.019999999552965164,
+                -0.8409326672554016
+              ],
+              "wingR": [
+                -0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "screw": [
+                0,
+                0,
+                0.000005799161499453476,
+                1
+              ],
+              "motorState": {
+                "fold": 0,
+                "phase": 0
+              },
+              "bladeQuaternions": {
+                "L_Front_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Front_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Rear_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Rear_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Front_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Front_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Rear_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Rear_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            },
+            {
+              "frame": 60,
+              "time": 2.5,
+              "unfold": 0,
+              "sliderPosition": [
+                0,
+                -0.019999999552965164,
+                -0.8409326672554016
+              ],
+              "wingR": [
+                -0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "screw": [
+                0,
+                0,
+                0.000005799161499453476,
+                1
+              ],
+              "motorState": {
+                "fold": 0,
+                "phase": 6
+              },
+              "bladeQuaternions": {
+                "L_Front_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Front_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Rear_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Rear_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Front_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Front_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Rear_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Rear_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            },
+            {
+              "frame": 96,
+              "time": 4,
+              "unfold": 0,
+              "sliderPosition": [
+                0,
+                -0.019999999552965164,
+                -0.8409326672554016
+              ],
+              "wingR": [
+                -0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "screw": [
+                0,
+                0,
+                0.000005799161499453476,
+                1
+              ],
+              "motorState": {
+                "fold": 0,
+                "phase": 24
+              },
+              "bladeQuaternions": {
+                "L_Front_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Front_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Rear_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Rear_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Front_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Front_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Rear_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Rear_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            },
+            {
+              "frame": 120,
+              "time": 5,
+              "unfold": 0,
+              "sliderPosition": [
+                0,
+                -0.019999999552965164,
+                -0.8409326672554016
+              ],
+              "wingR": [
+                -0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "screw": [
+                0,
+                0,
+                0.000005799161499453476,
+                1
+              ],
+              "motorState": {
+                "fold": 0,
+                "phase": 30
+              },
+              "bladeQuaternions": {
+                "L_Front_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Front_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Rear_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Rear_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Front_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Front_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Rear_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Rear_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            },
+            {
+              "frame": 132,
+              "time": 5.5,
+              "unfold": 0,
+              "sliderPosition": [
+                0,
+                -0.019999999552965164,
+                -0.8409326672554016
+              ],
+              "wingR": [
+                -0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "screw": [
+                0,
+                0,
+                0.000005799161499453476,
+                1
+              ],
+              "motorState": {
+                "fold": 0,
+                "phase": 31.41592653589793
+              },
+              "bladeQuaternions": {
+                "L_Front_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Front_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Rear_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Rear_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Front_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Front_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Rear_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Rear_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            },
+            {
+              "frame": 156,
+              "time": 6.5,
+              "unfold": 0,
+              "sliderPosition": [
+                0,
+                -0.019999999552965164,
+                -0.8409326672554016
+              ],
+              "wingR": [
+                -0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "screw": [
+                0,
+                0,
+                0.000005799161499453476,
+                1
+              ],
+              "motorState": {
+                "fold": 1,
+                "phase": 31.41592653589793
+              },
+              "bladeQuaternions": {
+                "L_Front_A": [
+                  0,
+                  0,
+                  0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "L_Front_B": [
+                  0,
+                  0,
+                  -0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "L_Rear_A": [
+                  0,
+                  0,
+                  0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "L_Rear_B": [
+                  0,
+                  0,
+                  -0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "R_Front_A": [
+                  0,
+                  0,
+                  0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "R_Front_B": [
+                  0,
+                  0,
+                  -0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "R_Rear_A": [
+                  0,
+                  0,
+                  0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "R_Rear_B": [
+                  0,
+                  0,
+                  -0.7071068286895752,
+                  0.7071067094802856
+                ]
+              }
+            },
+            {
+              "frame": 168,
+              "time": 7,
+              "unfold": 0,
+              "sliderPosition": [
+                0,
+                -0.019999999552965164,
+                -0.8409326672554016
+              ],
+              "wingR": [
+                -0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "screw": [
+                0,
+                0,
+                0.000005799161499453476,
+                1
+              ],
+              "motorState": {
+                "fold": 1,
+                "phase": 31.41592653589793
+              },
+              "bladeQuaternions": {
+                "L_Front_A": [
+                  0,
+                  0,
+                  0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "L_Front_B": [
+                  0,
+                  0,
+                  -0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "L_Rear_A": [
+                  0,
+                  0,
+                  0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "L_Rear_B": [
+                  0,
+                  0,
+                  -0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "R_Front_A": [
+                  0,
+                  0,
+                  0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "R_Front_B": [
+                  0,
+                  0,
+                  -0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "R_Rear_A": [
+                  0,
+                  0,
+                  0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "R_Rear_B": [
+                  0,
+                  0,
+                  -0.7071068286895752,
+                  0.7071067094802856
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "threadRestPhaseFaultInjection": {
+        "rejected": true,
+        "injectedMaleThreadRotationRadians": 0.05
+      }
+    },
+    {
+      "filename": "xp4.glb",
+      "passed": true,
+      "sha256": "02970bbcc56ef8574643c12962b53917f52ca3d42eaab974660c080fd41ec250",
+      "persistedMechanism": {
+        "actualRightPivot": [
+          1.5001282691955566,
+          -1.4448717832565308,
+          -0.22012822329998016
+        ],
+        "wingAnchorRightCruise": [
+          1.059999942779541,
+          -1.0399999618530273,
+          -0.17669521272182465
+        ],
+        "bodyAnchorRightCruise": [
+          0.16,
+          1.9,
+          -0.02
+        ],
+        "rigidRodLength": 3.0786610396187717,
+        "actualTravel": {
+          "samples": 4001,
+          "minimumY": 0.8409326081856277,
+          "maximumY": 1.9000001249111587,
+          "hoverY": 0.8409326081856277,
+          "cruiseY": 1.9000001249111587,
+          "minimumAtUnfold": 0,
+          "maximumAtUnfold": 1,
+          "continuousExtremaProof": false
+        }
+      },
+      "hierarchy": [
+        {
+          "node": "Composite_wing_L",
+          "parent": "WingPivot_L"
+        },
+        {
+          "node": "WingLowerClosure_L",
+          "parent": "WingPivot_L"
+        },
+        {
+          "node": "RootCarrierMoving_L",
+          "parent": "WingPivot_L"
+        },
+        {
+          "node": "RootCarrierThrust_L",
+          "parent": "WingPivot_L"
+        },
+        {
+          "node": "RootCarrierBridge_L",
+          "parent": "WingPivot_L"
+        },
+        {
+          "node": "BraceWing_L",
+          "parent": "WingPivot_L"
+        },
+        {
+          "node": "BraceWingSeat_L",
+          "parent": "WingPivot_L"
+        },
+        {
+          "node": "BraceBall_L_Wing",
+          "parent": "WingPivot_L"
+        },
+        {
+          "node": "BraceBall_L_Body",
+          "parent": "BraceSpreader"
+        },
+        {
+          "node": "BraceBody_L",
+          "parent": "BraceSpreader"
+        },
+        {
+          "node": "BraceRodEye_L_Body",
+          "parent": "BraceRod_L"
+        },
+        {
+          "node": "BraceRodEye_L_Root",
+          "parent": "BraceRod_L"
+        },
+        {
+          "node": "MotorAxisStart_L_Front",
+          "parent": "WingPivot_L"
+        },
+        {
+          "node": "MotorAxisEnd_L_Front",
+          "parent": "WingPivot_L"
+        },
+        {
+          "node": "Prop_L_Front",
+          "parent": "WingPivot_L"
+        },
+        {
+          "node": "BladeFold_L_Front_A",
+          "parent": "Prop_L_Front"
+        },
+        {
+          "node": "BladeFold_L_Front_B",
+          "parent": "Prop_L_Front"
+        },
+        {
+          "node": "MotorAxisStart_L_Rear",
+          "parent": "WingPivot_L"
+        },
+        {
+          "node": "MotorAxisEnd_L_Rear",
+          "parent": "WingPivot_L"
+        },
+        {
+          "node": "Prop_L_Rear",
+          "parent": "WingPivot_L"
+        },
+        {
+          "node": "BladeFold_L_Rear_A",
+          "parent": "Prop_L_Rear"
+        },
+        {
+          "node": "BladeFold_L_Rear_B",
+          "parent": "Prop_L_Rear"
+        },
+        {
+          "node": "Composite_wing_R",
+          "parent": "WingPivot_R"
+        },
+        {
+          "node": "WingLowerClosure_R",
+          "parent": "WingPivot_R"
+        },
+        {
+          "node": "RootCarrierMoving_R",
+          "parent": "WingPivot_R"
+        },
+        {
+          "node": "RootCarrierThrust_R",
+          "parent": "WingPivot_R"
+        },
+        {
+          "node": "RootCarrierBridge_R",
+          "parent": "WingPivot_R"
+        },
+        {
+          "node": "BraceWing_R",
+          "parent": "WingPivot_R"
+        },
+        {
+          "node": "BraceWingSeat_R",
+          "parent": "WingPivot_R"
+        },
+        {
+          "node": "BraceBall_R_Wing",
+          "parent": "WingPivot_R"
+        },
+        {
+          "node": "BraceBall_R_Body",
+          "parent": "BraceSpreader"
+        },
+        {
+          "node": "BraceBody_R",
+          "parent": "BraceSpreader"
+        },
+        {
+          "node": "BraceRodEye_R_Body",
+          "parent": "BraceRod_R"
+        },
+        {
+          "node": "BraceRodEye_R_Root",
+          "parent": "BraceRod_R"
+        },
+        {
+          "node": "MotorAxisStart_R_Front",
+          "parent": "WingPivot_R"
+        },
+        {
+          "node": "MotorAxisEnd_R_Front",
+          "parent": "WingPivot_R"
+        },
+        {
+          "node": "Prop_R_Front",
+          "parent": "WingPivot_R"
+        },
+        {
+          "node": "BladeFold_R_Front_A",
+          "parent": "Prop_R_Front"
+        },
+        {
+          "node": "BladeFold_R_Front_B",
+          "parent": "Prop_R_Front"
+        },
+        {
+          "node": "MotorAxisStart_R_Rear",
+          "parent": "WingPivot_R"
+        },
+        {
+          "node": "MotorAxisEnd_R_Rear",
+          "parent": "WingPivot_R"
+        },
+        {
+          "node": "Prop_R_Rear",
+          "parent": "WingPivot_R"
+        },
+        {
+          "node": "BladeFold_R_Rear_A",
+          "parent": "Prop_R_Rear"
+        },
+        {
+          "node": "BladeFold_R_Rear_B",
+          "parent": "Prop_R_Rear"
+        },
+        {
+          "node": "Drive_Crossbeam",
+          "parent": "BraceSpreader"
+        },
+        {
+          "node": "Drive_NutCarriage",
+          "parent": "BraceSpreader"
+        },
+        {
+          "node": "Drive_NutInternalThread",
+          "parent": "BraceSpreader"
+        },
+        {
+          "node": "Drive_GuideBushing_L",
+          "parent": "BraceSpreader"
+        },
+        {
+          "node": "Drive_GuideBushing_R",
+          "parent": "BraceSpreader"
+        },
+        {
+          "node": "Drive_OutputWeb",
+          "parent": "BraceSpreader"
+        },
+        {
+          "node": "Drive_LeadScrewThread",
+          "parent": "Drive_ScrewRotor"
+        },
+        {
+          "node": "Drive_PlanetRotor_0",
+          "parent": "Drive_ScrewRotor"
+        },
+        {
+          "node": "Drive_PlanetRotor_1",
+          "parent": "Drive_ScrewRotor"
+        },
+        {
+          "node": "Drive_PlanetRotor_2",
+          "parent": "Drive_ScrewRotor"
+        }
+      ],
+      "clips": [
+        {
+          "name": "TRANSWING_Hover_Cruise_Hover",
+          "channels": 18,
+          "duration": 8.291666984558105,
+          "samples": 5859,
+          "maximumVisibleEyeBallDistance": 0.000005304531537361694,
+          "maximumPropHubToRealAxisDistance": 1.0867649735959488e-7,
+          "maximumDriveQuaternionError": 8.881784197001252e-16,
+          "maximumThreadPhaseDriftRadians": 8.566390530262424e-8,
+          "maximumMechanismPointError": 0.000009118031030933414,
+          "maximumWingQuaternionError": 2.883493444016949e-11,
+          "maximumEndpointMotorQuaternionError": 0,
+          "maximumEndpointFoldQuaternionError": 3.552713678800501e-15,
+          "maximumMotorQuaternionError": 0,
+          "maximumFoldQuaternionError": 0,
+          "stationaryFoldChecks": 0,
+          "motorPoseReference": null,
+          "actualSliderYRange": [
+            0.8409326672554016,
+            1.9000000953674319
+          ],
+          "driveTracks": [
+            {
+              "name": "Drive_ScrewRotor",
+              "keys": 6371,
+              "maximumKeyAngle": 0.15032670548193133
+            },
+            {
+              "name": "Drive_MotorRotor",
+              "keys": 6371,
+              "maximumKeyAngle": 0.45097764749344177
+            },
+            {
+              "name": "Drive_PlanetRotor_0",
+              "keys": 6371,
+              "maximumKeyAngle": 0.6013036733072998
+            },
+            {
+              "name": "Drive_PlanetRotor_1",
+              "keys": 6371,
+              "maximumKeyAngle": 0.6013036733072998
+            },
+            {
+              "name": "Drive_PlanetRotor_2",
+              "keys": 6371,
+              "maximumKeyAngle": 0.6013036733072998
+            }
+          ],
+          "threadPhase": {
+            "method": "All loaded mesh triangles bounded in screw-frame atan2(x,y)+2*pi*z/lead; actual mesh witnesses track that phase during playback",
+            "lead": 0.032,
+            "centerSeparation": 3.14159252006254,
+            "restPhaseResidual": 1.3352725325432857e-7,
+            "conservativeMaterialBandGapRadians": 1.1258527497866249,
+            "bands": [
+              {
+                "node": "Drive_LeadScrewThread",
+                "center": 2.3455000040510368,
+                "band": [
+                  -1.007811557339711,
+                  1.0078118009566128
+                ],
+                "minimumTriangleRadius": 0.007435890880483022,
+                "uniqueVertices": 3532,
+                "triangles": 7060,
+                "phaseWitnesses": 13
+              },
+              {
+                "node": "Drive_NutInternalThread",
+                "center": -0.7960925160115032,
+                "band": [
+                  -1.0079279401805885,
+                  1.0079279693193022
+                ],
+                "minimumTriangleRadius": 0.009121289329633697,
+                "uniqueVertices": 136,
+                "triangles": 268,
+                "phaseWitnesses": 13
+              }
+            ],
+            "scope": "Actual candidate GLB rest geometry and sampled playback only; no whole-aircraft collision, manufacturing or appearance acceptance"
+          },
+          "endpoints": [
+            {
+              "frame": 0,
+              "time": 0,
+              "unfold": 0,
+              "sliderPosition": [
+                0,
+                -0.019999999552965164,
+                -0.8409326672554016
+              ],
+              "wingR": [
+                -0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "screw": [
+                0,
+                0,
+                0.000005799161499453476,
+                1
+              ],
+              "motorState": null,
+              "bladeQuaternions": {
+                "L_Front_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Front_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Rear_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Rear_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Front_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Front_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Rear_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Rear_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            },
+            {
+              "frame": 79,
+              "time": 3.2916666666666665,
+              "unfold": 1,
+              "sliderPosition": [
+                0,
+                -0.019999999552965164,
+                -1.9000000952828493
+              ],
+              "wingR": [
+                -1.380994776526555e-10,
+                1.380994776526555e-10,
+                1.380994776526555e-10,
+                1
+              ],
+              "screw": [
+                0,
+                0,
+                -0.29661848348177955,
+                -0.9549960518680314
+              ],
+              "motorState": null,
+              "bladeQuaternions": {
+                "L_Front_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Front_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Rear_A": [
+                  0,
+                  0,
+                  0.7071068278425722,
+                  0.7071067103276584
+                ],
+                "L_Rear_B": [
+                  0,
+                  0,
+                  -0.7071068278425722,
+                  0.7071067103276584
+                ],
+                "R_Front_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Front_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Rear_A": [
+                  0,
+                  0,
+                  0.7071068278425722,
+                  0.7071067103276584
+                ],
+                "R_Rear_B": [
+                  0,
+                  0,
+                  -0.7071068278425722,
+                  0.7071067103276584
+                ]
+              }
+            },
+            {
+              "frame": 119,
+              "time": 4.958333333333333,
+              "unfold": 1,
+              "sliderPosition": [
+                0,
+                -0.019999999552965164,
+                -1.9000000953674316
+              ],
+              "wingR": [
+                0,
+                0,
+                0,
+                1
+              ],
+              "screw": [
+                0,
+                0,
+                -0.2966184914112091,
+                -0.9549960494041443
+              ],
+              "motorState": null,
+              "bladeQuaternions": {
+                "L_Front_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Front_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Rear_A": [
+                  0,
+                  0,
+                  0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "L_Rear_B": [
+                  0,
+                  0,
+                  -0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "R_Front_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Front_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Rear_A": [
+                  0,
+                  0,
+                  0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "R_Rear_B": [
+                  0,
+                  0,
+                  -0.7071068286895752,
+                  0.7071067094802856
+                ]
+              }
+            },
+            {
+              "frame": 199,
+              "time": 8.291666666666666,
+              "unfold": 0,
+              "sliderPosition": [
+                0,
+                -0.019999999552965164,
+                -0.8409326680793787
+              ],
+              "wingR": [
+                -0.4999999997307978,
+                0.4999999997307978,
+                0.4999999997307978,
+                0.5000000008076066
+              ],
+              "screw": [
+                0,
+                0,
+                0.000005880055259430938,
+                0.9999999999995193
+              ],
+              "motorState": null,
+              "bladeQuaternions": {
+                "L_Front_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Front_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Rear_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Rear_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Front_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Front_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Rear_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Rear_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            },
+            {
+              "frame": 199,
+              "time": 8.291666984558105,
+              "unfold": 0,
+              "sliderPosition": [
+                0,
+                -0.019999999552965164,
+                -0.8409326672554016
+              ],
+              "wingR": [
+                -0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "screw": [
+                0,
+                0,
+                0.000005799161499453476,
+                1
+              ],
+              "motorState": null,
+              "bladeQuaternions": {
+                "L_Front_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Front_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Rear_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Rear_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Front_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Front_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Rear_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Rear_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "TRANSWING_Motors_Start_Stop",
+          "channels": 26,
+          "duration": 7,
+          "samples": 5313,
+          "maximumVisibleEyeBallDistance": 5.337077004268153e-7,
+          "maximumPropHubToRealAxisDistance": 1.0867644447540335e-7,
+          "maximumDriveQuaternionError": 1.1102230246251565e-16,
+          "maximumThreadPhaseDriftRadians": 2.8428648324307915e-14,
+          "maximumMechanismPointError": 1.1831247238894388e-7,
+          "maximumWingQuaternionError": 8.43769498715119e-15,
+          "maximumEndpointMotorQuaternionError": 8.596456879672587e-13,
+          "maximumEndpointFoldQuaternionError": 3.552713678800501e-15,
+          "maximumMotorQuaternionError": 1.1826095658307167e-12,
+          "maximumFoldQuaternionError": 4.773959005888173e-15,
+          "stationaryFoldChecks": 18208,
+          "motorPoseReference": "Independent analytical values at the frozen 673 Float32 quarter-frame knots, with linear angle interpolation matching glTF quaternion SLERP",
+          "actualSliderYRange": [
+            0.8409326672554015,
+            0.8409326672554017
+          ],
+          "driveTracks": [
+            {
+              "name": "Drive_ScrewRotor",
+              "keys": 673,
+              "maximumKeyAngle": 0
+            },
+            {
+              "name": "Drive_MotorRotor",
+              "keys": 673,
+              "maximumKeyAngle": 0
+            },
+            {
+              "name": "Drive_PlanetRotor_0",
+              "keys": 673,
+              "maximumKeyAngle": 0
+            },
+            {
+              "name": "Drive_PlanetRotor_1",
+              "keys": 673,
+              "maximumKeyAngle": 0
+            },
+            {
+              "name": "Drive_PlanetRotor_2",
+              "keys": 673,
+              "maximumKeyAngle": 0
+            }
+          ],
+          "threadPhase": {
+            "method": "All loaded mesh triangles bounded in screw-frame atan2(x,y)+2*pi*z/lead; actual mesh witnesses track that phase during playback",
+            "lead": 0.032,
+            "centerSeparation": 3.14159252006254,
+            "restPhaseResidual": 1.3352725325432857e-7,
+            "conservativeMaterialBandGapRadians": 1.1258527497866249,
+            "bands": [
+              {
+                "node": "Drive_LeadScrewThread",
+                "center": 2.3455000040510368,
+                "band": [
+                  -1.007811557339711,
+                  1.0078118009566128
+                ],
+                "minimumTriangleRadius": 0.007435890880483022,
+                "uniqueVertices": 3532,
+                "triangles": 7060,
+                "phaseWitnesses": 13
+              },
+              {
+                "node": "Drive_NutInternalThread",
+                "center": -0.7960925160115032,
+                "band": [
+                  -1.0079279401805885,
+                  1.0079279693193022
+                ],
+                "minimumTriangleRadius": 0.009121289329633697,
+                "uniqueVertices": 136,
+                "triangles": 268,
+                "phaseWitnesses": 13
+              }
+            ],
+            "scope": "Actual candidate GLB rest geometry and sampled playback only; no whole-aircraft collision, manufacturing or appearance acceptance"
+          },
+          "endpoints": [
+            {
+              "frame": 0,
+              "time": 0,
+              "unfold": 0,
+              "sliderPosition": [
+                0,
+                -0.019999999552965164,
+                -0.8409326672554016
+              ],
+              "wingR": [
+                -0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "screw": [
+                0,
+                0,
+                0.000005799161499453476,
+                1
+              ],
+              "motorState": {
+                "fold": 1,
+                "phase": 0
+              },
+              "bladeQuaternions": {
+                "L_Front_A": [
+                  0,
+                  0,
+                  0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "L_Front_B": [
+                  0,
+                  0,
+                  -0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "L_Rear_A": [
+                  0,
+                  0,
+                  0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "L_Rear_B": [
+                  0,
+                  0,
+                  -0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "R_Front_A": [
+                  0,
+                  0,
+                  0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "R_Front_B": [
+                  0,
+                  0,
+                  -0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "R_Rear_A": [
+                  0,
+                  0,
+                  0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "R_Rear_B": [
+                  0,
+                  0,
+                  -0.7071068286895752,
+                  0.7071067094802856
+                ]
+              }
+            },
+            {
+              "frame": 12,
+              "time": 0.5,
+              "unfold": 0,
+              "sliderPosition": [
+                0,
+                -0.019999999552965164,
+                -0.8409326672554016
+              ],
+              "wingR": [
+                -0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "screw": [
+                0,
+                0,
+                0.000005799161499453476,
+                1
+              ],
+              "motorState": {
+                "fold": 1,
+                "phase": 0
+              },
+              "bladeQuaternions": {
+                "L_Front_A": [
+                  0,
+                  0,
+                  0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "L_Front_B": [
+                  0,
+                  0,
+                  -0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "L_Rear_A": [
+                  0,
+                  0,
+                  0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "L_Rear_B": [
+                  0,
+                  0,
+                  -0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "R_Front_A": [
+                  0,
+                  0,
+                  0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "R_Front_B": [
+                  0,
+                  0,
+                  -0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "R_Rear_A": [
+                  0,
+                  0,
+                  0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "R_Rear_B": [
+                  0,
+                  0,
+                  -0.7071068286895752,
+                  0.7071067094802856
+                ]
+              }
+            },
+            {
+              "frame": 36,
+              "time": 1.5,
+              "unfold": 0,
+              "sliderPosition": [
+                0,
+                -0.019999999552965164,
+                -0.8409326672554016
+              ],
+              "wingR": [
+                -0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "screw": [
+                0,
+                0,
+                0.000005799161499453476,
+                1
+              ],
+              "motorState": {
+                "fold": 0,
+                "phase": 0
+              },
+              "bladeQuaternions": {
+                "L_Front_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Front_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Rear_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Rear_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Front_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Front_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Rear_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Rear_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            },
+            {
+              "frame": 60,
+              "time": 2.5,
+              "unfold": 0,
+              "sliderPosition": [
+                0,
+                -0.019999999552965164,
+                -0.8409326672554016
+              ],
+              "wingR": [
+                -0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "screw": [
+                0,
+                0,
+                0.000005799161499453476,
+                1
+              ],
+              "motorState": {
+                "fold": 0,
+                "phase": 6
+              },
+              "bladeQuaternions": {
+                "L_Front_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Front_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Rear_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Rear_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Front_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Front_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Rear_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Rear_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            },
+            {
+              "frame": 96,
+              "time": 4,
+              "unfold": 0,
+              "sliderPosition": [
+                0,
+                -0.019999999552965164,
+                -0.8409326672554016
+              ],
+              "wingR": [
+                -0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "screw": [
+                0,
+                0,
+                0.000005799161499453476,
+                1
+              ],
+              "motorState": {
+                "fold": 0,
+                "phase": 24
+              },
+              "bladeQuaternions": {
+                "L_Front_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Front_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Rear_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Rear_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Front_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Front_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Rear_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Rear_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            },
+            {
+              "frame": 120,
+              "time": 5,
+              "unfold": 0,
+              "sliderPosition": [
+                0,
+                -0.019999999552965164,
+                -0.8409326672554016
+              ],
+              "wingR": [
+                -0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "screw": [
+                0,
+                0,
+                0.000005799161499453476,
+                1
+              ],
+              "motorState": {
+                "fold": 0,
+                "phase": 30
+              },
+              "bladeQuaternions": {
+                "L_Front_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Front_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Rear_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Rear_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Front_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Front_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Rear_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Rear_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            },
+            {
+              "frame": 132,
+              "time": 5.5,
+              "unfold": 0,
+              "sliderPosition": [
+                0,
+                -0.019999999552965164,
+                -0.8409326672554016
+              ],
+              "wingR": [
+                -0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "screw": [
+                0,
+                0,
+                0.000005799161499453476,
+                1
+              ],
+              "motorState": {
+                "fold": 0,
+                "phase": 31.41592653589793
+              },
+              "bladeQuaternions": {
+                "L_Front_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Front_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Rear_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "L_Rear_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Front_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Front_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Rear_A": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "R_Rear_B": [
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              }
+            },
+            {
+              "frame": 156,
+              "time": 6.5,
+              "unfold": 0,
+              "sliderPosition": [
+                0,
+                -0.019999999552965164,
+                -0.8409326672554016
+              ],
+              "wingR": [
+                -0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "screw": [
+                0,
+                0,
+                0.000005799161499453476,
+                1
+              ],
+              "motorState": {
+                "fold": 1,
+                "phase": 31.41592653589793
+              },
+              "bladeQuaternions": {
+                "L_Front_A": [
+                  0,
+                  0,
+                  0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "L_Front_B": [
+                  0,
+                  0,
+                  -0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "L_Rear_A": [
+                  0,
+                  0,
+                  0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "L_Rear_B": [
+                  0,
+                  0,
+                  -0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "R_Front_A": [
+                  0,
+                  0,
+                  0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "R_Front_B": [
+                  0,
+                  0,
+                  -0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "R_Rear_A": [
+                  0,
+                  0,
+                  0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "R_Rear_B": [
+                  0,
+                  0,
+                  -0.7071068286895752,
+                  0.7071067094802856
+                ]
+              }
+            },
+            {
+              "frame": 168,
+              "time": 7,
+              "unfold": 0,
+              "sliderPosition": [
+                0,
+                -0.019999999552965164,
+                -0.8409326672554016
+              ],
+              "wingR": [
+                -0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "screw": [
+                0,
+                0,
+                0.000005799161499453476,
+                1
+              ],
+              "motorState": {
+                "fold": 1,
+                "phase": 31.41592653589793
+              },
+              "bladeQuaternions": {
+                "L_Front_A": [
+                  0,
+                  0,
+                  0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "L_Front_B": [
+                  0,
+                  0,
+                  -0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "L_Rear_A": [
+                  0,
+                  0,
+                  0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "L_Rear_B": [
+                  0,
+                  0,
+                  -0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "R_Front_A": [
+                  0,
+                  0,
+                  0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "R_Front_B": [
+                  0,
+                  0,
+                  -0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "R_Rear_A": [
+                  0,
+                  0,
+                  0.7071068286895752,
+                  0.7071067094802856
+                ],
+                "R_Rear_B": [
+                  0,
+                  0,
+                  -0.7071068286895752,
+                  0.7071067094802856
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "threadRestPhaseFaultInjection": {
+        "rejected": true,
+        "injectedMaleThreadRotationRadians": 0.05
+      }
+    }
+  ]
+}

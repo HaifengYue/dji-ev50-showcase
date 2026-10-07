@@ -1,0 +1,124 @@
+{
+  "revision": 27,
+  "inventoryComplete": true,
+  "sourceCandidateSha256": "2f6d6a1a5a616351643233342a1e175b2483aa3785b50185aac104799ac84f4b",
+  "actualSourceReferenceOwnerCount": 285,
+  "newMeshOwnersComparedToFrozenM": [],
+  "files": [
+    {
+      "file": "xp4-source.glb",
+      "sha256": "36dadf42ebbffbb81869ee8ddaecc69827dcaab0efdeee31cb87bb1fb6e1db2e",
+      "logicalOwners": 285,
+      "renderedMeshPrimitives": 287,
+      "renderedTriangles": 357418,
+      "rawClosedOwners": 265,
+      "allOwnersRawClosed": false,
+      "openOrNonmanifoldOwnerNames": [
+        "Lower_fuselage_join",
+        "Lower_fuselage_join.002",
+        "V_tail_blue_leading_L",
+        "Fixed_root_blue_L",
+        "Pod_mount_seam_L_Front",
+        "Pod_mount_seam_L_Front.001",
+        "Pod_mount_seam_L_Rear",
+        "Pod_mount_seam_L_Rear.001",
+        "Wing_blue_angular_panel_L",
+        "Wing_blue_leading_L",
+        "WingLowerClosureBlue_L",
+        "V_tail_blue_leading_R",
+        "Fixed_root_blue_R",
+        "Pod_mount_seam_R_Front",
+        "Pod_mount_seam_R_Front.001",
+        "Pod_mount_seam_R_Rear",
+        "Pod_mount_seam_R_Rear.001",
+        "Wing_blue_angular_panel_R",
+        "Wing_blue_leading_R",
+        "WingLowerClosureBlue_R"
+      ],
+      "ownersWithSatDegenerateFiltering": []
+    },
+    {
+      "file": "xp4.glb",
+      "sha256": "02970bbcc56ef8574643c12962b53917f52ca3d42eaab974660c080fd41ec250",
+      "logicalOwners": 285,
+      "renderedMeshPrimitives": 287,
+      "renderedTriangles": 357418,
+      "rawClosedOwners": 256,
+      "allOwnersRawClosed": false,
+      "openOrNonmanifoldOwnerNames": [
+        "Ventral_small_sensor",
+        "Lower_fuselage_join",
+        "Lower_fuselage_join.002",
+        "V_tail_blue_leading_L",
+        "Fixed_root_blue_L",
+        "Pod_mount_seam_L_Front",
+        "Pod_mount_seam_L_Front.001",
+        "Pod_mount_seam_L_Rear",
+        "Pod_mount_seam_L_Rear.001",
+        "Blade_hinge_arm_L_Front_A",
+        "Blade_hinge_arm_L_Front_B",
+        "Blade_hinge_arm_L_Rear_A",
+        "Blade_hinge_arm_L_Rear_B",
+        "Wing_blue_angular_panel_L",
+        "Wing_blue_leading_L",
+        "WingLowerClosureBlue_L",
+        "V_tail_blue_leading_R",
+        "Fixed_root_blue_R",
+        "Pod_mount_seam_R_Front",
+        "Pod_mount_seam_R_Front.001",
+        "Pod_mount_seam_R_Rear",
+        "Pod_mount_seam_R_Rear.001",
+        "Blade_hinge_arm_R_Front_A",
+        "Blade_hinge_arm_R_Front_B",
+        "Blade_hinge_arm_R_Rear_A",
+        "Blade_hinge_arm_R_Rear_B",
+        "Wing_blue_angular_panel_R",
+        "Wing_blue_leading_R",
+        "WingLowerClosureBlue_R"
+      ],
+      "ownersWithSatDegenerateFiltering": [
+        {
+          "node": "Ventral_small_sensor",
+          "count": 24
+        },
+        {
+          "node": "Blade_hinge_arm_L_Front_A",
+          "count": 8
+        },
+        {
+          "node": "Blade_hinge_arm_L_Front_B",
+          "count": 8
+        },
+        {
+          "node": "Blade_hinge_arm_L_Rear_A",
+          "count": 8
+        },
+        {
+          "node": "Blade_hinge_arm_L_Rear_B",
+          "count": 8
+        },
+        {
+          "node": "Blade_hinge_arm_R_Front_A",
+          "count": 8
+        },
+        {
+          "node": "Blade_hinge_arm_R_Front_B",
+          "count": 8
+        },
+        {
+          "node": "Blade_hinge_arm_R_Rear_A",
+          "count": 8
+        },
+        {
+          "node": "Blade_hinge_arm_R_Rear_B",
+          "count": 8
+        }
+      ]
+    }
+  ],
+  "globalClosureAcceptanceClaimed": false,
+  "jointMaterialAcceptanceImplied": false,
+  "appearanceAccepted": false,
+  "integrationApproved": false,
+  "scope": "Exhaustive physical-owner inventory includes every material primitive and both Group-owned Composite wings. Open coatings, nonmanifold surfaces and original SAT filtering are visible evidence, not silently granted exemptions. Strict lower-skin/new-owner topology is separately recorded in SEMANTIC_OWNER_TOPOLOGY_CHECK.json. No global closure, wall, clearance, appearance or material acceptance is claimed."
+}

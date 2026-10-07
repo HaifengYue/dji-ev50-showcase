@@ -234,6 +234,14 @@ class Client:
     def set_pose(self, position_m, attitude_xyzw=(0, 0, 0, 1), *, wait_applied=False) -> dict:
         return self.set_state(positionM=list(position_m), attitude=list(attitude_xyzw), wait_applied=wait_applied)
 
+    def set_surface(self, surface_id: str, degrees: float, *, wait_applied=False) -> dict:
+        """绝对偏转一片舵面；也接受 inboard/outboard/tail 兼容组。"""
+        return self.set_state(surfaces={surface_id: degrees}, wait_applied=wait_applied)
+
+    def set_surfaces(self, *, wait_applied=False, **angles: float) -> dict:
+        """原子更新多片舵面；未指定的舵面与舱盖保持原值。"""
+        return self.set_state(surfaces=angles, wait_applied=wait_applied)
+
     def set_motor(self, motor_id: str, target_rpm: float, *, enabled: bool = True, wait_applied=False) -> dict:
         return self.set_state(motors={motor_id: {"targetRpm": target_rpm, "enabled": enabled}}, wait_applied=wait_applied)
 

@@ -1,0 +1,142 @@
+{
+  "schema": "transwing.independent-controls.fresh-rebuild.v1",
+  "processContract": {
+    "blenderVersion": "4.3.2",
+    "frozenBaseThreads": 4,
+    "deltaThreads": 2,
+    "coldLoadBetweenStages": true
+  },
+  "inputCount": 276,
+  "inherited171Unchanged": true,
+  "currentOutputUsedAsConstructionInput": false,
+  "target": "/workspace/scratch/40bf3b17dbf8/transwing-new-annotations-20261007/control-surface-revision/fresh-rebuild/transwing-studio",
+  "commands": [
+    {
+      "name": "full-native-construction",
+      "exitCode": 0,
+      "seconds": 87.143,
+      "log": "qa/revision-20261007-controls/rebuild-checks/01-full-native-construction.log"
+    },
+    {
+      "name": "complete-native-identity",
+      "exitCode": 0,
+      "seconds": 2.798,
+      "log": "qa/revision-20261007-controls/rebuild-checks/02-complete-native-identity.log"
+    },
+    {
+      "name": "fresh-bake",
+      "exitCode": 0,
+      "seconds": 14.134,
+      "log": "qa/revision-20261007-controls/rebuild-checks/03-fresh-bake.log"
+    },
+    {
+      "name": "compress",
+      "exitCode": 0,
+      "seconds": 1.017,
+      "log": "qa/revision-20261007-controls/rebuild-checks/04-compress.log"
+    },
+    {
+      "name": "source-runtime",
+      "exitCode": 0,
+      "seconds": 0.894,
+      "log": "qa/revision-20261007-controls/rebuild-checks/05-source-runtime.log"
+    },
+    {
+      "name": "baked-native-geometry",
+      "exitCode": 0,
+      "seconds": 4.2,
+      "log": "qa/revision-20261007-controls/rebuild-checks/06-baked-native-geometry.log"
+    },
+    {
+      "name": "baked-animation",
+      "exitCode": 0,
+      "seconds": 3.435,
+      "log": "qa/revision-20261007-controls/rebuild-checks/07-baked-animation.log"
+    },
+    {
+      "name": "runtime-compatibility",
+      "exitCode": 0,
+      "seconds": 12.23,
+      "log": "qa/revision-20261007-controls/rebuild-checks/08-runtime-compatibility.log"
+    },
+    {
+      "name": "owner-topology",
+      "exitCode": 0,
+      "seconds": 4.659,
+      "log": "qa/revision-20261007-controls/rebuild-checks/09-owner-topology.log"
+    },
+    {
+      "name": "all-owner-inventory",
+      "exitCode": 0,
+      "seconds": 9.366,
+      "log": "qa/revision-20261007-controls/rebuild-checks/10-all-owner-inventory.log"
+    },
+    {
+      "name": "legacy-inventory-identity",
+      "exitCode": 0,
+      "seconds": 0.538,
+      "log": "qa/revision-20261007-controls/rebuild-checks/11-legacy-inventory-identity.log"
+    },
+    {
+      "name": "semantic-unit",
+      "exitCode": 0,
+      "seconds": 0.541,
+      "log": "qa/revision-20261007-controls/rebuild-checks/12-semantic-unit.log"
+    },
+    {
+      "name": "identity-negative",
+      "exitCode": 0,
+      "seconds": 3.376,
+      "log": "qa/revision-20261007-controls/rebuild-checks/13-identity-negative.log"
+    },
+    {
+      "name": "write-manifest",
+      "exitCode": 0,
+      "seconds": 0.243,
+      "log": "qa/revision-20261007-controls/rebuild-checks/14-write-manifest.log"
+    },
+    {
+      "name": "format-cache-helper",
+      "exitCode": 0,
+      "seconds": 0.163,
+      "log": "qa/revision-20261007-controls/rebuild-checks/15-format-cache-helper.log"
+    },
+    {
+      "name": "node-tests",
+      "exitCode": 0,
+      "seconds": 78.52,
+      "log": "qa/revision-20261007-controls/rebuild-checks/16-node-tests.log"
+    },
+    {
+      "name": "qa-tests",
+      "exitCode": 0,
+      "seconds": 0.969,
+      "log": "qa/revision-20261007-controls/rebuild-checks/17-qa-tests.log"
+    },
+    {
+      "name": "format",
+      "exitCode": 0,
+      "seconds": 2.464,
+      "log": "qa/revision-20261007-controls/rebuild-checks/18-format.log"
+    },
+    {
+      "name": "typescript-vite",
+      "exitCode": 0,
+      "seconds": 12.065,
+      "log": "qa/revision-20261007-controls/rebuild-checks/19-typescript-vite.log"
+    },
+    {
+      "name": "python-tests",
+      "exitCode": 0,
+      "seconds": 0.865,
+      "log": "qa/revision-20261007-controls/rebuild-checks/20-python-tests.log"
+    }
+  ],
+  "passed": true,
+  "hardlinkedReadOnlyInputs": [],
+  "packageIdentityChecked": false,
+  "sourceAndTargetInputHashesUnchangedAfterRun": true,
+  "fullNativeChainExecuted": true,
+  "currentNativeGeometryReferenceMatched": true,
+  "freshBakeAndAppTestsExecuted": true
+}

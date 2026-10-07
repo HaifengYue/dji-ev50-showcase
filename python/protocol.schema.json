@@ -106,10 +106,56 @@
               "type": "number",
               "minimum": -12,
               "maximum": 12
+            },
+            "inboard": {
+              "type": "number",
+              "minimum": -12,
+              "maximum": 12
+            },
+            "outboard": {
+              "type": "number",
+              "minimum": -12,
+              "maximum": 12
+            },
+            "tail": {
+              "type": "number",
+              "minimum": -12,
+              "maximum": 12
+            },
+            "inboard_L": {
+              "type": "number",
+              "minimum": -12,
+              "maximum": 12
+            },
+            "inboard_R": {
+              "type": "number",
+              "minimum": -12,
+              "maximum": 12
+            },
+            "outboard_L": {
+              "type": "number",
+              "minimum": -12,
+              "maximum": 12
+            },
+            "outboard_R": {
+              "type": "number",
+              "minimum": -12,
+              "maximum": 12
+            },
+            "tail_L": {
+              "type": "number",
+              "minimum": -12,
+              "maximum": 12
+            },
+            "tail_R": {
+              "type": "number",
+              "minimum": -12,
+              "maximum": 12
             }
           },
           "required": [],
-          "additionalProperties": false
+          "additionalProperties": false,
+          "description": "独立舵面补丁：单项覆盖分组，既有规范ID覆盖UI别名；未指定项保持。快照仍使用六个规范ID。"
         },
         "hatchDeg": {
           "type": "number",

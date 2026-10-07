@@ -30,6 +30,7 @@ import type { TiltAction } from "./tilt";
 import { useExperience, displayedUnfold } from "./experience";
 import { INSPECTION_VIEWS } from "./inspection";
 import DetailPanel from "./DetailPanel";
+import { NEUTRAL_DETAIL_POSE, detailSurfaces } from "./details";
 import InternalDrivePanel from "./InternalDrivePanel";
 import SimulationPanel from "./SimulationPanel";
 import { SimulationRuntime } from "./simulation";
@@ -255,10 +256,7 @@ export default function App() {
       ) as MotorCommands;
     }
     if (exploded) motors = newMotorCommands();
-    const details =
-      detailView && !exploded
-        ? detailPose
-        : { inboard: 0, outboard: 0, tail: 0, hatch: 0 };
+    const details = detailView && !exploded ? detailPose : NEUTRAL_DETAIL_POSE;
     runtime.setLocal({
       positionM: [
         stationary ? 0 : f.x,
@@ -268,14 +266,7 @@ export default function App() {
       attitude: q.toArray(),
       wingTilt: displayedUnfold(state),
       ...(motors ? { motors } : {}),
-      surfaces: {
-        L_Inboard: details.inboard,
-        R_Inboard: details.inboard,
-        L_Outboard: details.outboard,
-        R_Outboard: details.outboard,
-        Tail_L: details.tail,
-        Tail_R: details.tail,
-      },
+      surfaces: detailSurfaces(details),
       hatchDeg: details.hatch,
       display: { wireframe, exploded, environment },
       time: { paused: !playing && simulation.driver !== "manual" },

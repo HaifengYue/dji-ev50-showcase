@@ -71,6 +71,7 @@ with Client(client_name="本地演示") as sim:
 - `ready(timeout=0)`：检查已连接、模型就绪的真实查看器；只读 SDK 订阅者不计入
 - `set_pose(position_m, attitude_xyzw)`：位置、四元数
 - `set_motor(id, target_rpm, enabled=True)`、`stop_motors()`：独立电机目标
+- `set_surface(id, degrees)` / `set_surfaces(**angles)`：独立舵面或同次多舵面绝对偏转
 - `set_state(**patch)`：原子状态补丁，包括机翼、舵面、货舱和显示
 - `step(dt)` / `seek(seconds, state=None)` / `pause(paused=True)` / `reset()`：确定性时间与安全复位
 - `snapshot()`：服务当前目标快照；不是实际屏幕读回
@@ -80,7 +81,7 @@ with Client(client_name="本地演示") as sim:
 - `heartbeat()`：手动续租；SDK默认后台每10秒自动续租，不推进仿真时间
 - `retry_pending()`：传输结果不确定时，用完全相同的 `sessionId/seq` 幂等重试
 
-`set_state`、`set_pose`、`set_motor`、`step`、`seek` 和通用 `command` 支持 `wait_applied=True`。这会等待应用回执；没有查看器、被跳过或超时会抛出 `ApplicationTimeout`，异常的 `.receipt` 含具体状态。不要把异常吞掉后声称运行成功。
+`set_state`、`set_pose`、`set_motor`、`set_surface`、`set_surfaces`、`step`、`seek` 和通用 `command` 支持 `wait_applied=True`。这会等待应用回执；没有查看器、被跳过或超时会抛出 `ApplicationTimeout`，异常的 `.receipt` 含具体状态。不要把异常吞掉后声称运行成功。
 
 ## 3. 坐标、单位和状态
 
@@ -111,6 +112,36 @@ with Client(client_name="本地演示") as sim:
 | `time.paused` | 布尔值 | 暂停标记；显式 step 仍可单步推进 |
 
 补丁允许只指定一个电机的一个字段、一个舵面或一个显示字段；先与当前状态合并，再完整校验，错误不产生部分更新、不消耗序号、不增加 revision。未知字段一律拒绝。舵面的正号按模型各自铰轴符号定义，不等价于真实飞控滚转/俯仰/偏航混控。
+
+### 六片舵面独立控制与兼容输入
+
+状态、SSE 与 GLB 铰轴继续使用原来的六个规范 ID，`transwing.sim.v1` 不变。网页“主翼舵面”分别控制左内、右内、左外、右外，“V 尾舵面”分别控制左右尾舵；左右以机体自身为准。每个滑杆只改变本片，舱盖使用自己的滑杆。
+
+| 规范 ID | 网页 / Python 可用别名 | 兼容分组 |
+| --- | --- | --- |
+| `L_Inboard` | `inboard_L` | `inboard` |
+| `R_Inboard` | `inboard_R` | `inboard` |
+| `L_Outboard` | `outboard_L` | `outboard` |
+| `R_Outboard` | `outboard_R` | `outboard` |
+| `Tail_L` | `tail_L` | `tail` |
+| `Tail_R` | `tail_R` | `tail` |
+
+`surfaces` 补丁接受表内 ID、别名和分组。分组同时设置对应两片；同一个补丁中规范单项 ID 优先于单项别名，单项别名优先于分组，与 JSON 字段顺序无关。显式 `0` 会覆盖分组值。未指定的舵面保持原值，舱盖也保持原值。之后的分组命令会再次设置两片，之前的单片命令不会锁定该片。
+
+```python
+sim.set_surface("L_Inboard", 7)           # 只改变左内副翼
+sim.set_surface("inboard_R", -4)        # 别名：只改变右内副翼
+sim.set_surfaces(inboard=8, inboard_L=0)  # 左内0°，右内8°
+sim.set_surfaces(L_Outboard=5, R_Outboard=-5, Tail_L=3, Tail_R=-2)
+sim.set_state(wingTilt=0.5, hatchDeg=22)  # 倾转与舱盖独立，六片角度保持
+sim.set_state(surfaces={"tail": 0})      # 兼容分组：左右尾舵回中
+```
+
+`Recording` 同样提供 `set_surface` / `set_surfaces`，可直接保存并导入网页。旧的 `set_state(surfaces={"Tail_L": 6})` 调用及旧 JSON 记录继续有效。
+
+UI 有限数值限幅到 ±12°，非数值输入不改当前状态；底层兼容细节姿态归一化将非法项置零。Python、JSON、实时协议与模型快照严格拒绝超出 ±12°、NaN、Infinity、字符串、布尔值和未知键，即使非法项随后会被更高优先级字段覆盖，也整批拒绝，不发生部分更新。舱盖单独为 0°—55°。
+
+每帧从导出中立姿态计算，再绕当前父级空间中的真实铰轴施加绝对偏转，不累计旋转；倾转时各舵面随所属机翼运动。模型层在改任何部件前验证整批舵面与舱盖。网页细节检查暂停飞行和整翼动画；切换部件、离开检查或复位时六片回中并关闭舱盖。Python 或 JSON 回放接管后，UI 与演示动画不能覆盖其六片快照；`step` 推进时间时保持舵面目标，`reset` 清零六片和舱盖。
 
 `targetRpm` 是命令目标；实际视景电机转速、相位、寻位和折桨状态由前端共用运动模型在每次 step 后计算。ACK 的可选 `motors` 仅报告前端运动状态，不回写目标，也不是实机传感器数据。`GET state` 始终返回服务目标。
 

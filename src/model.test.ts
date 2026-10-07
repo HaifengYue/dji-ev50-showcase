@@ -120,7 +120,7 @@ test("V27明确标识新修订；冻结V24的槽顶和十二销记录仅作历�
   );
   assert.equal(
     manifest.annotationRevision.baselineCommit,
-    "d0ca0a5a7105e2ef55a909f67aca26faec65c33a",
+    "1797d4b1a0d653f786552116a3e9063148b444de",
   );
   assert.equal(
     manifest.annotationRevision.baselineManifest,

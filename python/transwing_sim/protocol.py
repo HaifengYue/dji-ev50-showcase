@@ -9,6 +9,16 @@ PROTOCOL = "transwing.sim.v1"
 VERSION = "1.0.0"
 MOTOR_IDS = ("L_Front", "R_Front", "L_Rear", "R_Rear")
 SURFACE_IDS = ("L_Inboard", "R_Inboard", "L_Outboard", "R_Outboard", "Tail_L", "Tail_R")
+SURFACE_GROUPS = {
+    "inboard": ("L_Inboard", "R_Inboard"),
+    "outboard": ("L_Outboard", "R_Outboard"),
+    "tail": ("Tail_L", "Tail_R"),
+}
+SURFACE_ALIASES = {
+    "inboard_L": "L_Inboard", "inboard_R": "R_Inboard",
+    "outboard_L": "L_Outboard", "outboard_R": "R_Outboard",
+    "tail_L": "Tail_L", "tail_R": "Tail_R",
+}
 MAX_BODY_BYTES = 1024 * 1024
 MAX_RECORDING_COMMANDS = 10000
 
@@ -82,6 +92,23 @@ def initial_state(owner: str = "ui") -> dict:
 PATCH_FIELDS = {"positionM", "attitude", "motors", "wingTilt", "surfaces", "hatchDeg", "display", "time"}
 
 
+def resolve_surfaces(value: Any) -> dict[str, float]:
+    """所有输入先校验；单项优先于组，既有规范ID优先于UI别名。"""
+    patch = object_value(value, "surfaces", set(SURFACE_IDS) | set(SURFACE_GROUPS) | set(SURFACE_ALIASES))
+    checked = {key: number(angle, key, -12, 12) for key, angle in patch.items()}
+    result = {}
+    for group, ids in SURFACE_GROUPS.items():
+        if group in checked:
+            result.update({key: checked[group] for key in ids})
+    for alias, key in SURFACE_ALIASES.items():
+        if alias in checked:
+            result[key] = checked[alias]
+    for key in SURFACE_IDS:
+        if key in checked:
+            result[key] = checked[key]
+    return result
+
+
 def apply_patch(state: dict, patch: Any) -> dict:
     """先校验副本，再提交；错误不会部分修改状态。"""
     patch = object_value(patch, "state patch", PATCH_FIELDS)
@@ -106,8 +133,7 @@ def apply_patch(state: dict, patch: Any) -> dict:
                 for field, setting in settings.items():
                     result[key][motor_id][field] = number(setting, f"{motor_id}.targetRpm", 0, 12000) if field == "targetRpm" else boolean(setting, f"{motor_id}.enabled")
         elif key == "surfaces":
-            for surface_id, angle in object_value(value, key, set(SURFACE_IDS)).items():
-                result[key][surface_id] = number(angle, surface_id, -12, 12)
+            result[key].update(resolve_surfaces(value))
         elif key == "wingTilt":
             result[key] = number(value, key, 0, 1)
         elif key == "hatchDeg":

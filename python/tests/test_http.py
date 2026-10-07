@@ -103,6 +103,33 @@ class HttpTests(unittest.TestCase):
             self.assertEqual(next(subscription)["revision"], receipt["revision"])
         self.assertFalse(self.client.ready())
 
+    def test_sdk_six_surfaces_preserve_hatch_and_sse_canonical_ids(self):
+        self.client.reset()
+        self.client.set_state(hatchDeg=22)
+        angles = {"L_Inboard": 2, "R_Inboard": -3, "L_Outboard": 4, "R_Outboard": -5, "Tail_L": 6, "Tail_R": -7}
+        for surface_id, degrees in angles.items():
+            self.client.set_surface(surface_id, degrees)
+        self.assertEqual(self.client.snapshot()["state"]["surfaces"], angles)
+        stream = self.viewer("independent_surface_viewer")
+        try:
+            initial = self.event(stream)
+            self.assertEqual(initial["state"]["surfaces"], angles)
+            self.client.set_surfaces(inboard=8, inboard_L=0, Tail_R=0)
+            updated = self.event(stream)["state"]
+            self.assertEqual(updated["surfaces"], {**angles, "L_Inboard": 0, "R_Inboard": 8, "Tail_R": 0})
+            self.assertEqual(updated["hatchDeg"], 22)
+            before = self.client.snapshot()
+            with self.assertRaises(RemoteError):
+                self.client.set_surfaces(inboard=100, L_Inboard=1, R_Inboard=2)
+            self.assertEqual(self.client.snapshot()["state"], before["state"])
+            self.client.reset()
+            reset = self.event(stream)["state"]
+            self.assertEqual(reset["surfaces"], {key: 0 for key in angles})
+            self.assertEqual(reset["hatchDeg"], 0)
+        finally:
+            stream.close()
+            self.request("DELETE", "/api/v1/viewers/independent_surface_viewer")
+
     def test_many_viewer_refreshes_do_not_exhaust_capacity(self):
         for index in range(80):
             vid = f"refresh_{index}"

@@ -1,17 +1,17 @@
 {
   "schema": "transwing.light-development-manifest.v1",
   "singleRoot": "transwing-studio",
-  "revision": "2026-10-07-edge-linkage",
-  "baseCommit": "d0ca0a5a7105e2ef55a909f67aca26faec65c33a",
-  "status": "CURRENT_CHECKS_AND_COMPLETE_FRESH_RECONSTRUCTION_PASSED_WITH_SCOPED_LIMITATIONS",
-  "publicationPerformed": false,
+  "revision": "2026-10-07-independent-controls",
+  "baseCommit": "1797d4b1a0d653f786552116a3e9063148b444de",
+  "status": "PASSED_WITH_EXPLICIT_SAMPLED_SCOPE_AND_INHERITED_LIMITATIONS",
   "contentFileCount": 469,
-  "contentBytes": 141198935,
+  "contentBytes": 142190325,
   "manifestSelfExcluded": true,
+  "constructionInputCount": 276,
+  "constructionInputLockSha256": "9f4c6611f599ca985120d0a13d650b159428e66286696865a077e8ee47bf52f6",
   "fullDefaultReconstructionActuallyRun": true,
   "fullSingleCommandWrapperRunExecuted": true,
-  "constructionInputCount": 204,
-  "constructionInputLockSha256": "8a3612d4801e62cdfb8c68d5086f4c45a08d4ea20e822f7b4b8552e839df07f9",
+  "publicationPerformed": false,
   "files": [
     {
       "path": ".gitignore",
@@ -30,13 +30,23 @@
     },
     {
       "path": "README.md",
-      "bytes": 2714,
-      "sha256": "6476dc602e160b53227567e9f68d3fe7340ab4d86f7aadb2116754687330ca67"
+      "bytes": 2732,
+      "sha256": "b42b2a06ac62e32cebf9ea4fd9cc94d73e11b0dfc309ac40ac0b4ef010d3e55f"
     },
     {
       "path": "REVISION_CONSTRUCTION_INPUTS.json",
       "bytes": 28578,
       "sha256": "b98d4156b5bf7cb2a4c4203ddd7d4bc605f264c2d22bacd45e4717a4434c4ce6"
+    },
+    {
+      "path": "REVISION_CONTROLS_CONSTRUCTION_INPUTS.json",
+      "bytes": 68250,
+      "sha256": "9f4c6611f599ca985120d0a13d650b159428e66286696865a077e8ee47bf52f6"
+    },
+    {
+      "path": "REVISION_CONTROLS_GEOMETRY_REFERENCE.json",
+      "bytes": 338607,
+      "sha256": "87386977598401949ac8f7c7aabae3cf80bd7487d9a79178981625421d5ecc12"
     },
     {
       "path": "REVISION_DETAIL_CONSTRUCTION_INPUTS.json",
@@ -155,13 +165,13 @@
     },
     {
       "path": "assets/blender/xp4-source.glb",
-      "bytes": 10920584,
-      "sha256": "db57f5fa421f10e5be27d236ad6d7733e354f3827d09d8d96f5adc55971e3be1"
+      "bytes": 11082648,
+      "sha256": "36dadf42ebbffbb81869ee8ddaecc69827dcaab0efdeee31cb87bb1fb6e1db2e"
     },
     {
       "path": "assets/blender/xp4.blend",
-      "bytes": 39514764,
-      "sha256": "74f4c082d150dedc160565eefbd5bc99ec0ff87999e86a835f7f4b62a32e4274"
+      "bytes": 39673708,
+      "sha256": "067371eed57fc432824f4a2f89b1be41110613a421e591810169e0d2a8ec5909"
     },
     {
       "path": "assets/build/annotated-mechanism.json",
@@ -170,8 +180,8 @@
     },
     {
       "path": "assets/model-validation.json",
-      "bytes": 75014,
-      "sha256": "0d71d6ec6858126d56225c594b30e1229fb2afe412f450965c458444a2a688d8"
+      "bytes": 74418,
+      "sha256": "a3138a94473220a29d3e34cdaf62fc65ce049e3b326f87848fff13ef2b1e0f41"
     },
     {
       "path": "dist/assets/index--cC-qrRa.js",
@@ -179,9 +189,19 @@
       "sha256": "4257de92a0c4bdcfa93b7c54e263bcd2359ab9402efca28930d169e0ecec031a"
     },
     {
+      "path": "dist/assets/index-CAHGE0uw.js",
+      "bytes": 196992,
+      "sha256": "073892960592a17bc691d9f2b76ac9b4e0f5c565323c65da1b4845d66e18385c"
+    },
+    {
       "path": "dist/assets/index-D1B7vCse.css",
       "bytes": 25272,
       "sha256": "e84fda884b7408512b167fc6aaa596a57c3d1ce5df62b5b5cb383f547501877b"
+    },
+    {
+      "path": "dist/assets/index-Tqk59FDG.js",
+      "bytes": 197006,
+      "sha256": "cc04457189b2fe5e0f455b9262440804c9f922f859a5eb4c4af0cc82afb2c2b8"
     },
     {
       "path": "dist/assets/index-ypUeB2_G.js",
@@ -206,7 +226,7 @@
     {
       "path": "dist/index.html",
       "bytes": 834,
-      "sha256": "8dc85c5e97a3cc10e939a4f6e4b38677ac9bd092a9094a7a9a315f8df8d59231"
+      "sha256": "159268d8b03535c16ed8c58350f910340785062536e626bfa285f19b9a693ac0"
     },
     {
       "path": "dist/models/annotated-mechanism.json",
@@ -215,8 +235,8 @@
     },
     {
       "path": "dist/models/manifest.json",
-      "bytes": 785748,
-      "sha256": "313110397dc7470d74233c72e3aea3dcd2944458f0ef3cdddd21ac5ac206af76"
+      "bytes": 910541,
+      "sha256": "c7f99cc414485d31c78f486516dae0bb4470dc3c9bd02f028f063460f689e5e0"
     },
     {
       "path": "dist/models/nacelle-system-concept.glb",
@@ -225,13 +245,13 @@
     },
     {
       "path": "dist/models/xp4.glb",
-      "bytes": 4035036,
-      "sha256": "334febcb77aa1a3f9eaead2c5931323093479664308b737362420d74d4b7f3dd"
+      "bytes": 4094144,
+      "sha256": "02970bbcc56ef8574643c12962b53917f52ca3d42eaab974660c080fd41ec250"
     },
     {
       "path": "docs/ASSETS.md",
-      "bytes": 1233,
-      "sha256": "c3b6cc546b8a39d9c5942bbc7a1d8a419c8e96a28f71f7f70b698f4e2c193609"
+      "bytes": 1419,
+      "sha256": "17527c81457b14065858022905ba47c88ff789f1f1afffef7c24970da072f470"
     },
     {
       "path": "docs/NAVIGATION.md",
@@ -240,13 +260,13 @@
     },
     {
       "path": "docs/PYTHON_API.md",
-      "bytes": 17026,
-      "sha256": "86637f54fdb7146f00de512602894583e5d27d6f49100656305222c751e1db0e"
+      "bytes": 19709,
+      "sha256": "cdd551217c4561ef76173fabef6098ed1de39a3948865c7004a92e7dd5ee0aa5"
     },
     {
       "path": "docs/VERIFICATION.md",
-      "bytes": 3664,
-      "sha256": "55e1eedbe29b3e96f206feb2497ba489175dea02ef33a5ba9ea0bfbc7454f82e"
+      "bytes": 4449,
+      "sha256": "5f0600ce39a7eac622de63098d5a0aff2c2c23acfec05d273b739d5c0220ffdf"
     },
     {
       "path": "docs/baseline-v24/ASSETS.md",
@@ -485,8 +505,8 @@
     },
     {
       "path": "public/models/manifest.json",
-      "bytes": 785748,
-      "sha256": "313110397dc7470d74233c72e3aea3dcd2944458f0ef3cdddd21ac5ac206af76"
+      "bytes": 910541,
+      "sha256": "c7f99cc414485d31c78f486516dae0bb4470dc3c9bd02f028f063460f689e5e0"
     },
     {
       "path": "public/models/nacelle-system-concept.glb",
@@ -495,8 +515,8 @@
     },
     {
       "path": "public/models/xp4.glb",
-      "bytes": 4035036,
-      "sha256": "334febcb77aa1a3f9eaead2c5931323093479664308b737362420d74d4b7f3dd"
+      "bytes": 4094144,
+      "sha256": "02970bbcc56ef8574643c12962b53917f52ca3d42eaab974660c080fd41ec250"
     },
     {
       "path": "python/install.py",
@@ -505,8 +525,8 @@
     },
     {
       "path": "python/protocol.schema.json",
-      "bytes": 11953,
-      "sha256": "cd2e6b5ace55a88aee9f35c8565257197afca4a952265a9ed0ad95614848f86b"
+      "bytes": 13284,
+      "sha256": "fd03657315be1da835fa2e912d82917a6c051e79db0be2d4bcc4560a8485cb9e"
     },
     {
       "path": "python/requirements.lock",
@@ -530,13 +550,13 @@
     },
     {
       "path": "python/tests/test_http.py",
-      "bytes": 9668,
-      "sha256": "888c4b1b723dcd079e975e8d9852af427ac98df0cd4877e56668811843b83cfb"
+      "bytes": 11159,
+      "sha256": "70c42f667cdf21c01d4a1c7c296fd38b591e3251e8d5f290a31c3f4e87585b4a"
     },
     {
       "path": "python/tests/test_protocol.py",
-      "bytes": 5228,
-      "sha256": "b9bd662913227e6e2c38c49aac879430acf546733ada92fcb94315e13195b054"
+      "bytes": 7428,
+      "sha256": "000f6fd2e5413bcc79b13ef1cc40efeb5f87a21a167233a8e38bcccfe29ea216"
     },
     {
       "path": "python/transwing_sim/__init__.py",
@@ -545,23 +565,83 @@
     },
     {
       "path": "python/transwing_sim/client.py",
-      "bytes": 13473,
-      "sha256": "355b5f7418afa4cbaa87d915d92b466426a27c438bc780df981cf44ed0061afa"
+      "bytes": 13975,
+      "sha256": "8c2a33e3dad3dbc16359a9b5a83f2050f49d99494afa33db58fea2f0fa1c0074"
     },
     {
       "path": "python/transwing_sim/protocol.py",
-      "bytes": 8229,
-      "sha256": "a177aa5239f1d25237e7e1687a7de675f7fe34bb2bf78df50bc897389508d62e"
+      "bytes": 9163,
+      "sha256": "91bbb922c3522838f03545e3d28d67f119a82273e1928525206fb41e5fc318ad"
     },
     {
       "path": "python/transwing_sim/recording.py",
-      "bytes": 2157,
-      "sha256": "930f6fcfe6054ffe4c33118ed5c2c1eb057427ed1dbc82f2da56c25101f1430a"
+      "bytes": 2403,
+      "sha256": "a162a1e2fb5b07a499f08cb93c583edb549607b647f56495cfbc2f8de37e1a7d"
     },
     {
       "path": "python/transwing_sim/server.py",
       "bytes": 26593,
       "sha256": "55ad32a30638c87f1db04bcee8c6ccfec4297685208a14943f38575bd0d008ed"
+    },
+    {
+      "path": "qa/control-surface-inputs/build.log",
+      "bytes": 859,
+      "sha256": "458cb937dd0fc1353898aa51cb3b9008e985e6206b3cde5955666183d02a43be"
+    },
+    {
+      "path": "qa/control-surface-inputs/format-check.log",
+      "bytes": 281,
+      "sha256": "fad16cd3eb30d839064584f1e54b34ed7e6f293588320d5a8602f01b06d36d90"
+    },
+    {
+      "path": "qa/control-surface-inputs/implementation-baseline-checks.json",
+      "bytes": 3956,
+      "sha256": "93d2c0dc00f980ec0e2a8e19d9dcd22c27d587430405627b8ec26087ac5a5d50"
+    },
+    {
+      "path": "qa/control-surface-inputs/independent-details-tests.log",
+      "bytes": 2497,
+      "sha256": "23dcc6a1d4e1dea3ac008c135d3ef3d91a5e545f097495b5f4cee8ad9873f08a"
+    },
+    {
+      "path": "qa/control-surface-inputs/model-identity-tests.log",
+      "bytes": 1739,
+      "sha256": "3186c84c9691b20068bd71dc95c20a347fecee91576fcaf2d10f3b8461e99f0a"
+    },
+    {
+      "path": "qa/control-surface-inputs/node-tests.log",
+      "bytes": 19684,
+      "sha256": "619472ed1f03623cd9fb2c86c67eefe82a9a9bf8e57adfbfadb50ec94f00437e"
+    },
+    {
+      "path": "qa/control-surface-inputs/python-tests.log",
+      "bytes": 3581,
+      "sha256": "90a6bbeff8afef362615b3e59e6774bbcaaf0946e1593062283eb6325778cd72"
+    },
+    {
+      "path": "qa/control-surface-inputs/qa-tests.log",
+      "bytes": 1465,
+      "sha256": "bcc960c58a030331a4270aa72999b532da4646f3aebb53c11c21efa2347369db"
+    },
+    {
+      "path": "qa/control-surface-inputs/runtime-detail-controls.json",
+      "bytes": 3347,
+      "sha256": "661b7282a043ea46319e4c9e1484190517eb1f67534244badbcb1b63b9383cbe"
+    },
+    {
+      "path": "qa/control-surface-inputs/runtime-detail-controls.log",
+      "bytes": 3347,
+      "sha256": "661b7282a043ea46319e4c9e1484190517eb1f67534244badbcb1b63b9383cbe"
+    },
+    {
+      "path": "qa/control-surface-inputs/runtime-independent-controls.json",
+      "bytes": 3733,
+      "sha256": "ccbe39244f7a0232dee153653c1a2194bd2c3cc6b9c236d7eaad6e9cef34c749"
+    },
+    {
+      "path": "qa/control-surface-inputs/runtime-independent-controls.log",
+      "bytes": 3733,
+      "sha256": "ccbe39244f7a0232dee153653c1a2194bd2c3cc6b9c236d7eaad6e9cef34c749"
     },
     {
       "path": "qa/flight-regression.test.ts",
@@ -592,6 +672,11 @@
       "path": "qa/lib/runtime-geometry.mts",
       "bytes": 4364,
       "sha256": "3f464fb9f2a8b4b97d033b372aa0254a75e76dbc61c0c15ed102edec1f81e704"
+    },
+    {
+      "path": "qa/lib/runtime-independent-controls.mts",
+      "bytes": 8919,
+      "sha256": "8b392e1213ffbde074f7591f9040367135ab205f9ba30e45cb7ab8f42c464a96"
     },
     {
       "path": "qa/lib/runtime-motor-motion.mts",
@@ -634,214 +719,484 @@
       "sha256": "82a15335d16fd7e73bf5529a13d802a5ed7cc8ea1b9d02b5fa7259fbea9e174f"
     },
     {
-      "path": "qa/revision-20261007/candidate-inset-integrated-b-edge-linkage-dense-wing-material-check.json",
-      "bytes": 8231,
-      "sha256": "15e2047a361a21f40d01365dfac0f56a9a37af1939999141982635838bb6eccf"
+      "path": "qa/revision-20261007/candidate-inset-integrated-b-independent-controls-final-controls-combined-check.json",
+      "bytes": 1466,
+      "sha256": "7af700ce0ec4a01b7e743844293e56d95138fd72e166744134847dae9e127ae8"
     },
     {
-      "path": "qa/revision-20261007/candidate-inset-integrated-b-edge-linkage-material-and-support-check.json",
-      "bytes": 65899,
-      "sha256": "8e86c308cc5085eb2992eea386dc31c642deae47507bc64dc411eb783bdfd6a8"
+      "path": "qa/revision-20261007/candidate-inset-integrated-b-independent-controls-final-controls-local-check.json",
+      "bytes": 1470,
+      "sha256": "134aedfb9d8c05cbcd89d93a92ceefd58a19da766eb1f100fc6792de096f98b1"
     },
     {
-      "path": "qa/revision-20261007/candidate-inset-integrated-b-edge-linkage-rotor-fold-phase-preflight.json",
-      "bytes": 11424,
-      "sha256": "0bbc805c231b3b9a60eb9172e6ef843302c4cbe0ea23577de3eefc7ed31881b5"
+      "path": "qa/revision-20261007/candidate-inset-integrated-b-independent-controls-final-rotor-fold-phase-preflight.json",
+      "bytes": 11438,
+      "sha256": "125b53054baffdd08f09833d676edf8351f340d7c359b3ad363ae272fb1b68a1"
     },
     {
-      "path": "qa/revision-20261007/candidate-inset-integrated-b-edge-linkage.blend",
-      "bytes": 23328868,
-      "sha256": "f38764881b5c597cc3be98aab79a9b2ad932f6c8c07359d7f9f30c218969c084"
+      "path": "qa/revision-20261007/candidate-inset-integrated-b-independent-controls-final.blend",
+      "bytes": 23487800,
+      "sha256": "2f6d6a1a5a616351643233342a1e175b2483aa3785b50185aac104799ac84f4b"
     },
     {
-      "path": "qa/revision-20261007-inset/EDGE_LINKAGE_CHANGE_DOMAIN.json",
-      "bytes": 2861,
-      "sha256": "2ee1816f661c8c8f5d0f115c8981fa9fbf8800f2e7d498922db5f84cd57fe6e9"
+      "path": "qa/revision-20261007-controls/CONTROLS_CHANGE_DOMAIN.json",
+      "bytes": 2560,
+      "sha256": "c916bae0f0c90283b817cb90f36c7d431c9478ffdb66ce8c0da6afe1876e5640"
     },
     {
-      "path": "qa/revision-20261007-inset/FINAL_EDGE_LINKAGE_ACCEPTANCE.json",
-      "bytes": 2149,
-      "sha256": "72ad2b259e012f66e73635f3183a76e7c8871f7c61a2c66e7bcaf94546bbea79"
+      "path": "qa/revision-20261007-controls/FINAL_CONTROLS_ACCEPTANCE.json",
+      "bytes": 2957,
+      "sha256": "a624a84bbd6b050dee5c29292fa260b3a8c678414d887543e7bbe01d407f1b53"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/ALL_OWNER_TOPOLOGY_INVENTORY.json",
-      "bytes": 346011,
-      "sha256": "8d8b0854a69e11aae7fa2a3b83f1cdde640a93ed1a60c30f183186ca5038c601"
+      "path": "qa/revision-20261007-controls/candidate-inset-integrated-b-independent-controls-final-construction.json",
+      "bytes": 600045,
+      "sha256": "8d8f3497f254e1641e4e4e9a929490ac73fe749404fbb601d58d7dedbb42694b"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/BAKED_ANIMATION_CHECK.json",
+      "path": "qa/revision-20261007-controls/candidate-inset-integrated-b-independent-controls-final-geometry-check.json",
+      "bytes": 22474,
+      "sha256": "f24884764b16554c5bf66a60cfdec8ac38d73dbb5c4357671c95ebf73b11a31d"
+    },
+    {
+      "path": "qa/revision-20261007-controls/motion-checks/SUPPORT_SLOT_CONTAINMENT_CHECK.json",
+      "bytes": 9275,
+      "sha256": "be29e1a40c0516bf110ce1dc7a9edd52dc7c39b32d7fc092b4bf8f04ea877f9b"
+    },
+    {
+      "path": "qa/revision-20261007-controls/motion-checks/drive-1201.json",
+      "bytes": 8221,
+      "sha256": "080c0f730c29e2be8afde0ff27fdcc9323786385b1c1910876bdb53d8dee59e8"
+    },
+    {
+      "path": "qa/revision-20261007-controls/motion-checks/final-build.log",
+      "bytes": 881,
+      "sha256": "551df84955385e8e98508122c991f42e7b0d0fd8ec21024ef033f30337f3b7f1"
+    },
+    {
+      "path": "qa/revision-20261007-controls/motion-checks/final-controls-bake.log",
+      "bytes": 67814,
+      "sha256": "f6fc6dffe5de695d6b52f9f3232299ec3663bfea0c33a6e8e73e667fbe02f83f"
+    },
+    {
+      "path": "qa/revision-20261007-controls/motion-checks/final-controls-combined.log",
+      "bytes": 11065,
+      "sha256": "28d6a5ad4e52e2f639cc10356cf8c57e75f70bde95a080ce39c8ddebed50f1cf"
+    },
+    {
+      "path": "qa/revision-20261007-controls/motion-checks/final-controls-compress.log",
+      "bytes": 855,
+      "sha256": "6dddf2cac4a1f39bec0ad79beeedec4ae0387bc96a29c7397777b55cc9febd8f"
+    },
+    {
+      "path": "qa/revision-20261007-controls/motion-checks/final-controls-local.log",
+      "bytes": 370,
+      "sha256": "47d9fe5c67e9dd3f426011e5b1cea0b7655001665fecd434003daf36deb3ef3b"
+    },
+    {
+      "path": "qa/revision-20261007-controls/motion-checks/final-controls-manifest.log",
+      "bytes": 799,
+      "sha256": "93717b1e4f6b806ddd1f4fe2805e0e3e49ec4914458caccf5522a900e484fdcb"
+    },
+    {
+      "path": "qa/revision-20261007-controls/motion-checks/final-controls-runtime.log",
+      "bytes": 226,
+      "sha256": "99026c13eef265ce5acc1c761a76dc177cee659dfb3dd2a91cedbea4d3c5b71b"
+    },
+    {
+      "path": "qa/revision-20261007-controls/motion-checks/final-drive-verified.log",
+      "bytes": 1920,
+      "sha256": "5d01dd541790b9e005ac1c2cdf0f68cdf33b183088d1ca5959e4539be013c560"
+    },
+    {
+      "path": "qa/revision-20261007-controls/motion-checks/final-format-cache.log",
+      "bytes": 31,
+      "sha256": "aa10b417d98409ec088e317ce4a55263dca9c038080a22a62e10197b0e39209a"
+    },
+    {
+      "path": "qa/revision-20261007-controls/motion-checks/final-format.log",
+      "bytes": 281,
+      "sha256": "fad16cd3eb30d839064584f1e54b34ed7e6f293588320d5a8602f01b06d36d90"
+    },
+    {
+      "path": "qa/revision-20261007-controls/motion-checks/final-material-support.log",
+      "bytes": 821,
+      "sha256": "d9bbeb3d77cb2975110e9ad69ad02638c741ecf275fb9e52994526d7bcee6a09"
+    },
+    {
+      "path": "qa/revision-20261007-controls/motion-checks/final-material-sweep.log",
+      "bytes": 2319,
+      "sha256": "18c54dbdeb6a7ebd46310ec6a804e8f15fa868244b76ea6160aa3970dac4b408"
+    },
+    {
+      "path": "qa/revision-20261007-controls/motion-checks/final-native-reference.log",
+      "bytes": 2794,
+      "sha256": "32d42e7bbc7568a267d248cd9bf1d3deefa22909efd709b40b3f36e9ec2c332e"
+    },
+    {
+      "path": "qa/revision-20261007-controls/motion-checks/final-node-tests.log",
+      "bytes": 18720,
+      "sha256": "4ee4d857e6966af847523b7856724226b14124fad08213e56b23b6b440eece12"
+    },
+    {
+      "path": "qa/revision-20261007-controls/motion-checks/final-python.log",
+      "bytes": 129,
+      "sha256": "2df51319ac984e5291ce5bd25e0ec1a2ac8f0704f11f68c481e8365f4196785e"
+    },
+    {
+      "path": "qa/revision-20261007-controls/motion-checks/final-qa-tests.log",
+      "bytes": 1463,
+      "sha256": "358b34d1f6d67907ed414a5f23a324ab88f8d182adeb2a4ec4d3812d243edc00"
+    },
+    {
+      "path": "qa/revision-20261007-controls/motion-checks/final-rotor-sweep.log",
+      "bytes": 1013,
+      "sha256": "29847d7784962075a5ff8429ae38ce3beadd993c6c875ffc0a522c707b1d3503"
+    },
+    {
+      "path": "qa/revision-20261007-controls/motion-checks/final-supports.log",
+      "bytes": 9757,
+      "sha256": "75c89e0bccb8994eb7519b651135e05a9f68a7e7d3a6f8eccd2e5fbcfb73f759"
+    },
+    {
+      "path": "qa/revision-20261007-controls/motion-checks/rotor-252.json",
+      "bytes": 11438,
+      "sha256": "125b53054baffdd08f09833d676edf8351f340d7c359b3ad363ae272fb1b68a1"
+    },
+    {
+      "path": "qa/revision-20261007-controls/motion-checks/wing-material-661.json",
+      "bytes": 8245,
+      "sha256": "6583c816fbeb9f2b0d7beb483a011b1ec2c416e1bba089aada040ad6241cf061"
+    },
+    {
+      "path": "qa/revision-20261007-controls/rebuild-checks/01-full-native-construction.log",
+      "bytes": 15441,
+      "sha256": "116c14ee2b5fb981dd1a4f00dbf46c27fa398e27a289e7edc37494b2e7da79ba"
+    },
+    {
+      "path": "qa/revision-20261007-controls/rebuild-checks/02-complete-native-identity.log",
+      "bytes": 677,
+      "sha256": "2762301b7385c066e16d95baedaec7f20252cb6283f315bffe008c31582f08b8"
+    },
+    {
+      "path": "qa/revision-20261007-controls/rebuild-checks/03-fresh-bake.log",
+      "bytes": 67853,
+      "sha256": "f9ca036e743fe8b5588ba4c824e7d195b047486af0d5036cac41d63e84b9923a"
+    },
+    {
+      "path": "qa/revision-20261007-controls/rebuild-checks/04-compress.log",
+      "bytes": 855,
+      "sha256": "020371545bf13cb70914fd7870063622f19603e0db433c7ef587b0cf7ba308de"
+    },
+    {
+      "path": "qa/revision-20261007-controls/rebuild-checks/05-source-runtime.log",
+      "bytes": 4265,
+      "sha256": "95e2dab91fefd3ff9b25602006452b76d4572831196ff2effc6b47216d6d9f72"
+    },
+    {
+      "path": "qa/revision-20261007-controls/rebuild-checks/06-baked-native-geometry.log",
+      "bytes": 2048,
+      "sha256": "97b25bad0072a25e8369ace7da1ba0786f2c020627507faf075bed4e195a1cbb"
+    },
+    {
+      "path": "qa/revision-20261007-controls/rebuild-checks/07-baked-animation.log",
+      "bytes": 6775,
+      "sha256": "82cd3cc470a630642128a24e87c9baf8a92fe7cc0dc2b33961ce07bef66e200d"
+    },
+    {
+      "path": "qa/revision-20261007-controls/rebuild-checks/08-runtime-compatibility.log",
+      "bytes": 11984,
+      "sha256": "500cdd665cd518fabfb183d3218b64ec42a49b35a2afcbc90f6d46876252c61d"
+    },
+    {
+      "path": "qa/revision-20261007-controls/rebuild-checks/09-owner-topology.log",
+      "bytes": 4402,
+      "sha256": "cee52a144e0f2f7c052976e3602199f689f5c7154c5b17513b2baa16d3b8da42"
+    },
+    {
+      "path": "qa/revision-20261007-controls/rebuild-checks/10-all-owner-inventory.log",
+      "bytes": 4058,
+      "sha256": "d08acf4fab45bcdf30710b9e0e4fb8b45c609cefdd55bee9a9543856aabeabce"
+    },
+    {
+      "path": "qa/revision-20261007-controls/rebuild-checks/11-legacy-inventory-identity.log",
+      "bytes": 20610,
+      "sha256": "2014c0a9fd5e4c016771a87d50fcf34ac6536d608a535d61c67a5d0a48092ecd"
+    },
+    {
+      "path": "qa/revision-20261007-controls/rebuild-checks/12-semantic-unit.log",
+      "bytes": 430,
+      "sha256": "7fb0bbbf3b6a0e259851a94d57b3427d0b05e104d16dd0a58ca3ca682de066a1"
+    },
+    {
+      "path": "qa/revision-20261007-controls/rebuild-checks/13-identity-negative.log",
+      "bytes": 2288,
+      "sha256": "6a2f1d735715964482682892092f6fddbaa700da45414442424f661e6d6ce21d"
+    },
+    {
+      "path": "qa/revision-20261007-controls/rebuild-checks/14-write-manifest.log",
+      "bytes": 845,
+      "sha256": "b021b47c879729683c8e2502c9f83f7aa138fa7b2b429ba745f7bedad5df0c34"
+    },
+    {
+      "path": "qa/revision-20261007-controls/rebuild-checks/15-format-cache-helper.log",
+      "bytes": 31,
+      "sha256": "e4ae09ab5ce20ef824907257b7d4d56d805429743e5c34424da896883e7cd192"
+    },
+    {
+      "path": "qa/revision-20261007-controls/rebuild-checks/16-node-tests.log",
+      "bytes": 18716,
+      "sha256": "e34c0e41972ff3a65aff4d12050d61f52a4a2560778cd39b14ff78ea00687ddd"
+    },
+    {
+      "path": "qa/revision-20261007-controls/rebuild-checks/17-qa-tests.log",
+      "bytes": 1465,
+      "sha256": "aeed07f8f71d8d39e7d5eab1c4cb8232ea9a38b6145fb70a6cbc1c48b6605b86"
+    },
+    {
+      "path": "qa/revision-20261007-controls/rebuild-checks/18-format.log",
+      "bytes": 281,
+      "sha256": "fad16cd3eb30d839064584f1e54b34ed7e6f293588320d5a8602f01b06d36d90"
+    },
+    {
+      "path": "qa/revision-20261007-controls/rebuild-checks/19-typescript-vite.log",
+      "bytes": 881,
+      "sha256": "a4dd22719b8c22a7b77c585b3c39071846806455de3bd1295d45fc72c8f4c932"
+    },
+    {
+      "path": "qa/revision-20261007-controls/rebuild-checks/20-python-tests.log",
+      "bytes": 129,
+      "sha256": "8ada4713e76f1d2ff056a205791e6f782a088ad5cc0970df6267e9220f5a933a"
+    },
+    {
+      "path": "qa/revision-20261007-controls/rebuild-checks/CONTROLS_REBUILD_COMPARISON.json",
+      "bytes": 423,
+      "sha256": "de1cadc43ad1dc4535007e12282e95eb6a69101faa624833d6f6b3767f273a2d"
+    },
+    {
+      "path": "qa/revision-20261007-controls/rebuild-checks/REBUILD_RECEIPT.json",
+      "bytes": 4236,
+      "sha256": "caeaef0b14d1e2cd44a2f17cb5cc18cc4148ae28256e1f3b38abe9817eefbbe2"
+    },
+    {
+      "path": "qa/revision-20261007-controls/rebuild-checks/RENDER_ATTRIBUTE_COMPARISON.json",
+      "bytes": 204889,
+      "sha256": "e6ba12a7ef62fa360ca6f129ba032f8abf814371ff5f16e37cbfaf147f85c329"
+    },
+    {
+      "path": "qa/revision-20261007-controls/shell-audit/FINAL_CHANGED_CONTROL_CANONICAL.json",
+      "bytes": 5015,
+      "sha256": "90b4540ec6b4633d92639c766e531c57a39b134492f6997abf884c7fbd1b22aa"
+    },
+    {
+      "path": "qa/revision-20261007-controls/shell-audit/FINAL_NATIVE_SHELL.json",
+      "bytes": 111129,
+      "sha256": "e56b1c7c9d392d972ad6b0d117491d905bf4a08e40b9f92a2eb128ef4f84aa8b"
+    },
+    {
+      "path": "qa/revision-20261007-controls/shell-audit/FINAL_SELF_COVERAGE.json",
+      "bytes": 8914,
+      "sha256": "5f015b13d6ef2a0bb02ddcfb10cbf1d2755d83f9eb0c26a5c34a972f74044cc3"
+    },
+    {
+      "path": "qa/revision-20261007-controls/shell-audit/FINAL_SHELL_SUMMARY.json",
+      "bytes": 5426,
+      "sha256": "8c542503651150cc014cfa96587ae242ea5f7a18c2745900caeabdfe087b1e58"
+    },
+    {
+      "path": "qa/revision-20261007-controls/shell-audit/FINITE_ROOT_CROSSINGS.json",
+      "bytes": 646767,
+      "sha256": "1d818ea6683e3ada9823f604fb1714e2cb2ee762f7c337d3f2c065867711a6ed"
+    },
+    {
+      "path": "qa/revision-20261007-controls/shell-audit/REPAIR_EXPOSURE_CHECK.json",
+      "bytes": 448236,
+      "sha256": "f1f0cc3ebe99cde578a719e3d68ec3f3dd777a4bf6c6cd801e644a754ce2b459"
+    },
+    {
+      "path": "qa/revision-20261007-controls/shell-audit/SHELL_REPAIR_BASELINE_CHECK.json",
+      "bytes": 67937,
+      "sha256": "d43988b6643fe44b5c234aa8de84bcba59bc08570542077428d27cece90f6f56"
+    },
+    {
+      "path": "qa/revision-20261007-inset/baked-independent-controls-final/ALL_OWNER_TOPOLOGY_INVENTORY.json",
+      "bytes": 345884,
+      "sha256": "016147593b925757cc526093a5eb176b5308dea3f71e429702b20cf1f914c1e3"
+    },
+    {
+      "path": "qa/revision-20261007-inset/baked-independent-controls-final/BAKED_ANIMATION_CHECK.json",
       "bytes": 77113,
-      "sha256": "d8ef83eae4638c9701acc0e13ec99a6d2624c93b4d803a010ca03a80f31acb57"
+      "sha256": "53f797642fc7c271e3218eb6d70b551e3cd6db78999cf5d3ab297d1f9221d121"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/BAKE_GEOMETRY_IDENTITY.json",
+      "path": "qa/revision-20261007-inset/baked-independent-controls-final/BAKE_GEOMETRY_IDENTITY.json",
       "bytes": 1581,
-      "sha256": "04ae1a8093fcb71456a548f45d9a3e5c26f17bb36e83158c54a3df1d4027c8f5"
+      "sha256": "55c2961de81f0e76225984bce4077d7ef18360e2dab9aa19c920842668147485"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/BAKE_RECEIPT.json",
-      "bytes": 10001,
-      "sha256": "51e78aa8d62d4ec715eed1c17c36e5cc8c27584ae3df8de9b21620d7b00b9a31"
+      "path": "qa/revision-20261007-inset/baked-independent-controls-final/BAKE_RECEIPT.json",
+      "bytes": 10031,
+      "sha256": "1bc977b8ab8db4d95bb541f49aef5616dbf24617bf3f70f668bc4b1af980d91f"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/BUDGET_APPROVAL.json",
-      "bytes": 946,
-      "sha256": "f6cbcca26ded2f3dc66b1e73af66584b8295de76385e810e0e09b2b42480fd85"
+      "path": "qa/revision-20261007-inset/baked-independent-controls-final/BUDGET_APPROVAL.json",
+      "bytes": 947,
+      "sha256": "27bf90694574856a81d4109820b5a15c6309136db8357ba29775983906aa10ad"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/FROZEN_PARENT_METADATA_CHECK.json",
+      "path": "qa/revision-20261007-inset/baked-independent-controls-final/FROZEN_PARENT_METADATA_CHECK.json",
       "bytes": 679,
       "sha256": "1a73b727f124d156100df812c7985bec4f434b751a4c20b73d9185efee6fa1f0"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/IDENTITY_NEGATIVE_TESTS.json",
+      "path": "qa/revision-20261007-inset/baked-independent-controls-final/IDENTITY_NEGATIVE_TESTS.json",
       "bytes": 2288,
-      "sha256": "ff55dafc75904925e1352491d20fe83ffcf5ffd6c8be23f83a22cfde25574851"
+      "sha256": "d2435c6e9c151199ddc341497a6e5a85ffe705d78a3efc4056c2de61dbf62c7f"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/LEGACY_QUANTIZATION_INVENTORY_IDENTITY.json",
+      "path": "qa/revision-20261007-inset/baked-independent-controls-final/LEGACY_QUANTIZATION_INVENTORY_IDENTITY.json",
       "bytes": 20672,
-      "sha256": "b77df7eeeb60c7fc638dd5c3ff6a76ad5c1c65d70bd5bd7312cb375b1defbbe7"
+      "sha256": "10053ed622fff0cecdbb8ea15db1b378e9d2fed0c3a3aaa7e541676d32311af4"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/RUNTIME_COMPATIBILITY_CHECK.json",
+      "path": "qa/revision-20261007-inset/baked-independent-controls-final/RUNTIME_COMPATIBILITY_CHECK.json",
       "bytes": 26824,
-      "sha256": "e47e2b9172b351b185b771c3a3caccd595638374f6f3d91eafa998efb1040849"
+      "sha256": "a7206c8d0ae58404bd9ac60c373a4616c3c060c983d9009068d0cfb201034f9f"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/RUNTIME_SIZE_REVIEW.json",
+      "path": "qa/revision-20261007-inset/baked-independent-controls-final/RUNTIME_SIZE_REVIEW.json",
       "bytes": 387,
-      "sha256": "84916340f8f46e8b8194fc6c2da5fd7c9360453f15852978b4ec696a21601fcf"
+      "sha256": "45c14d04578ec2316a62138bfbc33234d196d79a330cae763eb61bfad404e9d8"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/SEMANTIC_OWNER_TOPOLOGY_CHECK.json",
+      "path": "qa/revision-20261007-inset/baked-independent-controls-final/SEMANTIC_OWNER_TOPOLOGY_CHECK.json",
       "bytes": 6326,
-      "sha256": "bee0b8be80fd4c0f67e4a840d818817a12f44d50a5ce8c330d5c461c2a242a8b"
+      "sha256": "562e801a6baacffd931268054f63e9ff7169b7cf484136a247f9acdb4598b606"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/SOURCE_GEOMETRY_REFERENCE.json",
-      "bytes": 347214,
-      "sha256": "939549ab03762439d0c643073bbf110574729ff7990899e976943c6a965fc9f3"
+      "path": "qa/revision-20261007-inset/baked-independent-controls-final/SOURCE_GEOMETRY_REFERENCE.json",
+      "bytes": 347127,
+      "sha256": "453bab1f30c7b5564f2946927230ad0acfa47d3589c640683608b36209d22c35"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/SOURCE_RUNTIME_IDENTITY.json",
+      "path": "qa/revision-20261007-inset/baked-independent-controls-final/SOURCE_RUNTIME_IDENTITY.json",
       "bytes": 272614,
-      "sha256": "16b16b18168001ad32773e2ad0902799d7a86c2e61d659ca47ddfa2a274d036d"
+      "sha256": "3ea736a54f022662459a5dc100c0735ff04fab4942863786d0ed3c5e4b5bb6bd"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/V25_PROTECTED_IDENTITIES.json",
+      "path": "qa/revision-20261007-inset/baked-independent-controls-final/V25_PROTECTED_IDENTITIES.json",
       "bytes": 1262,
-      "sha256": "83c41f44d6afa1deb12cb09fadc3ea8a96292534a0bcf5976f211d32664e71f7"
+      "sha256": "019ea540ebb503596dd68b01000b89ebd3cf4eac6a42dd1c3e208cef37573b53"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/annotated-mechanism.json",
+      "path": "qa/revision-20261007-inset/baked-independent-controls-final/annotated-mechanism.json",
       "bytes": 29994,
       "sha256": "b47e11f4c9cb61dc1d2c9d90f2c1f4b2b5ac88659dae9d5296262e74139f6069"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/assets/animation/motor-reference.json",
+      "path": "qa/revision-20261007-inset/baked-independent-controls-final/assets/animation/motor-reference.json",
       "bytes": 89393,
       "sha256": "85f1583b700818b3d42ef02bbfa16917dfb0f48657d4e7959fd36d7fcd7e951c"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/assets/animation/wing-transition-reference.json",
+      "path": "qa/revision-20261007-inset/baked-independent-controls-final/assets/animation/wing-transition-reference.json",
       "bytes": 2268825,
       "sha256": "664e407aadda0f82c25812e0e6fc89b6ec8f6ce8d7557b0b2cb9f0ddc806f6c4"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/assets/blender/annotated-mechanism.json",
+      "path": "qa/revision-20261007-inset/baked-independent-controls-final/assets/blender/annotated-mechanism.json",
       "bytes": 29994,
       "sha256": "b47e11f4c9cb61dc1d2c9d90f2c1f4b2b5ac88659dae9d5296262e74139f6069"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/assets/build/annotated-mechanism.json",
+      "path": "qa/revision-20261007-inset/baked-independent-controls-final/assets/build/annotated-mechanism.json",
       "bytes": 29994,
       "sha256": "b47e11f4c9cb61dc1d2c9d90f2c1f4b2b5ac88659dae9d5296262e74139f6069"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/checks/RUNTIME_CHECK_COMMANDS.json",
+      "path": "qa/revision-20261007-inset/baked-independent-controls-final/checks/RUNTIME_CHECK_COMMANDS.json",
       "bytes": 747,
-      "sha256": "759ee1e53fcddaa421dc8df2ba37413eca2ec71560395d51e85711194fe86e45"
+      "sha256": "62ce63ccb05c805ae8eaec89a2cbfbd994a6f5297c9ba8a280902da41dbbb259"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/checks/all-owner-inventory.log",
-      "bytes": 4174,
-      "sha256": "b24a693d298a9e5aba892a8db5a3eaf58dcf488bcf3facf75a35d2b30ab2fc93"
+      "path": "qa/revision-20261007-inset/baked-independent-controls-final/checks/all-owner-inventory.log",
+      "bytes": 4058,
+      "sha256": "1648ab55e13fba32f4a43a71e063a8aac9e2d386206ab8872e4d60282bbee4e7"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/checks/baked-animation.log",
+      "path": "qa/revision-20261007-inset/baked-independent-controls-final/checks/baked-animation.log",
       "bytes": 6775,
-      "sha256": "a3961cf529defa135799193ae32ef0d4135f607c3346e453da885dd25d613199"
+      "sha256": "13f3c6b36921642dd1eae2f0c425c7b1a3184f322b3ebd6d6113f7a4873ad513"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/checks/baked-native-geometry.log",
-      "bytes": 1980,
-      "sha256": "ddfe0a466d3aadc5d51c09a5a83274716eee5c8808f70f23b6620061874a4ef5"
+      "path": "qa/revision-20261007-inset/baked-independent-controls-final/checks/baked-native-geometry.log",
+      "bytes": 2008,
+      "sha256": "048a1c07ccee03608e03290d6a08296b8961e91583442ae24319853fd5e96ebb"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/checks/identity-negative.log",
+      "path": "qa/revision-20261007-inset/baked-independent-controls-final/checks/identity-negative.log",
       "bytes": 2288,
-      "sha256": "ff55dafc75904925e1352491d20fe83ffcf5ffd6c8be23f83a22cfde25574851"
+      "sha256": "d2435c6e9c151199ddc341497a6e5a85ffe705d78a3efc4056c2de61dbf62c7f"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/checks/legacy-inventory-identity.log",
+      "path": "qa/revision-20261007-inset/baked-independent-controls-final/checks/legacy-inventory-identity.log",
       "bytes": 20672,
-      "sha256": "b77df7eeeb60c7fc638dd5c3ff6a76ad5c1c65d70bd5bd7312cb375b1defbbe7"
+      "sha256": "10053ed622fff0cecdbb8ea15db1b378e9d2fed0c3a3aaa7e541676d32311af4"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/checks/owner-topology.log",
+      "path": "qa/revision-20261007-inset/baked-independent-controls-final/checks/owner-topology.log",
       "bytes": 4402,
-      "sha256": "405b2472d9e7c005c7b1005477a4a61063a475de490f52512318655c34f04e23"
+      "sha256": "5a0f1dcfaa7e453e02a811b1f905a1bf61e1655e87a264ad2099917ff5a83de5"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/checks/runtime-compatibility.log",
+      "path": "qa/revision-20261007-inset/baked-independent-controls-final/checks/runtime-compatibility.log",
       "bytes": 11984,
-      "sha256": "49eb8c250d10075befeecad96fb636de3af293c6de9b7637a9b67ae7bae7dd63"
+      "sha256": "b4e4a9421367b1a691b3143e117b8d94b68ec98ed6d3277a79e78cd497670bed"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/checks/semantic-unit.log",
-      "bytes": 430,
-      "sha256": "c39661c642ca3540f2e5a2f7a31604c7cd33070e23e6e90556d12f20dc043124"
+      "path": "qa/revision-20261007-inset/baked-independent-controls-final/checks/semantic-unit.log",
+      "bytes": 431,
+      "sha256": "942c2870bbe1ab051f779fac5681387df73c442a704aa45a38dbb864de2a3e34"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/checks/source-runtime.log",
+      "path": "qa/revision-20261007-inset/baked-independent-controls-final/checks/source-runtime.log",
       "bytes": 4265,
-      "sha256": "5a9f6133a1d56f3f04ce9a14ad3d31eb278a2f4973d8c68126b58aabc3502643"
+      "sha256": "a330e0e35ef9732a03d95ed84592ed70e3deed07790511c17fb5c47de5435518"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/model-manifest.json",
-      "bytes": 785748,
-      "sha256": "313110397dc7470d74233c72e3aea3dcd2944458f0ef3cdddd21ac5ac206af76"
+      "path": "qa/revision-20261007-inset/baked-independent-controls-final/model-manifest.json",
+      "bytes": 910541,
+      "sha256": "c7f99cc414485d31c78f486516dae0bb4470dc3c9bd02f028f063460f689e5e0"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/model-validation.json",
-      "bytes": 75014,
-      "sha256": "0d71d6ec6858126d56225c594b30e1229fb2afe412f450965c458444a2a688d8"
+      "path": "qa/revision-20261007-inset/baked-independent-controls-final/model-validation.json",
+      "bytes": 74418,
+      "sha256": "a3138a94473220a29d3e34cdaf62fc65ce049e3b326f87848fff13ef2b1e0f41"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/modelAssetRevision.ts",
-      "bytes": 279,
-      "sha256": "cc000c8c4f0e8da2e1cf9a98a3298cb06282cbdd93652a7e31590108f5c14327"
+      "path": "qa/revision-20261007-inset/baked-independent-controls-final/modelAssetRevision.ts",
+      "bytes": 293,
+      "sha256": "1114fa178ac7ceb9e875fa13f473294f492c803126c2a1e4a2bafa3023aee969"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/public/models/annotated-mechanism.json",
+      "path": "qa/revision-20261007-inset/baked-independent-controls-final/public/models/annotated-mechanism.json",
       "bytes": 29994,
       "sha256": "b47e11f4c9cb61dc1d2c9d90f2c1f4b2b5ac88659dae9d5296262e74139f6069"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/v25-parent-manifest.json",
+      "path": "qa/revision-20261007-inset/baked-independent-controls-final/v25-parent-manifest.json",
       "bytes": 241466,
       "sha256": "f72d468427d43283fb1e359e5d84cc7a485e68542048476fb5653ddba1df7d15"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/v25-parent-validation.json",
+      "path": "qa/revision-20261007-inset/baked-independent-controls-final/v25-parent-validation.json",
       "bytes": 73213,
       "sha256": "d40e6473ba4fa86b1e61b05301b232c78d33a0331ae66bc83394bcd17dec816c"
     },
     {
-      "path": "qa/revision-20261007-inset/candidate-inset-integrated-b-edge-linkage-construction.json",
-      "bytes": 403927,
-      "sha256": "dbd126c37d4e74e6a1a1c3de2346d8618e0613dd9f72981789193cd043692f2f"
+      "path": "qa/revision-20261007-inset/candidate-inset-integrated-b-independent-controls-final-construction.json",
+      "bytes": 600045,
+      "sha256": "8d8f3497f254e1641e4e4e9a929490ac73fe749404fbb601d58d7dedbb42694b"
     },
     {
       "path": "qa/revision-20261007-inset/development-templates/src/Scene.tsx",
@@ -857,431 +1212,6 @@
       "path": "qa/revision-20261007-inset/development-templates/src/modelAssetRevision.test.ts",
       "bytes": 1231,
       "sha256": "8594519b0f1836a2f7506d713628d7375c8a8392cf31e3db1f5c9f91e989f86d"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/AIRFRAME_GAP_AUDIT_BASELINE.json",
-      "bytes": 5161,
-      "sha256": "bb42392ae6037c71bea2218e4c05dd6069c5baae939b327ed063a715b2880c46"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/APPLY_REVISED_LINKAGE_RECEIPT.json",
-      "bytes": 22167,
-      "sha256": "b815070d70289817c16d4a00b71e840aa1d53b25bd6c8a37fa95b31d1082d002"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/NATIVE_MOTION_BINDING.json",
-      "bytes": 426,
-      "sha256": "21adb7caacf705330435506be6eb28d125a9fb2ca5e9a84774e0c7806a16c2d1"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/SLOT_TOPOLOGY_FRESH_REPLAY_CHECK.json",
-      "bytes": 2281,
-      "sha256": "7950df5ea2d6ee931ff28936dd142ff09802d46b9067c11047dd748c43761b24"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/SLOT_TOPOLOGY_REPAIR_AND_EXPORT_CHECK.json",
-      "bytes": 2283,
-      "sha256": "7183fbcbd283d0a36e5d578e00ddd0c12b0c7095a770da7f112d0055dcf049ea"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/SUPPORT_SLOT_CONTAINMENT_CHECK.json",
-      "bytes": 9275,
-      "sha256": "694b89ccda3c2ca14aec66e8f0059ba41e133b168a8f0172180b3f2f1d3e4441"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/boundary-columns.json",
-      "bytes": 6677,
-      "sha256": "fd1d8ad4c7bb33e1996c29b32a8af16c81ef845b1e68d1b525ffe01cee63aad8"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/candidate-inset-integrated-b-edge-linkage-sweep.json",
-      "bytes": 8204,
-      "sha256": "10308dc7b6796f0850f21936aae9b756e1a17420db5e99268e5a75f8af474382"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/columns.json",
-      "bytes": 3165,
-      "sha256": "bedd6d82232de6c820a61c04251a0abd6dd4d2b5f940bba7aaf29a6999c5a7be"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/crossings-baseline-L-742ef529.json",
-      "bytes": 73069,
-      "sha256": "2c5ce35bde54e397e4c1c4d86e33486cedab86f123425acb135ffa45da815996"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/crossings-baseline-R-742ef529.json",
-      "bytes": 85721,
-      "sha256": "07ff1942cd0d81f7f7e48d3b6c478ea433156499e1d8b5cbcc159709c6504af2"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/crossings-candidate-L-f3876488.json",
-      "bytes": 99628,
-      "sha256": "25e671a7a219e59809fe40469123f7cae0bac85f20487ef63313d2da4c5e0502"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/crossings-candidate-R-f3876488.json",
-      "bytes": 110728,
-      "sha256": "dfb6c2c696ef65e6e33ec509d67bb91a9a3ac3a288e0a698875a0ffa949d1602"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-bake.log",
-      "bytes": 67400,
-      "sha256": "ce54bfbc2f5188bbc393060c947befc27f8f3502b2cd2d1923d74117a4e634e6"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-build.log",
-      "bytes": 881,
-      "sha256": "85c4662d0469dc6f6bfa5cac2cb9b48ac0d4248d9ba1189ea09245c9075d108f"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-check_boundary_columns.log",
-      "bytes": 1349,
-      "sha256": "6879eb42515bf7124c04c59aed7fc2215ff27ccee91c4d68a974d5c108880955"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-check_columns.log",
-      "bytes": 507,
-      "sha256": "e4932299c62ffb9389fe740623ff02549f1316d7124f9c60d50dfc5990c22f56"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-check_local_gap.log",
-      "bytes": 7926,
-      "sha256": "a936a8fa1ba7a7b92fb8a4e8e46971364622662132eec177c94c1f9b17995bfb"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-check_precise_rear.log",
-      "bytes": 1795,
-      "sha256": "44dc2ce9ed1f6a0bdc8e9b5d9ce26bc97b12c1afe5510a876948ee9ee8fc9b40"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-check_precise_self.log",
-      "bytes": 1738,
-      "sha256": "ae139e8abc54d8ff4dc45b4b1a112ba86380c70676d949441e186a50173e8a6b"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-check_walls.log",
-      "bytes": 1832,
-      "sha256": "33713d7c4e298e678c62cad2b91900e2314cda57056bbe68cc967424181c8f31"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-compress.log",
-      "bytes": 855,
-      "sha256": "6cb074d59ce5bc6a454116932156dfa41fd4432ed10f7787040cba50ab4df49a"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-drive.log",
-      "bytes": 1900,
-      "sha256": "fe1cdecbdccb56d9cb324696f263653ed033dc4efb0dce2be36c9bb04cf86506"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-format.log",
-      "bytes": 281,
-      "sha256": "fad16cd3eb30d839064584f1e54b34ed7e6f293588320d5a8602f01b06d36d90"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-manifest.log",
-      "bytes": 565,
-      "sha256": "dc9b702a55f99d2c28948463cff2b9ececee0ed9aa22c22fd41b2b85b86550f8"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-material-support.log",
-      "bytes": 3306,
-      "sha256": "43a6f763bb74cabe4f1af025e8aa49d3fc544f5379b3e031ab3fc3479b09c8cd"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-material.log",
-      "bytes": 2302,
-      "sha256": "758b0a3729fe0ded09a911cc042bd7c2009d6415017fe8f10be792ab16576e6d"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-native-binding.log",
-      "bytes": 426,
-      "sha256": "21adb7caacf705330435506be6eb28d125a9fb2ca5e9a84774e0c7806a16c2d1"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-node-tests.log",
-      "bytes": 17839,
-      "sha256": "33d845dc2d44a4fcab308f720d2a3861fdfadda20671b576784514362e036118"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-python.log",
-      "bytes": 2993,
-      "sha256": "1358891cc004974914c3697386587c01b2a000ff651df0a62fff453b77e8ff7b"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-qa-tests.log",
-      "bytes": 1464,
-      "sha256": "8a5d41f33b40c8d61b4f4b8b1f69b09a73bf6895edbed14b1b2c7eef15052295"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-rotor.log",
-      "bytes": 997,
-      "sha256": "5e88e788eaeb768ef236997e1b38bc817cb3abbadfbd57f6dda2105fa50096ee"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-runtime-checks.log",
-      "bytes": 226,
-      "sha256": "99026c13eef265ce5acc1c761a76dc177cee659dfb3dd2a91cedbea4d3c5b71b"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-supports.log",
-      "bytes": 9740,
-      "sha256": "47b4e434d9bcb5562e719aa453d3be0ba5e9d6f990b55169139b70bf13e9ef08"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/rear-crossings-baseline-L-742ef529.json",
-      "bytes": 17726,
-      "sha256": "aaa2a9078bd728afd634299071429c95d4626c580af18e29c15aa35552aa60a2"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/rear-crossings-baseline-R-742ef529.json",
-      "bytes": 19030,
-      "sha256": "119da1ea03cbb7e37ea731c3bd658d1217c5b145a564e1b33524db2a25d5b963"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/rear-crossings-candidate-L-f3876488.json",
-      "bytes": 26540,
-      "sha256": "cd6129804f77ebe81eec85b7752fccafbeee4f0cb418c800fb60af01aab062e1"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/rear-crossings-candidate-R-f3876488.json",
-      "bytes": 42511,
-      "sha256": "3ca4206c998907f04ea7949723be372db69cc67c9ebff72bb4106849e98f53ce"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/self-precise-f3876488.json",
-      "bytes": 133696,
-      "sha256": "78bbcd3d2a5fec7e30edbff4ba84e8fae54ea242fc9563217577879371bbb2a6"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/self-precise-rear-f3876488.json",
-      "bytes": 2054,
-      "sha256": "2506e675c29688697cdc594500bae855baab482873abffa7c257f85deccfc9f6"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/static-rear-gap.json",
-      "bytes": 7708,
-      "sha256": "f458e04a9008ebb0fd19c986128ed0010a28ed8418d41bad77234bbdf56acce6"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-checks/wall-screen.json",
-      "bytes": 2570,
-      "sha256": "89b08bc93def879436ff860cb5a0c73fe970af5ef895048040b38c379635f25c"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/01-full-native-construction.log",
-      "bytes": 12215,
-      "sha256": "828e1b96178e625a764f4c05e1fca6f881f81832d6ab50592a08d74582de57ae"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/02-complete-native-identity.log",
-      "bytes": 713,
-      "sha256": "29448dfbef766253e017df281a80ae79ec2a4029bde48fa34932eba2407976ae"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/03-fresh-bake.log",
-      "bytes": 67457,
-      "sha256": "a3899c81240e543dffe8804c62e6a7aa542a4a6a86e1670c93563916a2d79c14"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/04-compress.log",
-      "bytes": 855,
-      "sha256": "65fb356cfcb6e8444b7dbb903f75571c8585b8b513c7806bdb78cdb9f9bd4c88"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/05-source-runtime.log",
-      "bytes": 4265,
-      "sha256": "3860eaae526c0948da91fdb21a663f48867f0341505e66ab9a6c1c98fc356a7f"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/06-baked-native-geometry.log",
-      "bytes": 2042,
-      "sha256": "52f6601daef7fad3f8748a236d742ccda2d28bb87f1b31be4b585af116880e30"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/07-baked-animation.log",
-      "bytes": 6775,
-      "sha256": "4a81483176716a7301ebc658d1596b7f78426838672cd808e140ceef37fa3055"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/08-runtime-compatibility.log",
-      "bytes": 11984,
-      "sha256": "2abb67a0465ced88bc7270269ec219c726f2c78f7c1456c9cb86711c5e94444c"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/09-owner-topology.log",
-      "bytes": 4402,
-      "sha256": "661fd31c8b193bbc95c6e2a318189625bd5e77a5e1fca03d3b96f5ab350e245e"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/10-all-owner-inventory.log",
-      "bytes": 4174,
-      "sha256": "a405ff85087bacfb652bf7d2ce9a57b570ea5de9ed6b61f809ac2c45af0cbabc"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/11-legacy-inventory-identity.log",
-      "bytes": 20610,
-      "sha256": "7dae9eb605c7f81aed44961d4e0f3c0ec4ec5dce041b987f37fe297a5add5102"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/12-semantic-unit.log",
-      "bytes": 430,
-      "sha256": "d82e929a1df8850b73f064729c5b880700f407a3e2cec7fe79df1edfb6c2c98e"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/13-identity-negative.log",
-      "bytes": 2288,
-      "sha256": "358a41ca3ee6f3d9d744b3f7ef7e9136b87daafabf275704d6cb4fcdbdb8ee24"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/14-write-manifest.log",
-      "bytes": 599,
-      "sha256": "93913ea28549c9de96b419453a6d9ebca77c317ced5e0d1ffb804c7401a85ebd"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/15-format-cache-helper.log",
-      "bytes": 31,
-      "sha256": "cf79409cce5d9cc01ef81fcdff62e3e294edbe869c0e412c25a8eac855326762"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/16-node-tests.log",
-      "bytes": 17848,
-      "sha256": "2f13b434b4cad5216202d72024df1e5ceba945c3033c4a3714d226870c899fce"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/17-qa-tests.log",
-      "bytes": 1464,
-      "sha256": "31e22600aaa922a4258d2c07146f83230e860da06cb0a7352e9ad580f66b14aa"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/18-format.log",
-      "bytes": 281,
-      "sha256": "fad16cd3eb30d839064584f1e54b34ed7e6f293588320d5a8602f01b06d36d90"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/19-typescript-vite.log",
-      "bytes": 881,
-      "sha256": "2f951c4d9cf52a70158b206759fff7bb19543116f621acf9a8bb2a24a8b052a4"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/20-python-tests.log",
-      "bytes": 125,
-      "sha256": "7b25f79cdb152153a57c9a823d787e9a20a254f8dd6f335fde5c204496ec7382"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/EDGE_LINKAGE_REBUILD_COMPARISON.json",
-      "bytes": 462,
-      "sha256": "09a86f19d665be39f9bf584985dd716a585f07551bae8f261a210b823c9e2529"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/REBUILD_RECEIPT.json",
-      "bytes": 4439,
-      "sha256": "821720a08f8378e55d926be022d9d0d5be5006d19a7f9c2974197b9276bbf2ba"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/RENDER_ATTRIBUTE_COMPARISON.json",
-      "bytes": 204869,
-      "sha256": "5afffaf899816715ae7a261c3df959b6e95a7fcf67e4829d5b88f7309df36532"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/STRICT_PACKAGE_NEGATIVE_TEST.json",
-      "bytes": 540,
-      "sha256": "99a67969dad4cd922dfa570402554c73c535f8eb72006a1935a1cd48899f8407"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/runtime-reports/ALL_OWNER_TOPOLOGY_INVENTORY.json",
-      "bytes": 346011,
-      "sha256": "3dd8f98de48346730ea78a10154648e6a7b079e67397ea912d3f0b221e3f2198"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/runtime-reports/BAKED_ANIMATION_CHECK.json",
-      "bytes": 77113,
-      "sha256": "7f14971fdc5fd9ff0e55aaf4ff3760243f74ea9eb04691981f54ba61c05286e1"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/runtime-reports/BAKE_GEOMETRY_IDENTITY.json",
-      "bytes": 1581,
-      "sha256": "94c0e14b4c8acbbc95da56cc285cdeb02cf39def1c198b62df305bdb77b6bd6e"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/runtime-reports/BAKE_RECEIPT.json",
-      "bytes": 10025,
-      "sha256": "94f03e48dfc4e06982c8dc9115e96ead3a670fb221fe1efa85930c48b0104a50"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/runtime-reports/BUDGET_APPROVAL.json",
-      "bytes": 833,
-      "sha256": "4772faa4778693f2efab36b865e826e20d5d5171f39bc1b93466ad0af80dde56"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/runtime-reports/FROZEN_PARENT_METADATA_CHECK.json",
-      "bytes": 679,
-      "sha256": "1a73b727f124d156100df812c7985bec4f434b751a4c20b73d9185efee6fa1f0"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/runtime-reports/IDENTITY_NEGATIVE_TESTS.json",
-      "bytes": 2288,
-      "sha256": "358a41ca3ee6f3d9d744b3f7ef7e9136b87daafabf275704d6cb4fcdbdb8ee24"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/runtime-reports/LEGACY_QUANTIZATION_INVENTORY_IDENTITY.json",
-      "bytes": 20610,
-      "sha256": "7dae9eb605c7f81aed44961d4e0f3c0ec4ec5dce041b987f37fe297a5add5102"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/runtime-reports/RUNTIME_COMPATIBILITY_CHECK.json",
-      "bytes": 26824,
-      "sha256": "107233deb0c4b3c705f10efd921fa122993398186f47f96a677059cdab63d734"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/runtime-reports/RUNTIME_SIZE_REVIEW.json",
-      "bytes": 387,
-      "sha256": "543d194091714f12eaedd1bdc72bd325a828c96e3401420f780611efdbab9f17"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/runtime-reports/SEMANTIC_OWNER_TOPOLOGY_CHECK.json",
-      "bytes": 6326,
-      "sha256": "4b05191842e87593dfde28cdd67477dace0e63335ff69c6168134cd39b824c1c"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/runtime-reports/SOURCE_GEOMETRY_REFERENCE.json",
-      "bytes": 347226,
-      "sha256": "ea20435bf37256608069a61b6a3971babda021dfa95cbe08a232e80c2341d9ef"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/runtime-reports/SOURCE_RUNTIME_IDENTITY.json",
-      "bytes": 272614,
-      "sha256": "3f93af2817a1d79354a3c46727ee95c681a113ab9aac00187ae90da6057147b5"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/runtime-reports/V25_PROTECTED_IDENTITIES.json",
-      "bytes": 763,
-      "sha256": "b4528b3810c0cd6099fc1f68a54ff073b1861fc39a1c0c7da6c5b03fd205718a"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/runtime-reports/annotated-mechanism.json",
-      "bytes": 29994,
-      "sha256": "b47e11f4c9cb61dc1d2c9d90f2c1f4b2b5ac88659dae9d5296262e74139f6069"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/runtime-reports/model-manifest.json",
-      "bytes": 785799,
-      "sha256": "59dae2f5e98ca22c632529eecf335e928cbd29f4c311194292561ec849dde157"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/runtime-reports/model-validation.json",
-      "bytes": 75014,
-      "sha256": "35ce3e9580aa11564fc49d7d4099b14bc9a75b4a524aa2a9bbc6b7d018b40577"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/runtime-reports/v25-parent-manifest.json",
-      "bytes": 241466,
-      "sha256": "f72d468427d43283fb1e359e5d84cc7a485e68542048476fb5653ddba1df7d15"
-    },
-    {
-      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/runtime-reports/v25-parent-validation.json",
-      "bytes": 73213,
-      "sha256": "d40e6473ba4fa86b1e61b05301b232c78d33a0331ae66bc83394bcd17dec816c"
     },
     {
       "path": "scripts/airframe_accessories.py",
@@ -1657,6 +1587,61 @@
       "path": "scripts/revision_20261007/write_revision_manifest.py",
       "bytes": 5229,
       "sha256": "1c83a478b50deffca65248065c1066c4b73f45d1e8916c0793f14923a6775fd6"
+    },
+    {
+      "path": "scripts/revision_20261007_controls/build_candidate.py",
+      "bytes": 3049,
+      "sha256": "962cc8c5e11e7cfd1514c5376cfb1207723aa3454c62dbf62360db62a66ac0c7"
+    },
+    {
+      "path": "scripts/revision_20261007_controls/check_control_combinations.py",
+      "bytes": 9903,
+      "sha256": "0bf575e523f3f44f59e5e424921a52cb5d0fb6a442b45d35f6b7fcf3b85670ef"
+    },
+    {
+      "path": "scripts/revision_20261007_controls/check_native_identity.py",
+      "bytes": 2637,
+      "sha256": "3968229398e57a05f96395c7de142c00e2c412e5554f2d554820d06a61001fd9"
+    },
+    {
+      "path": "scripts/revision_20261007_controls/enlarge_inboard.py",
+      "bytes": 10806,
+      "sha256": "13c09ac2e234f7e7a13167b0983993584b52057cf42b6117afeb95e00713eaa3"
+    },
+    {
+      "path": "scripts/revision_20261007_controls/inspect_baseline.py",
+      "bytes": 969,
+      "sha256": "f9d1aafd13bf90b96b53381b4a1f5e455eb9df053f0e2a5f099c97c83aa12c7d"
+    },
+    {
+      "path": "scripts/revision_20261007_controls/render_annotation_match.py",
+      "bytes": 1639,
+      "sha256": "63440b36bd863f39ed11c28918b002c78094fe96a1ba2ed92b5ef426107fd9a2"
+    },
+    {
+      "path": "scripts/revision_20261007_controls/render_controls.py",
+      "bytes": 1592,
+      "sha256": "831ce05325404cbd81d3d3f9c2426bf22e3428f1af355487c3ef7518cbf4fe54"
+    },
+    {
+      "path": "scripts/revision_20261007_controls/render_independent_surfaces.py",
+      "bytes": 2949,
+      "sha256": "0a7f0e50c29de49db14026fd6b0a3d7dd0c9befb87024e37cee5a2a11ea25251"
+    },
+    {
+      "path": "scripts/revision_20261007_controls/repair_shell_details.py",
+      "bytes": 10967,
+      "sha256": "f20f6cb67f27f25898e0d1a5e8b9ccf123851fcf88a1b4ff1502d6b1df549244"
+    },
+    {
+      "path": "scripts/revision_20261007_controls/verify_controls_geometry.py",
+      "bytes": 4495,
+      "sha256": "3ee85d284f831050faf7e7dafb96e0d861ef80b84705f2ae99f659f9138061d8"
+    },
+    {
+      "path": "scripts/revision_20261007_controls/write_manifest.py",
+      "bytes": 1454,
+      "sha256": "917cdb7d7f4f6949338a9faf88e683b210680b2d24f98bf950c1be1620b6a6cd"
     },
     {
       "path": "scripts/revision_20261007_detail/bake_candidate.py",
@@ -2075,8 +2060,8 @@
     },
     {
       "path": "src/App.tsx",
-      "bytes": 51508,
-      "sha256": "c75b976a76d44337839caecfa3afc9fe285dea89cbb5b5eb2a3354a7e0d40dfa"
+      "bytes": 51330,
+      "sha256": "6fac4579f3b12fae7f988d7d5385b6d9dd7aeb1ed9fc986d5d80d42ed18ac6b1"
     },
     {
       "path": "src/DetailPanel.tsx",
@@ -2110,13 +2095,13 @@
     },
     {
       "path": "src/details.test.ts",
-      "bytes": 12966,
-      "sha256": "afe85890b306d7ff99f3da1dba5d8ac6ce2bf5811990310eec87fb7ab93348b5"
+      "bytes": 12995,
+      "sha256": "73cd7f0d2a3a5451b48901df66ca8f2f307a827f214e4f3ac6997056b78f7e36"
     },
     {
       "path": "src/details.ts",
-      "bytes": 2779,
-      "sha256": "6b6a967e411a72e5bea6f44badb89f33746c01e5e1d770ce91d962a1d4cb1a66"
+      "bytes": 4698,
+      "sha256": "6c8c441e86316562fed1f4dacc4d5f22c9719b2122ca48c183933cb5f0c28703"
     },
     {
       "path": "src/experience.test.ts",
@@ -2125,8 +2110,8 @@
     },
     {
       "path": "src/experience.ts",
-      "bytes": 7572,
-      "sha256": "d4afe57fbd401cbcba996cebc0e2d56771b425d4ad2df79e696158cb8822f105"
+      "bytes": 7564,
+      "sha256": "df10a1c1d2ad298019e225dba805878d7ec8e3aea119db427ab3db82ed7d0120"
     },
     {
       "path": "src/flight.test.ts",
@@ -2137,6 +2122,11 @@
       "path": "src/flight.ts",
       "bytes": 3759,
       "sha256": "00f3e09ac2579f6c7ca484a07692d191548821cb35b37509b61aafcb0ad9800a"
+    },
+    {
+      "path": "src/independentSurfaces.test.ts",
+      "bytes": 11715,
+      "sha256": "95fb823ff4c2db7243e4d61089afbf21cd2d20818e463fbed9efc3f9aebf0497"
     },
     {
       "path": "src/inspection.test.ts",
@@ -2171,7 +2161,7 @@
     {
       "path": "src/model.test.ts",
       "bytes": 35824,
-      "sha256": "481aefb28c6e2a58c9a5ab0b81097533fbe455ac6bb2430d422e375fe68fe61c"
+      "sha256": "683f714cd987f13e58af111a3a531776f7fd8a31d2d2409e3eb09525e90a7a0c"
     },
     {
       "path": "src/modelAssetRevision.test.ts",
@@ -2180,8 +2170,8 @@
     },
     {
       "path": "src/modelAssetRevision.ts",
-      "bytes": 281,
-      "sha256": "98562222772f6cff1d3be443edab940023312af5476f5f29661cc520580232db"
+      "bytes": 295,
+      "sha256": "f73e0d30d52ac32bf57ba0e55479e4abcc41f8828e35e29cf15948f8a88a0763"
     },
     {
       "path": "src/motors.ts",
@@ -2200,8 +2190,8 @@
     },
     {
       "path": "src/rig.ts",
-      "bytes": 25357,
-      "sha256": "4215cd44a02e36e62a2a7ccacd16a38b3fe9d82a727c0233af6d889caa56efb5"
+      "bytes": 26223,
+      "sha256": "70e56bf365a1a65019a496df93a4988eddd6e3bea789dd845884feae9f54a35e"
     },
     {
       "path": "src/rotor-geometry.test.ts",
@@ -2255,8 +2245,8 @@
     },
     {
       "path": "src/simulation.ts",
-      "bytes": 23108,
-      "sha256": "db34291fe2bca396f94c77d359900ea05da1ab148b8d0c5cac05eb3d933e4e34"
+      "bytes": 23287,
+      "sha256": "79bb873f9c242e1bfc5ecc9bb5256094b4c7aa086afed12c955ede6bca5e8d07"
     },
     {
       "path": "src/simulationBridge.ts",
@@ -2267,6 +2257,11 @@
       "path": "src/style.css",
       "bytes": 32278,
       "sha256": "7c0da5f0f423f43d69a17e12cf269e32ac16f4c50c7e3ae86ba9dca15a31b66d"
+    },
+    {
+      "path": "src/surfaces.ts",
+      "bytes": 2275,
+      "sha256": "b06f0f8245791fd2a6aaf332f2f002acef96d083da6edae181bc0d362bf8749e"
     },
     {
       "path": "src/tilt.test.ts",
@@ -2312,6 +2307,11 @@
       "path": "tools/guarded-native-entry-recovery.py",
       "bytes": 5340,
       "sha256": "01b715f0a50a1d9bf77f0a3d8460053e6fd87b1b687d9d4cc586ed2596b6e0b0"
+    },
+    {
+      "path": "tools/rebuild_controls_revision.py",
+      "bytes": 6710,
+      "sha256": "aad2a5ab666c5ce807d9f63d3722b9fa60befd9f6eb67d31c49bc458aa98ac9e"
     },
     {
       "path": "tools/rebuild_detail_revision.py",

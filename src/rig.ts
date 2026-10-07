@@ -9,10 +9,16 @@ import * as THREE from "three";
 import {
   DETAIL_LIMITS,
   normalizeDetailPose,
-  type DetailControl,
   type DetailPose,
   type DetailView,
 } from "./details";
+import {
+  SURFACE_CONTROLS,
+  resolveSurfacePatch,
+  type SurfaceControl,
+  type SurfaceGroup,
+  type SurfacePatch,
+} from "./surfaces";
 
 export const GROUND_HEIGHT = -0.6;
 const UP = new THREE.Vector3(0, 1, 0);
@@ -115,13 +121,19 @@ export function createModelRig(scene: THREE.Object3D) {
     .map((rest) => {
       const cargo = rest.object.name === "CargoHoodPivot";
       const suffix = rest.object.name.slice("ControlPivot_".length);
-      const group: DetailControl = cargo
+      const group: SurfaceGroup | "hatch" = cargo
         ? "hatch"
         : suffix.startsWith("Tail_")
           ? "tail"
           : suffix.endsWith("Inboard")
             ? "inboard"
             : "outboard";
+      const control = cargo
+        ? "hatch"
+        : (Object.keys(SURFACE_CONTROLS) as SurfaceControl[]).find(
+            (key) => SURFACE_CONTROLS[key] === suffix,
+          );
+      if (!control) throw new Error(`${rest.object.name} 的独立舵面编号无效`);
       const prefix = cargo ? "CargoHoodAxis" : "ControlAxis";
       const postfix = cargo ? "" : `_${suffix}`;
       const start = nodes.get(`${prefix}Start${postfix}`)?.object;
@@ -159,7 +171,14 @@ export function createModelRig(scene: THREE.Object3D) {
         Math.max(declared[0], DETAIL_LIMITS[group][0]),
         Math.min(declared[1], DETAIL_LIMITS[group][1]),
       ] as const;
-      return { ...rest, group, axis, sign, range };
+      return {
+        ...rest,
+        group,
+        control: control as SurfaceControl | "hatch",
+        axis,
+        sign,
+        range,
+      };
     });
   const spreader = nodes.get("BraceSpreader");
   const braces = (["L", "R"] as const).flatMap((side) => {
@@ -401,25 +420,39 @@ export function applyMotorPose(rig: ModelRig, states?: MotorStates) {
 /** 外部六舵面与舱盖独立偏转，沿原模型的真实铰轴。 */
 export function applySurfacePose(
   rig: ModelRig,
-  surfaces: Record<string, number>,
+  surfaces: SurfacePatch,
   hatchDeg: number,
 ) {
-  for (const part of rig.details) {
-    const key = part.object.name.slice("ControlPivot_".length);
-    const degrees = part.group === "hatch" ? hatchDeg : (surfaces[key] ?? 0);
+  const resolved = resolveSurfacePatch(surfaces);
+  if (
+    typeof hatchDeg !== "number" ||
+    !Number.isFinite(hatchDeg) ||
+    hatchDeg < 0 ||
+    hatchDeg > 55
+  )
+    throw new Error("舱盖超出模型行程");
+  // 检查所有部件后才改任何网格，末项错误不能留下半帧状态。
+  const angles = rig.details.map((part) => {
+    const degrees =
+      part.control === "hatch"
+        ? hatchDeg
+        : (resolved[SURFACE_CONTROLS[part.control]] ?? 0);
     if (
       !Number.isFinite(degrees) ||
       degrees < part.range[0] ||
       degrees > part.range[1]
     )
       throw new Error("独立舵面超出模型行程");
+    return degrees;
+  });
+  rig.details.forEach((part, index) => {
     ROTATION.setFromAxisAngle(
       part.axis,
-      THREE.MathUtils.degToRad(degrees * part.sign),
+      THREE.MathUtils.degToRad(angles[index] * part.sign),
     );
     part.object.quaternion.copy(part.quaternion).multiply(ROTATION).normalize();
     part.object.position.copy(part.position);
-  }
+  });
   rig.scene.updateMatrixWorld(true);
 }
 
@@ -434,11 +467,11 @@ export function applyDetailPose(
     quaternion,
     position,
     axis,
-    group,
+    control,
     sign,
     range,
   } of rig.details) {
-    const degrees = THREE.MathUtils.clamp(pose[group], range[0], range[1]);
+    const degrees = THREE.MathUtils.clamp(pose[control], range[0], range[1]);
     ROTATION.setFromAxisAngle(axis, THREE.MathUtils.degToRad(degrees * sign));
     object.quaternion.copy(quaternion).multiply(ROTATION).normalize();
     object.position.copy(position);

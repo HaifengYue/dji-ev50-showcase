@@ -32,6 +32,12 @@ class Recording:
     def set_state(self, **patch) -> "Recording":
         return self.command("set", patch)
 
+    def set_surface(self, surface_id: str, degrees: float) -> "Recording":
+        return self.set_state(surfaces={surface_id: degrees})
+
+    def set_surfaces(self, **angles: float) -> "Recording":
+        return self.set_state(surfaces=angles)
+
     def step(self, dt: float) -> "Recording":
         return self.command("step", {"dt": dt})
 
