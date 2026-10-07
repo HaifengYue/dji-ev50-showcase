@@ -1,37 +1,22 @@
 # Transwing 交互展示工程
 
-本树记录交付冻结时的状态：几何已冻结，限定域材料/运动及开发检查通过；用户审图仍待确认，尚未发布。模型为未标定尺度的原创概念，单位u；不作制造、强度、适航认证。
+本次根据标注补齐折起机翼前后端轮廓，保留巡航上片原圆角；左右连杆翼端支点由 |X|=1.12 内移到 1.06u，并同步调整定长杆、内部前支承、导轨、丝杆有效段、限位与侧槽前端。页面交互保持原有功能。
 
-## 已验证与边界
+## 工程与验证
 
-- 当前交付原生作者源SHA：742ef52939de40f5d2eb46b87d38c8e85f99bffafc270c302afd59b9ea398adf
-- 当前运行GLB：3,696,884 B，SHA352b1b6fd28026e5c9b50e981e1fb30aa4d5fad805084d7186ca2e9c7c375b16；开发性能预算3,800,000 B，非用户硬限
-- 285逻辑mesh owner、352原始节点、287渲染primitive；177关键owner/179primitive保源Float32与精确TRS
-- 实际176/176、QA、TypeScript/Vite、格式、Python26/26通过；真实动画/丝杠相位/4001姿态rig和电机故障检查通过
-- 原生661有限姿态0接触、0包含、0未判定；252桨组合0接触。有限采样不等于全机连续状态证明
-- 全新目录实际从冻结V24→V25→M→I→平腹/连接肋/内孔/相位重新生成B，285mesh/352节点与冻结参考全等；以新作者SHA继续fresh烘焙、压缩、全部管线和176/TS/Vite/Python均通过。再生资产字节与当前交付B不同，未混用
-- 该全流程实际逐组件执行；wrapper的准备、环境清理、绝对脚本定位、输入验证及篡改拒绝均实测。未声称单次不中断的完整--run执行
-- 没有浏览器GPU或实体手机测试；不绕过现有访问限制
+- 原生构造、烘焙动画及压缩运行体均包含；运行体为 4,035,036 字节，相比父版增加 9.15%，预算上限为 4,200,000 字节
+- 本轮原生模型完成 661 姿态翼面及闭体包含检查、252 折桨/桨相位检查、1,201 姿态内部传动检查，均未检出材料干涉
+- 179 项 Node 测试、5 项轻量 QA、26 项 Python 测试及格式、TypeScript/Vite 构建通过
+- 新端部局部主壁样点最小 .0101987u；后部静态层隙有限网格最小 .0030450u。前后端局部自交按独立精确分类检查通过
+- 旧 171 项构造输入逐字节保留，新增局部增量独立锁定；最终资产不作为全链构造输入
 
-## 外形与有限厚度声明
+完整检查范围、SHA 和限制见 [验证说明](docs/VERIFICATION.md)、[资产说明](docs/ASSETS.md)。所有尺寸为未标定概念单位 u，并非制造毫米；本项目不提供强度、制造或适航认证。
 
-巡航上皮投影让位口最大X宽约.06891u，由同轴刚体扫掠占位约束保留；这不是透光孔面积、最小机械净距或全局最优口宽证明。当前双侧上皮投影间隙面积约.01754454u²，较M约.03934523u²减少55.4%。
-
-新后部主壁有限样点最低.01019986u、巡航层隙最低.00365993u；新轴区自然主皮样点固定侧最低.01363156u、活动侧.01084013u。不得扩写为全机或全表面≥.010。
-
-自然羽缘仅按原V25自然薄缘恢复，不能把M后来人为下加厚当原始基准。224对应截面保留218，授权内收去掉6；B局部最低竖直厚约.00911129u、法向约.00936805u，适用范围见最终复核。旧孔屋顶还有真实继承薄区约.00754–.00983u，代表值.00896127u；继承不等于豁免。1.25°旧接缝约.00172605u正净空是V25/M同片原面沿袭，不能把巡航.003规则说成全运动≥.003。
-
-完整限定与来源见 qa/revision-20261007-inset/FINAL_GEOMETRY_REVIEW_B.json 及其引用。大扫描数组、多PNG和历史审计留在包外且未删除；包内小收据的历史引用不表示所有大证据均随包提供。
-
-## 开发与校验
-
-在本目录执行（实际验证环境：Blender4.3.2含NumPy/SciPy，Node24.19.0，Python3.12）：
+## 开发
 
 ```sh
-python3 tools/verify_package.py
 npm ci
 npm ci --prefix scripts
-export QA_EXPECTED_SOURCE_CANDIDATE_SHA256=742ef52939de40f5d2eb46b87d38c8e85f99bffafc270c302afd59b9ea398adf
 npm test
 npm run test:qa
 npm run format:check
@@ -40,17 +25,21 @@ PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=python python3 -m unittest discover -s pyth
 python3 python/run_server.py
 ```
 
-Python服务同源提供dist和API；在用户本机打开 http://127.0.0.1:8765。接口说明见 docs/PYTHON_API.md。npm依赖按两个lockfile安装，包内没有node_modules或凭据。
+Python 服务同源提供 dist 和 API，接口见 docs/PYTHON_API.md。依赖与凭据不随包分发。
 
-## 全新目录严格再生
+## 从冻结输入重建
 
-先安装上述依赖，再使用从未存在的工程外目标：
+使用 Blender 4.3.2、Node 24 和 Python 3.12；先安装上述依赖，然后执行：
 
 ```sh
-python3 tools/rebuild_inset_revision.py --output ../rebuilt-v27-b --dry-run
-python3 tools/rebuild_inset_revision.py --output ../rebuilt-v27-b --run --deps-from . --hardlink-inputs
+python3 tools/verify_edge_package.py
+python3 tools/rebuild_edge_linkage_revision.py --output ../transwing-rebuilt --run
 ```
 
-171项新输入锁保留旧82/103/136行与原字节。冻结V24 Blend包内一份；单独冻结V25 runtime只用于旧量化缺陷身份核验，不读取主public/models/xp4.glb冒充V25。当前B原生/GLB成品不是几何构造输入。再生候选容器SHA可不同，先核完整几何参考，再按实际新SHA烘焙并执行独立验证。详见 tools/REBUILD_INSET_REVISION.md 和 qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/DEFAULT_RECONSTRUCTION_CHECK.json。
+输出目录须为新的项目外目录。固定的进程合同为：冻结父代构造独立使用 4 个 Blender 线程，保存后在独立 2 线程进程冷载再应用本轮增量。线程配置会影响旧布尔运算的 Float32 舍入，不应擅自改变。完整原生身份比较包括每个 Float32 顶点、有向面/材质、父级和局部矩阵；当前最终 Blend/GLB 不作构造输入。
 
-发布父提交为7dcd5cde3a650c48a164c72bd9473671ec74b641。FILE_MAP仅供原发布线程比对交付树；本次没有推送、部署或远端写入。历史M/旧版本文件只作输入与背景，不是当前模型状态。
+## 保留的合理边界
+
+保留关节轴口、控制面铰缝、桨毂与折桨叉运动间隙、舱盖和短舱装配线。旧天然薄羽缘、轴孔屋顶约 .00754–.00983u 薄域，以及旧接缝约 .001726u 动态净空均为明确继承限制。侧槽延长域保留约 .006u 原机身壳厚，其标准不同于机翼新主壁。
+
+有限姿态与有限壁厚样点不证明全连续状态或全机最小壁厚。未声称浏览器 GPU 或实体手机实测。

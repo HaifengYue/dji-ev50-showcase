@@ -1,0 +1,14 @@
+{
+  "public/models/xp4.glb": "352b1b6fd28026e5c9b50e981e1fb30aa4d5fad805084d7186ca2e9c7c375b16",
+  "public/models/manifest.json": "1b11ad7621e5a8c0f9af9d1c22a191cbb624e91cbf2b8b159431803dcf54b639",
+  "assets/blender/xp4.blend": "e7baf0cf5e4d5fb0a0fda79199d24c12ac6867ad21aae067a0393dc2d5bb1973",
+  "assets/blender/xp4-source.glb": "e065b47171b799251b5e1eb7764b1d0e7d75e336edd1615979b69edf52c65a42",
+  "assets/model-validation.json": "cf437364aca6e039d80ebcb91a178620ef1082d15a3a7f7d3eba9ae95e7ae32b",
+  "CONSTRUCTION_INPUTS.json": "3a252fa5904e8a75ea326af28760f97f4f5d8c8504ca235c3b4b82807dcaeb8d",
+  "REVISION_CONSTRUCTION_INPUTS.json": "b98d4156b5bf7cb2a4c4203ddd7d4bc605f264c2d22bacd45e4717a4434c4ce6",
+  "scripts/export-transition.py": "900791a92748f6358257288c6de2b69d40e35d1e4dcb46a92f2b1d8abb630dc3",
+  "scripts/revision_20261007/compress-model-revision.mjs": "e01753ca7423d3cb39f42b2dae69b9da14b267c99ac33be00c82a9591e777ab2",
+  "src/modelAssetRevision.ts": "13c9bc5293d138288ebf66a2060aaebe150feabd8c22140b8b169a89cd693a6f",
+  "REVISION_DETAIL_CONSTRUCTION_INPUTS.json": "75f2d3299950f3b2e22fdeb0d86be390c2b029c772b8c8b7163503d0a577b03d",
+  "REVISION_DETAIL_GEOMETRY_REFERENCE.json": "764aff0b33fe40a7c1c9f82bbf767a8e4b4a97bbaa2a3fa5547302330cbcb5d7"
+}

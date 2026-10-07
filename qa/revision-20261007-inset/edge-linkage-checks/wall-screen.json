@@ -1,0 +1,86 @@
+{
+  "candidateSha256": "f38764881b5c597cc3be98aab79a9b2ad932f6c8c07359d7f9f30c218969c084",
+  "rows": [
+    {
+      "side": "L",
+      "testedLowerSamples": 12097,
+      "primaryInteriorSamples": 11213,
+      "minimumPrimaryNormalWall": {
+        "domain": "rear",
+        "x": 0.797,
+        "y": -1.08,
+        "lower": [
+          -0.796999990940094,
+          -1.0800000429153442,
+          -0.23821759223937988
+        ],
+        "normalWall": 0.010198714662015438,
+        "edgeDistance": 0.12668944311141972,
+        "primaryInteriorSample": true
+      },
+      "primaryBelow010Count": 0,
+      "primaryBelow010Witnesses": [],
+      "fixedGapSamples": 4241,
+      "minimumFixedVerticalGap": {
+        "domain": "rear",
+        "x": 0.7070000000000001,
+        "y": -1.01,
+        "verticalGap": 0.0036997199058532715
+      },
+      "allSampleMinimumIncludingEndEdgeAndFeather": {
+        "domain": "rear",
+        "x": 0.797,
+        "y": -1.08,
+        "lower": [
+          -0.796999990940094,
+          -1.0800000429153442,
+          -0.23821759223937988
+        ],
+        "normalWall": 0.010198714662015438,
+        "edgeDistance": 0.12668944311141972,
+        "primaryInteriorSample": true
+      }
+    },
+    {
+      "side": "R",
+      "testedLowerSamples": 12097,
+      "primaryInteriorSamples": 11213,
+      "minimumPrimaryNormalWall": {
+        "domain": "rear",
+        "x": 0.797,
+        "y": -1.08,
+        "lower": [
+          0.796999990940094,
+          -1.0800000429153442,
+          -0.23821759223937988
+        ],
+        "normalWall": 0.010198713730692864,
+        "edgeDistance": 0.12668944311141972,
+        "primaryInteriorSample": true
+      },
+      "primaryBelow010Count": 0,
+      "primaryBelow010Witnesses": [],
+      "fixedGapSamples": 4241,
+      "minimumFixedVerticalGap": {
+        "domain": "rear",
+        "x": 0.7070000000000001,
+        "y": -1.01,
+        "verticalGap": 0.0036997199058532715
+      },
+      "allSampleMinimumIncludingEndEdgeAndFeather": {
+        "domain": "front",
+        "x": 0.7100000000000001,
+        "y": -1.71,
+        "lower": [
+          0.7099999785423279,
+          -1.7100000381469727,
+          -0.2599557638168335
+        ],
+        "normalWall": 0.002041426704868674,
+        "edgeDistance": 0.0025142049789429466,
+        "primaryInteriorSample": false
+      }
+    }
+  ],
+  "boundary": "Finite BVH rays only, actual lower-face normals, primary samples >.014u from measured end wall and rear y<-.986. Thin natural feather and edge exits reported separately, not waived as full-body guarantee."
+}

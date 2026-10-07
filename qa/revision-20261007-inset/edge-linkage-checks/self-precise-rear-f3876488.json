@@ -1,0 +1,72 @@
+{
+  "schema": "rear-triangle-intersection.precise.v1",
+  "timestamp": "2026-10-07T13:16:28.345542+00:00",
+  "files": {
+    "candidate": {
+      "sha256": "f38764881b5c597cc3be98aab79a9b2ad932f6c8c07359d7f9f30c218969c084",
+      "stableDuringRead": true
+    },
+    "baseline": {
+      "sha256": "742ef52939de40f5d2eb46b87d38c8e85f99bffafc270c302afd59b9ea398adf",
+      "stableDuringRead": true
+    }
+  },
+  "rows": [
+    {
+      "label": "candidate",
+      "side": "R",
+      "regionTriangles": 18556,
+      "nonAdjacentBVHCandidatePairs": 84,
+      "classCounts": {
+        "proper_transverse_crossing": 29,
+        "edge_or_point_contact_or_subtolerance_crossing": 55
+      },
+      "robustCrossingCountOver1e7": 0,
+      "focusedCrossingCount": 0,
+      "robustFocusedCrossingCountOver1e7": 0,
+      "witnesses": []
+    },
+    {
+      "label": "candidate",
+      "side": "L",
+      "regionTriangles": 18555,
+      "nonAdjacentBVHCandidatePairs": 59,
+      "classCounts": {
+        "edge_or_point_contact_or_subtolerance_crossing": 41,
+        "proper_transverse_crossing": 18
+      },
+      "robustCrossingCountOver1e7": 0,
+      "focusedCrossingCount": 0,
+      "robustFocusedCrossingCountOver1e7": 0,
+      "witnesses": []
+    },
+    {
+      "label": "baseline",
+      "side": "R",
+      "regionTriangles": 18556,
+      "nonAdjacentBVHCandidatePairs": 38,
+      "classCounts": {
+        "proper_transverse_crossing": 13,
+        "edge_or_point_contact_or_subtolerance_crossing": 25
+      },
+      "robustCrossingCountOver1e7": 0,
+      "focusedCrossingCount": 0,
+      "robustFocusedCrossingCountOver1e7": 0,
+      "witnesses": []
+    },
+    {
+      "label": "baseline",
+      "side": "L",
+      "regionTriangles": 18555,
+      "nonAdjacentBVHCandidatePairs": 31,
+      "classCounts": {
+        "edge_or_point_contact_or_subtolerance_crossing": 19,
+        "proper_transverse_crossing": 12
+      },
+      "robustCrossingCountOver1e7": 0,
+      "focusedCrossingCount": 0,
+      "robustFocusedCrossingCountOver1e7": 0,
+      "witnesses": []
+    }
+  ]
+}

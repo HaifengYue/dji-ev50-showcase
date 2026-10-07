@@ -1,0 +1,128 @@
+{
+  "passed": true,
+  "revision": 27,
+  "sourceCandidateSha256": "f38764881b5c597cc3be98aab79a9b2ad932f6c8c07359d7f9f30c218969c084",
+  "strictGateOwnerNames": [
+    "Composite_wing_L",
+    "Composite_wing_R"
+  ],
+  "jointMaterialAcceptanceImplied": false,
+  "appearanceAccepted": false,
+  "integrationApproved": false,
+  "rows": [
+    {
+      "file": "xp4-source.glb",
+      "sha256": "db57f5fa421f10e5be27d236ad6d7733e354f3827d09d8d96f5adc55971e3be1",
+      "node": "Composite_wing_L",
+      "loaderType": "Group",
+      "primitives": [
+        "Composite_wing_L__flat_candidate_actual_triangle_surface002",
+        "Composite_wing_L__flat_candidate_actual_triangle_surface002_1"
+      ],
+      "sourceTriangleCount": 52312,
+      "rawTopology": {
+        "closed": true,
+        "components": 1,
+        "boundaryEdges": 0,
+        "nonmanifoldEdges": 0
+      },
+      "zeroAreaTriangles": [],
+      "minimumOwnerLocalTriangleArea": 2.7755575615628914e-17,
+      "ownerLocalBelowOrEqual1e18": [],
+      "unchangedCollisionSnapshotTopology": {
+        "closed": true,
+        "components": 1,
+        "boundaryEdges": 0
+      },
+      "skippedDegenerate": 0,
+      "skippedTriangles": []
+    },
+    {
+      "file": "xp4-source.glb",
+      "sha256": "db57f5fa421f10e5be27d236ad6d7733e354f3827d09d8d96f5adc55971e3be1",
+      "node": "Composite_wing_R",
+      "loaderType": "Group",
+      "primitives": [
+        "Composite_wing_R__flat_candidate_actual_triangle_surface002",
+        "Composite_wing_R__flat_candidate_actual_triangle_surface002_1"
+      ],
+      "sourceTriangleCount": 52520,
+      "rawTopology": {
+        "closed": true,
+        "components": 1,
+        "boundaryEdges": 0,
+        "nonmanifoldEdges": 0
+      },
+      "zeroAreaTriangles": [],
+      "minimumOwnerLocalTriangleArea": 2.7755575615628914e-17,
+      "ownerLocalBelowOrEqual1e18": [],
+      "unchangedCollisionSnapshotTopology": {
+        "closed": true,
+        "components": 1,
+        "boundaryEdges": 0
+      },
+      "skippedDegenerate": 0,
+      "skippedTriangles": []
+    },
+    {
+      "file": "xp4.glb",
+      "sha256": "334febcb77aa1a3f9eaead2c5931323093479664308b737362420d74d4b7f3dd",
+      "node": "Composite_wing_L",
+      "loaderType": "Group",
+      "primitives": [
+        "Composite_wing_L__flat_candidate_actual_triangle_surface002",
+        "Composite_wing_L__flat_candidate_actual_triangle_surface002_1"
+      ],
+      "sourceTriangleCount": 52312,
+      "rawTopology": {
+        "closed": true,
+        "components": 1,
+        "boundaryEdges": 0,
+        "nonmanifoldEdges": 0
+      },
+      "zeroAreaTriangles": [],
+      "minimumOwnerLocalTriangleArea": 2.7755575615628914e-17,
+      "ownerLocalBelowOrEqual1e18": [],
+      "unchangedCollisionSnapshotTopology": {
+        "closed": true,
+        "components": 1,
+        "boundaryEdges": 0
+      },
+      "skippedDegenerate": 0,
+      "skippedTriangles": []
+    },
+    {
+      "file": "xp4.glb",
+      "sha256": "334febcb77aa1a3f9eaead2c5931323093479664308b737362420d74d4b7f3dd",
+      "node": "Composite_wing_R",
+      "loaderType": "Group",
+      "primitives": [
+        "Composite_wing_R__flat_candidate_actual_triangle_surface002",
+        "Composite_wing_R__flat_candidate_actual_triangle_surface002_1"
+      ],
+      "sourceTriangleCount": 52520,
+      "rawTopology": {
+        "closed": true,
+        "components": 1,
+        "boundaryEdges": 0,
+        "nonmanifoldEdges": 0
+      },
+      "zeroAreaTriangles": [],
+      "minimumOwnerLocalTriangleArea": 2.7755575615628914e-17,
+      "ownerLocalBelowOrEqual1e18": [],
+      "unchangedCollisionSnapshotTopology": {
+        "closed": true,
+        "components": 1,
+        "boundaryEdges": 0
+      },
+      "skippedDegenerate": 0,
+      "skippedTriangles": []
+    }
+  ],
+  "unchangedThresholds": {
+    "ownerLocalMinimumAreaExclusive": 1e-18,
+    "triangleContactModuleSha256": "c8c8bc4f141aff261dbb0bac493fb9e7b4066cae9e1eb95f41cdd9b7718700bb",
+    "solidContactModuleSha256": "ce7e6268a2b923be64a714716989206c325d283936f28cb7a72d98d2433f023d"
+  },
+  "scope": "Aggregate all material primitives of each current lower-skin physical owner and any newly added owner; preserve V26 area and original SAT filtering gates exactly. Raw topology and the unchanged collision snapshot must both pass. No appearance, material-thickness, clearance, collision or global aircraft acceptance is implied."
+}

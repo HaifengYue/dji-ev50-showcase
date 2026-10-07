@@ -1,0 +1,54 @@
+{
+  "passed": true,
+  "revision": 27,
+  "scope": "Synthetic negative checks of current-stage copies only; no fixture grants model acceptance.",
+  "originalRuntimeSha256": "6c5c62f495d0296df72a23e3f2ce5fe5b66216640e40b8c81a3cc2d72bd0ad59",
+  "originalRuntimeUnchanged": true,
+  "tests": [
+    {
+      "test": "primitive-material-drift",
+      "passed": true,
+      "exitCode": 1,
+      "expectedRejection": "Serialized material changed",
+      "mutatedRuntimeSha256": "70d2456a12d323a08f01a78e93c930cc6899d7fb82786be38abe27b639448b61",
+      "log": "identity-negative-fixtures/primitive-material-drift/expected-rejection.log",
+      "temporaryFixtureAssetsRetained": false
+    },
+    {
+      "test": "critical-owner-trs-drift",
+      "passed": true,
+      "exitCode": 1,
+      "expectedRejection": "serialized translation",
+      "mutatedRuntimeSha256": "4c32a1082e1ec4a6511c7eaf2b11790bc426dee55474579a23b900b5177c6493",
+      "log": "identity-negative-fixtures/critical-owner-trs-drift/expected-rejection.log",
+      "temporaryFixtureAssetsRetained": false
+    },
+    {
+      "test": "empty-alias-trs-drift",
+      "passed": true,
+      "exitCode": 1,
+      "expectedRejection": "serialized translation",
+      "mutatedRuntimeSha256": "f1d41c8028ff165f4f368dac65553001f11c0ab019dbcf667c7293cdaa22f1b3",
+      "log": "identity-negative-fixtures/empty-alias-trs-drift/expected-rejection.log",
+      "temporaryFixtureAssetsRetained": false
+    },
+    {
+      "test": "animation-interpolation-drift",
+      "passed": true,
+      "exitCode": 1,
+      "expectedRejection": "Animation interpolation changed",
+      "mutatedRuntimeSha256": "66b6142368c10cec5c4c34d077fdec977349104553a74634377de6cacfa748d9",
+      "log": "identity-negative-fixtures/animation-interpolation-drift/expected-rejection.log",
+      "temporaryFixtureAssetsRetained": false
+    },
+    {
+      "test": "inherited-critical-exemption-removed",
+      "passed": true,
+      "exitCode": 1,
+      "expectedRejection": "Missing strict Float32 owner Composite_wing_R",
+      "mutatedRuntimeSha256": "6c5c62f495d0296df72a23e3f2ce5fe5b66216640e40b8c81a3cc2d72bd0ad59",
+      "log": "identity-negative-fixtures/inherited-critical-exemption-removed/expected-rejection.log",
+      "temporaryFixtureAssetsRetained": false
+    }
+  ]
+}

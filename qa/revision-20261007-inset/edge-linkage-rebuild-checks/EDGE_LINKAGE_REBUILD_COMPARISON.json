@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "referenceSha256": "cbf95cd8844dc114555ccdc638fb0afde1800236a5c297542b72a4cd44c1c34a",
+  "candidateSha256": "0212650e9d6ba53d694d700837d929c9797103ea88a0cff104f338a4f3169193",
+  "completeMeshCount": 285,
+  "completeNodeCount": 352,
+  "differences": [],
+  "method": "Every exact stored Float32 vertex including unused vertices, oriented polygon/material association, named parent, local basis and parent inverse; Blend packaging excluded"
+}

@@ -1,0 +1,11 @@
+{
+  "version": 27,
+  "actualRuntimeBytes": 4035240,
+  "approvedBudgetBytes": 4200000,
+  "status": "WITHIN_EXPLICIT_V27_BUDGET",
+  "priorV26ApprovedBudgetBytes": 3800000,
+  "differenceFromPriorBudgetBytes": 235240,
+  "geometryPrecisionReducedForSize": false,
+  "meshesRemovedForSize": false,
+  "approvalReceiptSha256": "4772faa4778693f2efab36b865e826e20d5d5171f39bc1b93466ad0af80dde56"
+}

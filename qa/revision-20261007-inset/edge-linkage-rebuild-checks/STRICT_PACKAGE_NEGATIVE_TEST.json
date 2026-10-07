@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "unlistedFileRejected": true,
+  "exitCode": 1,
+  "fixture": "strict-package-negative-test",
+  "stderr": "Traceback (most recent call last):\n  File \"/workspace/scratch/40bf3b17dbf8/transwing-new-annotations-20261007/edge-linkage-revision/strict-package-negative-test/tools/verify_edge_package.py\", line 15, in <module>\n    assert actual==expected,{'unlisted':sorted(actual-expected),'missing':sorted(expected-actual)}\n           ^^^^^^^^^^^^^^^^\nAssertionError: {'unlisted': ['UNLISTED.txt'], 'missing': []}\n"
+}

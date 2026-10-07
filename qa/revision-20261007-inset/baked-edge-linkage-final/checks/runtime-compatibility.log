@@ -1,0 +1,382 @@
+{
+  "schema": "transwing.v27-integrated-runtime-compatibility.v1",
+  "revision": 27,
+  "passed": true,
+  "pipelineTrialOnly": true,
+  "productionSourceModified": false,
+  "browserPixelsTested": false,
+  "appearanceAccepted": false,
+  "globalMaterialCollisionAcceptanceImplied": false,
+  "thresholds": {
+    "rigidRodClosure": 0.000001,
+    "visibleEyeBallDistance": 0.00002,
+    "propHubToRealAxisDistance": 0.000002,
+    "threadPhaseDriftRadians": 0.00005
+  },
+  "productionAndExistingQAHashes": {
+    "src/rig.ts": "4215cd44a02e36e62a2a7ccacd16a38b3fe9d82a727c0233af6d889caa56efb5",
+    "src/motors.ts": "5297141cc670fd98034bd242e189f0d61681587db209a02da08fb73971c02824",
+    "src/details.ts": "6b6a967e411a72e5bea6f44badb89f33746c01e5e1d770ce91d962a1d4cb1a66",
+    "src/rotorExposure.ts": "478cb4cddd2027e41dc74134ca808c9eff47b72ed949219d2464d951d1ae303e",
+    "src/internalDriveInspection.ts": "1a5fae23375a81475b43b9fe8d16bcce506a3b76663b1bba3ba9b288ad6f6a42",
+    "qa/lib/runtime-rotor-motion.mts": "6a11997a0329c82e8463fa9c1517756a8699eed19d05489ab580bed6053ec91e"
+  },
+  "files": [
+    {
+      "filename": "xp4-source.glb",
+      "passed": true,
+      "errors": [],
+      "sha256": "db57f5fa421f10e5be27d236ad6d7733e354f3827d09d8d96f5adc55971e3be1",
+      "actualRenderMeshes": 287,
+      "aliases": [
+        {
+          "side": "L",
+          "ownerType": "Group",
+          "renderPrimitives": 2,
+          "aliasType": "Object3D"
+        },
+        {
+          "side": "R",
+          "ownerType": "Group",
+          "renderPrimitives": 2,
+          "aliasType": "Object3D"
+        }
+      ],
+      "persistentMechanism": {
+        "actualRightPivot": [
+          1.5001282691955566,
+          -1.4448717832565308,
+          -0.22012822329998016
+        ],
+        "wingAnchorRightCruise": [
+          1.059999942779541,
+          -1.0399999618530273,
+          -0.17669521272182465
+        ],
+        "rigidRodLength": 3.0786610396187717,
+        "actualTravel": {
+          "samples": 4001,
+          "minimumY": 0.8409326081856277,
+          "maximumY": 1.9000001249111587,
+          "hoverY": 0.8409326081856277,
+          "cruiseY": 1.9000001249111587,
+          "minimumAtUnfold": 0,
+          "maximumAtUnfold": 1,
+          "continuousExtremaProof": false
+        }
+      },
+      "legacyDriveMetadata": [
+        {
+          "node": "Drive_ScrewRotor",
+          "legacySliderRestY": 0.8409326081856277,
+          "currentRestY": 0.8409326672554016,
+          "usedByProduction": false
+        },
+        {
+          "node": "Drive_MotorRotor",
+          "legacySliderRestY": 0.8409326081856277,
+          "currentRestY": 0.8409326672554016,
+          "usedByProduction": false
+        },
+        {
+          "node": "Drive_PlanetRotor_0",
+          "legacySliderRestY": 0.8409326081856277,
+          "currentRestY": 0.8409326672554016,
+          "usedByProduction": false
+        },
+        {
+          "node": "Drive_PlanetRotor_1",
+          "legacySliderRestY": 0.8409326081856277,
+          "currentRestY": 0.8409326672554016,
+          "usedByProduction": false
+        },
+        {
+          "node": "Drive_PlanetRotor_2",
+          "legacySliderRestY": 0.8409326081856277,
+          "currentRestY": 0.8409326672554016,
+          "usedByProduction": false
+        }
+      ],
+      "actualFrontStops": [
+        {
+          "side": "L",
+          "stopBlenderYBounds": [
+            0.7959325760602951,
+            0.8039325922727585
+          ],
+          "stopCenterBlenderY": 0.7999325841665268,
+          "innerFaceBlenderY": 0.8039325922727585,
+          "bushingFrontFaceAtHoverBlenderY": 0.8079326674342158,
+          "hoverGap": 0.004000075161457284,
+          "method": "Loaded actual mesh world-space bounds, glTF Z negated to Blender Y"
+        },
+        {
+          "side": "R",
+          "stopBlenderYBounds": [
+            0.7959325760602951,
+            0.8039325922727585
+          ],
+          "stopCenterBlenderY": 0.7999325841665268,
+          "innerFaceBlenderY": 0.8039325922727585,
+          "bushingFrontFaceAtHoverBlenderY": 0.8079326674342158,
+          "hoverGap": 0.004000075161457284,
+          "method": "Loaded actual mesh world-space bounds, glTF Z negated to Blender Y"
+        }
+      ],
+      "continuousParameterSamples": 4001,
+      "maximumRigidRodClosureError": 9.785490930214291e-8,
+      "maximumVisibleEyeBallDistance": 3.2580076208275705e-7,
+      "maximumPropHubToRealAxisDistance": 1.0867646873103498e-7,
+      "maximumPersistentMechanismPointError": 2.3616055318417332e-7,
+      "maximumWingQuaternionError": 8.659739592076221e-15,
+      "maximumDriveQuaternionError": 2.220446049250313e-16,
+      "maximumThreadPhaseDriftRadians": 9.992007221626409e-14,
+      "actualMotorAxisChecks": 16004,
+      "boundsChecks": 401,
+      "actualTravel": {
+        "minimumY": 0.8409326672554018,
+        "maximumY": 1.9000001773320925
+      },
+      "minimumFrontStopBushingGap": 0.004000075161457284,
+      "endpoints": [
+        {
+          "unfold": 0,
+          "wingAngleDegrees": 0,
+          "sliderY": 0.8409326672554018,
+          "wingR": [
+            -0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "rootEyeWorld": [
+            1.4566954552453488,
+            -0.6250001384368682,
+            1.8850003977250342
+          ]
+        },
+        {
+          "unfold": 0.5,
+          "wingAngleDegrees": 60,
+          "sliderY": 1.4363123117366823,
+          "wingR": [
+            -0.2886751345948129,
+            0.2886751345948129,
+            0.2886751345948129,
+            0.8660254037844386
+          ],
+          "rootEyeWorld": [
+            1.0427968787034771,
+            -0.6077969843082085,
+            1.453898705660074
+          ]
+        },
+        {
+          "unfold": 1,
+          "wingAngleDegrees": 120,
+          "sliderY": 1.9000001773320925,
+          "wingR": [
+            -5.551115123125783e-17,
+            5.551115123125783e-17,
+            5.551115123125783e-17,
+            1
+          ],
+          "rootEyeWorld": [
+            1.0600000092771784,
+            -0.17669528390409717,
+            1.0400001492763418
+          ]
+        }
+      ],
+      "explodedRestoreChecks": 8,
+      "inspectionAndExposureLifecyclePassed": true,
+      "productionMotorMotion": {
+        "passed": true,
+        "poseChecks": 34553,
+        "axisPlaneChecks": 24
+      },
+      "productionMotionFaultInjection": {
+        "rejected": true,
+        "injected": "前桨带速收桨，与旧后桨范围无关"
+      }
+    },
+    {
+      "filename": "xp4.glb",
+      "passed": true,
+      "errors": [],
+      "sha256": "334febcb77aa1a3f9eaead2c5931323093479664308b737362420d74d4b7f3dd",
+      "actualRenderMeshes": 287,
+      "aliases": [
+        {
+          "side": "L",
+          "ownerType": "Group",
+          "renderPrimitives": 2,
+          "aliasType": "Object3D"
+        },
+        {
+          "side": "R",
+          "ownerType": "Group",
+          "renderPrimitives": 2,
+          "aliasType": "Object3D"
+        }
+      ],
+      "persistentMechanism": {
+        "actualRightPivot": [
+          1.5001282691955566,
+          -1.4448717832565308,
+          -0.22012822329998016
+        ],
+        "wingAnchorRightCruise": [
+          1.059999942779541,
+          -1.0399999618530273,
+          -0.17669521272182465
+        ],
+        "rigidRodLength": 3.0786610396187717,
+        "actualTravel": {
+          "samples": 4001,
+          "minimumY": 0.8409326081856277,
+          "maximumY": 1.9000001249111587,
+          "hoverY": 0.8409326081856277,
+          "cruiseY": 1.9000001249111587,
+          "minimumAtUnfold": 0,
+          "maximumAtUnfold": 1,
+          "continuousExtremaProof": false
+        }
+      },
+      "legacyDriveMetadata": [
+        {
+          "node": "Drive_ScrewRotor",
+          "legacySliderRestY": 0.8409326081856277,
+          "currentRestY": 0.8409326672554016,
+          "usedByProduction": false
+        },
+        {
+          "node": "Drive_MotorRotor",
+          "legacySliderRestY": 0.8409326081856277,
+          "currentRestY": 0.8409326672554016,
+          "usedByProduction": false
+        },
+        {
+          "node": "Drive_PlanetRotor_0",
+          "legacySliderRestY": 0.8409326081856277,
+          "currentRestY": 0.8409326672554016,
+          "usedByProduction": false
+        },
+        {
+          "node": "Drive_PlanetRotor_1",
+          "legacySliderRestY": 0.8409326081856277,
+          "currentRestY": 0.8409326672554016,
+          "usedByProduction": false
+        },
+        {
+          "node": "Drive_PlanetRotor_2",
+          "legacySliderRestY": 0.8409326081856277,
+          "currentRestY": 0.8409326672554016,
+          "usedByProduction": false
+        }
+      ],
+      "actualFrontStops": [
+        {
+          "side": "L",
+          "stopBlenderYBounds": [
+            0.7959325760602951,
+            0.8039325922727585
+          ],
+          "stopCenterBlenderY": 0.7999325841665268,
+          "innerFaceBlenderY": 0.8039325922727585,
+          "bushingFrontFaceAtHoverBlenderY": 0.8079326674342158,
+          "hoverGap": 0.004000075161457284,
+          "method": "Loaded actual mesh world-space bounds, glTF Z negated to Blender Y"
+        },
+        {
+          "side": "R",
+          "stopBlenderYBounds": [
+            0.7959325760602951,
+            0.8039325922727585
+          ],
+          "stopCenterBlenderY": 0.7999325841665268,
+          "innerFaceBlenderY": 0.8039325922727585,
+          "bushingFrontFaceAtHoverBlenderY": 0.8079326674342158,
+          "hoverGap": 0.004000075161457284,
+          "method": "Loaded actual mesh world-space bounds, glTF Z negated to Blender Y"
+        }
+      ],
+      "continuousParameterSamples": 4001,
+      "maximumRigidRodClosureError": 9.785490930214291e-8,
+      "maximumVisibleEyeBallDistance": 3.2580076208275705e-7,
+      "maximumPropHubToRealAxisDistance": 1.0867646873103498e-7,
+      "maximumPersistentMechanismPointError": 2.3616055318417332e-7,
+      "maximumWingQuaternionError": 8.659739592076221e-15,
+      "maximumDriveQuaternionError": 2.220446049250313e-16,
+      "maximumThreadPhaseDriftRadians": 9.992007221626409e-14,
+      "actualMotorAxisChecks": 16004,
+      "boundsChecks": 401,
+      "actualTravel": {
+        "minimumY": 0.8409326672554018,
+        "maximumY": 1.9000001773320925
+      },
+      "minimumFrontStopBushingGap": 0.004000075161457284,
+      "endpoints": [
+        {
+          "unfold": 0,
+          "wingAngleDegrees": 0,
+          "sliderY": 0.8409326672554018,
+          "wingR": [
+            -0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "rootEyeWorld": [
+            1.4566954552453488,
+            -0.6250001384368682,
+            1.8850003977250342
+          ]
+        },
+        {
+          "unfold": 0.5,
+          "wingAngleDegrees": 60,
+          "sliderY": 1.4363123117366823,
+          "wingR": [
+            -0.2886751345948129,
+            0.2886751345948129,
+            0.2886751345948129,
+            0.8660254037844386
+          ],
+          "rootEyeWorld": [
+            1.0427968787034771,
+            -0.6077969843082085,
+            1.453898705660074
+          ]
+        },
+        {
+          "unfold": 1,
+          "wingAngleDegrees": 120,
+          "sliderY": 1.9000001773320925,
+          "wingR": [
+            -5.551115123125783e-17,
+            5.551115123125783e-17,
+            5.551115123125783e-17,
+            1
+          ],
+          "rootEyeWorld": [
+            1.0600000092771784,
+            -0.17669528390409717,
+            1.0400001492763418
+          ]
+        }
+      ],
+      "explodedRestoreChecks": 8,
+      "inspectionAndExposureLifecyclePassed": true,
+      "productionMotorMotion": {
+        "passed": true,
+        "poseChecks": 34553,
+        "axisPlaneChecks": 24
+      },
+      "productionMotionFaultInjection": {
+        "rejected": true,
+        "injected": "前桨带速收桨，与旧后桨范围无关"
+      }
+    }
+  ]
+}

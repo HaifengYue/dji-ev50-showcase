@@ -1,9 +1,0 @@
-{
-  "version": 27,
-  "stage": "qa/revision-20261007-inset/baked-integrated-b-regenerated",
-  "sourceSha256": "72ef1837bb7c654d079741146fd80a5874168dcbc6f5f8926903f4a2778b8059",
-  "runtimeBytes": 3696952,
-  "budgetStatus": "WITHIN_EXPLICIT_V27_BUDGET",
-  "reviewStatus": "PIPELINE_CHECKS_PASSED_JOINT_GEOMETRY_AND_USER_REVIEW_PENDING",
-  "mainTreeWrites": false
-}

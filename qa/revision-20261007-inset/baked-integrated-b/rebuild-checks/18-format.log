@@ -1,8 +1,0 @@
-npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
-
-> transwing-studio@1.0.0 format:check
-> prettier --check src vite.config.ts tsconfig.json package.json index.html
-
-Checking formatting...
-[warn] src/modelAssetRevision.ts
-[warn] Code style issues found in the above file. Run Prettier with --write to fix.

@@ -1,0 +1,86 @@
+{
+  "sourceCandidateSha256": "9859052664ab696f21b841eed27340e611fe78d69bb0d6f69e3a053b00e57e55",
+  "nativeRepair": {
+    "method": "Explicit identification of only exact-coordinate endpoints of zero-length edges in the bounded new slot",
+    "exactEndpointRepairs": [
+      {
+        "removedVertex": 8986,
+        "retainedVertex": 8939,
+        "exactStoredCoordinate": [
+          0.15000000596046448,
+          0.8150740265846252,
+          -0.038402386009693146
+        ],
+        "incidentFaceSizes": [
+          34,
+          4
+        ]
+      }
+    ],
+    "nativeDegenerateTrianglesBefore": [
+      {
+        "triangle": 14928,
+        "polygon": 14718,
+        "vertices": [
+          8986,
+          8939,
+          7361
+        ],
+        "area": 0.0
+      },
+      {
+        "triangle": 18003,
+        "polygon": 17572,
+        "vertices": [
+          8938,
+          8939,
+          8986
+        ],
+        "area": 0.0
+      }
+    ],
+    "nativeDegenerateTriangleCountAfter": 0,
+    "minimumNativeFloat32TriangleAreaAfter": 7.893685705084863e-14,
+    "areaGate": 1e-18,
+    "vertexCounts": [
+      9016,
+      9015
+    ],
+    "edgeCounts": [
+      26600,
+      26599
+    ],
+    "polygonCounts": [
+      17584,
+      17584
+    ],
+    "triangleCounts": [
+      18032,
+      18030
+    ],
+    "distinctVertexCoordinatesExactlyPreserved": true,
+    "allOrientedFaceDomainsExactlyPreservedAfterZeroEdgeCollapse": true,
+    "maximumCoordinateDisplacement": 0.0,
+    "materialAndSmoothFlagsPreserved": true,
+    "signedVolumes": [
+      0.7185222048486771,
+      0.7185222048486771
+    ],
+    "absoluteVolumeDelta": 0.0,
+    "closedPolygonManifold": true,
+    "distanceBasedWeldingUsed": false,
+    "finiteMaterialFacesDeleted": false
+  },
+  "nativeConnectedComponents": 1,
+  "smallExport": {
+    "file": "/workspace/scratch/40bf3b17dbf8/transwing-new-annotations-20261007/edge-linkage-revision/analysis-linkage/slot-topology-repaired-fuselage.glb",
+    "sha256": "173ce92d7bb0e9ae20101765719912760c594999a2bec4003c1671d2995eb10e",
+    "bytes": 395108,
+    "triangles": 18030,
+    "zeroOrSubthresholdAreaTriangles": 0,
+    "minimumTriangleArea": 7.893685705084863e-14,
+    "boundaryCoordinateEdges": 0,
+    "nonmanifoldCoordinateEdges": 0
+  },
+  "sourceBlendNotModified": true
+}

@@ -1,0 +1,9 @@
+COLUMNS candidate L 7251 1 0
+COLUMNS candidate R 7251 1 0
+COLUMNS baseline L 5778 0 0
+COLUMNS baseline R 5778 0 0
+Blender 4.3.2
+Read blend: "/workspace/scratch/40bf3b17dbf8/transwing-new-annotations-20261007/edge-linkage-revision/transwing-studio/qa/revision-20261007/candidate-inset-integrated-b-edge-linkage.blend"
+Read blend: "/workspace/scratch/40bf3b17dbf8/transwing-new-annotations-20261007/edge-linkage-revision/transwing-studio/qa/revision-20261007/candidate-inset-integrated-b.blend"
+
+Blender quit

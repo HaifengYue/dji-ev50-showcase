@@ -1,18 +1,17 @@
 {
   "schema": "transwing.light-development-manifest.v1",
   "singleRoot": "transwing-studio",
-  "revision": "2026-10-07-v27-integrated-b",
-  "purpose": "Complete independent developable/rebuildable B distribution with scoped evidence",
-  "baseCommit": "7dcd5cde3a650c48a164c72bd9473671ec74b641",
-  "status": "CURRENT_AFFECTED_GEOMETRY_CHECKS_PASSED_WITH_EXPLICIT_INHERITED_LIMITATIONS; USER_IMAGE_REVIEW_PENDING",
+  "revision": "2026-10-07-edge-linkage",
+  "baseCommit": "d0ca0a5a7105e2ef55a909f67aca26faec65c33a",
+  "status": "CURRENT_CHECKS_AND_COMPLETE_FRESH_RECONSTRUCTION_PASSED_WITH_SCOPED_LIMITATIONS",
   "publicationPerformed": false,
-  "contentFileCount": 430,
-  "contentBytes": 131396432,
+  "contentFileCount": 469,
+  "contentBytes": 141198935,
   "manifestSelfExcluded": true,
   "fullDefaultReconstructionActuallyRun": true,
-  "fullSingleCommandWrapperRunExecuted": false,
-  "constructionInputCount": 171,
-  "constructionInputLockSha256": "d564a253bbbc769884f9327a162c29b448aff719b9f8afe82a8d232eb370ca11",
+  "fullSingleCommandWrapperRunExecuted": true,
+  "constructionInputCount": 204,
+  "constructionInputLockSha256": "8a3612d4801e62cdfb8c68d5086f4c45a08d4ea20e822f7b4b8552e839df07f9",
   "files": [
     {
       "path": ".gitignore",
@@ -20,29 +19,19 @@
       "sha256": "5aac9243385e680bf059048f8edf4ed539b2aee333925b4a657963cd79d3baa6"
     },
     {
-      "path": "AUDIT_ARCHIVE.json",
-      "bytes": 760,
-      "sha256": "c3fba20b36197f5e57c8f3ca4ac1d018e0e6b4968aedd8bc4f5b822fc43ba8c5"
-    },
-    {
-      "path": "B_LOCAL_DELIVERY.json",
-      "bytes": 721,
-      "sha256": "41df9fff539b599f26dd14fbc0533dc0aa5f8db4144b0825518f1bf71f4f6445"
-    },
-    {
       "path": "CONSTRUCTION_INPUTS.json",
       "bytes": 17898,
       "sha256": "3a252fa5904e8a75ea326af28760f97f4f5d8c8504ca235c3b4b82807dcaeb8d"
     },
     {
-      "path": "EXTERNAL_EVIDENCE_INDEX.json",
-      "bytes": 5119,
-      "sha256": "9230f10b896613dbac6c25ed4e4dd403c4f40f1416dd65496571eb4f41020d2a"
+      "path": "EDGE_LINKAGE_PIPELINE_POLICY_INPUTS.json",
+      "bytes": 1153,
+      "sha256": "8d9fcb7a8f68ddb66aa3c2d26baf5bbf75c041dd2889366bfbca3a61a5721509"
     },
     {
       "path": "README.md",
-      "bytes": 4340,
-      "sha256": "dd02a6204ce82c8270d8392b22f24682ef71fb662ea837c8edadd1d011336122"
+      "bytes": 2714,
+      "sha256": "6476dc602e160b53227567e9f68d3fe7340ab4d86f7aadb2116754687330ca67"
     },
     {
       "path": "REVISION_CONSTRUCTION_INPUTS.json",
@@ -58,6 +47,16 @@
       "path": "REVISION_DETAIL_GEOMETRY_REFERENCE.json",
       "bytes": 338561,
       "sha256": "764aff0b33fe40a7c1c9f82bbf767a8e4b4a97bbaa2a3fa5547302330cbcb5d7"
+    },
+    {
+      "path": "REVISION_EDGE_LINKAGE_CONSTRUCTION_INPUTS.json",
+      "bytes": 50788,
+      "sha256": "8a3612d4801e62cdfb8c68d5086f4c45a08d4ea20e822f7b4b8552e839df07f9"
+    },
+    {
+      "path": "REVISION_EDGE_LINKAGE_GEOMETRY_REFERENCE.json",
+      "bytes": 338712,
+      "sha256": "cbf95cd8844dc114555ccdc638fb0afde1800236a5c297542b72a4cd44c1c34a"
     },
     {
       "path": "REVISION_GEOMETRY_REFERENCE.json",
@@ -106,8 +105,8 @@
     },
     {
       "path": "assets/animation/wing-transition-reference.json",
-      "bytes": 2267980,
-      "sha256": "e0f50d95e0bedeed2dce0617ceccea9b2541cdfe39f750f3c16b5d3b3528326b"
+      "bytes": 2268825,
+      "sha256": "664e407aadda0f82c25812e0e6fc89b6ec8f6ce8d7557b0b2cb9f0ddc806f6c4"
     },
     {
       "path": "assets/baseline-20261007/annotated-mechanism.json",
@@ -141,8 +140,8 @@
     },
     {
       "path": "assets/blender/annotated-mechanism.json",
-      "bytes": 7323,
-      "sha256": "ced17f6816d05f1b7ad73b5328096c586d9dac27bb3a425026347708f9ce9f43"
+      "bytes": 29994,
+      "sha256": "b47e11f4c9cb61dc1d2c9d90f2c1f4b2b5ac88659dae9d5296262e74139f6069"
     },
     {
       "path": "assets/blender/nacelle-system-concept-source.glb",
@@ -156,23 +155,23 @@
     },
     {
       "path": "assets/blender/xp4-source.glb",
-      "bytes": 10158984,
-      "sha256": "e065b47171b799251b5e1eb7764b1d0e7d75e336edd1615979b69edf52c65a42"
+      "bytes": 10920584,
+      "sha256": "db57f5fa421f10e5be27d236ad6d7733e354f3827d09d8d96f5adc55971e3be1"
     },
     {
       "path": "assets/blender/xp4.blend",
-      "bytes": 37484592,
-      "sha256": "e7baf0cf5e4d5fb0a0fda79199d24c12ac6867ad21aae067a0393dc2d5bb1973"
+      "bytes": 39514764,
+      "sha256": "74f4c082d150dedc160565eefbd5bc99ec0ff87999e86a835f7f4b62a32e4274"
     },
     {
       "path": "assets/build/annotated-mechanism.json",
-      "bytes": 7323,
-      "sha256": "ced17f6816d05f1b7ad73b5328096c586d9dac27bb3a425026347708f9ce9f43"
+      "bytes": 29994,
+      "sha256": "b47e11f4c9cb61dc1d2c9d90f2c1f4b2b5ac88659dae9d5296262e74139f6069"
     },
     {
       "path": "assets/model-validation.json",
-      "bytes": 73884,
-      "sha256": "cf437364aca6e039d80ebcb91a178620ef1082d15a3a7f7d3eba9ae95e7ae32b"
+      "bytes": 75014,
+      "sha256": "0d71d6ec6858126d56225c594b30e1229fb2afe412f450965c458444a2a688d8"
     },
     {
       "path": "dist/assets/index--cC-qrRa.js",
@@ -183,6 +182,11 @@
       "path": "dist/assets/index-D1B7vCse.css",
       "bytes": 25272,
       "sha256": "e84fda884b7408512b167fc6aaa596a57c3d1ce5df62b5b5cb383f547501877b"
+    },
+    {
+      "path": "dist/assets/index-ypUeB2_G.js",
+      "bytes": 195117,
+      "sha256": "aa42c268ae3e9e73194f073cbff9f75a2b26287d3ec30fab2dde74652d1dd0d7"
     },
     {
       "path": "dist/assets/scene-CAbU1Meg.js",
@@ -202,17 +206,17 @@
     {
       "path": "dist/index.html",
       "bytes": 834,
-      "sha256": "efcf48f4d6df82a59c1b88bc2111d56954b3f81246fcad89a69f2ee2fc30540a"
+      "sha256": "8dc85c5e97a3cc10e939a4f6e4b38677ac9bd092a9094a7a9a315f8df8d59231"
     },
     {
       "path": "dist/models/annotated-mechanism.json",
-      "bytes": 7323,
-      "sha256": "ced17f6816d05f1b7ad73b5328096c586d9dac27bb3a425026347708f9ce9f43"
+      "bytes": 29994,
+      "sha256": "b47e11f4c9cb61dc1d2c9d90f2c1f4b2b5ac88659dae9d5296262e74139f6069"
     },
     {
       "path": "dist/models/manifest.json",
-      "bytes": 428413,
-      "sha256": "1b11ad7621e5a8c0f9af9d1c22a191cbb624e91cbf2b8b159431803dcf54b639"
+      "bytes": 785748,
+      "sha256": "313110397dc7470d74233c72e3aea3dcd2944458f0ef3cdddd21ac5ac206af76"
     },
     {
       "path": "dist/models/nacelle-system-concept.glb",
@@ -221,13 +225,13 @@
     },
     {
       "path": "dist/models/xp4.glb",
-      "bytes": 3696884,
-      "sha256": "352b1b6fd28026e5c9b50e981e1fb30aa4d5fad805084d7186ca2e9c7c375b16"
+      "bytes": 4035036,
+      "sha256": "334febcb77aa1a3f9eaead2c5931323093479664308b737362420d74d4b7f3dd"
     },
     {
       "path": "docs/ASSETS.md",
-      "bytes": 460,
-      "sha256": "8d1143d6b1e02d9c45c25a6dc38986f7cc6d629ba665853e19ca5c78126a1790"
+      "bytes": 1233,
+      "sha256": "c3b6cc546b8a39d9c5942bbc7a1d8a419c8e96a28f71f7f70b698f4e2c193609"
     },
     {
       "path": "docs/NAVIGATION.md",
@@ -241,8 +245,8 @@
     },
     {
       "path": "docs/VERIFICATION.md",
-      "bytes": 551,
-      "sha256": "c5b958cfa581b145091bdc7614841f9ae6520bcd678a3c68d462d1d1479c1268"
+      "bytes": 3664,
+      "sha256": "55e1eedbe29b3e96f206feb2497ba489175dea02ef33a5ba9ea0bfbc7454f82e"
     },
     {
       "path": "docs/baseline-v24/ASSETS.md",
@@ -476,13 +480,13 @@
     },
     {
       "path": "public/models/annotated-mechanism.json",
-      "bytes": 7323,
-      "sha256": "ced17f6816d05f1b7ad73b5328096c586d9dac27bb3a425026347708f9ce9f43"
+      "bytes": 29994,
+      "sha256": "b47e11f4c9cb61dc1d2c9d90f2c1f4b2b5ac88659dae9d5296262e74139f6069"
     },
     {
       "path": "public/models/manifest.json",
-      "bytes": 428413,
-      "sha256": "1b11ad7621e5a8c0f9af9d1c22a191cbb624e91cbf2b8b159431803dcf54b639"
+      "bytes": 785748,
+      "sha256": "313110397dc7470d74233c72e3aea3dcd2944458f0ef3cdddd21ac5ac206af76"
     },
     {
       "path": "public/models/nacelle-system-concept.glb",
@@ -491,8 +495,8 @@
     },
     {
       "path": "public/models/xp4.glb",
-      "bytes": 3696884,
-      "sha256": "352b1b6fd28026e5c9b50e981e1fb30aa4d5fad805084d7186ca2e9c7c375b16"
+      "bytes": 4035036,
+      "sha256": "334febcb77aa1a3f9eaead2c5931323093479664308b737362420d74d4b7f3dd"
     },
     {
       "path": "python/install.py",
@@ -565,16 +569,6 @@
       "sha256": "7cea2cb247f2220b7c8dd635e791efbcc71b949ad50fb4042785f2f2826d5f24"
     },
     {
-      "path": "qa/frontend/glb-loader-report.json",
-      "bytes": 731,
-      "sha256": "a96fca41586f8ef4a871f75fb697b4353b2369724d423e0d2abda80348842206"
-    },
-    {
-      "path": "qa/frontend/viewport-framing-report.json",
-      "bytes": 4289,
-      "sha256": "0fb38d6a15806d0b0ff67a7b29f9a2e269a8bd6f2baaf2b1e48b05acf5476222"
-    },
-    {
       "path": "qa/glb-loader-check.mjs",
       "bytes": 1843,
       "sha256": "0a4a4d4951ddc0575f1cb86280571abfd01d9f15ae9d01c25b44ecb848bb5c9b"
@@ -640,569 +634,214 @@
       "sha256": "82a15335d16fd7e73bf5529a13d802a5ed7cc8ea1b9d02b5fa7259fbea9e174f"
     },
     {
-      "path": "qa/revision-20261007/candidate-inset-integrated-b-dense-wing-material-check.json",
-      "bytes": 7787,
-      "sha256": "2c1f29a9c11233f38d191c322bed42028cb36f1a7ee34a2356ef6ad2c9c9f025"
+      "path": "qa/revision-20261007/candidate-inset-integrated-b-edge-linkage-dense-wing-material-check.json",
+      "bytes": 8231,
+      "sha256": "15e2047a361a21f40d01365dfac0f56a9a37af1939999141982635838bb6eccf"
     },
     {
-      "path": "qa/revision-20261007/candidate-inset-integrated-b-material-and-support-check.json",
-      "bytes": 66537,
-      "sha256": "acd1716adb8efe7c25d8f27b99c8850faf5a37db46c1e5f48e2668adb8615cf9"
+      "path": "qa/revision-20261007/candidate-inset-integrated-b-edge-linkage-material-and-support-check.json",
+      "bytes": 65899,
+      "sha256": "8e86c308cc5085eb2992eea386dc31c642deae47507bc64dc411eb783bdfd6a8"
     },
     {
-      "path": "qa/revision-20261007/candidate-inset-integrated-b-rotor-fold-phase-preflight.json",
-      "bytes": 11411,
-      "sha256": "726820fdeabc6e0ea07eee57ac771f041038a685aa88ba4907c6230e55db6453"
+      "path": "qa/revision-20261007/candidate-inset-integrated-b-edge-linkage-rotor-fold-phase-preflight.json",
+      "bytes": 11424,
+      "sha256": "0bbc805c231b3b9a60eb9172e6ef843302c4cbe0ea23577de3eefc7ed31881b5"
     },
     {
-      "path": "qa/revision-20261007/candidate-inset-integrated-b.blend",
-      "bytes": 21298772,
-      "sha256": "742ef52939de40f5d2eb46b87d38c8e85f99bffafc270c302afd59b9ea398adf"
+      "path": "qa/revision-20261007/candidate-inset-integrated-b-edge-linkage.blend",
+      "bytes": 23328868,
+      "sha256": "f38764881b5c597cc3be98aab79a9b2ad932f6c8c07359d7f9f30c218969c084"
     },
     {
-      "path": "qa/revision-20261007-inset/FINAL_GEOMETRY_REVIEW_B.json",
-      "bytes": 6749,
-      "sha256": "ffa41dda044d934c4532d27758ba5cd9acb735669bdf775bdc40c89c0ad7cc5f"
+      "path": "qa/revision-20261007-inset/EDGE_LINKAGE_CHANGE_DOMAIN.json",
+      "bytes": 2861,
+      "sha256": "2ee1816f661c8c8f5d0f115c8981fa9fbf8800f2e7d498922db5f84cd57fe6e9"
     },
     {
-      "path": "qa/revision-20261007-inset/aperture-area-comparison.json",
-      "bytes": 3465,
-      "sha256": "534b79b2617cfb592650e97cb64013c645e4606428ddd742b14db310b4439871"
+      "path": "qa/revision-20261007-inset/FINAL_EDGE_LINKAGE_ACCEPTANCE.json",
+      "bytes": 2149,
+      "sha256": "72ad2b259e012f66e73635f3183a76e7c8871f7c61a2c66e7bcaf94546bbea79"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/ALL_OWNER_TOPOLOGY_INVENTORY.json",
-      "bytes": 346017,
-      "sha256": "26bd89e4ee8e778783922ecd20cac6a417abe3d41d023bf408263dfbedf68227"
+      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/ALL_OWNER_TOPOLOGY_INVENTORY.json",
+      "bytes": 346011,
+      "sha256": "8d8b0854a69e11aae7fa2a3b83f1cdde640a93ed1a60c30f183186ca5038c601"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/ANIMATION_RUNTIME_INPUT_PIN_CHECK.json",
-      "bytes": 2092,
-      "sha256": "39eec12c06cc02cb5a983110e738a53416abce21a8eff1eba1b86df05f43476a"
+      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/BAKED_ANIMATION_CHECK.json",
+      "bytes": 77113,
+      "sha256": "d8ef83eae4638c9701acc0e13ec99a6d2624c93b4d803a010ca03a80f31acb57"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/BAKED_ANIMATION_CHECK.json",
-      "bytes": 76946,
-      "sha256": "f54728e1e14dfaf54a11e2b6837868c5ee0556899f31b100cabea19d6a347625"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/BAKE_GEOMETRY_IDENTITY.json",
+      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/BAKE_GEOMETRY_IDENTITY.json",
       "bytes": 1581,
-      "sha256": "9abd6252aec7d2f3b520dd2422ca84f89119c25ca9bc35eab2d32fb0ab675646"
+      "sha256": "04ae1a8093fcb71456a548f45d9a3e5c26f17bb36e83158c54a3df1d4027c8f5"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/BAKE_RECEIPT.json",
-      "bytes": 9976,
-      "sha256": "41d708984faefdee3e86e7e09bfcd168814c14ca6e1d24620a8da05b0b1ddf9a"
+      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/BAKE_RECEIPT.json",
+      "bytes": 10001,
+      "sha256": "51e78aa8d62d4ec715eed1c17c36e5cc8c27584ae3df8de9b21620d7b00b9a31"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/BUDGET_APPROVAL.json",
-      "bytes": 457,
-      "sha256": "de8b65d5220df1a386791f9b2f34ffb2d901978e40d5a13067b601cb970bd4e5"
+      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/BUDGET_APPROVAL.json",
+      "bytes": 946,
+      "sha256": "f6cbcca26ded2f3dc66b1e73af66584b8295de76385e810e0e09b2b42480fd85"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/FROZEN_PARENT_METADATA_CHECK.json",
+      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/FROZEN_PARENT_METADATA_CHECK.json",
       "bytes": 679,
       "sha256": "1a73b727f124d156100df812c7985bec4f434b751a4c20b73d9185efee6fa1f0"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/IDENTITY_CHECKS.md",
-      "bytes": 5892,
-      "sha256": "d23a8a77aca26cb7bfb22bbc1259f5e0609f7be5d509fb1d175af9f13aeb5334"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/IDENTITY_CHECK_DELIVERABLES.before-frozen-v25-runtime.json",
-      "bytes": 4045,
-      "sha256": "f484f94b15327bafca3f448d456ba0261150d13a65b9662ae858eab6e9d79312"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/IDENTITY_CHECK_DELIVERABLES.json",
-      "bytes": 5144,
-      "sha256": "c63e5e7657ec633499c1fe5fc4444eb2e23cced80d9761eb384f24459865f7d1"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/IDENTITY_NEGATIVE_TESTS.json",
+      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/IDENTITY_NEGATIVE_TESTS.json",
       "bytes": 2288,
-      "sha256": "9463b4e4cbced2c1f5c20dec7386475a4b95b22c0f2798490d4aedcbb008807a"
+      "sha256": "ff55dafc75904925e1352491d20fe83ffcf5ffd6c8be23f83a22cfde25574851"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/IDENTITY_RUN_EXIT_CODES.json",
-      "bytes": 1492,
-      "sha256": "79286545f2e562f85b4bbeaecf3afb001d7af8b8a4cff17983c0e7473d3ad1b0"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/LEGACY_QUANTIZATION_INVENTORY_IDENTITY.json",
+      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/LEGACY_QUANTIZATION_INVENTORY_IDENTITY.json",
       "bytes": 20672,
-      "sha256": "5db694426eab6a4c81dfc2a11bc859227a49953aae8607ebce79c2a119b5edf6"
+      "sha256": "b77df7eeeb60c7fc638dd5c3ff6a76ad5c1c65d70bd5bd7312cb375b1defbbe7"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/PACKAGE_OVERRIDE_MAP.json",
-      "bytes": 9988,
-      "sha256": "9f0c82e7ea6243440cd8af1ebf5e8b73edb8f138ea7236bb5a412fdee6eb0570"
+      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/RUNTIME_COMPATIBILITY_CHECK.json",
+      "bytes": 26824,
+      "sha256": "e47e2b9172b351b185b771c3a3caccd595638374f6f3d91eafa998efb1040849"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/RUNTIME_COMPATIBILITY_CHECK.json",
-      "bytes": 26381,
-      "sha256": "cc344f2e73df0f51d36ae4ccf764b0d3e2934be5362916f9fad0cc405886559f"
+      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/RUNTIME_SIZE_REVIEW.json",
+      "bytes": 387,
+      "sha256": "84916340f8f46e8b8194fc6c2da5fd7c9360453f15852978b4ec696a21601fcf"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/RUNTIME_SIZE_REVIEW.json",
-      "bytes": 388,
-      "sha256": "2d9b02ba413acc72eafd8d00c630ea09813186bd543ea41a165c89ae418eff34"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/SEMANTIC_OWNER_TOPOLOGY_CHECK.json",
+      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/SEMANTIC_OWNER_TOPOLOGY_CHECK.json",
       "bytes": 6326,
-      "sha256": "ce2ea3449d3d14f5849e6fdf63ea1b690d1a71aca8936930ae587b96889cf934"
+      "sha256": "bee0b8be80fd4c0f67e4a840d818817a12f44d50a5ce8c330d5c461c2a242a8b"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/SOURCE_GEOMETRY_REFERENCE.json",
-      "bytes": 347125,
-      "sha256": "b0ce2f3b95fd90ac0540ac3b9419b5dcfe9b32dd0d7a512f6f621f41c1302862"
+      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/SOURCE_GEOMETRY_REFERENCE.json",
+      "bytes": 347214,
+      "sha256": "939549ab03762439d0c643073bbf110574729ff7990899e976943c6a965fc9f3"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/SOURCE_RUNTIME_IDENTITY.json",
-      "bytes": 272611,
-      "sha256": "8497b3baaa2793bb52d4d4e7eab0d2f44242a0d2ecaf4bd238baba8e856960fc"
+      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/SOURCE_RUNTIME_IDENTITY.json",
+      "bytes": 272614,
+      "sha256": "16b16b18168001ad32773e2ad0902799d7a86c2e61d659ca47ddfa2a274d036d"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/THIN_VALIDATION_INPUT_MAP.json",
-      "bytes": 46495,
-      "sha256": "7f39dc19e51415c008230343b0e5b0511b3d57691c81792f534aa3ab7b8e0e14"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/V25_PROTECTED_IDENTITIES.json",
+      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/V25_PROTECTED_IDENTITIES.json",
       "bytes": 1262,
-      "sha256": "129920e29ce3c579ce2e727daeee791835216288ea266662eb2b5759360069cf"
+      "sha256": "83c41f44d6afa1deb12cb09fadc3ea8a96292534a0bcf5976f211d32664e71f7"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/annotated-mechanism.json",
-      "bytes": 7323,
-      "sha256": "ced17f6816d05f1b7ad73b5328096c586d9dac27bb3a425026347708f9ce9f43"
+      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/annotated-mechanism.json",
+      "bytes": 29994,
+      "sha256": "b47e11f4c9cb61dc1d2c9d90f2c1f4b2b5ac88659dae9d5296262e74139f6069"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/assets/animation/motor-reference.json",
+      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/assets/animation/motor-reference.json",
       "bytes": 89393,
       "sha256": "85f1583b700818b3d42ef02bbfa16917dfb0f48657d4e7959fd36d7fcd7e951c"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/assets/animation/wing-transition-reference.json",
-      "bytes": 2267980,
-      "sha256": "e0f50d95e0bedeed2dce0617ceccea9b2541cdfe39f750f3c16b5d3b3528326b"
+      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/assets/animation/wing-transition-reference.json",
+      "bytes": 2268825,
+      "sha256": "664e407aadda0f82c25812e0e6fc89b6ec8f6ce8d7557b0b2cb9f0ddc806f6c4"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/assets/blender/annotated-mechanism.json",
-      "bytes": 7323,
-      "sha256": "ced17f6816d05f1b7ad73b5328096c586d9dac27bb3a425026347708f9ce9f43"
+      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/assets/blender/annotated-mechanism.json",
+      "bytes": 29994,
+      "sha256": "b47e11f4c9cb61dc1d2c9d90f2c1f4b2b5ac88659dae9d5296262e74139f6069"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/assets/build/annotated-mechanism.json",
-      "bytes": 7323,
-      "sha256": "ced17f6816d05f1b7ad73b5328096c586d9dac27bb3a425026347708f9ce9f43"
+      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/assets/build/annotated-mechanism.json",
+      "bytes": 29994,
+      "sha256": "b47e11f4c9cb61dc1d2c9d90f2c1f4b2b5ac88659dae9d5296262e74139f6069"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/baked-animation-check.log",
-      "bytes": 6598,
-      "sha256": "5455078c0a2508b30699b92900cacd1877ad5e1412b75820509e03d766a623ea"
+      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/checks/RUNTIME_CHECK_COMMANDS.json",
+      "bytes": 747,
+      "sha256": "759ee1e53fcddaa421dc8df2ba37413eca2ec71560395d51e85711194fe86e45"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/development-checks/build.log",
-      "bytes": 881,
-      "sha256": "367f97c90063396b2a9333fc65a6ab2a932cc66f8297e9440c4733c2b0ad73a1"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/development-checks/format.log",
-      "bytes": 281,
-      "sha256": "fad16cd3eb30d839064584f1e54b34ed7e6f293588320d5a8602f01b06d36d90"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/development-checks/full-npm-tests.log",
-      "bytes": 17593,
-      "sha256": "6a61917d27cec7f0389ddddbc664ce5aedfdc163695e37470de759b0074a72be"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/development-checks/light-qa.log",
-      "bytes": 1463,
-      "sha256": "1422a08b238f3180c72de7cb97355d65961438dcc5b54370c518ae4422b21e3e"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/development-checks/post-metadata-model-cache.log",
-      "bytes": 1537,
-      "sha256": "040ee9c717eb0b8bc347916899f8c3573b0247559466da083cf4c6ed7e98ec30"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/development-checks/python.log",
-      "bytes": 2993,
-      "sha256": "d9eb7b7dc24c3fcdbfebce0645997051b6bbc8df883097317dff56df097ef16c"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/development-checks/summary.json",
-      "bytes": 2471,
-      "sha256": "3e89c698d048a785b3cc45f54d9e64196affa24e7a7d5c36d322bb7229436e86"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/identity-all-owner-inventory.log",
+      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/checks/all-owner-inventory.log",
       "bytes": 4174,
-      "sha256": "466df221b4b1fb49a1d73310ce9806297e3770a4968a94d1ef2d469d171c99a9"
+      "sha256": "b24a693d298a9e5aba892a8db5a3eaf58dcf488bcf3facf75a35d2b30ab2fc93"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/identity-legacy-inventory.log",
-      "bytes": 20384,
-      "sha256": "54c2c753b4b12f743ebdbc909d6619b04b4fe127557c6a4a339e41293910e7f6"
+      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/checks/baked-animation.log",
+      "bytes": 6775,
+      "sha256": "a3961cf529defa135799193ae32ef0d4135f607c3346e453da885dd25d613199"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/identity-native-geometry.log",
-      "bytes": 1927,
-      "sha256": "cca9f3e49bcb16a5b8ac74b2caad990f92a932661eaf85d04e3bc5b92434d1f8"
+      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/checks/baked-native-geometry.log",
+      "bytes": 1980,
+      "sha256": "ddfe0a466d3aadc5d51c09a5a83274716eee5c8808f70f23b6620061874a4ef5"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/identity-negative-fixtures/animation-interpolation-drift/SOURCE_RUNTIME_IDENTITY.json",
-      "bytes": 93,
-      "sha256": "c9f538bad25487e6b2ae98ce65eb0fd186e23499076163f2041616615f8a9470"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/identity-negative-fixtures/animation-interpolation-drift/expected-rejection.log",
-      "bytes": 506,
-      "sha256": "bd14079b5845da3bf9702eeba64178a9a822c5aa1ef2b84b3c9b11c23920eb43"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/identity-negative-fixtures/critical-owner-trs-drift/SOURCE_RUNTIME_IDENTITY.json",
-      "bytes": 93,
-      "sha256": "c9f538bad25487e6b2ae98ce65eb0fd186e23499076163f2041616615f8a9470"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/identity-negative-fixtures/critical-owner-trs-drift/expected-rejection.log",
-      "bytes": 937,
-      "sha256": "1d033cb218c9a4f1cd3c6c7b4a30bd65bd632bcfe9d038754fc7db7b273f79bd"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/identity-negative-fixtures/empty-alias-trs-drift/SOURCE_RUNTIME_IDENTITY.json",
-      "bytes": 93,
-      "sha256": "c9f538bad25487e6b2ae98ce65eb0fd186e23499076163f2041616615f8a9470"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/identity-negative-fixtures/empty-alias-trs-drift/expected-rejection.log",
-      "bytes": 935,
-      "sha256": "85930ce2fdefc6eeb827031ec906464c5a3518b34d04d27b8fe1e96e11112ec5"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/identity-negative-fixtures/inherited-critical-exemption-removed/SOURCE_RUNTIME_IDENTITY.json",
-      "bytes": 93,
-      "sha256": "c9f538bad25487e6b2ae98ce65eb0fd186e23499076163f2041616615f8a9470"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/identity-negative-fixtures/inherited-critical-exemption-removed/expected-rejection.log",
-      "bytes": 472,
-      "sha256": "5ffca560df2473c7166cff145a2492544621a5acb0c2c8fb7b7d84ea85e2833c"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/identity-negative-fixtures/primitive-material-drift/SOURCE_RUNTIME_IDENTITY.json",
-      "bytes": 93,
-      "sha256": "c9f538bad25487e6b2ae98ce65eb0fd186e23499076163f2041616615f8a9470"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/identity-negative-fixtures/primitive-material-drift/expected-rejection.log",
-      "bytes": 1456,
-      "sha256": "ed0858e00adfe9c9fae23f916eb615ce9c0a9edfafd0dd17097b2f7a63b693d9"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/identity-negative-tests.log",
+      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/checks/identity-negative.log",
       "bytes": 2288,
-      "sha256": "9463b4e4cbced2c1f5c20dec7386475a4b95b22c0f2798490d4aedcbb008807a"
+      "sha256": "ff55dafc75904925e1352491d20fe83ffcf5ffd6c8be23f83a22cfde25574851"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/identity-owner-topology.log",
+      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/checks/legacy-inventory-identity.log",
+      "bytes": 20672,
+      "sha256": "b77df7eeeb60c7fc638dd5c3ff6a76ad5c1c65d70bd5bd7312cb375b1defbbe7"
+    },
+    {
+      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/checks/owner-topology.log",
       "bytes": 4402,
-      "sha256": "02d746d263714f4d94e36f9e3c17ef2b27b76263db08d78c212c4ce016ebed75"
+      "sha256": "405b2472d9e7c005c7b1005477a4a61063a475de490f52512318655c34f04e23"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/identity-semantic-unit-tests.log",
-      "bytes": 431,
-      "sha256": "ed09f880c9d1f22786a65f268282ce3b204f5c4ba7849620c2b0845fa756e4c2"
+      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/checks/runtime-compatibility.log",
+      "bytes": 11984,
+      "sha256": "49eb8c250d10075befeecad96fb636de3af293c6de9b7637a9b67ae7bae7dd63"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/identity-source-runtime.log",
-      "bytes": 4264,
-      "sha256": "898486fbbea48658bb7a3f032f711309605d4a0499046039d431c23d05ad90b9"
+      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/checks/semantic-unit.log",
+      "bytes": 430,
+      "sha256": "c39661c642ca3540f2e5a2f7a31604c7cd33070e23e6e90556d12f20dc043124"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/model-manifest.json",
-      "bytes": 420934,
-      "sha256": "ff01f0d35ac2266563ac72455f13c556a02bf745ad1ccdc7eb4ffc7a1d75aa93"
+      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/checks/source-runtime.log",
+      "bytes": 4265,
+      "sha256": "5a9f6133a1d56f3f04ce9a14ad3d31eb278a2f4973d8c68126b58aabc3502643"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/model-validation.json",
-      "bytes": 73884,
-      "sha256": "cf437364aca6e039d80ebcb91a178620ef1082d15a3a7f7d3eba9ae95e7ae32b"
+      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/model-manifest.json",
+      "bytes": 785748,
+      "sha256": "313110397dc7470d74233c72e3aea3dcd2944458f0ef3cdddd21ac5ac206af76"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/modelAssetRevision.ts",
-      "bytes": 266,
-      "sha256": "13c9bc5293d138288ebf66a2060aaebe150feabd8c22140b8b169a89cd693a6f"
+      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/model-validation.json",
+      "bytes": 75014,
+      "sha256": "0d71d6ec6858126d56225c594b30e1229fb2afe412f450965c458444a2a688d8"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/public/models/annotated-mechanism.json",
-      "bytes": 7323,
-      "sha256": "ced17f6816d05f1b7ad73b5328096c586d9dac27bb3a425026347708f9ce9f43"
+      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/modelAssetRevision.ts",
+      "bytes": 279,
+      "sha256": "cc000c8c4f0e8da2e1cf9a98a3298cb06282cbdd93652a7e31590108f5c14327"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/01-native-default.log",
-      "bytes": 11440,
-      "sha256": "49372fc8aba3434027a72a7d9c8b7252ac613ea06e3c8014e07c3e4a19f2a50f"
+      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/public/models/annotated-mechanism.json",
+      "bytes": 29994,
+      "sha256": "b47e11f4c9cb61dc1d2c9d90f2c1f4b2b5ac88659dae9d5296262e74139f6069"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/02-native-geometry-reference.log",
-      "bytes": 801,
-      "sha256": "7528ba0ab54720bc98f61df739e0f9479a01621c6c1eac384f7233ef1c4bd6e6"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/03-fresh-bake.log",
-      "bytes": 67256,
-      "sha256": "1c3140b2719d7bff1ba30f37cb517866461cdecd6d954ea4e753fd5627af0600"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/04-compress.log",
-      "bytes": 856,
-      "sha256": "b4378e6ce1fd8ee776a5d7fa2d5dfc5ff9e613e7bffa0885ef96861f01652661"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/05-source-runtime.log",
-      "bytes": 4264,
-      "sha256": "770c4ac7b145f272e28b4fb5ee4902387613b51ad69d23ff4ec01e60fc521f97"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/06-baked-native-geometry-correct-target.log",
-      "bytes": 1985,
-      "sha256": "d8a352e1b139fbda5983af38eb5f02c025f2c564bc2fedec2bb677819cc636e2"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/06-baked-native-geometry.log",
-      "bytes": 1588,
-      "sha256": "4f53a83d6a402727b5bb0b5b0fa298acc2cf5450d32825a7183a591369e32bcc"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/07-baked-animation-correct-target.log",
-      "bytes": 6598,
-      "sha256": "bfd5de460c93af2f9f19523d747c4e82bdee0274905010cd5b692bf3653a00d6"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/08-runtime-compatibility-correct-target.log",
-      "bytes": 11539,
-      "sha256": "8a4ef171c9615cf0ed4d55ee51fe7a47db6b88d1f4e0ae881bc4d3c0445a4ab7"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/09-owner-topology-correct-target.log",
-      "bytes": 4402,
-      "sha256": "c72785f8543b51545d2890c331f0b800a51299b4dd8a55aceaefdd4d97861aad"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/10-all-owner-inventory-correct-target.log",
-      "bytes": 4174,
-      "sha256": "bbbd08a0dd7c1e2d259bbdedca1c7d6d83c9e527132b6bdb3e36883da580ee25"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/11-legacy-inventory-identity-correct-target.log",
-      "bytes": 20610,
-      "sha256": "2e522f52ef14fc70ca3aa12e83e0912ee23084b68c355c0ae80996ff5624104e"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/12-semantic-unit-correct-target.log",
-      "bytes": 431,
-      "sha256": "bab15647bbd2ab58c03b4a52da872b178317e806db8eefaeafe1578fc2cb0401"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/13-identity-negative-correct-target.log",
-      "bytes": 2288,
-      "sha256": "c0fd021bf843d618e0b18d77fab52867543c2ede0b5f0ab30e8f31b217cba70d"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/14-write-manifest-correct-target.log",
-      "bytes": 363,
-      "sha256": "540c994f9636385c7cd7644bccfa4254c95f4c6267e12e79343b369bc6f96c7b"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/15-development-176.log",
-      "bytes": 17572,
-      "sha256": "791276d8df540e8b1392a99df967f398407a1ac075a2db923554dd303033500e"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/16-qa-regression.log",
-      "bytes": 1463,
-      "sha256": "d6a7f103ab9c4180405834f846882ae62a846abe3cb6a042a56e104b72dbc09d"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/17-typescript-vite.log",
-      "bytes": 859,
-      "sha256": "0604ee4a4c67e6f0e72a75b1ba80884e70175299f06f316823b3b452a03e5a3b"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/18-format.log",
-      "bytes": 355,
-      "sha256": "f380d4aee420673a278a90d326f03590a21ee87ca1c995012d3d0c353cb4bdbe"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/20-format-generated-cache-helper.log",
-      "bytes": 31,
-      "sha256": "08715635c0dca7054763c6183598339f0d43210c20aec951da3d81aa3e7e11d6"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/21-development-176.log",
-      "bytes": 17565,
-      "sha256": "0b5515392e335be1415c456e45258d6f9435625b2c1c1084906a53d43261c17c"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/22-qa-regression.log",
-      "bytes": 1462,
-      "sha256": "a1ffdf8c247a428b751f3b3716d0d9e285b3a8c29dfdaf036e2275d29e11e901"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/23-typescript-vite.log",
-      "bytes": 859,
-      "sha256": "2cde5e03c2901ebdb3cc3f86417c02c8afa09dccd10fe20d4cb7835ba04037aa"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/24-format.log",
-      "bytes": 281,
-      "sha256": "fad16cd3eb30d839064584f1e54b34ed7e6f293588320d5a8602f01b06d36d90"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/25-python-26.log",
-      "bytes": 125,
-      "sha256": "319ac97f76c6c79c637a27cd084793d682972f16392ace682bfa5022c330178f"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/DEFAULT_RECONSTRUCTION_CHECK.json",
-      "bytes": 7347,
-      "sha256": "41da82a54236122f34c8dff77c46b3ec0c00c9649af6d1dc533ef98572b42dbf"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/DEVELOPMENT_COMPONENT_EXECUTION.json",
-      "bytes": 2412,
-      "sha256": "4bb49846d11c8ee7041f0e065a06864e40ddc46e9f8a1beac303411cc8f54cfa"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/PIPELINE_COMPONENT_EXECUTION.json",
-      "bytes": 4079,
-      "sha256": "3132c093b10e3d5209bf5b5a53b4705c0313544cfb0bc23d62083c7c0db10658"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/REBUILD_EVIDENCE_FILES.json",
-      "bytes": 7877,
-      "sha256": "988b9ccec5ecaaf1b841f519101372491a2ab59afad084004212a4d196fcd2ea"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/REVISION_INSET_REBUILD_COMPARISON.json",
-      "bytes": 584,
-      "sha256": "dca13a37a896efc4000769fb2c87cc500aad251381e830bdf51b9251377b1eb8"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/WRAPPER_DRY_RUN.json",
-      "bytes": 3620,
-      "sha256": "c98db5a7bcf8f16c5bebb709839a2cf3c0b67899ddba22eea0c6a86aa2a61cb5"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/WRAPPER_PREPARATION_TESTS.json",
-      "bytes": 900,
-      "sha256": "0a164ae1d96eefb20fc3ac6e31eec5c649dc7f8f4ce8615a6d1dc2ef624efb32"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/candidate-inset-integrated-b-regenerated-construction.json",
-      "bytes": 219911,
-      "sha256": "c74f31fe14739052a1257ed91fd91554c4793d9ffccdb3f6a6aeba7f5ea91318"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/regenerated-pipeline-reports/ALL_OWNER_TOPOLOGY_INVENTORY.json",
-      "bytes": 346017,
-      "sha256": "69717468c1bbebcd1c1dd2338005ca355959b1ab1ebd082d8d3621520b4eec01"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/regenerated-pipeline-reports/BAKED_ANIMATION_CHECK.json",
-      "bytes": 76946,
-      "sha256": "c2882345e0ab6befcd726676644e3d1d44f405ea284edc7271ec26567e2567fc"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/regenerated-pipeline-reports/BAKE_GEOMETRY_IDENTITY.json",
-      "bytes": 1581,
-      "sha256": "932b35a4fbe49658df448b1c4235344ff49d5b5a981c3dc7ae5a99aabad9c677"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/regenerated-pipeline-reports/BAKE_RECEIPT.json",
-      "bytes": 10012,
-      "sha256": "c51665800e18a01f8aa61f666cb8bdfe3003f27a72503c7921874b4589865304"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/regenerated-pipeline-reports/BUDGET_APPROVAL.json",
-      "bytes": 406,
-      "sha256": "81a5636d60b82ae23aa9df644d042215bbc52d52152a428649eb3f1c2ad10f70"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/regenerated-pipeline-reports/FROZEN_PARENT_METADATA_CHECK.json",
-      "bytes": 679,
-      "sha256": "1a73b727f124d156100df812c7985bec4f434b751a4c20b73d9185efee6fa1f0"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/regenerated-pipeline-reports/IDENTITY_NEGATIVE_TESTS.json",
-      "bytes": 2288,
-      "sha256": "c0fd021bf843d618e0b18d77fab52867543c2ede0b5f0ab30e8f31b217cba70d"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/regenerated-pipeline-reports/LEGACY_QUANTIZATION_INVENTORY_IDENTITY.json",
-      "bytes": 20610,
-      "sha256": "2e522f52ef14fc70ca3aa12e83e0912ee23084b68c355c0ae80996ff5624104e"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/regenerated-pipeline-reports/RUNTIME_COMPATIBILITY_CHECK.json",
-      "bytes": 26381,
-      "sha256": "1ffe570b87ec5f18d129f198d6a6a0fc73b2ef5cab41f8483708d55be43bc3c7"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/regenerated-pipeline-reports/RUNTIME_SIZE_REVIEW.json",
-      "bytes": 388,
-      "sha256": "ef2337f2fc8e80fe0b117487c41a64d6c0fa100be728e7cf0a110c92d3abb125"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/regenerated-pipeline-reports/SEMANTIC_OWNER_TOPOLOGY_CHECK.json",
-      "bytes": 6326,
-      "sha256": "1ee6cc6b6bdefb7b5a8acb330d70553a28e3c8d498fe6e342afdc8b5f04ece61"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/regenerated-pipeline-reports/SOURCE_RUNTIME_IDENTITY.json",
-      "bytes": 272611,
-      "sha256": "979e73806f546be3ac9fd32b35062240b828580756562acae571bc1bc7b5d38f"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-checks/wrapper-preparation-tests.log",
-      "bytes": 900,
-      "sha256": "0a164ae1d96eefb20fc3ac6e31eec5c649dc7f8f4ce8615a6d1dc2ef624efb32"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/rebuild-dry-run.json",
-      "bytes": 3196,
-      "sha256": "bfa7d1cb5fbc5fbb785cdcde2a87c7e56f96e7e3e4f31edfd9a9a9cf1d7f5ea3"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/runtime-compatibility-check.log",
-      "bytes": 11539,
-      "sha256": "f17d3ded80f7b3b2d5c44b1cd99f432dd7d36366a01c0106f8af45a58bc45504"
-    },
-    {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/v25-parent-manifest.json",
+      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/v25-parent-manifest.json",
       "bytes": 241466,
       "sha256": "f72d468427d43283fb1e359e5d84cc7a485e68542048476fb5653ddba1df7d15"
     },
     {
-      "path": "qa/revision-20261007-inset/baked-integrated-b/v25-parent-validation.json",
+      "path": "qa/revision-20261007-inset/baked-edge-linkage-final/v25-parent-validation.json",
       "bytes": 73213,
       "sha256": "d40e6473ba4fa86b1e61b05301b232c78d33a0331ae66bc83394bcd17dec816c"
     },
     {
-      "path": "qa/revision-20261007-inset/candidate-inset-integrated-b-construction.json",
-      "bytes": 219883,
-      "sha256": "73802e625f2c385a79094a0ff907ae21ea3ec0dd956cd6d6adc3b134872c7f22"
-    },
-    {
-      "path": "qa/revision-20261007-inset/candidate-inset-integrated-b-moving-bore-clearance.json",
-      "bytes": 2007,
-      "sha256": "4ae155742d4422894c56e28634ecb9c6cf72a0d3f59ac187e43c8af5e7651934"
+      "path": "qa/revision-20261007-inset/candidate-inset-integrated-b-edge-linkage-construction.json",
+      "bytes": 403927,
+      "sha256": "dbd126c37d4e74e6a1a1c3de2346d8618e0613dd9f72981789193cd043692f2f"
     },
     {
       "path": "qa/revision-20261007-inset/development-templates/src/Scene.tsx",
@@ -1220,19 +859,429 @@
       "sha256": "8594519b0f1836a2f7506d713628d7375c8a8392cf31e3db1f5c9f91e989f86d"
     },
     {
-      "path": "qa/revision-20261007-inset/integrated-b-wall-review/FINAL_INTEGRATED_B_LIMITED_WALL_REVIEW.json",
-      "bytes": 68454,
-      "sha256": "e00009e137afbe7737e56a2dbddd661b8637d1e8b48e451c0f4ea1a7ec507256"
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/AIRFRAME_GAP_AUDIT_BASELINE.json",
+      "bytes": 5161,
+      "sha256": "bb42392ae6037c71bea2218e4c05dd6069c5baae939b327ed063a715b2880c46"
     },
     {
-      "path": "qa/revision-20261007-inset/integrated-b-wall-review/FINAL_INTEGRATED_B_WALL_MANIFEST.json",
-      "bytes": 5029,
-      "sha256": "010bf07cffa60a4456c76dfc98afc8f10558af21f6c1fbc21dd243632107f565"
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/APPLY_REVISED_LINKAGE_RECEIPT.json",
+      "bytes": 22167,
+      "sha256": "b815070d70289817c16d4a00b71e840aa1d53b25bd6c8a37fa95b31d1082d002"
     },
     {
-      "path": "qa/revision-20261007-inset/integrated-b-wall-review/dynamic-minimum-source-binding.json",
-      "bytes": 17235,
-      "sha256": "cf4e0dfacff0ac8fd98df6c333bdf870c485c8b6d24595feba9169139a741bc6"
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/NATIVE_MOTION_BINDING.json",
+      "bytes": 426,
+      "sha256": "21adb7caacf705330435506be6eb28d125a9fb2ca5e9a84774e0c7806a16c2d1"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/SLOT_TOPOLOGY_FRESH_REPLAY_CHECK.json",
+      "bytes": 2281,
+      "sha256": "7950df5ea2d6ee931ff28936dd142ff09802d46b9067c11047dd748c43761b24"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/SLOT_TOPOLOGY_REPAIR_AND_EXPORT_CHECK.json",
+      "bytes": 2283,
+      "sha256": "7183fbcbd283d0a36e5d578e00ddd0c12b0c7095a770da7f112d0055dcf049ea"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/SUPPORT_SLOT_CONTAINMENT_CHECK.json",
+      "bytes": 9275,
+      "sha256": "694b89ccda3c2ca14aec66e8f0059ba41e133b168a8f0172180b3f2f1d3e4441"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/boundary-columns.json",
+      "bytes": 6677,
+      "sha256": "fd1d8ad4c7bb33e1996c29b32a8af16c81ef845b1e68d1b525ffe01cee63aad8"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/candidate-inset-integrated-b-edge-linkage-sweep.json",
+      "bytes": 8204,
+      "sha256": "10308dc7b6796f0850f21936aae9b756e1a17420db5e99268e5a75f8af474382"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/columns.json",
+      "bytes": 3165,
+      "sha256": "bedd6d82232de6c820a61c04251a0abd6dd4d2b5f940bba7aaf29a6999c5a7be"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/crossings-baseline-L-742ef529.json",
+      "bytes": 73069,
+      "sha256": "2c5ce35bde54e397e4c1c4d86e33486cedab86f123425acb135ffa45da815996"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/crossings-baseline-R-742ef529.json",
+      "bytes": 85721,
+      "sha256": "07ff1942cd0d81f7f7e48d3b6c478ea433156499e1d8b5cbcc159709c6504af2"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/crossings-candidate-L-f3876488.json",
+      "bytes": 99628,
+      "sha256": "25e671a7a219e59809fe40469123f7cae0bac85f20487ef63313d2da4c5e0502"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/crossings-candidate-R-f3876488.json",
+      "bytes": 110728,
+      "sha256": "dfb6c2c696ef65e6e33ec509d67bb91a9a3ac3a288e0a698875a0ffa949d1602"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-bake.log",
+      "bytes": 67400,
+      "sha256": "ce54bfbc2f5188bbc393060c947befc27f8f3502b2cd2d1923d74117a4e634e6"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-build.log",
+      "bytes": 881,
+      "sha256": "85c4662d0469dc6f6bfa5cac2cb9b48ac0d4248d9ba1189ea09245c9075d108f"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-check_boundary_columns.log",
+      "bytes": 1349,
+      "sha256": "6879eb42515bf7124c04c59aed7fc2215ff27ccee91c4d68a974d5c108880955"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-check_columns.log",
+      "bytes": 507,
+      "sha256": "e4932299c62ffb9389fe740623ff02549f1316d7124f9c60d50dfc5990c22f56"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-check_local_gap.log",
+      "bytes": 7926,
+      "sha256": "a936a8fa1ba7a7b92fb8a4e8e46971364622662132eec177c94c1f9b17995bfb"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-check_precise_rear.log",
+      "bytes": 1795,
+      "sha256": "44dc2ce9ed1f6a0bdc8e9b5d9ce26bc97b12c1afe5510a876948ee9ee8fc9b40"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-check_precise_self.log",
+      "bytes": 1738,
+      "sha256": "ae139e8abc54d8ff4dc45b4b1a112ba86380c70676d949441e186a50173e8a6b"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-check_walls.log",
+      "bytes": 1832,
+      "sha256": "33713d7c4e298e678c62cad2b91900e2314cda57056bbe68cc967424181c8f31"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-compress.log",
+      "bytes": 855,
+      "sha256": "6cb074d59ce5bc6a454116932156dfa41fd4432ed10f7787040cba50ab4df49a"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-drive.log",
+      "bytes": 1900,
+      "sha256": "fe1cdecbdccb56d9cb324696f263653ed033dc4efb0dce2be36c9bb04cf86506"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-format.log",
+      "bytes": 281,
+      "sha256": "fad16cd3eb30d839064584f1e54b34ed7e6f293588320d5a8602f01b06d36d90"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-manifest.log",
+      "bytes": 565,
+      "sha256": "dc9b702a55f99d2c28948463cff2b9ececee0ed9aa22c22fd41b2b85b86550f8"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-material-support.log",
+      "bytes": 3306,
+      "sha256": "43a6f763bb74cabe4f1af025e8aa49d3fc544f5379b3e031ab3fc3479b09c8cd"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-material.log",
+      "bytes": 2302,
+      "sha256": "758b0a3729fe0ded09a911cc042bd7c2009d6415017fe8f10be792ab16576e6d"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-native-binding.log",
+      "bytes": 426,
+      "sha256": "21adb7caacf705330435506be6eb28d125a9fb2ca5e9a84774e0c7806a16c2d1"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-node-tests.log",
+      "bytes": 17839,
+      "sha256": "33d845dc2d44a4fcab308f720d2a3861fdfadda20671b576784514362e036118"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-python.log",
+      "bytes": 2993,
+      "sha256": "1358891cc004974914c3697386587c01b2a000ff651df0a62fff453b77e8ff7b"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-qa-tests.log",
+      "bytes": 1464,
+      "sha256": "8a5d41f33b40c8d61b4f4b8b1f69b09a73bf6895edbed14b1b2c7eef15052295"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-rotor.log",
+      "bytes": 997,
+      "sha256": "5e88e788eaeb768ef236997e1b38bc817cb3abbadfbd57f6dda2105fa50096ee"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-runtime-checks.log",
+      "bytes": 226,
+      "sha256": "99026c13eef265ce5acc1c761a76dc177cee659dfb3dd2a91cedbea4d3c5b71b"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/locked-supports.log",
+      "bytes": 9740,
+      "sha256": "47b4e434d9bcb5562e719aa453d3be0ba5e9d6f990b55169139b70bf13e9ef08"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/rear-crossings-baseline-L-742ef529.json",
+      "bytes": 17726,
+      "sha256": "aaa2a9078bd728afd634299071429c95d4626c580af18e29c15aa35552aa60a2"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/rear-crossings-baseline-R-742ef529.json",
+      "bytes": 19030,
+      "sha256": "119da1ea03cbb7e37ea731c3bd658d1217c5b145a564e1b33524db2a25d5b963"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/rear-crossings-candidate-L-f3876488.json",
+      "bytes": 26540,
+      "sha256": "cd6129804f77ebe81eec85b7752fccafbeee4f0cb418c800fb60af01aab062e1"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/rear-crossings-candidate-R-f3876488.json",
+      "bytes": 42511,
+      "sha256": "3ca4206c998907f04ea7949723be372db69cc67c9ebff72bb4106849e98f53ce"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/self-precise-f3876488.json",
+      "bytes": 133696,
+      "sha256": "78bbcd3d2a5fec7e30edbff4ba84e8fae54ea242fc9563217577879371bbb2a6"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/self-precise-rear-f3876488.json",
+      "bytes": 2054,
+      "sha256": "2506e675c29688697cdc594500bae855baab482873abffa7c257f85deccfc9f6"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/static-rear-gap.json",
+      "bytes": 7708,
+      "sha256": "f458e04a9008ebb0fd19c986128ed0010a28ed8418d41bad77234bbdf56acce6"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-checks/wall-screen.json",
+      "bytes": 2570,
+      "sha256": "89b08bc93def879436ff860cb5a0c73fe970af5ef895048040b38c379635f25c"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/01-full-native-construction.log",
+      "bytes": 12215,
+      "sha256": "828e1b96178e625a764f4c05e1fca6f881f81832d6ab50592a08d74582de57ae"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/02-complete-native-identity.log",
+      "bytes": 713,
+      "sha256": "29448dfbef766253e017df281a80ae79ec2a4029bde48fa34932eba2407976ae"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/03-fresh-bake.log",
+      "bytes": 67457,
+      "sha256": "a3899c81240e543dffe8804c62e6a7aa542a4a6a86e1670c93563916a2d79c14"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/04-compress.log",
+      "bytes": 855,
+      "sha256": "65fb356cfcb6e8444b7dbb903f75571c8585b8b513c7806bdb78cdb9f9bd4c88"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/05-source-runtime.log",
+      "bytes": 4265,
+      "sha256": "3860eaae526c0948da91fdb21a663f48867f0341505e66ab9a6c1c98fc356a7f"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/06-baked-native-geometry.log",
+      "bytes": 2042,
+      "sha256": "52f6601daef7fad3f8748a236d742ccda2d28bb87f1b31be4b585af116880e30"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/07-baked-animation.log",
+      "bytes": 6775,
+      "sha256": "4a81483176716a7301ebc658d1596b7f78426838672cd808e140ceef37fa3055"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/08-runtime-compatibility.log",
+      "bytes": 11984,
+      "sha256": "2abb67a0465ced88bc7270269ec219c726f2c78f7c1456c9cb86711c5e94444c"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/09-owner-topology.log",
+      "bytes": 4402,
+      "sha256": "661fd31c8b193bbc95c6e2a318189625bd5e77a5e1fca03d3b96f5ab350e245e"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/10-all-owner-inventory.log",
+      "bytes": 4174,
+      "sha256": "a405ff85087bacfb652bf7d2ce9a57b570ea5de9ed6b61f809ac2c45af0cbabc"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/11-legacy-inventory-identity.log",
+      "bytes": 20610,
+      "sha256": "7dae9eb605c7f81aed44961d4e0f3c0ec4ec5dce041b987f37fe297a5add5102"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/12-semantic-unit.log",
+      "bytes": 430,
+      "sha256": "d82e929a1df8850b73f064729c5b880700f407a3e2cec7fe79df1edfb6c2c98e"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/13-identity-negative.log",
+      "bytes": 2288,
+      "sha256": "358a41ca3ee6f3d9d744b3f7ef7e9136b87daafabf275704d6cb4fcdbdb8ee24"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/14-write-manifest.log",
+      "bytes": 599,
+      "sha256": "93913ea28549c9de96b419453a6d9ebca77c317ced5e0d1ffb804c7401a85ebd"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/15-format-cache-helper.log",
+      "bytes": 31,
+      "sha256": "cf79409cce5d9cc01ef81fcdff62e3e294edbe869c0e412c25a8eac855326762"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/16-node-tests.log",
+      "bytes": 17848,
+      "sha256": "2f13b434b4cad5216202d72024df1e5ceba945c3033c4a3714d226870c899fce"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/17-qa-tests.log",
+      "bytes": 1464,
+      "sha256": "31e22600aaa922a4258d2c07146f83230e860da06cb0a7352e9ad580f66b14aa"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/18-format.log",
+      "bytes": 281,
+      "sha256": "fad16cd3eb30d839064584f1e54b34ed7e6f293588320d5a8602f01b06d36d90"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/19-typescript-vite.log",
+      "bytes": 881,
+      "sha256": "2f951c4d9cf52a70158b206759fff7bb19543116f621acf9a8bb2a24a8b052a4"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/20-python-tests.log",
+      "bytes": 125,
+      "sha256": "7b25f79cdb152153a57c9a823d787e9a20a254f8dd6f335fde5c204496ec7382"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/EDGE_LINKAGE_REBUILD_COMPARISON.json",
+      "bytes": 462,
+      "sha256": "09a86f19d665be39f9bf584985dd716a585f07551bae8f261a210b823c9e2529"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/REBUILD_RECEIPT.json",
+      "bytes": 4439,
+      "sha256": "821720a08f8378e55d926be022d9d0d5be5006d19a7f9c2974197b9276bbf2ba"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/RENDER_ATTRIBUTE_COMPARISON.json",
+      "bytes": 204869,
+      "sha256": "5afffaf899816715ae7a261c3df959b6e95a7fcf67e4829d5b88f7309df36532"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/STRICT_PACKAGE_NEGATIVE_TEST.json",
+      "bytes": 540,
+      "sha256": "99a67969dad4cd922dfa570402554c73c535f8eb72006a1935a1cd48899f8407"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/runtime-reports/ALL_OWNER_TOPOLOGY_INVENTORY.json",
+      "bytes": 346011,
+      "sha256": "3dd8f98de48346730ea78a10154648e6a7b079e67397ea912d3f0b221e3f2198"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/runtime-reports/BAKED_ANIMATION_CHECK.json",
+      "bytes": 77113,
+      "sha256": "7f14971fdc5fd9ff0e55aaf4ff3760243f74ea9eb04691981f54ba61c05286e1"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/runtime-reports/BAKE_GEOMETRY_IDENTITY.json",
+      "bytes": 1581,
+      "sha256": "94c0e14b4c8acbbc95da56cc285cdeb02cf39def1c198b62df305bdb77b6bd6e"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/runtime-reports/BAKE_RECEIPT.json",
+      "bytes": 10025,
+      "sha256": "94f03e48dfc4e06982c8dc9115e96ead3a670fb221fe1efa85930c48b0104a50"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/runtime-reports/BUDGET_APPROVAL.json",
+      "bytes": 833,
+      "sha256": "4772faa4778693f2efab36b865e826e20d5d5171f39bc1b93466ad0af80dde56"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/runtime-reports/FROZEN_PARENT_METADATA_CHECK.json",
+      "bytes": 679,
+      "sha256": "1a73b727f124d156100df812c7985bec4f434b751a4c20b73d9185efee6fa1f0"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/runtime-reports/IDENTITY_NEGATIVE_TESTS.json",
+      "bytes": 2288,
+      "sha256": "358a41ca3ee6f3d9d744b3f7ef7e9136b87daafabf275704d6cb4fcdbdb8ee24"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/runtime-reports/LEGACY_QUANTIZATION_INVENTORY_IDENTITY.json",
+      "bytes": 20610,
+      "sha256": "7dae9eb605c7f81aed44961d4e0f3c0ec4ec5dce041b987f37fe297a5add5102"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/runtime-reports/RUNTIME_COMPATIBILITY_CHECK.json",
+      "bytes": 26824,
+      "sha256": "107233deb0c4b3c705f10efd921fa122993398186f47f96a677059cdab63d734"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/runtime-reports/RUNTIME_SIZE_REVIEW.json",
+      "bytes": 387,
+      "sha256": "543d194091714f12eaedd1bdc72bd325a828c96e3401420f780611efdbab9f17"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/runtime-reports/SEMANTIC_OWNER_TOPOLOGY_CHECK.json",
+      "bytes": 6326,
+      "sha256": "4b05191842e87593dfde28cdd67477dace0e63335ff69c6168134cd39b824c1c"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/runtime-reports/SOURCE_GEOMETRY_REFERENCE.json",
+      "bytes": 347226,
+      "sha256": "ea20435bf37256608069a61b6a3971babda021dfa95cbe08a232e80c2341d9ef"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/runtime-reports/SOURCE_RUNTIME_IDENTITY.json",
+      "bytes": 272614,
+      "sha256": "3f93af2817a1d79354a3c46727ee95c681a113ab9aac00187ae90da6057147b5"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/runtime-reports/V25_PROTECTED_IDENTITIES.json",
+      "bytes": 763,
+      "sha256": "b4528b3810c0cd6099fc1f68a54ff073b1861fc39a1c0c7da6c5b03fd205718a"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/runtime-reports/annotated-mechanism.json",
+      "bytes": 29994,
+      "sha256": "b47e11f4c9cb61dc1d2c9d90f2c1f4b2b5ac88659dae9d5296262e74139f6069"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/runtime-reports/model-manifest.json",
+      "bytes": 785799,
+      "sha256": "59dae2f5e98ca22c632529eecf335e928cbd29f4c311194292561ec849dde157"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/runtime-reports/model-validation.json",
+      "bytes": 75014,
+      "sha256": "35ce3e9580aa11564fc49d7d4099b14bc9a75b4a524aa2a9bbc6b7d018b40577"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/runtime-reports/v25-parent-manifest.json",
+      "bytes": 241466,
+      "sha256": "f72d468427d43283fb1e359e5d84cc7a485e68542048476fb5653ddba1df7d15"
+    },
+    {
+      "path": "qa/revision-20261007-inset/edge-linkage-rebuild-checks/runtime-reports/v25-parent-validation.json",
+      "bytes": 73213,
+      "sha256": "d40e6473ba4fa86b1e61b05301b232c78d33a0331ae66bc83394bcd17dec816c"
     },
     {
       "path": "scripts/airframe_accessories.py",
@@ -1690,6 +1739,141 @@
       "sha256": "669d7733b3ca25fc7b71266efe87b4ed859b3c3ee0387ad06e72992d4d214221"
     },
     {
+      "path": "scripts/revision_20261007_edges/apply_linkage_inset.py",
+      "bytes": 28874,
+      "sha256": "344e5cfc3c66152b048a0a97f1d4b7a645e2b7aea8bacbefd41df53c2478039f"
+    },
+    {
+      "path": "scripts/revision_20261007_edges/build_candidate.py",
+      "bytes": 3668,
+      "sha256": "579d0cf431213399031e62c4ee9946286b3771b05dce34d28500770c8833a411"
+    },
+    {
+      "path": "scripts/revision_20261007_edges/check_drive_sweep.py",
+      "bytes": 5397,
+      "sha256": "6ba178d5ac960f9a02ad7ad0a03fe4ee7d293e4f8ddbb1e68bae40ebfcf3f8ef"
+    },
+    {
+      "path": "scripts/revision_20261007_edges/check_internal_supports.py",
+      "bytes": 8021,
+      "sha256": "db970954232b0f84baa6f0157c0f9f78ebd1b5ab2dd7a6c016aa747b0b293824"
+    },
+    {
+      "path": "scripts/revision_20261007_edges/check_material_sweep.py",
+      "bytes": 6884,
+      "sha256": "5ed6347b0fcb4edd57a5c9e859c87a278ddad3e7b61c1a0ac02f01693ec0656b"
+    },
+    {
+      "path": "scripts/revision_20261007_edges/check_material_sweep_vectorized.py",
+      "bytes": 8040,
+      "sha256": "f0498457d022129a887d8b79181f1d746ad891b27799991e1433342cfce54e5e"
+    },
+    {
+      "path": "scripts/revision_20261007_edges/check_native_identity.py",
+      "bytes": 2810,
+      "sha256": "cf46482bda3681b64b32f2d6cf653da7035bdf249517d91b21af35a1ee1e872f"
+    },
+    {
+      "path": "scripts/revision_20261007_edges/check_native_reports.py",
+      "bytes": 2177,
+      "sha256": "9af0c0e30dee8bdb81600f335d17a9ff3392264c9da44c30b4ac5aeb1828c601"
+    },
+    {
+      "path": "scripts/revision_20261007_edges/native_snapshot.py",
+      "bytes": 1313,
+      "sha256": "be61a4060489b116fd78f682e0e1da0959f803e6a805b7c7a37baa78dcc50bd0"
+    },
+    {
+      "path": "scripts/revision_20261007_edges/portable_qa/README.md",
+      "bytes": 3039,
+      "sha256": "f3210feb23c106045f1b9953711d5581195fda6d48637e59b4b8a5d12e62da6e"
+    },
+    {
+      "path": "scripts/revision_20261007_edges/portable_qa/check_boundary_columns.py",
+      "bytes": 1046,
+      "sha256": "947b63fd35423b6d258428257b2f851d6efb47899245d0d2375eacca8da1a439"
+    },
+    {
+      "path": "scripts/revision_20261007_edges/portable_qa/check_coarse.py",
+      "bytes": 6245,
+      "sha256": "1efcdb165644a67e686fa0728ba46bd6ceda2dd73ab06ea5923427b1091e59ef"
+    },
+    {
+      "path": "scripts/revision_20261007_edges/portable_qa/check_columns.py",
+      "bytes": 1901,
+      "sha256": "6f15318707c323180cdbf7b6539d1626e3bdd13b161796691be25f02a8800623"
+    },
+    {
+      "path": "scripts/revision_20261007_edges/portable_qa/check_determinism.py",
+      "bytes": 1922,
+      "sha256": "64cfd92f7f4fffd5477e7662905223b51af4e0b418624256325030a6bea033c7"
+    },
+    {
+      "path": "scripts/revision_20261007_edges/portable_qa/check_local_gap.py",
+      "bytes": 1548,
+      "sha256": "9925f696d7bafc193f8a28c7016d99d893f4da5c1b367df9863e9ad884de1d1b"
+    },
+    {
+      "path": "scripts/revision_20261007_edges/portable_qa/check_precise_rear.py",
+      "bytes": 3241,
+      "sha256": "e9af2c4a7f3004a941889c29174df44635757b042fbf55eaf94019ab44a55cc6"
+    },
+    {
+      "path": "scripts/revision_20261007_edges/portable_qa/check_precise_self.py",
+      "bytes": 3235,
+      "sha256": "fdc5884f3ef75385ecd6a0dc39dfe05fad3c1b07460b82e7443f127e0d1baba5"
+    },
+    {
+      "path": "scripts/revision_20261007_edges/portable_qa/check_walls.py",
+      "bytes": 2808,
+      "sha256": "3811dd34bde03c14550d1c667b9bcfb10ec2446a84c3bdcee6bebb83f21670ee"
+    },
+    {
+      "path": "scripts/revision_20261007_edges/portable_qa/intersections.py",
+      "bytes": 3947,
+      "sha256": "9fd165322596644fe097981b398cd817b96d7a731ea8b3ba110a68f39f2830d2"
+    },
+    {
+      "path": "scripts/revision_20261007_edges/portable_qa/qa_context.py",
+      "bytes": 1719,
+      "sha256": "c55ed6468bf2c671cafc94d9b822218ea715d866582f0f56dda6cd028fd06007"
+    },
+    {
+      "path": "scripts/revision_20261007_edges/portable_qa/render.py",
+      "bytes": 2277,
+      "sha256": "130011035842a12d83298893def874f24384e3e445c7410a209ee7521dc3d4b9"
+    },
+    {
+      "path": "scripts/revision_20261007_edges/render_comparison.py",
+      "bytes": 3208,
+      "sha256": "0b63f847240feb494bd78da0f98be654c5479afc80930d853d1213679abaffeb"
+    },
+    {
+      "path": "scripts/revision_20261007_edges/repair_end_contours.py",
+      "bytes": 20581,
+      "sha256": "9a0abd2fe80bc0fbc85b6ed9a036f65dec68572fa390277f2a44670c82495c32"
+    },
+    {
+      "path": "scripts/revision_20261007_edges/run_runtime_checks.py",
+      "bytes": 1012,
+      "sha256": "b057501e2d3f7513046b6f0efeced3f6b0189530cf10086b4b3424e1f0458fd3"
+    },
+    {
+      "path": "scripts/revision_20261007_edges/verify_integrated_baked_animation.mts",
+      "bytes": 26826,
+      "sha256": "9d7b305c3576b4d58ae8918aecbdd92b3b3b085b9ff37b69d8c7cf72039efbcb"
+    },
+    {
+      "path": "scripts/revision_20261007_edges/verify_integrated_runtime_compatibility.mts",
+      "bytes": 14319,
+      "sha256": "015e572ebcf64c3639175ba47854c03ac825749ac95c2a90d402937dd30593ca"
+    },
+    {
+      "path": "scripts/revision_20261007_edges/write_manifest.py",
+      "bytes": 2620,
+      "sha256": "fe13ecc6f5bd882caae029cb779d7f6bb2d7fea84eba752a72efc1daa7f8fb24"
+    },
+    {
       "path": "scripts/revision_20261007_inset/bake_integrated_candidate.py",
       "bytes": 7539,
       "sha256": "9174a821fc49352cc06448486e83d7b273e8b9d249738ccf20040095002dd042"
@@ -1986,8 +2170,8 @@
     },
     {
       "path": "src/model.test.ts",
-      "bytes": 31986,
-      "sha256": "7d5c1beaef3bb69c9f76e49bbf7e6002524070d992dd67fecaf16b274b165a60"
+      "bytes": 35824,
+      "sha256": "481aefb28c6e2a58c9a5ab0b81097533fbe455ac6bb2430d422e375fe68fe61c"
     },
     {
       "path": "src/modelAssetRevision.test.ts",
@@ -1996,8 +2180,8 @@
     },
     {
       "path": "src/modelAssetRevision.ts",
-      "bytes": 266,
-      "sha256": "13c9bc5293d138288ebf66a2060aaebe150feabd8c22140b8b169a89cd693a6f"
+      "bytes": 281,
+      "sha256": "98562222772f6cff1d3be443edab940023312af5476f5f29661cc520580232db"
     },
     {
       "path": "src/motors.ts",
@@ -2135,6 +2319,11 @@
       "sha256": "2925a15a85f64dc6c0d546c1ba9046a22c86d2d75d59b531d27fc0aeed6e53dc"
     },
     {
+      "path": "tools/rebuild_edge_linkage_revision.py",
+      "bytes": 6610,
+      "sha256": "a1264c9e0f5ea8dad4d3c38209e0e5e988ff2562b4549325efc6f4a4f215c30e"
+    },
+    {
       "path": "tools/rebuild_inset_revision.py",
       "bytes": 14970,
       "sha256": "f18ee3933087b756ad00856e25726e9aa0004c0eb0631aae6279e0688c5ab4d7"
@@ -2148,6 +2337,11 @@
       "path": "tools/rebuild_revision.py",
       "bytes": 7364,
       "sha256": "920159282c974172160f203fbe85d34d5e7162080e756efb5fd68324e17a1ebc"
+    },
+    {
+      "path": "tools/verify_edge_package.py",
+      "bytes": 1031,
+      "sha256": "ce437f925763b92f44c011714cdb93680e59251e867fb6a74b021a42da862017"
     },
     {
       "path": "tools/verify_package.py",
