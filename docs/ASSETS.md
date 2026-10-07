@@ -1,14 +1,14 @@
-# Transwing 资产说明
+# 资产与重建
 
-当前父提交：1797d4b1a0d653f786552116a3e9063148b444de。
+- `assets/blender/xp4.blend`：唯一当前完整可编辑原生模型，未烘焙动画
+- `public/models/xp4.glb`：网页运行压缩模型；当前版本身份记录于同目录manifest
+- `scripts/data/current-model-contract.json`：独立复核的作者源SHA、机构目标、关键精度名单与4,300,000字节预算
+- `scripts/pipeline/`：当前原生基线重烘焙、压缩、完整源/运行身份及运动验证
+- `qa/lib/`、`qa/fixtures/`：仍在使用的回归检查与预期接口契约
+- `assets/blender/nacelle-system-concept*`：当前界面概念模型的可编辑小源与验证源，非历史飞机副本
 
-- 原生作者模型：qa/revision-20261007/candidate-inset-integrated-b-independent-controls-final.blend；SHA256 2f6d6a1a5a616351643233342a1e175b2483aa3785b50185aac104799ac84f4b
-- assets/blender/xp4.blend：39,673,708字节；SHA256 067371eed57fc432824f4a2f89b1be41110613a421e591810169e0d2a8ec5909
-- assets/blender/xp4-source.glb：11,082,648字节；SHA256 36dadf42ebbffbb81869ee8ddaecc69827dcaab0efdeee31cb87bb1fb6e1db2e
-- public/models/xp4.glb：4,094,144字节；SHA256 02970bbcc56ef8574643c12962b53917f52ca3d42eaab974660c080fd41ec250；dist中的模型逐字节相同
+`build/`和`dist/`均可重新生成，不纳入Git。默认不落盘重复烘焙Blend；未压缩GLB及大验收报告只存于`build/model/`。源运行逐值动画比较使用`npm run test:pipeline`，因此普通应用单测不要求先安装Blender。
 
-运行体含285个网格所有者、352节点、287渲染primitive和357,418个三角形；177个关键所有者保持源Float32几何和机构变换。上一版运行体4,035,036字节，本轮增加59,108字节，既有预算上限4,200,000字节。
+基线迁移明确放弃“当前checkout可由历史276原始输入重新构造”的承诺，换为“当前完整可编辑原生模型可再次烘焙/导出”。历史构造脚本、旧输入、原始验收证据保留在完整归档《Transwing-独立舵面完整工程.zip》（39,298,315字节，在用户Library中保留）。正常Git历史也未改写。
 
-当前输入锁为REVISION_CONTROLS_CONSTRUCTION_INPUTS.json。旧171项构造输入逐字节保留，上一版局部几何配方仍完整存在。当前模型测试的父提交期望已更新，历史锁不应被解释为当前应用源文件全部不可变。
-
-assets/baseline-20261007/xp4.blend是冻结初始几何输入；assets/baseline-v25-20261007/xp4-runtime.glb仅作历史量化比较。当前成品不作为全链构造输入。旧修订编号用于技术追溯，不代表页面标题。
+旧模型输出不作为新管线的几何输入；唯一几何输入是明确标注的当前native。预期机构与精度政策由独立契约固定，不能从被测输出自动反推来制造通过。

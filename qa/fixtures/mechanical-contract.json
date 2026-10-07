@@ -1,0 +1,543 @@
+{
+  "_scope": "Retained expected interface/mechanical assertions only. Historical certificates are provenance, not current geometry acceptance.",
+  "version": 24,
+  "jointRefinements": {
+    "version": 20,
+    "changedNodes": [
+      "ActuatorSideSlot_L",
+      "ActuatorSideSlot_R",
+      "BraceBallPin_L_Body",
+      "BraceBallPin_L_Wing",
+      "Blade_hinge_pin_L_Front_A",
+      "Blade_hinge_pin_L_Front_B",
+      "Blade_hinge_pin_L_Rear_A",
+      "Blade_hinge_pin_L_Rear_B",
+      "BraceBallPin_R_Body",
+      "BraceBallPin_R_Wing",
+      "Blade_hinge_pin_R_Front_A",
+      "Blade_hinge_pin_R_Front_B",
+      "Blade_hinge_pin_R_Rear_A",
+      "Blade_hinge_pin_R_Rear_B"
+    ],
+    "newCollisionExemptions": [],
+    "slotCovers": [
+      {
+        "node": "ActuatorSideSlot_L",
+        "volumeAfter": 0.0005578412837061603,
+        "volumeBefore": 0.0006310647530385188,
+        "originalRefinementMethodPreserved": true,
+        "radialSetback": 0.002
+      },
+      {
+        "node": "ActuatorSideSlot_R",
+        "volumeAfter": 0.0005578412837061641,
+        "volumeBefore": 0.0006310647530385206,
+        "originalRefinementMethodPreserved": true,
+        "radialSetback": 0.002
+      }
+    ],
+    "recessedPins": [
+      {
+        "node": "BraceBallPin_L_Body",
+        "transformPreserved": true,
+        "volume": 3.1511369929463375e-06
+      },
+      {
+        "node": "BraceBallPin_L_Wing",
+        "transformPreserved": true,
+        "volume": 2.725886913019136e-06
+      },
+      {
+        "node": "Blade_hinge_pin_L_Front_A",
+        "transformPreserved": true,
+        "volume": 1.0946834643747538e-05
+      },
+      {
+        "node": "Blade_hinge_pin_L_Front_B",
+        "transformPreserved": true,
+        "volume": 1.0946834643747535e-05
+      },
+      {
+        "node": "Blade_hinge_pin_L_Rear_A",
+        "transformPreserved": true,
+        "volume": 1.0946834643747538e-05
+      },
+      {
+        "node": "Blade_hinge_pin_L_Rear_B",
+        "transformPreserved": true,
+        "volume": 1.0946834643747535e-05
+      },
+      {
+        "node": "BraceBallPin_R_Body",
+        "transformPreserved": true,
+        "volume": 3.151136993704426e-06
+      },
+      {
+        "node": "BraceBallPin_R_Wing",
+        "transformPreserved": true,
+        "volume": 2.725886912837227e-06
+      },
+      {
+        "node": "Blade_hinge_pin_R_Front_A",
+        "transformPreserved": true,
+        "volume": 1.0946834643747538e-05
+      },
+      {
+        "node": "Blade_hinge_pin_R_Front_B",
+        "transformPreserved": true,
+        "volume": 1.0946834643747535e-05
+      },
+      {
+        "node": "Blade_hinge_pin_R_Rear_A",
+        "transformPreserved": true,
+        "volume": 1.0946834643747538e-05
+      },
+      {
+        "node": "Blade_hinge_pin_R_Rear_B",
+        "transformPreserved": true,
+        "volume": 1.0946834643747535e-05
+      }
+    ]
+  },
+  "hingeSupports": {
+    "newNodes": [
+      "RootBearingHousing_L",
+      "RootBearingHousing_R",
+      "CargoHingeFixedSeat",
+      "CargoHingeMovingSeat_L",
+      "CargoHingeMovingSeat_R",
+      "CargoHingePin",
+      "CargoHingeCap_L",
+      "CargoHingeCap_R"
+    ],
+    "fixedAttachmentInterfaces": [
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {}
+    ],
+    "rotatingSupportInterfaces": [
+      {
+        "boreRadius": 0.0051,
+        "shaftRadius": 0.0045
+      },
+      {
+        "boreRadius": 0.0051,
+        "shaftRadius": 0.0045
+      }
+    ]
+  },
+  "controlSupports": {
+    "newNodes": [
+      "ControlHingeFixed_L_Inboard",
+      "ControlHingeMoving_L_Inboard",
+      "ControlHingeFixed_L_Outboard",
+      "ControlHingeMoving_L_Outboard",
+      "ControlHingeFixed_Tail_L",
+      "ControlHingeMoving_Tail_L",
+      "ControlHingeFixed_R_Inboard",
+      "ControlHingeMoving_R_Inboard",
+      "ControlHingeFixed_R_Outboard",
+      "ControlHingeMoving_R_Outboard",
+      "ControlHingeFixed_Tail_R",
+      "ControlHingeMoving_Tail_R"
+    ],
+    "fixedAttachmentInterfaces": [
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {}
+    ],
+    "rotatingSupportInterfaces": [
+      {
+        "key": "L_Inboard",
+        "boreRadius": 0.0014,
+        "shaftRadius": 0.0012
+      },
+      {
+        "key": "L_Inboard",
+        "boreRadius": 0.0014,
+        "shaftRadius": 0.0012
+      },
+      {
+        "key": "L_Outboard",
+        "boreRadius": 0.0014,
+        "shaftRadius": 0.0012
+      },
+      {
+        "key": "L_Outboard",
+        "boreRadius": 0.0014,
+        "shaftRadius": 0.0012
+      },
+      {
+        "key": "Tail_L",
+        "boreRadius": 0.0014,
+        "shaftRadius": 0.0012
+      },
+      {
+        "key": "Tail_L",
+        "boreRadius": 0.0014,
+        "shaftRadius": 0.0012
+      },
+      {
+        "key": "R_Inboard",
+        "boreRadius": 0.0014,
+        "shaftRadius": 0.0012
+      },
+      {
+        "key": "R_Inboard",
+        "boreRadius": 0.0014,
+        "shaftRadius": 0.0012
+      },
+      {
+        "key": "R_Outboard",
+        "boreRadius": 0.0014,
+        "shaftRadius": 0.0012
+      },
+      {
+        "key": "R_Outboard",
+        "boreRadius": 0.0014,
+        "shaftRadius": 0.0012
+      },
+      {
+        "key": "Tail_R",
+        "boreRadius": 0.0014,
+        "shaftRadius": 0.0012
+      },
+      {
+        "key": "Tail_R",
+        "boreRadius": 0.0014,
+        "shaftRadius": 0.0012
+      }
+    ]
+  },
+  "surfaceSupports": {
+    "changedNodes": [
+      "ControlHorn_L_Inboard",
+      "ControlHorn_L_Outboard",
+      "ControlHorn_R_Inboard",
+      "ControlHorn_R_Outboard",
+      "CargoLatchFixed_L",
+      "CargoLatchMoving_L",
+      "CargoLatchFixed_R",
+      "CargoLatchMoving_R",
+      "Dorsal_antenna",
+      "Landing_wear_tip_L_Front",
+      "Pod_wing_saddle_L_Front",
+      "Landing_wear_tip_L_Rear",
+      "Pod_wing_saddle_L_Rear",
+      "Landing_wear_tip_R_Front",
+      "Pod_wing_saddle_R_Front",
+      "Landing_wear_tip_R_Rear",
+      "Pod_wing_saddle_R_Rear",
+      "Dorsal_hatch_main",
+      "Lower_fuselage_join.001",
+      "Lower_fuselage_join.003",
+      "Pitot_probe_mount"
+    ],
+    "finiteContactPairs": [
+      {
+        "strictInteriorSamples": 8
+      },
+      {
+        "strictInteriorSamples": 8
+      },
+      {
+        "strictInteriorSamples": 8
+      },
+      {
+        "strictInteriorSamples": 8
+      },
+      {
+        "strictInteriorSamples": 108
+      },
+      {
+        "strictInteriorSamples": 118
+      },
+      {
+        "strictInteriorSamples": 128
+      },
+      {
+        "strictInteriorSamples": 108
+      },
+      {
+        "strictInteriorSamples": 111
+      },
+      {
+        "strictInteriorSamples": 128
+      },
+      {
+        "strictInteriorSamples": 24
+      },
+      {
+        "strictInteriorSamples": 686
+      },
+      {
+        "strictInteriorSamples": 462
+      },
+      {
+        "strictInteriorSamples": 687
+      },
+      {
+        "strictInteriorSamples": 462
+      },
+      {
+        "strictInteriorSamples": 685
+      },
+      {
+        "strictInteriorSamples": 462
+      },
+      {
+        "strictInteriorSamples": 687
+      },
+      {
+        "strictInteriorSamples": 462
+      },
+      {
+        "strictInteriorSamples": 480
+      },
+      {
+        "strictInteriorSamples": 17
+      },
+      {
+        "strictInteriorSamples": 28
+      },
+      {
+        "strictInteriorSamples": 288
+      }
+    ]
+  },
+  "internalDrive": {
+    "cavity": {
+      "blenderYRange": [
+        0.2,
+        2.055
+      ]
+    }
+  },
+  "surfaceFinishV22": {
+    "rows": [
+      {
+        "node": "Fixed_root_blue_L",
+        "positionsUnchanged": true,
+        "topologyUnchanged": true
+      },
+      {
+        "node": "Wing_blue_leading_L",
+        "positionsUnchanged": true,
+        "topologyUnchanged": true
+      },
+      {
+        "node": "Fixed_root_blue_R",
+        "positionsUnchanged": true,
+        "topologyUnchanged": true
+      },
+      {
+        "node": "Wing_blue_leading_R",
+        "positionsUnchanged": true,
+        "topologyUnchanged": true
+      }
+    ]
+  },
+  "wingSeamRefinement": {
+    "version": 24,
+    "axialGap": 0.006,
+    "hardwareHalfGapPreserved": 0.012,
+    "fairingSeamPreserved": 0.003
+  },
+  "rootInterface": {
+    "axisHalfGap": 0.003,
+    "geometryContract": "layeredWingJoint"
+  },
+  "mechanism": {
+    "rootClearance": 0.006
+  },
+  "fairingRefinements": {
+    "nominalWallThickness": 0.0025
+  },
+  "layeredWingJoint": {
+    "independentFinalGeometryGateRequired": true,
+    "schema": "transwing.annotated-root-interface.segmented-tail-v7d.v1",
+    "phase": "repair-trim-required-closing-complete"
+  },
+  "surfaceRefinements": {
+    "root": {
+      "mechanismAxesUnchanged": false
+    }
+  },
+  "nativeAnnotatedStaging": {
+    "rebase": {
+      "sides": [
+        {
+          "directSubtrees": [
+            "BraceBall_L_Wing",
+            "BraceBallPin_L_Wing",
+            "BraceWing_L",
+            "Composite_wing_L",
+            "ControlAxisEnd_L_Inboard",
+            "ControlAxisEnd_L_Outboard",
+            "ControlAxisStart_L_Inboard",
+            "ControlAxisStart_L_Outboard",
+            "ControlFlexureFixed_L_Inboard",
+            "ControlFlexureFixed_L_Outboard",
+            "ControlPivot_L_Inboard",
+            "ControlPivot_L_Outboard",
+            "Cowl_boundary_L_Front",
+            "Cowl_boundary_L_Rear",
+            "Landing_wear_tip_L_Front",
+            "Landing_wear_tip_L_Rear",
+            "Motor_cowl_L_Front",
+            "Motor_cowl_L_Rear",
+            "Motor_spindle_L_Front",
+            "Motor_spindle_L_Rear",
+            "MotorAxisEnd_L_Front",
+            "MotorAxisEnd_L_Rear",
+            "MotorAxisStart_L_Front",
+            "MotorAxisStart_L_Rear",
+            "MotorFrontBearing_L_Front",
+            "MotorFrontBearing_L_Rear",
+            "Nacelle_L_Front",
+            "Nacelle_L_Rear",
+            "Pod_mount_seam_L_Front",
+            "Pod_mount_seam_L_Front.001",
+            "Pod_mount_seam_L_Rear",
+            "Pod_mount_seam_L_Rear.001",
+            "Pod_U_access_panel_L_Front",
+            "Pod_U_access_panel_L_Front.001",
+            "Pod_U_access_panel_L_Rear",
+            "Pod_U_access_panel_L_Rear.001",
+            "Pod_wing_saddle_L_Front",
+            "Pod_wing_saddle_L_Rear",
+            "Prop_L_Front",
+            "Prop_L_Rear",
+            "Wing_blue_angular_panel_L",
+            "Wing_blue_leading_L",
+            "Wing_service_panel_L",
+            "Wing_service_panel_L.001"
+          ]
+        },
+        {
+          "directSubtrees": [
+            "BraceBall_R_Wing",
+            "BraceBallPin_R_Wing",
+            "BraceWing_R",
+            "Composite_wing_R",
+            "ControlAxisEnd_R_Inboard",
+            "ControlAxisEnd_R_Outboard",
+            "ControlAxisStart_R_Inboard",
+            "ControlAxisStart_R_Outboard",
+            "ControlFlexureFixed_R_Inboard",
+            "ControlFlexureFixed_R_Outboard",
+            "ControlPivot_R_Inboard",
+            "ControlPivot_R_Outboard",
+            "Cowl_boundary_R_Front",
+            "Cowl_boundary_R_Rear",
+            "Landing_wear_tip_R_Front",
+            "Landing_wear_tip_R_Rear",
+            "Motor_cowl_R_Front",
+            "Motor_cowl_R_Rear",
+            "Motor_spindle_R_Front",
+            "Motor_spindle_R_Rear",
+            "MotorAxisEnd_R_Front",
+            "MotorAxisEnd_R_Rear",
+            "MotorAxisStart_R_Front",
+            "MotorAxisStart_R_Rear",
+            "MotorFrontBearing_R_Front",
+            "MotorFrontBearing_R_Rear",
+            "Nacelle_R_Front",
+            "Nacelle_R_Rear",
+            "Pod_mount_seam_R_Front",
+            "Pod_mount_seam_R_Front.001",
+            "Pod_mount_seam_R_Rear",
+            "Pod_mount_seam_R_Rear.001",
+            "Pod_U_access_panel_R_Front",
+            "Pod_U_access_panel_R_Front.001",
+            "Pod_U_access_panel_R_Rear",
+            "Pod_U_access_panel_R_Rear.001",
+            "Pod_wing_saddle_R_Front",
+            "Pod_wing_saddle_R_Rear",
+            "Prop_R_Front",
+            "Prop_R_Rear",
+            "Wing_blue_angular_panel_R",
+            "Wing_blue_leading_R",
+            "Wing_service_panel_R",
+            "Wing_service_panel_R.001"
+          ]
+        }
+      ]
+    }
+  },
+  "wingSeamTopology": {
+    "version": 24,
+    "parts": [
+      {
+        "node": "Fixed_root_L",
+        "nonManifoldEdges": 0,
+        "zeroAreaFaces": 0,
+        "volume": 0.030689529573868453
+      },
+      {
+        "node": "Composite_wing_L",
+        "nonManifoldEdges": 0,
+        "zeroAreaFaces": 0,
+        "volume": 0.1658644114598913
+      },
+      {
+        "node": "Fixed_root_R",
+        "nonManifoldEdges": 0,
+        "zeroAreaFaces": 0,
+        "volume": 0.030689529579286976
+      },
+      {
+        "node": "Composite_wing_R",
+        "nonManifoldEdges": 0,
+        "zeroAreaFaces": 0,
+        "volume": 0.16586411942283097
+      }
+    ]
+  }
+}

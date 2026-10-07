@@ -32,6 +32,11 @@ import {
 } from "./internalDriveInspection";
 import { SCENE_LIGHTING, SCENE_TONE_MAPPING_EXPOSURE } from "./sceneLighting";
 import {
+  AIRCRAFT_SHADOW,
+  aircraftShadowRadius,
+  updateAircraftShadow,
+} from "./sceneShadows";
+import {
   CAMERA_NAVIGATION,
   CAMERA_CLIP_DEFAULTS,
   syncCameraDepthRange,
@@ -112,6 +117,10 @@ function Model({
         o.material = Array.isArray(o.material)
           ? o.material.map((m) => m.clone())
           : o.material.clone();
+        for (const material of Array.isArray(o.material)
+          ? o.material
+          : [o.material])
+          material.dithering = true;
         o.castShadow = true;
         o.receiveShadow = true;
       }
@@ -356,12 +365,70 @@ function ConceptSystems({
   useLayoutEffect(() => onBounds(bounds), [bounds, onBounds]);
   return <primitive object={clone} />;
 }
+function AircraftSun({
+  runtime,
+  lowQuality,
+  lighting,
+  measurements,
+  detailView,
+}: {
+  runtime: SimulationRuntime;
+  lowQuality: boolean;
+  lighting: (typeof SCENE_LIGHTING)["hangar"];
+  measurements: ReturnType<typeof measureModelRig>;
+  detailView: DetailView | null;
+}) {
+  const light = useRef<THREE.DirectionalLight>(null);
+  const target = useMemo(() => new THREE.Object3D(), []);
+  const anchor = useMemo(() => new THREE.Vector3(), []);
+  const radius = useMemo(() => {
+    const bounds = measurements.bounds.clone();
+    for (const detail of Object.values(measurements.detailBounds))
+      bounds.union(detail);
+    return aircraftShadowRadius(bounds, measurements.groundOffset);
+  }, [measurements]);
+  const update = () => {
+    if (!light.current) return;
+    const pose = runtime.getRenderSample().state;
+    anchor.fromArray(pose.positionM);
+    anchor.y +=
+      measurements.groundOffset +
+      (detailView === "cargo" ? measurements.detailLift : 0);
+    updateAircraftShadow(
+      light.current,
+      lighting.sun.position,
+      anchor,
+      radius,
+      pose.display.exploded,
+    );
+  };
+  useLayoutEffect(update);
+  useFrame(update);
+  return (
+    <>
+      <primitive object={target} />
+      <directionalLight
+        ref={light}
+        {...lighting.sun}
+        target={target}
+        castShadow={!lowQuality}
+        shadow-mapSize={[AIRCRAFT_SHADOW.mapSize, AIRCRAFT_SHADOW.mapSize]}
+      />
+    </>
+  );
+}
 function Ground({
   environment,
   lowQuality,
+  runtime,
+  measurements,
+  detailView,
 }: {
   environment: "hangar" | "sky";
   lowQuality: boolean;
+  runtime: SimulationRuntime;
+  measurements: ReturnType<typeof measureModelRig>;
+  detailView: DetailView | null;
 }) {
   const sky = environment === "sky";
   const lighting = SCENE_LIGHTING[environment];
@@ -372,14 +439,12 @@ function Ground({
       <fog attach="fog" args={[lighting.background, 30, 78]} />
       <ambientLight intensity={lighting.ambient} />
       <hemisphereLight {...lighting.hemisphere} />
-      <directionalLight
-        {...lighting.sun}
-        castShadow={!lowQuality}
-        shadow-mapSize={[1024, 1024]}
-        shadow-camera-left={-15}
-        shadow-camera-right={15}
-        shadow-camera-top={15}
-        shadow-camera-bottom={-15}
+      <AircraftSun
+        runtime={runtime}
+        lowQuality={lowQuality}
+        lighting={lighting}
+        measurements={measurements}
+        detailView={detailView}
       />
       <pointLight {...lighting.coolFill} />
       <pointLight {...lighting.warmFill} />
@@ -788,6 +853,9 @@ export default function Scene(props: SceneProps) {
       <Ground
         environment={props.runtime.getSnapshot().state.display.environment}
         lowQuality={props.lowQuality}
+        runtime={props.runtime}
+        measurements={measurements}
+        detailView={props.detailView}
       />
       <Suspense
         fallback={

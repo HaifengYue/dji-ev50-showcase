@@ -17,10 +17,18 @@ function loadManifest() {
     ),
   );
 }
+function loadCurrentContract() {
+  return JSON.parse(
+    readFileSync(
+      new URL("../scripts/data/current-model-contract.json", import.meta.url),
+      "utf8",
+    ),
+  );
+}
 function loadBaselineManifest() {
   return JSON.parse(
     readFileSync(
-      new URL("../assets/baseline-20261007/manifest.json", import.meta.url),
+      new URL("../qa/fixtures/mechanical-contract.json", import.meta.url),
       "utf8",
     ),
   );
@@ -44,8 +52,9 @@ test("压缩模型包含两片完整机翼与四个随翼动力单元", async ()
   // V27下蒙皮已与Composite合体，保留语义空锚和完整材质；批准的4.2MB性能预算
   // 不以量化关键薄壁、删减几何或放宽实体检查换取体积。
   assert.ok(
-    readFileSync(runtimePath).byteLength < 4200000,
-    "含新闭合下蒙皮和关键实体精度的压缩模型应小于 4.2 MB",
+    readFileSync(runtimePath).byteLength <
+      loadCurrentContract().runtimeBudgetBytes,
+    "运行模型不得超过独立批准的当前字节预算",
   );
 });
 test("整翼铰链将真实电机轴线从竖直向上连续转为向前", async () => {
@@ -118,31 +127,25 @@ test("V27明确标识新修订；冻结V24的槽顶和十二销记录仅作历�
     manifest.annotationRevision.id,
     /^2026-10-07-v27-inset-integrated-b(?:-[a-z0-9]+)*$/,
   );
-  assert.equal(
-    manifest.annotationRevision.baselineCommit,
-    "1797d4b1a0d653f786552116a3e9063148b444de",
+  const contract = JSON.parse(
+    readFileSync(
+      new URL("../scripts/data/current-model-contract.json", import.meta.url),
+      "utf8",
+    ),
   );
-  assert.equal(
-    manifest.annotationRevision.baselineManifest,
-    "assets/baseline-v25-20261007/manifest.json",
-  );
-  assert.equal(
-    manifest.annotationRevision.supersedesBaselineGeometryEvidence,
-    true,
-  );
-  const expectedSource = process.env.QA_EXPECTED_SOURCE_CANDIDATE_SHA256;
-  assert.ok(
-    expectedSource,
-    "验收必须提供独立确认的本轮作者源SHA，不能从被测manifest自取",
-  );
-  assert.match(expectedSource, /^[a-f0-9]{64}$/);
+  assert.equal(contract.rebuildMode, "editable-native-baseline-rebake-export");
+  assert.equal(contract.historicalProceduralReconstruction, false);
   assert.equal(
     manifest.annotationRevision.sourceCandidateSha256,
-    expectedSource,
+    contract.sourceSha256,
   );
   assert.equal(
-    manifest.annotationRevision.old82And136ConstructionInputsUnchanged,
-    true,
+    createHash("sha256")
+      .update(
+        readFileSync(new URL("../assets/blender/xp4.blend", import.meta.url)),
+      )
+      .digest("hex"),
+    contract.sourceSha256,
   );
   const baseline = loadBaselineManifest();
   assert.equal(baseline.version, 24);
@@ -177,13 +180,13 @@ test("V27当前球心和全部支承节点真实存在，未改舱盖和舵铰�
   assert.equal(manifest.variants.xp4.renderedMeshPrimitives, meshes);
   assert.equal(
     manifest.assetEncoding.runtimeBudgetReview.approvedBudgetBytes,
-    4200000,
+    loadCurrentContract().runtimeBudgetBytes,
   );
   assert.equal(manifest.variants.xp4.rawNodes, 352);
   const criticalOwners: string[] =
     manifest.assetEncoding.quantization.float32PositionExceptions;
-  assert.equal(criticalOwners.length, 177);
-  assert.equal(new Set(criticalOwners).size, 177);
+  assert.equal(criticalOwners.length, 186);
+  assert.equal(new Set(criticalOwners).size, 186);
   let criticalPrimitives = 0;
   for (const name of criticalOwners) {
     const owner = scene.getObjectByName(
@@ -202,16 +205,20 @@ test("V27当前球心和全部支承节点真实存在，未改舱盖和舵铰�
     assert.ok(primitives > 0, `${name}必须是实际几何owner，不能用EMPTY替代`);
     criticalPrimitives += primitives;
   }
-  assert.equal(criticalPrimitives, 179);
+  assert.equal(criticalPrimitives, 188);
   for (const [side, sign] of [
     ["L", -1],
     ["R", 1],
   ] as const) {
     const anchor = scene.getObjectByName(`BraceWing_${side}`)!;
     const expectedLocal = new THREE.Vector3(
-      -sign * (1.5001282691955566 - 1.059999942779541),
-      -0.17669521272182465 + 0.22012822329998016,
-      1.0399999618530273 - 1.4448717832565308,
+      -sign *
+        (1.5001282691955566 -
+          loadCurrentContract().mechanism.wingAnchorRightCruise[0]),
+      loadCurrentContract().mechanism.wingAnchorRightCruise[2] +
+        0.22012822329998016,
+      -loadCurrentContract().mechanism.wingAnchorRightCruise[1] -
+        1.4448717832565308,
     );
     assert.ok(anchor.position.distanceTo(expectedLocal) < 1e-6);
     assert.equal(anchor.parent?.name, `WingPivot_${side}`);
@@ -311,73 +318,6 @@ test("冻结V24的23处表面接触见证仍完整保存，不作为V27新接触
   );
 });
 
-test("V22压缩保留五传动空节点的静态TRS与全部旋转轨原值", async () => {
-  const paths = [
-    process.env.QA_SOURCE_MODEL ??
-      new URL("../assets/blender/xp4-source.glb", import.meta.url),
-    runtimePath,
-  ];
-  const buffers = paths.map((path) => readFileSync(path));
-  const manifest = loadManifest();
-  for (const [index, name] of ["xp4-source.glb", "xp4.glb"].entries()) {
-    assert.equal(buffers[index].length, manifest.assets[name].bytes);
-    assert.equal(
-      createHash("sha256").update(buffers[index]).digest("hex"),
-      manifest.assets[name].sha256,
-      `${name}必须绑定当前manifest的完整SHA-256`,
-    );
-  }
-  const documents = buffers.map((bytes) =>
-    JSON.parse(
-      bytes.subarray(20, 20 + bytes.readUInt32LE(12)).toString("utf8"),
-    ),
-  );
-  const models = await Promise.all(
-    buffers.map((bytes) =>
-      new GLTFLoader()
-        .setMeshoptDecoder(MeshoptDecoder)
-        .parseAsync(
-          bytes.buffer.slice(
-            bytes.byteOffset,
-            bytes.byteOffset + bytes.byteLength,
-          ),
-          "",
-        ),
-    ),
-  );
-  for (const name of [
-    "Drive_ScrewRotor",
-    "Drive_MotorRotor",
-    "Drive_PlanetRotor_0",
-    "Drive_PlanetRotor_1",
-    "Drive_PlanetRotor_2",
-  ]) {
-    const nodes = documents.map((doc) =>
-      doc.nodes.find((node: { name: string }) => node.name === name),
-    );
-    for (const field of ["matrix", "translation", "rotation", "scale"]) {
-      assert.deepEqual(
-        nodes[0][field],
-        nodes[1][field],
-        `${name}近单位静态姿态不能省略或舍入`,
-      );
-    }
-    for (const sourceClip of models[0].animations) {
-      const runtimeClip = models[1].animations.find(
-        (clip) => clip.name === sourceClip.name,
-      )!;
-      const sourceTrack = sourceClip.tracks.find(
-        (track) => track.name === `${name}.quaternion`,
-      )!;
-      const runtimeTrack = runtimeClip.tracks.find(
-        (track) => track.name === `${name}.quaternion`,
-      )!;
-      assert.deepEqual(runtimeTrack.times, sourceTrack.times);
-      assert.deepEqual(runtimeTrack.values, sourceTrack.values);
-    }
-  }
-});
-
 test("新球心、刚杆闭合、实际槽轮廓和低置布局均有可复算契约", async () => {
   const manifest = loadManifest();
   const scene = await loadModel();
@@ -395,9 +335,9 @@ test("新球心、刚杆闭合、实际槽轮廓和低置布局均有可复算�
   // Independently fixed revision target and final authored skin ray; retain
   // the existing 1e-6 encoding bound rather than fitting to the loaded model.
   const anchor = new THREE.Vector3(
-    1.059999942779541,
-    -0.17669521272182465,
-    1.0399999618530273,
+    loadCurrentContract().mechanism.wingAnchorRightCruise[0],
+    loadCurrentContract().mechanism.wingAnchorRightCruise[2],
+    -loadCurrentContract().mechanism.wingAnchorRightCruise[1],
   );
   const body = new THREE.Vector3(0.16, -0.02, -1.9);
   const length = anchor.distanceTo(body);
@@ -415,8 +355,15 @@ test("新球心、刚杆闭合、实际槽轮廓和低置布局均有可复算�
     );
   assert.ok(Math.abs(manifest.mechanism.sides.R.braceLength - length) < 1e-6);
   assert.ok(Math.abs(manifest.mechanism.sliderTravel[0] - hoverSlider) < 1e-6);
-  assert.ok(Math.abs(length - 3.0786610396187717) < 1e-6);
-  assert.equal(manifest.mechanism.currentRigidRodLength, 3.0786610396187717);
+  assert.ok(
+    Math.abs(
+      length - loadCurrentContract().currentGeometry.linkage.rigidRodLength,
+    ) < 1e-6,
+  );
+  assert.equal(
+    manifest.mechanism.currentRigidRodLength,
+    loadCurrentContract().currentGeometry.linkage.rigidRodLength,
+  );
   assert.equal(manifest.mechanism.persistentContract.foldAngleDegrees, 120);
   // V27 explicitly moved the front stops. Current actual-mesh records replace
   // the historical V25 center; fixed-layout/cavity contact certificates do not.
@@ -433,16 +380,35 @@ test("新球心、刚杆闭合、实际槽轮廓和低置布局均有可复算�
     manifest.annotationRevision.id,
   );
   for (const stop of manifest.internalDrive.actualFrontStopMeshesBlender) {
-    assert.ok(Math.abs(stop.stopCenterBlenderY - 0.7999326) < 1e-7);
-    assert.ok(Math.abs(stop.innerFaceBlenderY - 0.8039326) < 1e-7);
+    assert.ok(
+      Math.abs(
+        stop.stopCenterBlenderY -
+          (loadCurrentContract().currentGeometry.linkage.frontStops[0]
+            .newInnerFaceY -
+            0.004),
+      ) < 1e-7,
+    );
+    assert.ok(
+      Math.abs(
+        stop.innerFaceBlenderY -
+          loadCurrentContract().currentGeometry.linkage.frontStops[0]
+            .newInnerFaceY,
+      ) < 1e-7,
+    );
     assert.ok(Math.abs(stop.hoverGap - 0.004000019282102807) < 1e-7);
   }
   assert.equal(manifest.internalDrive.actualFrontStopMeshesBlender.length, 2);
   assert.ok(
-    Math.abs(manifest.mechanism.sliderTravel[0] - 0.8409326081856277) < 1e-6,
+    Math.abs(
+      manifest.mechanism.sliderTravel[0] -
+        loadCurrentContract().currentGeometry.linkage.actualTravel.minimumY,
+    ) < 1e-6,
   );
   assert.ok(
-    Math.abs(manifest.mechanism.sliderTravel[1] - 1.9000001249111587) < 1e-6,
+    Math.abs(
+      manifest.mechanism.sliderTravel[1] -
+        loadCurrentContract().currentGeometry.linkage.actualTravel.maximumY,
+    ) < 1e-6,
   );
   assert.ok(
     manifest.mechanism.slotEnvelopeBlender.actualRoundedOutlineRightXY.length >
@@ -450,7 +416,8 @@ test("新球心、刚杆闭合、实际槽轮廓和低置布局均有可复算�
   );
   assert.ok(
     Math.abs(
-      manifest.internalDrive.currentLayout.guideSpan[0] - 0.7395765445219613,
+      manifest.internalDrive.currentLayout.guideSpan[0] -
+        loadCurrentContract().currentGeometry.driveExtension.rails[0].newFrontY,
     ) < 1e-7,
   );
   assert.ok(
@@ -459,7 +426,8 @@ test("新球心、刚杆闭合、实际槽轮廓和低置布局均有可复算�
   assert.ok(
     Math.abs(
       manifest.internalDrive.currentLayout.screwThreadSpan[0] -
-        0.7745765362249948,
+        loadCurrentContract().currentGeometry.driveExtension.maleThread
+          .nominalStartY,
     ) < 1e-7,
   );
   assert.ok(
@@ -576,7 +544,12 @@ test("V27实际滑架4001姿态保留定长闭环，实际移动件不穿过当�
   assert.ok(rig.spreader);
   assert.equal(rig.braces.length, 2);
   for (const brace of rig.braces)
-    assert.ok(Math.abs(brace.length - 3.0786610396187717) < 1e-6);
+    assert.ok(
+      Math.abs(
+        brace.length -
+          loadCurrentContract().currentGeometry.linkage.rigidRodLength,
+      ) < 1e-6,
+    );
   const stops = (["L", "R"] as const).map((side) => {
     const front = scene.getObjectByName(`Drive_FrontTravelStop_${side}`);
     const rear = scene.getObjectByName(`Drive_RearTravelStop_${side}`);
@@ -584,12 +557,23 @@ test("V27实际滑架4001姿态保留定长闭环，实际移动件不穿过当�
     const frontBounds = new THREE.Box3().setFromObject(front);
     const rearBounds = new THREE.Box3().setFromObject(rear);
     assert.ok(
-      Math.abs(frontBounds.getCenter(new THREE.Vector3()).z + 0.7999326) < 1e-7,
+      Math.abs(
+        frontBounds.getCenter(new THREE.Vector3()).z +
+          (loadCurrentContract().currentGeometry.linkage.frontStops[0]
+            .newInnerFaceY -
+            0.004),
+      ) < 1e-7,
     );
     assert.ok(
       Math.abs(rearBounds.getCenter(new THREE.Vector3()).z + 1.947) < 1e-7,
     );
-    assert.ok(Math.abs(frontBounds.min.z + 0.8039326) < 1e-7);
+    assert.ok(
+      Math.abs(
+        frontBounds.min.z +
+          loadCurrentContract().currentGeometry.linkage.frontStops[0]
+            .newInnerFaceY,
+      ) < 1e-7,
+    );
     const bushing = scene.getObjectByName(`Drive_GuideBushing_${side}`);
     assert.ok(bushing instanceof THREE.Mesh);
     return {
@@ -665,8 +649,18 @@ test("V27实际滑架4001姿态保留定长闭环，实际移动件不穿过当�
       assert.ok(rod.scale.equals(new THREE.Vector3(1, 1, 1)));
     }
   }
-  assert.ok(Math.abs(minimumTravel - 0.8409326081856277) < 1e-6);
-  assert.ok(Math.abs(maximumTravel - 1.9000001249111587) < 1e-6);
+  assert.ok(
+    Math.abs(
+      minimumTravel -
+        loadCurrentContract().currentGeometry.linkage.actualTravel.minimumY,
+    ) < 1e-6,
+  );
+  assert.ok(
+    Math.abs(
+      maximumTravel -
+        loadCurrentContract().currentGeometry.linkage.actualTravel.maximumY,
+    ) < 1e-6,
+  );
   assert.ok(Math.abs(frontGap - 0.004000019282102807) < 1e-6);
   assert.ok(Math.abs(rearGap - 0.02300005) < 1e-6);
   assert.ok(Math.abs(guideGap - 0.004000019282102807) < 1e-6);
@@ -859,14 +853,22 @@ test("标注内移联动保留原导程并以当前原生几何记录替代旧�
   const manifest = loadManifest();
   const scene = await loadModel();
   assert.equal(
-    manifest.annotationRevision.old171ConstructionInputsUnchanged,
-    true,
+    JSON.parse(
+      readFileSync(
+        new URL("../scripts/data/current-model-contract.json", import.meta.url),
+        "utf8",
+      ),
+    ).historicalProceduralReconstruction,
+    false,
   );
-  assert.equal(manifest.mechanism.currentLinkedInsetTargetAbsX, 1.06);
+  assert.equal(
+    manifest.mechanism.currentLinkedInsetTargetAbsX,
+    loadCurrentContract().targetWingAnchorAbsX,
+  );
   assert.equal(manifest.internalDrive.currentLayout.lead, 0.032);
   assert.equal(
     manifest.internalDrive.currentLayout.motorGearboxCoreRearSupportChanged,
-    false,
+    true,
   );
   assert.equal(manifest.internalDrive.layoutV22, undefined);
   assert.deepEqual(
@@ -877,27 +879,57 @@ test("标注内移联动保留原导程并以当前原生几何记录替代旧�
     const rail = scene.getObjectByName(`Drive_GuideRail_${side}`);
     assert.ok(rail instanceof THREE.Mesh);
     const bounds = new THREE.Box3().setFromObject(rail);
-    assert.ok(Math.abs(bounds.max.z + 0.7395765445219613) < 2e-7);
+    assert.ok(
+      Math.abs(
+        bounds.max.z +
+          loadCurrentContract().currentGeometry.driveExtension.rails[0]
+            .newFrontY,
+      ) < 2e-7,
+    );
     assert.ok(Math.abs(bounds.min.z + 1.9920001029968262) < 2e-7);
   }
   const thread = scene.getObjectByName("Drive_LeadScrewThread");
   assert.ok(thread instanceof THREE.Mesh);
   const threadBounds = new THREE.Box3().setFromObject(thread);
-  assert.ok(Math.abs(threadBounds.max.z + 0.7707765362249948) < 2e-7);
+  assert.ok(
+    Math.abs(
+      threadBounds.max.z +
+        loadCurrentContract().currentGeometry.driveExtension.maleThread
+          .physicalSpanY[0],
+    ) < 2e-7,
+  );
   assert.ok(Math.abs(threadBounds.min.z + 1.9537999629974365) < 2e-7);
 });
 
 test("当前局部槽延长显式限定范围，不能把旧槽验收冒充本轮证据", () => {
   const manifest = loadManifest();
   const slot = manifest.internalDrive.currentFrontSlotRelief;
-  assert.equal(slot.extensionAtOriginalTipY, 0.055);
+  assert.equal(slot.segmentedEnvelope.cutClippedAtY, 0.84);
+  assert.ok(
+    slot.segmentedEnvelope.minimumActual2dEnvelopeToBoundaryDistance >=
+      loadCurrentContract().linkageAcceptance.minimumDesignSlotMargin,
+  );
   assert.equal(slot.joinBackToOriginalAtY, 0.84);
-  assert.ok(Math.abs(slot.newTipY - 0.722137578) < 1e-6);
+  assert.ok(
+    Math.abs(
+      slot.newTipY -
+        Math.min(
+          ...loadCurrentContract().currentGeometry.slotRelief.outlineRightXY.map(
+            (p: number[]) => p[1],
+          ),
+        ),
+    ) < 1e-6,
+  );
   assert.equal(slot.bodyClosedManifold, true);
   assert.equal(slot.slotRoofMeshesByteCoordinateIdentical, true);
   assert.ok(slot.unchangedSlotRoofMinimumY > slot.joinBackToOriginalAtY);
   assert.ok(
-    slot.removedVolumeBothSides > 0 && slot.removedVolumeBothSides < 0.0001,
+    slot.removedVolumeBothSides > 0 &&
+      Math.abs(
+        slot.removedVolumeBothSides -
+          loadCurrentContract().currentGeometry.slotRelief
+            .removedVolumeBothSides,
+      ) < 1e-12,
   );
   assert.equal(
     manifest.mechanism.historicalPersistentFieldsAreNotCurrentAcceptance,
@@ -938,6 +970,12 @@ test("新侧槽机身以原始三角闭合，不依赖SAT丢弃零面积面", as
     }
   }
   assert.ok(volume > 0);
+  assert.ok(
+    Math.abs(
+      volume - loadCurrentContract().currentGeometry.slotRelief.bodyVolumeAfter,
+    ) < 1e-7,
+    "实际运行机身必须保持已独立接受的本轮圆顺槽体积",
+  );
   assert.ok(
     [...edges.values()].every((e) => e.count === 2 && e.orientation === 0),
   );

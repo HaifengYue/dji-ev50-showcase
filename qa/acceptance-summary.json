@@ -1,0 +1,98 @@
+{
+  "sourceSha256": "41d1d093ce4b261483ffcc845303fc1e1b8cbb211c4b75ef24663aeb46f0d116",
+  "passed": true,
+  "gates": [
+    {
+      "gate": "wing material",
+      "samples": 661,
+      "report": "candidate-linkage-refined-dense-wing-material-vectorized-check.json",
+      "sha256": "3434895cf5c2dcd49aece6e0ea78893a56003ed647828746c9c091501f6a15b6",
+      "passed": true
+    },
+    {
+      "file": "candidate-linkage-refined-controls-combined-check.json",
+      "sha256": "85d207000c2074bc2101f646bcd21ea515e490745d05ef08c8af863140140156",
+      "passed": true,
+      "samples": 14592
+    },
+    {
+      "file": "candidate-linkage-refined-controls-local-check.json",
+      "sha256": "7ed99792b0d0191db455381c455843aef365224d0cd6002695e2d4f74d963338",
+      "passed": true,
+      "samples": 150
+    },
+    {
+      "file": "candidate-linkage-refined-rotor-fold-phase-preflight.json",
+      "sha256": "cda24468be1f6d90df8afda25e81ea0916bf82d3da5b55c803ae53a5c2b343a0",
+      "passed": true,
+      "samples": 252
+    },
+    {
+      "file": "native-self-intersections.json",
+      "sha256": "8f396dab3891362b72cf8142b93237c32243c3f0aaa59813084a68220ae9a58e",
+      "passed": true,
+      "samples": null
+    },
+    {
+      "file": "support-thread-check.json",
+      "sha256": "c57b76606365ca2a576e6f7d4e1365f4a459bd15cca10a07a9c364dbbb405bad",
+      "passed": true,
+      "samples": 241
+    },
+    {
+      "file": "slot-clearance.json",
+      "sha256": "fb5b39810a2531725c023ec7285b3d22ddb6047c8b895e127d06f7e1620f8bed",
+      "passed": true,
+      "samples": 481
+    },
+    {
+      "file": "candidate-linkage-refined-sweep.json",
+      "sha256": "7e21a065be2045b9535749959eb3f60ca44f722fe3e55bfb4c6c7e998435c00f",
+      "passed": true,
+      "samples": 1201
+    }
+  ],
+  "scope": "Finite sampled visualization-model geometry validation; no continuous-time, manufacturing, strength, flight or airtightness certification. Deliberate articulation openings and 20 role-aware open owners retained. Browser/mobile physical-device QA not run.",
+  "slotClearanceU": {
+    "distance": 0.004265125048647206,
+    "angle": 120.0,
+    "owner": "BraceRod_mesh_R",
+    "movingTriangle": 13,
+    "hullTriangle": 4242,
+    "hullTrianglePoints": [
+      [
+        0.23398616909980774,
+        0.41499999165534973,
+        -0.053910497575998306
+      ],
+      [
+        0.24421173334121704,
+        0.41499999165534973,
+        -0.0483628548681736
+      ],
+      [
+        0.23750123381614685,
+        0.30112001299858093,
+        -0.06592872738838196
+      ]
+    ]
+  },
+  "inheritedVisualLimit": "Local hull lip shading remains; not claimed to remove all visual artifacts.",
+  "evidenceFilesInSeparateVerificationArchive": true,
+  "applicationChecks": {
+    "nodeTestsPassed": 187,
+    "pythonTestsPassed": 30,
+    "lightweightQATestsPassed": 5,
+    "sourceRuntimeAnimationTestsPassed": 1,
+    "faultInjectionsRejected": 5,
+    "shadowEnvelopeCornersChecked": 7776,
+    "typescriptViteBuildPassed": true,
+    "formatPassed": true,
+    "browserOrMobileDeviceTested": false
+  },
+  "runtimeSha256": "8f0840ada14d7a137d01d3c29f8053657abc88078d2fa6302b5a29f3c674440c",
+  "runtimeBytes": 4273500,
+  "runtimeBudgetBytes": 4300000,
+  "rebuildMode": "editable-native-baseline-rebake-export",
+  "historicalProceduralReconstruction": false
+}

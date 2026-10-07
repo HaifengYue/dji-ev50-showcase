@@ -1,24 +1,67 @@
-# 本机依赖、缓存和可复算中间输出；不执行清理或删除。
+# Local dependencies and credentials
 node_modules/
-scripts/node_modules/
 .venv/
+.env
+.env.*
+# Generated artifacts, never additional source snapshots
+build/
+dist/
+qa/frontend/
 __pycache__/
-*.pyc
-*.pyo
+*.py[cod]
 *.tsbuildinfo
 *.blend1
 .DS_Store
-.env
-.env.*
+# Historical construction and audit files remain recoverable in Git/Library,
+# but are not part of the current editable-native checkout.
+/assets/baseline*/
+/assets/blender/xp4-source.glb
+/assets/build/
+/assets/previews/
+/qa/revision*/
+/qa/regenerated/
 
-# 当前生成暂存与独立重建窗口不当作另一套源码发布。
-assets/build/
-assets/previews/
-qa/regenerated/
-qa/current/author/*.glb
-qa/current/decoded/
-qa/visual/frames/
-qa/visual/scenes/
+# Retired local construction inputs are archived, not current source.
+/*.json
+!/package.json
+!/package-lock.json
+!/tsconfig.json
+/STAGING_ONLY.json
+/scripts/*
+!/scripts/pipeline/
+!/scripts/data/
+!/scripts/package.json
+!/scripts/package-lock.json
+!/scripts/export-transition.py
+!/scripts/kinematics.py
+!/scripts/internal_drive.py
+!/scripts/annotated_mechanism.py
+!/scripts/drive_layout.py
+/scripts/data/*
+!/scripts/data/fixed-root-paint-encoding.json
+!/scripts/data/annotated-mechanism-intent.json
+!/scripts/data/current-model-contract.json
+/tools/*
+!/tools/rebuild_model.py
+/qa/*
+!/qa/lib/
+!/qa/fixtures/
+!/qa/flight-regression.test.ts
+!/qa/glb-loader-check.mjs
+!/qa/source-runtime.test.ts
+/assets/*
+!/assets/blender/
+!/assets/animation/
+/assets/blender/*
+!/assets/blender/xp4.blend
+!/assets/blender/nacelle-system-concept.blend
+!/assets/blender/nacelle-system-concept-source.glb
+/docs/*
+!/docs/ASSETS.md
+!/docs/PYTHON_API.md
+!/docs/VERIFICATION.md
 
-# 准备期适配自测输出保留本地；正式同名自测在最终结果目录统一登记。
-qa/current/adapter-checks/
+!/scripts/verify/
+!/tools/verify_model.py
+
+!/qa/acceptance-summary.json

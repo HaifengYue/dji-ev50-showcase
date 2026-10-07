@@ -10,7 +10,10 @@
     "test": "node --import tsx --test src/*.test.ts",
     "test:qa": "node --import tsx --test qa/flight-regression.test.ts && node qa/glb-loader-check.mjs",
     "format": "prettier --write src vite.config.ts tsconfig.json package.json index.html",
-    "format:check": "prettier --check src vite.config.ts tsconfig.json package.json index.html"
+    "format:check": "prettier --check src vite.config.ts tsconfig.json package.json index.html",
+    "build:model": "python3 tools/rebuild_model.py",
+    "test:pipeline": "node --import tsx --test qa/source-runtime.test.ts && node scripts/pipeline/identity_negative.mjs",
+    "verify:model": "python3 tools/verify_model.py"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.0",
