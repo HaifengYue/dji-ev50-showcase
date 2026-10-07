@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "revision": 27,
+  "jointMaterialAcceptanceImplied": false,
+  "appearanceAccepted": false,
+  "integrationApproved": false,
+  "candidateReferenceSha256": "84ce720a45f16e696eb7f6e4955aed86d7556c8f220e6cecb39e12799c62bc04",
+  "sourceCandidateSha256": "72ef1837bb7c654d079741146fd80a5874168dcbc6f5f8926903f4a2778b8059",
+  "bakedBlendSha256": "735962d0fa9acc9abfbd58291a72faa3c0033f51f698a58e765b519e260b2459",
+  "completeMeshIdentitiesCompared": 285,
+  "allNamedParentsCompared": 352,
+  "countsVerifiedAgainstCurrentReferenceAndBakeReceipt": true,
+  "completeGeometryIncludesUnusedVerticesOrientedPolygonsAndMaterialSlots": true,
+  "actualCandidateReopenedAndIndependentlyCompared": true,
+  "animatedFramesRequireSeparateActualGLTFPlaybackVerification": true,
+  "checks": [
+    {
+      "artifact": "pinned-current-candidate",
+      "sha256": "72ef1837bb7c654d079741146fd80a5874168dcbc6f5f8926903f4a2778b8059",
+      "completeMeshIdentitiesCompared": 285,
+      "allNamedParentsCompared": 352,
+      "staticLocalFramesCompared": 352,
+      "differences": []
+    },
+    {
+      "artifact": "fresh-baked-blend",
+      "sha256": "735962d0fa9acc9abfbd58291a72faa3c0033f51f698a58e765b519e260b2459",
+      "completeMeshIdentitiesCompared": 285,
+      "allNamedParentsCompared": 352,
+      "staticLocalFramesCompared": 330,
+      "differences": []
+    }
+  ],
+  "differences": [],
+  "claimBoundary": "Complete current-candidate and baked native geometry identity only. No thickness, clearance, collision, visual, animation-playback or integration acceptance is granted."
+}

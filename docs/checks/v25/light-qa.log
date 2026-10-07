@@ -1,0 +1,58 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> transwing-studio@1.0.0 test:qa
+> node --import tsx --test qa/flight-regression.test.ts && node qa/glb-loader-check.mjs
+
+✔ 八个飞行阶段及最终待命均可到达 (1.430888ms)
+✔ 阶段边界的高度、位置、展开程度与旋翼转速连续 (0.465062ms)
+✔ 全部时间轴状态有限且展开程度与旋翼转速有界 (9.919689ms)
+✔ 十轮自动循环保持完整阶段顺序并在终点重复 (16.458594ms)
+✔ 非循环模式限制终点时间、停止旋翼并返回原点待命 (0.230087ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 243.667247
+{
+  "passed": true,
+  "runtimeBytes": 3653208,
+  "renderedMeshes": 287,
+  "renderedTriangles": 303190,
+  "hoverBounds": {
+    "min": [
+      -1.9383675373182205,
+      -1.4370003410001921,
+      -3.049999952316284
+    ],
+    "max": [
+      1.9383676531498246,
+      1.4937527118307061,
+      2.7200000286102295
+    ],
+    "size": [
+      3.876735190468045,
+      2.930753052830898,
+      5.769999980926514
+    ]
+  },
+  "cruiseBounds": {
+    "min": [
+      -5.30000027309737,
+      -0.6605773898196821,
+      -3.049999952316284
+    ],
+    "max": [
+      5.300000071525574,
+      1.4937527118307061,
+      2.7200000286102295
+    ],
+    "size": [
+      10.600000344622945,
+      2.1543301016503884,
+      5.769999980926514
+    ]
+  }
+}

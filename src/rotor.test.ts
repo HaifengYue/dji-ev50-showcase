@@ -96,7 +96,10 @@ function rotorGeometry(scene: THREE.Object3D, suffix: string) {
   );
   const cowlPoints = meshVertices(cowl);
   const cowlAxis = principalAxes(cowlPoints)[2].direction;
-  const podAxis = principalAxes(meshVertices(nacelle))[2].direction;
+  // V25前舱真实关节孔增加了局部三角化密度。轴线仍由完整舱体实面
+  // 二阶面积积分独立推导，避免把孔边密集顶点误当作舱体质量分布。
+  // 保留原.998共轴门，不借空节点、桨帽轴或放宽角度来决定舱轴。
+  const podAxis = surfacePrincipalFrame(nacelle).axes[2].direction;
   assert.ok(
     Math.abs(axis.dot(cowlAxis)) > 0.999,
     `${suffix} 桨毂与电机罩不共轴`,
@@ -134,6 +137,42 @@ function spanCenters(
 }
 
 const suffixes = ["L_Front", "L_Rear", "R_Front", "R_Rear"];
+
+test("面积积分动力舱轴门仍拒绝四个真实舱体各自10度错轴", async () => {
+  const scene = await loadModel();
+  const rig = createModelRig(scene);
+  applyModelPose(rig, 0.5);
+  for (const suffix of suffixes) {
+    rotorGeometry(scene, suffix);
+    const nacelle = scene.getObjectByName(`Nacelle_${suffix}`)!;
+    const original = nacelle.quaternion.clone();
+    const axis = surfacePrincipalFrame(nacelle).axes[2].direction;
+    const transverse = axis
+      .clone()
+      .cross(
+        Math.abs(axis.x) < 0.9
+          ? new THREE.Vector3(1, 0, 0)
+          : new THREE.Vector3(0, 1, 0),
+      )
+      .normalize()
+      .transformDirection(nacelle.parent!.matrixWorld.clone().invert());
+    nacelle.quaternion.premultiply(
+      new THREE.Quaternion().setFromAxisAngle(
+        transverse,
+        THREE.MathUtils.degToRad(10),
+      ),
+    );
+    scene.updateMatrixWorld(true);
+    assert.throws(
+      () => rotorGeometry(scene, suffix),
+      /桨毂与动力舱不共轴/,
+      `${suffix}真实舱体错轴不能被面积积分方法掩盖`,
+    );
+    nacelle.quaternion.copy(original);
+    scene.updateMatrixWorld(true);
+    rotorGeometry(scene, suffix);
+  }
+});
 
 test("实际网格的八片桨叶展向垂直电机轴，保留真实桨距和厚度", async () => {
   const scene = await loadModel();

@@ -24,6 +24,7 @@ import type { OrbitControls as OrbitControlsImpl } from "three-stdlib";
 import { gsap } from "gsap";
 import { MeshoptDecoder } from "three/examples/jsm/libs/meshopt_decoder.module.js";
 import { SimulationRuntime } from "./simulation";
+import { modelAssetUrl } from "./modelAssetRevision";
 import { createRotorExposure } from "./rotorExposure";
 import {
   createInternalDriveInspection,
@@ -101,11 +102,8 @@ function Model({
 }: SceneProps & {
   onBounds: (measurements: ReturnType<typeof measureModelRig>) => void;
 }) {
-  const { scene } = useGLTF(
-    `/models/${variant}.glb`,
-    "/draco/",
-    true,
-    (loader) => loader.setMeshoptDecoder(MeshoptDecoder),
+  const { scene } = useGLTF(modelAssetUrl(variant), "/draco/", true, (loader) =>
+    loader.setMeshoptDecoder(MeshoptDecoder),
   );
   const clone = useMemo(() => {
     const c = scene.clone(true);

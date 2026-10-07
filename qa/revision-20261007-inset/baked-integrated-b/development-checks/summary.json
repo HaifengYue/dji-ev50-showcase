@@ -1,0 +1,58 @@
+{
+  "schema": "transwing.v27-b-thin-development-checks.v1",
+  "passed": true,
+  "sourceCandidateSha256": "742ef52939de40f5d2eb46b87d38c8e85f99bffafc270c302afd59b9ea398adf",
+  "runtimeSha256": "352b1b6fd28026e5c9b50e981e1fb30aa4d5fad805084d7186ca2e9c7c375b16",
+  "runtimeBytes": 3696884,
+  "fullNpmTests": 176,
+  "fullNpmPassed": 176,
+  "postMetadataModelAndCacheTests": 15,
+  "pythonTests": 26,
+  "qaPassed": true,
+  "formatPassed": true,
+  "typescriptAndViteBuildPassed": true,
+  "buildCommand": "npm run build -- --configLoader native",
+  "thinRoot": "/workspace/scratch/40bf3b17dbf8/transwing-new-annotations-20261007/work/transwing-studio/qa/revision-20261007-inset/validation-worktree-b/transwing-studio",
+  "nodeModulesCopied": false,
+  "readOnlyHardlinksUnchanged": true,
+  "primaryV25ProtectedPathsUnchanged": true,
+  "browserAndGpuInteractionRun": false,
+  "notes": [
+    "176 ran against B in the thin project root; subsequent status-only metadata correction was checked by model/cache 15 tests before the final build",
+    "One QA command was accidentally invoked from the original V25 root and excluded from B evidence; its generated report SHA values equal the pre-existing V25 DEVELOPMENT_MANIFEST. Correct QA was rerun from the B thin root and is the included light-qa.log",
+    "An initial metadata-update attempt used a wrong working directory and failed without writes; it was corrected from the project root",
+    "No production behavior source changed; Scene override is only equivalent formatting, model/cache tests are V27-aware"
+  ],
+  "logs": [
+    {
+      "path": "full-npm-tests.log",
+      "bytes": 17593,
+      "sha256": "6a61917d27cec7f0389ddddbc664ce5aedfdc163695e37470de759b0074a72be"
+    },
+    {
+      "path": "post-metadata-model-cache.log",
+      "bytes": 1537,
+      "sha256": "040ee9c717eb0b8bc347916899f8c3573b0247559466da083cf4c6ed7e98ec30"
+    },
+    {
+      "path": "light-qa.log",
+      "bytes": 1463,
+      "sha256": "1422a08b238f3180c72de7cb97355d65961438dcc5b54370c518ae4422b21e3e"
+    },
+    {
+      "path": "format.log",
+      "bytes": 281,
+      "sha256": "fad16cd3eb30d839064584f1e54b34ed7e6f293588320d5a8602f01b06d36d90"
+    },
+    {
+      "path": "python.log",
+      "bytes": 2993,
+      "sha256": "d9eb7b7dc24c3fcdbfebce0645997051b6bbc8df883097317dff56df097ef16c"
+    },
+    {
+      "path": "build.log",
+      "bytes": 881,
+      "sha256": "367f97c90063396b2a9333fc65a6ab2a932cc66f8297e9440c4733c2b0ad73a1"
+    }
+  ]
+}

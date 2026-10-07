@@ -1,0 +1,1068 @@
+{
+  "schema": "transwing.light-development-manifest.v1",
+  "singleRoot": "transwing-studio",
+  "purpose": "Standalone development source, editable assets, Python API, dist, locked constructor inputs and lightweight checks; complete audit archive separate",
+  "sourceArchiveSha256": "3f1482d273846f6e329ca7475ccc7f62f3fd1f5d8ba1ce2ea644c199591ec0cd",
+  "constructorInputFiles": 82,
+  "constructorInputLockSha256": "3a252fa5904e8a75ea326af28760f97f4f5d8c8504ca235c3b4b82807dcaeb8d",
+  "contentFileCount": 209,
+  "contentBytes": 58663553,
+  "excludedGeneratedPaths": [
+    "node_modules/",
+    "scripts/node_modules/",
+    "__pycache__/",
+    "*.pyc",
+    "*.pyo",
+    "*.tsbuildinfo",
+    "qa/frontend/"
+  ],
+  "manifestSelfExcluded": true,
+  "fullPhysicalReverificationPerformedForThisPackage": false,
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 521,
+      "sha256": "5aac9243385e680bf059048f8edf4ed539b2aee333925b4a657963cd79d3baa6"
+    },
+    {
+      "path": "AUDIT_ARCHIVE.json",
+      "bytes": 760,
+      "sha256": "c3fba20b36197f5e57c8f3ca4ac1d018e0e6b4968aedd8bc4f5b822fc43ba8c5"
+    },
+    {
+      "path": "CONSTRUCTION_INPUTS.json",
+      "bytes": 17898,
+      "sha256": "3a252fa5904e8a75ea326af28760f97f4f5d8c8504ca235c3b4b82807dcaeb8d"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2294,
+      "sha256": "c9a1dc1ca250844b1cbd1171557892c8f9ea77f891a8459d4183b58e3d6ba458"
+    },
+    {
+      "path": "STAGING_ONLY.json",
+      "bytes": 827,
+      "sha256": "560f37c6e51ec679bd67d7994ba170ac3d43074e8cdec233ba03b6365588fa3a"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.txt",
+      "bytes": 6064,
+      "sha256": "fea1cc9b6d7233dcee7e596759da4dd3ca49bb30ee08054e89a89c7d03be8c9b"
+    },
+    {
+      "path": "assets/animation/motor-reference.json",
+      "bytes": 89393,
+      "sha256": "85f1583b700818b3d42ef02bbfa16917dfb0f48657d4e7959fd36d7fcd7e951c"
+    },
+    {
+      "path": "assets/animation/wing-transition-reference.json",
+      "bytes": 2266919,
+      "sha256": "948eeb2ffa300e74659acc177a2dbc0484b8e07dc0ebaa946e582e67e37c6086"
+    },
+    {
+      "path": "assets/blender/annotated-mechanism.json",
+      "bytes": 6865,
+      "sha256": "43a1dc0a8dfd8773f395e477690d361f81e2e15949f93174003f98e2268be97d"
+    },
+    {
+      "path": "assets/blender/nacelle-system-concept-source.glb",
+      "bytes": 105676,
+      "sha256": "e1ce4da42d21aa46f055dab338430b7516617366faa6cf850f906a6a031187bd"
+    },
+    {
+      "path": "assets/blender/nacelle-system-concept.blend",
+      "bytes": 778316,
+      "sha256": "b4c5273c586ac2a0fcb526e9e039d7705e45f35d431ad031a7d5bf00ec4919f7"
+    },
+    {
+      "path": "assets/blender/xp4-source.glb",
+      "bytes": 8874240,
+      "sha256": "e0323e3c6d50c3810a17f9e940debe2b13369ce76fcd042fe6ac0ea26b0adedd"
+    },
+    {
+      "path": "assets/blender/xp4.blend",
+      "bytes": 33134084,
+      "sha256": "1e29d4697c931545cc7b6e5d3cfa124093c9adb7dfe71a03428cda66cbd15225"
+    },
+    {
+      "path": "assets/build/annotated-mechanism.json",
+      "bytes": 6865,
+      "sha256": "43a1dc0a8dfd8773f395e477690d361f81e2e15949f93174003f98e2268be97d"
+    },
+    {
+      "path": "assets/model-validation.json",
+      "bytes": 9816,
+      "sha256": "4e9cd2b86860cb520a10e2ac413f432b07b09f762c6105be73b9fa2a93590808"
+    },
+    {
+      "path": "dist/assets/index-D1B7vCse.css",
+      "bytes": 25272,
+      "sha256": "e84fda884b7408512b167fc6aaa596a57c3d1ce5df62b5b5cb383f547501877b"
+    },
+    {
+      "path": "dist/assets/index-rGvhun1F.js",
+      "bytes": 195017,
+      "sha256": "f249750d5a0cfb7575473e59a73fa7a67a46e464de8717b7b533ad7d3a48b044"
+    },
+    {
+      "path": "dist/assets/scene-CAbU1Meg.js",
+      "bytes": 580484,
+      "sha256": "75aa17c801875503926381edec9e54805ee8865773eb384391bf22f40e1935cb"
+    },
+    {
+      "path": "dist/assets/three-D1MzFUPS.js",
+      "bytes": 704570,
+      "sha256": "e7f26150336dfdd9fb8d5f62a3e2e98575a6e9b19f468dbe5382ca4b663181c7"
+    },
+    {
+      "path": "dist/examples/python-full-flow.json",
+      "bytes": 41446,
+      "sha256": "cf8e29405e950e9ec15c7744908040eed2bc62b4d7dc1bd198f2b6abd4deaf13"
+    },
+    {
+      "path": "dist/index.html",
+      "bytes": 834,
+      "sha256": "60d2ac88eb4a2eb1f40be7fda67af96e35b1494522594e0439d9e043b37387c5"
+    },
+    {
+      "path": "dist/models/annotated-mechanism.json",
+      "bytes": 6865,
+      "sha256": "43a1dc0a8dfd8773f395e477690d361f81e2e15949f93174003f98e2268be97d"
+    },
+    {
+      "path": "dist/models/manifest.json",
+      "bytes": 840342,
+      "sha256": "8cbc5779ee5bfeb7022359cd96efd0b5d6d1943e8edb9be2c0e6978a21cc8b19"
+    },
+    {
+      "path": "dist/models/nacelle-system-concept.glb",
+      "bytes": 84352,
+      "sha256": "55f0d778657593e8745ecd0711f5720c3d6f98abb91b9ffab0875eeef8d08996"
+    },
+    {
+      "path": "dist/models/xp4.glb",
+      "bytes": 3282332,
+      "sha256": "26fc74f34383dc80342ca1804ccb8d4cf6fda2f8a8dace6e03d84510fb9d6b5c"
+    },
+    {
+      "path": "docs/ASSETS.md",
+      "bytes": 4613,
+      "sha256": "3e6b07865f3099aa71d3b9e1b3a1b849e01d4a7483604fa8dd81f393bfa1adfa"
+    },
+    {
+      "path": "docs/NAVIGATION.md",
+      "bytes": 5616,
+      "sha256": "5852990dafd3704a5cc29844ab4a0f333c8cff03dee2b78d3665150fc72345e4"
+    },
+    {
+      "path": "docs/PYTHON_API.md",
+      "bytes": 17026,
+      "sha256": "86637f54fdb7146f00de512602894583e5d27d6f49100656305222c751e1db0e"
+    },
+    {
+      "path": "docs/VERIFICATION.md",
+      "bytes": 3943,
+      "sha256": "d82bcb95c2c623deb25e63d41bfb616714029a741dd35d1b595deb429a20ead3"
+    },
+    {
+      "path": "docs/checks/build.log",
+      "bytes": 859,
+      "sha256": "8f60e11e0e94b0fb47b198c121cfe4c5ecc73c6112c1396c429428a56fca1d48"
+    },
+    {
+      "path": "docs/checks/constructor-input-verification.json",
+      "bytes": 240,
+      "sha256": "4a5bd60fe03ccb6409aa95aaab1dbee2930aadd042fd0936c269cacb49e0928a"
+    },
+    {
+      "path": "docs/checks/derivation.json",
+      "bytes": 2597,
+      "sha256": "58c549e44f19e60fbf91fd4ac3878a6a0129157b1b4a6df0f199303e17cb9a36"
+    },
+    {
+      "path": "docs/checks/format.log",
+      "bytes": 281,
+      "sha256": "fad16cd3eb30d839064584f1e54b34ed7e6f293588320d5a8602f01b06d36d90"
+    },
+    {
+      "path": "docs/checks/glb-loader-report.json",
+      "bytes": 731,
+      "sha256": "66e2bbd65f280144c537343881d9c802bedf30ff9cfc5306e0efa5e8311a0558"
+    },
+    {
+      "path": "docs/checks/initial-attempt.json",
+      "bytes": 467,
+      "sha256": "e5d2fccde617d68511afd664984dc054a056fdfa12d381770e4d20dd216aeb2e"
+    },
+    {
+      "path": "docs/checks/input-preparation.json",
+      "bytes": 566,
+      "sha256": "607466ae70af10eb97f7d6b19e39989a884b5de55c341561c39ca58700610aba"
+    },
+    {
+      "path": "docs/checks/light-qa.log",
+      "bytes": 1463,
+      "sha256": "e320e014ffc98ccc1be540043ebbe42cf2d7b2470fd464d5763e5a00d583a5bf"
+    },
+    {
+      "path": "docs/checks/model-identity-summary.json",
+      "bytes": 1069,
+      "sha256": "249f6ff441b6b7a202211df0b954d6dff7194cb08a8006b0277696f9cf5714b0"
+    },
+    {
+      "path": "docs/checks/node-tests-initial-missing-output-dir.log",
+      "bytes": 17921,
+      "sha256": "55217d8231af6fe1aaf18835409954d0e8034a230a8fccd1b4d2cdab0a2380bf"
+    },
+    {
+      "path": "docs/checks/node-tests.log",
+      "bytes": 16964,
+      "sha256": "bfc53e86c13b236505a09ba94757bfb430a3d2e31d935d33e417a0d4ff9c747a"
+    },
+    {
+      "path": "docs/checks/npm-install.log",
+      "bytes": 125,
+      "sha256": "ec1dd2e43fae56ed9384b4dca5ffb494058b59c769e82753e78cb1d99df1e982"
+    },
+    {
+      "path": "docs/checks/python.log",
+      "bytes": 2993,
+      "sha256": "c495c66111c25e2d54c64cc1ab04a58d42b1436db4ed1c80c35f423e8510125f"
+    },
+    {
+      "path": "docs/checks/root-guard.json",
+      "bytes": 443,
+      "sha256": "76174c98b9d2eff9a016bef95657cc27259c0f4deb159eddb94a0a23496e37f3"
+    },
+    {
+      "path": "docs/checks/summary.json",
+      "bytes": 1824,
+      "sha256": "b66b1e632e2ebb1f1d10e34638a3e3904e5bd9066127904e6173177381b8fd06"
+    },
+    {
+      "path": "docs/checks/transferred-tool-methods.json",
+      "bytes": 746,
+      "sha256": "9cbbdcb8f80e4991099006e703e40c8447d76fbfae9e533418f0a327582bc8c5"
+    },
+    {
+      "path": "docs/checks/viewport-framing-report.json",
+      "bytes": 4289,
+      "sha256": "c18736cacd29a5fd8226e83e2eb9ff63a6ebf5a4e53b7e9ce3458e2c62cc2690"
+    },
+    {
+      "path": "examples/python/drive_trajectory.py",
+      "bytes": 1382,
+      "sha256": "2b3c357fe1049980fd563b33b56856d04016990e6676a2ac525be9497a87721a"
+    },
+    {
+      "path": "examples/python/full_flow.json",
+      "bytes": 41446,
+      "sha256": "cf8e29405e950e9ec15c7744908040eed2bc62b4d7dc1bd198f2b6abd4deaf13"
+    },
+    {
+      "path": "examples/python/full_flow.py",
+      "bytes": 3352,
+      "sha256": "e7ac339f326543fde64dbae8c3b7c106d184fe8afccfb343eefcb4bf4ea07579"
+    },
+    {
+      "path": "examples/python/independent_motors.py",
+      "bytes": 1035,
+      "sha256": "cb08605ba7bbc151684c6874ac8fa8d81562d2ca736e931e4471cae65425b2f5"
+    },
+    {
+      "path": "index.html",
+      "bytes": 584,
+      "sha256": "363abb6025fd0a264e4e469e17a1b62c426615601cb86926a6ff0e9aeee37bb1"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 90179,
+      "sha256": "8ca282ddba0bc23d4de0e6db5888de6b3b855a0597ac9c8296c4ddef78ce1ff4"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1119,
+      "sha256": "fbe6744094bcd133ce0e77df6c80bebe050803faff65366f62fd47bafdf0c827"
+    },
+    {
+      "path": "public/examples/python-full-flow.json",
+      "bytes": 41446,
+      "sha256": "cf8e29405e950e9ec15c7744908040eed2bc62b4d7dc1bd198f2b6abd4deaf13"
+    },
+    {
+      "path": "public/models/annotated-mechanism.json",
+      "bytes": 6865,
+      "sha256": "43a1dc0a8dfd8773f395e477690d361f81e2e15949f93174003f98e2268be97d"
+    },
+    {
+      "path": "public/models/manifest.json",
+      "bytes": 840342,
+      "sha256": "8cbc5779ee5bfeb7022359cd96efd0b5d6d1943e8edb9be2c0e6978a21cc8b19"
+    },
+    {
+      "path": "public/models/nacelle-system-concept.glb",
+      "bytes": 84352,
+      "sha256": "55f0d778657593e8745ecd0711f5720c3d6f98abb91b9ffab0875eeef8d08996"
+    },
+    {
+      "path": "public/models/xp4.glb",
+      "bytes": 3282332,
+      "sha256": "26fc74f34383dc80342ca1804ccb8d4cf6fda2f8a8dace6e03d84510fb9d6b5c"
+    },
+    {
+      "path": "python/install.py",
+      "bytes": 953,
+      "sha256": "af2d3123ca423ee5fcb253acfff8cf850806cc33a88e7829e5d68d71580b15e1"
+    },
+    {
+      "path": "python/protocol.schema.json",
+      "bytes": 11953,
+      "sha256": "cd2e6b5ace55a88aee9f35c8565257197afca4a952265a9ed0ad95614848f86b"
+    },
+    {
+      "path": "python/requirements.lock",
+      "bytes": 207,
+      "sha256": "cc1e4a33fe5d0b992fa2f1b372eca402ac6e6f17b44ced2b17e782bd418d1872"
+    },
+    {
+      "path": "python/run_server.py",
+      "bytes": 161,
+      "sha256": "31faff7795c254cfaab6f7a4b38e7a9cdb6b0995bfc6727442c87d7dfefba505"
+    },
+    {
+      "path": "python/tests/protocol_events.json",
+      "bytes": 8052,
+      "sha256": "3fc7abfd1574ff2f55dec6947ce2635dbc94528172d3f97129c11f69856a9441"
+    },
+    {
+      "path": "python/tests/test_bridge.py",
+      "bytes": 6617,
+      "sha256": "a65e17bb90d9f4f5dab421d25e01d2f088d5b9c574b5780a7a73d6b81b68aa99"
+    },
+    {
+      "path": "python/tests/test_http.py",
+      "bytes": 9668,
+      "sha256": "888c4b1b723dcd079e975e8d9852af427ac98df0cd4877e56668811843b83cfb"
+    },
+    {
+      "path": "python/tests/test_protocol.py",
+      "bytes": 5228,
+      "sha256": "b9bd662913227e6e2c38c49aac879430acf546733ada92fcb94315e13195b054"
+    },
+    {
+      "path": "python/transwing_sim/__init__.py",
+      "bytes": 416,
+      "sha256": "bdd3c58cb2cf935ffa54b8bc195769549ebbe1b5a274011127a653f9e0765c84"
+    },
+    {
+      "path": "python/transwing_sim/client.py",
+      "bytes": 13473,
+      "sha256": "355b5f7418afa4cbaa87d915d92b466426a27c438bc780df981cf44ed0061afa"
+    },
+    {
+      "path": "python/transwing_sim/protocol.py",
+      "bytes": 8229,
+      "sha256": "a177aa5239f1d25237e7e1687a7de675f7fe34bb2bf78df50bc897389508d62e"
+    },
+    {
+      "path": "python/transwing_sim/recording.py",
+      "bytes": 2157,
+      "sha256": "930f6fcfe6054ffe4c33118ed5c2c1eb057427ed1dbc82f2da56c25101f1430a"
+    },
+    {
+      "path": "python/transwing_sim/server.py",
+      "bytes": 26593,
+      "sha256": "55ad32a30638c87f1db04bcee8c6ccfec4297685208a14943f38575bd0d008ed"
+    },
+    {
+      "path": "qa/flight-regression.test.ts",
+      "bytes": 1833,
+      "sha256": "7cea2cb247f2220b7c8dd635e791efbcc71b949ad50fb4042785f2f2826d5f24"
+    },
+    {
+      "path": "qa/glb-loader-check.mjs",
+      "bytes": 1843,
+      "sha256": "0a4a4d4951ddc0575f1cb86280571abfd01d9f15ae9d01c25b44ecb848bb5c9b"
+    },
+    {
+      "path": "qa/lib/compact-geometry.mjs",
+      "bytes": 6004,
+      "sha256": "2f018a4c4546aae1371e8f4a8de0498446a5cfccb10c5c0aa7233003cd3032a5"
+    },
+    {
+      "path": "qa/lib/runtime-concept-compression-check.mts",
+      "bytes": 6183,
+      "sha256": "3cc2d192dc19185ad52112e8428ef24f5b56747f508c5c44fcbd6f29f6befefb"
+    },
+    {
+      "path": "qa/lib/runtime-detail-controls.mts",
+      "bytes": 8832,
+      "sha256": "f9d34ad29c00eb31e3bcee9d405473d60c4ecb6aee254abe539e3fa3cf842728"
+    },
+    {
+      "path": "qa/lib/runtime-geometry.mts",
+      "bytes": 4364,
+      "sha256": "3f464fb9f2a8b4b97d033b372aa0254a75e76dbc61c0c15ed102edec1f81e704"
+    },
+    {
+      "path": "qa/lib/runtime-motor-motion.mts",
+      "bytes": 9794,
+      "sha256": "c188a447acf2281e86fa13d888fd26b9a37065244d91b31ab13205955bfe2eee"
+    },
+    {
+      "path": "qa/lib/runtime-rotor-motion.mts",
+      "bytes": 9908,
+      "sha256": "6a11997a0329c82e8463fa9c1517756a8699eed19d05489ab580bed6053ec91e"
+    },
+    {
+      "path": "qa/lib/runtime-self-clearance.mts",
+      "bytes": 3646,
+      "sha256": "4fc6b4d9350e8d0d98e676c48d422f634ddfe6fc4fed02352de398ca0840dda8"
+    },
+    {
+      "path": "qa/lib/runtime-shaft-clearance.mts",
+      "bytes": 5070,
+      "sha256": "7191718c010a9b73ebb91bab47eb742d3fa102dc5e3039f3efe6283a4e5853cb"
+    },
+    {
+      "path": "qa/lib/runtime-ui-source-check.mts",
+      "bytes": 22761,
+      "sha256": "f68a6f4b4eceda7879ba2c1f016e2ea88dcc5ea21bbade0cc27c9775a4bb23d0"
+    },
+    {
+      "path": "qa/lib/solid-contact.mjs",
+      "bytes": 6360,
+      "sha256": "ce7e6268a2b923be64a714716989206c325d283936f28cb7a72d98d2433f023d"
+    },
+    {
+      "path": "qa/lib/triangle-contact.mjs",
+      "bytes": 13195,
+      "sha256": "c8c8bc4f141aff261dbb0bac493fb9e7b4066cae9e1eb95f41cdd9b7718700bb"
+    },
+    {
+      "path": "qa/native-staging/constructor-input-seed/manifest.json",
+      "bytes": 1014,
+      "sha256": "82a15335d16fd7e73bf5529a13d802a5ed7cc8ea1b9d02b5fa7259fbea9e174f"
+    },
+    {
+      "path": "scripts/airframe_accessories.py",
+      "bytes": 19391,
+      "sha256": "d730864a644b729eb47fe11f81cdb7122df4b654b4cf8409432723ed35f3ca17"
+    },
+    {
+      "path": "scripts/airframe_refinements.py",
+      "bytes": 6616,
+      "sha256": "9904ff1896b61584990962827b2a4c43d9a4ca84baa5095b0c4b02a9886aa6fb"
+    },
+    {
+      "path": "scripts/annotated_fixed_support.py",
+      "bytes": 3930,
+      "sha256": "397e091785dbc1449b3f198d6cf952f161254a619dafd694445181cff183d5f7"
+    },
+    {
+      "path": "scripts/annotated_linkage.py",
+      "bytes": 9875,
+      "sha256": "6a956449c9f83253977daddeb9f2331564e4a9d60d46fa2526203dcd34d98638"
+    },
+    {
+      "path": "scripts/annotated_low_angle_relief.py",
+      "bytes": 10993,
+      "sha256": "3dcc35265cc7440b10ef89c55f0e43940909e1d3130cd1208bb3e000cbe47aa9"
+    },
+    {
+      "path": "scripts/annotated_mechanism.py",
+      "bytes": 4748,
+      "sha256": "697e54189282411f17806ac2dc7617d44d159c8010acc834c80bfc3ad3a06a04"
+    },
+    {
+      "path": "scripts/annotated_moving_support.py",
+      "bytes": 9718,
+      "sha256": "e4c1526f24d64943321b3a201c098aba6a3c95a471f1129b41117c9866a4fc1e"
+    },
+    {
+      "path": "scripts/annotated_native_stage.py",
+      "bytes": 21706,
+      "sha256": "fd5423a155e7ea42128527e751dcad9f35edbd709ff3f6ebb32f1dfbd20ac209"
+    },
+    {
+      "path": "scripts/annotated_principal_side_closure.py",
+      "bytes": 21574,
+      "sha256": "80f8fa7305d1735787aedbccbf2d5a0fa066a8f444a4b5f15ecd74ceac8f8d9c"
+    },
+    {
+      "path": "scripts/annotated_root_closing.py",
+      "bytes": 6418,
+      "sha256": "c8036936c8fe494bd5a7d50958641371dadb86fae26066ab0cc2f0ef86d541b5"
+    },
+    {
+      "path": "scripts/annotated_root_interface.py",
+      "bytes": 12704,
+      "sha256": "93eaf464f5831aaa68f48d63327601785c1a3d803451364def79147fe37e79bd"
+    },
+    {
+      "path": "scripts/annotated_tail_partition.py",
+      "bytes": 6514,
+      "sha256": "e78ffa54dfb5401e9282b114e1cb7c46549cf02e20d1e69eced968f768ec8d6a"
+    },
+    {
+      "path": "scripts/central_wing_attachment.py",
+      "bytes": 18887,
+      "sha256": "0777d0f7fb1ac4bc17ec4356ca2a274a16dc4dd6d682aff44508933cb2ff675d"
+    },
+    {
+      "path": "scripts/compact_hinge_enclosure.py",
+      "bytes": 15293,
+      "sha256": "9457b12c3a0e2e10c374e589c6f99242fda52e2191b946da088cbef83ca06174"
+    },
+    {
+      "path": "scripts/compact_hinge_stack.py",
+      "bytes": 7455,
+      "sha256": "974fdf6bba5f406b2fa5cd9ad2fd62e36b7cdb6940e316b29ec3ed27e5ee9244"
+    },
+    {
+      "path": "scripts/compress-concept.mjs",
+      "bytes": 4273,
+      "sha256": "b1da5746b96a5627ca9b4dba95b2d5ed3ec708c8a0e9928b64d899c658cdc153"
+    },
+    {
+      "path": "scripts/compress-model.mjs",
+      "bytes": 11729,
+      "sha256": "166965001af05d3731a86336f40574d78da4a0691b359544ab3b42ee46cae129"
+    },
+    {
+      "path": "scripts/constructor_inputs.py",
+      "bytes": 8425,
+      "sha256": "feafb234decb038994bdc8744039202c43781e01ab45f7b18c1fd355c3615179"
+    },
+    {
+      "path": "scripts/control_supports.py",
+      "bytes": 6596,
+      "sha256": "28505aee0d5eb2b8f36afef2a63a8bbf4a15cfa209212eb948d8718f7a2109de"
+    },
+    {
+      "path": "scripts/data/annotated-fixed-support.json",
+      "bytes": 1533,
+      "sha256": "2f3e9691b700aad9bd4f980d4aa575d418cf5ae620e70d01e40a36cc2d5d974e"
+    },
+    {
+      "path": "scripts/data/annotated-low-angle-relief.json",
+      "bytes": 53431,
+      "sha256": "9f20c7b2d0e5baf8e235fec87029d517f5f402d77e548b690c86ea193f7a241b"
+    },
+    {
+      "path": "scripts/data/annotated-mechanism-intent.json",
+      "bytes": 5480,
+      "sha256": "73af20dfc8df51400854d2f1dfeb83ffb57c481c11dfe159b1d576c52254c062"
+    },
+    {
+      "path": "scripts/data/annotated-moving-support.json",
+      "bytes": 3005,
+      "sha256": "ded317b56df085cd874c658ceb6a7142eca599f06cccec554e63788ef2a80d45"
+    },
+    {
+      "path": "scripts/data/annotated-paint-repair.json",
+      "bytes": 1132,
+      "sha256": "aa8180b28358ac6741d805716eb24e7002787bf8faf2d42e1db4e40b5a7216ef"
+    },
+    {
+      "path": "scripts/data/annotated-principal-side-closure.json",
+      "bytes": 350509,
+      "sha256": "9cd40401b110a44e31af3fd7ac5d20f1b4701e27638818ee4a0e486d02661c0d"
+    },
+    {
+      "path": "scripts/data/annotated-root-closing.json",
+      "bytes": 325886,
+      "sha256": "58a176135b2bb8f3dfc74b36815069ea84c4a1651b28eac7e64ec2ccd7c7fd30"
+    },
+    {
+      "path": "scripts/data/annotated-root-interface.json",
+      "bytes": 22955,
+      "sha256": "45261a637c8731a21d041a9b3aeb4cd9c56ac63e195e33362eaed44ed14c01d6"
+    },
+    {
+      "path": "scripts/data/annotated-tail-partition.json",
+      "bytes": 1792,
+      "sha256": "9a74b57cb2b2911506e45e9ed0db7bb3974eba7f2764d838cef39b0812e2e0cc"
+    },
+    {
+      "path": "scripts/data/compact-hinge-enclosure.json",
+      "bytes": 12003,
+      "sha256": "6b85793f1b233feaa5b95d8b5af193857af4d967316709b730c502885d85adb7"
+    },
+    {
+      "path": "scripts/data/fixed-root-paint-encoding.json",
+      "bytes": 299536,
+      "sha256": "b112619e432e67b31d605f847d31dab716ce3c5bcbaf334c20985b9d2fe124e2"
+    },
+    {
+      "path": "scripts/data/legacy-powertrain-fit.json",
+      "bytes": 2387,
+      "sha256": "f05f4442f91e2ff5ac7ce6590c7a04870aeabda682e5cfdac81c0cbdf71e622d"
+    },
+    {
+      "path": "scripts/data/preserved-front-surfaces.blend",
+      "bytes": 732142,
+      "sha256": "69c73ce46be035abb655b03a9608523ce38f3695ed3f0bbdc5b5436cc488451c"
+    },
+    {
+      "path": "scripts/data/preserved-front-surfaces.json",
+      "bytes": 611,
+      "sha256": "50af15b925da72edc69bcb8fb3fb138d0c21aba95705053bb29a7da5d30dbc9c"
+    },
+    {
+      "path": "scripts/data/short-cap-construction-plan.json",
+      "bytes": 1749,
+      "sha256": "960a4d5ef199855c0cfbd8de4ec9a929db632d49d62b096c9770a75a63833f1f"
+    },
+    {
+      "path": "scripts/data/slot-roof-preservation.json",
+      "bytes": 818,
+      "sha256": "1abb1097e97b28e6d58db1fc1acbc88847376305e1266beb2bf446bebed28bfc"
+    },
+    {
+      "path": "scripts/data/wing-post-triangulation-regression.json",
+      "bytes": 2218,
+      "sha256": "9d4ba4a909d94b4b2a08206a6fd6a585232a55cbad3f87a70dd826ab75175d9b"
+    },
+    {
+      "path": "scripts/drive_layout.py",
+      "bytes": 735,
+      "sha256": "53efe7cadef9f79d87d884f5b1981b9eca775f3de80c58eee98ee3d803e57d69"
+    },
+    {
+      "path": "scripts/embedded_joint_surfaces.py",
+      "bytes": 3809,
+      "sha256": "bfa1e6d506b50f97f6a8230c4340c1dd94a777e7497a61691f9687a3f848c8b4"
+    },
+    {
+      "path": "scripts/export-transition.py",
+      "bytes": 21254,
+      "sha256": "900791a92748f6358257288c6de2b69d40e35d1e4dcb46a92f2b1d8abb630dc3"
+    },
+    {
+      "path": "scripts/generate-concept.py",
+      "bytes": 2134,
+      "sha256": "72f121693aaa5a78b5e096fe3ab673de30239f972d9dc455fb946be015989c9a"
+    },
+    {
+      "path": "scripts/generate_transwing.py",
+      "bytes": 64472,
+      "sha256": "90dbbc1e1b375621b01dcf5b22196ec3369e4ee4f965c96b3a597f0499484e04"
+    },
+    {
+      "path": "scripts/hinge_supports.py",
+      "bytes": 8068,
+      "sha256": "3ceb9cce86a638191d0efa4b83c2f941e39909db42af2c5bd9596ae6ea6da83d"
+    },
+    {
+      "path": "scripts/internal_drive.py",
+      "bytes": 23008,
+      "sha256": "30df1ef2526cc8f2a4d2975bdd398c2c5887db413946c5a1b8f8a73493281c75"
+    },
+    {
+      "path": "scripts/joint_endcaps.py",
+      "bytes": 8553,
+      "sha256": "4c7a454ff3dbe253bf9847fe352508cf2cfd9bbd25f8b2b8fcc2a05582a5336c"
+    },
+    {
+      "path": "scripts/joint_fairings.py",
+      "bytes": 6706,
+      "sha256": "b8bdd4d0f904fba6346a7cd604cf8521ed93ce04225cf5c2fc65a824a3bc8268"
+    },
+    {
+      "path": "scripts/kinematics.py",
+      "bytes": 3786,
+      "sha256": "9c5bb0b7945b2f8e3bd5cc58072a500654df37311fb713cf392fcf7848145378"
+    },
+    {
+      "path": "scripts/layered_wing_joint.py",
+      "bytes": 33367,
+      "sha256": "93a6d24c32f47974a57aaa2733ae8fcce3d6698e4b55dae9c6efabb0acda7b76"
+    },
+    {
+      "path": "scripts/legacy_powertrain_fit.py",
+      "bytes": 14169,
+      "sha256": "30e1852dd185e71afd6b30810b5d69cb10cee7f8b20336931564b9da7a2176f0"
+    },
+    {
+      "path": "scripts/linkage_geometry.py",
+      "bytes": 5597,
+      "sha256": "a66ce5f7e07797d7e8f5ea2a564b468ffba3ca35efe2e2a23c3bac17932f2416"
+    },
+    {
+      "path": "scripts/mesh_precision.py",
+      "bytes": 756,
+      "sha256": "8e39c57a9fddb666b6e0bf55fd6e3343d2838f91f22e08f270875aed6b76712b"
+    },
+    {
+      "path": "scripts/nacelle_wing_layout.py",
+      "bytes": 16539,
+      "sha256": "7c62753fbc16aedc78a8b91ee8952fb6284ef73de768ae41f58dd7cc11803265"
+    },
+    {
+      "path": "scripts/output_slot_geometry.py",
+      "bytes": 3804,
+      "sha256": "abb198cb363578773acc15bd04aaab4da2bf9507c6da0b99ef97db36ea703c5b"
+    },
+    {
+      "path": "scripts/output_slot_profile.py",
+      "bytes": 10277,
+      "sha256": "e93f43e2edb3e31ec72b2f527700dd19e582221aba6703928851043ef3799d2d"
+    },
+    {
+      "path": "scripts/package-lock.json",
+      "bytes": 25110,
+      "sha256": "a4cda2aeaa58d86bffcc4b4020346d64b3abefc954d858f8c398521e464c904f"
+    },
+    {
+      "path": "scripts/package.json",
+      "bytes": 178,
+      "sha256": "4d87fdff2312cb3afc1ecd98c39e152c6b44e792b4ea717c8f94204ab8d857a7"
+    },
+    {
+      "path": "scripts/paint_exact_regions.py",
+      "bytes": 22625,
+      "sha256": "ee5432260e656fafca78adf4fe5f598ce9169dbcf826dde7821c757aa789d480"
+    },
+    {
+      "path": "scripts/preserved_surfaces.py",
+      "bytes": 7883,
+      "sha256": "4e7d66d3991317311a91251920e7841f9d35db50d411d80613798c576bf1e18e"
+    },
+    {
+      "path": "scripts/propeller_continuity.py",
+      "bytes": 11507,
+      "sha256": "4733a21d16a70a6f2cc6ef2a4fde45ffc4c9e4cefe3a51b797cbd24f39af05ac"
+    },
+    {
+      "path": "scripts/propeller_shape.py",
+      "bytes": 10104,
+      "sha256": "51ee268df416fdc03304d9d5af397a1a3ef7d451cd6ab6b94ca6e9ca9f5a2636"
+    },
+    {
+      "path": "scripts/reexport-source.py",
+      "bytes": 459,
+      "sha256": "12434c473af230a3cd5e2dd0a45dee5095829dc8d97032b124c484a4b3b912b8"
+    },
+    {
+      "path": "scripts/root_paint_ownership.py",
+      "bytes": 34452,
+      "sha256": "28588906345120fedc0ffcddecd2896fb280a155940734e8ee8cb6479b6e844a"
+    },
+    {
+      "path": "scripts/rotor_handedness.py",
+      "bytes": 5246,
+      "sha256": "c15730cc97b88486c94d85fe9d2735c8bcdf76830072c4308b26082b2f0905bb"
+    },
+    {
+      "path": "scripts/slot_topology.py",
+      "bytes": 17817,
+      "sha256": "a58e6a868b17fe4898e9f42bdc9b810b6b50f974f8161b23597a0fd3d1cbcdef"
+    },
+    {
+      "path": "scripts/surface_finish.py",
+      "bytes": 4762,
+      "sha256": "49e7a9fd1a52ae3fdd5ab816b6e3c0c880dffd4fba9aee2b5e520967b5b5d5d5"
+    },
+    {
+      "path": "scripts/surface_supports.py",
+      "bytes": 23224,
+      "sha256": "103e40b0aea7f5c0e164116e5a136208a5959c1a01c026a361e1e9f6c82d8925"
+    },
+    {
+      "path": "scripts/verify-motor-animation.py",
+      "bytes": 2941,
+      "sha256": "613ef719d9be7aaa93ff3f6941543de211526fbe90f381b5ded88498a6d2114e"
+    },
+    {
+      "path": "scripts/verify-native-drive.py",
+      "bytes": 2093,
+      "sha256": "692658b17a18cbee6af00b31214cedd8c77399495df1b4c39f677d9ba05f1bc2"
+    },
+    {
+      "path": "scripts/verify-regeneration-exact.mjs",
+      "bytes": 3599,
+      "sha256": "9ef1c2d2867252b812947d37fd4f1e1cb0e7641d6c1d88535d3320781a161ed6"
+    },
+    {
+      "path": "scripts/verify-regeneration.mjs",
+      "bytes": 5003,
+      "sha256": "e997ea70d0eaf2d9a425f0d7b9010757c3c1067f20ca0eb734d2a4a0c8e061df"
+    },
+    {
+      "path": "scripts/verify-solids.py",
+      "bytes": 2454,
+      "sha256": "18cac73510964d58cd7b0c60735a79724fae2aad0791295123b309c9c42f6673"
+    },
+    {
+      "path": "scripts/verify-source-runtime.mjs",
+      "bytes": 6510,
+      "sha256": "d3621cad2c55e85df075e8d9d17cb6a7f124c6c28ce0fd353dfe7b6408400cd9"
+    },
+    {
+      "path": "scripts/verify-source.py",
+      "bytes": 5757,
+      "sha256": "bcc0297e1849272c9c17a012bf8da5a05bfe897d8797030f1f0b261b5a3ed088"
+    },
+    {
+      "path": "scripts/wing_seam.py",
+      "bytes": 3813,
+      "sha256": "4228da9c2983aa252b34bd059d9a5335bedcaac181319c16f824787aafb758fc"
+    },
+    {
+      "path": "scripts/wing_surface_repair.py",
+      "bytes": 13752,
+      "sha256": "4c713427b6d995c9af46d7b861b2e10a6fcc5ecea4222d3dfdaece8d961d6cdb"
+    },
+    {
+      "path": "scripts/wing_surfaces.py",
+      "bytes": 12664,
+      "sha256": "4be94d46d7ba231537e84cfdf61a72d1c6d0313c5fec1f30c0deb7004ef4ab54"
+    },
+    {
+      "path": "src/App.tsx",
+      "bytes": 51508,
+      "sha256": "c75b976a76d44337839caecfa3afc9fe285dea89cbb5b5eb2a3354a7e0d40dfa"
+    },
+    {
+      "path": "src/DetailPanel.tsx",
+      "bytes": 3424,
+      "sha256": "5377da7b364d1c94eed0cc2cfc82c7f053a1ebe8270966040eeaa3f234c66c96"
+    },
+    {
+      "path": "src/InternalDrivePanel.tsx",
+      "bytes": 1384,
+      "sha256": "befbd976df707aadeae47a916f364dd1b8e6e4f4af80e6165c34a21bf14a26ab"
+    },
+    {
+      "path": "src/Scene.tsx",
+      "bytes": 25525,
+      "sha256": "0a7354b91bfaab621fcd2d26f0543682b5ef19aa004988a0033cfa4c987248fd"
+    },
+    {
+      "path": "src/SimulationPanel.tsx",
+      "bytes": 13801,
+      "sha256": "b6ef7b660442b2d7840fbeb4491883a6ff9fe63343b41ef6d39ccd08f6e89b6f"
+    },
+    {
+      "path": "src/cameraNavigation.test.ts",
+      "bytes": 9921,
+      "sha256": "a524e204e7521cea1b09b7f69a9e8cf79b91c3418ce2beaef0e23e0124066578"
+    },
+    {
+      "path": "src/cameraNavigation.ts",
+      "bytes": 1792,
+      "sha256": "7329027c4188edb1f387e00b621ab9b710777aaf3eb6753ee04f411a7cb5e78c"
+    },
+    {
+      "path": "src/details.test.ts",
+      "bytes": 12966,
+      "sha256": "afe85890b306d7ff99f3da1dba5d8ac6ce2bf5811990310eec87fb7ab93348b5"
+    },
+    {
+      "path": "src/details.ts",
+      "bytes": 2779,
+      "sha256": "6b6a967e411a72e5bea6f44badb89f33746c01e5e1d770ce91d962a1d4cb1a66"
+    },
+    {
+      "path": "src/experience.test.ts",
+      "bytes": 3987,
+      "sha256": "b7d6b8147ce3bd0f05621c53c7fea5bfed5e44c674092fa2f184efec8ed921a5"
+    },
+    {
+      "path": "src/experience.ts",
+      "bytes": 7572,
+      "sha256": "d4afe57fbd401cbcba996cebc0e2d56771b425d4ad2df79e696158cb8822f105"
+    },
+    {
+      "path": "src/flight.test.ts",
+      "bytes": 1269,
+      "sha256": "ebb7d4c5752755bfac8b676bb9b5602f83c08d19c46555f454e4d1bda5172328"
+    },
+    {
+      "path": "src/flight.ts",
+      "bytes": 3759,
+      "sha256": "00f3e09ac2579f6c7ca484a07692d191548821cb35b37509b61aafcb0ad9800a"
+    },
+    {
+      "path": "src/inspection.test.ts",
+      "bytes": 7723,
+      "sha256": "d909d27763778f96a70a73203eb4645d3bca5be307bc33bf33f072d649b766c5"
+    },
+    {
+      "path": "src/inspection.ts",
+      "bytes": 6709,
+      "sha256": "6169f60df2ca81abcf361b42fbdb751e7e7e50362cdae0bd4d0c9e000d599ca4"
+    },
+    {
+      "path": "src/internalDriveInspection.test.ts",
+      "bytes": 8629,
+      "sha256": "d3c6994875df5e15c79f66286371b93c6637ddbb2bbd65690276804375462c9b"
+    },
+    {
+      "path": "src/internalDriveInspection.ts",
+      "bytes": 2093,
+      "sha256": "1a5fae23375a81475b43b9fe8d16bcce506a3b76663b1bba3ba9b288ad6f6a42"
+    },
+    {
+      "path": "src/internalDriveMotion.test.ts",
+      "bytes": 3105,
+      "sha256": "d5aeb0c535155acbaf94bc3496a343c3c882bc21e7d3dd21e79805daae35c994"
+    },
+    {
+      "path": "src/main.tsx",
+      "bytes": 236,
+      "sha256": "0149f7a69d4d5aeb746722160f8fbcd57defdf78e80e1fe3d9038dc76f84361e"
+    },
+    {
+      "path": "src/model.test.ts",
+      "bytes": 17751,
+      "sha256": "1e51ea9b65300cd1ce0033c6d9cc4979abb7be2f8c50a0ba32196019ee530795"
+    },
+    {
+      "path": "src/motors.ts",
+      "bytes": 5268,
+      "sha256": "5297141cc670fd98034bd242e189f0d61681587db209a02da08fb73971c02824"
+    },
+    {
+      "path": "src/recordingLoader.ts",
+      "bytes": 2999,
+      "sha256": "3ff3d85e8c6a5a0285b76ed1044454ef045b8a903d0404df3e565bcfdaeca54d"
+    },
+    {
+      "path": "src/rig.test.ts",
+      "bytes": 19255,
+      "sha256": "7663ccba45f9bb4c8359645f007c82121d70a4889860db256572ae17f2eaba8c"
+    },
+    {
+      "path": "src/rig.ts",
+      "bytes": 25357,
+      "sha256": "4215cd44a02e36e62a2a7ccacd16a38b3fe9d82a727c0233af6d889caa56efb5"
+    },
+    {
+      "path": "src/rotor-geometry.test.ts",
+      "bytes": 8033,
+      "sha256": "e5ec30b315db08876e882daa6cdcaf37530cbb7f8217a9e11b9316cdd082e5fa"
+    },
+    {
+      "path": "src/rotor.test.ts",
+      "bytes": 19982,
+      "sha256": "a5381b168d324f316e96542370b9f4b989ba9000adb09998e2315e4b85577f05"
+    },
+    {
+      "path": "src/rotorExposure.ts",
+      "bytes": 5680,
+      "sha256": "478cb4cddd2027e41dc74134ca808c9eff47b72ed949219d2464d951d1ae303e"
+    },
+    {
+      "path": "src/rotorExposureProfile.test.ts",
+      "bytes": 6613,
+      "sha256": "e0bf36dc091204d95220dd9124bda0dc95dd7d1ce17673c4e15214b7f277bdd6"
+    },
+    {
+      "path": "src/rotorExposureProfile.ts",
+      "bytes": 7533,
+      "sha256": "a8e1c9fc3ba86e3d80a749a4a9d2ea8207a3501ab9b292fcc691a39cdf1e2a24"
+    },
+    {
+      "path": "src/rotorPresentation.test.ts",
+      "bytes": 10157,
+      "sha256": "cc1606501b5f6bca4b3eb9333694ee3c8f31f628faa4ce4c2f83404d77f0193b"
+    },
+    {
+      "path": "src/rotorVisibility.test.ts",
+      "bytes": 6090,
+      "sha256": "d3a3294b7dac76cf8dcb0596ee2d1d881507bdee601d6ee311624399ad45fc34"
+    },
+    {
+      "path": "src/runtime.test.ts",
+      "bytes": 2123,
+      "sha256": "c3a69b23dc6f470d9fb93911b813997b010b127807dad4d0e446159b07873a18"
+    },
+    {
+      "path": "src/sceneLighting.ts",
+      "bytes": 1554,
+      "sha256": "00584eba19c175341efb5893b5b53a09b560232dd371381acde8c502f8752150"
+    },
+    {
+      "path": "src/simulation.test.ts",
+      "bytes": 31356,
+      "sha256": "ee34ddb0a3615087e000ca2c92f77fc120bc76d119a62a0e6f5918440887d76f"
+    },
+    {
+      "path": "src/simulation.ts",
+      "bytes": 23108,
+      "sha256": "db34291fe2bca396f94c77d359900ea05da1ab148b8d0c5cac05eb3d933e4e34"
+    },
+    {
+      "path": "src/simulationBridge.ts",
+      "bytes": 10333,
+      "sha256": "2bfac4d7037ba9513aff8c6f51689c98112c230ec5b244d76044dd3059e426d8"
+    },
+    {
+      "path": "src/style.css",
+      "bytes": 32278,
+      "sha256": "7c0da5f0f423f43d69a17e12cf269e32ac16f4c50c7e3ae86ba9dca15a31b66d"
+    },
+    {
+      "path": "src/tilt.test.ts",
+      "bytes": 5792,
+      "sha256": "792ed40d569d083f6f582b29f9b03995647c0e441679cb59463206a12a8a8cc5"
+    },
+    {
+      "path": "src/tilt.ts",
+      "bytes": 2601,
+      "sha256": "aaad954b22fda6719b3a4fee829271ad212dc5c9a7d354c163e8f64731cd7327"
+    },
+    {
+      "path": "src/uiControl.test.ts",
+      "bytes": 12806,
+      "sha256": "723ba3c4622f32cfbb35712d5159ef43ee02f86493cb2b4dde59c34b7c5451c7"
+    },
+    {
+      "path": "src/uiControl.ts",
+      "bytes": 1272,
+      "sha256": "c5f7e26476a632fef02b8de5fd41e0e4affa71b4b9f451f00b0df444788ae493"
+    },
+    {
+      "path": "src/viewportLayout.test.ts",
+      "bytes": 6601,
+      "sha256": "2a69add34a05770ceec9ded30dec924dbc2360018dae2c2910599b4304ee365d"
+    },
+    {
+      "path": "tools/compare-complete-native-signed-zero.mts",
+      "bytes": 6234,
+      "sha256": "218cc1783a11a6cf7ccca3e1c32f2dc6c0a4f0612889fead34b81d39e0ec622d"
+    },
+    {
+      "path": "tools/compare_isolated.py",
+      "bytes": 3658,
+      "sha256": "8b5301b9097dcd7d4de4a5b73d080d6810b57ee02dae758678898690b0e66d7c"
+    },
+    {
+      "path": "tools/guarded-native-entry-recovery.py",
+      "bytes": 5340,
+      "sha256": "01b715f0a50a1d9bf77f0a3d8460053e6fd87b1b687d9d4cc586ed2596b6e0b0"
+    },
+    {
+      "path": "tools/rebuild_isolated.py",
+      "bytes": 4775,
+      "sha256": "26a2f9d2743e1ff2504fdd1e4615fd765d5d10951579b91145d9d5bd7c3a3132"
+    },
+    {
+      "path": "tools/verify_package.py",
+      "bytes": 1262,
+      "sha256": "a08b728257d1010c21924ae079e9d3850ac41c12098e5e2fb8abb9e97133b76c"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 371,
+      "sha256": "713b3d770d95aa35bbd97ac64dca82b0d6f6c7b9cf1ae5c11808051a8762ba1a"
+    },
+    {
+      "path": "vite.config.ts",
+      "bytes": 394,
+      "sha256": "0f2ea1904c7a1b7a123207f1d01cad2e27c15ecaf09f9b9c9fa241c28e563871"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "scope": "Frozen parent metadata lock checked before this bake; current main outputs are optional audit only",
+  "metadataInputLockSha256": "3cbb163e57cc483cbdae91cce2f2b8e69b3a4d6f597ba608f3585387f1bee595",
+  "checks": [
+    {
+      "frozenParentPath": "assets/baseline-v25-20261007/manifest.json",
+      "sha256": "f72d468427d43283fb1e359e5d84cc7a485e68542048476fb5653ddba1df7d15",
+      "byteIdenticalToStageCapture": true
+    },
+    {
+      "frozenParentPath": "assets/baseline-v25-20261007/model-validation.json",
+      "sha256": "d40e6473ba4fa86b1e61b05301b232c78d33a0331ae66bc83394bcd17dec816c",
+      "byteIdenticalToStageCapture": true
+    }
+  ]
+}

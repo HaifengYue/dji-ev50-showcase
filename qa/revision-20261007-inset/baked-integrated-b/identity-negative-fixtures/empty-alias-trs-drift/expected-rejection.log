@@ -1,0 +1,25 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: WingLowerClosure_R serialized translation changed
++ actual - expected
+
+  [
+    -1.5001283884048462,
++   0.22012917859649658,
+-   0.22012817859649658,
+    -1.4448717832565308
+  ]
+
+    at serializedTrs (file:///workspace/scratch/40bf3b17dbf8/transwing-new-annotations-20261007/work/transwing-studio/scripts/revision_20261007_inset/integrated_verify_source_runtime.mjs:38:187)
+    at file:///workspace/scratch/40bf3b17dbf8/transwing-new-annotations-20261007/work/transwing-studio/scripts/revision_20261007_inset/integrated_verify_source_runtime.mjs:89:139 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: [ -1.5001283884048462, 0.22012917859649658, -1.4448717832565308 ],
+  expected: [ -1.5001283884048462, 0.22012817859649658, -1.4448717832565308 ],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

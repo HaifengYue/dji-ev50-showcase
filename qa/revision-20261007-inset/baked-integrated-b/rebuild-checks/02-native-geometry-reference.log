@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "referenceSha256": "cdf23dec8178269ee75155994db2bbba4d3b69467b0654568f80f5c0ccb4bde1",
+  "candidate": "qa/revision-20261007/candidate-inset-integrated-b-regenerated.blend",
+  "candidateSha256": "72ef1837bb7c654d079741146fd80a5874168dcbc6f5f8926903f4a2778b8059",
+  "completeMeshCount": 285,
+  "completeNodeCount": 352,
+  "differences": [],
+  "method": "Every mesh including unused vertices, complete oriented polygon/material association, each named parent, local basis and parent inverse, exact stored Float32 values; scene labels and Blend packaging excluded"
+}
+Blender 4.3.2
+Read blend: "/workspace/scratch/40bf3b17dbf8/transwing-new-annotations-20261007/rebuild-v27-b-default/transwing-studio/qa/revision-20261007/candidate-inset-integrated-b-regenerated.blend"
+
+Blender quit

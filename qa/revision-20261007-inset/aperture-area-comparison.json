@@ -1,0 +1,105 @@
+{
+  "definition": "XY projection of gap between actual fixed and moving upper wing-skin boundaries, geometric normal Z>0.9 and all triangle vertices Z>=-0.2200001. Includes view of internal hardware/sidewalls through that mouth; excludes hardware occlusion and is not sky-through area. Exact piecewise-linear midpoint integral between all boundary crossing events within stated domain, subject to stored-mesh arithmetic tolerances.",
+  "methodSourceSha256": "54317c9430399c0db53644150b23c9066b13bc3864bead3021ca0df200a03e26",
+  "areaUnit": "u^2, uncalibrated model units",
+  "rows": [
+    {
+      "source": "qa/revision-20261007/candidate-detail-m.blend",
+      "sha256": "2ed048e53a4376fa79413add32a914510b245611df369e3e337ec1d1dc89a2a8",
+      "domain": {
+        "absX": [
+          1.34,
+          1.67
+        ],
+        "worldY": [
+          -1.5648717832565309,
+          -1.3248717832565309
+        ],
+        "YRelativeToPivot": [
+          -0.12,
+          0.12
+        ]
+      },
+      "sides": {
+        "L": {
+          "upperWingSkinApertureProjectedArea": 0.01971872763380908,
+          "maximumXWidth": 0.1663302389751078,
+          "linearIntervals": 348
+        },
+        "R": {
+          "upperWingSkinApertureProjectedArea": 0.019626501396700188,
+          "maximumXWidth": 0.1663302389751078,
+          "linearIntervals": 359
+        }
+      }
+    },
+    {
+      "source": "qa/revision-20261007/candidate-inset-integrated-a.blend",
+      "sha256": "51ec3c493b62d0d4caac924ddf1e26b6889288affa5ccd5376f0eb249be6e72c",
+      "domain": {
+        "absX": [
+          1.34,
+          1.67
+        ],
+        "worldY": [
+          -1.5648717832565309,
+          -1.3248717832565309
+        ],
+        "YRelativeToPivot": [
+          -0.12,
+          0.12
+        ]
+      },
+      "sides": {
+        "L": {
+          "upperWingSkinApertureProjectedArea": 0.008725363234401618,
+          "maximumXWidth": 0.06891033700768157,
+          "linearIntervals": 1093
+        },
+        "R": {
+          "upperWingSkinApertureProjectedArea": 0.00881917824022786,
+          "maximumXWidth": 0.068910278790417,
+          "linearIntervals": 1090
+        }
+      }
+    },
+    {
+      "source": "qa/revision-20261007/candidate-inset-narrow-healed-a.blend",
+      "sha256": "60d98c612ed737608fa356597485e62113d9ef636a45fea82ea9df4c30faa4fc",
+      "domain": {
+        "absX": [
+          1.34,
+          1.67
+        ],
+        "worldY": [
+          -1.5648717832565309,
+          -1.3248717832565309
+        ],
+        "YRelativeToPivot": [
+          -0.12,
+          0.12
+        ]
+      },
+      "sides": {
+        "L": {
+          "upperWingSkinApertureProjectedArea": 0.007823493197741666,
+          "maximumXWidth": 0.07314486358061667,
+          "linearIntervals": 1265
+        },
+        "R": {
+          "upperWingSkinApertureProjectedArea": 0.007823541083528347,
+          "maximumXWidth": 0.07314486358061667,
+          "linearIntervals": 1258
+        }
+      }
+    }
+  ],
+  "comparison": {
+    "reference": "same fixed global XY domain, anchored to candidate A; legacy M has a different pivot origin parameterization, so relative-pivot label applies only to A",
+    "baselineMTotalUpperSkinGapArea": 0.03934522903050927,
+    "integratedATotalUpperSkinGapArea": 0.01754454147462948,
+    "areaReductionFraction": 0.5540871941290517,
+    "maximumWidthReductionFraction": 0.5857020394185222,
+    "notAThroughLightOrHardwareOcclusionCorrectedArea": true
+  }
+}

@@ -1,0 +1,10 @@
+"""实际读取保存动作的关键帧，不以另造动画或AI图替代模型。"""
+from pathlib import Path
+import bpy,runpy,sys,json,hashlib
+from mathutils import Vector
+ROOT=Path(__file__).resolve().parents[2];OUT=ROOT/'qa/revision-20261007';source=ROOT/'assets/blender/xp4.blend';bpy.ops.wm.open_mainfile(filepath=str(source));sys.path.insert(0,str(ROOT/'scripts'));ns=runpy.run_path(str(ROOT/'scripts/export-transition.py'),run_name='render_actual_baked_animation');s=bpy.context.scene
+s.render.engine='BLENDER_WORKBENCH';s.display.shading.light='STUDIO';s.display.shading.color_type='MATERIAL';s.display.shading.show_shadows=True;s.display.shading.show_cavity=True;s.display.shading.cavity_type='BOTH';s.display.shading.background_type='WORLD';s.world.color=(.55,.55,.55);s.render.resolution_x=1440;s.render.resolution_y=1000;s.render.resolution_percentage=100;s.render.image_settings.file_format='PNG';s.view_settings.view_transform='Standard'
+c=bpy.data.cameras.new('BakedReviewCamera');cam=bpy.data.objects.new('BakedReviewCamera',c);s.collection.objects.link(cam);s.camera=cam;c.type='ORTHO';c.ortho_scale=12.8;cam.location=(8,-10,8);cam.rotation_euler=(Vector((0,0,0))-cam.location).to_track_quat('-Z','Y').to_euler();rows=[]
+for label,clip,frame in [('animation-hover-start',ns['CLIP'],0),('animation-cruise',ns['CLIP'],79),('animation-hover-return',ns['CLIP'],199),('animation-motors-stopped',ns['MOTOR_CLIP'],168)]:
+ ns['select_clip'](clip);s.frame_set(frame);bpy.context.view_layer.update();path=OUT/(label+'.png');s.render.filepath=str(path);bpy.ops.render.render(write_still=True);rows.append({'file':path.name,'clip':clip,'frame':frame,'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'actualSavedAnimationFrame':True})
+(OUT/'ANIMATION_IMAGE_PROVENANCE.json').write_text(json.dumps({'sourceBlendSha256':hashlib.sha256(source.read_bytes()).hexdigest(),'images':rows,'camera':{'position':list(cam.location),'orthographicScale':12.8},'renderer':'Blender Workbench; geometry from actual saved Blend, no image generation'},indent=2))

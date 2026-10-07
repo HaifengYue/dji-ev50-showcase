@@ -1,0 +1,10 @@
+{
+  "version": 27,
+  "approvedByProjectRoot": true,
+  "runtimeBudgetBytes": 3800000,
+  "actualRuntimeBytes": 3696884,
+  "authority": "Parent relays root permission to retain the approved 3.8MB development performance budget for V27",
+  "approvalMessage": "3.8MB沿用root先前明确允许的开发性能预算即可，记实际值/非用户硬限制；不需要为几何压低。",
+  "isUserHardLimit": false,
+  "geometryPrecisionTradeoffAllowed": false
+}

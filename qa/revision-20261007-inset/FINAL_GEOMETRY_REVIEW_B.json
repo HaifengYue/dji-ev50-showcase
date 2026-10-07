@@ -1,0 +1,184 @@
+{
+  "schema": "transwing.v27.integrated-b.qualified-geometry-review.v1",
+  "candidate": "qa/revision-20261007/candidate-inset-integrated-b.blend",
+  "candidateSha256": "742ef52939de40f5d2eb46b87d38c8e85f99bffafc270c302afd59b9ea398adf",
+  "status": "CURRENT_AFFECTED_GEOMETRY_CHECKS_PASSED_WITH_EXPLICIT_INHERITED_LIMITATIONS; USER_IMAGE_REVIEW_PENDING",
+  "units": "Uncalibrated concept-model u; no mm, strength, fabrication, or airworthiness claim",
+  "published": false,
+  "geometryFrozen": true,
+  "materialSweep": {
+    "poses": 661,
+    "angleRangeDegrees": [
+      0,
+      120
+    ],
+    "ordinaryStepDegrees": 0.25,
+    "nearCruiseStepDegrees": 0.025,
+    "surfaceContacts": 0,
+    "containedComponents": 0,
+    "unresolvedContainment": 0,
+    "finiteSamplingNotWholeMachineContinuousProof": true
+  },
+  "rotorAndFoldSweep": {
+    "cases": 252,
+    "contacts": 0
+  },
+  "closedMaterialAndSupportCheckPassed": true,
+  "newGeometry": {
+    "hingeAxisLinePreserved": true,
+    "shaftDiameter": 0.056,
+    "shaftAxialSpan": [
+      -0.0145,
+      0.02
+    ],
+    "negativeEndcapMinimumT": -0.0148,
+    "movingBoreNominalInnerRadius": 0.0313,
+    "wingBallAbsXCruise": 1.12,
+    "priorWingBallAbsXCruise": 1.18,
+    "wingBallInwardDelta": 0.06,
+    "rigidRodLength": 3.0967291777188986,
+    "frontStopTranslationY": -0.0505221063497614,
+    "sliderTravelY": [
+      0.921356056511109,
+      1.900000123109269
+    ],
+    "frontStopMinimumDesignGap": 0.004,
+    "maleThreadPhaseOnlyCorrectionDegrees": -151.6265346,
+    "frontAndRearNacelleCoordinatesNotAdditionallyChanged": true,
+    "rearCornerRadius": 0.06,
+    "additionalRearInnerEdgePlanRetreatMaximum": 0.003976,
+    "naturalLowerSurfaceExtraBulgeRemoved": true,
+    "upperSkinLimitedRemeshNotEveryOldTriangleIdentical": true
+  },
+  "newAffectedWallDomains": {
+    "rearPrimaryMinimum": 0.010199863223195075,
+    "rearPrimarySampleCount": 210987,
+    "cruiseLayerMinimum": 0.003659929148852825,
+    "cruiseLayerSampleCount": 43058,
+    "fixedAxisNaturalMainSkinMinimum": 0.01363156,
+    "movingAxisNaturalMainSkinMinimum": 0.01084013,
+    "notUniformWholeWingOrBoreWallClaim": true
+  },
+  "inheritedLimits": {
+    "dynamicOldSeam": {
+      "minimumMeasuredGapApprox": 0.00172605,
+      "angleDegrees": 1.25,
+      "sameOriginalV25AndMTriangle": true,
+      "BDriftApproxAtWitnessLessThan": 7.5e-08,
+      "cruise003DoesNotMeanEntireMotion003": true
+    },
+    "oldBoreRoof": {
+      "actualThinWallRangeApprox": [
+        0.00754,
+        0.00983
+      ],
+      "representativeThickness": 0.008961273,
+      "thinPatchCount": 6,
+      "thinAreaApprox": 1.47688e-05,
+      "absX": [
+        1.38975,
+        1.39595
+      ],
+      "Y": [
+        -1.38504,
+        -1.37685
+      ],
+      "Z": [
+        -0.1837,
+        -0.17517
+      ],
+      "inheritedFromOriginalV25AndM": true,
+      "notNumericalEdgeAndNotWaivedAsNewPass": true
+    },
+    "naturalFeatherException": {
+      "reference": "Original V25 natural trailing skin, not M later downward artificial thickening",
+      "originalComparedSections": 224,
+      "retainedSections": 218,
+      "removedByAuthorizedInnerEdgeRetreat": 6,
+      "absX": [
+        0.716,
+        0.836
+      ],
+      "Y": [
+        -0.96618544,
+        -0.9534958
+      ],
+      "chordU": [
+        0.959,
+        0.963
+      ],
+      "minimumVerticalThickness": {
+        "V25": 0.009107113,
+        "M": 0.010008097,
+        "B": 0.009111285
+      },
+      "minimumNormalThickness": {
+        "V25": 0.009364604,
+        "M": 0.010283367,
+        "B": 0.009368052
+      },
+      "scope": "Only the original naturally thin feather domain may restore its original distribution. New primary skin and regions originally >=.010 remain subject to .010. No statement of M all-point thickness preservation."
+    }
+  },
+  "cruiseAperture": {
+    "maximumUpperWingSkinXWidthApprox": 0.06891,
+    "scope": "Gap between fixed/moving upper-skin XY projections; excludes hardware occlusion and is not a sky-through hole area",
+    "sameAxisAndRigidSkinMotionNecessity": "At Y=-1.475068823, actual fixed-skin triangle reaches moving-rest X=1.55961525, Z=-.17170 at116.4deg, while static fixed top boundary X=1.50235128. This is a finite occupied-surface witness, not a global optimum proof. A simple hairline gap is not assumed feasible.",
+    "baselineMUpperSkinGapAreaBothSides": 0.03934522903050927,
+    "currentUpperSkinGapAreaBothSides": 0.01754454147462948,
+    "upperSkinGapProjectedAreaReductionFraction": 0.5540871941290517,
+    "areaUnit": "u^2",
+    "broaderOrRougherExploratoryCandidateNotSelected": true
+  },
+  "sourceAndRuntimeBoundaries": {
+    "newVersion": 27,
+    "old82_103_136InputsPreserved": true,
+    "requiredInputsMustRemainInMainPackage": true,
+    "heavyReportsAndPngsMayBeExternalButNotDeleted": true,
+    "runtimeBlenderRendersAndNumericalChecksNotBrowserGpuTest": true,
+    "browserAndPhysicalMobileTestingNotPerformed": true,
+    "wholeMachineManufacturingMinimumWallCertification": false
+  },
+  "evidence": [
+    {
+      "path": "qa/revision-20261007/candidate-inset-integrated-b-dense-wing-material-check.json",
+      "bytes": 7787,
+      "sha256": "2c1f29a9c11233f38d191c322bed42028cb36f1a7ee34a2356ef6ad2c9c9f025"
+    },
+    {
+      "path": "qa/revision-20261007/candidate-inset-integrated-b-rotor-fold-phase-preflight.json",
+      "bytes": 11411,
+      "sha256": "726820fdeabc6e0ea07eee57ac771f041038a685aa88ba4907c6230e55db6453"
+    },
+    {
+      "path": "qa/revision-20261007/candidate-inset-integrated-b-material-and-support-check.json",
+      "bytes": 66537,
+      "sha256": "acd1716adb8efe7c25d8f27b99c8850faf5a37db46c1e5f48e2668adb8615cf9"
+    },
+    {
+      "path": "qa/revision-20261007-inset/candidate-inset-integrated-b-moving-bore-clearance.json",
+      "bytes": 2007,
+      "sha256": "4ae155742d4422894c56e28634ecb9c6cf72a0d3f59ac187e43c8af5e7651934"
+    },
+    {
+      "path": "qa/revision-20261007-inset/integrated-b-wall-review/FINAL_INTEGRATED_B_LIMITED_WALL_REVIEW.json",
+      "bytes": 68454,
+      "sha256": "e00009e137afbe7737e56a2dbddd661b8637d1e8b48e451c0f4ea1a7ec507256"
+    },
+    {
+      "path": "qa/revision-20261007-inset/integrated-b-wall-review/FINAL_INTEGRATED_B_WALL_MANIFEST.json",
+      "bytes": 5029,
+      "sha256": "010bf07cffa60a4456c76dfc98afc8f10558af21f6c1fbc21dd243632107f565"
+    },
+    {
+      "path": "qa/revision-20261007-inset/candidate-inset-integrated-b-construction.json",
+      "bytes": 219883,
+      "sha256": "73802e625f2c385a79094a0ff907ae21ea3ec0dd956cd6d6adc3b134872c7f22"
+    },
+    {
+      "path": "qa/revision-20261007-inset/aperture-area-comparison.json",
+      "bytes": 3465,
+      "sha256": "534b79b2617cfb592650e97cb64013c645e4606428ddd742b14db310b4439871"
+    }
+  ]
+}

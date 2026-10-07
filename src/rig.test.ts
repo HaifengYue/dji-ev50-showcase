@@ -407,9 +407,17 @@ test("实际 GLB 在飞行父级位移、航向、侧倾及缩放下保持球头
           const eyeNode = scene.getObjectByName(`BraceRodEye_${side}_${eye}`);
           assert.ok(ballNode && eyeNode, "缺少可见球头或杆眼");
           assert.ok(
-            ballNode
-              .getWorldPosition(new THREE.Vector3())
-              .distanceTo(eyeNode.getWorldPosition(new THREE.Vector3())) < 2e-6,
+            // Authoring origins need not be the geometric joint center. In V25,
+            // exact Float32 rod eyes retain their source origin rather than a
+            // quantizer's recentered origin; test the actual visible solids.
+            new THREE.Box3()
+              .setFromObject(ballNode)
+              .getCenter(new THREE.Vector3())
+              .distanceTo(
+                new THREE.Box3()
+                  .setFromObject(eyeNode)
+                  .getCenter(new THREE.Vector3()),
+              ) < 2e-6,
             `${side} ${ball} 球头与杆眼脱开`,
           );
         }

@@ -1,48 +1,5 @@
-# 资产与独立重建
+# V27 B 资产
 
-本工程只有一套当前飞机资产。主模型、参数脚本、动画和网页采用同一机构设计；验证参考和失败候选保留在独立完整审计归档，轻量包不携带这些大数据。当前验证范围见 [VERIFICATION.md](VERIFICATION.md)。
+assets/blender/xp4.blend与xp4-source.glb、public/models/xp4.glb和dist内模型均绑定已验交付B。运行SHA352b1b6fd28026e5c9b50e981e1fb30aa4d5fad805084d7186ca2e9c7c375b16。
 
-## 当前模型
-
-| 文件 | 用途 | 字节数 | SHA-256 |
-| --- | --- | ---: | --- |
-| `assets/blender/xp4.blend` | 可编辑场景、机构和保存动画 | 33,134,084 | `1e29d4697c931545cc7b6e5d3cfa124093c9adb7dfe71a03428cda66cbd15225` |
-| `assets/blender/xp4-source.glb` | 完整源编码 | 8,874,240 | `e0323e3c6d50c3810a17f9e940debe2b13369ce76fcd042fe6ac0ea26b0adedd` |
-| `public/models/xp4.glb` | 网页 Meshopt 运行编码 | 3,282,332 | `26fc74f34383dc80342ca1804ccb8d4cf6fda2f8a8dace6e03d84510fb9d6b5c` |
-| `public/models/manifest.json` | 当前模型清单 | 840,342 | `8cbc5779ee5bfeb7022359cd96efd0b5d6d1943e8edb9be2c0e6978a21cc8b19` |
-
-两种 GLB 各有 348 个原始节点、283 个渲染网格实例、281,984 个实例三角形、6 种材质、2 条动画和 0 个独立纹理。源编码有 283 个网格定义，运行编码复用为 224 个；不能把去重后的网格定义数当成渲染实例数。加载器另加的 Scene 节点不计入原始 GLB 节点数。
-
-动力部件演示保留在 `assets/blender/nacelle-system-concept.blend`、同目录的源 GLB 和 `public/models/nacelle-system-concept.glb`。它们是为本工程恢复的等价可编辑作者源和配套导出，不声称是未改动的历史原件。该演示有 20 个网格实例和 3,144 个三角形。
-
-## 构造与再生
-
-`CONSTRUCTION_INPUTS.json` 锁定 82 项实际输入及其完整 SHA，包括参数数据、原生几何处理、压缩脚本、包锁和必要的概念部件资源。局部几何模板与校准数据是明确的构造输入，不是隐藏的整机输出替代品。
-
-2026-10-06 在另一个真实目录中按该清单进行了隔离再生：没有预置主飞机 GLB 或 Blend，使用 Blender 4.3.2、4 线程及冻结的 Node 工具链，重新构造、保存并压缩。源编码和运行编码分别与当前对应资产比较了全部 283 个网格的有向角点属性、未用顶点行、材质、父级、局部矩阵、动画及元数据；逐值相同，另有保留负零的表示核对。部分访问器排列和 GLB 包装字节不同，因此再生文件不能以原文件 SHA 冒充当前生产资产。
-
-原生入口根据自身脚本路径和显式根参数确定输出位置。两个真实工程目录的正负测试证明，错误的工作目录、环境根或跨根写入在保存 Blend/GLB 前被拒绝。此验证是实际输入锁、声明依赖和输出隔离的检查，不声称完成系统级追踪。
-
-先建立一个位于本工程之外的空父目录，再执行：
-
-```sh
-python3 tools/rebuild_isolated.py --parent /path/to/empty-parent --install-deps --run
-```
-
-该命令只在父目录的新 `transwing-studio` 子目录复制锁定输入、安装脚本包锁依赖、运行 Blender 4 线程和压缩。需要预装 Blender 4.3.2、Node.js 和 npm；安装依赖需要访问 npm 仓库。省略 `--run` 和 `--install-deps` 时只准备输入，不执行构造。目标子目录或收据已存在时拒绝覆盖。
-
-随后从原工程根比较两种编码；`--output` 指向一个尚不存在的新目录：
-
-```sh
-python3 tools/compare_isolated.py --other /path/to/empty-parent/transwing-studio --output /path/to/new-comparison
-```
-
-比较通过只证明对应编码的完整几何、材质、节点和动画身份，不代替材料、支承或运动检查。原工程资产始终保留，再生输出不会自动替换它们。Windows 可将 `python3` 改为 `py -3`，并传入实际目录及 `--blender` 可执行文件路径。
-
-## 使用边界
-
-主翼修复、紧凑关节、内部桥座、短轴帽、连杆和涂层分属明确的构造来源。保存 Blend 的七个检查视图包含巡航、悬停、上下翼根及正面，能看见真实的可变窄缝；图像不作为墙厚和碰撞门的替代。
-
-部分历史网格保留原有表示缺陷，包括指定机身自接触、桨叉臂自交及运行编码的退化面、结构性开口天线。验收仅对完整同一性证明的有限库存作明确登记，不称全机网格零自交或所有部件都是有效闭实体。详见验证说明。
-
-用户参考照片、外部摄影、凭据、依赖安装目录和临时传输文件不作为项目资产交付。本工程是原创概念可视化与接口演示，不是原厂制造数据、生产 CAD、真实飞控、强度或适航证明。
+assets/baseline-20261007/xp4.blend为冻结V24几何输入；assets/baseline-v25-20261007/xp4-runtime.glb仅作历史量化身份比较。旧82/103/136及新171锁均自带；当前最终模型不是primitive构造输入。完整命令和限制见根README。

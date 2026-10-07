@@ -1,0 +1,2087 @@
+{
+  "candidate": "qa/revision-20261007/candidate-inset-integrated-b.blend",
+  "candidateSha256": "742ef52939de40f5d2eb46b87d38c8e85f99bffafc270c302afd59b9ea398adf",
+  "units": "model units u",
+  "status": "Finite affected-domain evidence complete with explicitly retained old bore-roof thin-wall limitation; not a universal thickness certificate",
+  "newTailResults": [
+    {
+      "side": "L",
+      "primaryWallSamples": 105532,
+      "primaryWallMinimum": 0.010199863223195075,
+      "primaryWallBelow010": 0,
+      "cruiseAdjacentLayerSamples": 21531,
+      "cruiseNearestUndersideGapMinimum": 0.0036601200699806213,
+      "cruiseLayerBelow003": 0
+    },
+    {
+      "side": "R",
+      "primaryWallSamples": 105455,
+      "primaryWallMinimum": 0.010199863223195075,
+      "primaryWallBelow010": 0,
+      "cruiseAdjacentLayerSamples": 21527,
+      "cruiseNearestUndersideGapMinimum": 0.003659929148852825,
+      "cruiseLayerBelow003": 0
+    }
+  ],
+  "tailBinding": "Fresh B actual-mesh primary wall and cruise layer samples exactly reproduce E counts and minima; the final B dynamic witness is also measured directly. Whole 181-pose E motion was not repeated on B by this review.",
+  "frozenFlatFunction": {
+    "path": "scripts/revision_20261007_inset/rebuild_rear_corner_flat.py",
+    "sha256": "6cdc7976778b8b31b66a4ced2fdd5b343027a5f1570be694176bdc46ced22515",
+    "review": "qa/revision-20261007-inset/rear-flat-trial/FROZEN_FLAT_E_REVIEW.json",
+    "reviewSha256": "00f9c95a414552cd897d48c85f43bef523be5081603aac32664008e2a6f8ac89",
+    "manifestSha256": "0a212b87f1776ec34a34000f0d7b4c189c2dace52d3531d5e1e7beccc4e2c8b2"
+  },
+  "newAxisNaturalSkinWalls": [
+    {
+      "side": "L",
+      "owner": "fixed",
+      "classifiedNaturalOpposingMainSkinSamples": 7468,
+      "minimumNormalWall": 0.013631558736622333,
+      "below010MainCount": 0,
+      "rawOtherOpposingSub010CountNotBlanketPassed": 610
+    },
+    {
+      "side": "L",
+      "owner": "moving",
+      "classifiedNaturalOpposingMainSkinSamples": 6505,
+      "minimumNormalWall": 0.010840130729436874,
+      "below010MainCount": 0,
+      "rawOtherOpposingSub010CountNotBlanketPassed": 1256
+    },
+    {
+      "side": "R",
+      "owner": "fixed",
+      "classifiedNaturalOpposingMainSkinSamples": 7524,
+      "minimumNormalWall": 0.013631558736622333,
+      "below010MainCount": 0,
+      "rawOtherOpposingSub010CountNotBlanketPassed": 598
+    },
+    {
+      "side": "R",
+      "owner": "moving",
+      "classifiedNaturalOpposingMainSkinSamples": 6473,
+      "minimumNormalWall": 0.010840130729436874,
+      "below010MainCount": 0,
+      "rawOtherOpposingSub010CountNotBlanketPassed": 1250
+    }
+  ],
+  "axisAToBGeometryIdentity": {
+    "method": "Exact equality of all three stored world vertex coordinate tuples, orientation-independent, for every triangle having any vertex within axis t[-.075,.160], r<.155.",
+    "sourceSha256": {
+      "a": "51ec3c493b62d0d4caac924ddf1e26b6889288affa5ccd5376f0eb249be6e72c",
+      "b": "742ef52939de40f5d2eb46b87d38c8e85f99bffafc270c302afd59b9ea398adf"
+    },
+    "rows": [
+      {
+        "node": "Fixed_root_L",
+        "selectedActualAxisTrianglesA": 2892,
+        "selectedActualAxisTrianglesB": 2892,
+        "identicalStoredWorldTriangles": 2892,
+        "onlyA": 0,
+        "onlyB": 0,
+        "sameGeometry": true
+      },
+      {
+        "node": "Composite_wing_L",
+        "selectedActualAxisTrianglesA": 4810,
+        "selectedActualAxisTrianglesB": 4810,
+        "identicalStoredWorldTriangles": 4810,
+        "onlyA": 0,
+        "onlyB": 0,
+        "sameGeometry": true
+      },
+      {
+        "node": "Fixed_root_R",
+        "selectedActualAxisTrianglesA": 2867,
+        "selectedActualAxisTrianglesB": 2867,
+        "identicalStoredWorldTriangles": 2867,
+        "onlyA": 0,
+        "onlyB": 0,
+        "sameGeometry": true
+      },
+      {
+        "node": "Composite_wing_R",
+        "selectedActualAxisTrianglesA": 4811,
+        "selectedActualAxisTrianglesB": 4811,
+        "identicalStoredWorldTriangles": 4811,
+        "onlyA": 0,
+        "onlyB": 0,
+        "sameGeometry": true
+      }
+    ],
+    "totalExactlyMatchingActualTriangles": 15380
+  },
+  "axisStaticSkinNearest": {
+    "sourceSha256": "742ef52939de40f5d2eb46b87d38c8e85f99bffafc270c302afd59b9ea398adf",
+    "method": "Seven interior barycentric samples per actual axis-neighborhood triangle, bidirectional nearest opposite rigid-body skin surface. No hard exclusion of the joint; new core is reported separately from join/retained neighborhood. Finite samples, no all-surface minimum proof.",
+    "results": [
+      {
+        "side": "L",
+        "groups": {
+          "join_or_retained_axis_neighborhood": {
+            "sampleCount": 25938,
+            "minimum": {
+              "source": "Composite_wing_L",
+              "sourceTriangle": 1591,
+              "point": [
+                -1.4075462818145752,
+                -1.5851999521255493,
+                -0.1811314821243286
+              ],
+              "sourceTR": [
+                0.15698552131652832,
+                0.07169178250693224
+              ],
+              "target": "Fixed_root_L",
+              "targetTriangle": 1462,
+              "nearestPoint": [
+                -1.406920313835144,
+                -1.5825400352478027,
+                -0.1811314821243286
+              ],
+              "targetTR": [
+                0.15581121668219566,
+                0.06988476448923632
+              ],
+              "distance": 0.0027325800620019436
+            },
+            "below003Count": 57,
+            "lowest": [
+              {
+                "source": "Composite_wing_L",
+                "sourceTriangle": 1591,
+                "point": [
+                  -1.4075462818145752,
+                  -1.5851999521255493,
+                  -0.1811314821243286
+                ],
+                "sourceTR": [
+                  0.15698552131652832,
+                  0.07169178250693224
+                ],
+                "target": "Fixed_root_L",
+                "targetTriangle": 1462,
+                "nearestPoint": [
+                  -1.406920313835144,
+                  -1.5825400352478027,
+                  -0.1811314821243286
+                ],
+                "targetTR": [
+                  0.15581121668219566,
+                  0.06988476448923632
+                ],
+                "distance": 0.0027325800620019436
+              },
+              {
+                "source": "Fixed_root_L",
+                "sourceTriangle": 624,
+                "point": [
+                  -1.4069838523864746,
+                  -1.5825250148773193,
+                  -0.17652612924575806
+                ],
+                "sourceTR": [
+                  0.15842476300895214,
+                  0.06653593698440118
+                ],
+                "target": "Composite_wing_L",
+                "targetTriangle": 4339,
+                "nearestPoint": [
+                  -1.4075638055801392,
+                  -1.5851962566375732,
+                  -0.17652612924575806
+                ],
+                "targetTR": [
+                  0.15963216684758663,
+                  0.06839481173401216
+                ],
+                "distance": 0.002733473666012287
+              },
+              {
+                "source": "Fixed_root_L",
+                "sourceTriangle": 1462,
+                "point": [
+                  -1.407196283340454,
+                  -1.5824750661849976,
+                  -0.1766340434551239
+                ],
+                "sourceTR": [
+                  0.1582109685987234,
+                  0.06657363034650497
+                ],
+                "target": "Composite_wing_L",
+                "targetTriangle": 4339,
+                "nearestPoint": [
+                  -1.4077770709991455,
+                  -1.585149884223938,
+                  -0.1766340434551239
+                ],
+                "targetTR": [
+                  0.15941996313631535,
+                  0.06843762152457766
+                ],
+                "distance": 0.0027371456380933523
+              },
+              {
+                "source": "Composite_wing_L",
+                "sourceTriangle": 4339,
+                "point": [
+                  -1.4080069065093994,
+                  -1.5851000547409058,
+                  -0.18090876936912537
+                ],
+                "sourceTR": [
+                  0.15679048746824265,
+                  0.07145084052034772
+                ],
+                "target": "Fixed_root_L",
+                "targetTriangle": 1462,
+                "nearestPoint": [
+                  -1.4073790311813354,
+                  -1.5824320316314697,
+                  -0.18090876936912537
+                ],
+                "targetTR": [
+                  0.15561260655522346,
+                  0.06962848093314361
+                ],
+                "distance": 0.0027409077156335115
+              },
+              {
+                "source": "Composite_wing_L",
+                "sourceTriangle": 4339,
+                "point": [
+                  -1.4082372188568115,
+                  -1.585050106048584,
+                  -0.17619219422340393
+                ],
+                "sourceTR": [
+                  0.15935179218649864,
+                  0.06805371285667595
+                ],
+                "target": "Fixed_root_L",
+                "targetTriangle": 624,
+                "nearestPoint": [
+                  -1.4076082706451416,
+                  -1.5823780298233032,
+                  -0.17619219422340393
+                ],
+                "targetTR": [
+                  0.15817219018936157,
+                  0.06618043599535145
+                ],
+                "distance": 0.002745098900049925
+              },
+              {
+                "source": "Fixed_root_L",
+                "sourceTriangle": 1462,
+                "point": [
+                  -1.4106309413909912,
+                  -1.5816667079925537,
+                  -0.17837367951869965
+                ],
+                "sourceTR": [
+                  0.15475688315927982,
+                  0.06720394357986749
+                ],
+                "target": "Composite_wing_L",
+                "targetTriangle": 898,
+                "nearestPoint": [
+                  -1.411260724067688,
+                  -1.5843425989151,
+                  -0.17837367951869965
+                ],
+                "targetTR": [
+                  0.15593820996582508,
+                  0.06911052825146846
+                ],
+                "distance": 0.0027490032371133566
+              },
+              {
+                "source": "Composite_wing_L",
+                "sourceTriangle": 898,
+                "point": [
+                  -1.4088923931121826,
+                  -1.5849000215530396,
+                  -0.18110714852809906
+                ],
+                "sourceTR": [
+                  0.1560492254793644,
+                  0.0714365168269671
+                ],
+                "target": "Fixed_root_L",
+                "targetTriangle": 1462,
+                "nearestPoint": [
+                  -1.4082626104354858,
+                  -1.5822241306304932,
+                  -0.18110714852809906
+                ],
+                "targetTR": [
+                  0.15486789867281914,
+                  0.06959556442348279
+                ],
+                "distance": 0.0027490032371133566
+              },
+              {
+                "source": "Fixed_root_L",
+                "sourceTriangle": 624,
+                "point": [
+                  -1.4168626070022583,
+                  -1.5802000761032104,
+                  -0.17129690945148468
+                ],
+                "sourceTR": [
+                  0.15439804829657078,
+                  0.061584547708435376
+                ],
+                "target": "Composite_wing_L",
+                "targetTriangle": 4379,
+                "nearestPoint": [
+                  -1.417492389678955,
+                  -1.5828760862350464,
+                  -0.17129690945148468
+                ],
+                "targetTR": [
+                  0.1555794384330511,
+                  0.06366640425159073
+                ],
+                "distance": 0.0027491191867738962
+              },
+              {
+                "source": "Fixed_root_L",
+                "sourceTriangle": 1462,
+                "point": [
+                  -1.4172875881195068,
+                  -1.5801000595092773,
+                  -0.17151275277137756
+                ],
+                "sourceTR": [
+                  0.15397032722830772,
+                  0.061691716374504574
+                ],
+                "target": "Composite_wing_L",
+                "targetTriangle": 4379,
+                "nearestPoint": [
+                  -1.4179173707962036,
+                  -1.5827760696411133,
+                  -0.17151275277137756
+                ],
+                "targetTR": [
+                  0.15515170991420746,
+                  0.0637779970817204
+                ],
+                "distance": 0.0027491191867738962
+              },
+              {
+                "source": "Composite_wing_L",
+                "sourceTriangle": 898,
+                "point": [
+                  -1.4086799621582031,
+                  -1.5849500894546509,
+                  -0.17629137635231018
+                ],
+                "sourceTR": [
+                  0.1589811686426401,
+                  0.06805425752411216
+                ],
+                "target": "Fixed_root_L",
+                "targetTriangle": 1462,
+                "nearestPoint": [
+                  -1.4080501794815063,
+                  -1.582274079322815,
+                  -0.17629137635231018
+                ],
+                "targetTR": [
+                  0.15779977478086948,
+                  0.06617147953188036
+                ],
+                "distance": 0.0027491191867738962
+              },
+              {
+                "source": "Composite_wing_L",
+                "sourceTriangle": 1154,
+                "point": [
+                  -1.4143885374069214,
+                  -1.583606481552124,
+                  -0.17114540934562683
+                ],
+                "sourceTR": [
+                  0.15788061171770096,
+                  0.06380945160018366
+                ],
+                "target": "Fixed_root_L",
+                "targetTriangle": 624,
+                "nearestPoint": [
+                  -1.4137587547302246,
+                  -1.580930471420288,
+                  -0.17114540934562683
+                ],
+                "targetTR": [
+                  0.15669922158122063,
+                  0.061776443929949944
+                ],
+                "distance": 0.0027491191867738962
+              },
+              {
+                "source": "Fixed_root_L",
+                "sourceTriangle": 1462,
+                "point": [
+                  -1.4175001382827759,
+                  -1.580049991607666,
+                  -0.17657338082790375
+                ],
+                "sourceTR": [
+                  0.15089694410562515,
+                  0.06502069815170002
+                ],
+                "target": "Composite_wing_L",
+                "targetTriangle": 898,
+                "nearestPoint": [
+                  -1.4181300401687622,
+                  -1.582726001739502,
+                  -0.17657338082790375
+                ],
+                "targetTR": [
+                  0.1520782671868801,
+                  0.06705758174740233
+                ],
+                "distance": 0.0027491464279592037
+              }
+            ]
+          },
+          "reconstructed_core": {
+            "sampleCount": 25718,
+            "minimum": {
+              "source": "Fixed_root_L",
+              "sourceTriangle": 3970,
+              "point": [
+                -1.4532227516174316,
+                -1.57035493850708,
+                -0.1787663847208023
+              ],
+              "sourceTR": [
+                0.12340891174972057,
+                0.06653714077774352
+              ],
+              "target": "Composite_wing_L",
+              "targetTriangle": 14801,
+              "nearestPoint": [
+                -1.4541391134262085,
+                -1.5735418796539307,
+                -0.1787663996219635
+              ],
+              "targetTR": [
+                0.12471982277929783,
+                0.06947489828082541
+              ],
+              "distance": 0.003316069021821022
+            },
+            "below003Count": 0,
+            "lowest": [
+              {
+                "source": "Fixed_root_L",
+                "sourceTriangle": 3970,
+                "point": [
+                  -1.4532227516174316,
+                  -1.57035493850708,
+                  -0.1787663847208023
+                ],
+                "sourceTR": [
+                  0.12340891174972057,
+                  0.06653714077774352
+                ],
+                "target": "Composite_wing_L",
+                "targetTriangle": 14801,
+                "nearestPoint": [
+                  -1.4541391134262085,
+                  -1.5735418796539307,
+                  -0.1787663996219635
+                ],
+                "targetTR": [
+                  0.12471982277929783,
+                  0.06947489828082541
+                ],
+                "distance": 0.003316069021821022
+              },
+              {
+                "source": "Fixed_root_L",
+                "sourceTriangle": 3970,
+                "point": [
+                  -1.4515635967254639,
+                  -1.5708320140838623,
+                  -0.17650532722473145
+                ],
+                "sourceTR": [
+                  0.12594768963754177,
+                  0.06530423690390247
+                ],
+                "target": "Composite_wing_L",
+                "targetTriangle": 14797,
+                "nearestPoint": [
+                  -1.4524799585342407,
+                  -1.574018955230713,
+                  -0.17650529742240906
+                ],
+                "targetTR": [
+                  0.12725862488150597,
+                  0.06824628040740605
+                ],
+                "distance": 0.003316069021821022
+              },
+              {
+                "source": "Fixed_root_L",
+                "sourceTriangle": 3970,
+                "point": [
+                  -1.4525084495544434,
+                  -1.5705604553222656,
+                  -0.1782202422618866
+                ],
+                "sourceTR": [
+                  0.12425528839230537,
+                  0.06619812409230319
+                ],
+                "target": "Composite_wing_L",
+                "targetTriangle": 14801,
+                "nearestPoint": [
+                  -1.4534249305725098,
+                  -1.5737473964691162,
+                  -0.1782202571630478
+                ],
+                "targetTR": [
+                  0.12556612864136696,
+                  0.06913428887063491
+                ],
+                "distance": 0.0033161018509417772
+              },
+              {
+                "source": "Fixed_root_L",
+                "sourceTriangle": 6276,
+                "point": [
+                  -1.4527027606964111,
+                  -1.5705044269561768,
+                  -0.17943589389324188
+                ],
+                "sourceTR": [
+                  0.12340889684855938,
+                  0.0667746175665287
+                ],
+                "target": "Composite_wing_L",
+                "targetTriangle": 14801,
+                "nearestPoint": [
+                  -1.4536192417144775,
+                  -1.5736913681030273,
+                  -0.17943590879440308
+                ],
+                "targetTR": [
+                  0.12471973709762096,
+                  0.06970241065568922
+                ],
+                "distance": 0.0033161018509417772
+              },
+              {
+                "source": "Fixed_root_L",
+                "sourceTriangle": 3970,
+                "point": [
+                  -1.452061414718628,
+                  -1.5706888437271118,
+                  -0.17595499753952026
+                ],
+                "sourceTR": [
+                  0.12589534930884838,
+                  0.06513056239841918
+                ],
+                "target": "Composite_wing_L",
+                "targetTriangle": 14797,
+                "nearestPoint": [
+                  -1.4529777765274048,
+                  -1.573875904083252,
+                  -0.17595496773719788
+                ],
+                "targetTR": [
+                  0.12720635160803795,
+                  0.0680812166238465
+                ],
+                "distance": 0.0033161835744976997
+              },
+              {
+                "source": "Fixed_root_L",
+                "sourceTriangle": 4085,
+                "point": [
+                  -1.4544328451156616,
+                  -1.5700069665908813,
+                  -0.175742506980896
+                ],
+                "sourceTR": [
+                  0.12425519712269306,
+                  0.06540353496116383
+                ],
+                "target": "Composite_wing_L",
+                "targetTriangle": 14801,
+                "nearestPoint": [
+                  -1.4553492069244385,
+                  -1.5731940269470215,
+                  -0.1757425218820572
+                ],
+                "targetTR": [
+                  0.1255661826580763,
+                  0.06837387697481621
+                ],
+                "distance": 0.0033161835744976997
+              },
+              {
+                "source": "Fixed_root_L",
+                "sourceTriangle": 4085,
+                "point": [
+                  -1.4544551372528076,
+                  -1.570000410079956,
+                  -0.17287282645702362
+                ],
+                "sourceTR": [
+                  0.12589535303413868,
+                  0.06423892657459487
+                ],
+                "target": "Composite_wing_L",
+                "targetTriangle": 13415,
+                "nearestPoint": [
+                  -1.4553714990615845,
+                  -1.5731874704360962,
+                  -0.17287273705005646
+                ],
+                "targetTR": [
+                  0.12720639631152153,
+                  0.06722869473040023
+                ],
+                "distance": 0.0033161835744976997
+              },
+              {
+                "source": "Fixed_root_L",
+                "sourceTriangle": 4085,
+                "point": [
+                  -1.4544559717178345,
+                  -1.5700002908706665,
+                  -0.1771784871816635
+                ],
+                "sourceTR": [
+                  0.12340892851352692,
+                  0.06601528207842226
+                ],
+                "target": "Composite_wing_L",
+                "targetTriangle": 14801,
+                "nearestPoint": [
+                  -1.4553723335266113,
+                  -1.5731873512268066,
+                  -0.1771785020828247
+                ],
+                "targetTR": [
+                  0.12471990659832954,
+                  0.06897536313815608
+                ],
+                "distance": 0.0033161835744976997
+              },
+              {
+                "source": "Fixed_root_L",
+                "sourceTriangle": 4085,
+                "point": [
+                  -1.4544212818145752,
+                  -1.5700101852416992,
+                  -0.1772231161594391
+                ],
+                "sourceTR": [
+                  0.12340890616178513,
+                  0.06602907133781827
+                ],
+                "target": "Composite_wing_L",
+                "targetTriangle": 14801,
+                "nearestPoint": [
+                  -1.455337643623352,
+                  -1.5731972455978394,
+                  -0.17722313106060028
+                ],
+                "targetTR": [
+                  0.1247198823839426,
+                  0.06898855990282891
+                ],
+                "distance": 0.0033161835744976997
+              },
+              {
+                "source": "Fixed_root_L",
+                "sourceTriangle": 6274,
+                "point": [
+                  -1.4534741640090942,
+                  -1.5702826976776123,
+                  -0.17697694897651672
+                ],
+                "sourceTR": [
+                  0.12425518222153187,
+                  0.06578133736888335
+                ],
+                "target": "Composite_wing_L",
+                "targetTriangle": 14801,
+                "nearestPoint": [
+                  -1.454390525817871,
+                  -1.5734697580337524,
+                  -0.17697696387767792
+                ],
+                "targetTR": [
+                  0.1255661603063345,
+                  0.06873535913390269
+                ],
+                "distance": 0.0033161835744976997
+              },
+              {
+                "source": "Fixed_root_L",
+                "sourceTriangle": 6274,
+                "point": [
+                  -1.4521193504333496,
+                  -1.5706721544265747,
+                  -0.17588040232658386
+                ],
+                "sourceTR": [
+                  0.1258953269571066,
+                  0.06510625706734015
+                ],
+                "target": "Composite_wing_L",
+                "targetTriangle": 14797,
+                "nearestPoint": [
+                  -1.4530357122421265,
+                  -1.5738592147827148,
+                  -0.17588037252426147
+                ],
+                "targetTR": [
+                  0.1272063385695219,
+                  0.06805796377606617
+                ],
+                "distance": 0.0033161835744976997
+              },
+              {
+                "source": "Fixed_root_L",
+                "sourceTriangle": 6276,
+                "point": [
+                  -1.4510513544082642,
+                  -1.5709792375564575,
+                  -0.17725549638271332
+                ],
+                "sourceTR": [
+                  0.12589531764388084,
+                  0.06557493270802467
+                ],
+                "target": "Composite_wing_L",
+                "targetTriangle": 14797,
+                "nearestPoint": [
+                  -1.451967716217041,
+                  -1.5741662979125977,
+                  -0.17725548148155212
+                ],
+                "targetTR": [
+                  0.1272063199430704,
+                  0.0685064555717948
+                ],
+                "distance": 0.0033161835744976997
+              }
+            ]
+          }
+        }
+      },
+      {
+        "side": "R",
+        "groups": {
+          "join_or_retained_axis_neighborhood": {
+            "sampleCount": 25881,
+            "minimum": {
+              "source": "Fixed_root_R",
+              "sourceTriangle": 619,
+              "point": [
+                1.403549313545227,
+                -1.5833334922790527,
+                -0.1784047931432724
+              ],
+              "sourceTR": [
+                0.15978981740772724,
+                0.06860900791483206
+              ],
+              "target": "Composite_wing_R",
+              "targetTriangle": 321,
+              "nearestPoint": [
+                1.4041162729263306,
+                -1.5859447717666626,
+                -0.1784047931432724
+              ],
+              "targetTR": [
+                0.16097010858356953,
+                0.07035167968778241
+              ],
+              "distance": 0.002672119764611125
+            },
+            "below003Count": 58,
+            "lowest": [
+              {
+                "source": "Fixed_root_R",
+                "sourceTriangle": 619,
+                "point": [
+                  1.403549313545227,
+                  -1.5833334922790527,
+                  -0.1784047931432724
+                ],
+                "sourceTR": [
+                  0.15978981740772724,
+                  0.06860900791483206
+                ],
+                "target": "Composite_wing_R",
+                "targetTriangle": 321,
+                "nearestPoint": [
+                  1.4041162729263306,
+                  -1.5859447717666626,
+                  -0.1784047931432724
+                ],
+                "targetTR": [
+                  0.16097010858356953,
+                  0.07035167968778241
+                ],
+                "distance": 0.002672119764611125
+              },
+              {
+                "source": "Composite_wing_R",
+                "sourceTriangle": 4299,
+                "point": [
+                  1.4075462818145752,
+                  -1.5852000713348389,
+                  -0.1811314821243286
+                ],
+                "sourceTR": [
+                  0.1569855883717537,
+                  0.07169186451351037
+                ],
+                "target": "Fixed_root_R",
+                "targetTriangle": 619,
+                "nearestPoint": [
+                  1.4069201946258545,
+                  -1.5825400352478027,
+                  -0.1811314821243286
+                ],
+                "targetTR": [
+                  0.15581128746271133,
+                  0.06988476996821671
+                ],
+                "distance": 0.0027327234856784344
+              },
+              {
+                "source": "Fixed_root_R",
+                "sourceTriangle": 619,
+                "point": [
+                  1.4069838523864746,
+                  -1.5825250148773193,
+                  -0.17661955952644348
+                ],
+                "sourceTR": [
+                  0.1583708208054304,
+                  0.06660315827726067
+                ],
+                "target": "Composite_wing_R",
+                "targetTriangle": 321,
+                "nearestPoint": [
+                  1.4075638055801392,
+                  -1.5851962566375732,
+                  -0.17661955952644348
+                ],
+                "targetTR": [
+                  0.1595782246440649,
+                  0.06846115900002255
+                ],
+                "distance": 0.002733473666012287
+              },
+              {
+                "source": "Fixed_root_R",
+                "sourceTriangle": 1469,
+                "point": [
+                  1.407196283340454,
+                  -1.5824750661849976,
+                  -0.17650943994522095
+                ],
+                "sourceTR": [
+                  0.15828290954232216,
+                  0.06648409157380246
+                ],
+                "target": "Composite_wing_R",
+                "targetTriangle": 321,
+                "nearestPoint": [
+                  1.4077770709991455,
+                  -1.5851500034332275,
+                  -0.17650943994522095
+                ],
+                "targetTR": [
+                  0.15949197113513947,
+                  0.06834933438339864
+                ],
+                "distance": 0.0027372620534151793
+              },
+              {
+                "source": "Composite_wing_R",
+                "sourceTriangle": 321,
+                "point": [
+                  1.4080069065093994,
+                  -1.5851000547409058,
+                  -0.18090876936912537
+                ],
+                "sourceTR": [
+                  0.15679048746824265,
+                  0.07145084052034772
+                ],
+                "target": "Fixed_root_R",
+                "targetTriangle": 619,
+                "nearestPoint": [
+                  1.4073790311813354,
+                  -1.5824320316314697,
+                  -0.18090876936912537
+                ],
+                "targetTR": [
+                  0.15561260655522346,
+                  0.06962848093314361
+                ],
+                "distance": 0.0027409077156335115
+              },
+              {
+                "source": "Composite_wing_R",
+                "sourceTriangle": 321,
+                "point": [
+                  1.4082372188568115,
+                  -1.585050106048584,
+                  -0.17619219422340393
+                ],
+                "sourceTR": [
+                  0.15935179218649864,
+                  0.06805371285667595
+                ],
+                "target": "Fixed_root_R",
+                "targetTriangle": 1469,
+                "nearestPoint": [
+                  1.4076083898544312,
+                  -1.5823781490325928,
+                  -0.17619219422340393
+                ],
+                "targetTR": [
+                  0.15817218646407127,
+                  0.06618051651092385
+                ],
+                "distance": 0.002744955476373434
+              },
+              {
+                "source": "Composite_wing_R",
+                "sourceTriangle": 1435,
+                "point": [
+                  1.4143885374069214,
+                  -1.583606481552124,
+                  -0.17114539444446564
+                ],
+                "sourceTR": [
+                  0.1578806210309267,
+                  0.0638094421930107
+                ],
+                "target": "Fixed_root_R",
+                "targetTriangle": 1469,
+                "nearestPoint": [
+                  1.4137587547302246,
+                  -1.5809305906295776,
+                  -0.17114539444446564
+                ],
+                "targetTR": [
+                  0.15669929794967175,
+                  0.0617765213253186
+                ],
+                "distance": 0.0027490032371133566
+              },
+              {
+                "source": "Composite_wing_R",
+                "sourceTriangle": 4165,
+                "point": [
+                  1.4088923931121826,
+                  -1.5849000215530396,
+                  -0.18110714852809906
+                ],
+                "sourceTR": [
+                  0.1560492254793644,
+                  0.0714365168269671
+                ],
+                "target": "Fixed_root_R",
+                "targetTriangle": 619,
+                "nearestPoint": [
+                  1.4082626104354858,
+                  -1.5822241306304932,
+                  -0.18110714852809906
+                ],
+                "targetTR": [
+                  0.15486789867281914,
+                  0.06959556442348279
+                ],
+                "distance": 0.0027490032371133566
+              },
+              {
+                "source": "Fixed_root_R",
+                "sourceTriangle": 1469,
+                "point": [
+                  1.4106309413909912,
+                  -1.5816667079925537,
+                  -0.17473451793193817
+                ],
+                "sourceTR": [
+                  0.15685795433819294,
+                  0.0646435753512478
+                ],
+                "target": "Composite_wing_R",
+                "targetTriangle": 4165,
+                "nearestPoint": [
+                  1.411260724067688,
+                  -1.5843427181243896,
+                  -0.17473451793193817
+                ],
+                "targetTR": [
+                  0.15803934819996357,
+                  0.06658629096623994
+                ],
+                "distance": 0.0027491191867738962
+              },
+              {
+                "source": "Fixed_root_R",
+                "sourceTriangle": 1469,
+                "point": [
+                  1.4172875881195068,
+                  -1.5801000595092773,
+                  -0.1712944060564041
+                ],
+                "sourceTR": [
+                  0.15409638918936253,
+                  0.06154924734275719
+                ],
+                "target": "Composite_wing_R",
+                "targetTriangle": 1385,
+                "nearestPoint": [
+                  1.4179173707962036,
+                  -1.5827760696411133,
+                  -0.1712944060564041
+                ],
+                "targetTR": [
+                  0.15527777187526226,
+                  0.06363785941970387
+                ],
+                "distance": 0.0027491191867738962
+              },
+              {
+                "source": "Fixed_root_R",
+                "sourceTriangle": 1469,
+                "point": [
+                  1.4175001382827759,
+                  -1.580049991607666,
+                  -0.17646420001983643
+                ],
+                "sourceTR": [
+                  0.15095997974276543,
+                  0.06494756509524716
+                ],
+                "target": "Composite_wing_R",
+                "targetTriangle": 4165,
+                "nearestPoint": [
+                  1.4181299209594727,
+                  -1.582726001739502,
+                  -0.17646420001983643
+                ],
+                "targetTR": [
+                  0.15214137360453606,
+                  0.06698554941411576
+                ],
+                "distance": 0.0027491191867738962
+              },
+              {
+                "source": "Composite_wing_R",
+                "sourceTriangle": 4165,
+                "point": [
+                  1.4086799621582031,
+                  -1.5849500894546509,
+                  -0.17629137635231018
+                ],
+                "sourceTR": [
+                  0.1589811686426401,
+                  0.06805425752411216
+                ],
+                "target": "Fixed_root_R",
+                "targetTriangle": 1469,
+                "nearestPoint": [
+                  1.4080501794815063,
+                  -1.582274079322815,
+                  -0.17629137635231018
+                ],
+                "targetTR": [
+                  0.15779977478086948,
+                  0.06617147953188036
+                ],
+                "distance": 0.0027491191867738962
+              }
+            ]
+          },
+          "reconstructed_core": {
+            "sampleCount": 25685,
+            "minimum": {
+              "source": "Fixed_root_R",
+              "sourceTriangle": 6242,
+              "point": [
+                1.4534741640090942,
+                -1.5702826976776123,
+                -0.17697694897651672
+              ],
+              "sourceTR": [
+                0.12425518222153187,
+                0.06578133736888335
+              ],
+              "target": "Composite_wing_R",
+              "targetTriangle": 14802,
+              "nearestPoint": [
+                1.454390525817871,
+                -1.573469638824463,
+                -0.17697694897651672
+              ],
+              "targetTR": [
+                0.12556610070168972,
+                0.06873525624310263
+              ],
+              "distance": 0.003316069021821022
+            },
+            "below003Count": 0,
+            "lowest": [
+              {
+                "source": "Fixed_root_R",
+                "sourceTriangle": 6242,
+                "point": [
+                  1.4534741640090942,
+                  -1.5702826976776123,
+                  -0.17697694897651672
+                ],
+                "sourceTR": [
+                  0.12425518222153187,
+                  0.06578133736888335
+                ],
+                "target": "Composite_wing_R",
+                "targetTriangle": 14802,
+                "nearestPoint": [
+                  1.454390525817871,
+                  -1.573469638824463,
+                  -0.17697694897651672
+                ],
+                "targetTR": [
+                  0.12556610070168972,
+                  0.06873525624310263
+                ],
+                "distance": 0.003316069021821022
+              },
+              {
+                "source": "Fixed_root_R",
+                "sourceTriangle": 6242,
+                "point": [
+                  1.454172968864441,
+                  -1.5700817108154297,
+                  -0.17754268646240234
+                ],
+                "sourceTR": [
+                  0.12340905703604221,
+                  0.06612977508176067
+                ],
+                "target": "Composite_wing_R",
+                "targetTriangle": 14802,
+                "nearestPoint": [
+                  1.4550893306732178,
+                  -1.5732686519622803,
+                  -0.17754270136356354
+                ],
+                "targetTR": [
+                  0.12471997365355492,
+                  0.0690848537434153
+                ],
+                "distance": 0.003316069021821022
+              },
+              {
+                "source": "Fixed_root_R",
+                "sourceTriangle": 3358,
+                "point": [
+                  1.4496967792510986,
+                  -1.571368932723999,
+                  -0.1788184642791748
+                ],
+                "sourceTR": [
+                  0.12599999643862247,
+                  0.0661465082742706
+                ],
+                "target": "Composite_wing_R",
+                "targetTriangle": 14799,
+                "nearestPoint": [
+                  1.450613260269165,
+                  -1.5745558738708496,
+                  -0.1788184493780136
+                ],
+                "targetTR": [
+                  0.1273108534514904,
+                  0.06905173810184329
+                ],
+                "distance": 0.0033161018509417772
+              },
+              {
+                "source": "Fixed_root_R",
+                "sourceTriangle": 3949,
+                "point": [
+                  1.4532227516174316,
+                  -1.57035493850708,
+                  -0.1787663847208023
+                ],
+                "sourceTR": [
+                  0.12340891174972057,
+                  0.06653714077774352
+                ],
+                "target": "Composite_wing_R",
+                "targetTriangle": 14802,
+                "nearestPoint": [
+                  1.454139232635498,
+                  -1.5735418796539307,
+                  -0.1787663847208023
+                ],
+                "targetTR": [
+                  0.12471976317465305,
+                  0.06947493598284578
+                ],
+                "distance": 0.0033161018509417772
+              },
+              {
+                "source": "Fixed_root_R",
+                "sourceTriangle": 6238,
+                "point": [
+                  1.4539523124694824,
+                  -1.5701451301574707,
+                  -0.17352046072483063
+                ],
+                "sourceTR": [
+                  0.1258953046053648,
+                  0.0644071882183117
+                ],
+                "target": "Composite_wing_R",
+                "targetTriangle": 14804,
+                "nearestPoint": [
+                  1.4548685550689697,
+                  -1.5733321905136108,
+                  -0.17352020740509033
+                ],
+                "targetTR": [
+                  0.12720650620758533,
+                  0.06738938423949736
+                ],
+                "distance": 0.0033161507453769445
+              },
+              {
+                "source": "Fixed_root_R",
+                "sourceTriangle": 3949,
+                "point": [
+                  1.4515637159347534,
+                  -1.5708320140838623,
+                  -0.17650532722473145
+                ],
+                "sourceTR": [
+                  0.12594762071967125,
+                  0.06530428102474942
+                ],
+                "target": "Composite_wing_R",
+                "targetTriangle": 14800,
+                "nearestPoint": [
+                  1.4524800777435303,
+                  -1.5740190744400024,
+                  -0.17650529742240906
+                ],
+                "targetTR": [
+                  0.12725862301886082,
+                  0.06824642284255666
+                ],
+                "distance": 0.0033161835744976997
+              },
+              {
+                "source": "Fixed_root_R",
+                "sourceTriangle": 6242,
+                "point": [
+                  1.453251600265503,
+                  -1.5703465938568115,
+                  -0.1787290871143341
+                ],
+                "sourceTR": [
+                  0.1234089694917202,
+                  0.06652415595013864
+                ],
+                "target": "Composite_wing_R",
+                "targetTriangle": 14802,
+                "nearestPoint": [
+                  1.4541679620742798,
+                  -1.5735336542129517,
+                  -0.1787291020154953
+                ],
+                "targetTR": [
+                  0.12471995502710342,
+                  0.06946255731013298
+                ],
+                "distance": 0.0033161835744976997
+              },
+              {
+                "source": "Composite_wing_R",
+                "sourceTriangle": 14806,
+                "point": [
+                  1.450958251953125,
+                  -1.5744565725326538,
+                  -0.18105024099349976
+                ],
+                "sourceTR": [
+                  0.12576581351459026,
+                  0.07014239533503355
+                ],
+                "target": "Fixed_root_R",
+                "targetTriangle": 6237,
+                "nearestPoint": [
+                  1.4500418901443481,
+                  -1.5712695121765137,
+                  -0.1810501664876938
+                ],
+                "targetTR": [
+                  0.12445487268269062,
+                  0.067254071761644
+                ],
+                "distance": 0.0033161835744976997
+              },
+              {
+                "source": "Composite_wing_R",
+                "sourceTriangle": 14806,
+                "point": [
+                  1.4511723518371582,
+                  -1.5743950605392456,
+                  -0.18077439069747925
+                ],
+                "sourceTR": [
+                  0.12576595693826675,
+                  0.07003291617631871
+                ],
+                "target": "Fixed_root_R",
+                "targetTriangle": 6246,
+                "nearestPoint": [
+                  1.4502559900283813,
+                  -1.5712080001831055,
+                  -0.18077437579631805
+                ],
+                "targetTR": [
+                  0.12445497140288353,
+                  0.06713991315734584
+                ],
+                "distance": 0.0033161835744976997
+              },
+              {
+                "source": "Composite_wing_R",
+                "sourceTriangle": 14806,
+                "point": [
+                  1.4509083032608032,
+                  -1.5744709968566895,
+                  -0.18091177940368652
+                ],
+                "sourceTR": [
+                  0.12588292360305786,
+                  0.07007124692170691
+                ],
+                "target": "Fixed_root_R",
+                "targetTriangle": 6237,
+                "nearestPoint": [
+                  1.4499919414520264,
+                  -1.5712839365005493,
+                  -0.18091168999671936
+                ],
+                "targetTR": [
+                  0.12457198835909367,
+                  0.06718213863418618
+                ],
+                "distance": 0.0033161835744976997
+              },
+              {
+                "source": "Fixed_root_R",
+                "sourceTriangle": 3358,
+                "point": [
+                  1.4503490924835205,
+                  -1.5711811780929565,
+                  -0.17797844111919403
+                ],
+                "sourceTR": [
+                  0.12599997036159039,
+                  0.06582279796675979
+                ],
+                "target": "Composite_wing_R",
+                "targetTriangle": 14800,
+                "nearestPoint": [
+                  1.451265573501587,
+                  -1.5743682384490967,
+                  -0.17797842621803284
+                ],
+                "targetTR": [
+                  0.12731089629232883,
+                  0.06874179902933203
+                ],
+                "distance": 0.003316216403618455
+              },
+              {
+                "source": "Fixed_root_R",
+                "sourceTriangle": 3358,
+                "point": [
+                  1.4496937990188599,
+                  -1.5713696479797363,
+                  -0.17882218956947327
+                ],
+                "sourceTR": [
+                  0.12599997408688068,
+                  0.06614785551123986
+                ],
+                "target": "Composite_wing_R",
+                "targetTriangle": 14799,
+                "nearestPoint": [
+                  1.4506102800369263,
+                  -1.5745567083358765,
+                  -0.17882217466831207
+                ],
+                "targetTR": [
+                  0.12731090933084488,
+                  0.06905311843048834
+                ],
+                "distance": 0.003316216403618455
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "staticGapInterpretation": "Reconstructed core t[-.041,.126], r<.108 samples have nearest fixed-to-moving skin distance >=.003316069u. The wider retained/join neighborhood has same-height exterior side-seam samples down to .002672120u outside the reconstruction axial extent; do not apply the cruise overlapping-layer rule indiscriminately to all exterior C seams.",
+  "axisShortPathClassifications": {
+    "sourceSha256": "51ec3c493b62d0d4caac924ddf1e26b6889288affa5ccd5376f0eb249be6e72c",
+    "bSha256": "742ef52939de40f5d2eb46b87d38c8e85f99bffafc270c302afd59b9ea398adf",
+    "scope": "Four requested local witness pairs, stored meshes only. No mesh edits or motion re-run. No broad historic defect expansion.",
+    "witnessClassifications": [
+      {
+        "pair": [
+          "Composite_wing_R",
+          15355,
+          15561
+        ],
+        "class": "actual shared-closure-edge wedge",
+        "reference": "four-witness-pair-classification.json",
+        "entirePairedShortPathRegionDistanceBoundToClosure": 0.0050282388054829165
+      },
+      {
+        "pair": [
+          "Fixed_root_R",
+          5978,
+          5258
+        ],
+        "class": "sub-coordinate-resolution seam facet at shallow inner-skin step; original float32 witness outside source triangle",
+        "reference": "fixed5978-witness-numerics.json"
+      },
+      {
+        "pair": [
+          "Composite_wing_R",
+          14356,
+          13601
+        ],
+        "class": "actual shared-closure-edge wedge",
+        "reference": "four-witness-pair-classification.json",
+        "entirePairedShortPathRegionDistanceBoundToClosure": 0.01391857545946258
+      },
+      {
+        "pair": [
+          "Fixed_root_R",
+          4772,
+          4233
+        ],
+        "class": "stable inherited cavity roof; fails if 0.010-u wall rule includes it; not newly thinned",
+        "reference": "fixed4772-stable-roof-summary.json"
+      }
+    ],
+    "bLocalIdentity": {
+      "allRequestedComponentTrianglesHaveIdenticalCoordinates": true,
+      "comparedComponentTriangles": 107,
+      "maximumAbsoluteSameRayThicknessDelta": 0.0
+    },
+    "acceptanceBoundary": "This classifies the specified witnesses. It does not certify all raw under-limit rays or grant a whole-joint exclusion. Stable inherited roof is retained as a conditional noncompliance, not silently passed.",
+    "candidate-inset-integrated-aFinalSha256": "51ec3c493b62d0d4caac924ddf1e26b6889288affa5ccd5376f0eb249be6e72c",
+    "candidate-inset-integrated-bFinalSha256": "742ef52939de40f5d2eb46b87d38c8e85f99bffafc270c302afd59b9ea398adf"
+  },
+  "stableInheritedBoreRoof": {
+    "isStableRealMaterialNotNumericalNoise": true,
+    "isNewlyThinnedByAorB": false,
+    "sourceEvidence": "candidate-final V25, locked M, layout-a, A and B actual same-point/normal comparisons",
+    "representativePoint": [
+      1.39260448,
+      -1.38318267,
+      -0.18262871
+    ],
+    "inwardRaySurfaceNormal": [
+      -0.50759484,
+      -0.30006821,
+      -0.80765497
+    ],
+    "normalWall": 0.008961273,
+    "representativeThinSourcePatchArea": 5.15197e-06,
+    "representativeInPlaneIncircleRadius": 0.000829448,
+    "totalSixSourceFacetsThinRegionArea": 1.47688e-05,
+    "sourceRegionBounds": {
+      "x": [
+        1.38975215,
+        1.39407813
+      ],
+      "y": [
+        -1.385042191,
+        -1.37927584
+      ],
+      "z": [
+        -0.183698816,
+        -0.181453422
+      ]
+    },
+    "complianceBoundary": "If a universal .010 rule includes this inherited bore roof, it does not meet that rule. Its inheritance is provenance, not automatic exemption. Do not claim entire joint is >=.010."
+  },
+  "dynamicSmallGapOriginalInheritance": {
+    "evidence": "dynamic-minimum-source-binding.json",
+    "originalFaceIndices": {
+      "V25": {
+        "L": 6240,
+        "R": 6300
+      },
+      "M": {
+        "L": 5130,
+        "R": 5193
+      },
+      "flatE": {
+        "L": 4542,
+        "R": 4573
+      },
+      "integratedB": {
+        "L": 4510,
+        "R": 4523
+      }
+    },
+    "exactWorldTriangleIdentityAcrossSources": true,
+    "restCentroidAbsXY_Z": [
+      0.8769327998161316,
+      -1.1252444982528687,
+      -0.19553737342357635
+    ],
+    "outsideTailReplacementYMin": -1.115,
+    "angleDeg": 1.25,
+    "V25_M_E_NearestFixedUndersideGapAtSameWitness": 0.0017260507447645068,
+    "BActualSurfacePointGaps": [
+      {
+        "side": "L",
+        "vertical": 0.0017322184209004044,
+        "nearestUnderside": 0.001726006157696247,
+        "sourceRayPositionDifference": 4.470348358154297e-08
+      },
+      {
+        "side": "R",
+        "vertical": 0.0017323372809439897,
+        "nearestUnderside": 0.0017261250177398324,
+        "sourceRayPositionDifference": 7.450580596923828e-08
+      }
+    ],
+    "interpretation": "This unchanged original front-join triangle has positive sampled clearance, already in V25/M; no all-angle >=.003 claim."
+  },
+  "naturalFeatherPermittedReference": "Original V25 natural feather, explicitly excluding M later artificial downward thickening. New main skin and V25 originally >=.010 portions remain subject to that threshold.",
+  "224SectionAccounting": {
+    "originalD224Count": 224,
+    "retainedCorrespondingEColumnCount": 218,
+    "missingEColumnsAfterAuthorizedInnerRetreat": [
+      {
+        "side": "L",
+        "x": -0.7160000000000001,
+        "y": -0.9543866,
+        "u": 0.9605,
+        "values": {
+          "V25": {
+            "bottom": [
+              -0.7160000205039978,
+              -0.9543865919113159,
+              -0.22166019678115845
+            ],
+            "top": [
+              -0.7160000205039978,
+              -0.9543865919113159,
+              -0.21167314052581787
+            ],
+            "vertical": 0.009987056255340576,
+            "normalFromLower": 0.01027683424001932,
+            "lowerTriangle": 45,
+            "lowerNormal": [
+              0.010627441108226776,
+              0.1375643014907837,
+              -0.9904358386993408
+            ]
+          },
+          "M": {
+            "bottom": [
+              -0.7160000205039978,
+              -0.9543865919113159,
+              -0.22212719917297363
+            ],
+            "top": [
+              -0.7160000205039978,
+              -0.9543865919113159,
+              -0.2117633819580078
+            ],
+            "vertical": 0.01036381721496582,
+            "normalFromLower": 0.010723906328737735,
+            "lowerTriangle": 12690,
+            "lowerNormal": [
+              0.04292353615164757,
+              0.16145853698253632,
+              -0.9859455823898315
+            ]
+          },
+          "D": {
+            "bottom": [
+              -0.7160000205039978,
+              -0.9543865919113159,
+              -0.22166699171066284
+            ],
+            "top": [
+              -0.7160000205039978,
+              -0.9543865919113159,
+              -0.21166932582855225
+            ],
+            "vertical": 0.009997665882110596,
+            "normalFromLower": 0.010269660262227058,
+            "lowerTriangle": 26533,
+            "lowerNormal": [
+              0.010355389676988125,
+              0.1372409611940384,
+              -0.9904835820198059
+            ]
+          },
+          "E": null
+        },
+        "EanyBottomHit": null,
+        "EanyBottomNormal": null
+      },
+      {
+        "side": "L",
+        "x": -0.7160000000000001,
+        "y": -0.9539411999999999,
+        "u": 0.9610000000000001,
+        "values": {
+          "V25": {
+            "bottom": [
+              -0.7160000205039978,
+              -0.9539412260055542,
+              -0.2215983271598816
+            ],
+            "top": [
+              -0.7160000205039978,
+              -0.9539412260055542,
+              -0.21173501014709473
+            ],
+            "vertical": 0.009863317012786865,
+            "normalFromLower": 0.010149514062166213,
+            "lowerTriangle": 45,
+            "lowerNormal": [
+              0.010627441108226776,
+              0.1375643014907837,
+              -0.9904358386993408
+            ]
+          },
+          "M": {
+            "bottom": [
+              -0.7160000205039978,
+              -0.9539412260055542,
+              -0.22205418348312378
+            ],
+            "top": [
+              -0.7160000205039978,
+              -0.9539412260055542,
+              -0.2118234634399414
+            ],
+            "vertical": 0.010230720043182373,
+            "normalFromLower": 0.010586150681436061,
+            "lowerTriangle": 12690,
+            "lowerNormal": [
+              0.04292353615164757,
+              0.16145853698253632,
+              -0.9859455823898315
+            ]
+          },
+          "D": {
+            "bottom": [
+              -0.7160000205039978,
+              -0.9539412260055542,
+              -0.2216053009033203
+            ],
+            "top": [
+              -0.7160000205039978,
+              -0.9539412260055542,
+              -0.21172964572906494
+            ],
+            "vertical": 0.009875655174255371,
+            "normalFromLower": 0.010157127624213695,
+            "lowerTriangle": 26533,
+            "lowerNormal": [
+              0.010355389676988125,
+              0.1372409611940384,
+              -0.9904835820198059
+            ]
+          },
+          "E": null
+        },
+        "EanyBottomHit": null,
+        "EanyBottomNormal": null
+      },
+      {
+        "side": "L",
+        "x": -0.7160000000000001,
+        "y": -0.9534958,
+        "u": 0.9615,
+        "values": {
+          "V25": {
+            "bottom": [
+              -0.7160000205039978,
+              -0.9534958004951477,
+              -0.22153645753860474
+            ],
+            "top": [
+              -0.7160000205039978,
+              -0.9534958004951477,
+              -0.21179687976837158
+            ],
+            "vertical": 0.009739577770233154,
+            "normalFromLower": 0.010022191090345382,
+            "lowerTriangle": 45,
+            "lowerNormal": [
+              0.010627441108226776,
+              0.1375643014907837,
+              -0.9904358386993408
+            ]
+          },
+          "M": {
+            "bottom": [
+              -0.7160000205039978,
+              -0.9534958004951477,
+              -0.2219812273979187
+            ],
+            "top": [
+              -0.7160000205039978,
+              -0.9534958004951477,
+              -0.21188366413116455
+            ],
+            "vertical": 0.01009756326675415,
+            "normalFromLower": 0.01044844811952114,
+            "lowerTriangle": 12690,
+            "lowerNormal": [
+              0.04292353615164757,
+              0.16145853698253632,
+              -0.9859455823898315
+            ]
+          },
+          "D": {
+            "bottom": [
+              -0.7160000205039978,
+              -0.9534958004951477,
+              -0.22154361009597778
+            ],
+            "top": [
+              -0.7160000205039978,
+              -0.9534958004951477,
+              -0.21179020404815674
+            ],
+            "vertical": 0.009753406047821045,
+            "normalFromLower": 0.01003115786409378,
+            "lowerTriangle": 26533,
+            "lowerNormal": [
+              0.010355389676988125,
+              0.1372409611940384,
+              -0.9904835820198059
+            ]
+          },
+          "E": null
+        },
+        "EanyBottomHit": null,
+        "EanyBottomNormal": null
+      },
+      {
+        "side": "R",
+        "x": 0.7160000000000001,
+        "y": -0.9543866,
+        "u": 0.9605,
+        "values": {
+          "V25": {
+            "bottom": [
+              0.7160000205039978,
+              -0.9543865919113159,
+              -0.22166019678115845
+            ],
+            "top": [
+              0.7160000205039978,
+              -0.9543865919113159,
+              -0.21167314052581787
+            ],
+            "vertical": 0.009987056255340576,
+            "normalFromLower": 0.010276833308696746,
+            "lowerTriangle": 33,
+            "lowerNormal": [
+              -0.010627441108226776,
+              0.1375643014907837,
+              -0.9904358386993408
+            ]
+          },
+          "M": {
+            "bottom": [
+              0.7160000205039978,
+              -0.9543865919113159,
+              -0.2221267819404602
+            ],
+            "top": [
+              0.7160000205039978,
+              -0.9543865919113159,
+              -0.2117633819580078
+            ],
+            "vertical": 0.010363399982452393,
+            "normalFromLower": 0.010723446255385875,
+            "lowerTriangle": 12703,
+            "lowerNormal": [
+              -0.04289701208472252,
+              0.16144880652427673,
+              -0.9859483242034912
+            ]
+          },
+          "D": {
+            "bottom": [
+              0.7160000205039978,
+              -0.9543865919113159,
+              -0.22166705131530762
+            ],
+            "top": [
+              0.7160000205039978,
+              -0.9543865919113159,
+              -0.2116692066192627
+            ],
+            "vertical": 0.009997844696044922,
+            "normalFromLower": 0.010269720798194408,
+            "lowerTriangle": 26538,
+            "lowerNormal": [
+              -0.010355389676988125,
+              0.1372409611940384,
+              -0.9904835820198059
+            ]
+          },
+          "E": null
+        },
+        "EanyBottomHit": null,
+        "EanyBottomNormal": null
+      },
+      {
+        "side": "R",
+        "x": 0.7160000000000001,
+        "y": -0.9539411999999999,
+        "u": 0.9610000000000001,
+        "values": {
+          "V25": {
+            "bottom": [
+              0.7160000205039978,
+              -0.9539412260055542,
+              -0.2215983271598816
+            ],
+            "top": [
+              0.7160000205039978,
+              -0.9539412260055542,
+              -0.21173501014709473
+            ],
+            "vertical": 0.009863317012786865,
+            "normalFromLower": 0.010149514062166213,
+            "lowerTriangle": 33,
+            "lowerNormal": [
+              -0.010627441108226776,
+              0.1375643014907837,
+              -0.9904358386993408
+            ]
+          },
+          "M": {
+            "bottom": [
+              0.7160000205039978,
+              -0.9539412260055542,
+              -0.22205382585525513
+            ],
+            "top": [
+              0.7160000205039978,
+              -0.9539412260055542,
+              -0.2118234634399414
+            ],
+            "vertical": 0.01023036241531372,
+            "normalFromLower": 0.010585750212728976,
+            "lowerTriangle": 12703,
+            "lowerNormal": [
+              -0.04289701208472252,
+              0.16144880652427673,
+              -0.9859483242034912
+            ]
+          },
+          "D": {
+            "bottom": [
+              0.7160000205039978,
+              -0.9539412260055542,
+              -0.2216053605079651
+            ],
+            "top": [
+              0.7160000205039978,
+              -0.9539412260055542,
+              -0.21172964572906494
+            ],
+            "vertical": 0.009875714778900146,
+            "normalFromLower": 0.01015718909150362,
+            "lowerTriangle": 26538,
+            "lowerNormal": [
+              -0.010355389676988125,
+              0.1372409611940384,
+              -0.9904835820198059
+            ]
+          },
+          "E": null
+        },
+        "EanyBottomHit": null,
+        "EanyBottomNormal": null
+      },
+      {
+        "side": "R",
+        "x": 0.7160000000000001,
+        "y": -0.9534958,
+        "u": 0.9615,
+        "values": {
+          "V25": {
+            "bottom": [
+              0.7160000205039978,
+              -0.9534958004951477,
+              -0.22153645753860474
+            ],
+            "top": [
+              0.7160000205039978,
+              -0.9534958004951477,
+              -0.21179687976837158
+            ],
+            "vertical": 0.009739577770233154,
+            "normalFromLower": 0.010022190159022807,
+            "lowerTriangle": 33,
+            "lowerNormal": [
+              -0.010627441108226776,
+              0.1375643014907837,
+              -0.9904358386993408
+            ]
+          },
+          "M": {
+            "bottom": [
+              0.7160000205039978,
+              -0.9534958004951477,
+              -0.22198092937469482
+            ],
+            "top": [
+              0.7160000205039978,
+              -0.9534958004951477,
+              -0.21188366413116455
+            ],
+            "vertical": 0.010097265243530273,
+            "normalFromLower": 0.01044811098074913,
+            "lowerTriangle": 12703,
+            "lowerNormal": [
+              -0.04289701208472252,
+              0.16144880652427673,
+              -0.9859483242034912
+            ]
+          },
+          "D": {
+            "bottom": [
+              0.7160000205039978,
+              -0.9534958004951477,
+              -0.22154361009597778
+            ],
+            "top": [
+              0.7160000205039978,
+              -0.9534958004951477,
+              -0.2117900848388672
+            ],
+            "vertical": 0.009753525257110596,
+            "normalFromLower": 0.01003115786409378,
+            "lowerTriangle": 26538,
+            "lowerNormal": [
+              -0.010355389676988125,
+              0.1372409611940384,
+              -0.9904835820198059
+            ]
+          },
+          "E": null
+        },
+        "EanyBottomHit": null,
+        "EanyBottomNormal": null
+      }
+    ],
+    "boundsAbsXYU": [
+      [
+        0.7160000000000001,
+        0.8360000000000001
+      ],
+      [
+        -0.9661854400000001,
+        -0.9534958
+      ],
+      [
+        0.9590000000000001,
+        0.9630000000000001
+      ]
+    ],
+    "minima": {
+      "V25": {
+        "vertical": 0.009107112884521484,
+        "normalFromLower": 0.00936460377818346
+      },
+      "M": {
+        "vertical": 0.010008096694946289,
+        "normalFromLower": 0.010283367467880248
+      },
+      "D": {
+        "vertical": 0.009111285209655762,
+        "normalFromLower": 0.00936805246567726
+      },
+      "E": {
+        "vertical": 0.009111285209655762,
+        "normalFromLower": 0.00936805246567726
+      }
+    },
+    "retainedEminusMVerticalRange": [
+      -0.0013434886932373047,
+      -2.181529998779297e-05
+    ],
+    "retainedEminusV25VerticalRange": [
+      3.516674041748047e-06,
+      1.6868114471435547e-05
+    ],
+    "claim": "These are the 224 previously disclosed D-vs-M vertical-section reductions. E has 218 corresponding opposing-skin columns; remaining six are explicitly traced. V25 and M are not conflated. A vertical section under .010 does not itself prove normal wall under .010."
+  },
+  "wingSkinAperture": {
+    "rightMaximumXWidth": 0.068910279,
+    "leftMaximumXWidth": 0.068910337,
+    "maximumAtY": -1.47506882,
+    "axisCenterYSectionRightWidth": 0.049957299,
+    "rightFixedBoundary": [
+      1.502351276,
+      -1.475068823,
+      -0.17143491
+    ],
+    "rightMovingBoundary": [
+      1.571261555,
+      -1.475068823,
+      -0.171439115
+    ],
+    "sourceEvidence": "../integrated-a-wall-review/aperture-width/aperture-report.json",
+    "boundToBByExactAxisSkinTriangleIdentity": true,
+    "definition": "Actual natural upper-wing-skin projection gap measured along X at fixed Y. Excludes lower skin and independent hardware. It is not a through-light opening or minimum mechanical clearance."
+  },
+  "claimLimits": [
+    "Finite triangle-interior and section samples; no uniform all-surface wall/gap bound",
+    "New natural-skin main samples pass; raw cut/edge short paths are not all silently accepted. Four explicit classes are documented; inherited bore roof remains a conditional noncompliance",
+    "Main thread owns current B whole-machine 661-pose testing; it is not duplicated or certified here",
+    "No machining, structural-strength, flightworthiness or manufacturing certification",
+    "A/B models and frozen H/flat-E source files not edited during this review"
+  ]
+}

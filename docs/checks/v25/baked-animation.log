@@ -1,0 +1,286 @@
+{
+  "files": [
+    {
+      "file": "assets/blender/xp4-source.glb",
+      "sha256": "5913af2abefc60672934b76ce038a9c43935d08b5a68a22d354d9be02b7c8b28",
+      "clips": [
+        {
+          "name": "TRANSWING_Hover_Cruise_Hover",
+          "channels": 18,
+          "duration": 8.291666984558105,
+          "samples": 797,
+          "maximumVisibleEyeBallDistance": 0.0000011704154275312891,
+          "maximumPropHubToRealAxisDistance": 6.502324978602637e-8,
+          "endpoints": [
+            {
+              "time": 0,
+              "wingR": [
+                -0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "sliderPosition": [
+                0,
+                -0.019999999552965164,
+                -1.002929449081421
+              ],
+              "rootEyeWorld": [
+                1.4565530819632497,
+                -0.6249999897665269,
+                1.7650005937136344
+              ]
+            },
+            {
+              "time": 3.2916667928647754,
+              "wingR": [
+                0,
+                0,
+                0,
+                1
+              ],
+              "sliderPosition": [
+                0,
+                -0.019999999552965164,
+                -1.9000000953674316
+              ],
+              "rootEyeWorld": [
+                1.1800000198080012,
+                -0.17655325734752905,
+                1.0400004120422914
+              ]
+            },
+            {
+              "time": 8.291666984558105,
+              "wingR": [
+                -0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "sliderPosition": [
+                0,
+                -0.019999999552965164,
+                -1.002929449081421
+              ],
+              "rootEyeWorld": [
+                1.4565530819632497,
+                -0.6249999897665269,
+                1.7650005937136344
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TRANSWING_Motors_Start_Stop",
+          "channels": 26,
+          "duration": 7,
+          "samples": 673,
+          "maximumVisibleEyeBallDistance": 5.361492806948089e-7,
+          "maximumPropHubToRealAxisDistance": 6.502321560887052e-8,
+          "endpoints": [
+            {
+              "time": 0,
+              "wingR": [
+                -0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "sliderPosition": [
+                0,
+                -0.019999999552965164,
+                -1.002929449081421
+              ],
+              "rootEyeWorld": [
+                1.4565530819632497,
+                -0.6249999897665269,
+                1.7650005937136344
+              ]
+            },
+            {
+              "time": 3.2916666666666665,
+              "wingR": [
+                -0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "sliderPosition": [
+                0,
+                -0.019999999552965164,
+                -1.002929449081421
+              ],
+              "rootEyeWorld": [
+                1.4565530819632497,
+                -0.6249999897665269,
+                1.7650005937136344
+              ]
+            },
+            {
+              "time": 7,
+              "wingR": [
+                -0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "sliderPosition": [
+                0,
+                -0.019999999552965164,
+                -1.002929449081421
+              ],
+              "rootEyeWorld": [
+                1.4565530819632497,
+                -0.6249999897665269,
+                1.7650005937136344
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "public/models/xp4.glb",
+      "sha256": "7d8f17becf588b7dbebcd95201f89e18bcd95db4eca238451c6e64e85de9e902",
+      "clips": [
+        {
+          "name": "TRANSWING_Hover_Cruise_Hover",
+          "channels": 18,
+          "duration": 8.291666984558105,
+          "samples": 797,
+          "maximumVisibleEyeBallDistance": 0.0000011704154276245561,
+          "maximumPropHubToRealAxisDistance": 6.502324978602637e-8,
+          "endpoints": [
+            {
+              "time": 0,
+              "wingR": [
+                -0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "sliderPosition": [
+                0,
+                -0.019999999552965164,
+                -1.002929449081421
+              ],
+              "rootEyeWorld": [
+                1.4565530819632497,
+                -0.6249999897665269,
+                1.7650005937136344
+              ]
+            },
+            {
+              "time": 3.2916667928647754,
+              "wingR": [
+                0,
+                0,
+                0,
+                1
+              ],
+              "sliderPosition": [
+                0,
+                -0.019999999552965164,
+                -1.9000000953674316
+              ],
+              "rootEyeWorld": [
+                1.1800000198080012,
+                -0.17655325734752905,
+                1.0400004120422914
+              ]
+            },
+            {
+              "time": 8.291666984558105,
+              "wingR": [
+                -0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "sliderPosition": [
+                0,
+                -0.019999999552965164,
+                -1.002929449081421
+              ],
+              "rootEyeWorld": [
+                1.4565530819632497,
+                -0.6249999897665269,
+                1.7650005937136344
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TRANSWING_Motors_Start_Stop",
+          "channels": 26,
+          "duration": 7,
+          "samples": 673,
+          "maximumVisibleEyeBallDistance": 5.361492806948089e-7,
+          "maximumPropHubToRealAxisDistance": 6.502321560887052e-8,
+          "endpoints": [
+            {
+              "time": 0,
+              "wingR": [
+                -0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "sliderPosition": [
+                0,
+                -0.019999999552965164,
+                -1.002929449081421
+              ],
+              "rootEyeWorld": [
+                1.4565530819632497,
+                -0.6249999897665269,
+                1.7650005937136344
+              ]
+            },
+            {
+              "time": 3.2916666666666665,
+              "wingR": [
+                -0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "sliderPosition": [
+                0,
+                -0.019999999552965164,
+                -1.002929449081421
+              ],
+              "rootEyeWorld": [
+                1.4565530819632497,
+                -0.6249999897665269,
+                1.7650005937136344
+              ]
+            },
+            {
+              "time": 7,
+              "wingR": [
+                -0.5,
+                0.5,
+                0.5,
+                0.5
+              ],
+              "sliderPosition": [
+                0,
+                -0.019999999552965164,
+                -1.002929449081421
+              ],
+              "rootEyeWorld": [
+                1.4565530819632497,
+                -0.6249999897665269,
+                1.7650005937136344
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "method": "Actual GLTF AnimationMixer playback; visible eye/ball mesh centers, node hierarchy and real independent shaft markers, no procedural rig replacing the baked clip",
+  "passed": true
+}

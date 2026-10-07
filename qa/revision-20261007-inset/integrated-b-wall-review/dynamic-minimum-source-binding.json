@@ -1,0 +1,643 @@
+{
+  "sourceHashes": {
+    "V25": "04803b8084c82fe3e5215b2b3377169f93e63ca44e36dad1f9d798caee8d21f7",
+    "M": "2ed048e53a4376fa79413add32a914510b245611df369e3e337ec1d1dc89a2a8",
+    "flatE": "3cdedbb7a9104646b291147d31de06b4fb9ec98f1e15b77b702f3715d7964918",
+    "integratedB": "742ef52939de40f5d2eb46b87d38c8e85f99bffafc270c302afd59b9ea398adf"
+  },
+  "results": [
+    {
+      "actualSourcePointVerticalGap": 0.0017322333220615982,
+      "actualSourcePointNearestUndersideGap": 0.001726021058857441,
+      "label": "V25",
+      "side": "L",
+      "movingExactStoredWorldTriangleMatches": [
+        6240
+      ],
+      "sourceMovingTriangleAtSameRestXY": 6240,
+      "sourceMovingTriangleVertices": [
+        [
+          -0.8781684041023254,
+          -1.1260000467300415,
+          -0.1954711377620697
+        ],
+        [
+          -0.8765284419059753,
+          -1.125,
+          -0.19555874168872833
+        ],
+        [
+          -0.876101553440094,
+          -1.124733328819275,
+          -0.19558222591876984
+        ]
+      ],
+      "restWitnessPoint": [
+        -0.8769327998161316,
+        -1.1252444982528687,
+        -0.19553737342357635
+      ],
+      "sourceActualUpperAtSameXY": [
+        -0.8769327998161316,
+        -1.1252444982528687,
+        -0.19553732872009277
+      ],
+      "sourceRestPointDifference": 4.470348358154297e-08,
+      "angleDeg": 1.25,
+      "transformedWitness": [
+        -0.8727197051048279,
+        -1.1328859329223633,
+        -0.20739194750785828
+      ],
+      "sourceTransformedUpperAtSameRestXY": [
+        -0.8727197051048279,
+        -1.1328859329223633,
+        -0.2073919177055359
+      ],
+      "fixedHitTriangle": 600,
+      "fixedHitTriangleVertices": [
+        [
+          -0.8687230944633484,
+          -1.1299999952316284,
+          -0.20590472221374512
+        ],
+        [
+          -0.7571282982826233,
+          -1.1349999904632568,
+          -0.2054801881313324
+        ],
+        [
+          -0.8771311044692993,
+          -1.1349999904632568,
+          -0.2054801881313324
+        ]
+      ],
+      "actualFixedHit": [
+        -0.8727197051048279,
+        -1.1328859329223633,
+        -0.2056596875190735
+      ],
+      "verticalGapAtSameWitness": 0.001732263124383986,
+      "nearestFixedUndersideGapAtSameWitness": 0.0017260507447645068,
+      "nearestFixedUndersidePoint": [
+        -0.8727197051048279,
+        -1.1327399015426636,
+        -0.20567208528518677
+      ]
+    },
+    {
+      "actualSourcePointVerticalGap": 0.0017323522985205053,
+      "actualSourcePointNearestUndersideGap": 0.0017261398024857044,
+      "label": "V25",
+      "side": "R",
+      "movingExactStoredWorldTriangleMatches": [
+        6300
+      ],
+      "sourceMovingTriangleAtSameRestXY": 6300,
+      "sourceMovingTriangleVertices": [
+        [
+          0.876101553440094,
+          -1.124733328819275,
+          -0.19558222591876984
+        ],
+        [
+          0.8765284419059753,
+          -1.125,
+          -0.19555874168872833
+        ],
+        [
+          0.8781684041023254,
+          -1.1260000467300415,
+          -0.1954711377620697
+        ]
+      ],
+      "restWitnessPoint": [
+        0.8769327998161316,
+        -1.1252444982528687,
+        -0.19553737342357635
+      ],
+      "sourceActualUpperAtSameXY": [
+        0.8769327998161316,
+        -1.1252444982528687,
+        -0.19553744792938232
+      ],
+      "sourceRestPointDifference": 7.450580596923828e-08,
+      "angleDeg": 1.25,
+      "transformedWitness": [
+        0.8727197051048279,
+        -1.1328859329223633,
+        -0.20739194750785828
+      ],
+      "sourceTransformedUpperAtSameRestXY": [
+        0.8727197051048279,
+        -1.1328859329223633,
+        -0.20739203691482544
+      ],
+      "fixedHitTriangle": 1770,
+      "fixedHitTriangleVertices": [
+        [
+          0.7550625801086426,
+          -1.130772352218628,
+          -0.205839142203331
+        ],
+        [
+          0.8687281012535095,
+          -1.1299999952316284,
+          -0.20590472221374512
+        ],
+        [
+          0.8771361112594604,
+          -1.1349999904632568,
+          -0.2054801881313324
+        ]
+      ],
+      "actualFixedHit": [
+        0.8727197051048279,
+        -1.1328859329223633,
+        -0.2056596875190735
+      ],
+      "verticalGapAtSameWitness": 0.001732263007968664,
+      "nearestFixedUndersideGapAtSameWitness": 0.0017260507447645068,
+      "nearestFixedUndersidePoint": [
+        0.8727197051048279,
+        -1.1327399015426636,
+        -0.20567208528518677
+      ]
+    },
+    {
+      "actualSourcePointVerticalGap": 0.0017322333220615982,
+      "actualSourcePointNearestUndersideGap": 0.001726021058857441,
+      "label": "M",
+      "side": "L",
+      "movingExactStoredWorldTriangleMatches": [
+        5130
+      ],
+      "sourceMovingTriangleAtSameRestXY": 5130,
+      "sourceMovingTriangleVertices": [
+        [
+          -0.8781684041023254,
+          -1.1260000467300415,
+          -0.1954711377620697
+        ],
+        [
+          -0.8765284419059753,
+          -1.125,
+          -0.19555874168872833
+        ],
+        [
+          -0.876101553440094,
+          -1.124733328819275,
+          -0.19558222591876984
+        ]
+      ],
+      "restWitnessPoint": [
+        -0.8769327998161316,
+        -1.1252444982528687,
+        -0.19553737342357635
+      ],
+      "sourceActualUpperAtSameXY": [
+        -0.8769327998161316,
+        -1.1252444982528687,
+        -0.19553732872009277
+      ],
+      "sourceRestPointDifference": 4.470348358154297e-08,
+      "angleDeg": 1.25,
+      "transformedWitness": [
+        -0.8727197051048279,
+        -1.1328859329223633,
+        -0.20739194750785828
+      ],
+      "sourceTransformedUpperAtSameRestXY": [
+        -0.8727197051048279,
+        -1.1328859329223633,
+        -0.2073919177055359
+      ],
+      "fixedHitTriangle": 600,
+      "fixedHitTriangleVertices": [
+        [
+          -0.8687230944633484,
+          -1.1299999952316284,
+          -0.20590472221374512
+        ],
+        [
+          -0.7571282982826233,
+          -1.1349999904632568,
+          -0.2054801881313324
+        ],
+        [
+          -0.8771311044692993,
+          -1.1349999904632568,
+          -0.2054801881313324
+        ]
+      ],
+      "actualFixedHit": [
+        -0.8727197051048279,
+        -1.1328859329223633,
+        -0.2056596875190735
+      ],
+      "verticalGapAtSameWitness": 0.001732263124383986,
+      "nearestFixedUndersideGapAtSameWitness": 0.0017260507447645068,
+      "nearestFixedUndersidePoint": [
+        -0.8727197051048279,
+        -1.1327399015426636,
+        -0.20567208528518677
+      ]
+    },
+    {
+      "actualSourcePointVerticalGap": 0.0017323522985205053,
+      "actualSourcePointNearestUndersideGap": 0.0017261398024857044,
+      "label": "M",
+      "side": "R",
+      "movingExactStoredWorldTriangleMatches": [
+        5193
+      ],
+      "sourceMovingTriangleAtSameRestXY": 5193,
+      "sourceMovingTriangleVertices": [
+        [
+          0.876101553440094,
+          -1.124733328819275,
+          -0.19558222591876984
+        ],
+        [
+          0.8765284419059753,
+          -1.125,
+          -0.19555874168872833
+        ],
+        [
+          0.8781684041023254,
+          -1.1260000467300415,
+          -0.1954711377620697
+        ]
+      ],
+      "restWitnessPoint": [
+        0.8769327998161316,
+        -1.1252444982528687,
+        -0.19553737342357635
+      ],
+      "sourceActualUpperAtSameXY": [
+        0.8769327998161316,
+        -1.1252444982528687,
+        -0.19553744792938232
+      ],
+      "sourceRestPointDifference": 7.450580596923828e-08,
+      "angleDeg": 1.25,
+      "transformedWitness": [
+        0.8727197051048279,
+        -1.1328859329223633,
+        -0.20739194750785828
+      ],
+      "sourceTransformedUpperAtSameRestXY": [
+        0.8727197051048279,
+        -1.1328859329223633,
+        -0.20739203691482544
+      ],
+      "fixedHitTriangle": 1770,
+      "fixedHitTriangleVertices": [
+        [
+          0.7550625801086426,
+          -1.130772352218628,
+          -0.205839142203331
+        ],
+        [
+          0.8687281012535095,
+          -1.1299999952316284,
+          -0.20590472221374512
+        ],
+        [
+          0.8771361112594604,
+          -1.1349999904632568,
+          -0.2054801881313324
+        ]
+      ],
+      "actualFixedHit": [
+        0.8727197051048279,
+        -1.1328859329223633,
+        -0.2056596875190735
+      ],
+      "verticalGapAtSameWitness": 0.001732263007968664,
+      "nearestFixedUndersideGapAtSameWitness": 0.0017260507447645068,
+      "nearestFixedUndersidePoint": [
+        0.8727197051048279,
+        -1.1327399015426636,
+        -0.20567208528518677
+      ]
+    },
+    {
+      "actualSourcePointVerticalGap": 0.0017322333220615982,
+      "actualSourcePointNearestUndersideGap": 0.001726021058857441,
+      "label": "flatE",
+      "side": "L",
+      "movingExactStoredWorldTriangleMatches": [
+        4542
+      ],
+      "sourceMovingTriangleAtSameRestXY": 4542,
+      "sourceMovingTriangleVertices": [
+        [
+          -0.8781684041023254,
+          -1.1260000467300415,
+          -0.1954711377620697
+        ],
+        [
+          -0.8765284419059753,
+          -1.125,
+          -0.19555874168872833
+        ],
+        [
+          -0.876101553440094,
+          -1.124733328819275,
+          -0.19558222591876984
+        ]
+      ],
+      "restWitnessPoint": [
+        -0.8769327998161316,
+        -1.1252444982528687,
+        -0.19553737342357635
+      ],
+      "sourceActualUpperAtSameXY": [
+        -0.8769327998161316,
+        -1.1252444982528687,
+        -0.19553732872009277
+      ],
+      "sourceRestPointDifference": 4.470348358154297e-08,
+      "angleDeg": 1.25,
+      "transformedWitness": [
+        -0.8727197051048279,
+        -1.1328859329223633,
+        -0.20739194750785828
+      ],
+      "sourceTransformedUpperAtSameRestXY": [
+        -0.8727197051048279,
+        -1.1328859329223633,
+        -0.2073919177055359
+      ],
+      "fixedHitTriangle": 600,
+      "fixedHitTriangleVertices": [
+        [
+          -0.8687230944633484,
+          -1.1299999952316284,
+          -0.20590472221374512
+        ],
+        [
+          -0.7571282982826233,
+          -1.1349999904632568,
+          -0.2054801881313324
+        ],
+        [
+          -0.8771311044692993,
+          -1.1349999904632568,
+          -0.2054801881313324
+        ]
+      ],
+      "actualFixedHit": [
+        -0.8727197051048279,
+        -1.1328859329223633,
+        -0.2056596875190735
+      ],
+      "verticalGapAtSameWitness": 0.001732263124383986,
+      "nearestFixedUndersideGapAtSameWitness": 0.0017260507447645068,
+      "nearestFixedUndersidePoint": [
+        -0.8727197051048279,
+        -1.1327399015426636,
+        -0.20567208528518677
+      ]
+    },
+    {
+      "actualSourcePointVerticalGap": 0.0017323522985205053,
+      "actualSourcePointNearestUndersideGap": 0.0017261398024857044,
+      "label": "flatE",
+      "side": "R",
+      "movingExactStoredWorldTriangleMatches": [
+        4573
+      ],
+      "sourceMovingTriangleAtSameRestXY": 4573,
+      "sourceMovingTriangleVertices": [
+        [
+          0.876101553440094,
+          -1.124733328819275,
+          -0.19558222591876984
+        ],
+        [
+          0.8765284419059753,
+          -1.125,
+          -0.19555874168872833
+        ],
+        [
+          0.8781684041023254,
+          -1.1260000467300415,
+          -0.1954711377620697
+        ]
+      ],
+      "restWitnessPoint": [
+        0.8769327998161316,
+        -1.1252444982528687,
+        -0.19553737342357635
+      ],
+      "sourceActualUpperAtSameXY": [
+        0.8769327998161316,
+        -1.1252444982528687,
+        -0.19553744792938232
+      ],
+      "sourceRestPointDifference": 7.450580596923828e-08,
+      "angleDeg": 1.25,
+      "transformedWitness": [
+        0.8727197051048279,
+        -1.1328859329223633,
+        -0.20739194750785828
+      ],
+      "sourceTransformedUpperAtSameRestXY": [
+        0.8727197051048279,
+        -1.1328859329223633,
+        -0.20739203691482544
+      ],
+      "fixedHitTriangle": 1770,
+      "fixedHitTriangleVertices": [
+        [
+          0.7550625801086426,
+          -1.130772352218628,
+          -0.205839142203331
+        ],
+        [
+          0.8687281012535095,
+          -1.1299999952316284,
+          -0.20590472221374512
+        ],
+        [
+          0.8771361112594604,
+          -1.1349999904632568,
+          -0.2054801881313324
+        ]
+      ],
+      "actualFixedHit": [
+        0.8727197051048279,
+        -1.1328859329223633,
+        -0.2056596875190735
+      ],
+      "verticalGapAtSameWitness": 0.001732263007968664,
+      "nearestFixedUndersideGapAtSameWitness": 0.0017260507447645068,
+      "nearestFixedUndersidePoint": [
+        0.8727197051048279,
+        -1.1327399015426636,
+        -0.20567208528518677
+      ]
+    },
+    {
+      "actualSourcePointVerticalGap": 0.0017322184209004044,
+      "actualSourcePointNearestUndersideGap": 0.001726006157696247,
+      "label": "integratedB",
+      "side": "L",
+      "movingExactStoredWorldTriangleMatches": [
+        4510
+      ],
+      "sourceMovingTriangleAtSameRestXY": 4510,
+      "sourceMovingTriangleVertices": [
+        [
+          -0.8781684041023254,
+          -1.1260000467300415,
+          -0.1954711377620697
+        ],
+        [
+          -0.8765284419059753,
+          -1.125,
+          -0.19555874168872833
+        ],
+        [
+          -0.876101553440094,
+          -1.124733328819275,
+          -0.19558222591876984
+        ]
+      ],
+      "restWitnessPoint": [
+        -0.8769327998161316,
+        -1.1252444982528687,
+        -0.19553737342357635
+      ],
+      "sourceActualUpperAtSameXY": [
+        -0.8769327998161316,
+        -1.1252444982528687,
+        -0.19553732872009277
+      ],
+      "sourceRestPointDifference": 4.470348358154297e-08,
+      "angleDeg": 1.25,
+      "transformedWitness": [
+        -0.8727197051048279,
+        -1.1328859329223633,
+        -0.20739194750785828
+      ],
+      "sourceTransformedUpperAtSameRestXY": [
+        -0.8727197051048279,
+        -1.1328859329223633,
+        -0.2073919028043747
+      ],
+      "fixedHitTriangle": 458,
+      "fixedHitTriangleVertices": [
+        [
+          -0.8687230944633484,
+          -1.1299999952316284,
+          -0.20590472221374512
+        ],
+        [
+          -0.7571282982826233,
+          -1.1349999904632568,
+          -0.2054801881313324
+        ],
+        [
+          -0.8771311044692993,
+          -1.1349999904632568,
+          -0.2054801881313324
+        ]
+      ],
+      "actualFixedHit": [
+        -0.8727197051048279,
+        -1.1328859329223633,
+        -0.2056596875190735
+      ],
+      "verticalGapAtSameWitness": 0.001732263124383986,
+      "nearestFixedUndersideGapAtSameWitness": 0.0017260507447645068,
+      "nearestFixedUndersidePoint": [
+        -0.8727197051048279,
+        -1.1327399015426636,
+        -0.20567208528518677
+      ]
+    },
+    {
+      "actualSourcePointVerticalGap": 0.0017323372809439897,
+      "actualSourcePointNearestUndersideGap": 0.0017261250177398324,
+      "label": "integratedB",
+      "side": "R",
+      "movingExactStoredWorldTriangleMatches": [
+        4523
+      ],
+      "sourceMovingTriangleAtSameRestXY": 4523,
+      "sourceMovingTriangleVertices": [
+        [
+          0.876101553440094,
+          -1.124733328819275,
+          -0.19558222591876984
+        ],
+        [
+          0.8765284419059753,
+          -1.125,
+          -0.19555874168872833
+        ],
+        [
+          0.8781684041023254,
+          -1.1260000467300415,
+          -0.1954711377620697
+        ]
+      ],
+      "restWitnessPoint": [
+        0.8769327998161316,
+        -1.1252444982528687,
+        -0.19553737342357635
+      ],
+      "sourceActualUpperAtSameXY": [
+        0.8769327998161316,
+        -1.1252444982528687,
+        -0.19553744792938232
+      ],
+      "sourceRestPointDifference": 7.450580596923828e-08,
+      "angleDeg": 1.25,
+      "transformedWitness": [
+        0.8727197051048279,
+        -1.1328859329223633,
+        -0.20739194750785828
+      ],
+      "sourceTransformedUpperAtSameRestXY": [
+        0.8727197051048279,
+        -1.1328859329223633,
+        -0.20739202201366425
+      ],
+      "fixedHitTriangle": 1227,
+      "fixedHitTriangleVertices": [
+        [
+          0.7550625801086426,
+          -1.130772352218628,
+          -0.205839142203331
+        ],
+        [
+          0.8687281012535095,
+          -1.1299999952316284,
+          -0.20590472221374512
+        ],
+        [
+          0.8771361112594604,
+          -1.1349999904632568,
+          -0.2054801881313324
+        ]
+      ],
+      "actualFixedHit": [
+        0.8727197051048279,
+        -1.1328859329223633,
+        -0.2056596875190735
+      ],
+      "verticalGapAtSameWitness": 0.001732263007968664,
+      "nearestFixedUndersideGapAtSameWitness": 0.0017260507447645068,
+      "nearestFixedUndersidePoint": [
+        0.8727197051048279,
+        -1.1327399015426636,
+        -0.20567208528518677
+      ]
+    }
+  ],
+  "conclusion": "Compare stored face identity to M and actual upper hit at identical rest XY to V25; then use each source own rig axis/pivot at 1.25 degrees and its actual Fixed_root underside. No model edits. Positive finite clearance is not a >=.003 continuous-sweep claim."
+}

@@ -1,0 +1,138 @@
+{
+  "scope": "Actual component execution, not a single fresh wrapper invocation",
+  "commands": [
+    {
+      "name": "compress",
+      "command": [
+        "node",
+        "scripts/revision_20261007_inset/compress-integrated-model.mjs"
+      ],
+      "exitCode": 0,
+      "log": "qa/revision-20261007-inset/rebuild-checks/04-compress.log"
+    },
+    {
+      "name": "source-runtime",
+      "command": [
+        "node",
+        "scripts/revision_20261007_inset/integrated_verify_source_runtime.mjs"
+      ],
+      "exitCode": 0,
+      "log": "qa/revision-20261007-inset/rebuild-checks/05-source-runtime.log"
+    },
+    {
+      "name": "baked-native-geometry",
+      "command": [
+        "blender",
+        "-b",
+        "-t",
+        "2",
+        "--python-exit-code",
+        "1",
+        "--python",
+        "scripts/revision_20261007_inset/integrated_verify_baked_geometry.py"
+      ],
+      "exitCode": 1,
+      "log": "qa/revision-20261007-inset/rebuild-checks/06-baked-native-geometry.log"
+    },
+    {
+      "name": "baked-native-geometry",
+      "command": [
+        "blender",
+        "-b",
+        "-t",
+        "2",
+        "--python-exit-code",
+        "1",
+        "--python",
+        "/workspace/scratch/40bf3b17dbf8/transwing-new-annotations-20261007/rebuild-v27-b-default/transwing-studio/scripts/revision_20261007_inset/integrated_verify_baked_geometry.py"
+      ],
+      "exitCode": 0,
+      "log": "qa/revision-20261007-inset/rebuild-checks/06-baked-native-geometry-correct-target.log"
+    },
+    {
+      "name": "baked-animation",
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "scripts/revision_20261007_inset/verify_integrated_baked_animation.mts"
+      ],
+      "exitCode": 0,
+      "log": "qa/revision-20261007-inset/rebuild-checks/07-baked-animation-correct-target.log"
+    },
+    {
+      "name": "runtime-compatibility",
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "scripts/revision_20261007_inset/verify_integrated_runtime_compatibility.mts"
+      ],
+      "exitCode": 0,
+      "log": "qa/revision-20261007-inset/rebuild-checks/08-runtime-compatibility-correct-target.log"
+    },
+    {
+      "name": "owner-topology",
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "scripts/revision_20261007_inset/integrated_verify_owner_topology.mts"
+      ],
+      "exitCode": 0,
+      "log": "qa/revision-20261007-inset/rebuild-checks/09-owner-topology-correct-target.log"
+    },
+    {
+      "name": "all-owner-inventory",
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "scripts/revision_20261007_inset/integrated_verify_all_owner_inventory.mts"
+      ],
+      "exitCode": 0,
+      "log": "qa/revision-20261007-inset/rebuild-checks/10-all-owner-inventory-correct-target.log"
+    },
+    {
+      "name": "legacy-inventory-identity",
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "scripts/revision_20261007_inset/integrated_verify_legacy_inventory_identity.mts"
+      ],
+      "exitCode": 0,
+      "log": "qa/revision-20261007-inset/rebuild-checks/11-legacy-inventory-identity-correct-target.log"
+    },
+    {
+      "name": "semantic-unit",
+      "command": [
+        "node",
+        "--import",
+        "tsx",
+        "--test",
+        "scripts/revision_20261007_inset/integrated_semantic_geometry.test.mts"
+      ],
+      "exitCode": 0,
+      "log": "qa/revision-20261007-inset/rebuild-checks/12-semantic-unit-correct-target.log"
+    },
+    {
+      "name": "identity-negative",
+      "command": [
+        "node",
+        "scripts/revision_20261007_inset/integrated_identity_regression.mjs"
+      ],
+      "exitCode": 0,
+      "log": "qa/revision-20261007-inset/rebuild-checks/13-identity-negative-correct-target.log"
+    },
+    {
+      "name": "write-manifest",
+      "command": [
+        "python3",
+        "scripts/revision_20261007_inset/write_integrated_manifest.py"
+      ],
+      "exitCode": 0,
+      "log": "qa/revision-20261007-inset/rebuild-checks/14-write-manifest-correct-target.log"
+    }
+  ]
+}

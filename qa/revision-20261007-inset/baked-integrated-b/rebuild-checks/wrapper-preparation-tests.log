@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "environmentOverrideSanitization": true,
+  "inputRowsVerified": 171,
+  "fullFreshWrapperPipelineExecuted": false,
+  "packageManifestVerificationClaimed": false,
+  "freshPrepareCommand": [
+    "python3",
+    "tools/rebuild_inset_revision.py",
+    "--output",
+    "/tmp/transwing-v27-wrapper-prepare-ee98e_5g",
+    "--skip-package-check",
+    "--hardlink-inputs"
+  ],
+  "prepareExitCode": 0,
+  "prepareStdout": "Prepared verified fresh inputs: /tmp/transwing-v27-wrapper-prepare-ee98e_5g/transwing-studio",
+  "all171CopiedInputIdentitiesChecked": true,
+  "templateOverrideMappingChecked": true,
+  "currentFinalOutputsAbsentAfterPrepare": true,
+  "requiredNativeOutputDirectoriesCreated": true,
+  "absoluteBlenderScriptPathsChecked": true,
+  "sameLengthInputTamperRejected": true,
+  "ephemeralPrepareTreeRemovedAfterTest": true,
+  "hardlinkAcrossFilesystemFallsBackToCopy": true
+}

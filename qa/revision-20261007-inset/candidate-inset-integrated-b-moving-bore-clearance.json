@@ -1,0 +1,48 @@
+{
+  "source": "qa/revision-20261007/candidate-inset-integrated-b.blend",
+  "sourceSha256": "742ef52939de40f5d2eb46b87d38c8e85f99bffafc270c302afd59b9ea398adf",
+  "rows": [
+    {
+      "movingMesh": "RootCarrierMoving_L",
+      "shaft": "RootHingeShaft_L",
+      "innerBoundaryEdges": 384,
+      "minimumActualProjectedInnerEdgeRadius": 0.03128317711154171,
+      "maximumActualShaftVertexRadius": 0.02800012998961206,
+      "numericalAllowance": 2e-06,
+      "allAngleRadialSeparationLowerBound": 0.003281047121929648,
+      "passed": true
+    },
+    {
+      "movingMesh": "RootCarrierThrust_L",
+      "shaft": "RootHingeShaft_L",
+      "innerBoundaryEdges": 384,
+      "minimumActualProjectedInnerEdgeRadius": 0.03128318727163267,
+      "maximumActualShaftVertexRadius": 0.02800012998961206,
+      "numericalAllowance": 2e-06,
+      "allAngleRadialSeparationLowerBound": 0.003281057282020611,
+      "passed": true
+    },
+    {
+      "movingMesh": "RootCarrierMoving_R",
+      "shaft": "RootHingeShaft_R",
+      "innerBoundaryEdges": 384,
+      "minimumActualProjectedInnerEdgeRadius": 0.03128317711154171,
+      "maximumActualShaftVertexRadius": 0.02800012998961206,
+      "numericalAllowance": 2e-06,
+      "allAngleRadialSeparationLowerBound": 0.003281047121929648,
+      "passed": true
+    },
+    {
+      "movingMesh": "RootCarrierThrust_R",
+      "shaft": "RootHingeShaft_R",
+      "innerBoundaryEdges": 384,
+      "minimumActualProjectedInnerEdgeRadius": 0.03128318728071797,
+      "maximumActualShaftVertexRadius": 0.02800012998961206,
+      "numericalAllowance": 2e-06,
+      "allAngleRadialSeparationLowerBound": 0.003281057291105906,
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "method": "Actual annular inner polygon facet/edge radial envelope minus shaft vertex radial maximum. Rigid rotations about the common axis preserve radius, so this bound covers every angle. Inner facet radial projections are the local chord sectors; this is not a global all-hardware or strength certificate."
+}

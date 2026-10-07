@@ -1,0 +1,21 @@
+{
+  "schema": "transwing.v26-pipeline-metadata-inputs.v1",
+  "version": 26,
+  "parentVersion": 25,
+  "files": [
+    {
+      "path": "assets/baseline-v25-20261007/manifest.json",
+      "bytes": 241466,
+      "sha256": "f72d468427d43283fb1e359e5d84cc7a485e68542048476fb5653ddba1df7d15",
+      "role": "frozen-v25-parent-metadata-only"
+    },
+    {
+      "path": "assets/baseline-v25-20261007/model-validation.json",
+      "bytes": 73213,
+      "sha256": "d40e6473ba4fa86b1e61b05301b232c78d33a0331ae66bc83394bcd17dec816c",
+      "role": "frozen-v25-parent-metadata-only"
+    }
+  ],
+  "currentMainAssetsRequiredAsConstructionInputs": false,
+  "parentFullModelsIncluded": false
+}

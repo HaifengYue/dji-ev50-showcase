@@ -1,0 +1,923 @@
+{
+  "schema": "transwing.detail-revision-construction-inputs.v1",
+  "revision": "2026-10-07-v26-detail-m-checkpoint",
+  "status": "SUPERSEDED_BY_NEW_062510_USER_DESIGN; VISUAL_DEFECTS_PENDING; NOT_PUBLISHED",
+  "parentPublishedCommit": "7dcd5cde3a650c48a164c72bd9473671ec74b641",
+  "original82Lock": {
+    "path": "CONSTRUCTION_INPUTS.json",
+    "sha256": "3a252fa5904e8a75ea326af28760f97f4f5d8c8504ca235c3b4b82807dcaeb8d",
+    "unchanged": true
+  },
+  "v25ParentInputLock": {
+    "path": "REVISION_CONSTRUCTION_INPUTS.json",
+    "sha256": "b98d4156b5bf7cb2a4c4203ddd7d4bc605f264c2d22bacd45e4717a4434c4ce6"
+  },
+  "geometryInput": "assets/baseline-20261007/xp4.blend",
+  "geometryInputSha256": "1e29d4697c931545cc7b6e5d3cfa124093c9adb7dfe71a03428cda66cbd15225",
+  "entry": "scripts/revision_20261007_detail/build_detail_candidate.py",
+  "wrapper": "tools/rebuild_detail_revision.py",
+  "expectedGeometryReference": "REVISION_DETAIL_GEOMETRY_REFERENCE.json",
+  "finalBlendOrGlbUsedAsConstructionInput": false,
+  "projectApplicationSourceIdentity": "DEVELOPMENT_MANIFEST.json independently locks all packaged source and output files",
+  "files": [
+    {
+      "path": "CONSTRUCTION_INPUTS.json",
+      "bytes": 17898,
+      "sha256": "3a252fa5904e8a75ea326af28760f97f4f5d8c8504ca235c3b4b82807dcaeb8d",
+      "role": "unchanged-v24-input-lock"
+    },
+    {
+      "path": "REVISION_CONSTRUCTION_INPUTS.json",
+      "bytes": 28578,
+      "sha256": "b98d4156b5bf7cb2a4c4203ddd7d4bc605f264c2d22bacd45e4717a4434c4ce6",
+      "role": "v26-construction-or-verification-method"
+    },
+    {
+      "path": "REVISION_DETAIL_GEOMETRY_REFERENCE.json",
+      "bytes": 338561,
+      "sha256": "764aff0b33fe40a7c1c9f82bbf767a8e4b4a97bbaa2a3fa5547302330cbcb5d7",
+      "role": "v26-construction-or-verification-method"
+    },
+    {
+      "path": "REVISION_GEOMETRY_REFERENCE.json",
+      "bytes": 338841,
+      "sha256": "2f688bba14a1abfb4ae75760b38aee0476dd8d36d58c3a3db82ec0ca7e057743",
+      "role": "verification-only-complete-geometry-identity-reference"
+    },
+    {
+      "path": "STAGING_ONLY.json",
+      "bytes": 827,
+      "sha256": "560f37c6e51ec679bd67d7994ba170ac3d43074e8cdec233ba03b6365588fa3a",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "V26_PIPELINE_METADATA_INPUTS.json",
+      "bytes": 675,
+      "sha256": "3cbb163e57cc483cbdae91cce2f2b8e69b3a4d6f597ba608f3585387f1bee595",
+      "role": "v26-construction-or-verification-method"
+    },
+    {
+      "path": "assets/baseline-20261007/annotated-mechanism.json",
+      "bytes": 6865,
+      "sha256": "43a1dc0a8dfd8773f395e477690d361f81e2e15949f93174003f98e2268be97d",
+      "role": "explicit-frozen-v24-baseline"
+    },
+    {
+      "path": "assets/baseline-20261007/manifest.json",
+      "bytes": 840342,
+      "sha256": "8cbc5779ee5bfeb7022359cd96efd0b5d6d1943e8edb9be2c0e6978a21cc8b19",
+      "role": "explicit-frozen-v24-baseline"
+    },
+    {
+      "path": "assets/baseline-20261007/xp4.blend",
+      "bytes": 33134084,
+      "sha256": "1e29d4697c931545cc7b6e5d3cfa124093c9adb7dfe71a03428cda66cbd15225",
+      "role": "explicit-frozen-v24-baseline"
+    },
+    {
+      "path": "assets/baseline-v25-20261007/manifest.json",
+      "bytes": 241466,
+      "sha256": "f72d468427d43283fb1e359e5d84cc7a485e68542048476fb5653ddba1df7d15",
+      "role": "v26-construction-or-verification-method"
+    },
+    {
+      "path": "assets/baseline-v25-20261007/model-validation.json",
+      "bytes": 73213,
+      "sha256": "d40e6473ba4fa86b1e61b05301b232c78d33a0331ae66bc83394bcd17dec816c",
+      "role": "v26-construction-or-verification-method"
+    },
+    {
+      "path": "assets/blender/nacelle-system-concept-source.glb",
+      "bytes": 105676,
+      "sha256": "e1ce4da42d21aa46f055dab338430b7516617366faa6cf850f906a6a031187bd",
+      "role": "independent-concept-companion",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "assets/blender/nacelle-system-concept.blend",
+      "bytes": 778316,
+      "sha256": "b4c5273c586ac2a0fcb526e9e039d7705e45f35d431ad031a7d5bf00ec4919f7",
+      "role": "independent-concept-companion",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 90179,
+      "sha256": "8ca282ddba0bc23d4de0e6db5888de6b3b855a0597ac9c8296c4ddef78ce1ff4",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1119,
+      "sha256": "fbe6744094bcd133ce0e77df6c80bebe050803faff65366f62fd47bafdf0c827",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "public/models/nacelle-system-concept.glb",
+      "bytes": 84352,
+      "sha256": "55f0d778657593e8745ecd0711f5720c3d6f98abb91b9ffab0875eeef8d08996",
+      "role": "independent-concept-companion",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "qa/lib/compact-geometry.mjs",
+      "bytes": 6004,
+      "sha256": "2f018a4c4546aae1371e8f4a8de0498446a5cfccb10c5c0aa7233003cd3032a5",
+      "role": "v26-construction-or-verification-method"
+    },
+    {
+      "path": "qa/lib/runtime-concept-compression-check.mts",
+      "bytes": 6183,
+      "sha256": "3cc2d192dc19185ad52112e8428ef24f5b56747f508c5c44fcbd6f29f6befefb",
+      "role": "v26-construction-or-verification-method"
+    },
+    {
+      "path": "qa/lib/runtime-detail-controls.mts",
+      "bytes": 8832,
+      "sha256": "f9d34ad29c00eb31e3bcee9d405473d60c4ecb6aee254abe539e3fa3cf842728",
+      "role": "v26-construction-or-verification-method"
+    },
+    {
+      "path": "qa/lib/runtime-geometry.mts",
+      "bytes": 4364,
+      "sha256": "3f464fb9f2a8b4b97d033b372aa0254a75e76dbc61c0c15ed102edec1f81e704",
+      "role": "v26-construction-or-verification-method"
+    },
+    {
+      "path": "qa/lib/runtime-motor-motion.mts",
+      "bytes": 9794,
+      "sha256": "c188a447acf2281e86fa13d888fd26b9a37065244d91b31ab13205955bfe2eee",
+      "role": "v26-construction-or-verification-method"
+    },
+    {
+      "path": "qa/lib/runtime-rotor-motion.mts",
+      "bytes": 9908,
+      "sha256": "6a11997a0329c82e8463fa9c1517756a8699eed19d05489ab580bed6053ec91e",
+      "role": "v26-construction-or-verification-method"
+    },
+    {
+      "path": "qa/lib/runtime-self-clearance.mts",
+      "bytes": 3646,
+      "sha256": "4fc6b4d9350e8d0d98e676c48d422f634ddfe6fc4fed02352de398ca0840dda8",
+      "role": "v26-construction-or-verification-method"
+    },
+    {
+      "path": "qa/lib/runtime-shaft-clearance.mts",
+      "bytes": 5070,
+      "sha256": "7191718c010a9b73ebb91bab47eb742d3fa102dc5e3039f3efe6283a4e5853cb",
+      "role": "v26-construction-or-verification-method"
+    },
+    {
+      "path": "qa/lib/runtime-ui-source-check.mts",
+      "bytes": 22761,
+      "sha256": "f68a6f4b4eceda7879ba2c1f016e2ea88dcc5ea21bbade0cc27c9775a4bb23d0",
+      "role": "v26-construction-or-verification-method"
+    },
+    {
+      "path": "qa/lib/solid-contact.mjs",
+      "bytes": 6360,
+      "sha256": "ce7e6268a2b923be64a714716989206c325d283936f28cb7a72d98d2433f023d",
+      "role": "v26-construction-or-verification-method"
+    },
+    {
+      "path": "qa/lib/triangle-contact.mjs",
+      "bytes": 13195,
+      "sha256": "c8c8bc4f141aff261dbb0bac493fb9e7b4066cae9e1eb95f41cdd9b7718700bb",
+      "role": "v26-construction-or-verification-method"
+    },
+    {
+      "path": "qa/native-staging/constructor-input-seed/manifest.json",
+      "bytes": 1014,
+      "sha256": "82a15335d16fd7e73bf5529a13d802a5ed7cc8ea1b9d02b5fa7259fbea9e174f",
+      "destinationPath": "public/models/manifest.json",
+      "role": "constructor-seed",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/airframe_accessories.py",
+      "bytes": 19391,
+      "sha256": "d730864a644b729eb47fe11f81cdb7122df4b654b4cf8409432723ed35f3ca17",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/airframe_refinements.py",
+      "bytes": 6616,
+      "sha256": "9904ff1896b61584990962827b2a4c43d9a4ca84baa5095b0c4b02a9886aa6fb",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/annotated_fixed_support.py",
+      "bytes": 3930,
+      "sha256": "397e091785dbc1449b3f198d6cf952f161254a619dafd694445181cff183d5f7",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/annotated_linkage.py",
+      "bytes": 9875,
+      "sha256": "6a956449c9f83253977daddeb9f2331564e4a9d60d46fa2526203dcd34d98638",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/annotated_low_angle_relief.py",
+      "bytes": 10993,
+      "sha256": "3dcc35265cc7440b10ef89c55f0e43940909e1d3130cd1208bb3e000cbe47aa9",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/annotated_mechanism.py",
+      "bytes": 4748,
+      "sha256": "697e54189282411f17806ac2dc7617d44d159c8010acc834c80bfc3ad3a06a04",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/annotated_moving_support.py",
+      "bytes": 9718,
+      "sha256": "e4c1526f24d64943321b3a201c098aba6a3c95a471f1129b41117c9866a4fc1e",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/annotated_native_stage.py",
+      "bytes": 21706,
+      "sha256": "fd5423a155e7ea42128527e751dcad9f35edbd709ff3f6ebb32f1dfbd20ac209",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/annotated_principal_side_closure.py",
+      "bytes": 21574,
+      "sha256": "80f8fa7305d1735787aedbccbf2d5a0fa066a8f444a4b5f15ecd74ceac8f8d9c",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/annotated_root_closing.py",
+      "bytes": 6418,
+      "sha256": "c8036936c8fe494bd5a7d50958641371dadb86fae26066ab0cc2f0ef86d541b5",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/annotated_root_interface.py",
+      "bytes": 12704,
+      "sha256": "93eaf464f5831aaa68f48d63327601785c1a3d803451364def79147fe37e79bd",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/annotated_tail_partition.py",
+      "bytes": 6514,
+      "sha256": "e78ffa54dfb5401e9282b114e1cb7c46549cf02e20d1e69eced968f768ec8d6a",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/central_wing_attachment.py",
+      "bytes": 18887,
+      "sha256": "0777d0f7fb1ac4bc17ec4356ca2a274a16dc4dd6d682aff44508933cb2ff675d",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/compact_hinge_enclosure.py",
+      "bytes": 15293,
+      "sha256": "9457b12c3a0e2e10c374e589c6f99242fda52e2191b946da088cbef83ca06174",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/compact_hinge_stack.py",
+      "bytes": 7455,
+      "sha256": "974fdf6bba5f406b2fa5cd9ad2fd62e36b7cdb6940e316b29ec3ed27e5ee9244",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/compress-concept.mjs",
+      "bytes": 4273,
+      "sha256": "b1da5746b96a5627ca9b4dba95b2d5ed3ec708c8a0e9928b64d899c658cdc153",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/compress-model.mjs",
+      "bytes": 11729,
+      "sha256": "166965001af05d3731a86336f40574d78da4a0691b359544ab3b42ee46cae129",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/constructor_inputs.py",
+      "bytes": 8425,
+      "sha256": "feafb234decb038994bdc8744039202c43781e01ab45f7b18c1fd355c3615179",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/control_supports.py",
+      "bytes": 6596,
+      "sha256": "28505aee0d5eb2b8f36afef2a63a8bbf4a15cfa209212eb948d8718f7a2109de",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/data/annotated-fixed-support.json",
+      "bytes": 1533,
+      "sha256": "2f3e9691b700aad9bd4f980d4aa575d418cf5ae620e70d01e40a36cc2d5d974e",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/data/annotated-low-angle-relief.json",
+      "bytes": 53431,
+      "sha256": "9f20c7b2d0e5baf8e235fec87029d517f5f402d77e548b690c86ea193f7a241b",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/data/annotated-mechanism-intent.json",
+      "bytes": 5480,
+      "sha256": "73af20dfc8df51400854d2f1dfeb83ffb57c481c11dfe159b1d576c52254c062",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/data/annotated-moving-support.json",
+      "bytes": 3005,
+      "sha256": "ded317b56df085cd874c658ceb6a7142eca599f06cccec554e63788ef2a80d45",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/data/annotated-paint-repair.json",
+      "bytes": 1132,
+      "sha256": "aa8180b28358ac6741d805716eb24e7002787bf8faf2d42e1db4e40b5a7216ef",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/data/annotated-principal-side-closure.json",
+      "bytes": 350509,
+      "sha256": "9cd40401b110a44e31af3fd7ac5d20f1b4701e27638818ee4a0e486d02661c0d",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/data/annotated-root-closing.json",
+      "bytes": 325886,
+      "sha256": "58a176135b2bb8f3dfc74b36815069ea84c4a1651b28eac7e64ec2ccd7c7fd30",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/data/annotated-root-interface.json",
+      "bytes": 22955,
+      "sha256": "45261a637c8731a21d041a9b3aeb4cd9c56ac63e195e33362eaed44ed14c01d6",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/data/annotated-tail-partition.json",
+      "bytes": 1792,
+      "sha256": "9a74b57cb2b2911506e45e9ed0db7bb3974eba7f2764d838cef39b0812e2e0cc",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/data/compact-hinge-enclosure.json",
+      "bytes": 12003,
+      "sha256": "6b85793f1b233feaa5b95d8b5af193857af4d967316709b730c502885d85adb7",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/data/fixed-root-paint-encoding.json",
+      "bytes": 299536,
+      "sha256": "b112619e432e67b31d605f847d31dab716ce3c5bcbaf334c20985b9d2fe124e2",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/data/legacy-powertrain-fit.json",
+      "bytes": 2387,
+      "sha256": "f05f4442f91e2ff5ac7ce6590c7a04870aeabda682e5cfdac81c0cbdf71e622d",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/data/preserved-front-surfaces.blend",
+      "bytes": 732142,
+      "sha256": "69c73ce46be035abb655b03a9608523ce38f3695ed3f0bbdc5b5436cc488451c",
+      "role": "authorized-finite-surface-template",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/data/preserved-front-surfaces.json",
+      "bytes": 611,
+      "sha256": "50af15b925da72edc69bcb8fb3fb138d0c21aba95705053bb29a7da5d30dbc9c",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/data/short-cap-construction-plan.json",
+      "bytes": 1749,
+      "sha256": "960a4d5ef199855c0cfbd8de4ec9a929db632d49d62b096c9770a75a63833f1f",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/data/slot-roof-preservation.json",
+      "bytes": 818,
+      "sha256": "1abb1097e97b28e6d58db1fc1acbc88847376305e1266beb2bf446bebed28bfc",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/data/wing-post-triangulation-regression.json",
+      "bytes": 2218,
+      "sha256": "9d4ba4a909d94b4b2a08206a6fd6a585232a55cbad3f87a70dd826ab75175d9b",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/drive_layout.py",
+      "bytes": 735,
+      "sha256": "53efe7cadef9f79d87d884f5b1981b9eca775f3de80c58eee98ee3d803e57d69",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/embedded_joint_surfaces.py",
+      "bytes": 3809,
+      "sha256": "bfa1e6d506b50f97f6a8230c4340c1dd94a777e7497a61691f9687a3f848c8b4",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/export-transition.py",
+      "bytes": 21254,
+      "sha256": "900791a92748f6358257288c6de2b69d40e35d1e4dcb46a92f2b1d8abb630dc3",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/generate-concept.py",
+      "bytes": 2134,
+      "sha256": "72f121693aaa5a78b5e096fe3ab673de30239f972d9dc455fb946be015989c9a",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/generate_transwing.py",
+      "bytes": 64472,
+      "sha256": "90dbbc1e1b375621b01dcf5b22196ec3369e4ee4f965c96b3a597f0499484e04",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/hinge_supports.py",
+      "bytes": 8068,
+      "sha256": "3ceb9cce86a638191d0efa4b83c2f941e39909db42af2c5bd9596ae6ea6da83d",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/internal_drive.py",
+      "bytes": 23008,
+      "sha256": "30df1ef2526cc8f2a4d2975bdd398c2c5887db413946c5a1b8f8a73493281c75",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/joint_endcaps.py",
+      "bytes": 8553,
+      "sha256": "4c7a454ff3dbe253bf9847fe352508cf2cfd9bbd25f8b2b8fcc2a05582a5336c",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/joint_fairings.py",
+      "bytes": 6706,
+      "sha256": "b8bdd4d0f904fba6346a7cd604cf8521ed93ce04225cf5c2fc65a824a3bc8268",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/kinematics.py",
+      "bytes": 3786,
+      "sha256": "9c5bb0b7945b2f8e3bd5cc58072a500654df37311fb713cf392fcf7848145378",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/layered_wing_joint.py",
+      "bytes": 33367,
+      "sha256": "93a6d24c32f47974a57aaa2733ae8fcce3d6698e4b55dae9c6efabb0acda7b76",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/legacy_powertrain_fit.py",
+      "bytes": 14169,
+      "sha256": "30e1852dd185e71afd6b30810b5d69cb10cee7f8b20336931564b9da7a2176f0",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/linkage_geometry.py",
+      "bytes": 5597,
+      "sha256": "a66ce5f7e07797d7e8f5ea2a564b468ffba3ca35efe2e2a23c3bac17932f2416",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/mesh_precision.py",
+      "bytes": 756,
+      "sha256": "8e39c57a9fddb666b6e0bf55fd6e3343d2838f91f22e08f270875aed6b76712b",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/nacelle_wing_layout.py",
+      "bytes": 16539,
+      "sha256": "7c62753fbc16aedc78a8b91ee8952fb6284ef73de768ae41f58dd7cc11803265",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/output_slot_geometry.py",
+      "bytes": 3804,
+      "sha256": "abb198cb363578773acc15bd04aaab4da2bf9507c6da0b99ef97db36ea703c5b",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/output_slot_profile.py",
+      "bytes": 10277,
+      "sha256": "e93f43e2edb3e31ec72b2f527700dd19e582221aba6703928851043ef3799d2d",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/package-lock.json",
+      "bytes": 25110,
+      "sha256": "a4cda2aeaa58d86bffcc4b4020346d64b3abefc954d858f8c398521e464c904f",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/package.json",
+      "bytes": 178,
+      "sha256": "4d87fdff2312cb3afc1ecd98c39e152c6b44e792b4ea717c8f94204ab8d857a7",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/paint_exact_regions.py",
+      "bytes": 22625,
+      "sha256": "ee5432260e656fafca78adf4fe5f598ce9169dbcf826dde7821c757aa789d480",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/preserved_surfaces.py",
+      "bytes": 7883,
+      "sha256": "4e7d66d3991317311a91251920e7841f9d35db50d411d80613798c576bf1e18e",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/propeller_continuity.py",
+      "bytes": 11507,
+      "sha256": "4733a21d16a70a6f2cc6ef2a4fde45ffc4c9e4cefe3a51b797cbd24f39af05ac",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/propeller_shape.py",
+      "bytes": 10104,
+      "sha256": "51ee268df416fdc03304d9d5af397a1a3ef7d451cd6ab6b94ca6e9ca9f5a2636",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/reexport-source.py",
+      "bytes": 459,
+      "sha256": "12434c473af230a3cd5e2dd0a45dee5095829dc8d97032b124c484a4b3b912b8",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/revision_20261007/bake_candidate.py",
+      "bytes": 1749,
+      "sha256": "3d1e0c957063743931aac5686e8b6a83e6f6b3fb6aacd9d8c990ba583547ae1d",
+      "role": "v25-construction-compression-or-verification-method"
+    },
+    {
+      "path": "scripts/revision_20261007/check_dense_material.py",
+      "bytes": 6262,
+      "sha256": "297f0ec414a4622a12416996163e021b4b0d68daf3cfd8e2a7de25a49817a55f",
+      "role": "v25-construction-compression-or-verification-method"
+    },
+    {
+      "path": "scripts/revision_20261007/check_dense_sweep.py",
+      "bytes": 3182,
+      "sha256": "8703abeead16a6affc5e3be19799a5e609fd4f8297b8faca722232c26cb74a6e",
+      "role": "v25-construction-compression-or-verification-method"
+    },
+    {
+      "path": "scripts/revision_20261007/check_material.py",
+      "bytes": 2724,
+      "sha256": "07efaaf7bb056aa49ba2c67bdb246a884c52e72451113bc15f8b71cf0e1b64ac",
+      "role": "v25-construction-compression-or-verification-method"
+    },
+    {
+      "path": "scripts/revision_20261007/check_rotor_sweep.py",
+      "bytes": 3858,
+      "sha256": "099d265380ec3e85aff359b0d0808f3dfa4ecf99d6126f335f39c2b83d1770d2",
+      "role": "v25-construction-compression-or-verification-method"
+    },
+    {
+      "path": "scripts/revision_20261007/compress-model-revision.mjs",
+      "bytes": 12482,
+      "sha256": "e01753ca7423d3cb39f42b2dae69b9da14b267c99ac33be00c82a9591e777ab2",
+      "role": "v25-construction-compression-or-verification-method"
+    },
+    {
+      "path": "scripts/revision_20261007/finish_supports_paint.py",
+      "bytes": 7881,
+      "sha256": "8d10c69789aac51ffd38f4cdf076bfd78bcdce6acb2edc63427fdf5f726c0001",
+      "role": "v25-construction-compression-or-verification-method"
+    },
+    {
+      "path": "scripts/revision_20261007/rebuild_geometry.py",
+      "bytes": 12068,
+      "sha256": "919d3b0dc373eae700bf34e1215bc784f7279f5af0e3be82c75969227d585aa2",
+      "role": "v25-construction-compression-or-verification-method"
+    },
+    {
+      "path": "scripts/revision_20261007/render_baked_endpoints.py",
+      "bytes": 2056,
+      "sha256": "d6d55010d9ad4da9ac74bddd17dfc5d17426801b59c43af58069dbdd650fef9b",
+      "role": "v25-construction-compression-or-verification-method"
+    },
+    {
+      "path": "scripts/revision_20261007/verify_baked_animation.mts",
+      "bytes": 2877,
+      "sha256": "1a412d0517dac976640910acb6089939e1e267a36521d32b467d584fda6e4047",
+      "role": "v25-construction-compression-or-verification-method"
+    },
+    {
+      "path": "scripts/revision_20261007/verify_baked_geometry.py",
+      "bytes": 2125,
+      "sha256": "2c380122adb56514792c2716696d182f92669239e84c0931424d88d80233c68f",
+      "role": "v25-construction-compression-or-verification-method"
+    },
+    {
+      "path": "scripts/revision_20261007/verify_geometry_rebuild.py",
+      "bytes": 2697,
+      "sha256": "429259ebc15282c38da24dd1e18bccd249c680e036db502603c25a953a7d29b4",
+      "role": "v25-construction-compression-or-verification-method"
+    },
+    {
+      "path": "scripts/revision_20261007/verify_linkage_geometry.mts",
+      "bytes": 1522,
+      "sha256": "816d749d6c96983717488749aedf2a5d48cf7b52ca4266106e66959dbf6b06d0",
+      "role": "v25-construction-compression-or-verification-method"
+    },
+    {
+      "path": "scripts/revision_20261007/verify_source_runtime.mjs",
+      "bytes": 3795,
+      "sha256": "db4ee2f3a00c4a04dd013eceb34cf33706326a0574b88ea452485fcf368cf8a3",
+      "role": "v25-construction-compression-or-verification-method"
+    },
+    {
+      "path": "scripts/revision_20261007/write_revision_manifest.py",
+      "bytes": 5229,
+      "sha256": "1c83a478b50deffca65248065c1066c4b73f45d1e8916c0793f14923a6775fd6",
+      "role": "v25-construction-compression-or-verification-method"
+    },
+    {
+      "path": "scripts/revision_20261007_detail/bake_candidate.py",
+      "bytes": 6402,
+      "sha256": "ee425e38fc2dc1888e60f2158a9ade930f802b95932c498c28eb3df376d68f86",
+      "role": "v26-construction-or-verification-method"
+    },
+    {
+      "path": "scripts/revision_20261007_detail/build_detail_candidate.py",
+      "bytes": 4070,
+      "sha256": "64d7981e79bcae0bb24b45bc14c154e94378d5fa17ff98742f0fc77ea563b861",
+      "role": "v26-construction-or-verification-method"
+    },
+    {
+      "path": "scripts/revision_20261007_detail/check_material.py",
+      "bytes": 2784,
+      "sha256": "4427ff1a7daf0efa8f5a530338a788f656fc6b8828b890105b570265f88358c3",
+      "role": "v26-construction-or-verification-method"
+    },
+    {
+      "path": "scripts/revision_20261007_detail/compress-model-detail.mjs",
+      "bytes": 13533,
+      "sha256": "efefa976345e585624bac9b26e1dd1613b595c5789cf11e7e40ebd2b0a1b9d4a",
+      "role": "v26-construction-or-verification-method"
+    },
+    {
+      "path": "scripts/revision_20261007_detail/semantic_geometry.mts",
+      "bytes": 2607,
+      "sha256": "883274ca667732d33d879617ae7f9d34f23574a257f2001e894eb6b97ea04823",
+      "role": "v26-construction-or-verification-method"
+    },
+    {
+      "path": "scripts/revision_20261007_detail/semantic_geometry.test.mts",
+      "bytes": 1907,
+      "sha256": "c8a0a7c6df7dbc93213f0afcb3b0aa6660c7e67cc5eb019bb657e6272c0bcbba",
+      "role": "v26-construction-or-verification-method"
+    },
+    {
+      "path": "scripts/revision_20261007_detail/unified_endcaps.py",
+      "bytes": 9790,
+      "sha256": "9d6f4ba3414852916d307d7708f98d1a20bb8855576ed8bbd6346730fd143c39",
+      "role": "v26-construction-or-verification-method"
+    },
+    {
+      "path": "scripts/revision_20261007_detail/verify_all_owner_inventory.mts",
+      "bytes": 3334,
+      "sha256": "448343d2a1dc89866794b3c3e26621fa3c7d1ad6ede1ffa2d54b4a541d0a6767",
+      "role": "v26-construction-or-verification-method"
+    },
+    {
+      "path": "scripts/revision_20261007_detail/verify_baked_animation.mts",
+      "bytes": 3383,
+      "sha256": "ef194bc0327d84d91af93c6b9cfcea46f3cb9980cc508db0799c9cb14c86c880",
+      "role": "v26-construction-or-verification-method"
+    },
+    {
+      "path": "scripts/revision_20261007_detail/verify_baked_geometry.py",
+      "bytes": 2412,
+      "sha256": "9cf8ee83d31d0b91f9a3871f8cdff82a5b67e46e6894ccb394de4263e18c3399",
+      "role": "v26-construction-or-verification-method"
+    },
+    {
+      "path": "scripts/revision_20261007_detail/verify_geometry_rebuild.py",
+      "bytes": 2753,
+      "sha256": "811e068fc039a75d72893a5adfcc182676055d23aedb66d6c34f363de646b0c1",
+      "role": "v26-construction-or-verification-method"
+    },
+    {
+      "path": "scripts/revision_20261007_detail/verify_legacy_inventory_identity.mts",
+      "bytes": 3356,
+      "sha256": "cf2292ab69c4c47987831ce99c8a9fd8b77afe354d2b98cdde0a89350aea5d50",
+      "role": "v26-construction-or-verification-method"
+    },
+    {
+      "path": "scripts/revision_20261007_detail/verify_owner_topology.mts",
+      "bytes": 3257,
+      "sha256": "05660f58caba45e765d5ab309bbacb31e0480083d67945edec06a611c2ee29d4",
+      "role": "v26-construction-or-verification-method"
+    },
+    {
+      "path": "scripts/revision_20261007_detail/verify_runtime_compatibility.mts",
+      "bytes": 5512,
+      "sha256": "3e88f129341d27763ac7ffb8bc2e576aac10e68f460a87103373595a4ea66f6e",
+      "role": "v26-construction-or-verification-method"
+    },
+    {
+      "path": "scripts/revision_20261007_detail/verify_source_runtime.mjs",
+      "bytes": 7632,
+      "sha256": "893019b673c1220c877c694da2ef72ddb9a62c008ef89d26cb54489c18d0fc55",
+      "role": "v26-construction-or-verification-method"
+    },
+    {
+      "path": "scripts/revision_20261007_detail/write_detail_manifest.py",
+      "bytes": 7691,
+      "sha256": "669d7733b3ca25fc7b71266efe87b4ed859b3c3ee0387ad06e72992d4d214221",
+      "role": "v26-construction-or-verification-method"
+    },
+    {
+      "path": "scripts/root_paint_ownership.py",
+      "bytes": 34452,
+      "sha256": "28588906345120fedc0ffcddecd2896fb280a155940734e8ee8cb6479b6e844a",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/rotor_handedness.py",
+      "bytes": 5246,
+      "sha256": "c15730cc97b88486c94d85fe9d2735c8bcdf76830072c4308b26082b2f0905bb",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/slot_topology.py",
+      "bytes": 17817,
+      "sha256": "a58e6a868b17fe4898e9f42bdc9b810b6b50f974f8161b23597a0fd3d1cbcdef",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/surface_finish.py",
+      "bytes": 4762,
+      "sha256": "49e7a9fd1a52ae3fdd5ab816b6e3c0c880dffd4fba9aee2b5e520967b5b5d5d5",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/surface_supports.py",
+      "bytes": 23224,
+      "sha256": "103e40b0aea7f5c0e164116e5a136208a5959c1a01c026a361e1e9f6c82d8925",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/verify-motor-animation.py",
+      "bytes": 2941,
+      "sha256": "613ef719d9be7aaa93ff3f6941543de211526fbe90f381b5ded88498a6d2114e",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/verify-native-drive.py",
+      "bytes": 2093,
+      "sha256": "692658b17a18cbee6af00b31214cedd8c77399495df1b4c39f677d9ba05f1bc2",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/verify-regeneration-exact.mjs",
+      "bytes": 3599,
+      "sha256": "9ef1c2d2867252b812947d37fd4f1e1cb0e7641d6c1d88535d3320781a161ed6",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/verify-regeneration.mjs",
+      "bytes": 5003,
+      "sha256": "e997ea70d0eaf2d9a425f0d7b9010757c3c1067f20ca0eb734d2a4a0c8e061df",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/verify-solids.py",
+      "bytes": 2454,
+      "sha256": "18cac73510964d58cd7b0c60735a79724fae2aad0791295123b309c9c42f6673",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/verify-source-runtime.mjs",
+      "bytes": 6510,
+      "sha256": "d3621cad2c55e85df075e8d9d17cb6a7f124c6c28ce0fd353dfe7b6408400cd9",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/verify-source.py",
+      "bytes": 5757,
+      "sha256": "bcc0297e1849272c9c17a012bf8da5a05bfe897d8797030f1f0b261b5a3ed088",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/wing_seam.py",
+      "bytes": 3813,
+      "sha256": "4228da9c2983aa252b34bd059d9a5335bedcaac181319c16f824787aafb758fc",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/wing_surface_repair.py",
+      "bytes": 13752,
+      "sha256": "4c713427b6d995c9af46d7b861b2e10a6fcc5ecea4222d3dfdaece8d961d6cdb",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "scripts/wing_surfaces.py",
+      "bytes": 12664,
+      "sha256": "4be94d46d7ba231537e84cfdf61a72d1c6d0313c5fec1f30c0deb7004ef4ab54",
+      "role": "primitive-construction-input",
+      "revisionRole": "unchanged-v24-primitive-input"
+    },
+    {
+      "path": "tools/rebuild_detail_revision.py",
+      "bytes": 5713,
+      "sha256": "2925a15a85f64dc6c0d546c1ba9046a22c86d2d75d59b531d27fc0aeed6e53dc",
+      "role": "v26-construction-or-verification-method"
+    },
+    {
+      "path": "tools/rebuild_revision.py",
+      "bytes": 7364,
+      "sha256": "920159282c974172160f203fbe85d34d5e7162080e756efb5fd68324e17a1ebc",
+      "role": "isolated-revision-orchestrator"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> transwing-studio@1.0.0 build
+> tsc -b && vite build --emptyOutDir false
+
+vite v7.3.6 building client environment for production...
+transforming...
+✓ 2164 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.83 kB │ gzip:   0.54 kB
+dist/assets/index-D1B7vCse.css   25.27 kB │ gzip:   5.57 kB
+dist/assets/index-2aQYKLgx.js   195.12 kB │ gzip:  71.13 kB
+dist/assets/scene-CAbU1Meg.js   580.48 kB │ gzip: 182.28 kB
+dist/assets/three-D1MzFUPS.js   704.57 kB │ gzip: 181.63 kB
+✓ built in 5.42s
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

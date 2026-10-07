@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "candidateReferenceSha256": "2f688bba14a1abfb4ae75760b38aee0476dd8d36d58c3a3db82ec0ca7e057743",
+  "sourceCandidateSha256": "04803b8084c82fe3e5215b2b3377169f93e63ca44e36dad1f9d798caee8d21f7",
+  "bakedBlendSha256": "948e6a83b19b87bbfe7efe6d0e5e461e1679b40a8e8da31027d9a290a54e373b",
+  "completeMeshIdentitiesCompared": 287,
+  "allNamedParentsCompared": 352,
+  "staticLocalFramesCompared": 330,
+  "animatedFramesVerifiedSeparatelyByActualGLTFPlayback": true,
+  "differences": []
+}
+Blender 4.3.2
+Read blend: "/workspace/scratch/40bf3b17dbf8/transwing-new-annotations-20261007/work/transwing-studio/assets/blender/xp4.blend"
+
+Blender quit
