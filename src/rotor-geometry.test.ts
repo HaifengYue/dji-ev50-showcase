@@ -9,7 +9,10 @@ import { createModelRig, applyModelPose, applyMotorPose } from "./rig";
 import { MOTOR_IDS, newMotorStates, stepMotor } from "./motors";
 const signs = { L_Front: -1, R_Front: 1, L_Rear: 1, R_Rear: -1 } as const;
 async function model() {
-  const b = readFileSync(new URL("../public/models/xp4.glb", import.meta.url));
+  const b = readFileSync(
+    process.env.QA_MODEL ??
+      new URL("../public/models/xp4.glb", import.meta.url),
+  );
   const g = await new GLTFLoader()
     .setMeshoptDecoder(MeshoptDecoder)
     .parseAsync(b.buffer.slice(b.byteOffset, b.byteOffset + b.byteLength), "");
@@ -147,4 +150,54 @@ test("V15拒绝方向与几何手性脱离的节点契约", async () => {
   const rig = await model();
   rig.props[0].object.userData.handedness = -rig.props[0].spinSign;
   assert.throws(() => createModelRig(rig.scene), /手性契约不一致/);
+});
+
+test("真实连续桨叶保留28点根截面、56点叶身截面与单点圆尖，接回和包络由实际顶点证明", async () => {
+  const rig = await model();
+  for (const prop of rig.props) {
+    const blade = rig.scene.getObjectByName(`Blade_${prop.id}_B`) as T.Mesh;
+    assert.equal(blade.userData.propellerContinuityVersion, 1);
+    const attribute = blade.geometry.getAttribute("position");
+    const points = Array.from({ length: attribute.count }, (_, index) =>
+      new T.Vector3().fromBufferAttribute(attribute, index),
+    );
+    const unique = (list: T.Vector3[]) => [
+      ...new Map(
+        list.map((point) => [point.toArray().join(","), point]),
+      ).values(),
+    ];
+    const section = (x: number) =>
+      unique(points.filter((point) => Math.abs(point.x - x) < 1e-7));
+    assert.equal(section(0.08).length, 28, `${prop.id} 原根共用截面被改变`);
+    for (const x of [0.24, 0.395, 0.515])
+      assert.equal(section(x).length, 56, `${prop.id} 叶身截面未实体加密`);
+    const tipX = Math.max(...points.map((point) => point.x));
+    const tip = section(tipX);
+    assert.equal(tip.length, 1, `${prop.id} 仍为平切端盖或出现重叠桨尖`);
+    assert.ok(Math.abs(tipX - 0.5956363366507627) < 1e-6);
+    assert.ok(Math.abs(tip[0].y) < 1e-6, "圆尖中心必须仍在实际桨盘内");
+    assert.ok(Math.abs(tip[0].z - prop.spinSign * 0.14) < 1e-6);
+    const radius = Math.max(
+      ...points.map((point) => Math.hypot(point.x + 0.17, point.z)),
+    );
+    assert.ok(radius <= 0.78 + 1e-6 && radius >= 0.7783);
+    const edgePoint = (x: number, leading: boolean) => {
+      const ring = section(x);
+      assert.ok(ring.length > 0, `${prop.id} 缺少真实截面 ${x}`);
+      return ring.reduce((best, point) => {
+        const direction = leading ? -prop.spinSign : prop.spinSign;
+        return point.z * direction > best.z * direction ? point : best;
+      });
+    };
+    for (const leading of [true, false]) {
+      const a = edgePoint(0.054, leading);
+      const b = edgePoint(0.08, leading);
+      const c = edgePoint(0.08888888888888889, leading);
+      const angle = b.clone().sub(a).angleTo(c.clone().sub(b));
+      assert.ok(
+        angle < (3 * Math.PI) / 180,
+        `${prop.id} 真实接回边线仍有超过3度的折角`,
+      );
+    }
+  }
 });

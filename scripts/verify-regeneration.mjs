@@ -110,6 +110,7 @@ const generatorFiles = [
   "embedded_joint_surfaces.py",
   "propeller_shape.py",
   "rotor_handedness.py",
+  "propeller_continuity.py",
   "linkage_geometry.py",
   "internal_drive.py",
   "output_slot_geometry.py",

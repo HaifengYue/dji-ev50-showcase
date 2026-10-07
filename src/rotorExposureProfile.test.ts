@@ -109,7 +109,10 @@ test("轮廓来自实际部署叶片，保持渐尖/后掠及薄轴向包络，�
   );
   for (const p of profiles) {
     assert.ok(Math.abs(p.rows[0].radius - 0.148) < 1e-4);
-    assert.ok(Math.abs(p.rows.at(-1)!.radius - 0.78) < 1e-4);
+    // Approved rounded-tip module, independently measured before full-aircraft
+    // integration. The unchanged .78 rotor envelope remains the outer limit.
+    assert.ok(Math.abs(p.rows.at(-1)!.radius - 0.778330953655) < 1e-4);
+    assert.ok(p.rows.at(-1)!.radius <= 0.78);
     assert.ok(
       p.rows[48].maxAngle - p.rows[48].minAngle >
         p.rows[84].maxAngle - p.rows[84].minAngle,

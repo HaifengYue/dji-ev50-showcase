@@ -68,7 +68,13 @@ def build_joint_refinements(ctx):
     rows = []
     # 外模线刀具不是空心机壳。用与机身相同的截面和角采样构造实心
     # 内收包络，盖板与该包络取真实交集；不削机身，也不加盖掩住突出物。
-    y0, y1 = min(1.0, ctx['slot_min']-.060), 2.055
+    # The roof is a fixed preserved part; slider relocation must not resize it.
+    from pathlib import Path
+    import json
+    roof_domain = json.loads((Path(__file__).with_name('data') / 'slot-roof-preservation.json').read_text())
+    if roof_domain['schema'] != 'transwing.original-slot-roof-preservation.v1' or roof_domain['radialSetback'] != SLOT_RADIAL_SETBACK:
+        raise ValueError('Frozen original slot-roof domain mismatch')
+    y0, y1 = roof_domain['domainStartBlenderY'], roof_domain['domainEndBlenderY']
     stations = [y0] + [s[0] for s in ctx['body_dense'] if y0 < s[0] < y1] + [y1]
     n = 64
     vertices = [ctx['fuselage_point'](y, k * 2 * math.pi / n, -SLOT_RADIAL_SETBACK)

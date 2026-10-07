@@ -1,7 +1,0 @@
-{
-  passed: true,
-  reports: [
-    { encoding: 'source', geometryChanges: 88, transforms: 153 },
-    { encoding: 'runtime', geometryChanges: 66, transforms: 165 }
-  ]
-}

@@ -1,7 +1,7 @@
 /** 实际CSS尺寸模型和真实GLB投影验收；不等同于浏览器像素或触屏检查。 */
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { readFileSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
@@ -163,6 +163,7 @@ test("八种CSS计算画布比例完整容纳真实模型全展开、检查视�
       project(new THREE.Box3().setFromObject(scene), perspective, pose);
     }
   }
+  mkdirSync(new URL("../qa/frontend/", import.meta.url), { recursive: true });
   writeFileSync(
     new URL(
       "viewport-framing-report.json",

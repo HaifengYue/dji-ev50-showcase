@@ -1,0 +1,10 @@
+{
+  "schema": "transwing.original-slot-roof-preservation.v1",
+  "domainStartBlenderY": 0.8504609710668882,
+  "domainEndBlenderY": 2.055,
+  "radialSetback": 0.002,
+  "originalSourceSha256": "801b02ca6b12c326a04e0a1fe7741a99f168c629384ae836f490f7779428570e",
+  "originalManifestSha256": "b311aa5bfb7dab0923a0b95d83e42d48aa0ba34ea064f78162f6e81863ce33d8",
+  "geometryPurpose": "Preserve both original ActuatorSideSlot roof meshes. Their fixed outer-envelope clipping domain is independent of the newly authorized slider stroke. Actual fuselage aperture outline and all dynamic admission gates remain unchanged.",
+  "provedBy": "Minimal empty-scene primitive replay reproduces all original POSITION/NORMAL/UV arrays and complete oriented triangles for both roofs; no finished aircraft geometry is a construction input."
+}

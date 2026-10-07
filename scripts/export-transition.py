@@ -6,7 +6,8 @@ import bpy, math, os, json, sys
 from mathutils import Vector, Quaternion
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0,os.path.join(ROOT,'scripts'))
-from kinematics import wing_rotation, update_linkage
+from kinematics import wing_rotation, update_linkage, hydrate_final_mechanism
+hydrate_final_mechanism()
 CLIP='TRANSWING_Hover_Cruise_Hover'
 
 DRIVE_NAMES=['Drive_ScrewRotor','Drive_MotorRotor']+['Drive_PlanetRotor_'+str(i) for i in range(3)]
@@ -306,6 +307,9 @@ def export_transition(path):
                 sampler[key]=accessors[old]
         a['animations'].append(animation);a['buffers'][0]['byteLength']=len(data)
         data=align_serialized_drive_phases(a,data)
+        mechanism=bpy.context.scene.get('annotatedMechanismJSON')
+        if mechanism is None:raise ValueError('Annotated source export requires the persisted actual-fit mechanism')
+        a.setdefault('extras',{})['annotatedMechanism']=json.loads(mechanism)
         _write_glb(path,a,bytes(data))
     select_clip(CLIP)
 

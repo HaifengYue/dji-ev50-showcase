@@ -15,6 +15,10 @@ from mathutils import Vector, Quaternion, Matrix
 from mathutils.geometry import tessellate_polygon
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'scripts'))
+from annotated_native_stage import require_authoring_ready, run_stage, install_native_diagnostics, prepare_native_outer_paint
+ANNOTATED_STAGE_PREFLIGHT=require_authoring_ready(ROOT)
+if bpy.context.scene.get('annotatedMechanismJSON') is not None:
+    raise RuntimeError('Start a fresh native scene; do not regenerate over a loaded finished aircraft')
 from kinematics import *
 use_authoring_reference(True)
 PIVOT_X,PIVOT_Y,PIVOT_Z=REFERENCE_PIVOT
@@ -477,7 +481,10 @@ slider_min,slider_max=min(slider_samples),max(slider_samples)
 # the original aft narrow run and exterior mold line remain.
 from output_slot_geometry import prism as output_roof_prism
 from output_slot_profile import SLOT_OUTLINE, SLOT_BOTTOM_Z, SLOT_TOP_Z, prism as output_prism, trim_seam, resample_rear_seam
-slot_min,slot_max=slider_min,1.8999999762819604
+from annotated_mechanism import slot_preflight
+EARLY_SLOT_PLAN=slot_preflight(SLOT_OUTLINE)
+# Prepare the actual unchanged cut before it is made, using the final-target plan.
+slot_min,slot_max=EARLY_SLOT_PLAN['travel']['minimumY'],EARLY_SLOT_PLAN['travel']['maximumY']
 SLOT_CENTER_X,SLOT_WIDTH=.10575,.0205
 for sign,side in [(-1,'L'),(1,'R')]:
     cutter=output_prism(globals(),'Temporary_side_slot',sign,SLOT_BOTTOM_Z,SLOT_TOP_Z,None)
@@ -698,29 +705,44 @@ ROTOR_HANDEDNESS=build_rotor_handedness(globals())
 from central_wing_attachment import build_central_attachment
 CENTRAL_ATTACHMENT=build_central_attachment(globals())
 EMBEDDED_JOINTS=finish_embedded_joints(globals())
-from layered_wing_joint import build_layered_wing_joint
-LAYERED_WING_JOINT=build_layered_wing_joint(globals())
-from nacelle_wing_layout import reposition_nacelles, lift_central_attachment
+from annotated_native_stage import (rebase_native_assemblies, apply_required_after_root_hook,
+    fit_and_bind_final_mechanism, build_compact_supported_hinge, finish_root_paint, decorate_manifest)
+from annotated_root_interface import build_annotated_root_interface, finish_annotated_root_interface
+install_native_diagnostics()
+ANNOTATED_REBASE=run_stage('rebase',lambda:rebase_native_assemblies(globals()))
+ANNOTATED_OUTER_PAINT_STOCK=run_stage('native-outer-paint-stock',lambda:prepare_native_outer_paint(globals()))
+LAYERED_WING_JOINT=run_stage('root-build',lambda:build_annotated_root_interface(globals()))
+run_stage('repair-trim',lambda:finish_annotated_root_interface(LAYERED_WING_JOINT))  # repair4 then trim2 once
+ANNOTATED_ROOT_CLOSING=run_stage('v6b-closing',lambda:apply_required_after_root_hook(globals(),LAYERED_WING_JOINT))
+ANNOTATED_MECHANISM=run_stage('actual-skin-linkage',lambda:fit_and_bind_final_mechanism(globals(),ANNOTATED_REBASE,LAYERED_WING_JOINT,EARLY_SLOT_PLAN))
+LAYERED_WING_JOINT['closedWingSolids']=LAYERED_WING_JOINT['mainWingSolids']
+LAYERED_WING_JOINT['closedWingSolidsScope']='Original pre-repair construction checks; final v6b material is independently gated'
+from nacelle_wing_layout import reposition_nacelles
 slider_samples=[slider_at(i/1000) for i in range(1001)]
 slider_min,slider_max=min(slider_samples),max(slider_samples)
 from linkage_geometry import build_linkage_details
-LINKAGE_REFINEMENTS=build_linkage_details(globals())
+LINKAGE_REFINEMENTS=run_stage('linkage-seats',lambda:build_linkage_details(globals()))
 from internal_drive import build_internal_drive
-INTERNAL_DRIVE=build_internal_drive(globals())
+INTERNAL_DRIVE=run_stage('internal-drive',lambda:build_internal_drive(globals()))
 from joint_endcaps import build_joint_refinements
-JOINT_REFINEMENTS=build_joint_refinements(globals())
+JOINT_REFINEMENTS=run_stage('joint-refinements',lambda:build_joint_refinements(globals()))
 from hinge_supports import build_hinge_supports
-HINGE_SUPPORTS=build_hinge_supports(globals())
+HINGE_SUPPORTS=run_stage('hinge-supports',lambda:build_hinge_supports(globals()))
 from control_supports import build_control_supports
-CONTROL_SUPPORTS=build_control_supports(globals())
+CONTROL_SUPPORTS=run_stage('control-supports',lambda:build_control_supports(globals()))
+from legacy_powertrain_fit import prepare_and_install_for_native_context
+LEGACY_POWERTRAIN_RESTORATION=run_stage('legacy-powertrain-restoration',lambda:prepare_and_install_for_native_context(globals()))
 from surface_supports import build_surface_supports
-SURFACE_SUPPORTS=build_surface_supports(globals())
+SURFACE_SUPPORTS=run_stage('surface-supports',lambda:build_surface_supports(globals()))
+SURFACE_SUPPORTS['nativeProtected64ExactIdentityPending']=True
+SURFACE_SUPPORTS['legacyPowertrainRestoration']=LEGACY_POWERTRAIN_RESTORATION
 from joint_fairings import build_fairing_refinements
-FAIRING_REFINEMENTS=build_fairing_refinements(globals())
-from wing_surface_repair import repair_wing_surfaces
-WING_SURFACE_REPAIR=repair_wing_surfaces()
+FAIRING_REFINEMENTS=run_stage('source-fairings',lambda:build_fairing_refinements(globals()))
+# Housing and all four original covers now exist; do not compact earlier.
+ANNOTATED_SUPPORTED_HINGE=run_stage('compact-supported-hinge',lambda:build_compact_supported_hinge(globals()))
+WING_SURFACE_REPAIR=LAYERED_WING_JOINT['repair']
 from surface_finish import build_surface_finish
-SURFACE_FINISH_V22=build_surface_finish(globals())
+# Final actual-host coating assignment is deferred until all body preservation is done.
 from preserved_surfaces import preserve_untouched, finish_topology
 SLOT_PROFILE_CONFIG['preservation']=preserve_untouched(globals())
 SLOT_PROFILE_CONFIG['initialTopology']=finish_topology()
@@ -732,21 +754,29 @@ SLOT_PROFILE_CONFIG['preservation']=preserve_untouched(globals())
 SLOT_PROFILE_CONFIG['topology']=finish_topology()
 SLOT_PROFILE_CONFIG['normalRefinement']=refine_normals(globals())
 SLOT_PROFILE_CONFIG['adjacentSeamFit']=fit_adjacent_seams(globals())
-CENTRAL_ATTACHMENT_LIFT=lift_central_attachment()
+CENTRAL_ATTACHMENT_LIFT={'applied':False,'lift':0,'changedVertices':[],'reason':'Fresh native common-natural root; neither old fixed lift nor central lift is applied'}
 NACELLE_LAYOUT=reposition_nacelles(globals())
+ANNOTATED_ROOT_PAINT=run_stage('final-root-paint',lambda:finish_root_paint(globals()))
+SURFACE_FINISH_V22=build_surface_finish(globals())
+from annotated_low_angle_relief import apply_bounded_low_angle_relief
+ANNOTATED_LOW_ANGLE_RELIEF=run_stage('bounded-low-angle-relief',apply_bounded_low_angle_relief)
+from annotated_principal_side_closure import apply_bounded_principal_side_closure
+ANNOTATED_PRINCIPAL_SIDE_CLOSURE=run_stage('bounded-principal-side-closure',lambda:apply_bounded_principal_side_closure(
+    root_objects={name:bpy.data.objects[name]for name in ('Fixed_root_L','Fixed_root_R','Composite_wing_L','Composite_wing_R')},
+    wing_pivots={name:bpy.data.objects[name]for name in ('WingPivot_L','WingPivot_R')}))
 
 scene=bpy.context.scene
 # 可编辑源文件、独立GLB和网页模型共用确定性的烘焙动作。
 import importlib.util
 spec=importlib.util.spec_from_file_location('transition_export',os.path.join(ROOT,'scripts/export-transition.py'))
 transition_export=importlib.util.module_from_spec(spec);spec.loader.exec_module(transition_export)
-transition_export.bake_transition()
+run_stage('bake-actions',transition_export.bake_transition)
 aircraft=[o for o in scene.objects if o.type=='MESH']
 ground_min=min((o.matrix_world@v.co).z for o in aircraft for v in o.data.vertices)
 triangles=sum(sum(len(face.vertices)-2 for face in obj.data.polygons) for obj in aircraft)
 bpy.ops.object.select_all(action='SELECT')
 bpy.ops.wm.save_as_mainfile(filepath=os.path.join(SOURCES,'xp4.blend'))
-transition_export.export_transition(os.path.join(SOURCES,'xp4-source.glb'))
+run_stage('export-source-actions',lambda:transition_export.export_transition(os.path.join(SOURCES,'xp4-source.glb')))
 for name in ('xp4.blend','xp4-source.glb'):shutil.copy2(os.path.join(SOURCES,name),os.path.join(ROOT,'assets/blender',name))
 manifest={'version':24,'referenceBaseline':'原N273PD/10蓝白照片与V14新增四张实机参考；统一型号的原创几何与材质，不复制影像或标识','coordinateSystem':'glTF Y-up, nose +Z, span X','authoredPose':'hover','transition':'oblique wing rotation with rigid moving control rods and a shared longitudinal spreader; dimensions reconstructed, not surveyed production geometry','propellerSpinLocalAxis':'Y','motorAxisMarkers':{'startPrefix':'MotorAxisStart_','endPrefix':'MotorAxisEnd_'},'propellerPlane':'展向中心线垂直电机轴；根至尖分布安装角，与演示旋向匹配的双手性','outerBladeFoldLocalAxis':'Z','outerBladeFoldAngles':{'A':math.pi/2,'B':-math.pi/2},'variants':{'xp4':{'file':'xp4.glb','meshes':len(aircraft),'triangles':triangles,'span':HALF_SPAN*2,'groundContactMinY':ground_min,'fuselageLength':5.44,'fuselageMaxWidth':1.24,'fuselageCoreMaxWidth':1.116,'fuselageMergedMeshMaxWidth':1.24,'podLength':2.28,'podMaxWidth':.47,'rootChord':.86,'outerPanelChord':.76,'propellerRadius':.78,'tailSpan':3.30,'pivots':{'WingPivot_L':{'axis':[.577350269,.577350269,.577350269],'angle':2.0943951024},'WingPivot_R':{'axis':[-.577350269,.577350269,.577350269],'angle':-2.0943951024}},'props':['Prop_L_Front','Prop_L_Rear','Prop_R_Front','Prop_R_Rear']}}}
 manifest['detailRevision']={'version':14,'targets':sorted(o.name for o in aircraft if o.name.startswith(('Fixed_root_L','Fixed_root_R','Composite_wing_','RootHingeShaft_','RootHingeEndcap_','RootBearingFixed_','RootBearingSeal_','RootCarrierMoving_','RootCarrierThrust_','RootCarrierBridge_','RootFixedBearingPedestal_'))),'reference':'V14新增实机图2和图4支持的局部壳边错层与窄槽短轴；全部四动力折桨是本轮用户功能要求。原创重建尺寸与演示时序，不是原厂CAD或飞控','mechanismBaselineVersion':9,'controlSurfaceBaselineVersion':10,'unchangedLandingEndsVersion':11,'unchangedSurfaceAndPropellerBaselineVersion':12}
@@ -791,6 +821,7 @@ manifest['surfaceSupports']=SURFACE_SUPPORTS
 manifest['wingSurfaceRepair']=WING_SURFACE_REPAIR
 manifest['fairingRefinements']=FAIRING_REFINEMENTS
 manifest['surfaceFinishV22']=SURFACE_FINISH_V22
+manifest['boundedLowAngleRelief']=ANNOTATED_LOW_ANGLE_RELIEF
 manifest['mechanism']['actualSlotTravel']=[slot_min,slot_max]
 manifest['mechanism']['actualSlotTravelScope']='兼容字段，记录保留槽口的既有制作包络；当前滑架真实行程在sliderTravel，必须检查其位于该包络内'
 manifest['mechanism']['slotEnvelopeBlender']={'centerX':SLOT_CENTER_X,'width':SLOT_WIDTH,'bottomZ':SLOT_BOTTOM_Z,'topZ':SLOT_TOP_Z,'actualRoundedOutlineRightXY':SLOT_OUTLINE,'previousTravel':[1.2090788195527518,1.8999999762819604]}
@@ -801,6 +832,7 @@ manifest['fairingRefinements']['protectedHardwareUnchangedScope']='仅指当前�
 manifest['spinnerAxleClearance']={'shaftRadius':.016,'blindBoreRadius':.017,'blindBoreFrontEndLocalZ':.003,'frontCapPreserved':True,'motorInternalTypeNotClaimed':True}
 manifest['rodEndSeat']={'type':'spherical retaining bore','ballRadius':.018,'seatRadius':.0185,'halfWidth':.005,'nominalRadialClearance':.0005,'centersUnchanged':False,'seatGeometryUnchanged':True}
 manifest['foldingHinge']={'version':12,'pivotRadius':.17,'forkBoreRadius':.0068,'pinAxisBlenderLocal':[0,1,0],'pinRadius':.006,'boreRadius':.0085,'sleeveOuterRadius':.022,'sleeveAxialHalfLength':.029,'forkInnerHalfWidth':.036,'radialClearance':.0025,'axialSideClearance':.007,'actualSolidBore':True,'samePropMovingPartsRequireContactChecks':True}
+manifest=decorate_manifest(manifest,globals())
 with open(os.path.join(MODELS,'manifest.json'),'w') as file:json.dump(manifest,file,indent=2)
 
 # 解除预览场景的动作绑定，防止渲染器重评估第 1 帧而覆盖手动姿态。

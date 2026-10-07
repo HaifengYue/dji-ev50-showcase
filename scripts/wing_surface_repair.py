@@ -126,10 +126,38 @@ def simplify_slivers(bm,obj):
   if not changes:break
  return records
 
+def simple_projected_boundary(points):
+ """Exact dyadic 2D simplicity prerequisite for dissolving a near-planar patch.
+
+ A rejected patch is left untouched. This is not permission to discard a
+ crossing polygon or to replace it with an overlapping triangle fan.
+ """
+ if len(points)<3:return False
+ normal=[0.,0.,0.]
+ for a,b in zip(points,points[1:]+points[:1]):
+  for k in range(3):normal[k]+=(a[(k+1)%3]-b[(k+1)%3])*(a[(k+2)%3]+b[(k+2)%3])
+ axis=max(range(3),key=lambda k:abs(normal[k]));ks=[k for k in range(3)if k!=axis]
+ ratios=[[float(p[k]).as_integer_ratio()for k in ks]for p in points]
+ den=max(d for p in ratios for n,d in p);ps=[tuple(n*(den//d)for n,d in p)for p in ratios]
+ if len(set(ps))!=len(ps):return False
+ def orient(a,b,c):return(b[0]-a[0])*(c[1]-a[1])-(b[1]-a[1])*(c[0]-a[0])
+ def on(a,b,p):return orient(a,b,p)==0 and min(a[0],b[0])<=p[0]<=max(a[0],b[0])and min(a[1],b[1])<=p[1]<=max(a[1],b[1])
+ if sum(a[0]*b[1]-a[1]*b[0]for a,b in zip(ps,ps[1:]+ps[:1]))==0:return False
+ n=len(ps)
+ for i in range(n):
+  a,b=ps[i],ps[(i+1)%n];c=ps[(i+2)%n]
+  if orient(a,b,c)==0 and (b[0]-a[0])*(c[0]-b[0])+(b[1]-a[1])*(c[1]-b[1])<0:return False
+  for j in range(i+1,n):
+   if j==i+1 or(i==0 and j==n-1):continue
+   c,d=ps[j],ps[(j+1)%n];o1,o2,o3,o4=orient(a,b,c),orient(a,b,d),orient(c,d,a),orient(c,d,b)
+   if (o1*o2<0 and o3*o4<0)or on(a,b,c)or on(a,b,d)or on(c,d,a)or on(c,d,b):return False
+ return True
+
+
 def repair_wing_surfaces():
  reports=[]
  for name in ('Fixed_root_L','Fixed_root_R','Composite_wing_L','Composite_wing_R'):
-  o=bpy.data.objects[name];bm=bmesh.new();bm.from_mesh(o.data);original_points={tuple(v.co)for v in bm.verts};original_volume=bm.calc_volume(signed=True);original_count=len(bm.verts);bmesh.ops.remove_doubles(bm,verts=[v for v in bm.verts if in_repair_domain(o,v.co)],dist=1e-7);sliver_records=simplify_slivers(bm,o);print('SLIVERS',name,len(sliver_records),flush=True);bm.verts.ensure_lookup_table();bm.verts.index_update();bm.faces.ensure_lookup_table();bm.faces.index_update();before={v:tuple(v.co)for v in bm.verts};volume=bm.calc_volume(signed=True);vol0=volume;patches=[];assigned=set();eligible={f for f in bm.faces if all(in_repair_domain(o,v.co) for v in f.verts)};areas={f:face_area(f)for f in bm.faces}
+  o=bpy.data.objects[name];bm=bmesh.new();bm.from_mesh(o.data);original_points={tuple(v.co)for v in bm.verts};original_volume=bm.calc_volume(signed=True);original_count=len(bm.verts);bmesh.ops.remove_doubles(bm,verts=[v for v in bm.verts if in_repair_domain(o,v.co)],dist=1e-7);sliver_records=simplify_slivers(bm,o);print('SLIVERS',name,len(sliver_records),flush=True);bm.verts.ensure_lookup_table();bm.verts.index_update();bm.faces.ensure_lookup_table();bm.faces.index_update();before={v:tuple(v.co)for v in bm.verts};volume=bm.calc_volume(signed=True);vol0=volume;patches=[];skipped_non_simple=[];assigned=set();eligible={f for f in bm.faces if all(in_repair_domain(o,v.co) for v in f.verts)};areas={f:face_area(f)for f in bm.faces}
   for f in sorted(eligible,key=lambda f:(-areas[f],f.index)):
    if f in assigned:continue
    coords=[before[v]for v in f.verts];anchor=coords[0];n=cross(sub(coords[1],anchor),sub(coords[2],anchor));nl=length(n)
@@ -155,6 +183,17 @@ def repair_wing_surfaces():
     if v in seen:continue
     seen.add(v);stack.extend(graph[v]-seen)
    if len(seen)!=len(graph):continue
+   # A degree-two topological ring can still be a crossed polygon in the
+   # projected material plane. Never dissolve it into an invalid n-gon.
+   first=min(graph,key=lambda v:v.index);ring=[first];previous=None;current=first
+   while True:
+    choices=sorted((v for v in graph[current]if v!=previous),key=lambda v:v.index)
+    following=choices[0]
+    if following==first:break
+    if following in ring:raise ValueError('Patch boundary is not a single simple topological ring')
+    ring.append(following);previous,current=current,following
+   if not simple_projected_boundary([before[v]for v in ring]):
+    skipped_non_simple.append({'sourceFaceCount':len(patch),'boundaryVertexCount':len(ring),'originalFacesRetained':True});continue
    patches.append((patch,maxdev))
   rows=[]
   for patch,dev in patches:
@@ -186,7 +225,7 @@ def repair_wing_surfaces():
   bm.to_mesh(o.data);bm.free();o.data.update()
   bm=bmesh.new();bm.from_mesh(o.data)
   post_records=simplify_slivers(bm,o)
-  bmesh.ops.recalc_face_normals(bm,faces=list(bm.faces));bm.normal_update();report={'name':name,'originalVertexCount':original_count,'originalVolume':original_volume,'allFinalCoordinatesFromOriginal':all(tuple(v.co)in original_points for v in bm.verts),'sliverCollapseRecords':sliver_records,'postTriangulationSliverCollapseRecords':post_records,'patches':len(rows),'patchSourceFaces':sum(x['faces']for x in rows),'maximumPatchDeviation':max([x['maximumSeedPlaneDistance']for x in rows],default=0),'removedDegree2Vertices':len(removed),'maximumDegree2Deviation':max(removed,default=0),'volumeBefore':vol0,'volumeAfter':bm.calc_volume(signed=True),'bad':sum(not e.is_manifold for e in bm.edges),'zero':sum(face_area(f)<=1e-18 for f in bm.faces),'verticesBefore':len(before),'verticesAfter':len(bm.verts),'noSurvivingVertexMoved':all(tuple(v.co)in retained_points for v in bm.verts)};
+  bmesh.ops.recalc_face_normals(bm,faces=list(bm.faces));bm.normal_update();report={'name':name,'originalVertexCount':original_count,'originalVolume':original_volume,'allFinalCoordinatesFromOriginal':all(tuple(v.co)in original_points for v in bm.verts),'sliverCollapseRecords':sliver_records,'postTriangulationSliverCollapseRecords':post_records,'patches':len(rows),'skippedNonSimpleProjectedPatches':skipped_non_simple,'patchSourceFaces':sum(x['faces']for x in rows),'maximumPatchDeviation':max([x['maximumSeedPlaneDistance']for x in rows],default=0),'removedDegree2Vertices':len(removed),'maximumDegree2Deviation':max(removed,default=0),'volumeBefore':vol0,'volumeAfter':bm.calc_volume(signed=True),'bad':sum(not e.is_manifold for e in bm.edges),'zero':sum(face_area(f)<=1e-18 for f in bm.faces),'verticesBefore':len(before),'verticesAfter':len(bm.verts),'noSurvivingVertexMoved':all(tuple(v.co)in retained_points for v in bm.verts)};
   if report['bad'] or report['zero'] or report['volumeAfter']<=0 or abs(report['volumeAfter']-original_volume)>1e-8:
    raise ValueError('Bounded wing repair failed solid gate: '+name)
   reports.append(report);print('Wing surface rebuilt',name,len(bm.faces),flush=True)

@@ -2,7 +2,8 @@
 import {createRequire} from 'node:module';
 import {fileURLToPath,pathToFileURL} from 'node:url';
 import fs from 'node:fs';import path from 'node:path';
-const req=createRequire(process.env.ASSET_TOOL_ROOT?path.join(process.env.ASSET_TOOL_ROOT,'package.json'):import.meta.url);
+// Production dependencies resolve only from the installed scripts/package-lock.json.
+const req=createRequire(import.meta.url);
 const {NodeIO}=await import(pathToFileURL(req.resolve('@gltf-transform/core')));
 const {ALL_EXTENSIONS,EXTMeshoptCompression}=await import(pathToFileURL(req.resolve('@gltf-transform/extensions')));
 const {dedup,prune,reorder,quantize,weld,getBounds}=await import(pathToFileURL(req.resolve('@gltf-transform/functions')));
@@ -45,7 +46,9 @@ for(const n of doc.getRoot().listNodes().filter(n=>/^Fixed_root_blue_[LR]$/.test
 // 以下实体保留源Float32位置及原局部变换，索引与法线继续Meshopt压缩。
 // V14缩短端帽的极薄倒角同样保留Float32；否则16位位置会压塌36个面/端帽。
 // 不隐藏或删除网格，也不通过提高碰撞检测容差掩盖开孔。
-const exactNodes=doc.getRoot().listNodes().filter(n=>n.getMesh()&&/^(Drive_.+|CargoHinge.+|ControlHinge.+|RootBearingHousing_.+|RootFairing.+|ActuatorSideSlot_.+|Fuselage|CargoHoodShell|CargoOpeningLip|Composite_wing_[LR]|V_tail_[LR]|ControlSurface_.+|ControlFlexure.+|ControlHorn_.+|Motor_cowl_.+|Landing_wear_tip_.+|Fixed_root_[LR]|Fixed_root_blue_[LR]|Wing_blue_leading_[LR]|Blade_[LR]_(Front|Rear)_[AB]|RootHingeEndcap_.+)$/.test(n.getName()));
+// 标注紧凑轴系：20个轴/承/套件及4个真实桥座也保源Float32与局部矩阵；
+// 保留微米级实际配合余量，仍须两编码真实间隙/薄壁重验，3.5MB预算不变。
+const exactNodes=doc.getRoot().listNodes().filter(n=>n.getMesh()&&/^(Drive_.+|CargoHinge.+|ControlHinge.+|RootBearingHousing_.+|RootHingeShaft_[LR]|RootBearing(Fixed|Seal)_[LR]_(Front|Rear)|RootCarrier(Moving|Thrust|Bridge)_[LR]|RootFixedBearingPedestal_[LR]|RootFairing.+|ActuatorSideSlot_.+|Fuselage|CargoHoodShell|CargoOpeningLip|Composite_wing_[LR]|V_tail_[LR]|ControlSurface_.+|ControlFlexure.+|ControlHorn_.+|Motor_cowl_.+|Landing_wear_tip_.+|Fixed_root_[LR]|Fixed_root_blue_[LR]|Wing_blue_leading_[LR]|Blade_[LR]_(Front|Rear)_[AB]|RootHingeEndcap_.+)$/.test(n.getName()));
 const exactMeshes=new Set(exactNodes.map(n=>n.getMesh()));
 const exactTransforms=exactNodes.map(n=>[n,n.getMatrix().slice()]);
 const exactPositions=[...exactMeshes].flatMap(m=>m.listPrimitives().map(p=>[p,p.getAttribute('POSITION').clone()]));

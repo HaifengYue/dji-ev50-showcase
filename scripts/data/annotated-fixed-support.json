@@ -1,0 +1,57 @@
+{
+  "schema": "transwing.annotated-fixed-support.v1",
+  "status": "single bounded candidate, unaccepted",
+  "units": "model-u, no calibration or load claim",
+  "revision": 1,
+  "axisOriginRight": [
+    1.350000023841858,
+    -1.4149999618530273,
+    -0.20000000298023224
+  ],
+  "axisDirectionRight": [
+    -0.5773502691896258,
+    -0.5773502691896258,
+    0.5773502691896258
+  ],
+  "axisT": [
+    -0.01,
+    -0.004
+  ],
+  "innerRadius": 0.0135,
+  "outerRadius": 0.0322,
+  "segments": 64,
+  "fixedFootReadOnlyDomain": {
+    "axisT": [
+      -0.0095,
+      -0.0065
+    ],
+    "radius": [
+      0.031,
+      0.0322
+    ],
+    "source": "full actual Fixed_root/RootFairingFixed triangle axial clipping, not a runtime input"
+  },
+  "targets": [
+    "RootFixedBearingPedestal_R",
+    "RootFixedBearingPedestal_L"
+  ],
+  "authorizedBounds": {
+    "axisT": [
+      -0.01,
+      -0.004
+    ],
+    "radialMaximum": 0.045,
+    "unchangedHardwareAndHosts": true,
+    "unchangedMovingSupports": true,
+    "keepExistingWingOrFixedCoverOuterEnvelope": true
+  },
+  "requiredContactPartners": [
+    "RootBearingHousing",
+    "RootBearingFixed_Rear",
+    "RootBearingSeal_Rear",
+    "RootHingeShaft",
+    "RootFairingFixed",
+    "Fixed_root"
+  ],
+  "claimBoundary": "A single static annular-seat hypothesis. Preserved original six contact-span floors per side, actual finite neck/solid/exterior and moving interference must be remeasured before any integration; direct shaft overlap is intentional co-rigid support contact, not a new rotating fit."
+}

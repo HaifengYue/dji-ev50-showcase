@@ -1,1 +1,0 @@
-{"demonstrated":true,"out":"qa/current/host-protection-supplement/unused-points-regression-report.json","rows":[{"name":"Lower_fuselage_join","geometryPassed":true,"lostExactOutside":0,"missingActualMaterial":48,"unused":48},{"name":"Lower_fuselage_join002","geometryPassed":true,"lostExactOutside":0,"missingActualMaterial":48,"unused":48}]}

@@ -1,0 +1,29 @@
+{
+  "schema": "transwing.independent-encoding-comparison.v1",
+  "passed": true,
+  "methodSha256": "218cc1783a11a6cf7ccca3e1c32f2dc6c0a4f0612889fead34b81d39e0ec622d",
+  "reports": [
+    {
+      "encoding": "source",
+      "passed": true,
+      "reportSha256": "517e6534100176b325bb4b85702c0facfe4775aea23cec5eeed8308fd17bc5c3",
+      "meshCount": 283,
+      "nodeCount": 349,
+      "accessorOnlyChanges": [],
+      "recordedReportName": "source.json"
+    },
+    {
+      "encoding": "runtime",
+      "passed": true,
+      "reportSha256": "07ba21f104017741b57e62969f6d27aa1bc64f96b3a7ea8f800da404e7f6acc5",
+      "meshCount": 283,
+      "nodeCount": 349,
+      "accessorOnlyChanges": [],
+      "recordedReportName": "runtime.json"
+    }
+  ],
+  "physicalAcceptanceClaimed": false,
+  "overallAcceptancePassed": false,
+  "completeRawComparisonReportsIncluded": false,
+  "note": "The lightweight package retains comparison methods and this test summary. Full generated comparison details remain a separate local verification output; this is not a full audit replay bundle."
+}

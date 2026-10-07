@@ -1,0 +1,17 @@
+{
+  "scope": "Portable small launcher support; no geometry or acceptance gate changes",
+  "files": [
+    {
+      "file": "tools/guarded-native-entry-recovery.py",
+      "originalSha256": "92c45880c9cb3550abebb8119ddbbe1834c6abdff59938fb0983a14881cd696b",
+      "currentSha256": "01b715f0a50a1d9bf77f0a3d8460053e6fd87b1b687d9d4cc586ed2596b6e0b0",
+      "change": "Only root depth 2 to 1 for qa/native-staging to tools relocation"
+    },
+    {
+      "file": "tools/compare-complete-native-signed-zero.mts",
+      "originalSha256": "218cc1783a11a6cf7ccca3e1c32f2dc6c0a4f0612889fead34b81d39e0ec622d",
+      "currentSha256": "218cc1783a11a6cf7ccca3e1c32f2dc6c0a4f0612889fead34b81d39e0ec622d",
+      "change": "Exact original method bytes"
+    }
+  ]
+}

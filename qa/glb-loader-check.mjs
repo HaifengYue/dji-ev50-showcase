@@ -15,4 +15,5 @@ R.quaternion.premultiply(new THREE.Quaternion().setFromAxisAngle(new THREE.Vecto
 model.updateMatrixWorld(true);const cruise=new THREE.Box3().setFromObject(model);
 const result={passed:true,runtimeBytes:bytes.length,renderedMeshes:meshes,renderedTriangles:triangles,hoverBounds:{min:hover.min.toArray(),max:hover.max.toArray(),size:hover.getSize(new THREE.Vector3()).toArray()},cruiseBounds:{min:cruise.min.toArray(),max:cruise.max.toArray(),size:cruise.getSize(new THREE.Vector3()).toArray()}};
 if(!Number.isFinite(hover.min.y)||triangles<=0||cruise.getSize(new THREE.Vector3()).x<hover.getSize(new THREE.Vector3()).x)throw Error('解码网格几何无效');
+fs.mkdirSync('qa/frontend',{recursive:true});
 fs.writeFileSync('qa/frontend/glb-loader-report.json',JSON.stringify(result,null,2));console.log(JSON.stringify(result,null,2));

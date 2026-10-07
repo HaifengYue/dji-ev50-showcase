@@ -1,0 +1,62 @@
+{
+  "schema": "transwing.legacy-powertrain-fit.v1",
+  "units": "concept model u",
+  "parameters": {
+    "referencePivot": [
+      1.35,
+      -1.3,
+      -0.22
+    ],
+    "legacyRightPivot": [
+      1.5,
+      -1.47,
+      -0.191
+    ],
+    "actualRightPivot": [
+      1.35,
+      -1.415,
+      -0.2
+    ],
+    "legacyNacelleRebaseZ": 0.0,
+    "legacyNativeHover": true,
+    "temporaryLegacyFitZ": -0.22,
+    "tipEmbedding": 0.0005,
+    "saddleEmbedding": 0.00065,
+    "tipModifiedInnerVertices": 80,
+    "tipInnerRingVertexTotal": 160,
+    "tipAdmissionMaximum": 0.0004,
+    "coordinateRebaseRepresentation": "object_translation",
+    "meshDataTransformAfterLegacyFit": false,
+    "customNormalSetter": false,
+    "oldHostOriginalGeometryPreserved": true
+  },
+  "surfaceHelperFunctionSha256": {
+    "_bounds": "fdee0b5d19c5bda7ab2064bcb756ed070b068606ab383f673cf5d44c0b0a7829",
+    "_frame": "ed468a199545d622d634eae01251a14047e54b8f453fa83b19292180e3ee6f04",
+    "_points": "6b8c4622b4ea597a7832cfa3b6641ec6e7938aeb5cd34ec9f09e9deb340fc12f",
+    "_set_points": "5b20fb0fff056a2d02d937dbb7f7366a0120b25731b559a3cf733d1251ad4121",
+    "_tree": "c2466a33461a33087620cad1ae0bf79fb151460ca1a230323a83cc10f032de60",
+    "_ray": "469b6421095e792fa52066f2ce165bee4e16e16679aaa9141021906d98342a83",
+    "_replace_geometry": "d91bf0ae0b9aff3c7425e0fb77945c37ea8b4cbeb0312821e981bceb75344326",
+    "_closed": "efcf1c892912c6e200a9bf67c26affb0c04a5f9c816d80b04d059e073326c206",
+    "_contact": "8f9e12cb5e48c559dfdbae13b3c9c11ef3f691b1291127776be3a294836a4b64",
+    "_record": "bcba9d5a2e34e29c2053784fac1ed1a8ce647578cbc05bbf8b6539d8b4a9cc49",
+    "_fit_saddle": "1db69bf6292f854fc16d1ecd8f8f46e8908e325ffa351edb45b1057abf0d46fd"
+  },
+  "protectedAttachmentNames": [
+    "Landing_wear_tip_L_Front",
+    "Pod_wing_saddle_L_Front",
+    "Landing_wear_tip_L_Rear",
+    "Pod_wing_saddle_L_Rear",
+    "Landing_wear_tip_R_Front",
+    "Pod_wing_saddle_R_Front",
+    "Landing_wear_tip_R_Rear",
+    "Pod_wing_saddle_R_Rear"
+  ],
+  "status": {
+    "productionCandidatePrepared": true,
+    "full64Verified": false,
+    "combinedAccepted": false
+  },
+  "constructionPolicy": "Read current native primitive stock only before its one rebase; no completed Blend/GLB input. The original12-body legacy fit recipe and rigid TRS installation were independently replayed against both histories before integration."
+}

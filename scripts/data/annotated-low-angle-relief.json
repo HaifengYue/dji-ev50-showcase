@@ -1,0 +1,1633 @@
+{
+  "schema": "transwing.bounded-low-angle-relief.v1",
+  "designReview": "candidate-validation-pending",
+  "authorizedNodes": [
+    "Composite_wing_L",
+    "Composite_wing_R",
+    "Fixed_root_L",
+    "Fixed_root_R"
+  ],
+  "upper": {
+    "fullYWindow": [
+      -1.157,
+      -1.067
+    ],
+    "plateauY": [
+      -1.149,
+      -1.073
+    ],
+    "targetPlateauGap": 0.016,
+    "inboardNonintersectingTransitionGuard": 0.0002,
+    "cutterZ": [
+      -0.22,
+      0.0
+    ],
+    "parts": [
+      {
+        "side": "L",
+        "knots": [
+          {
+            "y": -1.157,
+            "fixedActualC": 0.9170419503937145,
+            "oldActualMovingEdge": 0.9410419202672652,
+            "cutAbsX": 0.9408419202672652,
+            "targetFullGap": 0.016,
+            "transitionWeight": 0.0
+          },
+          {
+            "y": -1.156,
+            "fixedActualC": 0.9151030127259108,
+            "oldActualMovingEdge": 0.9391029909481149,
+            "cutAbsX": 0.9389029909481149,
+            "targetFullGap": 0.016,
+            "transitionWeight": 0.04296875000000911
+          },
+          {
+            "y": -1.155,
+            "fixedActualC": 0.9131640750581075,
+            "oldActualMovingEdge": 0.937164061628965,
+            "cutAbsX": 0.9369640616289651,
+            "targetFullGap": 0.016,
+            "transitionWeight": 0.15625
+          },
+          {
+            "y": -1.154,
+            "fixedActualC": 0.9112839622719019,
+            "oldActualMovingEdge": 0.9340839353965978,
+            "cutAbsX": 0.9338839353965979,
+            "targetFullGap": 0.016,
+            "transitionWeight": 0.31640625000001954
+          },
+          {
+            "y": -1.153,
+            "fixedActualC": 0.9094038511687383,
+            "oldActualMovingEdge": 0.9310038031665023,
+            "cutAbsX": 0.9308038031665024,
+            "targetFullGap": 0.016,
+            "transitionWeight": 0.5
+          },
+          {
+            "y": -1.152,
+            "fixedActualC": 0.9075237400655742,
+            "oldActualMovingEdge": 0.9279236692909657,
+            "cutAbsX": 0.9277236692909657,
+            "targetFullGap": 0.016,
+            "transitionWeight": 0.6835937500000195
+          },
+          {
+            "y": -1.151,
+            "fixedActualC": 0.9056436289624107,
+            "oldActualMovingEdge": 0.9248435354154296,
+            "cutAbsX": 0.9246435354154297,
+            "targetFullGap": 0.016,
+            "transitionWeight": 0.84375
+          },
+          {
+            "y": -1.15,
+            "fixedActualC": 0.9037635178592467,
+            "oldActualMovingEdge": 0.9217634015685751,
+            "cutAbsX": 0.9215634015685751,
+            "targetFullGap": 0.016,
+            "transitionWeight": 0.9570312500000091
+          },
+          {
+            "y": -1.149,
+            "fixedActualC": 0.9019383156481952,
+            "oldActualMovingEdge": 0.9187381643096322,
+            "cutAbsX": 0.9185381643096322,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.148,
+            "fixedActualC": 0.9001131147463044,
+            "oldActualMovingEdge": 0.9157129270506886,
+            "cutAbsX": 0.9161131147463044,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.147,
+            "fixedActualC": 0.8982878339739286,
+            "oldActualMovingEdge": 0.9126876897917457,
+            "cutAbsX": 0.9142878339739287,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.146,
+            "fixedActualC": 0.8964625479234537,
+            "oldActualMovingEdge": 0.9096624525328022,
+            "cutAbsX": 0.9124625479234537,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.145,
+            "fixedActualC": 0.8946372618729792,
+            "oldActualMovingEdge": 0.9066372230935833,
+            "cutAbsX": 0.9106372618729792,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.144,
+            "fixedActualC": 0.8928632901019099,
+            "oldActualMovingEdge": 0.904863214551156,
+            "cutAbsX": 0.9088632901019099,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.143,
+            "fixedActualC": 0.8910893803625122,
+            "oldActualMovingEdge": 0.9030892060087292,
+            "cutAbsX": 0.9070893803625122,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.142,
+            "fixedActualC": 0.8893157210857068,
+            "oldActualMovingEdge": 0.9013151974663021,
+            "cutAbsX": 0.9053157210857068,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.141,
+            "fixedActualC": 0.8875420618089018,
+            "oldActualMovingEdge": 0.8995411822970225,
+            "cutAbsX": 0.9035420618089018,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.14,
+            "fixedActualC": 0.8857684025320964,
+            "oldActualMovingEdge": 0.8977671486863898,
+            "cutAbsX": 0.9017684025320964,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.139,
+            "fixedActualC": 0.8840409916734144,
+            "oldActualMovingEdge": 0.8960409208398155,
+            "cutAbsX": 0.9000409916734144,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.138,
+            "fixedActualC": 0.8823147632199387,
+            "oldActualMovingEdge": 0.8943147014266265,
+            "cutAbsX": 0.8983147632199388,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.137,
+            "fixedActualC": 0.8805885347664633,
+            "oldActualMovingEdge": 0.8925884820134379,
+            "cutAbsX": 0.8965885347664633,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.136,
+            "fixedActualC": 0.8788623063129875,
+            "oldActualMovingEdge": 0.8908622626002489,
+            "cutAbsX": 0.8948623063129875,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.135,
+            "fixedActualC": 0.8771361277211576,
+            "oldActualMovingEdge": 0.8891360297823466,
+            "cutAbsX": 0.8931361277211576,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.134,
+            "fixedActualC": 0.8754545236915896,
+            "oldActualMovingEdge": 0.8874544378596307,
+            "cutAbsX": 0.8914545236915896,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.133,
+            "fixedActualC": 0.8737729200866975,
+            "oldActualMovingEdge": 0.8857728459369151,
+            "cutAbsX": 0.8897729200866975,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.132,
+            "fixedActualC": 0.8720913164818049,
+            "oldActualMovingEdge": 0.8840912540141992,
+            "cutAbsX": 0.888091316481805,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.131,
+            "fixedActualC": 0.8704097128769127,
+            "oldActualMovingEdge": 0.8824096620914835,
+            "cutAbsX": 0.8864097128769127,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.13,
+            "fixedActualC": 0.8687281092720202,
+            "oldActualMovingEdge": 0.880728071098736,
+            "cutAbsX": 0.8847281092720202,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.129,
+            "fixedActualC": 0.8670881754139084,
+            "oldActualMovingEdge": 0.8790881428712883,
+            "cutAbsX": 0.8830881754139084,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.128,
+            "fixedActualC": 0.8654482417544941,
+            "oldActualMovingEdge": 0.8774482146438404,
+            "cutAbsX": 0.8814482417544941,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.127,
+            "fixedActualC": 0.86380830809508,
+            "oldActualMovingEdge": 0.8758082864163929,
+            "cutAbsX": 0.87980830809508,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.126,
+            "fixedActualC": 0.8621683744356656,
+            "oldActualMovingEdge": 0.8741683581889449,
+            "cutAbsX": 0.8781683744356656,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.125,
+            "fixedActualC": 0.8605284690856934,
+            "oldActualMovingEdge": 0.8725284310386575,
+            "cutAbsX": 0.8765284690856934,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.124,
+            "fixedActualC": 0.8589274987211512,
+            "oldActualMovingEdge": 0.8709274509631687,
+            "cutAbsX": 0.8749274987211512,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.123,
+            "fixedActualC": 0.8573265283566086,
+            "oldActualMovingEdge": 0.8693264708876796,
+            "cutAbsX": 0.8733265283566086,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.122,
+            "fixedActualC": 0.8557255579920665,
+            "oldActualMovingEdge": 0.8677254908121907,
+            "cutAbsX": 0.8717255579920665,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.121,
+            "fixedActualC": 0.854124587627524,
+            "oldActualMovingEdge": 0.8661245060090283,
+            "cutAbsX": 0.870124587627524,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.12,
+            "fixedActualC": 0.8525236174362464,
+            "oldActualMovingEdge": 0.8645235197019973,
+            "cutAbsX": 0.8685236174362464,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.119,
+            "fixedActualC": 0.8509589832899047,
+            "oldActualMovingEdge": 0.8629589318327138,
+            "cutAbsX": 0.8669589832899047,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.118,
+            "fixedActualC": 0.8493943688985863,
+            "oldActualMovingEdge": 0.8613943439634307,
+            "cutAbsX": 0.8653943688985863,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.117,
+            "fixedActualC": 0.8478297857852226,
+            "oldActualMovingEdge": 0.8598297560941472,
+            "cutAbsX": 0.8638297857852226,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.116,
+            "fixedActualC": 0.8462652026718591,
+            "oldActualMovingEdge": 0.8582651682248642,
+            "cutAbsX": 0.8622652026718591,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.115,
+            "fixedActualC": 0.844700619883483,
+            "oldActualMovingEdge": 0.8567005816603596,
+            "cutAbsX": 0.860700619883483,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.114,
+            "fixedActualC": 0.8431701141971947,
+            "oldActualMovingEdge": 0.8551700645092772,
+            "cutAbsX": 0.8591701141971947,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.113,
+            "fixedActualC": 0.841639608510906,
+            "oldActualMovingEdge": 0.8536395473581947,
+            "cutAbsX": 0.857639608510906,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.112,
+            "fixedActualC": 0.8401091028246176,
+            "oldActualMovingEdge": 0.8521090302071124,
+            "cutAbsX": 0.8561091028246176,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.111,
+            "fixedActualC": 0.8385785971383289,
+            "oldActualMovingEdge": 0.8505785130560297,
+            "cutAbsX": 0.854578597138329,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.11,
+            "fixedActualC": 0.8370480919077168,
+            "oldActualMovingEdge": 0.8490479939750388,
+            "cutAbsX": 0.8530480919077168,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.109,
+            "fixedActualC": 0.8355494403023638,
+            "oldActualMovingEdge": 0.847549352760735,
+            "cutAbsX": 0.8515494403023638,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.108,
+            "fixedActualC": 0.8340507886970111,
+            "oldActualMovingEdge": 0.8460507115464314,
+            "cutAbsX": 0.8500507886970111,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.107,
+            "fixedActualC": 0.8325521354489178,
+            "oldActualMovingEdge": 0.8445520703321276,
+            "cutAbsX": 0.8485521354489178,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.106,
+            "fixedActualC": 0.8310534813439382,
+            "oldActualMovingEdge": 0.8430534291178241,
+            "cutAbsX": 0.8470534813439382,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.105,
+            "fixedActualC": 0.8295548278090069,
+            "oldActualMovingEdge": 0.8415547893645233,
+            "cutAbsX": 0.8455548278090069,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.104,
+            "fixedActualC": 0.8280860606726553,
+            "oldActualMovingEdge": 0.8400860273292865,
+            "cutAbsX": 0.8440860606726553,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.103,
+            "fixedActualC": 0.8266172935363035,
+            "oldActualMovingEdge": 0.8386172563424018,
+            "cutAbsX": 0.8426172935363035,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.102,
+            "fixedActualC": 0.825148526399952,
+            "oldActualMovingEdge": 0.837148468594099,
+            "cutAbsX": 0.841148526399952,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.101,
+            "fixedActualC": 0.8236797592636,
+            "oldActualMovingEdge": 0.8356796808457958,
+            "cutAbsX": 0.8396797592636001,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.1,
+            "fixedActualC": 0.8222109927945909,
+            "oldActualMovingEdge": 0.8342108946158996,
+            "cutAbsX": 0.8382109927945909,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.099,
+            "fixedActualC": 0.8207702160261192,
+            "oldActualMovingEdge": 0.8327701295777651,
+            "cutAbsX": 0.8367702160261192,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.098,
+            "fixedActualC": 0.8193294392576479,
+            "oldActualMovingEdge": 0.8313293645396308,
+            "cutAbsX": 0.8353294392576479,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.097,
+            "fixedActualC": 0.8178886624891762,
+            "oldActualMovingEdge": 0.8298885995014962,
+            "cutAbsX": 0.8338886624891763,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.096,
+            "fixedActualC": 0.8164478857207049,
+            "oldActualMovingEdge": 0.8284478344633619,
+            "cutAbsX": 0.8324478857207049,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.095,
+            "fixedActualC": 0.8150071097002954,
+            "oldActualMovingEdge": 0.8270070709861858,
+            "cutAbsX": 0.8310071097002955,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.094,
+            "fixedActualC": 0.8135924795996652,
+            "oldActualMovingEdge": 0.8255925520031687,
+            "cutAbsX": 0.8295924795996652,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.093,
+            "fixedActualC": 0.8121779708555331,
+            "oldActualMovingEdge": 0.8241780229437882,
+            "cutAbsX": 0.8281779708555331,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.092,
+            "fixedActualC": 0.8107634723752901,
+            "oldActualMovingEdge": 0.8227634938844078,
+            "cutAbsX": 0.8267634723752901,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.091,
+            "fixedActualC": 0.8093489738950468,
+            "oldActualMovingEdge": 0.8213489648250273,
+            "cutAbsX": 0.8253489738950468,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.09,
+            "fixedActualC": 0.8079344762339303,
+            "oldActualMovingEdge": 0.8199344373610535,
+            "cutAbsX": 0.8239344762339303,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.089,
+            "fixedActualC": 0.8065445182213339,
+            "oldActualMovingEdge": 0.8185445509052363,
+            "cutAbsX": 0.8225445182213339,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.088,
+            "fixedActualC": 0.8051546483901105,
+            "oldActualMovingEdge": 0.8171546644494193,
+            "cutAbsX": 0.8211546483901105,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.087,
+            "fixedActualC": 0.8037647805487006,
+            "oldActualMovingEdge": 0.8157647779936021,
+            "cutAbsX": 0.8197647805487006,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.086,
+            "fixedActualC": 0.8023749127072911,
+            "oldActualMovingEdge": 0.8143748915377852,
+            "cutAbsX": 0.8183749127072911,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.085,
+            "fixedActualC": 0.8009850457469398,
+            "oldActualMovingEdge": 0.8129850066989553,
+            "cutAbsX": 0.8169850457469399,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.084,
+            "fixedActualC": 0.799618282058835,
+            "oldActualMovingEdge": 0.8116182486241847,
+            "cutAbsX": 0.815618282058835,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.083,
+            "fixedActualC": 0.7982515383198038,
+            "oldActualMovingEdge": 0.8102515032604868,
+            "cutAbsX": 0.8142515383198038,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.082,
+            "fixedActualC": 0.7968847945807728,
+            "oldActualMovingEdge": 0.8088847578967889,
+            "cutAbsX": 0.8128847945807728,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.081,
+            "fixedActualC": 0.7955180508417415,
+            "oldActualMovingEdge": 0.807518012533091,
+            "cutAbsX": 0.8115180508417416,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.08,
+            "fixedActualC": 0.7941513080395108,
+            "oldActualMovingEdge": 0.8061512688051773,
+            "cutAbsX": 0.8101513080395109,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.079,
+            "fixedActualC": 0.7928063933281159,
+            "oldActualMovingEdge": 0.8048062536439495,
+            "cutAbsX": 0.8088063933281159,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.078,
+            "fixedActualC": 0.7914614786167213,
+            "oldActualMovingEdge": 0.803461238482722,
+            "cutAbsX": 0.8074614786167214,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.077,
+            "fixedActualC": 0.7901165639053264,
+            "oldActualMovingEdge": 0.8021162233214942,
+            "cutAbsX": 0.8061165639053264,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.076,
+            "fixedActualC": 0.7887716491939318,
+            "oldActualMovingEdge": 0.8007712081602667,
+            "cutAbsX": 0.8047716491939318,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.075,
+            "fixedActualC": 0.787426734482537,
+            "oldActualMovingEdge": 0.79942619030856,
+            "cutAbsX": 0.803426734482537,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.074,
+            "fixedActualC": 0.7861017293437336,
+            "oldActualMovingEdge": 0.7981015948571546,
+            "cutAbsX": 0.8021017293437336,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.073,
+            "fixedActualC": 0.78477722942718,
+            "oldActualMovingEdge": 0.7967769994057489,
+            "cutAbsX": 0.80077722942718,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.072,
+            "fixedActualC": 0.7834527295106267,
+            "oldActualMovingEdge": 0.7954524039543435,
+            "cutAbsX": 0.7991415942842355,
+            "targetFullGap": 0.016,
+            "transitionWeight": 0.9259259259259413
+          },
+          {
+            "y": -1.071,
+            "fixedActualC": 0.7821282295940731,
+            "oldActualMovingEdge": 0.7941278085029378,
+            "cutAbsX": 0.7970392315334085,
+            "targetFullGap": 0.016,
+            "transitionWeight": 0.7407407407407407
+          },
+          {
+            "y": -1.07,
+            "fixedActualC": 0.7808037296775199,
+            "oldActualMovingEdge": 0.7928032146994859,
+            "cutAbsX": 0.794703472188503,
+            "targetFullGap": 0.016,
+            "transitionWeight": 0.5000000000000278
+          },
+          {
+            "y": -1.069,
+            "fixedActualC": 0.7794979708399881,
+            "oldActualMovingEdge": 0.7914978387752616,
+            "cutAbsX": 0.7923867619031536,
+            "targetFullGap": 0.016,
+            "transitionWeight": 0.25925925925925924
+          },
+          {
+            "y": -1.068,
+            "fixedActualC": 0.7781926874792366,
+            "oldActualMovingEdge": 0.7901924628510375,
+            "cutAbsX": 0.7903035906012745,
+            "targetFullGap": 0.016,
+            "transitionWeight": 0.07407407407408949
+          },
+          {
+            "y": -1.067,
+            "fixedActualC": 0.776887404118485,
+            "oldActualMovingEdge": 0.7888870869268132,
+            "cutAbsX": 0.7886870869268132,
+            "targetFullGap": 0.016,
+            "transitionWeight": 0.0
+          }
+        ]
+      },
+      {
+        "side": "R",
+        "knots": [
+          {
+            "y": -1.157,
+            "fixedActualC": 0.9170419503937145,
+            "oldActualMovingEdge": 0.9410419817406929,
+            "cutAbsX": 0.9408419817406929,
+            "targetFullGap": 0.016,
+            "transitionWeight": 0.0
+          },
+          {
+            "y": -1.156,
+            "fixedActualC": 0.9151030127259108,
+            "oldActualMovingEdge": 0.9391030527179713,
+            "cutAbsX": 0.9389030527179714,
+            "targetFullGap": 0.016,
+            "transitionWeight": 0.04296875000000911
+          },
+          {
+            "y": -1.155,
+            "fixedActualC": 0.9131640750581075,
+            "oldActualMovingEdge": 0.9371641236952503,
+            "cutAbsX": 0.9369641236952503,
+            "targetFullGap": 0.016,
+            "transitionWeight": 0.15625
+          },
+          {
+            "y": -1.154,
+            "fixedActualC": 0.9112839622719019,
+            "oldActualMovingEdge": 0.934084024804081,
+            "cutAbsX": 0.9338840248040811,
+            "targetFullGap": 0.016,
+            "transitionWeight": 0.31640625000001954
+          },
+          {
+            "y": -1.153,
+            "fixedActualC": 0.9094038511687383,
+            "oldActualMovingEdge": 0.9310038932218077,
+            "cutAbsX": 0.9308038932218077,
+            "targetFullGap": 0.016,
+            "transitionWeight": 0.5
+          },
+          {
+            "y": -1.152,
+            "fixedActualC": 0.9075237400655742,
+            "oldActualMovingEdge": 0.9279237599948978,
+            "cutAbsX": 0.9277237599948979,
+            "targetFullGap": 0.016,
+            "transitionWeight": 0.6835937500000195
+          },
+          {
+            "y": -1.151,
+            "fixedActualC": 0.9056436289624107,
+            "oldActualMovingEdge": 0.9248436267679887,
+            "cutAbsX": 0.9246436267679887,
+            "targetFullGap": 0.016,
+            "transitionWeight": 0.84375
+          },
+          {
+            "y": -1.15,
+            "fixedActualC": 0.9037635178592467,
+            "oldActualMovingEdge": 0.9217634935410789,
+            "cutAbsX": 0.9215634935410789,
+            "targetFullGap": 0.016,
+            "transitionWeight": 0.9570312500000091
+          },
+          {
+            "y": -1.149,
+            "fixedActualC": 0.9019383156481952,
+            "oldActualMovingEdge": 0.918738255601577,
+            "cutAbsX": 0.918538255601577,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.148,
+            "fixedActualC": 0.9001131147463044,
+            "oldActualMovingEdge": 0.9157130189709113,
+            "cutAbsX": 0.9161131147463044,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.147,
+            "fixedActualC": 0.8982878339739286,
+            "oldActualMovingEdge": 0.9126877823402462,
+            "cutAbsX": 0.9142878339739287,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.146,
+            "fixedActualC": 0.8964625479234537,
+            "oldActualMovingEdge": 0.9096625457095804,
+            "cutAbsX": 0.9124625479234537,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.145,
+            "fixedActualC": 0.8946372618729792,
+            "oldActualMovingEdge": 0.9066373090789153,
+            "cutAbsX": 0.9106372618729792,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.144,
+            "fixedActualC": 0.8928632901019099,
+            "oldActualMovingEdge": 0.9048632769294161,
+            "cutAbsX": 0.9088632901019099,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.143,
+            "fixedActualC": 0.8910893094915634,
+            "oldActualMovingEdge": 0.9030892686452041,
+            "cutAbsX": 0.9070893094915634,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.142,
+            "fixedActualC": 0.8893152886038348,
+            "oldActualMovingEdge": 0.9013152603609916,
+            "cutAbsX": 0.9053152886038348,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.141,
+            "fixedActualC": 0.8875412677161065,
+            "oldActualMovingEdge": 0.8995412454505517,
+            "cutAbsX": 0.9035412677161065,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.14,
+            "fixedActualC": 0.8857672468283778,
+            "oldActualMovingEdge": 0.8977672115426144,
+            "cutAbsX": 0.9017672468283778,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.139,
+            "fixedActualC": 0.8840410118730853,
+            "oldActualMovingEdge": 0.8960409832594729,
+            "cutAbsX": 0.9000410118730853,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.138,
+            "fixedActualC": 0.8823147776013854,
+            "oldActualMovingEdge": 0.894314764094002,
+            "cutAbsX": 0.8983147776013855,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.137,
+            "fixedActualC": 0.8805885433296858,
+            "oldActualMovingEdge": 0.8925885449285315,
+            "cutAbsX": 0.8965885433296858,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.136,
+            "fixedActualC": 0.8788623090579859,
+            "oldActualMovingEdge": 0.8908623257630605,
+            "cutAbsX": 0.8948623090579859,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.135,
+            "fixedActualC": 0.8771361277211576,
+            "oldActualMovingEdge": 0.8891360924361776,
+            "cutAbsX": 0.8931361277211576,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.134,
+            "fixedActualC": 0.8754545236915896,
+            "oldActualMovingEdge": 0.8874545003264666,
+            "cutAbsX": 0.8914545236915896,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.133,
+            "fixedActualC": 0.8737729200866975,
+            "oldActualMovingEdge": 0.8857729086425147,
+            "cutAbsX": 0.8897729200866975,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.132,
+            "fixedActualC": 0.8720913164818049,
+            "oldActualMovingEdge": 0.8840913169585625,
+            "cutAbsX": 0.888091316481805,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.131,
+            "fixedActualC": 0.8704097128769127,
+            "oldActualMovingEdge": 0.8824097252746106,
+            "cutAbsX": 0.8864097128769127,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.13,
+            "fixedActualC": 0.8687281092720202,
+            "oldActualMovingEdge": 0.8807281335906584,
+            "cutAbsX": 0.8847281092720202,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.129,
+            "fixedActualC": 0.8670881754139084,
+            "oldActualMovingEdge": 0.8790882053944702,
+            "cutAbsX": 0.8830881754139084,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.128,
+            "fixedActualC": 0.8654482417544941,
+            "oldActualMovingEdge": 0.8774482773969496,
+            "cutAbsX": 0.8814482417544941,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.127,
+            "fixedActualC": 0.86380830809508,
+            "oldActualMovingEdge": 0.8758083493994293,
+            "cutAbsX": 0.87980830809508,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.126,
+            "fixedActualC": 0.8621683744356656,
+            "oldActualMovingEdge": 0.8741684214019086,
+            "cutAbsX": 0.8781683744356656,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.125,
+            "fixedActualC": 0.8605284690856934,
+            "oldActualMovingEdge": 0.8725284934043884,
+            "cutAbsX": 0.8765284690856934,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.124,
+            "fixedActualC": 0.8589274987211512,
+            "oldActualMovingEdge": 0.8709275135507465,
+            "cutAbsX": 0.8749274987211512,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.123,
+            "fixedActualC": 0.8573265283566086,
+            "oldActualMovingEdge": 0.8693265336971042,
+            "cutAbsX": 0.8733265283566086,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.122,
+            "fixedActualC": 0.8557255579920665,
+            "oldActualMovingEdge": 0.8677255538434623,
+            "cutAbsX": 0.8717255579920665,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.121,
+            "fixedActualC": 0.854124587627524,
+            "oldActualMovingEdge": 0.8661245692624625,
+            "cutAbsX": 0.870124587627524,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.12,
+            "fixedActualC": 0.8525236174362464,
+            "oldActualMovingEdge": 0.8645235821505183,
+            "cutAbsX": 0.8685236174362464,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.119,
+            "fixedActualC": 0.8509589832899047,
+            "oldActualMovingEdge": 0.8629589944958439,
+            "cutAbsX": 0.8669589832899047,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.118,
+            "fixedActualC": 0.8493943688985863,
+            "oldActualMovingEdge": 0.86139440684117,
+            "cutAbsX": 0.8653943688985863,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.117,
+            "fixedActualC": 0.8478297857852226,
+            "oldActualMovingEdge": 0.8598298191864956,
+            "cutAbsX": 0.8638297857852226,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.116,
+            "fixedActualC": 0.8462652026718591,
+            "oldActualMovingEdge": 0.8582652315318215,
+            "cutAbsX": 0.8622652026718591,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.115,
+            "fixedActualC": 0.844700619883483,
+            "oldActualMovingEdge": 0.8567006442020708,
+            "cutAbsX": 0.860700619883483,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.114,
+            "fixedActualC": 0.8431701141971947,
+            "oldActualMovingEdge": 0.8551701272588026,
+            "cutAbsX": 0.8591701141971947,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.113,
+            "fixedActualC": 0.841639608510906,
+            "oldActualMovingEdge": 0.8536396103155341,
+            "cutAbsX": 0.857639608510906,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.112,
+            "fixedActualC": 0.8401091028246176,
+            "oldActualMovingEdge": 0.852109093372266,
+            "cutAbsX": 0.8561091028246176,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.111,
+            "fixedActualC": 0.8385785971383289,
+            "oldActualMovingEdge": 0.8505785764289976,
+            "cutAbsX": 0.854578597138329,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.11,
+            "fixedActualC": 0.8370480919077168,
+            "oldActualMovingEdge": 0.8490480566219186,
+            "cutAbsX": 0.8530480919077168,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.109,
+            "fixedActualC": 0.8355494403023638,
+            "oldActualMovingEdge": 0.8475494156091153,
+            "cutAbsX": 0.8515494403023638,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.108,
+            "fixedActualC": 0.8340507886970111,
+            "oldActualMovingEdge": 0.8460507745963125,
+            "cutAbsX": 0.8500507886970111,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.107,
+            "fixedActualC": 0.8325521354489178,
+            "oldActualMovingEdge": 0.8445521335835092,
+            "cutAbsX": 0.8485521354489178,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.106,
+            "fixedActualC": 0.8310534813439382,
+            "oldActualMovingEdge": 0.8430534925707063,
+            "cutAbsX": 0.8470534813439382,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.105,
+            "fixedActualC": 0.8295548278090069,
+            "oldActualMovingEdge": 0.841554852127803,
+            "cutAbsX": 0.8455548278090069,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.104,
+            "fixedActualC": 0.8280860606726553,
+            "oldActualMovingEdge": 0.8400860902883329,
+            "cutAbsX": 0.8440860606726553,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.103,
+            "fixedActualC": 0.8266172935363035,
+            "oldActualMovingEdge": 0.8386173194980313,
+            "cutAbsX": 0.8426172935363035,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.102,
+            "fixedActualC": 0.825148526399952,
+            "oldActualMovingEdge": 0.837148531945625,
+            "cutAbsX": 0.841148526399952,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.101,
+            "fixedActualC": 0.8236797592636,
+            "oldActualMovingEdge": 0.8356797443932183,
+            "cutAbsX": 0.8396797592636001,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.1,
+            "fixedActualC": 0.8222109927945909,
+            "oldActualMovingEdge": 0.8342109575089254,
+            "cutAbsX": 0.8382109927945909,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.099,
+            "fixedActualC": 0.8207702160261192,
+            "oldActualMovingEdge": 0.8327701926613941,
+            "cutAbsX": 0.8367702160261192,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.098,
+            "fixedActualC": 0.8193294392576479,
+            "oldActualMovingEdge": 0.831329427813863,
+            "cutAbsX": 0.8353294392576479,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.097,
+            "fixedActualC": 0.8178886624891762,
+            "oldActualMovingEdge": 0.8298886629663317,
+            "cutAbsX": 0.8338886624891763,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.096,
+            "fixedActualC": 0.8164478857207049,
+            "oldActualMovingEdge": 0.8284478981188007,
+            "cutAbsX": 0.8324478857207049,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.095,
+            "fixedActualC": 0.8150071097002954,
+            "oldActualMovingEdge": 0.8270071340222875,
+            "cutAbsX": 0.8310071097002955,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.094,
+            "fixedActualC": 0.8135924795996652,
+            "oldActualMovingEdge": 0.8255926152255402,
+            "cutAbsX": 0.8295924795996652,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.093,
+            "fixedActualC": 0.8121779708555331,
+            "oldActualMovingEdge": 0.8241780863522761,
+            "cutAbsX": 0.8281779708555331,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.092,
+            "fixedActualC": 0.8107634723752901,
+            "oldActualMovingEdge": 0.8227635574790123,
+            "cutAbsX": 0.8267634723752901,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.091,
+            "fixedActualC": 0.8093489738950468,
+            "oldActualMovingEdge": 0.8213490286057482,
+            "cutAbsX": 0.8253489738950468,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.09,
+            "fixedActualC": 0.8079344762339303,
+            "oldActualMovingEdge": 0.8199345005550198,
+            "cutAbsX": 0.8239344762339303,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.089,
+            "fixedActualC": 0.8065445182213339,
+            "oldActualMovingEdge": 0.8185446142807904,
+            "cutAbsX": 0.8225445182213339,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.088,
+            "fixedActualC": 0.8051546483901105,
+            "oldActualMovingEdge": 0.8171547280065612,
+            "cutAbsX": 0.8211546483901105,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.087,
+            "fixedActualC": 0.8037647805487006,
+            "oldActualMovingEdge": 0.8157648417323318,
+            "cutAbsX": 0.8197647805487006,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.086,
+            "fixedActualC": 0.8023749127072911,
+            "oldActualMovingEdge": 0.8143749554581027,
+            "cutAbsX": 0.8183749127072911,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.085,
+            "fixedActualC": 0.8009850457469398,
+            "oldActualMovingEdge": 0.8129850700649089,
+            "cutAbsX": 0.8169850457469399,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.084,
+            "fixedActualC": 0.799618282058835,
+            "oldActualMovingEdge": 0.8116183121661634,
+            "cutAbsX": 0.815618282058835,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.083,
+            "fixedActualC": 0.7982515383198038,
+            "oldActualMovingEdge": 0.8102515669799584,
+            "cutAbsX": 0.8142515383198038,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.082,
+            "fixedActualC": 0.7968847945807728,
+            "oldActualMovingEdge": 0.8088848217937535,
+            "cutAbsX": 0.8128847945807728,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.081,
+            "fixedActualC": 0.7955180508417415,
+            "oldActualMovingEdge": 0.8075180766075484,
+            "cutAbsX": 0.8115180508417416,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.08,
+            "fixedActualC": 0.7941513080395108,
+            "oldActualMovingEdge": 0.8061513323539025,
+            "cutAbsX": 0.8101513080395109,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.079,
+            "fixedActualC": 0.7928063933281159,
+            "oldActualMovingEdge": 0.8048063173662834,
+            "cutAbsX": 0.8088063933281159,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.078,
+            "fixedActualC": 0.7914614786167213,
+            "oldActualMovingEdge": 0.8034613023786646,
+            "cutAbsX": 0.8074614786167214,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.077,
+            "fixedActualC": 0.7901165639053264,
+            "oldActualMovingEdge": 0.8021162873910456,
+            "cutAbsX": 0.8061165639053264,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.076,
+            "fixedActualC": 0.7887716491939318,
+            "oldActualMovingEdge": 0.8007712724034268,
+            "cutAbsX": 0.8047716491939318,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.075,
+            "fixedActualC": 0.787426734482537,
+            "oldActualMovingEdge": 0.7994262540533407,
+            "cutAbsX": 0.803426734482537,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.074,
+            "fixedActualC": 0.7861017293437336,
+            "oldActualMovingEdge": 0.7981016587692648,
+            "cutAbsX": 0.8021017293437336,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.073,
+            "fixedActualC": 0.78477722942718,
+            "oldActualMovingEdge": 0.7967770634851886,
+            "cutAbsX": 0.80077722942718,
+            "targetFullGap": 0.016,
+            "transitionWeight": 1.0
+          },
+          {
+            "y": -1.072,
+            "fixedActualC": 0.7834527295106267,
+            "oldActualMovingEdge": 0.7954524682011128,
+            "cutAbsX": 0.7991415990432554,
+            "targetFullGap": 0.016,
+            "transitionWeight": 0.9259259259259413
+          },
+          {
+            "y": -1.071,
+            "fixedActualC": 0.7821282295940731,
+            "oldActualMovingEdge": 0.7941278729170366,
+            "cutAbsX": 0.7970392482333599,
+            "targetFullGap": 0.016,
+            "transitionWeight": 0.7407407407407407
+          },
+          {
+            "y": -1.07,
+            "fixedActualC": 0.7808037296775199,
+            "oldActualMovingEdge": 0.7928032786410649,
+            "cutAbsX": 0.7947035041592926,
+            "targetFullGap": 0.016,
+            "transitionWeight": 0.5000000000000278
+          },
+          {
+            "y": -1.069,
+            "fixedActualC": 0.7794979708399881,
+            "oldActualMovingEdge": 0.7914979028810201,
+            "cutAbsX": 0.7923868093889007,
+            "targetFullGap": 0.016,
+            "transitionWeight": 0.25925925925925924
+          },
+          {
+            "y": -1.068,
+            "fixedActualC": 0.7781926874792366,
+            "oldActualMovingEdge": 0.7901925271209755,
+            "cutAbsX": 0.7903036501104764,
+            "targetFullGap": 0.016,
+            "transitionWeight": 0.07407407407408949
+          },
+          {
+            "y": -1.067,
+            "fixedActualC": 0.776887404118485,
+            "oldActualMovingEdge": 0.7888871513609308,
+            "cutAbsX": 0.7886871513609308,
+            "targetFullGap": 0.016,
+            "transitionWeight": 0.0
+          }
+        ]
+      }
+    ]
+  },
+  "fixedInner": {
+    "nominalDz": 0.0001,
+    "parts": [
+      {
+        "node": "Fixed_root_L",
+        "vertices": [
+          {
+            "before": [
+              -0.6730205416679382,
+              -1.0750000476837158,
+              -0.2105952948331833
+            ],
+            "after": [
+              -0.6730205416679382,
+              -1.0750000476837158,
+              -0.21049529314041138
+            ]
+          },
+          {
+            "before": [
+              -0.7874263525009155,
+              -1.0750000476837158,
+              -0.2105952948331833
+            ],
+            "after": [
+              -0.7874263525009155,
+              -1.0750000476837158,
+              -0.21049529314041138
+            ]
+          },
+          {
+            "before": [
+              -0.6679999828338623,
+              -1.0700000524520874,
+              -0.2108728140592575
+            ],
+            "after": [
+              -0.6679999828338623,
+              -1.0700000524520874,
+              -0.2107728123664856
+            ]
+          },
+          {
+            "before": [
+              -0.780803382396698,
+              -1.0700000524520874,
+              -0.2108728140592575
+            ],
+            "after": [
+              -0.780803382396698,
+              -1.0700000524520874,
+              -0.2107728123664856
+            ]
+          }
+        ]
+      },
+      {
+        "node": "Fixed_root_R",
+        "vertices": [
+          {
+            "before": [
+              0.6730205416679382,
+              -1.0750000476837158,
+              -0.2105952948331833
+            ],
+            "after": [
+              0.6730205416679382,
+              -1.0750000476837158,
+              -0.21049529314041138
+            ]
+          },
+          {
+            "before": [
+              0.7874263525009155,
+              -1.0750000476837158,
+              -0.2105952948331833
+            ],
+            "after": [
+              0.7874263525009155,
+              -1.0750000476837158,
+              -0.21049529314041138
+            ]
+          },
+          {
+            "before": [
+              0.6679999828338623,
+              -1.0700000524520874,
+              -0.2108728140592575
+            ],
+            "after": [
+              0.6679999828338623,
+              -1.0700000524520874,
+              -0.2107728123664856
+            ]
+          },
+          {
+            "before": [
+              0.780803382396698,
+              -1.0700000524520874,
+              -0.2108728140592575
+            ],
+            "after": [
+              0.780803382396698,
+              -1.0700000524520874,
+              -0.2107728123664856
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "provenance": {
+    "v10Source": "3ff715aa13b5a849a35ab9dc506667adebb3560b06a7e3bf40ede87ca9f1e6f2",
+    "localCandidate": "1030b9f83a1f0a34e568dc9fcf56f148fab2047a8ade0634b84757c3c7fcc12a",
+    "constructionPlan": "238ce9930e95ef4a15bb334f1cadc043f9a5c3ffdf375c61f04d24d855d6000e"
+  },
+  "claimBoundary": "Deterministic bounded construction, no saved aircraft input; all physical and material gates bind newly generated source/runtime.",
+  "preconstructionRootGeometry": {
+    "Fixed_root_L": {
+      "sha256": "821fb6d47f384f698219815c637b1a137052c5744f1906336b3d9d761d503a5b",
+      "vertices": 3678,
+      "triangles": 7360
+    },
+    "Fixed_root_R": {
+      "sha256": "db75233e1202f6bb036c15977c4c992262b8bb9917d929b981c77e547ecd6d1d",
+      "vertices": 3677,
+      "triangles": 7358
+    },
+    "Composite_wing_L": {
+      "sha256": "32a1453b83be9b54881d22f170469e90261581dc3a7f46f149709411e89de744",
+      "vertices": 2937,
+      "triangles": 5870
+    },
+    "Composite_wing_R": {
+      "sha256": "42cc07efa9b83f70d12f838362cf48799996e8c18b9e5cd0dba58bb12cb3d108",
+      "vertices": 2938,
+      "triangles": 5872
+    }
+  }
+}

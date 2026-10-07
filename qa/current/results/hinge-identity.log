@@ -1,8 +1,0 @@
-{
-  passed: true,
-  certifiesCurrentLayeredPlacement: true,
-  models: [
-    { encoding: 'source', failures: [] },
-    { encoding: 'runtime', failures: [] }
-  ]
-}

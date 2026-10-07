@@ -1,0 +1,76 @@
+{
+  "status": "prepared_bounded_candidate_not_built",
+  "oldProfileRegeneratedExactly": true,
+  "oldProfileSha256": "0fd52839bf6cad6d3e38d6f1fb5e34bf487ff510ef59849ae0293cdd0f3cb90d",
+  "newConfigSha256": "6b85793f1b233feaa5b95d8b5af193857af4d967316709b730c502885d85adb7",
+  "changedHardwareMeshes": [
+    "RootHingeShaft_L",
+    "RootHingeShaft_R",
+    "RootHingeEndcap_L-0.148",
+    "RootHingeEndcap_L0.148",
+    "RootHingeEndcap_R-0.148",
+    "RootHingeEndcap_R0.148"
+  ],
+  "changedCoverMeshes": [
+    "RootFairingFixed_L",
+    "RootFairingMoving_L",
+    "RootFairingFixed_R",
+    "RootFairingMoving_R"
+  ],
+  "relatedNonRenderMarkers": [
+    "RootAxisStart_L",
+    "RootAxisEnd_L",
+    "RootAxisStart_R",
+    "RootAxisEnd_R"
+  ],
+  "newActualCapsAreThinner": true,
+  "oldInnerRange": [
+    -0.070501,
+    0.010501
+  ],
+  "newInnerRange": [
+    -0.061502,
+    -0.0004979999999999997
+  ],
+  "oldOuterRange": [
+    -0.07320099999999999,
+    0.013201
+  ],
+  "newOuterRange": [
+    -0.064202,
+    0.002202
+  ],
+  "oldAndNewRadiiMaxima": [
+    0.04155205126551424,
+    0.04155205126551424,
+    0.044202000000000005,
+    0.044202000000000005
+  ],
+  "nominalDimensions": {
+    "shaft": [
+      -0.058,
+      -0.004
+    ],
+    "frontCap": [
+      -0.059,
+      -0.056
+    ],
+    "rearCap": [
+      -0.006,
+      -0.003
+    ],
+    "capsOriginalLength": 0.01,
+    "capsNewLength": 0.003,
+    "radialDimensionsKept": true,
+    "axisLineKept": true,
+    "bearingsSealsCarrierKept": true
+  },
+  "clearanceAndWallRequirementsKept": {
+    "hardwareToCover": 0.0025,
+    "coverWall": 0.0025,
+    "oppositeHostToCover": 0.001,
+    "mainHostWall": 0.01
+  },
+  "allMotionAndSupportAcceptancePending": true,
+  "noShapeOrWallRestorationProvedByProfileRange": true
+}

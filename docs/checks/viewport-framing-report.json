@@ -1,0 +1,206 @@
+{
+  "passed": true,
+  "evidence": "CSS source layout model plus actual decoded GLB bounding-box projection through unchanged production camera functions; no browser screenshots, browser interactions or physical rerun",
+  "cssSha256": "7c0da5f0f423f43d69a17e12cf269e32ac16f4c50c7e3ae86ba9dca15a31b66d",
+  "runtimeSha256": "26fc74f34383dc80342ca1804ccb8d4cf6fda2f8a8dace6e03d84510fb9d6b5c",
+  "layouts": [
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "inspector": false,
+      "viewportWidth": 295.6,
+      "canvasWidth": 295.6,
+      "canvasHeight": 260,
+      "aspect": 1.136923076923077,
+      "sideWidth": 0
+    },
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "inspector": true,
+      "viewportWidth": 295.6,
+      "canvasWidth": 295.6,
+      "canvasHeight": 260,
+      "aspect": 1.136923076923077,
+      "sideWidth": 0
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "inspector": false,
+      "viewportWidth": 360.7,
+      "canvasWidth": 360.7,
+      "canvasHeight": 300.5833333333333,
+      "aspect": 1.2,
+      "sideWidth": 0
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "inspector": true,
+      "viewportWidth": 360.7,
+      "canvasWidth": 360.7,
+      "canvasHeight": 300.5833333333333,
+      "aspect": 1.2,
+      "sideWidth": 0
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "inspector": false,
+      "viewportWidth": 719.92,
+      "canvasWidth": 719.92,
+      "canvasHeight": 449.94999999999993,
+      "aspect": 1.6,
+      "sideWidth": 0
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "inspector": true,
+      "viewportWidth": 719.92,
+      "canvasWidth": 719.92,
+      "canvasHeight": 449.94999999999993,
+      "aspect": 1.6,
+      "sideWidth": 0
+    },
+    {
+      "viewport": [
+        844,
+        390
+      ],
+      "inspector": false,
+      "viewportWidth": 532,
+      "canvasWidth": 532,
+      "canvasHeight": 280,
+      "aspect": 1.9,
+      "sideWidth": 0
+    },
+    {
+      "viewport": [
+        844,
+        390
+      ],
+      "inspector": true,
+      "viewportWidth": 532,
+      "canvasWidth": 532,
+      "canvasHeight": 280,
+      "aspect": 1.9,
+      "sideWidth": 0
+    },
+    {
+      "viewport": [
+        1366,
+        768
+      ],
+      "inspector": false,
+      "viewportWidth": 1102.2,
+      "canvasWidth": 1102.2,
+      "canvasHeight": 668,
+      "aspect": 1.6500000000000001,
+      "sideWidth": 0
+    },
+    {
+      "viewport": [
+        1366,
+        768
+      ],
+      "inspector": true,
+      "viewportWidth": 1282.04,
+      "canvasWidth": 1002.04,
+      "canvasHeight": 626.275,
+      "aspect": 1.6,
+      "sideWidth": 280
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "inspector": false,
+      "viewportWidth": 1320,
+      "canvasWidth": 1320,
+      "canvasHeight": 800,
+      "aspect": 1.65,
+      "sideWidth": 0
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "inspector": true,
+      "viewportWidth": 1351.6,
+      "canvasWidth": 1071.6,
+      "canvasHeight": 669.7499999999999,
+      "aspect": 1.6,
+      "sideWidth": 280
+    },
+    {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "inspector": false,
+      "viewportWidth": 1584,
+      "canvasWidth": 1584,
+      "canvasHeight": 960,
+      "aspect": 1.65,
+      "sideWidth": 0
+    },
+    {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "inspector": true,
+      "viewportWidth": 1802.8,
+      "canvasWidth": 1522.8,
+      "canvasHeight": 951.7499999999999,
+      "aspect": 1.6,
+      "sideWidth": 280
+    },
+    {
+      "viewport": [
+        2560,
+        1440
+      ],
+      "inspector": false,
+      "viewportWidth": 1584,
+      "canvasWidth": 1584,
+      "canvasHeight": 960,
+      "aspect": 1.65,
+      "sideWidth": 0
+    },
+    {
+      "viewport": [
+        2560,
+        1440
+      ],
+      "inspector": true,
+      "viewportWidth": 1802.8,
+      "canvasWidth": 1522.8,
+      "canvasHeight": 951.7499999999999,
+      "aspect": 1.6,
+      "sideWidth": 280
+    }
+  ],
+  "posesPerInspectionView": 41,
+  "inspectionViews": 4,
+  "flightTimeStepSeconds": 0.5,
+  "flightDurationSeconds": 57,
+  "projectedCorners": 35840,
+  "largestAbsoluteNdcXY": 0.7575757575757577
+}

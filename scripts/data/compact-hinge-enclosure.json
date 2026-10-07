@@ -1,0 +1,571 @@
+{
+  "configuration": {
+    "carrierLength": 0.026,
+    "carrierCenterBeforeAssemblyShift": -0.006,
+    "thrustCenterBeforeAssemblyShift": 0.004,
+    "thrustLength": 0.009,
+    "assemblyAxisShift": -0.03,
+    "nominalInnerOffset": 0.0025,
+    "nominalOuterOffset": 0.0052,
+    "circumferentialSegments": 64,
+    "quarterCircleSegments": 7,
+    "maximumArcStepRadians": 0.2243994752564138,
+    "serviceCenterT": -0.012,
+    "serviceGap": 0.003,
+    "movingMaximumT": -0.0135,
+    "fixedMinimumT": -0.0105
+  },
+  "axisOrigin": [
+    1.350000023841858,
+    -1.4149999618530273,
+    -0.20000000298023224
+  ],
+  "axisDirection": [
+    -0.5773502691896257,
+    -0.5773502691896257,
+    0.5773502691896257
+  ],
+  "basisE": [
+    -0.7071067811865475,
+    0.7071067811865475,
+    0.0
+  ],
+  "basisF": [
+    -0.40824829046386296,
+    -0.40824829046386296,
+    -0.8164965809277259
+  ],
+  "cylinders": [
+    {
+      "name": "RootBearingFixed_R_Front",
+      "a": -0.054002,
+      "b": -0.031998,
+      "R": 0.028002
+    },
+    {
+      "name": "RootBearingFixed_R_Rear",
+      "a": -0.028002,
+      "b": -0.005998,
+      "R": 0.028002
+    },
+    {
+      "name": "RootBearingHousing_R",
+      "a": -0.056001999999999996,
+      "b": -0.003998,
+      "R": 0.027702
+    },
+    {
+      "name": "RootBearingSeal_R_Front",
+      "a": -0.056001999999999996,
+      "b": -0.029997999999999997,
+      "R": 0.026002
+    },
+    {
+      "name": "RootBearingSeal_R_Rear",
+      "a": -0.030002,
+      "b": -0.003998,
+      "R": 0.026002
+    },
+    {
+      "name": "RootCarrierMoving_R",
+      "a": -0.049002,
+      "b": -0.022997999999999998,
+      "R": 0.039002
+    },
+    {
+      "name": "RootCarrierThrust_R",
+      "a": -0.030502,
+      "b": -0.021498,
+      "R": 0.039002
+    },
+    {
+      "name": "RootHingeEndcap_R-0.148",
+      "a": -0.059002,
+      "b": -0.055998,
+      "R": 0.016697
+    },
+    {
+      "name": "RootHingeEndcap_R0.148",
+      "a": -0.006002,
+      "b": -0.002998,
+      "R": 0.016697
+    },
+    {
+      "name": "RootHingeShaft_R",
+      "a": -0.058002,
+      "b": -0.003998,
+      "R": 0.014001999999999999
+    }
+  ],
+  "innerProfile": [
+    [
+      -0.061502,
+      0.016999158580735967
+    ],
+    [
+      -0.061376639560909114,
+      0.017549060932482527
+    ],
+    [
+      -0.061132204778602976,
+      0.018057247120527187
+    ],
+    [
+      -0.06078095263373717,
+      0.01849823456740059
+    ],
+    [
+      -0.060340496375556496,
+      0.018849910321113342
+    ],
+    [
+      -0.05983292232003129,
+      0.019094639890904173
+    ],
+    [
+      -0.059283682349750275,
+      0.019220151514242126
+    ],
+    [
+      -0.058502,
+      0.019220151514242126
+    ],
+    [
+      -0.058502,
+      0.028017430571892682
+    ],
+    [
+      -0.05837663956090911,
+      0.028567332923639294
+    ],
+    [
+      -0.058132204778602974,
+      0.02907551911168387
+    ],
+    [
+      -0.05778095263373717,
+      0.029516506558557278
+    ],
+    [
+      -0.05734049637555649,
+      0.029868182312270005
+    ],
+    [
+      -0.05683292232003129,
+      0.030112911882060844
+    ],
+    [
+      -0.05628368234975027,
+      0.030238423505398796
+    ],
+    [
+      -0.05519556510494707,
+      0.030238423505398796
+    ],
+    [
+      -0.05483292232003129,
+      0.030413273681001957
+    ],
+    [
+      -0.05428368234975028,
+      0.030538785304339913
+    ],
+    [
+      -0.051502,
+      0.030538785304339913
+    ],
+    [
+      -0.051502,
+      0.039331058332008124
+    ],
+    [
+      -0.05137663956090911,
+      0.039880960683754706
+    ],
+    [
+      -0.051132204778602974,
+      0.040389146871799286
+    ],
+    [
+      -0.05078095263373717,
+      0.04083013431867272
+    ],
+    [
+      -0.050340496375556494,
+      0.04118181007238544
+    ],
+    [
+      -0.04983292232003129,
+      0.041426539642176276
+    ],
+    [
+      -0.04928368234975027,
+      0.04155205126551424
+    ],
+    [
+      -0.02121631765024972,
+      0.041552051265514235
+    ],
+    [
+      -0.020667077679968705,
+      0.04142653964217628
+    ],
+    [
+      -0.020159503624443503,
+      0.04118181007238544
+    ],
+    [
+      -0.01971904736626283,
+      0.04083013431867271
+    ],
+    [
+      -0.019367795221397022,
+      0.04038914687179931
+    ],
+    [
+      -0.01912336043909088,
+      0.03988096068375468
+    ],
+    [
+      -0.018998,
+      0.0393310583320081
+    ],
+    [
+      -0.018998,
+      0.030538785304339913
+    ],
+    [
+      -0.005716317650249722,
+      0.030538785304339913
+    ],
+    [
+      -0.005167077679968705,
+      0.030413273681001964
+    ],
+    [
+      -0.0048044348950529265,
+      0.030238423505398796
+    ],
+    [
+      -0.003716317650249722,
+      0.030238423505398796
+    ],
+    [
+      -0.0031670776799687054,
+      0.030112911882060847
+    ],
+    [
+      -0.0026595036244435035,
+      0.02986818231227
+    ],
+    [
+      -0.0022190473662628283,
+      0.02951650655855727
+    ],
+    [
+      -0.0018677952213970225,
+      0.029075519111683868
+    ],
+    [
+      -0.001623360439090882,
+      0.02856733292363924
+    ],
+    [
+      -0.0014979999999999998,
+      0.028017430571892668
+    ],
+    [
+      -0.0014979999999999998,
+      0.018720960152285877
+    ],
+    [
+      -0.0012190473662628282,
+      0.018498234567400598
+    ],
+    [
+      -0.0008677952213970224,
+      0.018057247120527198
+    ],
+    [
+      -0.000623360439090882,
+      0.01754906093248257
+    ],
+    [
+      -0.0004979999999999997,
+      0.016999158580735994
+    ]
+  ],
+  "outerProfile": [
+    [
+      -0.064202,
+      0.016696999999999962
+    ],
+    [
+      -0.06407162514334548,
+      0.017854108856572792
+    ],
+    [
+      -0.06368703811309258,
+      0.018953195443411286
+    ],
+    [
+      -0.06306752370883376,
+      0.01993914696966541
+    ],
+    [
+      -0.06224414696966541,
+      0.020762523708833767
+    ],
+    [
+      -0.0612581954434113,
+      0.021382038113092583
+    ],
+    [
+      -0.06120199999999999,
+      0.021401701749201058
+    ],
+    [
+      -0.06120199999999999,
+      0.027702000000000004
+    ],
+    [
+      -0.06107162514334548,
+      0.028859108856572835
+    ],
+    [
+      -0.060687038113092576,
+      0.02995819544341133
+    ],
+    [
+      -0.06006752370883375,
+      0.030944146969665423
+    ],
+    [
+      -0.05924414696966541,
+      0.031767523708833754
+    ],
+    [
+      -0.0582581954434113,
+      0.03238703811309258
+    ],
+    [
+      -0.057159108856572834,
+      0.03277162514334549
+    ],
+    [
+      -0.056001999999999996,
+      0.032902
+    ],
+    [
+      -0.05564386966537851,
+      0.032902
+    ],
+    [
+      -0.05515910885657284,
+      0.03307162514334548
+    ],
+    [
+      -0.054202,
+      0.03317946541201997
+    ],
+    [
+      -0.054202,
+      0.03900199999999998
+    ],
+    [
+      -0.05407162514334548,
+      0.04015910885657281
+    ],
+    [
+      -0.053687038113092576,
+      0.041258195443411305
+    ],
+    [
+      -0.053067523708833754,
+      0.0422441469696654
+    ],
+    [
+      -0.05224414696966541,
+      0.04306752370883375
+    ],
+    [
+      -0.0512581954434113,
+      0.04368703811309259
+    ],
+    [
+      -0.050159108856572834,
+      0.04407162514334548
+    ],
+    [
+      -0.049002,
+      0.044202000000000005
+    ],
+    [
+      -0.021498,
+      0.044202000000000005
+    ],
+    [
+      -0.020340891143427166,
+      0.044071625143345484
+    ],
+    [
+      -0.019241804556588697,
+      0.04368703811309258
+    ],
+    [
+      -0.018255853030334585,
+      0.04306752370883376
+    ],
+    [
+      -0.017432476291166246,
+      0.042244146969665414
+    ],
+    [
+      -0.01681296188690742,
+      0.041258195443411305
+    ],
+    [
+      -0.016428374856654517,
+      0.04015910885657284
+    ],
+    [
+      -0.016298,
+      0.03900200000000001
+    ],
+    [
+      -0.016298,
+      0.033201999999999995
+    ],
+    [
+      -0.005998,
+      0.033201999999999995
+    ],
+    [
+      -0.004840891143427165,
+      0.03307162514334548
+    ],
+    [
+      -0.0043561303346214926,
+      0.032902
+    ],
+    [
+      -0.003998,
+      0.032902
+    ],
+    [
+      -0.002840891143427165,
+      0.03277162514334549
+    ],
+    [
+      -0.0017418045565886974,
+      0.032387038113092584
+    ],
+    [
+      -0.0007558530303345854,
+      0.031767523708833754
+    ],
+    [
+      6.75237088337546e-05,
+      0.030944146969665416
+    ],
+    [
+      0.0006870381130925796,
+      0.029958195443411304
+    ],
+    [
+      0.0010716251433454827,
+      0.02885910885657284
+    ],
+    [
+      0.001202,
+      0.027702
+    ],
+    [
+      0.001202,
+      0.01972512917829707
+    ],
+    [
+      0.0016870381130925797,
+      0.018953195443411307
+    ],
+    [
+      0.0020716251433454827,
+      0.017854108856572834
+    ],
+    [
+      0.002202,
+      0.016696999999999997
+    ]
+  ],
+  "tessellationErrorBudget": {
+    "innerSupersetMaximumExpansionBound": 6.587020696467834e-05,
+    "outerSubsetMaximumContractionBound": 8.593975337410783e-05,
+    "nominalWallThickness": 0.0026999999999999997,
+    "minimumUntrimmedWallThicknessConservativeBound": 0.002548190039661213,
+    "hardwareClearanceLowerBound": 0.0025,
+    "notes": "Inner profile circumscribes all cylinder-offset quarter circles and its 64-gon rings circumscribe circles. Outer uses inscribed quarter-circle chords and inscribed 64-gon rings. Exact maximum envelope crossover events are retained; profile steps are retained. Circumscription error bounds are Euclidean. Shells split only on a shared cylindrical plateau; service lips radial wall exceeds the untrimmed bound. Mesh validity remains to be checked separately."
+  },
+  "schema": "transwing.compact-hinge-enclosure.v1",
+  "units": "model u; no asserted physical metre conversion",
+  "sourceProfileSha256": "2e923cfaf391f1066ddb210f26d0876b69df3bfd1faa8938d30f326cfef61a8b",
+  "auditedStandaloneGlbSha256": null,
+  "hostCavity": {
+    "oppositeRigidBodyEuclideanClearance": 0.001,
+    "clearanceEnvelopeOffset": 0.006201,
+    "legacyBoreRadius": 0.045,
+    "legacyBoreAxialBounds": [
+      -1.1,
+      1.1
+    ],
+    "newCavityFinite": true,
+    "localSkinOwnership": "Own shell: complete inner cavity only, permit actual annular same-body host-shell overlap. Opposite shell: complete outer envelope plus 0.001 model-u clearance. Whole service interval remains void in both hosts. Local enclosure walls are not 0.010 model-u main-wall credit.",
+    "supportStatus": "Existing four support meshes retained; new end-cap/shaft and cover/support interfaces unverified",
+    "clearanceEnvelopeNominalOffset": 0.0062,
+    "clearanceEnvelopeNumericalConstructionGuard": 1e-06,
+    "numericalGuardReason": "The unguarded .0062 actual v1 Float32 CSG host/fairing pair reached .00099989200312474 m, short of .001 by .00000010799687526 m. One micrometre is explicit cutter-only construction allowance; remeasure final actual geometry. Enclosure geometry is unchanged."
+  },
+  "supportInterfaces": {
+    "moving": {
+      "suggestedT": -0.042,
+      "finiteBridgeBoreRadius": 0.0305,
+      "carrierRadialMaterial": [
+        0.03,
+        0.039
+      ],
+      "shellPlateauT": [
+        -0.049,
+        -0.0305
+      ],
+      "requires": "Finite actual moving carrier/bridge/shell/wing overlap, no passage through fixed hardware"
+    },
+    "fixed": {
+      "suggestedT": -0.008,
+      "shellPlateauT": [
+        -0.0105,
+        -0.006
+      ],
+      "requires": "Actual fixed bearing/housing/seat/shell/wing path; do not route through moving shell at rear-bearing center -0.017; all old span gates must be remeasured against the shorter shaft"
+    }
+  },
+  "claimBoundary": "New actual short caps, shaft, covers and host cutters require fresh exact material/support/clearance/motion checks; no earlier module pass transfers.",
+  "candidateRevision": "bounded-short-axial-caps-v1-not-accepted",
+  "shortAxialGeometry": {
+    "shaft": [
+      -0.058,
+      -0.004
+    ],
+    "frontCap": [
+      -0.059,
+      -0.056
+    ],
+    "rearCap": [
+      -0.006,
+      -0.003
+    ],
+    "capsOriginalLength": 0.01,
+    "capsNewLength": 0.003,
+    "radialDimensionsKept": true,
+    "axisLineKept": true,
+    "bearingsSealsCarrierKept": true
+  }
+}

@@ -1,0 +1,381 @@
+{
+  "modelVersion": 24,
+  "driveRestTransformPreservation": {
+    "nodes": [
+      {
+        "node": "Drive_ScrewRotor",
+        "before": {
+          "translation": [
+            0,
+            0.07699999958276749,
+            0
+          ]
+        },
+        "sourceRest": {
+          "translation": [
+            0,
+            0.07699999958276749,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0.0000028041224595654057,
+            1
+          ]
+        },
+        "exactSerializedFields": true
+      },
+      {
+        "node": "Drive_MotorRotor",
+        "before": {
+          "translation": [
+            0,
+            0.07699999958276749,
+            0
+          ]
+        },
+        "sourceRest": {
+          "translation": [
+            0,
+            0.07699999958276749,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0.000008412367606069893,
+            1
+          ]
+        },
+        "exactSerializedFields": true
+      },
+      {
+        "node": "Drive_PlanetRotor_0",
+        "before": {
+          "translation": [
+            0.014999999664723873,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            -0.000011216489838261623,
+            1
+          ]
+        },
+        "sourceRest": {
+          "translation": [
+            0.014999999664723873,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            -0.000011216489838261623,
+            1
+          ]
+        },
+        "exactSerializedFields": true
+      },
+      {
+        "node": "Drive_PlanetRotor_1",
+        "before": {
+          "translation": [
+            -0.007499999832361937,
+            0.01299037504941225,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            -0.000011216489838261623,
+            1
+          ]
+        },
+        "sourceRest": {
+          "translation": [
+            -0.007499999832361937,
+            0.01299037504941225,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            -0.000011216489838261623,
+            1
+          ]
+        },
+        "exactSerializedFields": true
+      },
+      {
+        "node": "Drive_PlanetRotor_2",
+        "before": {
+          "translation": [
+            -0.007499999832361937,
+            -0.012990380637347698,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            -0.000011216489838261623,
+            1
+          ]
+        },
+        "sourceRest": {
+          "translation": [
+            -0.007499999832361937,
+            -0.012990380637347698,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            -0.000011216489838261623,
+            1
+          ]
+        },
+        "exactSerializedFields": true
+      }
+    ],
+    "meshoptAndAnimationBufferByteIdentical": true,
+    "reason": "保持源静止转轴的微小旋转，不允许JSON默认值省略破坏滑架—转轴的相位基准"
+  },
+  "paintEncodingPreservation": {
+    "layeredSourceFloat32Nodes": [
+      {
+        "node": "Fixed_root_blue_L",
+        "vertices": 514,
+        "reason": "当前分层翼根完整源Float32表面"
+      },
+      {
+        "node": "Fixed_root_blue_R",
+        "vertices": 514,
+        "reason": "当前分层翼根完整源Float32表面"
+      }
+    ],
+    "layeredSourceFloat32Vertices": 1028,
+    "legacyMappingAppliedToChangedWing": false,
+    "restoredVertices": 0,
+    "seamFloat32Vertices": 0,
+    "seamFloat32ProfileDistanceMaximum": 0,
+    "seamFloat32DistanceBound": 0.15,
+    "baselineSha256": "3947012c3504967fbd4e18983b2ca89c26311eb313d644af31836f021cd5680a",
+    "map": "scripts/data/fixed-root-paint-encoding.json"
+  },
+  "animations": [
+    {
+      "name": "TRANSWING_Hover_Cruise_Hover",
+      "channels": 18,
+      "startSeconds": 0,
+      "durationSeconds": 8.291666984558105
+    },
+    {
+      "name": "TRANSWING_Motors_Start_Stop",
+      "channels": 26,
+      "startSeconds": 0,
+      "durationSeconds": 7
+    }
+  ],
+  "bounds": {
+    "min": [
+      -1.8083676438030558,
+      -1.387000296538057,
+      -3.049999952316284
+    ],
+    "max": [
+      1.8083676579181962,
+      1.4937527118307061,
+      2.7200000286102295
+    ]
+  },
+  "meshInstances": 283,
+  "renderedTriangles": 281984,
+  "inputBytes": 8874240,
+  "runtimeBytes": 3282332,
+  "compression": "EXT_meshopt_compression",
+  "quantization": {
+    "positions": 16,
+    "normals": 12,
+    "level": "medium",
+    "float32PositionExceptions": [
+      "Fuselage",
+      "Drive_Crossbeam",
+      "Drive_GuideBridge_L",
+      "Drive_GuideBridge_R",
+      "Drive_GuideBushing_L",
+      "Drive_GuideBushing_R",
+      "Drive_NutCarriage",
+      "Drive_NutInternalThread",
+      "Drive_OutputWeb",
+      "ActuatorSideSlot_L",
+      "ActuatorSideSlot_R",
+      "V_tail_L",
+      "Fixed_root_L",
+      "Fixed_root_blue_L",
+      "Composite_wing_L",
+      "ControlFlexureFixed_L_Inboard",
+      "ControlFlexureFixed_L_Outboard",
+      "ControlHingeFixed_L_Inboard",
+      "ControlHingeFixed_L_Outboard",
+      "ControlFlexureMoving_L_Inboard",
+      "ControlHingeMoving_L_Inboard",
+      "ControlHorn_L_Inboard",
+      "ControlSurface_L_Inboard",
+      "ControlFlexureMoving_L_Outboard",
+      "ControlHingeMoving_L_Outboard",
+      "ControlHorn_L_Outboard",
+      "ControlSurface_L_Outboard",
+      "Landing_wear_tip_L_Front",
+      "Landing_wear_tip_L_Rear",
+      "Motor_cowl_L_Front",
+      "Motor_cowl_L_Rear",
+      "Blade_L_Front_A",
+      "Blade_L_Front_B",
+      "Blade_L_Rear_A",
+      "Blade_L_Rear_B",
+      "RootCarrierBridge_L",
+      "RootCarrierMoving_L",
+      "RootCarrierThrust_L",
+      "RootFairingMoving_L",
+      "Wing_blue_leading_L",
+      "RootHingeShaft_L",
+      "RootBearingFixed_L_Front",
+      "RootBearingSeal_L_Front",
+      "RootBearingFixed_L_Rear",
+      "RootBearingSeal_L_Rear",
+      "RootFixedBearingPedestal_L",
+      "RootHingeEndcap_L-0.148",
+      "RootHingeEndcap_L0.148",
+      "V_tail_R",
+      "Fixed_root_R",
+      "Fixed_root_blue_R",
+      "Composite_wing_R",
+      "ControlFlexureFixed_R_Inboard",
+      "ControlFlexureFixed_R_Outboard",
+      "ControlHingeFixed_R_Inboard",
+      "ControlHingeFixed_R_Outboard",
+      "ControlFlexureMoving_R_Inboard",
+      "ControlHingeMoving_R_Inboard",
+      "ControlHorn_R_Inboard",
+      "ControlSurface_R_Inboard",
+      "ControlFlexureMoving_R_Outboard",
+      "ControlHingeMoving_R_Outboard",
+      "ControlHorn_R_Outboard",
+      "ControlSurface_R_Outboard",
+      "Landing_wear_tip_R_Front",
+      "Landing_wear_tip_R_Rear",
+      "Motor_cowl_R_Front",
+      "Motor_cowl_R_Rear",
+      "Blade_R_Front_A",
+      "Blade_R_Front_B",
+      "Blade_R_Rear_A",
+      "Blade_R_Rear_B",
+      "RootCarrierBridge_R",
+      "RootCarrierMoving_R",
+      "RootCarrierThrust_R",
+      "RootFairingMoving_R",
+      "Wing_blue_leading_R",
+      "RootHingeShaft_R",
+      "RootBearingFixed_R_Front",
+      "RootBearingSeal_R_Front",
+      "RootBearingFixed_R_Rear",
+      "RootBearingSeal_R_Rear",
+      "RootFixedBearingPedestal_R",
+      "RootHingeEndcap_R-0.148",
+      "RootHingeEndcap_R0.148",
+      "ControlFlexureMoving_Tail_L",
+      "ControlHingeMoving_Tail_L",
+      "ControlSurface_Tail_L",
+      "ControlFlexureFixed_Tail_L",
+      "ControlFlexureMoving_Tail_R",
+      "ControlHingeMoving_Tail_R",
+      "ControlSurface_Tail_R",
+      "ControlFlexureFixed_Tail_R",
+      "CargoHingeMovingSeat_L",
+      "CargoHingeMovingSeat_R",
+      "CargoHoodShell",
+      "CargoOpeningLip",
+      "Drive_CouplingWitness",
+      "Drive_LeadScrewCore",
+      "Drive_LeadScrewThread",
+      "Drive_OutputCoupling",
+      "Drive_PlanetCarrier",
+      "Drive_PlanetPin_0",
+      "Drive_PlanetPin_1",
+      "Drive_PlanetPin_2",
+      "Drive_PlanetRetainer_0_Front",
+      "Drive_PlanetRetainer_0_Rear",
+      "Drive_PlanetRetainer_1_Front",
+      "Drive_PlanetRetainer_1_Rear",
+      "Drive_PlanetRetainer_2_Front",
+      "Drive_PlanetRetainer_2_Rear",
+      "Drive_PlanetGear_0",
+      "Drive_PlanetGear_1",
+      "Drive_PlanetGear_2",
+      "Drive_MotorRotorDisc",
+      "Drive_MotorShaft",
+      "Drive_MotorWitness",
+      "Drive_SunGear",
+      "Drive_MotorHousing",
+      "Drive_ReductionHousing",
+      "Drive_MotorGearboxAdapter",
+      "Drive_RingGear",
+      "Drive_MotorMount",
+      "Drive_MotorSaddle_L",
+      "Drive_MotorSaddle_R",
+      "Drive_FrontSupport",
+      "Drive_FrontScrewPedestal",
+      "Drive_FrontScrewBearing",
+      "Drive_FrontGuidePedestal_L",
+      "Drive_FrontGuideSeat_L",
+      "Drive_FrontGuidePedestal_R",
+      "Drive_FrontGuideSeat_R",
+      "Drive_RearSupport",
+      "Drive_RearScrewPedestal",
+      "Drive_RearScrewBearing",
+      "Drive_RearGuidePedestal_L",
+      "Drive_RearGuideSeat_L",
+      "Drive_RearGuidePedestal_R",
+      "Drive_RearGuideSeat_R",
+      "Drive_GuideRail_L",
+      "Drive_GuideRail_R",
+      "Drive_FrontFoot_L",
+      "Drive_FrontFoot_R",
+      "Drive_RearFoot_L",
+      "Drive_RearFoot_R",
+      "Drive_MotorFoot_L",
+      "Drive_MotorFoot_R",
+      "Drive_FrontTravelStop_L",
+      "Drive_FrontTravelStop_R",
+      "Drive_RearTravelStop_L",
+      "Drive_RearTravelStop_R",
+      "RootBearingHousing_L",
+      "RootBearingHousing_R",
+      "CargoHingeFixedSeat",
+      "CargoHingePin",
+      "CargoHingeCap_L",
+      "CargoHingeCap_R",
+      "ControlHingeFixed_Tail_L",
+      "ControlHingeFixed_Tail_R",
+      "RootFairingFixed_L",
+      "RootFairingFixed_R"
+    ]
+  },
+  "triangles": 228156,
+  "meshes": 224,
+  "nodes": 348,
+  "materials": 6,
+  "rigNodesVerified": [
+    "WingPivot_L",
+    "WingPivot_R",
+    "Prop_L_Front",
+    "Prop_L_Rear",
+    "Prop_R_Front",
+    "Prop_R_Rear"
+  ],
+  "textures": 0
+}

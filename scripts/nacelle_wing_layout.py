@@ -7,8 +7,8 @@ from mathutils.bvhtree import BVHTree
 
 CENTRAL_WING_LIFT = .029
 NACELLE_LOWERING = .22
-INNER_NACELLE_INSET = .35
-HINGE_LIFT = .029
+INNER_NACELLE_INSET = .42
+HINGE_LIFT = 0.0  # Full XYZ native rebase already preserved cruise locations
 NACELLE_ROOT_PREFIXES=('Nacelle','Motor_cowl','Landing_wear_tip','Pod_U_access_panel',
               'Cowl_boundary','Pod_wing_saddle','Pod_mount_seam','MotorAxisStart',
               'MotorAxisEnd','Motor_spindle','Prop','MotorFrontBearing')
@@ -30,6 +30,8 @@ def lift_fixed_wing(obj):
 
 def reposition_nacelles(ctx):
     """仅平移所属翼的直属动力节点，Prop整个后代树因此只移动一次。"""
+    if any(bpy.data.objects['WingPivot_'+side].get('annotatedFinalNacelleLayout') for side in ('L','R')):
+        raise ValueError('Final complete-assembly layout may only be applied once')
     prefixes=NACELLE_ROOT_PREFIXES
     rows=[]
     for side,sign in [('L',-1),('R',1)]:
@@ -70,6 +72,7 @@ def reposition_nacelles(ctx):
                          'cruiseCenterZ':-.22-NACELLE_LOWERING,
                          'method':'直属节点整体平移一次；后代局部坐标、父级、折桨与旋转轴保持'})
     bpy.context.view_layer.update()
+    for side in ('L','R'):bpy.data.objects['WingPivot_'+side]['annotatedFinalNacelleLayout']=True
     return {'assemblies':rows,'wingSaddleAttachments':measure_wing_saddle_attachments(),'conceptElectronics':'电机/ESC功能示意资产仍为独立模块，无虚构的整机内部电子设备节点',
             'units':'概念模型单位','source':'用户2026-10-04收翼图四红箭头；先换算至所属翼局部坐标',
             'hingeRelocation':{'deltaBlender':[0,0,HINGE_LIFT],'deltaGltf':[0,HINGE_LIFT,0],'reason':'与中央翼等量上移，使原通孔关系及薄下皮材料恢复；真实硬件和低驱动闭环同步'},

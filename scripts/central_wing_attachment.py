@@ -50,24 +50,138 @@ def _boolean(target, cutter, operation, label):
     bpy.ops.object.modifier_apply(modifier=mod.name)
 
 
+def _cap_root_boundary(bm, edges, sign):
+    """Cap a trim section as material, preserving nested holes and every cut edge.
+
+    Keep the historic one-loop fill unchanged. Multiple loops must be filled
+    together: holes_fill caps each loop independently and overlaps hollow roots.
+    Scan-fill uses only the original vertices; exact dyadic checks below reject
+    an invalid section or an incomplete fill instead of adjusting its geometry.
+    """
+    adjacent = {}
+    for edge in edges:
+        for vertex in edge.verts:
+            adjacent.setdefault(vertex, []).append(edge)
+    if any(len(linked) != 2 for linked in adjacent.values()):
+        raise ValueError('Root trim boundary must consist of closed, disjoint loops')
+    loops, remaining = [], set(edges)
+    for first in edges:
+        if first not in remaining:
+            continue
+        start = vertex = first.verts[0]
+        edge, loop = first, []
+        while True:
+            loop.append(vertex)
+            remaining.remove(edge)
+            vertex = edge.other_vert(vertex)
+            if vertex == start:
+                break
+            edge = next(e for e in adjacent[vertex] if e != edge)
+        loops.append(loop)
+    if len(loops) == 1:
+        bmesh.ops.holes_fill(bm, edges=edges, sides=0)
+        return {'boundaryLoops': 1, 'holes': 0, 'method': 'original single-loop holes_fill'}
+    if not loops:
+        return {'boundaryLoops': 0, 'holes': 0, 'method': 'no cut boundary'}
+
+    vertices = list(adjacent)
+    plane_x = Vector((sign*JOIN_X, 0, 0)).x
+    if any(v.co.x != plane_x for v in vertices):
+        raise ValueError('Root trim loops are not on the exact stored trim plane')
+    ratios = {v: [float(v.co[k]).as_integer_ratio() for k in (1, 2)] for v in vertices}
+    denominator = max(d for point in ratios.values() for _, d in point)
+    points = {v: tuple(n*(denominator//d) for n, d in point) for v, point in ratios.items()}
+    if len(set(points.values())) != len(vertices):
+        raise ValueError('Root trim loops have coincident boundary vertices')
+
+    def orient(a, b, c):
+        return (b[0]-a[0])*(c[1]-a[1])-(b[1]-a[1])*(c[0]-a[0])
+
+    def on_segment(a, b, p):
+        return (orient(a, b, p) == 0 and
+                min(a[0], b[0]) <= p[0] <= max(a[0], b[0]) and
+                min(a[1], b[1]) <= p[1] <= max(a[1], b[1]))
+
+    segments = [(points[e.verts[0]], points[e.verts[1]]) for e in edges]
+    for i, (a, b) in enumerate(segments):
+        for c, d in segments[i+1:]:
+            shared = set((a, b)) & set((c, d))
+            if shared:
+                # Consecutive collinear edges may continue, but may not fold back.
+                p = next(iter(shared))
+                u, v = next(q for q in (a, b) if q != p), next(q for q in (c, d) if q != p)
+                if orient(p, u, v) == 0 and sum((u[k]-p[k])*(v[k]-p[k]) for k in (0, 1)) > 0:
+                    raise ValueError('Root trim boundary folds back on itself')
+                continue
+            if (orient(a, b, c)*orient(a, b, d) < 0 and orient(c, d, a)*orient(c, d, b) < 0 or
+                    on_segment(a, b, c) or on_segment(a, b, d) or
+                    on_segment(c, d, a) or on_segment(c, d, b)):
+                raise ValueError('Root trim boundary loops intersect or touch')
+
+    polygons = [[points[v] for v in loop] for loop in loops]
+
+    def inside(p, polygon):
+        winding = 0
+        for a, b in zip(polygon, polygon[1:]+polygon[:1]):
+            if a[1] <= p[1] < b[1] and orient(a, b, p) > 0:
+                winding += 1
+            elif b[1] <= p[1] < a[1] and orient(a, b, p) < 0:
+                winding -= 1
+        return winding != 0
+
+    areas = [abs(sum(a[0]*b[1]-a[1]*b[0] for a, b in zip(poly, poly[1:]+poly[:1])))
+             for poly in polygons]
+    if any(area == 0 for area in areas):
+        raise ValueError('Root trim boundary has a zero-area loop')
+    depths = [sum(inside(poly[0], other) for other in polygons if other is not poly) for poly in polygons]
+    expected_area = sum(area*(-1 if depth % 2 else 1) for area, depth in zip(areas, depths))
+    original_vertices = {v: tuple(v.co) for v in bm.verts}
+    original_faces = set(bm.faces)
+    bmesh.ops.triangle_fill(bm, edges=edges, use_beauty=True, use_dissolve=False,
+                           normal=Vector((-sign, 0, 0)))
+    faces = set(bm.faces)-original_faces
+    if set(bm.verts) != set(original_vertices) or any(tuple(v.co) != co for v, co in original_vertices.items()):
+        raise ValueError('Root cap changed the original vertices')
+    boundary = set(edges)
+    cap_edges = {e for face in faces for e in face.edges}
+    if not boundary <= cap_edges or any(
+            sum(f in faces for f in e.link_faces) != (1 if e in boundary else 2) or
+            (e not in boundary and any(f not in faces for f in e.link_faces)) for e in cap_edges):
+        raise ValueError('Root cap did not preserve every boundary edge exactly once')
+    actual_area = 0
+    for face in faces:
+        if len(face.verts) != 3 or any(v not in points for v in face.verts):
+            raise ValueError('Root cap must use triangles of original boundary vertices')
+        area = -sign*orient(*(points[v] for v in face.verts))
+        if area <= 0:
+            raise ValueError('Root cap has a degenerate or reversed triangle')
+        actual_area += area
+    if actual_area != expected_area:
+        raise ValueError('Root cap does not exactly cover the material cross-section')
+    return {'boundaryLoops': len(loops), 'holes': sum(d % 2 for d in depths),
+            'method': 'joint hole-aware triangle_fill; exact boundary and material-area checks'}
+
+
 def _trim_root(obj, sign):
     old = _corner_snapshot(obj)
     bm = bmesh.new()
-    bm.from_mesh(obj.data)
-    result = bmesh.ops.bisect_plane(bm, geom=list(bm.verts)+list(bm.edges)+list(bm.faces),
-                                  dist=1e-7, plane_co=(sign*JOIN_X, 0, 0),
-                                  plane_no=(sign, 0, 0), clear_inner=True, clear_outer=False)
-    edges = [e for e in result['geom_cut'] if isinstance(e, bmesh.types.BMEdge) and e.is_boundary]
-    if edges:
-        bmesh.ops.holes_fill(bm, edges=edges, sides=0)
-    bmesh.ops.recalc_face_normals(bm, faces=list(bm.faces))
-    bmesh.ops.triangulate(bm, faces=list(bm.faces))
-    bm.to_mesh(obj.data)
-    bm.free()
+    try:
+        bm.from_mesh(obj.data)
+        result = bmesh.ops.bisect_plane(bm, geom=list(bm.verts)+list(bm.edges)+list(bm.faces),
+                                      dist=1e-7, plane_co=(sign*JOIN_X, 0, 0),
+                                      plane_no=(sign, 0, 0), clear_inner=True, clear_outer=False)
+        edges = [e for e in result['geom_cut'] if isinstance(e, bmesh.types.BMEdge) and e.is_boundary]
+        cap = _cap_root_boundary(bm, edges, sign)
+        bmesh.ops.recalc_face_normals(bm, faces=list(bm.faces))
+        bmesh.ops.triangulate(bm, faces=list(bm.faces))
+        bm.to_mesh(obj.data)
+    finally:
+        bm.free()
     obj.data.update()
     restored = _restore_untouched_normals(obj, old)
     return {'node': obj.name, 'sharedSectionAbsX': JOIN_X, 'restoredUnchangedCorners': restored,
-            'method': 'remove inward geometry and close exact original airfoil section; zero intentional overlap'}
+            'method': 'remove inward geometry and cap exact original material section with openings retained; zero intentional overlap',
+            'cap': cap}
 
 
 def _taper_paint(obj, sign, context):

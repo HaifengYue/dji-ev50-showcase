@@ -1,0 +1,162 @@
+{
+  "schema": "transwing.annotated-mechanism.final.v1",
+  "unitBoundary": "All geometry, gaps, areas and mechanism positions are concept model units u (areas u^2), not certified real-aircraft metres or millimetres. Legacy unit strings in immutable source helper reports do not change this boundary.",
+  "inputIntentSha256": "73af20dfc8df51400854d2f1dfeb83ffb57c481c11dfe159b1d576c52254c062",
+  "referencePivot": [
+    1.35,
+    -1.3,
+    -0.22
+  ],
+  "actualRightPivot": [
+    1.35,
+    -1.415,
+    -0.2
+  ],
+  "rightAxisUnnormalized": [
+    -1,
+    -1,
+    1
+  ],
+  "foldAngleDegrees": 120,
+  "bodyAnchorRightCruise": [
+    0.16,
+    1.9,
+    -0.02
+  ],
+  "wingAnchorRightCruise": [
+    0.97,
+    -1.04,
+    -0.17641597986221313
+  ],
+  "rigidRodLength": 3.0535498223714517,
+  "actualTravel": {
+    "samples": 4001,
+    "minimumY": 0.9718781424045453,
+    "maximumY": 1.9000001253238241,
+    "hoverY": 0.9718781424045453,
+    "cruiseY": 1.9000001253238241,
+    "continuousExtremaProof": false,
+    "implementation": "actual native mathutils kinematics"
+  },
+  "rootPhase": "repair-trim-required-closing-complete",
+  "sourceRootLineageSha256": "ab96da56a65287e3b53e81b73fea7636ecf81f6de06a27e62dd1ecbcef5ed15b",
+  "preservedClosingLineageSha256": "839f5a93b81b44276a02a4739fa89233e8152e14332bab75395e2f7d5912a61a",
+  "shortCapLineageSha256": "2f7cf4e5c5c0a178fb5600216ffc055934d5002654de6808525572dc2520f2e0",
+  "combinedSupportLineageSha256": "5346ae4123cc68c7028316a32041e7f4ba8d19c15a8c2ada56cbe774d763d65c",
+  "constructionRevision": "Bounded 32-component principal side repair; restored right terminal step; generic-root primitive constructor",
+  "constructionInputHashes": {
+    "annotated_fixed_support.py": "397e091785dbc1449b3f198d6cf952f161254a619dafd694445181cff183d5f7",
+    "annotated_low_angle_relief.py": "3dcc35265cc7440b10ef89c55f0e43940909e1d3130cd1208bb3e000cbe47aa9",
+    "annotated_mechanism.py": "697e54189282411f17806ac2dc7617d44d159c8010acc834c80bfc3ad3a06a04",
+    "annotated_moving_support.py": "e4c1526f24d64943321b3a201c098aba6a3c95a471f1129b41117c9866a4fc1e",
+    "annotated_native_stage.py": "fd5423a155e7ea42128527e751dcad9f35edbd709ff3f6ebb32f1dfbd20ac209",
+    "annotated_principal_side_closure.py": "80f8fa7305d1735787aedbccbf2d5a0fa066a8f444a4b5f15ecd74ceac8f8d9c",
+    "annotated_root_closing.py": "c8036936c8fe494bd5a7d50958641371dadb86fae26066ab0cc2f0ef86d541b5",
+    "annotated_root_interface.py": "93eaf464f5831aaa68f48d63327601785c1a3d803451364def79147fe37e79bd",
+    "annotated_tail_partition.py": "e78ffa54dfb5401e9282b114e1cb7c46549cf02e20d1e69eced968f768ec8d6a",
+    "compact_hinge_enclosure.py": "9457b12c3a0e2e10c374e589c6f99242fda52e2191b946da088cbef83ca06174",
+    "compact_hinge_stack.py": "974fdf6bba5f406b2fa5cd9ad2fd62e36b7cdb6940e316b29ec3ed27e5ee9244",
+    "constructor_inputs.py": "feafb234decb038994bdc8744039202c43781e01ab45f7b18c1fd355c3615179",
+    "data/annotated-fixed-support.json": "2f3e9691b700aad9bd4f980d4aa575d418cf5ae620e70d01e40a36cc2d5d974e",
+    "data/annotated-low-angle-relief.json": "9f20c7b2d0e5baf8e235fec87029d517f5f402d77e548b690c86ea193f7a241b",
+    "data/annotated-moving-support.json": "ded317b56df085cd874c658ceb6a7142eca599f06cccec554e63788ef2a80d45",
+    "data/annotated-paint-repair.json": "aa8180b28358ac6741d805716eb24e7002787bf8faf2d42e1db4e40b5a7216ef",
+    "data/annotated-principal-side-closure.json": "9cd40401b110a44e31af3fd7ac5d20f1b4701e27638818ee4a0e486d02661c0d",
+    "data/annotated-root-closing.json": "58a176135b2bb8f3dfc74b36815069ea84c4a1651b28eac7e64ec2ccd7c7fd30",
+    "data/annotated-root-interface.json": "45261a637c8731a21d041a9b3aeb4cd9c56ac63e195e33362eaed44ed14c01d6",
+    "data/annotated-tail-partition.json": "9a74b57cb2b2911506e45e9ed0db7bb3974eba7f2764d838cef39b0812e2e0cc",
+    "data/compact-hinge-enclosure.json": "6b85793f1b233feaa5b95d8b5af193857af4d967316709b730c502885d85adb7",
+    "data/legacy-powertrain-fit.json": "f05f4442f91e2ff5ac7ce6590c7a04870aeabda682e5cfdac81c0cbdf71e622d",
+    "data/slot-roof-preservation.json": "1abb1097e97b28e6d58db1fc1acbc88847376305e1266beb2bf446bebed28bfc",
+    "generate_transwing.py": "90dbbc1e1b375621b01dcf5b22196ec3369e4ee4f965c96b3a597f0499484e04",
+    "joint_endcaps.py": "4c7a454ff3dbe253bf9847fe352508cf2cfd9bbd25f8b2b8fcc2a05582a5336c",
+    "legacy_powertrain_fit.py": "30e1852dd185e71afd6b30810b5d69cb10cee7f8b20336931564b9da7a2176f0",
+    "paint_exact_regions.py": "ee5432260e656fafca78adf4fe5f598ce9169dbcf826dde7821c757aa789d480",
+    "root_paint_ownership.py": "28588906345120fedc0ffcddecd2896fb280a155940734e8ee8cb6479b6e844a",
+    "surface_supports.py": "103e40b0aea7f5c0e164116e5a136208a5959c1a01c026a361e1e9f6c82d8925",
+    "wing_surface_repair.py": "4c713427b6d995c9af46d7b861b2e10a6fcc5ecea4222d3dfdaece8d961d6cdb"
+  },
+  "geometryAcceptance": false,
+  "earlySlotPreparation": {
+    "plannedAnchor": [
+      0.97,
+      -1.04,
+      -0.17641587544274198
+    ],
+    "travel": {
+      "samples": 4001,
+      "minimumY": 0.9718781924048734,
+      "minimumAtUnfold": 0.0,
+      "maximumY": 1.9,
+      "maximumAtUnfold": 1.0,
+      "hoverY": 0.9718781924048734,
+      "cruiseY": 1.9,
+      "continuousExtremaProof": false
+    },
+    "actualApertureXYBounds": [
+      [
+        0.09549999982118607,
+        0.21586261689662933
+      ],
+      [
+        0.7771375775337219,
+        1.9544873237609863
+      ]
+    ],
+    "outputCenterYOffset": -0.009,
+    "outputRadius": 0.007,
+    "carriageLongitudinalEnvelope": [
+      0.9558781924048734,
+      1.898
+    ],
+    "longitudinalMargins": [
+      0.17874061487115145,
+      0.05648732376098642
+    ],
+    "longitudinalAdmissionPassed": true,
+    "slotGeometryChanged": false,
+    "fullFiniteMaterialApertureClearancePassed": false,
+    "inputIntentSha256": "73af20dfc8df51400854d2f1dfeb83ffb57c481c11dfe159b1d576c52254c062"
+  },
+  "actualSlotAdmission": {
+    "plannedAnchor": [
+      0.97,
+      -1.04,
+      -0.17641597986221313
+    ],
+    "travel": {
+      "samples": 4001,
+      "minimumY": 0.9718781542883903,
+      "minimumAtUnfold": 0.0,
+      "maximumY": 1.9,
+      "maximumAtUnfold": 1.0,
+      "hoverY": 0.9718781542883903,
+      "cruiseY": 1.9,
+      "continuousExtremaProof": false
+    },
+    "actualApertureXYBounds": [
+      [
+        0.09549999982118607,
+        0.21586261689662933
+      ],
+      [
+        0.7771375775337219,
+        1.9544873237609863
+      ]
+    ],
+    "outputCenterYOffset": -0.009,
+    "outputRadius": 0.007,
+    "carriageLongitudinalEnvelope": [
+      0.9558781542883903,
+      1.898
+    ],
+    "longitudinalMargins": [
+      0.17874057675466837,
+      0.05648732376098642
+    ],
+    "longitudinalAdmissionPassed": true,
+    "slotGeometryChanged": false,
+    "fullFiniteMaterialApertureClearancePassed": false,
+    "inputIntentSha256": "73af20dfc8df51400854d2f1dfeb83ffb57c481c11dfe159b1d576c52254c062"
+  }
+}

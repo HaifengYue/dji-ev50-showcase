@@ -1,0 +1,20 @@
+{
+  "status": "v8 source seed; no full native candidate output yet",
+  "airframeDetails": {
+    "conceptModule": {
+      "file": "nacelle-system-concept.glb",
+      "separateAsset": true,
+      "defaultVisible": false,
+      "source": "UAFM 2.5.1.1 confirms function/count only",
+      "label": "\u6bcf\u540a\u8231\u914d\u7f6e\u6709\u624b\u518c\u4f9d\u636e\uff1b\u5f62\u72b6\u4e0e\u5e03\u7f6e\u7ec6\u8282\u4e3a\u6982\u5ff5\u793a\u610f",
+      "runtimeBytes": 84352,
+      "sha256": "55f0d778657593e8745ecd0711f5720c3d6f98abb91b9ffab0875eeef8d08996",
+      "editableSource": "assets/blender/nacelle-system-concept.blend",
+      "functionalFlow": "\u76f4\u6d41\u8f93\u5165 \u2192 \u7535\u8c03 \u2192 \u4e09\u76f8\u8f93\u51fa \u2192 \u65e0\u5237\u7535\u673a \u2192 \u8f74\u7aef\uff1b\u529f\u80fd\u793a\u610f",
+      "sourceBytes": 105676,
+      "sourceSha256": "e1ce4da42d21aa46f055dab338430b7516617366faa6cf850f906a6a031187bd",
+      "compression": "EXT_meshopt_compression",
+      "quantization": false
+    }
+  }
+}

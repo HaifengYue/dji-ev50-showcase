@@ -1,0 +1,14 @@
+{
+  "schema": "transwing.separate-audit-archive-reference.v1",
+  "includedInDevelopmentArchive": false,
+  "archiveFilename": "transwing-studio-local-delivery-20261007.tar.gz",
+  "archiveBytes": 1039891669,
+  "archiveSha256": "3f1482d273846f6e329ca7475ccc7f62f3fd1f5d8ba1ce2ea644c199591ec0cd",
+  "libraryPartsInOrder": [
+    "libfile_9b81a2ecb74c8191b45b27052dba4ba2",
+    "libfile_a7b1d53879cc8191bd6a243e86bd51c6",
+    "libfile_03403105047881918a60e85b22cbf4b0"
+  ],
+  "instructions": "Use the original attached split manifest and merge script; verify the combined archive SHA before extracting in a separate directory. Do not overlay this development root.",
+  "archivedFinalIndexSha256": "f95bf3fce1a66ffece7a15d64357955abf1d2aca69bc41f13d5836ddbdfe1f8e"
+}

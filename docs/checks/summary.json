@@ -1,0 +1,74 @@
+{
+  "schema": "transwing.light-development-checks.v1",
+  "checks": [
+    {
+      "name": "node-tests",
+      "command": [
+        "npm",
+        "test"
+      ],
+      "exitCode": 0,
+      "seconds": 24.118,
+      "log": "docs/checks/node-tests.log",
+      "logSha256": "bfc53e86c13b236505a09ba94757bfb430a3d2e31d935d33e417a0d4ff9c747a"
+    },
+    {
+      "name": "light-qa",
+      "command": [
+        "npm",
+        "run",
+        "test:qa"
+      ],
+      "exitCode": 0,
+      "seconds": 0.609,
+      "log": "docs/checks/light-qa.log",
+      "logSha256": "e320e014ffc98ccc1be540043ebbe42cf2d7b2470fd464d5763e5a00d583a5bf"
+    },
+    {
+      "name": "format",
+      "command": [
+        "npm",
+        "run",
+        "format:check"
+      ],
+      "exitCode": 0,
+      "seconds": 1.52,
+      "log": "docs/checks/format.log",
+      "logSha256": "fad16cd3eb30d839064584f1e54b34ed7e6f293588320d5a8602f01b06d36d90"
+    },
+    {
+      "name": "build",
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "exitCode": 0,
+      "seconds": 9.048,
+      "log": "docs/checks/build.log",
+      "logSha256": "8f60e11e0e94b0fb47b198c121cfe4c5ecc73c6112c1396c429428a56fca1d48"
+    },
+    {
+      "name": "python",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "python/tests",
+        "-v"
+      ],
+      "exitCode": 0,
+      "seconds": 0.819,
+      "log": "docs/checks/python.log",
+      "logSha256": "c495c66111c25e2d54c64cc1ab04a58d42b1436db4ed1c80c35f423e8510125f"
+    }
+  ],
+  "allCompleted": true,
+  "passed": true,
+  "pythonPath": "python",
+  "fullMaterialOrMotionReexecuted": false,
+  "browserPixelsTested": false,
+  "initialFailure": "node-tests-initial-missing-output-dir.log; fixed by ensuring qa/frontend exists in the test itself"
+}

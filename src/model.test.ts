@@ -132,8 +132,10 @@ test("新翼端球铰真实内移且所有支承有实际节点与有限接口",
   ] as const) {
     const anchor = scene.getObjectByName(`BraceWing_${side}`)!;
     assert.ok(Math.abs(anchor.position.x + sign * 0.38) < 1e-6);
-    assert.ok(Math.abs(anchor.position.y - 0.02554436791055261) < 1e-6);
-    assert.ok(Math.abs(anchor.position.z + 0.33) < 1e-6);
+    assert.ok(
+      Math.abs(anchor.position.y - (-0.17641587544274198 + 0.2)) < 1e-6,
+    );
+    assert.ok(Math.abs(anchor.position.z + 0.375) < 1e-6);
     assert.equal(anchor.parent?.name, `WingPivot_${side}`);
     assert.ok(scene.getObjectByName(`RootBearingHousing_${side}`));
   }
@@ -268,8 +270,10 @@ test("新球心、刚杆闭合、实际槽轮廓和低置布局均有可复算�
     manifest.wingAttachmentReference.exactImagePixelRegistrationClaimed,
     false,
   );
-  const pivot = new THREE.Vector3(1.5, -0.191, 1.47);
-  const anchor = new THREE.Vector3(1.12, -0.16545563208944739, 1.14);
+  const pivot = new THREE.Vector3(1.35, -0.2, 1.415);
+  // Independently fixed planning skin ray + retained ball rise; native ray is
+  // allowed its existing 1e-6 source encoding bound, not a new fitted datum.
+  const anchor = new THREE.Vector3(0.97, -0.17641587544274198, 1.04);
   const body = new THREE.Vector3(0.16, -0.02, -1.9);
   const length = anchor.distanceTo(body);
   const hoverAnchor = anchor
@@ -339,7 +343,12 @@ test("新分层翼根有可复算移轴和闭合材料契约；实际净空由�
   assert.equal(seam.hardwareHalfGapPreserved, 0.012);
   assert.equal(seam.fairingSeamPreserved, 0.003);
   assert.equal(manifest.fairingRefinements.nominalWallThickness, 0.0025);
-  assert.equal(layered.fullStrokeRequiresNewCollisionEvidence, true);
+  assert.equal(layered.independentFinalGeometryGateRequired, true);
+  assert.equal(
+    layered.schema,
+    "transwing.annotated-root-interface.segmented-tail-v7d.v1",
+  );
+  assert.equal(layered.phase, "repair-trim-required-closing-complete");
   assert.equal(manifest.surfaceRefinements.root.mechanismAxesUnchanged, false);
   assert.equal(
     manifest.internalDrive.loweredLayout.bodyBallAndWingTrajectoryUnchanged,
@@ -352,11 +361,13 @@ test("新分层翼根有可复算移轴和闭合材料契约；实际净空由�
   ] as const) {
     const pivot = scene.getObjectByName(`WingPivot_${side}`)!;
     assert.ok(
-      pivot.position.distanceTo(new THREE.Vector3(sign * 1.5, -0.191, 1.47)) <
+      pivot.position.distanceTo(new THREE.Vector3(sign * 1.35, -0.2, 1.415)) <
         1e-6,
     );
   }
-  for (const name of layered.rebasedDirectChildren)
+  for (const name of manifest.nativeAnnotatedStaging.rebase.sides.flatMap(
+    (side: { directSubtrees: string[] }) => side.directSubtrees,
+  ))
     assert.ok(
       scene.getObjectByName(THREE.PropertyBinding.sanitizeNodeName(name)),
       name,

@@ -1,26 +1,43 @@
 """移轴后的真实翼上球心、定长控制杆与共用滑架；尺寸为概念外观拟合。"""
 import math
 from mathutils import Vector, Quaternion, Matrix
-REFERENCE_PIVOT = (1.35, -1.30, -.22)
-PIVOT_X, PIVOT_Y, PIVOT_Z = 1.50, -1.47, -.191
-WING_ANCHOR_CRUISE = (1.12, -1.14, -.16545563208944739)
+from annotated_mechanism import INTENT, planned_anchor
+REFERENCE_PIVOT = tuple(INTENT['referencePivot'])
+PIVOT_X, PIVOT_Y, PIVOT_Z = INTENT['actualRightPivot']
+WING_ANCHOR_CRUISE = planned_anchor()
+_BOUND_SCENE_MECHANISM = None
+
+def hydrate_final_mechanism():
+    """Saved native scene is the authoritative derived mechanism on reopen."""
+    global PIVOT_X,PIVOT_Y,PIVOT_Z,WING_ANCHOR_CRUISE,_BOUND_SCENE_MECHANISM
+    if _AUTHORING_REFERENCE:return
+    import bpy,json
+    raw=bpy.context.scene.get('annotatedMechanismJSON')
+    if raw is None or raw==_BOUND_SCENE_MECHANISM:return
+    record=json.loads(raw)
+    if record.get('schema')!='transwing.annotated-mechanism.final.v1':raise ValueError('Invalid saved mechanism contract')
+    PIVOT_X,PIVOT_Y,PIVOT_Z=record['actualRightPivot']
+    WING_ANCHOR_CRUISE=tuple(record['wingAnchorRightCruise'])
+    _BOUND_SCENE_MECHANISM=raw
 _AUTHORING_REFERENCE = False
 
 def use_authoring_reference(enabled):
     """原有外廓先按原坐标构造；移轴重基后只使用实际机构坐标。"""
     global _AUTHORING_REFERENCE
     _AUTHORING_REFERENCE = bool(enabled)
-FOLD_ANGLE = 2 * math.pi / 3
+FOLD_ANGLE = math.radians(INTENT['foldAngleDegrees'])
 BEARING_OFFSET = .16
-SLIDER_X, SLIDER_Z, SLIDER_CRUISE_Y = .16, -.02, 1.90
+SLIDER_X, SLIDER_CRUISE_Y, SLIDER_Z = INTENT['bodyAnchorRightCruise']
 
 def wing_axis(sign):return Vector((-sign,-1,1)).normalized()
 def wing_rotation(sign,unfold):return Quaternion(wing_axis(sign),sign*FOLD_ANGLE*(1-unfold))
 def pivot_position(sign):
+    hydrate_final_mechanism()
     x,y,z = REFERENCE_PIVOT if _AUTHORING_REFERENCE else (PIVOT_X,PIVOT_Y,PIVOT_Z)
     return Vector((sign*x,y,z))
 def brace_body(sign):return Vector((sign*SLIDER_X,SLIDER_CRUISE_Y,SLIDER_Z))
 def brace_wing_local(sign):
+    hydrate_final_mechanism()
     if _AUTHORING_REFERENCE:
         return Vector((-sign*.45969725856807764,.33799887117646427,.03580632777801959))
     x,y,z = WING_ANCHOR_CRUISE
