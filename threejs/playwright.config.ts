@@ -21,6 +21,12 @@ export default defineConfig({
   },
   webServer: [
     {
+      command: 'node hangar-server.mjs',
+      url: 'http://127.0.0.1:8790/api/hangar/v1/health',
+      reuseExistingServer: false,
+      timeout: 20_000,
+    },
+    {
       command: 'node qa/serve-built.mjs',
       url: 'http://127.0.0.1:4174/hangar/',
       reuseExistingServer: !process.env.CI,

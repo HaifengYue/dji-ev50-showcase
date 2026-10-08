@@ -6,7 +6,7 @@ This integration starts from main commit `3b1887e23465824d3452eb4052e793e1f55b34
 
 The Vite app remains `threejs/`. One WebGL renderer, canvas, scene, render pass and animation loop serve the selected aircraft. The registry lists capabilities and cameras. The selection controller aborts previous work, disposes the old instance, and accepts only the newest completion. A GLTF parse cannot itself be aborted; late parsed resources are disposed before mounting.
 
-EV50 uses its original flight/telemetry/airframe logic. Transwing has a lazy-loaded native adapter with reusable kinematics, motors, runtime, camera-framing and exposure modules. It does not mount React, another Canvas, an iframe or a second app. Models are exclusively instance-owned and unloaded on switching; the browser HTTP cache may reuse downloaded bytes. Shared terrain and EV50 environment belong to the host.
+EV50 uses its original flight/telemetry/airframe logic. Transwing has a lazy-loaded native adapter with reusable kinematics, motors, runtime, camera-framing and rotor-exposure modules. It uses the same host product stage and dynamic landscape; its former private hangar, grid, floor and lighting are not constructed. A 180-second shared FlightController mission drives world pose while its adapter translates route phases into model-specific mechanisms. It does not mount React, another Canvas, an iframe or a second app. Models are exclusively instance-owned and unloaded on switching; the browser HTTP cache may reuse downloaded bytes. Shared terrain and EV50 environment belong to the host.
 
 ## Usage
 
@@ -17,6 +17,8 @@ Shared navigation provides product/flight modes, playback, seek, speed/loop, qua
 Switching stops the previous airframe, clears imported/replayed state, closes its transport, invalidates pending callbacks and releases its model resources. Re-entering an aircraft starts with fresh state. Pending screenshot/video output is canceled on a switch; finish a capture first to keep it.
 
 ## API isolation
+
+The recommended common entry point is `window.hangarAPI.request`, with normalized state, validated configuration, selection generations, exclusive control leases and post-render applied acknowledgements. The companion `control:hangar` service supplies one loopback-only origin for both aircraft. See [the complete unified contract and compatibility map](UNIFIED_CONTROL.md).
 
 `window.hangarAPI.list()` returns supported aircraft and capabilities. `state()` reports selected/current/pending/ready state and the active descriptor. `select('ev50' | 'transwing')` performs the same validated transition as the UI. `window.hangarDiagnostics` exposes read-only diagnostic snapshots for acceptance tests.
 

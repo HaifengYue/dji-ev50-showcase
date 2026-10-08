@@ -31,6 +31,10 @@ export const AIRCRAFT = [
       'independent-surfaces',
       'python',
       'json-replay',
+      'shared-terrain',
+      'shared-routes',
+      'sensor-cameras',
+      'unified-control',
     ],
     cameras: [
       ['free', '自由观察'],
@@ -39,6 +43,10 @@ export const AIRCRAFT = [
       ['top', '正交俯视'],
       ['joint-L', '左关节'],
       ['joint-R', '右关节'],
+      ['follow', '飞行跟随'],
+      ['wide', '地形全景'],
+      ['fpv', '机鼻相机'],
+      ['down', '下视相机'],
     ],
   },
 ] as const;

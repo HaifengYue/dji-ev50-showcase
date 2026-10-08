@@ -14,7 +14,10 @@
     "test:model": "node validate-glb.mjs",
     "test:airframe": "node test-airframe.mjs",
     "test:hangar": "node test-hangar.mjs",
-    "test:browser": "playwright test"
+    "test:browser": "playwright test",
+    "control:hangar": "node hangar-server.mjs",
+    "test:control": "node test-control-contract.mjs && node test-hangar-server.mjs",
+    "test:world": "node test-transwing-world.mjs"
   },
   "dependencies": {
     "three": "^0.170.0",

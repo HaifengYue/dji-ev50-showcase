@@ -1,4 +1,10 @@
 import type * as T from 'three';
+import type { Frame, routes } from '../flight';
+import type {
+  ControlLease,
+  AircraftControlCommand,
+  AdapterAircraftState,
+} from '../control/contracts';
 
 export type AircraftId = 'ev50' | 'transwing';
 export type AircraftMode = 'product' | 'flight';
@@ -26,7 +32,23 @@ export type AircraftSnapshot = {
   /** True only when a live external owner locks transport controls. */
   externallyControlled?: boolean;
 };
+/** World pose in metres: +X east/right, +Y up, +Z south/body forward.
+ * Adapters retain asset-local pivots; this datum never receives mechanism transforms. */
+export type AircraftWorldState = {
+  position: T.Vector3;
+  quaternion: T.Quaternion;
+  speedMps: number;
+  time: number;
+  mode: AircraftMode;
+  routeProgress: number;
+  path: T.Vector3[];
+  route: keyof typeof routes;
+  source: 'demo' | 'external' | 'replay';
+};
 export type AircraftHost = {
+  flightFrames: Frame[];
+  setSceneMode: (mode: AircraftMode) => void;
+  clearTrail: () => void;
   scene: T.Scene;
   renderer: T.WebGLRenderer;
   canvas: HTMLCanvasElement;
@@ -49,6 +71,12 @@ export interface AircraftInstance {
   setLoop(loop: boolean): void;
   setView(view: string): void;
   snapshot(): AircraftSnapshot;
+  worldState?(): AircraftWorldState;
+  setControlLease?(lease: ControlLease | null, reason?: string): void;
+  applyControl?(command: AircraftControlCommand): void;
+  normalizedState?(): AdapterAircraftState;
+  controlBlockedReason?(): string | undefined;
+  setRoute?(route: keyof typeof routes): void;
   describe(): unknown;
   dispose(): void;
 }

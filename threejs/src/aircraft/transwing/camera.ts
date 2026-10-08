@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import type { AircraftHost } from '../types';
+import { trackingCameraPose, type TranswingFlightView } from './flightCamera';
 import {
   CAMERA_CLIP_DEFAULTS,
   CAMERA_NAVIGATION,
@@ -42,6 +43,7 @@ export class TranswingCamera {
   private orbit = false;
   private internal = false;
   private lastExternal = new THREE.Vector3();
+  view: 'free' | 'inspection' | TranswingFlightView = 'free';
   constructor(private host: AircraftHost) {
     this.controls = this.makeControls(this.active);
     host.setCamera(this.active);
@@ -53,6 +55,7 @@ export class TranswingCamera {
     const controls = new OrbitControls(camera, this.host.canvas);
     Object.assign(controls, CAMERA_NAVIGATION);
     controls.maxPolarAngle = Math.PI;
+    controls.maxDistance = 5200;
     controls.dampingFactor = 0.06;
     controls.autoRotateSpeed = 0.45;
     controls.target.copy(this.target);
@@ -68,6 +71,7 @@ export class TranswingCamera {
     externalPosition = new THREE.Vector3(),
   ) {
     if (this.disposed) return;
+    this.view = orthographic ? 'inspection' : 'free';
     frame = {
       ...frame,
       position: frame.position.clone(),
@@ -138,9 +142,49 @@ export class TranswingCamera {
   resetExternalAnchor(position: readonly [number, number, number]) {
     this.lastExternal.fromArray(position);
   }
-  update(dt: number, externalPosition: readonly [number, number, number] | null) {
+  setFlightView(view: TranswingFlightView, position: THREE.Vector3, quaternion: THREE.Quaternion) {
+    const pose = trackingCameraPose(view, position, quaternion);
+    const distance = pose.position.distanceTo(pose.target);
+    this.frame(
+      { ...pose, distance, height: 2 * distance * Math.tan(THREE.MathUtils.degToRad(19.5)) },
+      false,
+    );
+    this.view = view;
+    this.lastExternal.copy(position);
+  }
+  update(
+    dt: number,
+    externalPosition: readonly [number, number, number] | null,
+    attitude = new THREE.Quaternion(),
+  ) {
     if (this.disposed) return;
-    if (externalPosition) {
+    const tracking = !['free', 'inspection'].includes(this.view);
+    if (tracking && externalPosition) {
+      const pose = trackingCameraPose(
+        this.view as TranswingFlightView,
+        new THREE.Vector3(...externalPosition),
+        attitude,
+      );
+      if (this.transition) {
+        Object.assign(this.transition.frame, pose);
+        const targetCamera = new THREE.PerspectiveCamera();
+        targetCamera.position.copy(pose.position);
+        targetCamera.up.copy(pose.up);
+        targetCamera.lookAt(pose.target);
+        this.transition.toQuaternion.copy(targetCamera.quaternion);
+      } else {
+        this.active.position.copy(pose.position);
+        this.active.up.copy(pose.up);
+        this.active.lookAt(pose.target);
+        this.target.copy(pose.target);
+        this.controls.target.copy(pose.target);
+        this.active.updateMatrixWorld(true);
+      }
+      this.lastExternal.fromArray(externalPosition);
+    }
+    // Free observation is world-fixed, including external/Python motion. Only an
+    // explicitly chosen inspection view translates its existing offset with the rig.
+    if (externalPosition && this.view === 'inspection') {
       const current = new THREE.Vector3(...externalPosition);
       const delta = current.clone().sub(this.lastExternal);
       if (delta.lengthSq() !== 0) {
@@ -182,9 +226,16 @@ export class TranswingCamera {
       this.active.updateMatrixWorld(true);
       if (p === 1) this.finish();
     }
-    this.controls.autoRotate = this.orbit && !this.internal && this.active === this.perspective;
-    if (!this.transition) this.controls.update(dt);
-    syncCameraDepthRange(this.active, this.target, this.host.scene.fog);
+    this.controls.enabled = !this.transition && !tracking;
+    this.controls.autoRotate =
+      this.orbit && !this.internal && this.view === 'free' && this.active === this.perspective;
+    if (!this.transition && !tracking) this.controls.update(dt);
+    // Camera clipping is local; never write shared host fog/background.
+    syncCameraDepthRange(this.active, this.target);
+    if (this.active.far < 9000) {
+      this.active.far = 9000;
+      this.active.updateProjectionMatrix();
+    }
   }
   resize() {
     resizeCameraProjection(this.active, this.aspect);
@@ -192,6 +243,7 @@ export class TranswingCamera {
   describe() {
     return {
       type: this.active.type,
+      view: this.view,
       position: this.active.position.toArray(),
       target: this.target.toArray(),
       zoom: this.active.zoom,

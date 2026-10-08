@@ -1,4 +1,13 @@
 import * as T from 'three';
+import { UnifiedControlGateway } from './control/gateway';
+import { LocalHttpBridge } from './control/localHttpBridge';
+import { controlPanel } from './control/panel';
+import { Ev50ExternalControl } from './aircraft/ev50Control';
+import type {
+  AircraftControlCapabilities,
+  AircraftControlCommand,
+  AdapterAircraftState,
+} from './control/contracts';
 import { AIRCRAFT, aircraftDescriptor, aircraftFromUrl, isAircraftId } from './aircraft/registry';
 import { createAircraftSelection } from './aircraft/selection';
 import { disposeObjectTree } from './aircraft/resources';
@@ -39,6 +48,10 @@ import { simulationPanel } from './simulation/panel';
 import { ROTOR_NAMES, Surfaces } from './simulation/telemetry';
 const $ = <E extends HTMLElement>(s: string) => document.querySelector<E>(s)!;
 const canvas = $<HTMLCanvasElement>('#scene');
+let unifiedGateway: UnifiedControlGateway | undefined;
+let unifiedBridge: LocalHttpBridge | undefined;
+let unifiedPanel: ReturnType<typeof controlPanel> | undefined;
+const ev50External = new Ev50ExternalControl();
 let selectedId: AircraftId = aircraftFromUrl(new URL(location.href));
 let selectionRevision = 0;
 let historyRestores = 0;
@@ -106,6 +119,7 @@ let flight: FlightController,
   ready = false,
   cameraMode: CameraMode = 'free',
   showLabels = false;
+let sharedSceneMode: 'product' | 'flight' = 'product';
 let assetVersion = 'EV50';
 const site = sceneDetails(terrain.group);
 let rig: ReturnType<typeof aircraftRig> | undefined;
@@ -172,6 +186,7 @@ mapWrap.className = 'route-map';
 mapWrap.innerHTML =
   '<span>航线 / 完成度 <b id="route-progress">0%</b></span><canvas width="180" height="92" aria-label="飞行航线缩略图"></canvas>';
 $('.right-tools')?.append(mapWrap);
+let missionPath: T.Vector3[] | null = null;
 const mapCanvas = mapWrap.querySelector('canvas')!,
   missionMap = routeMap(mapCanvas);
 for (const d of labelData) {
@@ -325,9 +340,18 @@ async function loadEv50(signal: AbortSignal): Promise<AircraftInstance> {
     throw error;
   }
 }
+/** The host alone owns the stage, lighting, fog and terrain for every airframe. */
+function setSceneMode(mode: 'product' | 'flight') {
+  if (sharedSceneMode !== mode) site.clearTrail();
+  sharedSceneMode = mode;
+  terrain.group.visible = mode === 'flight';
+  scene.background = new T.Color(mode === 'product' ? 0x202c34 : 0xa4becb);
+  scene.fog = mode === 'product' ? null : new T.Fog(0xa4becb, 1800, 7200);
+}
 function setMode(mode: 'product' | 'flight') {
   if (selectedId === 'transwing') {
     selection.current?.setMode(mode);
+    cameraSelect.value = 'free';
     return;
   }
   if (!ready) return;
@@ -337,17 +361,12 @@ function setMode(mode: 'product' | 'flight') {
   flight.restart();
   mapWrap.hidden = mode === 'product';
   flight.playing = mode === 'flight';
-  terrain.group.visible = mode === 'flight';
+  setSceneMode(mode);
   cameraMode = mode === 'flight' ? 'follow' : 'free';
   $<HTMLSelectElement>('#camera').value = cameraMode;
   controls.enabled = cameraMode === 'free';
   if (mode === 'product') {
     presentationView.resetProductView();
-    scene.background = new T.Color(0x202c34);
-    scene.fog = null;
-  } else {
-    scene.background = new T.Color(0xa4becb);
-    scene.fog = new T.Fog(0xa4becb, 1800, 7200);
   }
   $('#product').classList.toggle('active', mode === 'product');
   $('#flight').classList.toggle('active', mode === 'flight');
@@ -367,10 +386,8 @@ function sourceChanged(source: SimulationSource) {
   }
   flight.pause();
   flight.mode = 'flight';
-  terrain.group.visible = true;
+  setSceneMode('flight');
   mapWrap.hidden = true;
-  scene.background = new T.Color(0xa4becb);
-  scene.fog = new T.Fog(0xa4becb, 1800, 7200);
   if (cameraMode === 'free') cameraMode = 'follow';
   controls.enabled = false;
   $<HTMLSelectElement>('#camera').value = cameraMode;
@@ -462,6 +479,10 @@ $<HTMLInputElement>('#annotations').onchange = (e) => {
   showLabels = (e.target as HTMLInputElement).checked;
 };
 routeSelect.onchange = () => {
+  if (selectedId === 'transwing') {
+    selection.current?.setRoute?.(routeSelect.value as keyof typeof routes);
+    return;
+  }
   if (ready) {
     leaveSimulation();
     site.clearTrail();
@@ -528,7 +549,7 @@ const currentSettings = (): ApiSettings => ({
 });
 const apiGateway = new Ev50ApiGateway({
   get ready() {
-    return ready && selectedId === 'ev50';
+    return ready && selectedId === 'ev50' && !unifiedGateway?.getLease();
   },
   visualRequest: (operation: string, payload: unknown) => {
     requireReady();
@@ -666,7 +687,34 @@ const api = installBrowserApi(apiGateway, (callback) => {
   return () => subscribers.delete(callback);
 });
 Object.assign(window, { ev50API: api });
-const simulationTools = simulationPanel(api, simulation, site.getSettings);
+const scenePanelApi = {
+  request(request: { operation: string; payload?: unknown }) {
+    if (selectedId !== 'transwing') return api.request(request);
+    try {
+      let data: unknown;
+      if (request.operation === 'scene.configure') data = site.configure(request.payload);
+      else if (request.operation === 'scene.describe') data = site.describe();
+      else if (request.operation === 'scene.query') data = site.query(request.payload);
+      else if (request.operation === 'aircraft.describe') data = selection.current?.describe();
+      else if (request.operation === 'camera.describe')
+        data = {
+          type: activeCamera.type,
+          position: activeCamera.position.toArray(),
+          quaternion: activeCamera.quaternion.toArray(),
+        };
+      else if (request.operation === 'flight.state') data = selection.current?.worldState?.();
+      else throw new Error('EV50 telemetry is unavailable for this aircraft');
+      return { operation: request.operation, ok: true as const, data };
+    } catch (error) {
+      return {
+        operation: request.operation,
+        ok: false as const,
+        error: { code: 'INVALID_REQUEST', message: String(error) },
+      };
+    }
+  },
+};
+const simulationTools = simulationPanel(scenePanelApi, simulation, site.getSettings);
 let stopHttpBridge: (() => void) | undefined;
 let telemetryElapsed = 0;
 $<HTMLSelectElement>('#playback-speed').onchange = (e) => {
@@ -677,7 +725,7 @@ $<HTMLSelectElement>('#playback-speed').onchange = (e) => {
   if (ready) flight.setSpeed(Number((e.target as HTMLSelectElement).value));
 };
 function quality(q: string) {
-  postEnabled = q === 'High' && selectedId === 'ev50';
+  postEnabled = q === 'High';
   renderer.setPixelRatio(Math.min(devicePixelRatio, q === 'Low' ? 1 : q === 'Medium' ? 1.5 : 2));
   renderer.shadowMap.enabled = q !== 'Low';
   const size = q === 'High' ? 4096 : 1024;
@@ -719,6 +767,7 @@ document.addEventListener('keydown', (e) => {
 });
 canvas.addEventListener('webglcontextlost', (e) => {
   e.preventDefault();
+  unifiedGateway?.disconnect();
   $('#loading').hidden = false;
   $('#loading').textContent = '图形设备连接中断，请刷新页面恢复。';
   selection.current?.setMode('product');
@@ -743,6 +792,8 @@ const neutralSurfaces: Surfaces = { aileron: 0, elevator: 0, rudder: 0 };
 const replayThrottle = (rpm: number, maximum: number) =>
   `${Math.round(T.MathUtils.clamp(rpm / maximum, 0, 1) * 100)}%`;
 function animate() {
+  unifiedBridge?.sync();
+  unifiedGateway?.beforeFrame();
   const frameRevision = selectionRevision;
   const frameAircraft = selection.current?.id ?? null;
   const dt = Math.min(clock.getDelta(), 0.1),
@@ -751,12 +802,35 @@ function animate() {
   if (selectedId === 'transwing' && selection.current) {
     selection.current.update(activeDt, now);
     syncTranswingHud(selection.current);
+    const world = selection.current.worldState?.();
+    if (world) {
+      presentationView.update(world.mode, false);
+      site.update(
+        activeDt,
+        world.time,
+        world.position,
+        world.mode === 'flight',
+        scene.fog instanceof T.Fog ? scene.fog : null,
+      );
+      sun.position.copy(world.position).add(presentationView.sunOffset);
+      sun.target.position.copy(world.position);
+      mapWrap.hidden = world.mode !== 'flight' || world.source !== 'demo';
+      routeSelect.disabled = world.source !== 'demo';
+      if (missionPath !== world.path) {
+        missionPath = world.path;
+        missionMap.setPath(world.path);
+      }
+      missionMap.draw(world.routeProgress, world.position);
+      $('#route-progress').textContent = `${Math.round(world.routeProgress * 100)}%`;
+    }
+    simulationTools.updateScene();
   }
   if (ready && selectedId === 'ev50') {
     presentationView.update(flight.mode, cameraMode === 'free');
-    const frame = simulation.tick(activeDt, now),
+    const externalFrame = ev50External.snapshot();
+    const frame = externalFrame ?? simulation.tick(activeDt, now),
       simState = simulation.state(now),
-      simulated = simulation.source !== 'demo';
+      simulated = !!externalFrame || simulation.source !== 'demo';
     if (!simulated) {
       flight.tick(activeDt);
       visual.position.copy(flight.position);
@@ -801,8 +875,12 @@ function animate() {
         const index = (ROTOR_NAMES as readonly string[]).indexOf(r.pivot.name),
           rpm = frame && index >= 0 ? frame.rotorRpm[index] : 0;
         power = rpm / 1800;
-        raw = rotorAngles.get(r.pivot.name) ?? 0;
-        if (!simState.paused && !(simulation.source === 'external' && simState.stale))
+        raw = externalFrame ? ev50External.angle(index) : (rotorAngles.get(r.pivot.name) ?? 0);
+        if (
+          !externalFrame &&
+          !simState.paused &&
+          !(simulation.source === 'external' && simState.stale)
+        )
           raw = (raw + ((rpm * 2 * Math.PI) / 60) * activeDt) % (2 * Math.PI);
         rotorAngles.set(r.pivot.name, raw);
       }
@@ -976,6 +1054,10 @@ function animate() {
     frameAircraft === selection.current?.id;
   renderedSelectionRevision = currentWasRendered ? frameRevision : -1;
   renderedAircraft = currentWasRendered ? frameAircraft : null;
+  if (currentWasRendered && !renderer.getContext().isContextLost())
+    unifiedGateway?.afterRender(frameNumber);
+  updateControlOwnership();
+  unifiedPanel?.update();
   presentationView.afterRender();
   document.body.dataset.geometries = String(renderer.info.memory.geometries);
   document.body.dataset.textures = String(renderer.info.memory.textures);
@@ -997,7 +1079,9 @@ function syncTranswingHud(instance: AircraftInstance) {
     state.control === 'replay'
       ? 'JSON REPLAY'
       : state.control === 'external'
-        ? 'PYTHON CONTROL'
+        ? state.timelineLabel === '外部仿真时间'
+          ? 'UNIFIED API CONTROL'
+          : 'PYTHON CONTROL'
         : state.mode === 'product'
           ? 'MECHANISM STUDY'
           : 'FLIGHT DEMONSTRATION';
@@ -1059,10 +1143,10 @@ function configureAircraftShell(id: AircraftId) {
   );
   cameraSelect.value = 'free';
   for (const element of document.querySelectorAll<HTMLElement>(
-    '[data-ev50-only],#simulation-tools,#scene-tools',
+    '[data-ev50-only],#simulation-tools',
   ))
     element.hidden = id !== 'ev50';
-  routeLabel.hidden = id !== 'ev50';
+  routeLabel.hidden = false;
   mapWrap.hidden = true;
   labelEls.forEach((element) => {
     element.hidden = true;
@@ -1084,8 +1168,15 @@ function createSelection() {
       if (id === 'ev50') return loadEv50(signal);
       const module = await import('./aircraft/transwing/index');
       signal.throwIfAborted();
+      const response = await fetch(assetUrl('flight.json'), { signal });
+      if (!response.ok) throw new Error('共享航线数据读取失败');
+      const data = await response.json();
+      signal.throwIfAborted();
       return module.createTranswing(
         {
+          flightFrames: data.frames as Frame[],
+          setSceneMode,
+          clearTrail: () => site.clearTrail(),
           scene,
           renderer,
           canvas,
@@ -1100,6 +1191,8 @@ function createSelection() {
       );
     },
     onPending(id) {
+      unifiedGateway?.invalidateSelection();
+      ev50External.release();
       ++selectionRevision;
       selectedId = id as AircraftId;
       ready = false;
@@ -1119,8 +1212,11 @@ function createSelection() {
       aircraft.visible = selectedId === 'ev50';
       controls.enabled = selectedId === 'ev50';
       controls.autoRotate = false;
-      terrain.group.visible = false;
-      sun.visible = hemisphere.visible = selectedId === 'ev50';
+      setSceneMode('product');
+      sun.visible = hemisphere.visible = true;
+      sun.position.set(-35, 65, 25);
+      sun.target.position.set(0, 0, 0);
+      missionPath = null;
       scene.environment = envmap.texture;
       scene.environmentIntensity = 0.45;
       renderer.toneMappingExposure = 1;
@@ -1156,6 +1252,10 @@ function createSelection() {
       >('.modes button,.timeline-panel button,.timeline-panel input,#camera'))
         control.disabled = false;
       presentationView.setReady();
+      for (const control of document.querySelectorAll<
+        HTMLInputElement | HTMLSelectElement | HTMLButtonElement
+      >('#scene-tools input,#scene-tools select,#scene-tools button,#lighting,#route,#immersive'))
+        control.disabled = false;
       instance.setQuality($<HTMLSelectElement>('#quality').value as AircraftQuality);
       instance.resize();
       if (id === 'ev50') stopHttpBridge = startHttpBridge(api);
@@ -1172,6 +1272,188 @@ function createSelection() {
   });
 }
 let selection = createSelection();
+function unifiedCapabilities(): AircraftControlCapabilities {
+  const operations: AircraftControlCapabilities['operations'] = [
+    'aircraft.pose',
+    'clock.step',
+    'transport.play',
+    'transport.pause',
+    'transport.reset',
+    'transport.seek',
+    'transport.speed',
+    'transport.loop',
+    ...(selectedId === 'ev50'
+      ? ['ev50.motors' as const]
+      : [
+          'transwing.mechanism' as const,
+          'transwing.motors' as const,
+          'transwing.surfaces' as const,
+        ]),
+  ];
+  return {
+    aircraft: selectedId,
+    rotorCount: selectedId === 'ev50' ? 11 : 4,
+    operations,
+    body: {
+      forward: '+Z',
+      up: '+Y',
+      origin:
+        selectedId === 'ev50'
+          ? 'EV50 source GLB datum; home pad y=0'
+          : 'ground datum at home pad y=0; source rig offset converted by adapter',
+    },
+    notes:
+      selectedId === 'ev50'
+        ? ['Eleven rotors, grouped lift/cruise power control; no Transwing motor names']
+        : ['Four named motors; six independent surfaces; unchanged native mechanism rig'],
+  };
+}
+function normalizedState(): AdapterAircraftState {
+  if (selectedId === 'transwing') return selection.current!.normalizedState!();
+  const external = ev50External.snapshot();
+  const state = status();
+  const frame = external ?? simulation.frame;
+  const source = external ? 'external' : simulation.source;
+  const simulated = source !== 'demo';
+  return {
+    pose: {
+      positionM: frame && simulated ? [...frame.position] : flight.position.toArray(),
+      attitude: frame && simulated ? [...frame.quaternion] : flight.quaternion.toArray(),
+      velocityMps: frame && simulated ? [...frame.velocity] : null,
+    },
+    clock: {
+      authority: source === 'demo' ? 'host' : source === 'external' ? 'external' : 'replay',
+      seconds: external?.time ?? state.time,
+    },
+    controlMode: source === 'demo' ? 'local' : source === 'external' ? 'external' : 'replay',
+    transport: {
+      playing: external ? ev50External.playing : state.playing,
+      position: external?.time ?? state.time ?? 0,
+      duration: external ? 0 : (state.duration ?? 0),
+      unit: 'seconds',
+      speed: simulated ? null : flight.speed,
+      loop: !simulated && flight.loop,
+    },
+    model: {
+      aircraft: 'ev50',
+      rotorCount: 11,
+      rotorsRpm:
+        frame && simulated
+          ? [...frame.rotorRpm]
+          : ROTOR_NAMES.map((_, i) => (i < 8 ? flight.lift : flight.cruise) * 1800),
+    },
+  };
+}
+function applyUnifiedCommand(command: AircraftControlCommand) {
+  if (selectedId === 'transwing') {
+    if (!selection.current?.applyControl)
+      throw new Error('Transwing control adapter is unavailable');
+    selection.current.applyControl(command);
+    return;
+  }
+  if (ev50External.active) {
+    ev50External.apply(command);
+    return;
+  }
+  switch (command.operation) {
+    case 'transport.play':
+      if (flight.mode !== 'flight') setMode('flight');
+      flight.playing = true;
+      break;
+    case 'transport.pause':
+      flight.pause();
+      break;
+    case 'transport.reset':
+      site.clearTrail();
+      flight.pause();
+      flight.restart();
+      break;
+    case 'transport.seek':
+      site.clearTrail();
+      flight.seek(command.payload.position);
+      break;
+    case 'transport.speed':
+      flight.setSpeed(command.payload.speed);
+      break;
+    case 'transport.loop':
+      flight.loop = command.payload.loop;
+      break;
+    case 'ev50.motors':
+      flight.applyCommand({ type: 'motor', ...command.payload });
+      setSceneMode('flight');
+      break;
+    default:
+      throw new Error('Operation requires an external EV50 lease');
+  }
+}
+function initializeUnifiedControl() {
+  unifiedGateway = new UnifiedControlGateway(
+    {
+      getContext: () => ({
+        aircraft: selectedId,
+        generation: selectionRevision,
+        ready: !!selection.current,
+        blockedReason:
+          selectedId === 'ev50'
+            ? simulation.source !== 'demo'
+              ? 'Legacy EV50 telemetry or replay owns the aircraft'
+              : undefined
+            : selection.current?.controlBlockedReason?.(),
+      }),
+      getState: normalizedState,
+      getCapabilities: unifiedCapabilities,
+      apply: applyUnifiedCommand,
+      leaseChanged(lease, reason) {
+        if (selectedId === 'transwing') {
+          selection.current?.setControlLease?.(lease, reason);
+          return;
+        }
+        if (!ready) return;
+        if (lease?.controlMode === 'external') {
+          ev50External.acquire(flight);
+          flight.mode = 'flight';
+          setSceneMode('flight');
+          site.clearTrail();
+        } else if (!lease) {
+          const hadExternal = ev50External.active;
+          ev50External.release();
+          flight.pause();
+          if (hadExternal) setMode('product');
+          for (const control of document.querySelectorAll<
+            HTMLInputElement | HTMLSelectElement | HTMLButtonElement
+          >(
+            '.modes button,.timeline-panel input,.timeline-panel button,.timeline-panel select,#route,#simulation-tools button,#simulation-tools input,#simulation-tools select',
+          ))
+            control.disabled = false;
+        }
+      },
+    },
+    { origin: location.origin },
+  );
+  unifiedBridge = new LocalHttpBridge(unifiedGateway);
+  unifiedPanel = controlPanel(unifiedGateway, unifiedBridge);
+}
+function updateControlOwnership() {
+  const lease = unifiedGateway?.getLease();
+  if (!lease) return;
+  for (const element of document.querySelectorAll<
+    HTMLInputElement | HTMLSelectElement | HTMLButtonElement
+  >(
+    '.modes button,.timeline-panel input,.timeline-panel button,.timeline-panel select,#route,#simulation-tools button,#simulation-tools input,#simulation-tools select',
+  ))
+    element.disabled = true;
+  if (selectedId === 'ev50' && ev50External.active) {
+    const state = ev50External.snapshot()!;
+    $('#state').textContent = '统一 API 外部控制';
+    $('#state-code').textContent = 'EXTERNAL';
+    $('#mode-label').textContent = 'EXTERNAL VISUAL CONTROL';
+    $('#time').textContent = `${state.time.toFixed(2)} s · 外部步进时钟`;
+    $('#speed').textContent = Math.hypot(...state.velocity).toFixed(1);
+    $('#altitude').textContent = state.position[1].toFixed(1);
+    $('#play').textContent = ev50External.playing ? '暂停' : '播放';
+    mapWrap.hidden = true;
+  }
+}
 function selectAircraft(id: AircraftId, historyMode: 'push' | 'replace' | 'none' = 'push') {
   if (historyMode !== 'none') {
     const url = new URL(location.href);
@@ -1191,6 +1473,8 @@ window.addEventListener('popstate', () => {
   void selectAircraft(aircraftFromUrl(new URL(location.href)), 'none');
 });
 window.addEventListener('pagehide', () => {
+  unifiedBridge?.stop();
+  unifiedGateway?.invalidateSelection();
   selection.dispose();
   simulationTools.deactivate();
   simulation.disconnect();
@@ -1214,6 +1498,9 @@ window.addEventListener('pageshow', (event) => {
 });
 Object.assign(window, {
   hangarAPI: Object.freeze({
+    request: (request: unknown) => unifiedGateway!.request(request),
+    config: () => unifiedGateway!.getConfig(),
+    controlState: () => unifiedGateway!.getState(),
     list: () =>
       AIRCRAFT.map((entry) => ({
         id: entry.id,
@@ -1249,9 +1536,22 @@ Object.defineProperty(window, 'hangarDiagnostics', {
     drawCalls: renderer.info.render.calls,
     camera: activeCamera.type,
     sceneChildren: scene.children.length,
+    scene: {
+      mode: sharedSceneMode,
+      terrainVisible: terrain.group.visible,
+      background: scene.background instanceof T.Color ? scene.background.getHexString() : null,
+      exposure: renderer.toneMappingExposure,
+      environmentIntensity: scene.environmentIntensity,
+      ownedGroups: scene.children.map((child) => child.name),
+      settings: site.describe(),
+    },
+    world: selection.current?.worldState?.(),
     aircraft: selection.current?.describe(),
+    control: unifiedGateway?.getState(),
+    localBridge: unifiedBridge?.describe(),
   }),
 });
+initializeUnifiedControl();
 quality(initialQuality);
 void selectAircraft(selectedId, 'replace');
 renderer.setAnimationLoop(animate);

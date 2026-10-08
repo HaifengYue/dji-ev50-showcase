@@ -153,39 +153,18 @@ export async function testHangarContracts() {
     await testHangarCapture({ load, passed });
     await testHangarSnapshot({ load, passed });
 
-    const { TranswingPresentation } = await load('aircraft/transwing/presentation.ts');
-    const originalBuildEnvironment = TranswingPresentation.prototype.buildEnvironment;
-    const failedScene = new THREE.Scene();
-    const startupFailure = new Error('Synthetic PMREM startup failure');
-    try {
-      TranswingPresentation.prototype.buildEnvironment = function () {
-        throw startupFailure;
-      };
-      assert.throws(
-        () =>
-          new TranswingPresentation(
-            {
-              scene: failedScene,
-              renderer: {},
-              canvas: { clientWidth: 800 },
-            },
-            {
-              bounds: new THREE.Box3(new THREE.Vector3(-3, -1, -2), new THREE.Vector3(3, 1, 2)),
-              detailBounds: {},
-              groundOffset: 0,
-            },
-          ),
-        (error) => error === startupFailure,
-      );
-      assert.equal(
-        failedScene.children.length,
-        0,
-        'failed presentation construction must remove its scene group',
-      );
-      passed('failed Transwing presentation construction rolls back its partially installed scene');
-    } finally {
-      TranswingPresentation.prototype.buildEnvironment = originalBuildEnvironment;
-    }
+    const guideOnly = await load('aircraft/transwing/presentation.ts');
+    assert.equal(guideOnly.TranswingPresentation, undefined);
+    assert.equal(typeof guideOnly.createJointGuide, 'function');
+    const presentationSource = fs.readFileSync('src/aircraft/transwing/presentation.ts', 'utf8');
+    assert.ok(
+      !/PMREMGenerator|GridHelper|DirectionalLight|toneMappingExposure|scene\.background|scene\.environment/.test(
+        presentationSource,
+      ),
+    );
+    passed(
+      'Transwing presentation contains only rig guides and cannot replace the shared environment',
+    );
 
     const { TranswingCamera } = await load('aircraft/transwing/camera.ts');
     const { getPresentationFrame, getInspectionFrame } = await load(
@@ -255,8 +234,8 @@ export async function testHangarContracts() {
     camera.frame(movingFrame, false, false, new THREE.Vector3());
     camera.update(0.5, [20, 0, 0]);
     camera.update(0.6, [30, 0, 0]);
-    nearVector(camera.target, movingFrame.target.clone().add(new THREE.Vector3(30, 0, 0)));
-    passed('external motion during camera transition retains the full world-space displacement');
+    nearVector(camera.target, movingFrame.target);
+    passed('free camera transition ignores world motion instead of silently enabling follow');
 
     reducedMotion = true;
     camera.frame(presentation, false);
@@ -265,8 +244,29 @@ export async function testHangarContracts() {
     nearVector(camera.active.position, presentation.position);
     camera.resetExternalAnchor([0, 0, 0]);
     camera.update(0, [20, 3, -5]);
-    nearVector(camera.target, presentation.target.clone().add(new THREE.Vector3(20, 3, -5)));
-    passed('reduced-motion framing is immediate and external tracking preserves camera offset');
+    nearVector(camera.target, presentation.target);
+    passed('reduced-motion framing is immediate and free camera remains world-fixed');
+
+    const preservedFog = [host.scene.fog.near, host.scene.fog.far];
+    const quaternion = new THREE.Quaternion().setFromEuler(new THREE.Euler(0.2, 0.8, -0.1));
+    camera.setFlightView('follow', new THREE.Vector3(100, 160, -200), quaternion);
+    camera.update(1.1, [100, 160, -200], quaternion);
+    const followed = camera.active.position.clone();
+    camera.update(0.016, [120, 163, -210], quaternion);
+    nearVector(camera.active.position.clone().sub(followed), new THREE.Vector3(20, 3, -10));
+    assert.equal(camera.describe().view, 'follow');
+    assert.deepEqual([host.scene.fog.near, host.scene.fog.far], preservedFog);
+    assert.equal(camera.active.far, 9000);
+    camera.frame(presentation, false, true);
+    const freePosition = camera.active.position.clone(),
+      freeQuaternion = camera.active.quaternion.clone();
+    for (let index = 0; index < 120; index++)
+      camera.update(1 / 60, [1000 + index, 180, -2000], quaternion);
+    nearVector(camera.active.position, freePosition);
+    near(camera.active.quaternion.angleTo(freeQuaternion), 0);
+    passed(
+      'explicit flight follow tracks the rig; free camera and shared scene fog stay unchanged thereafter',
+    );
 
     const beforeDispose = camera.describe();
     const cameraChanges = cameras.length;

@@ -178,7 +178,17 @@ export function simulationPanel(
     action(() => {
       request('scene.configure', { trail: (e.target as HTMLInputElement).checked });
     });
+  const updateScene = () => {
+    const settings = getSceneSettings();
+    element('wind-readout').textContent = `${settings.windSpeed} m/s`;
+    element<HTMLInputElement>('scene-wind').value = String(settings.windSpeed);
+    element<HTMLInputElement>('scene-references').checked = settings.references;
+    element<HTMLInputElement>('scene-trail').checked = settings.trail;
+    element<HTMLSelectElement>('scene-visibility').value = String(settings.visibility);
+    element<HTMLSelectElement>('scene-wind-direction').value = String(settings.windFromDegrees);
+  };
   return {
+    updateScene,
     deactivate() {
       cancelImport();
       message('');

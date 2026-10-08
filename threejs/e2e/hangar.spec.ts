@@ -466,3 +466,305 @@ test('Real Python bridge owns time, receives applied ACKs and releases every sha
     await page.request.delete(`${base}/api/v1/sessions/${sessionId}`);
   }
 });
+
+test('Transwing uses the EV50 stage and world terrain route without a private hangar', async ({
+  page,
+}, info) => {
+  test.setTimeout(180_000);
+  const errors = watchErrors(page);
+  await page.goto('/hangar/?aircraft=transwing');
+  await ready(page, 'transwing');
+  await page.locator('#quality').selectOption('Low');
+  const initial = await diagnostics(page);
+  expect(initial.scene.mode).toBe('product');
+  expect(initial.scene.background).toBe('202c34');
+  expect(initial.scene.exposure).toBe(1);
+  expect(initial.scene.environmentIntensity).toBe(0.45);
+  expect(initial.scene.ownedGroups).not.toContain('Transwing_Presentation');
+  expect(initial.world.position.y).toBeCloseTo(0, 6);
+  await expect(page.getByTestId('tw-environment')).toHaveCount(0);
+  await expect(page.locator('#scene-tools')).toBeVisible();
+  await expect(page.locator('#immersive')).toBeEnabled();
+  await page.screenshot({ path: info.outputPath('transwing-shared-product-stage.png') });
+  await page.locator('#flight').click();
+  await page.locator('#camera').selectOption('follow');
+  await page.evaluate(() => {
+    const timeline = document.querySelector<HTMLInputElement>('#timeline')!;
+    timeline.value = '80';
+    timeline.dispatchEvent(new Event('input', { bubbles: true }));
+  });
+  await expect.poll(async () => (await diagnostics(page)).world.time).toBeCloseTo(80, 3);
+  const flying = await diagnostics(page);
+  expect(flying.scene.mode).toBe('flight');
+  expect(flying.scene.terrainVisible).toBe(true);
+  expect(flying.world.position.y).toBeGreaterThan(100);
+  expect(Math.hypot(flying.world.position.x, flying.world.position.z)).toBeGreaterThan(100);
+  expect(flying.world.speedMps).toBeGreaterThan(5);
+  expect(flying.aircraft.runtime.state.wingTilt).toBeCloseTo(1, 5);
+  expect(flying.aircraft.coordinates.bodyAlignment).toEqual([0, 0, 0, 1]);
+  await expect(page.locator('#timeline')).toHaveAttribute('max', '180');
+  await expect
+    .poll(async () => (await diagnostics(page)).aircraft.camera.transitioning)
+    .toBe(false);
+  await page.screenshot({ path: info.outputPath('transwing-shared-terrain-follow.png') });
+  await page.locator('#camera').selectOption('fpv');
+  await expect.poll(async () => (await diagnostics(page)).aircraft.camera.view).toBe('fpv');
+  await expect
+    .poll(async () => (await diagnostics(page)).aircraft.camera.transitioning)
+    .toBe(false);
+  await page.screenshot({ path: info.outputPath('transwing-shared-terrain-fpv.png') });
+  await page.locator('#product').click();
+  await expect.poll(async () => (await diagnostics(page)).scene.terrainVisible).toBe(false);
+  expect(errors).toEqual([]);
+});
+
+test('Unified browser control isolates models, applies once after render and preserves step clocks', async ({
+  page,
+}, info) => {
+  test.setTimeout(180_000);
+  const errors = watchErrors(page);
+  await page.goto('/hangar/?aircraft=ev50');
+  await ready(page, 'ev50');
+  await page.locator('#quality').selectOption('Low');
+  for (const aircraft of ['ev50', 'transwing'] as const) {
+    if (aircraft === 'transwing') await select(page, aircraft);
+    const state = await page.evaluate(() => (window as any).hangarAPI.controlState());
+    const invoke = (request: any) =>
+      page.evaluate((request) => (window as any).hangarAPI.request(request), request);
+    const envelope = { aircraft, generation: state.generation, owner: 'browser-acceptance' };
+    const acquired = await invoke({
+      ...envelope,
+      id: `${aircraft}-acquire`,
+      operation: 'control.acquire',
+      payload: { controlMode: 'external', clock: 'external', ttlMs: 120000 },
+    });
+    expect(acquired.ok).toBe(true);
+    const owner = { ...envelope, leaseId: acquired.data.leaseId };
+    await expect(page.locator('#flight')).toBeDisabled();
+    await expect(page.locator('#camera')).toBeEnabled();
+    const legacy = await page.evaluate(() =>
+      (window as any).ev50API.request({
+        operation: 'flight.command',
+        payload: { type: 'motor', lift: 1, cruise: 1 },
+      }),
+    );
+    expect(legacy.ok).toBe(false);
+    const frame = (await diagnostics(page)).frameNumber;
+    const pose = await invoke({
+      ...owner,
+      id: `${aircraft}-pose`,
+      operation: 'aircraft.pose',
+      payload: {
+        positionM: [100, 120, 70],
+        attitude: [0, 0, 0, 1],
+        velocityMps: [2, 0, -3],
+        timeSeconds: 0,
+      },
+    });
+    expect(pose.ok).toBe(true);
+    expect(pose.ack.status).toBe('applied');
+    expect(pose.ack.frame).toBeGreaterThan(frame);
+    expect(pose.data.state.pose.positionM).toEqual([100, 120, 70]);
+    const wrongModel = await invoke({
+      ...owner,
+      id: `${aircraft}-wrong-motor`,
+      operation: aircraft === 'ev50' ? 'transwing.motors' : 'ev50.motors',
+      payload:
+        aircraft === 'ev50' ? { motors: { L_Front: { enabled: true } } } : { lift: 1, cruise: 1 },
+    });
+    expect(wrongModel.ok).toBe(false);
+    expect(wrongModel.error.code).toBe('AIRCRAFT_MISMATCH');
+    expect(
+      (await invoke({ ...owner, id: `${aircraft}-play`, operation: 'transport.play', payload: {} }))
+        .ok,
+    ).toBe(true);
+    const command = {
+      ...owner,
+      id: `${aircraft}-step`,
+      operation: 'clock.step',
+      payload: { dt: 1.25 },
+    };
+    const stepped = await invoke(command);
+    expect(stepped.ok).toBe(true);
+    expect(stepped.data.state.clock.seconds).toBe(1.25);
+    expect(stepped.data.state.pose.positionM).toEqual([102.5, 120, 66.25]);
+    const repeated = await invoke(command);
+    expect(repeated).toEqual(stepped);
+    await page.waitForTimeout(350);
+    const held = await page.evaluate(() => (window as any).hangarAPI.controlState());
+    expect(held.state.clock.seconds).toBe(1.25);
+    expect(held.state.pose.positionM).toEqual([102.5, 120, 66.25]);
+    await info.attach(`${aircraft}-unified-applied.json`, {
+      body: JSON.stringify({ acquired, pose, stepped, repeated, held }, null, 2),
+      contentType: 'application/json',
+    });
+    expect(
+      (
+        await invoke({
+          ...owner,
+          id: `${aircraft}-release`,
+          operation: 'control.release',
+          payload: {},
+        })
+      ).ok,
+    ).toBe(true);
+    await expect(page.locator('#flight')).toBeEnabled();
+    const stale = await invoke({
+      ...owner,
+      id: `${aircraft}-late`,
+      operation: 'clock.step',
+      payload: { dt: 1 },
+    });
+    expect(stale.ok).toBe(false);
+  }
+  expect(errors).toEqual([]);
+});
+
+test('One local HTTP endpoint dispatches both aircraft and retries the original applied result', async ({
+  page,
+}, info) => {
+  test.setTimeout(180_000);
+  const base = 'http://127.0.0.1:8790';
+  const prefix = `${base}/api/hangar/v1`;
+  let failedResult = false;
+  await page.route('**/api/hangar/v1/results?*', async (route) => {
+    const body = route.request().postDataJSON();
+    if (!failedResult && body.id === 'http-step') {
+      failedResult = true;
+      await route.abort();
+    } else await route.continue();
+  });
+  await page.goto(`${base}/?aircraft=transwing&control=local`);
+  await ready(page, 'transwing');
+  await page.locator('#quality').selectOption('Low');
+  await expect
+    .poll(async () => (await (await page.request.get(`${prefix}/health`)).json()).ready)
+    .toBe(true);
+  const serverState = async () => (await (await page.request.get(`${prefix}/state`)).json()).data;
+  await expect.poll(async () => (await serverState())?.state?.ready).toBe(true);
+  const initial = (await serverState()).state;
+  const context = {
+    aircraft: 'transwing',
+    generation: initial.generation,
+    owner: 'http-acceptance',
+  };
+  async function command(request: any) {
+    expect((await page.request.post(`${prefix}/commands`, { data: request })).status()).toBe(202);
+    await expect
+      .poll(
+        async () =>
+          (
+            await (
+              await page.request.get(`${prefix}/results/${request.id}?epoch=${request.epoch ?? 0}`)
+            ).json()
+          ).data.status,
+      )
+      .not.toBe('queued');
+    return (
+      await (
+        await page.request.get(`${prefix}/results/${request.id}?epoch=${request.epoch ?? 0}`)
+      ).json()
+    ).data.response;
+  }
+  const acquired = await command({
+    ...context,
+    id: 'http-acquire',
+    operation: 'control.acquire',
+    payload: { controlMode: 'external', clock: 'external', ttlMs: 120000 },
+  });
+  expect(acquired.ok).toBe(true);
+  const owner = { ...context, leaseId: acquired.data.leaseId };
+  expect(
+    (await command({ ...owner, id: 'http-play', operation: 'transport.play', payload: {} })).ok,
+  ).toBe(true);
+  const applied = await command({
+    ...owner,
+    id: 'http-step',
+    operation: 'clock.step',
+    payload: { dt: 2 },
+  });
+  expect(failedResult).toBe(true);
+  expect(applied.ok).toBe(true);
+  expect(applied.ack.status).toBe('applied');
+  expect(applied.data.state.clock.seconds).toBe(2);
+  // A failed result POST releases authority, while its immutable original result survives retry.
+  await expect
+    .poll(() => page.evaluate(() => (window as any).hangarAPI.controlState().lease))
+    .toBeNull();
+  await select(page, 'ev50');
+  await expect.poll(async () => (await serverState())?.state?.aircraft).toBe('ev50');
+  const late = await command({
+    ...owner,
+    id: 'http-old-aircraft',
+    operation: 'clock.step',
+    payload: { dt: 2 },
+  });
+  expect(late.ok).toBe(false);
+  expect(late.error.code).toBe('AIRCRAFT_MISMATCH');
+  const next = (await serverState()).state;
+  const ev50 = await command({
+    aircraft: 'ev50',
+    generation: next.generation,
+    owner: 'http-acceptance',
+    id: 'http-ev50-acquire',
+    operation: 'control.acquire',
+    payload: { controlMode: 'external', clock: 'external' },
+  });
+  expect(ev50.ok).toBe(true);
+  const ev50Owner = {
+    aircraft: 'ev50',
+    generation: next.generation,
+    owner: 'http-acceptance',
+    leaseId: ev50.data.leaseId,
+  };
+  expect(
+    (
+      await command({
+        ...ev50Owner,
+        id: 'http-ev50-release',
+        operation: 'control.release',
+        payload: {},
+      })
+    ).ok,
+  ).toBe(true);
+  const resetRequest = {
+    aircraft: 'ev50',
+    generation: next.generation,
+    epoch: 0,
+    owner: 'http-acceptance',
+    id: 'http-reset-session',
+    operation: 'control.resetSession',
+    payload: { acknowledgeCompletedResults: true },
+  };
+  const reset = await command(resetRequest);
+  expect(reset.ok).toBe(true);
+  expect(reset.data.commandEpoch).toBe(1);
+  expect(await command(resetRequest)).toEqual(reset);
+  await expect.poll(async () => (await serverState())?.state?.commandEpoch).toBe(1);
+  const retired = await page.request.post(`${prefix}/commands`, {
+    data: { ...ev50Owner, id: 'http-retired-epoch', operation: 'clock.step', payload: { dt: 1 } },
+  });
+  expect(retired.status()).toBe(409);
+  expect((await retired.json()).error.code).toBe('STALE_SESSION');
+  const renewedEpoch = await command({
+    aircraft: 'ev50',
+    generation: next.generation,
+    epoch: 1,
+    owner: 'http-acceptance',
+    id: 'http-ev50-acquire',
+    operation: 'control.acquire',
+    payload: { controlMode: 'external', clock: 'external' },
+  });
+  expect(renewedEpoch.ok).toBe(true);
+  await page.locator('#unified-control').evaluate((element: HTMLDetailsElement) => {
+    element.open = true;
+  });
+  await page.locator('#control-disable').click();
+  await expect
+    .poll(async () => (await (await page.request.get(`${prefix}/health`)).json()).ready)
+    .toBe(false);
+  await info.attach('unified-http-applied-retry.json', {
+    body: JSON.stringify({ applied, late, ev50, reset, renewedEpoch }, null, 2),
+    contentType: 'application/json',
+  });
+});

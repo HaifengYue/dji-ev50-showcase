@@ -18,7 +18,9 @@ export async function testHangarSnapshot({ load, passed }) {
     'aircraft/transwing/core/experience.ts',
   );
   const { playbackPresentation } = await load('aircraft/playbackPresentation.ts');
-  const { getFlight, TOTAL } = await load('aircraft/transwing/core/flight.ts');
+  const { WORLD_FLIGHT_DURATION: TOTAL, worldFlightPhase } = await load(
+    'aircraft/transwing/worldFlight.ts',
+  );
   const runtime = new SimulationRuntime();
   runtime.setReady(true);
   const base = structuredClone(runtime.getSnapshot());
@@ -65,7 +67,7 @@ export async function testHangarSnapshot({ load, passed }) {
     rate: 4,
     loop: false,
   });
-  const sample = getFlight(inputs.experience.time);
+  const sample = worldFlightPhase(inputs.experience.time);
   assert.equal(flight.playbackRate, 4);
   assert.equal(flight.loop, false);
   const defaultFlight = buildTranswingSnapshot(
@@ -82,9 +84,9 @@ export async function testHangarSnapshot({ load, passed }) {
   assert.equal(flight.time, 26.5);
   assert.equal(flight.duration, TOTAL);
   assert.equal(flight.playing, true);
-  assert.equal(flight.state, sample.phase.id);
-  assert.equal(flight.label, sample.phase.label);
-  assert.equal(flight.speedMps, sample.speed * 20);
+  assert.equal(flight.state, sample.state);
+  assert.equal(flight.label, sample.label);
+  assert.equal(flight.speedMps, 0);
   assert.equal(flight.altitude, inputs.pose.positionM[1]);
   assert.equal(flight.timelineLabel, 'Transwing 飞行演示');
   passed(
@@ -244,7 +246,7 @@ export async function testHangarSnapshot({ load, passed }) {
   }).outputText;
   const Transport = new Function(
     'experienceReducer',
-    'TOTAL',
+    'WORLD_FLIGHT_DURATION',
     `${javascript}; return TransportUnderTest;`,
   )(experienceReducer, TOTAL);
   const transport = new Transport();
@@ -254,6 +256,7 @@ export async function testHangarSnapshot({ load, passed }) {
     replayRates = [];
   Object.assign(transport, {
     mode: 'product',
+    unified: { lease: null },
     state: structuredClone(INITIAL_EXPERIENCE),
     rate: 1,
     loop: false,

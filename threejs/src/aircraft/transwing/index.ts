@@ -5,6 +5,7 @@ import type {
   AircraftMode,
   AircraftQuality,
   AircraftSnapshot,
+  AircraftWorldState,
 } from '../types';
 import {
   createModelRig,
@@ -13,7 +14,7 @@ import {
   applyMotorPose,
   applySurfacePose,
 } from './core/rig';
-import { SimulationRuntime, type StatePatch } from './core/simulation';
+import { SimulationRuntime, applyStatePatch, type StatePatch } from './core/simulation';
 import { SimulationBridge } from './core/simulationBridge';
 import { RecordingLoader } from './core/recordingLoader';
 import { beginLocalControl } from './core/uiControl';
@@ -24,8 +25,16 @@ import {
   type ExperienceAction,
   type ExperienceState,
 } from './core/experience';
-import { getFlight, TOTAL } from './core/flight';
-import { MOTOR_IDS, newMotorCommands, type MotorCommands } from './core/motors';
+import type { routes } from '../../flight';
+import {
+  TranswingWorldFlight,
+  WORLD_FLIGHT_DURATION,
+  TRANSWING_COORDINATES,
+  bodyGroundOffset,
+  worldToLegacyPosition,
+  legacyToWorldPosition,
+} from './worldFlight';
+import { newMotorCommands, type MotorCommands } from './core/motors';
 import { detailSurfaces, NEUTRAL_DETAIL_POSE } from './core/details';
 import {
   getInspectionFrame,
@@ -39,10 +48,16 @@ import { createInternalDriveInspection } from './core/internalDriveInspection';
 import { modelAssetUrl } from './core/modelAssetRevision';
 import { loadOwnedGLTF, type OwnedResources } from './resources';
 import { TranswingCamera } from './camera';
-import { TranswingPresentation, createJointGuide } from './presentation';
+import { createJointGuide } from './presentation';
 import { createTranswingPanel } from './panel';
 import { buildTranswingSnapshot } from './snapshot';
 import { prepareManualInput, cargoPresentationLift } from './localControl';
+import { TranswingControlAdapter } from './controlAdapter';
+import type {
+  AdapterAircraftState,
+  AircraftControlCommand,
+  ControlLease,
+} from '../../control/contracts';
 import './panel.css';
 
 /** One host renderer, canvas and clock. Every asynchronous asset belongs to this selection. */
@@ -63,13 +78,15 @@ export async function createTranswing(
 class TranswingInstance implements AircraftInstance {
   readonly id = 'transwing' as const;
   private readonly root = new THREE.Group();
+  private readonly body = new THREE.Group();
+  private readonly flight: TranswingWorldFlight;
   private readonly runtime = new SimulationRuntime();
+  private readonly unified = new TranswingControlAdapter(this.runtime);
   private readonly bridge: SimulationBridge;
   private readonly loader: RecordingLoader;
   private readonly rig: ReturnType<typeof createModelRig>;
   private readonly measurements: ReturnType<typeof measureModelRig>;
   private camera!: TranswingCamera;
-  private presentation!: TranswingPresentation;
   private panel: ReturnType<typeof createTranswingPanel> | null = null;
   private exposure: ReturnType<typeof createRotorExposure> | null = null;
   private drive: ReturnType<typeof createInternalDriveInspection> | null = null;
@@ -80,12 +97,12 @@ class TranswingInstance implements AircraftInstance {
   private rate = 1;
   private loop = true;
   private wireframe = false;
-  private environment: 'hangar' | 'sky' = 'hangar';
   private internalDrive = false;
   private axes = true;
   private lastWireframe: boolean | null = null;
-  private lastEnvironment: 'hangar' | 'sky' = 'hangar';
   private disposed = false;
+  private applyingControl = false;
+  private manualPaused = false;
   private concept: { scene: THREE.Group; resources: OwnedResources; bounds: THREE.Box3 } | null =
     null;
   private conceptLoading: Promise<void> | null = null;
@@ -115,6 +132,7 @@ class TranswingInstance implements AircraftInstance {
     private model: THREE.Group,
     private resources: OwnedResources,
   ) {
+    this.flight = new TranswingWorldFlight(host.flightFrames);
     this.bridge = new SimulationBridge(this.runtime, {
       origin: window.location.origin,
       fetch: window.fetch.bind(window),
@@ -132,12 +150,14 @@ class TranswingInstance implements AircraftInstance {
         for (const material of Array.isArray(object.material) ? object.material : [object.material])
           material.dithering = true;
       });
-      this.root.name = 'Transwing_Aircraft';
-      this.root.add(model);
+      this.root.name = 'Transwing_WorldDatum';
+      this.body.name = 'Transwing_BodyAlignment';
+      this.body.position.y = bodyGroundOffset(this.measurements.groundOffset);
+      this.body.add(model);
+      this.root.add(this.body);
       host.scene.add(this.root);
       this.drive = createInternalDriveInspection(model);
       this.exposure = createRotorExposure(this.rig);
-      this.presentation = new TranswingPresentation(host, this.measurements);
       this.camera = new TranswingCamera(host);
       this.panel = createTranswingPanel(host.panel, {
         runtime: this.runtime,
@@ -145,17 +165,14 @@ class TranswingInstance implements AircraftInstance {
         loader: this.loader,
         assetUrl: host.assetUrl,
         getState: () => this.state,
+        startFlightAt: (time) => this.startFlightAt(time),
+        getCameraView: () => this.camera.view,
+        isUnifiedControl: () => this.unified.lease !== null,
         dispatch: (action) => this.dispatch(action),
         manual: (patch) => this.manual(patch),
         setWireframe: (value) => {
           if (this.local()) {
             this.wireframe = value;
-            this.syncLocal();
-          }
-        },
-        setEnvironment: (value) => {
-          if (this.local()) {
-            this.environment = value;
             this.syncLocal();
           }
         },
@@ -169,6 +186,7 @@ class TranswingInstance implements AircraftInstance {
         prepareExternal: () => this.prepareExternal(),
         getViewSettings: () => ({ internalDrive: this.internalDrive, axes: this.axes }),
       });
+      this.state = experienceReducer(this.state, { type: 'enter-tilt' });
       this.runtime.setReady(true);
       this.syncLocal();
       this.paint();
@@ -184,29 +202,87 @@ class TranswingInstance implements AircraftInstance {
     }
   }
   private local(driver: 'demo' | 'manual' = 'demo') {
-    return !this.disposed && beginLocalControl(this.runtime, this.bridge, this.loader, driver);
+    return (
+      !this.disposed &&
+      (!this.unified.lease || this.applyingControl) &&
+      beginLocalControl(this.runtime, this.bridge, this.loader, driver)
+    );
+  }
+  private changeMode(mode: AircraftMode) {
+    if (this.mode === mode) return;
+    this.mode = mode;
+    this.host.setSceneMode(mode);
+    this.host.clearTrail();
+  }
+  private startFlightAt(time: number) {
+    if (!this.local()) return;
+    this.changeMode('flight');
+    this.state = {
+      ...this.state,
+      time: Math.max(0, Math.min(WORLD_FLIGHT_DURATION, time)),
+      playing: true,
+      tiltMode: false,
+      detailView: null,
+      jointSide: null,
+      exploded: false,
+      tilt: { ...this.state.tilt, playing: false },
+    };
+    this.internalDrive = false;
+    this.runtime.seekLocal(this.state.time);
+    this.host.clearTrail();
+    this.syncLocal();
   }
   private dispatch(action: ExperienceAction) {
     if (!this.local()) return;
     const previous = this.state;
-    if (action.type === 'tilt' && ['begin', 'scrub', 'reset'].includes(action.action.type))
-      this.state = experienceReducer(this.state, { type: 'enter-tilt' });
-    this.state = experienceReducer(this.state, action);
+    // Mechanism buttons preserve the current world pose and camera. Only explicit
+    // scene selection resets the world datum; detail/inspection explicitly frame.
+    if (action.type === 'play-flight') {
+      const playing = !this.state.playing;
+      const time = this.state.time >= WORLD_FLIGHT_DURATION ? 0 : this.state.time;
+      this.startFlightAt(time);
+      this.state = { ...this.state, playing };
+    } else {
+      if (
+        (action.type === 'enter-tilt' ||
+          action.type === 'tilt' ||
+          action.type === 'inspect' ||
+          action.type === 'joint' ||
+          action.type === 'detail') &&
+        !this.state.tiltMode
+      )
+        this.state = {
+          ...this.state,
+          tiltMode: true,
+          playing: false,
+          tilt: {
+            ...this.state.tilt,
+            progress: this.runtime.getSnapshot().state.wingTilt,
+            playing: false,
+          },
+        };
+      this.state = experienceReducer(this.state, action);
+    }
     if (this.state.detailView || this.state.exploded) this.internalDrive = false;
-    if (action.type === 'play-flight') this.mode = 'flight';
-    if (
-      action.type === 'enter-tilt' ||
-      action.type === 'tilt' ||
-      action.type === 'detail' ||
-      action.type === 'joint'
-    )
-      this.mode = 'product';
-    if (action.type === 'set' && action.key === 'time') this.runtime.seekLocal(this.state.time);
+    if (action.type === 'set' && action.key === 'time') {
+      this.state = {
+        ...this.state,
+        time: Math.max(0, Math.min(WORLD_FLIGHT_DURATION, this.state.time)),
+      };
+      this.runtime.seekLocal(this.state.time);
+      this.host.clearTrail();
+    }
     this.syncLocal();
+    const explicitFrame =
+      ['inspect', 'joint', 'detail', 'close-detail'].includes(action.type) ||
+      (action.type === 'set' && ['cameraView', 'cameraReset'].includes(action.key));
+    if (!explicitFrame && !(action.type === 'set' && action.key === 'autoRotate'))
+      this.state = { ...this.state, autoRotate: previous.autoRotate };
     if (
-      this.state.cameraReset !== previous.cameraReset ||
-      this.state.cameraView !== previous.cameraView ||
-      this.state.inspection !== previous.inspection
+      explicitFrame &&
+      (this.state.cameraReset !== previous.cameraReset ||
+        this.state.cameraView !== previous.cameraView ||
+        this.state.inspection !== previous.inspection)
     )
       this.frame();
     if (this.state.detailView === 'systems') void this.loadConcept();
@@ -214,13 +290,27 @@ class TranswingInstance implements AircraftInstance {
   private manual(patch: StatePatch) {
     if (!this.local('manual')) return;
     const input = prepareManualInput(this.state, this.runtime.getSnapshot(), patch);
-    this.state = input.state;
-    this.runtime.setLocal(input.patch, 'manual');
+    this.state = { ...input.state, autoRotate: this.state.autoRotate };
+    if (!this.applyingControl) this.manualPaused = false;
+    this.runtime.setLocal(
+      { ...input.patch, time: { ...input.patch.time, paused: this.manualPaused } },
+      'manual',
+    );
   }
   private setInternalDrive(value: boolean) {
     if (this.disposed) return;
     if (value && this.runtime.getSnapshot().control === 'local') {
       if (!this.local()) return;
+      this.state = {
+        ...this.state,
+        tiltMode: true,
+        playing: false,
+        tilt: {
+          ...this.state.tilt,
+          progress: this.runtime.getSnapshot().state.wingTilt,
+          playing: false,
+        },
+      };
       this.state = experienceReducer(this.state, { type: 'enter-tilt' });
       this.state = { ...this.state, jointSide: null };
       this.syncLocal();
@@ -229,6 +319,8 @@ class TranswingInstance implements AircraftInstance {
       value && !this.state.detailView && !this.runtime.getSnapshot().state.display.exploded;
   }
   private prepareExternal() {
+    if (this.unified.lease) throw new Error('Release unified control before Python or JSON replay');
+    this.changeMode('flight');
     this.state = {
       ...this.state,
       playing: false,
@@ -242,14 +334,16 @@ class TranswingInstance implements AircraftInstance {
   }
   private async releaseLocal() {
     if (this.disposed) return;
+    if (this.unified.lease)
+      throw new Error('Release unified control through the shared controls first');
     this.loader.cancel();
     const cleanup = this.bridge.close();
     this.state = structuredClone(INITIAL_EXPERIENCE);
     this.internalDrive = false;
-    this.mode = 'product';
+    this.changeMode('product');
     this.wireframe = false;
-    this.environment = 'hangar';
     this.lastControl = 'local';
+    this.state = experienceReducer(this.state, { type: 'enter-tilt' });
     this.syncLocal();
     this.frame();
     await cleanup;
@@ -258,47 +352,29 @@ class TranswingInstance implements AircraftInstance {
   private syncLocal() {
     const snapshot = this.runtime.getSnapshot();
     if (this.disposed || snapshot.control !== 'local') return;
-    const state = this.state,
-      stationary = state.inspection || state.tiltMode;
-    const flight = getFlight(state.time);
-    const quaternion = new THREE.Quaternion().setFromEuler(
-      new THREE.Euler(0, stationary ? 0 : flight.yaw, stationary ? 0 : flight.bank),
-    );
+    const state = this.state;
+    const moving = this.mode === 'flight' && !state.tiltMode && !state.detailView;
+    const flight = this.flight.sample(state.time);
     let motors: MotorCommands | undefined;
-    if (snapshot.driver === 'demo') {
-      const rpm = stationary ? 0 : flight.rpm * 1800;
-      const rearOff =
-        flight.index === 4 || flight.index === 5 || (flight.index === 3 && flight.progress > 0.55);
-      motors = Object.fromEntries(
-        MOTOR_IDS.map((id) => [
-          id,
-          {
-            targetRpm: id.endsWith('Rear') && rearOff ? 0 : rpm,
-            enabled: rpm >= 60 && !(id.endsWith('Rear') && rearOff),
-          },
-        ]),
-      ) as MotorCommands;
-    }
+    if (snapshot.driver === 'demo') motors = moving ? flight.motors : newMotorCommands();
     if (state.exploded) motors = newMotorCommands();
     const details = state.detailView && !state.exploded ? state.detailPose : NEUTRAL_DETAIL_POSE;
     this.runtime.setLocal({
-      positionM: [
-        stationary ? 0 : flight.x,
-        stationary ? 0 : flight.altitude * 0.32,
-        stationary ? 0 : flight.z,
-      ],
-      attitude: quaternion.toArray(),
-      wingTilt: displayedUnfold(state),
+      ...(moving
+        ? {
+            positionM: worldToLegacyPosition(flight.position.toArray()),
+            attitude: flight.quaternion.toArray(),
+          }
+        : this.mode === 'product'
+          ? { positionM: worldToLegacyPosition([0, 0, 0]), attitude: [0, 0, 0, 1] }
+          : {}),
+      wingTilt: moving ? flight.wingTilt : state.tilt.progress,
       ...(motors ? { motors } : {}),
       ...(snapshot.driver === 'demo'
         ? { surfaces: detailSurfaces(details), hatchDeg: details.hatch }
         : {}),
-      display: {
-        wireframe: this.wireframe,
-        exploded: state.exploded,
-        environment: this.environment,
-      },
-      time: { paused: !state.playing && snapshot.driver !== 'manual' },
+      display: { wireframe: this.wireframe, exploded: state.exploded },
+      time: { paused: snapshot.driver === 'manual' ? this.manualPaused : !state.playing },
     });
   }
   private frame(immediate = false) {
@@ -329,13 +405,24 @@ class TranswingInstance implements AircraftInstance {
             )
           : getInspectionFrame(bounds, state.cameraView, aspect)
       : getPresentationFrame(bounds, aspect, this.mode === 'flight');
-    const external = this.runtime.getSnapshot().control !== 'local';
-    const offset = external
-      ? new THREE.Vector3(...this.runtime.getSnapshot().state.positionM)
-      : new THREE.Vector3();
-    frame.position.add(offset);
-    frame.target.add(offset);
-    this.camera.frame(frame, state.inspection, immediate || external, offset);
+    const pose = this.runtime.getRenderSample().state;
+    const offset = legacyToWorldPosition(pose.positionM);
+    const attitude = new THREE.Quaternion().fromArray(pose.attitude).normalize();
+    // Concept module is a stationary inspection asset, separate from moving aircraft.
+    if (state.detailView !== 'systems') {
+      const lift = new THREE.Vector3(0, bodyGroundOffset(this.measurements.groundOffset), 0);
+      frame.position.y -= this.measurements.groundOffset;
+      frame.target.y -= this.measurements.groundOffset;
+      frame.position.applyQuaternion(attitude).add(lift).add(offset);
+      frame.target.applyQuaternion(attitude).add(lift).add(offset);
+      frame.up.applyQuaternion(attitude);
+    }
+    this.camera.frame(
+      frame,
+      state.inspection,
+      immediate,
+      offset.clone().add(new THREE.Vector3(0, bodyGroundOffset(this.measurements.groundOffset), 0)),
+    );
   }
   private async loadConcept() {
     if (this.concept || this.conceptLoading || this.disposed) return;
@@ -350,7 +437,7 @@ class TranswingInstance implements AircraftInstance {
           return;
         }
         const bounds = new THREE.Box3().setFromObject(loaded.scene);
-        loaded.scene.position.y += -0.42 - bounds.min.y;
+        loaded.scene.position.y += 0.18 - bounds.min.y;
         loaded.scene.updateMatrixWorld(true);
         this.concept = { ...loaded, bounds: new THREE.Box3().setFromObject(loaded.scene) };
         loaded.scene.name = 'Transwing_ConceptSystems';
@@ -378,19 +465,23 @@ class TranswingInstance implements AircraftInstance {
     const snapshot = this.runtime.getSnapshot(),
       sample = this.runtime.getRenderSample(),
       pose = sample.state;
-    this.root.position.set(
-      pose.positionM[0],
-      this.measurements.groundOffset +
-        cargoPresentationLift(
-          this.state.detailView,
-          snapshot.control,
-          pose.hatchDeg,
-          this.measurements.detailLift,
-        ) +
-        pose.positionM[1],
-      pose.positionM[2],
-    );
+    this.root.position.copy(legacyToWorldPosition(pose.positionM));
     this.root.quaternion.fromArray(pose.attitude).normalize();
+    // Keep the source body origin and historical Python transform exact even when
+    // banked: the presentation ground lift is world-up, not a rotated body lever.
+    this.body.position
+      .set(
+        0,
+        bodyGroundOffset(this.measurements.groundOffset) +
+          cargoPresentationLift(
+            this.state.detailView,
+            snapshot.control,
+            pose.hatchDeg,
+            this.measurements.detailLift,
+          ),
+        0,
+      )
+      .applyQuaternion(this.root.quaternion.clone().invert());
     this.root.updateMatrixWorld(true);
     this.root.visible = this.state.detailView !== 'systems' || !this.concept;
     if (this.concept) this.concept.scene.visible = this.state.detailView === 'systems';
@@ -413,18 +504,13 @@ class TranswingInstance implements AircraftInstance {
     this.exposure?.update(sample.exposure);
     if (pose.display.exploded || this.state.detailView) this.internalDrive = false;
     this.drive?.setActive(this.internalDrive);
-    if (this.lastEnvironment !== pose.display.environment) {
-      this.lastEnvironment = pose.display.environment;
-      this.presentation.setEnvironment(pose.display.environment);
-    }
-    this.presentation.update(this.root.position, pose.display.exploded);
     if (this.guideSide !== this.state.jointSide) {
       this.guide?.dispose();
       this.guideSide = this.state.jointSide;
       this.guide = this.guideSide
         ? createJointGuide(this.rig, this.guideSide, this.host.canvas)
         : null;
-      if (this.guide) this.root.add(this.guide.group);
+      if (this.guide) this.body.add(this.guide.group);
     }
     this.guide?.update(pose.wingTilt, this.camera.active, this.axes && this.root.visible);
   }
@@ -435,7 +521,8 @@ class TranswingInstance implements AircraftInstance {
     const before = this.runtime.getSnapshot();
     if (before.control !== this.lastControl) {
       if (before.control === 'local') {
-        this.state = structuredClone(INITIAL_EXPERIENCE);
+        this.state = experienceReducer(structuredClone(INITIAL_EXPERIENCE), { type: 'enter-tilt' });
+        this.changeMode('product');
         this.internalDrive = false;
         this.syncLocal();
       }
@@ -449,48 +536,52 @@ class TranswingInstance implements AircraftInstance {
           action: { type: 'tick', seconds: dt },
         });
       if (this.state.playing && !this.state.tiltMode) {
-        const previousTime = this.state.time;
-        this.state = experienceReducer(this.state, {
-          type: 'advance-flight',
-          seconds: dt * this.rate,
-          loop: this.loop,
-        });
-        if (this.state.time < previousTime) this.runtime.seekLocal(this.state.time);
+        const next = this.state.time + dt * this.rate;
+        const time =
+          next >= WORLD_FLIGHT_DURATION
+            ? this.loop
+              ? next % WORLD_FLIGHT_DURATION
+              : WORLD_FLIGHT_DURATION
+            : next;
+        if (time < this.state.time) {
+          this.runtime.seekLocal(time);
+          this.host.clearTrail();
+        }
+        this.state = { ...this.state, time, playing: this.loop || time < WORLD_FLIGHT_DURATION };
       }
       this.syncLocal();
-      if (this.state.playing || before.driver === 'manual')
+      if (this.state.playing || (before.driver === 'manual' && !this.manualPaused))
         this.runtime.stepLocal(dt * (this.state.playing ? this.rate : 1));
     } else if (before.control === 'replay') this.runtime.advanceReplay(dt);
+    this.paint();
     this.camera.setAutoRotate(this.state.autoRotate);
     this.camera.setInternal(this.internalDrive);
     this.camera.update(
       dt,
-      this.runtime.getSnapshot().control !== 'local'
-        ? this.runtime.getRenderSample().state.positionM
-        : null,
+      this.body.getWorldPosition(new THREE.Vector3()).toArray(),
+      this.root.quaternion,
     );
-    this.paint();
     this.panel?.update();
   }
   resize() {
     if (!this.disposed) {
       this.camera.resize();
-      this.presentation.resize();
     }
   }
   setQuality(quality: AircraftQuality) {
-    if (!this.disposed) this.presentation.setQuality(quality);
+    // Shared renderer/shadows are host-owned; model geometry remains unchanged.
+    void quality;
   }
   setMode(mode: AircraftMode) {
     if (!this.local()) return;
-    this.mode = mode;
+    this.changeMode(mode);
     this.internalDrive = false;
     this.state = experienceReducer(this.state, {
       type: mode === 'product' ? 'enter-tilt' : 'leave-tilt',
     });
-    this.state = { ...this.state, inspection: false, jointSide: null };
+    this.state = { ...this.state, playing: false, inspection: false, jointSide: null };
     this.syncLocal();
-    this.frame();
+    this.frame(); // Explicit scene selection may initialize framing; movement never does.
   }
   playPause() {
     const snapshot = this.runtime.getSnapshot();
@@ -524,6 +615,8 @@ class TranswingInstance implements AircraftInstance {
     if (!this.local()) return;
     const mode = this.mode;
     this.runtime.resetLocal();
+    this.host.clearTrail();
+    this.manualPaused = false;
     this.state = structuredClone(INITIAL_EXPERIENCE);
     this.internalDrive = false;
     this.wireframe = false;
@@ -543,9 +636,15 @@ class TranswingInstance implements AircraftInstance {
         type: 'tilt',
         action: { type: 'scrub', progress: Math.max(0, Math.min(1, position / 100)) },
       });
-    else this.dispatch({ type: 'set', key: 'time', value: Math.max(0, Math.min(TOTAL, position)) });
+    else
+      this.dispatch({
+        type: 'set',
+        key: 'time',
+        value: Math.max(0, Math.min(WORLD_FLIGHT_DURATION, position)),
+      });
   }
   setSpeed(speed: number) {
+    if (this.unified.lease && !this.applyingControl) return;
     if (!Number.isFinite(speed) || speed <= 0) return;
     const control = this.runtime.getSnapshot().control;
     if (control === 'external') return;
@@ -562,6 +661,7 @@ class TranswingInstance implements AircraftInstance {
       });
   }
   setLoop(loop: boolean) {
+    if (this.unified.lease && !this.applyingControl) return;
     if (this.runtime.getSnapshot().control !== 'local') return;
     this.loop = loop;
     this.state = experienceReducer(this.state, {
@@ -572,25 +672,40 @@ class TranswingInstance implements AircraftInstance {
   setView(view: string) {
     if (this.disposed) return;
     const lower = view.toLowerCase();
+    if (['follow', 'wide', 'fpv', 'down'].includes(lower)) {
+      this.state = {
+        ...this.state,
+        inspection: false,
+        jointSide: null,
+        detailView: null,
+        autoRotate: false,
+      };
+      this.camera.setFlightView(
+        lower as 'follow' | 'wide' | 'fpv' | 'down',
+        this.body.getWorldPosition(new THREE.Vector3()),
+        this.root.quaternion,
+      );
+      return;
+    }
     if (lower === 'joint-l' || lower === 'joint-r') {
       const side = lower === 'joint-l' ? 'L' : 'R';
-      if (this.runtime.getSnapshot().control === 'local') this.dispatch({ type: 'joint', side });
+      if (this.runtime.getSnapshot().control === 'local' && !this.unified.lease)
+        this.dispatch({ type: 'joint', side });
       else {
         this.state = { ...this.state, jointSide: side, detailView: null, inspection: true };
         this.frame();
       }
       return;
     }
-    const mapped: CameraView =
-      lower.includes('top') || lower === 'down'
-        ? 'top'
-        : lower.includes('front')
-          ? 'front'
-          : lower.includes('side') || lower.includes('left') || lower.includes('right')
-            ? 'side'
-            : 'perspective';
+    const mapped: CameraView = lower.includes('top')
+      ? 'top'
+      : lower.includes('front')
+        ? 'front'
+        : lower.includes('side') || lower.includes('left') || lower.includes('right')
+          ? 'side'
+          : 'perspective';
     // Camera-only commands remain available during external ownership.
-    if (this.runtime.getSnapshot().control !== 'local') {
+    if (this.runtime.getSnapshot().control !== 'local' || this.unified.lease) {
       this.state = {
         ...this.state,
         cameraView: mapped,
@@ -614,19 +729,200 @@ class TranswingInstance implements AircraftInstance {
     } else this.dispatch({ type: 'inspect', view: mapped });
   }
   snapshot(): AircraftSnapshot {
-    return buildTranswingSnapshot(
+    const snapshot = buildTranswingSnapshot(
       this.runtime.getSnapshot(),
       this.runtime.getRenderSample().state,
       this.state,
       this.mode,
       { rate: this.rate, loop: this.loop },
+      this.worldState(),
+      this.flight.controller.state,
     );
+    if (
+      this.unified.lease?.controlMode === 'local' &&
+      this.runtime.getSnapshot().driver === 'manual'
+    )
+      snapshot.playing = !this.runtime.getSnapshot().state.time.paused;
+    if (this.unified.lease?.controlMode === 'external') {
+      snapshot.label = '统一外部控制';
+      snapshot.timelineLabel = '外部仿真时间';
+    }
+    return snapshot;
+  }
+
+  controlBlockedReason() {
+    if (this.unified.lease) return undefined;
+    if (this.loader.loading) return 'Transwing JSON import is pending';
+    const snapshot = this.runtime.getSnapshot();
+    return snapshot.control !== 'local' ||
+      snapshot.connection === 'connecting' ||
+      snapshot.connection === 'connected'
+      ? 'Release Transwing Python or JSON replay first'
+      : undefined;
+  }
+  setControlLease(lease: Pick<ControlLease, 'controlMode' | 'clock'> | null, _reason?: string) {
+    if (this.disposed) {
+      if (lease) throw new Error('Aircraft is disposed');
+      return;
+    }
+    if (lease) {
+      if (this.loader.loading) throw new Error('Wait for or cancel the pending recording import');
+      this.unified.acquire(lease);
+      if (lease.controlMode === 'external') {
+        this.state = {
+          ...this.state,
+          playing: false,
+          tilt: { ...this.state.tilt, playing: false },
+          detailView: null,
+          jointSide: null,
+          autoRotate: false,
+        };
+        this.internalDrive = false;
+        this.changeMode('flight');
+      }
+    } else if (this.unified.release()) {
+      this.manualPaused = false;
+      this.state = experienceReducer(structuredClone(INITIAL_EXPERIENCE), { type: 'enter-tilt' });
+      this.internalDrive = false;
+      this.wireframe = false;
+      this.lastControl = 'local';
+      this.changeMode('product');
+      this.host.clearTrail();
+      this.syncLocal();
+    }
+  }
+  applyControl(command: AircraftControlCommand) {
+    if (!this.unified.lease) throw new Error('A unified control lease is required');
+    if (this.unified.lease.controlMode === 'external') {
+      this.unified.external(command);
+      return;
+    }
+    this.applyingControl = true;
+    try {
+      switch (command.operation) {
+        case 'transport.play':
+        case 'transport.pause': {
+          const playing = command.operation === 'transport.play';
+          if (this.runtime.getSnapshot().driver === 'manual') {
+            this.manualPaused = !playing;
+            this.runtime.setLocal({ time: { paused: !playing } });
+          } else if (this.snapshot().playing !== playing) this.playPause();
+          break;
+        }
+        case 'transport.reset':
+          this.restart();
+          break;
+        case 'transport.seek':
+          if (command.payload.unit !== this.snapshot().timeUnit)
+            throw new Error('Timeline unit does not match current aircraft mode');
+          this.seek(command.payload.position);
+          break;
+        case 'transport.speed':
+          this.setSpeed(command.payload.speed);
+          break;
+        case 'transport.loop':
+          this.setLoop(command.payload.loop);
+          break;
+        case 'transwing.mechanism': {
+          // Validate the entire command atomically before changing local ownership or UI.
+          const patch = command.payload;
+          applyStatePatch(this.runtime.getSnapshot().state, patch);
+          this.manual(patch);
+          if (patch.wingTilt !== undefined)
+            this.state = { ...this.state, tilt: { ...this.state.tilt, progress: patch.wingTilt } };
+          break;
+        }
+        case 'transwing.motors':
+        case 'transwing.surfaces':
+          applyStatePatch(this.runtime.getSnapshot().state, command.payload);
+          this.manual(command.payload);
+          break;
+        default:
+          throw new Error(`Unsupported locally controlled operation: ${command.operation}`);
+      }
+    } finally {
+      this.applyingControl = false;
+    }
+  }
+  normalizedState(): AdapterAircraftState {
+    const runtime = this.runtime.getSnapshot();
+    const snapshot = this.snapshot();
+    const world = this.worldState();
+    return {
+      pose: {
+        positionM: world.position.toArray(),
+        attitude: world.quaternion.toArray(),
+        velocityMps: this.unified.velocity ? [...this.unified.velocity] : null,
+      },
+      clock: {
+        authority:
+          runtime.control === 'replay'
+            ? 'replay'
+            : runtime.control === 'external'
+              ? 'external'
+              : 'host',
+        seconds:
+          runtime.control === 'local' && this.mode === 'flight'
+            ? this.state.time
+            : runtime.state.time.seconds,
+      },
+      controlMode: runtime.control,
+      transport: {
+        playing: snapshot.playing,
+        position: snapshot.time,
+        duration: snapshot.duration,
+        unit: snapshot.timeUnit ?? 'seconds',
+        speed: snapshot.playbackRate ?? null,
+        loop: snapshot.loop ?? false,
+      },
+      model: {
+        aircraft: 'transwing',
+        rotorCount: 4,
+        wingTilt: runtime.state.wingTilt,
+        hatchDeg: runtime.state.hatchDeg,
+        motors: structuredClone(runtime.state.motors),
+        surfaces: { ...runtime.state.surfaces },
+      },
+    };
+  }
+
+  worldState(): AircraftWorldState {
+    const snapshot = this.runtime.getSnapshot();
+    const pose = this.runtime.getRenderSample().state;
+    const demo = snapshot.control === 'local';
+    return {
+      position: legacyToWorldPosition(pose.positionM),
+      quaternion: new THREE.Quaternion().fromArray(pose.attitude).normalize(),
+      speedMps:
+        demo && this.mode === 'flight' && !this.state.tiltMode
+          ? this.flight.controller.speedMps
+          : this.unified.velocity && !pose.time.paused
+            ? Math.hypot(...this.unified.velocity)
+            : 0,
+      time: demo ? this.state.time : pose.time.seconds,
+      mode: this.mode,
+      routeProgress: demo && this.mode === 'flight' ? this.flight.controller.routeProgress : 0,
+      path: this.flight.path,
+      route: this.flight.controller.route,
+      source: demo ? 'demo' : (snapshot.control as 'external' | 'replay'),
+    };
+  }
+  setRoute(route: keyof typeof routes) {
+    if (!this.local()) return;
+    this.flight.setRoute(route);
+    this.state = { ...this.state, time: 0, playing: false };
+    this.runtime.seekLocal(0);
+    this.host.clearTrail();
+    this.syncLocal();
   }
 
   describe() {
     return {
       id: this.id,
       source: '2ecb723',
+      coordinates: TRANSWING_COORDINATES,
+      unifiedControl: this.unified.lease !== null,
+      world: this.worldState(),
       runtime: structuredClone(this.runtime.getSnapshot()),
       experience: structuredClone(this.state),
       camera: this.camera.describe(),
@@ -661,6 +957,5 @@ class TranswingInstance implements AircraftInstance {
     this.concept?.scene.removeFromParent();
     this.concept?.resources.dispose();
     this.concept = null;
-    this.presentation?.dispose();
   }
 }

@@ -1,6 +1,7 @@
-import type { AircraftMode, AircraftSnapshot } from '../types';
+import type { AircraftMode, AircraftSnapshot, AircraftWorldState } from '../types';
+import { labels, type State } from '../../flight';
 import type { ExperienceState } from './core/experience';
-import { getFlight, TOTAL } from './core/flight';
+import { WORLD_FLIGHT_DURATION, worldFlightPhase } from './worldFlight';
 import { MOTOR_IDS } from './core/motors';
 import type { RuntimeSnapshot, SimulationState } from './core/simulation';
 
@@ -13,8 +14,10 @@ export function buildTranswingSnapshot(
   experience: ExperienceState,
   mode: AircraftMode,
   localPlayback: { rate: number; loop: boolean } = { rate: 1, loop: true },
+  world?: AircraftWorldState,
+  flightState?: State,
 ): AircraftSnapshot {
-  const flight = getFlight(experience.time);
+  const phase = worldFlightPhase(experience.time);
   const nonlocal = snapshot.control !== 'local';
   const external = snapshot.control === 'external';
   const replay = snapshot.control === 'replay';
@@ -24,7 +27,7 @@ export function buildTranswingSnapshot(
       ? 0
       : mode === 'product'
         ? 100
-        : TOTAL;
+        : WORLD_FLIGHT_DURATION;
   const time = replay
     ? snapshot.replayIndex
     : external
@@ -61,16 +64,22 @@ export function buildTranswingSnapshot(
         : mode === 'product'
           ? '整翼机构进度'
           : 'Transwing 飞行演示',
-    state: nonlocal ? snapshot.control : mode === 'product' ? 'mechanism' : flight.phase.id,
+    state: nonlocal
+      ? snapshot.control
+      : mode === 'product'
+        ? 'mechanism'
+        : (flightState ?? phase.state),
     label: replay
       ? 'JSON 离线回放'
       : external
         ? 'Python 外部控制'
         : mode === 'product'
           ? `整翼 ${Math.round(pose.wingTilt * 120)}°`
-          : flight.phase.label,
-    speedMps: nonlocal || mode === 'product' ? 0 : flight.speed * 20,
-    altitude: pose.positionM[1],
+          : flightState
+            ? labels[flightState]
+            : phase.label,
+    speedMps: mode === 'product' ? 0 : (world?.speedMps ?? 0),
+    altitude: world?.position.y ?? pose.positionM[1],
     lift: `${Math.round(pose.wingTilt * 100)}%`,
     cruise: `${MOTOR_IDS.filter((id) => snapshot.actuators[id].rpm > 0).length}/4`,
     externallyControlled: external,

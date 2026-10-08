@@ -14,7 +14,7 @@ jobs:
     if: github.event_name == 'push' || github.head_ref == 'main-copy-transwing'
     name: Chromium shared hangar
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30 # 12 end-to-end cases; per-case and motor timing gates remain unchanged
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

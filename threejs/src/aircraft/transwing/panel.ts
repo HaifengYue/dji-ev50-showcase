@@ -7,7 +7,7 @@ import { MOTOR_IDS, type MotorStage } from './core/motors';
 import { SURFACE_IDS, type SurfaceId } from './core/surfaces';
 import { DETAIL_VIEWS } from './core/details';
 import { INSPECTION_VIEWS } from './core/inspection';
-import { PHASES, getFlight, phaseStart } from './core/flight';
+import { WORLD_FLIGHT_PHASES, worldFlightPhase } from './worldFlight';
 import type { TiltAction } from './core/tilt';
 import './panel.css';
 
@@ -21,7 +21,9 @@ export interface TranswingPanelAPI {
   dispatch: (action: ExperienceAction) => void;
   manual: (patch: StatePatch) => void;
   setWireframe: (enabled: boolean) => void;
-  setEnvironment: (environment: 'hangar' | 'sky') => void;
+  startFlightAt: (seconds: number) => void;
+  getCameraView?: () => string;
+  isUnifiedControl?: () => boolean;
   setInternalDrive: (enabled: boolean) => void;
   setAxes: (enabled: boolean) => void;
   setAutoRotate: (enabled: boolean) => void;
@@ -104,7 +106,8 @@ export function createTranswingPanel(
   }
   function local(action: () => void) {
     const snapshot = api.runtime.getSnapshot();
-    if (disposed || snapshot.disposed || snapshot.control !== 'local') return;
+    if (disposed || snapshot.disposed || snapshot.control !== 'local' || api.isUnifiedControl?.())
+      return;
     generation++;
     fileError = '';
     action();
@@ -224,6 +227,8 @@ export function createTranswingPanel(
     api.dispatch({ type: 'tilt', action });
   }
   function external() {
+    if (api.isUnifiedControl?.())
+      throw new Error('请先在统一控制台释放控制，再连接 Python 或导入 JSON');
     if (api.prepareExternal) api.prepareExternal();
     else {
       api.dispatch({ type: 'set', key: 'playing', value: false });
@@ -231,6 +236,7 @@ export function createTranswingPanel(
     }
   }
   function load(read: (signal: AbortSignal) => Promise<string>, autoplay = false) {
+    if (api.isUnifiedControl?.()) throw new Error('请先在统一控制台释放控制，再导入 JSON');
     void asynchronous(() => api.loader.load(read, external, autoplay));
   }
 
@@ -266,25 +272,22 @@ export function createTranswingPanel(
   const phaseDescription = note(flight, '');
   const phaseRow = row(flight, '选择飞行阶段');
   phaseRow.classList.add('tw-phase-grid');
-  const phaseButtons = PHASES.map((phase, index) => ({
+  const phaseButtons = WORLD_FLIGHT_PHASES.map((phase, index) => ({
     phase: phase.id,
     index,
     button: button(
       phaseRow,
       phase.label,
       () => {
-        api.setInternalDrive(false);
-        api.dispatch({ type: 'leave-tilt' });
-        api.dispatch({ type: 'set', key: 'playing', value: false });
-        api.dispatch({ type: 'set', key: 'inspection', value: false });
-        api.dispatch({ type: 'set', key: 'exploded', value: false });
-        api.dispatch({ type: 'set', key: 'time', value: phaseStart(index) });
-        api.dispatch({ type: 'play-flight' });
+        api.startFlightAt(phase.start);
       },
       true,
     ),
   }));
-  note(flight, '选择阶段后从该阶段起点连续播放。飞行时间与轨迹为交互演示约定。');
+  note(
+    flight,
+    '使用 EV50 同一条 180 秒航线、地形与高度。整翼按航线转换阶段展开/收拢；仅为视觉演示，非物理飞控。',
+  );
 
   const mechanism = section('连续整翼倾转', true);
   const poses = row(mechanism, '整翼形态预设');
@@ -368,21 +371,13 @@ export function createTranswingPanel(
   const cameraRow = row(views, '正交与整体视角');
   const cameraButtons = INSPECTION_VIEWS.map((view) => ({
     view: view.id,
-    button: button(
-      cameraRow,
-      view.label,
-      () => api.dispatch({ type: 'inspect', view: view.id }),
-      true,
-    ),
+    button: button(cameraRow, view.label, () => api.setView?.(view.id)),
   }));
   const jointRow = row(views, '倾转关节特写');
   const joints = (['L', 'R'] as const).map((side) => ({
     side,
-    button: button(
-      jointRow,
-      `${side === 'L' ? '左' : '右'}关节特写`,
-      () => api.dispatch({ type: 'joint', side }),
-      true,
+    button: button(jointRow, `${side === 'L' ? '左' : '右'}关节特写`, () =>
+      api.setView?.(`joint-${side.toLowerCase()}`),
     ),
   }));
   const wireframe = check(views, '线框显示', api.setWireframe, true);
@@ -406,14 +401,21 @@ export function createTranswingPanel(
     api.setAxes(enabled);
   });
   const rotate = check(views, '自动环绕观察', api.setAutoRotate);
-  const environment = select(
-    views,
-    '环境',
+  const flightViews = row(views, '航线镜头');
+  const flightCameras = (
     [
-      ['hangar', '机库'],
-      ['sky', '天空'],
-    ],
-    (selected) => api.setEnvironment(selected as 'hangar' | 'sky'),
+      ['follow', '跟随'],
+      ['wide', '航线远景'],
+      ['fpv', '机头 FPV'],
+      ['down', '腹部下视'],
+    ] as const
+  ).map(([view, label]) => ({
+    view,
+    button: button(flightViews, label, () => api.setView?.(view)),
+  }));
+  note(
+    views,
+    '自由观察不会跟随机体移动；跟随、远景、机头与下视需明确选择。地形、背景和光照使用主场景设置。',
   );
 
   const detail = section('部件细节与系统概念');
@@ -498,6 +500,7 @@ export function createTranswingPanel(
   const simulation = section('Python 接入与 JSON 回放');
   const connectionRow = row(simulation, 'Python 连接与控制权');
   const connect = button(connectionRow, '连接本机 Python 桥', () => {
+    if (api.isUnifiedControl?.()) throw new Error('请先在统一控制台释放控制，再连接 Python');
     if (api.runtime.getSnapshot().control !== 'local') return;
     api.loader.cancel();
     external();
@@ -670,7 +673,6 @@ export function createTranswingPanel(
     [drive, 'internal-drive'],
     [axis, 'axes'],
     [rotate, 'auto-rotate'],
-    [environment, 'environment'],
     [closeDetail, 'detail-close'],
     [freeCamera, 'camera-free'],
     [properties, 'properties'],
@@ -687,6 +689,7 @@ export function createTranswingPanel(
     [shutter, 'shutter'],
   ];
   hooks.forEach(([target, name]) => testId(target, name));
+  flightCameras.forEach((item) => testId(item.button, `camera-${item.view}`));
   phaseButtons.forEach((item) => testId(item.button, `flight-phase-${item.phase}`));
   presets.forEach((item) => testId(item.button, `tilt-preset-${item.progress * 100}`));
   cameraButtons.forEach((item) => testId(item.button, `camera-${item.view}`));
@@ -702,9 +705,9 @@ export function createTranswingPanel(
     if (disposed) return;
     const snapshot = api.runtime.getSnapshot();
     const state = api.getState();
-    const isLocal = snapshot.control === 'local' && !snapshot.disposed;
+    const isLocal = snapshot.control === 'local' && !snapshot.disposed && !api.isUnifiedControl?.();
     const isManual = isLocal && snapshot.driver === 'manual';
-    const progress = isLocal ? displayedUnfold(state) : snapshot.state.wingTilt;
+    const progress = snapshot.state.wingTilt;
     const settings = api.getViewSettings?.();
     if (settings) {
       internalDrive = settings.internalDrive;
@@ -718,10 +721,14 @@ export function createTranswingPanel(
           : snapshot.connection === 'connecting'
             ? '正在连接同源桥'
             : snapshot.state.owner === 'external'
-              ? 'Python 独占控制'
+              ? api.isUnifiedControl?.()
+                ? '统一外部控制'
+                : 'Python 独占控制'
               : snapshot.connection === 'connected'
                 ? '同源桥就绪，等待 Python'
-                : '本地操作'
+                : api.isUnifiedControl?.()
+                  ? '统一接口 · 本地时钟'
+                  : '本地操作'
       }`,
     );
     text(
@@ -730,7 +737,11 @@ export function createTranswingPanel(
         ? `控制权：本地 · ${isManual ? '手动机构 / 四电机' : '连续飞行演示'}`
         : snapshot.control === 'replay'
           ? '控制权：JSON 回放 · 退出并复位后可恢复本地操作'
-          : '控制权：Python · 本地动作已锁定，镜头显示仍可查看',
+          : api.isUnifiedControl?.()
+            ? snapshot.control === 'external'
+              ? '控制权：统一外部控制 · 本地动作已锁定，镜头仍可查看'
+              : '控制权：统一接口 · 本地时钟，镜头仍可查看'
+            : '控制权：Python · 本地动作已锁定，镜头显示仍可查看',
     );
     text(clock, `仿真时间 ${snapshot.state.time.seconds.toFixed(2)} 秒`);
     text(
@@ -740,18 +751,22 @@ export function createTranswingPanel(
     localControls.forEach((control) => {
       control.disabled = !isLocal;
     });
-    const currentPhase = getFlight(state.time);
+    const currentPhase = worldFlightPhase(state.time);
     phaseButtons.forEach((item) =>
       pressed(
         item.button,
-        isLocal &&
-          snapshot.driver === 'demo' &&
-          !state.tiltMode &&
-          currentPhase.index === item.index,
+        isLocal && snapshot.driver === 'demo' && !state.tiltMode && currentPhase.id === item.phase,
       ),
     );
-    text(phaseDescription, `${currentPhase.phase.label} · ${currentPhase.phase.detail}`);
-    pressed(freeCamera, !state.inspection && !state.detailView && !state.jointSide);
+    text(phaseDescription, `${currentPhase.label} · ${currentPhase.detail}`);
+    pressed(
+      freeCamera,
+      (api.getCameraView?.() ?? 'free') === 'free' &&
+        !state.inspection &&
+        !state.detailView &&
+        !state.jointSide,
+    );
+    flightCameras.forEach((item) => pressed(item.button, api.getCameraView?.() === item.view));
     freeCamera.disabled = !isLocal && !api.setView;
     pressed(demo, isLocal && snapshot.driver === 'demo');
     pressed(manual, isManual);
@@ -783,7 +798,6 @@ export function createTranswingPanel(
     driveNote.hidden = !internalDrive;
     axis.checked = axes;
     rotate.checked = state.autoRotate;
-    value(environment, snapshot.state.display.environment);
     detailButtons.forEach((item) => pressed(item.button, state.detailView === item.view));
     const selected = DETAIL_VIEWS.find((item) => item.id === state.detailView);
     text(
@@ -821,7 +835,10 @@ export function createTranswingPanel(
       snapshot.connection === 'connecting' ||
       snapshot.connection === 'connected' ||
       resetting;
-    release.disabled = resetting;
+    release.disabled = resetting || !!api.isUnifiedControl?.();
+    example.disabled = !!api.isUnifiedControl?.();
+    file.disabled = !!api.isUnifiedControl?.();
+    connect.disabled ||= !!api.isUnifiedControl?.();
     text(release, resetting ? '正在释放控制…' : '退出外控 / 复位');
     text(importStatus, api.loader.loading ? '正在验证记录，完成前保留当前画面…' : '');
     importStatus.hidden = !api.loader.loading;

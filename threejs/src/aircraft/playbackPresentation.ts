@@ -17,7 +17,7 @@ export function playbackPresentation(state: AircraftSnapshot) {
       : timeUnit === 'percent'
         ? `${state.time.toFixed(1)}% 展开`
         : external
-          ? `${state.time.toFixed(2)} s · Python 时钟`
+          ? `${state.time.toFixed(2)} s · ${state.timelineLabel === '外部仿真时间' ? '外部步进时钟' : 'Python 时钟'}`
           : `${state.time.toFixed(1)} / ${state.duration.toFixed(1)} s`;
   return {
     timeLabel,

@@ -16,11 +16,22 @@ npm --prefix threejs run dev
 
 - 顶部“机库”切换 EV50 / TRANSWING P4，支持 `?aircraft=ev50` 和 `?aircraft=transwing` 直达及浏览器前进/后退。
 - EV50 保留原产品展示、航线、8 + 3 动力系统、MAVLink / ULog 回放、传感器相机及导出。
-- Transwing 提供连续整翼倾转、四电机折桨、六片独立舵面、舱盖、关节/部件检查、内部驱动及离线 JSON / 本机 Python 接口。
+- Transwing 直接使用 EV50 的产品舞台、光照与动态地形；180 秒共同航线保留连续整翼倾转、四电机折桨、六片独立舵面、舱盖、机构检查、传感器视角及旧 JSON / Python 接口。
 - 机型切换清理当前播放、输入、异步导入、外控连接和专属图形资源；切回使用干净状态。切换会取消尚未完成的截图/视频输出，请先完成导出。
 - 默认自由观察。机构运动保留观察机位，明确选择检查视角时才重新取景。
 
-[集成说明](docs/INTEGRATION.md) · [验证范围与结果](docs/INTEGRATION-VERIFICATION.md) · [Transwing 本机 Python](models/transwing/PYTHON.md)
+[统一 API 与本机服务](docs/UNIFIED_CONTROL.md) · [场景迁移](docs/SCENE-CONTROL-MIGRATION.md) · [集成说明](docs/INTEGRATION.md) · [验证范围与结果](docs/INTEGRATION-VERIFICATION.md) · [Transwing 本机 Python](models/transwing/PYTHON.md)
+
+## 统一外部控制开发
+
+```sh
+npm --prefix threejs run build
+npm --prefix threejs run control:hangar
+```
+
+打开唯一打印的本机地址（默认 `http://127.0.0.1:8790/?control=local`）。两机型共用 `window.hangarAPI.request` 与 `/api/hangar/v1`；先查询能力和当前机型版本，再取得控制租约。外部位姿采用米、Y-up 和 XYZW 四元数，时间只由 `clock.step` 前进，执行结果在渲染后确认。页面的“统一 API 控制”可断开并释放。服务仅绑定 loopback，无认证凭据或公网入口。此接口驱动视觉模型，不控制实体飞机。
+
+旧 EV50 和 Transwing API 仍是分别兼容的机型专属入口，不能同时取得写控制权。完整契约、Python 标准库示例与迁移限制见[统一控制文档](docs/UNIFIED_CONTROL.md)。
 
 ## EV50 资产与脚本
 
