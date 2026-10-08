@@ -18,7 +18,7 @@ npm --prefix threejs run dev
 - EV50 保留原产品展示、航线、8 + 3 动力系统、MAVLink / ULog 回放、传感器相机及导出。
 - Transwing 直接使用 EV50 的产品舞台、光照与动态地形；180 秒共同航线保留连续整翼倾转、四电机折桨、六片独立舵面、舱盖、机构检查、传感器视角及旧 JSON / Python 接口。
 - 机型切换清理当前播放、输入、异步导入、外控连接和专属图形资源；切回使用干净状态。切换会取消尚未完成的截图/视频输出，请先完成导出。
-- 默认自由观察。机构运动保留观察机位，明确选择检查视角时才重新取景。
+- 产品模式默认自由观察。明确进入“飞行演示”会自动播放并使用跟随视角，重复点击不会重置正在播放的时间；返回产品恢复自由观察。机构运动保留观察机位，明确选择检查视角时才重新取景。
 
 [统一 API 与本机服务](docs/UNIFIED_CONTROL.md) · [场景迁移](docs/SCENE-CONTROL-MIGRATION.md) · [集成说明](docs/INTEGRATION.md) · [验证范围与结果](docs/INTEGRATION-VERIFICATION.md) · [Transwing 本机 Python](models/transwing/PYTHON.md)
 

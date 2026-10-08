@@ -51,6 +51,11 @@ test('EV50 starts alone on nested base, preserves flight controls and capture', 
   await expect
     .poll(() => page.evaluate(() => (window as any).ev50Diagnostics.time))
     .toBeGreaterThan(0);
+  const evTime = await page.evaluate(() => (window as any).ev50Diagnostics.time);
+  await page.locator('#flight').click();
+  expect(await page.evaluate(() => (window as any).ev50Diagnostics.time)).toBeGreaterThanOrEqual(
+    evTime,
+  );
   await page.locator('#product').click();
   await page.locator('#quality').selectOption('Low');
   await expect(page.locator('#quality-readout')).toHaveText('LOW');
@@ -470,7 +475,7 @@ test('Real Python bridge owns time, receives applied ACKs and releases every sha
 test('Transwing uses the EV50 stage and world terrain route without a private hangar', async ({
   page,
 }, info) => {
-  test.setTimeout(180_000);
+  test.setTimeout(240_000); // Adds live-flight progression and one high-quality capture.
   const errors = watchErrors(page);
   await page.goto('/hangar/?aircraft=transwing');
   await ready(page, 'transwing');
@@ -487,14 +492,49 @@ test('Transwing uses the EV50 stage and world terrain route without a private ha
   await expect(page.locator('#immersive')).toBeEnabled();
   await page.screenshot({ path: info.outputPath('transwing-shared-product-stage.png') });
   await page.locator('#flight').click();
-  await page.locator('#camera').selectOption('follow');
+  await expect(page.locator('#camera')).toHaveValue('follow');
+  await expect.poll(async () => (await diagnostics(page)).aircraft.experience.playing).toBe(true);
+  await expect.poll(async () => (await diagnostics(page)).world.time).toBeGreaterThan(0);
   await page.evaluate(() => {
     const timeline = document.querySelector<HTMLInputElement>('#timeline')!;
     timeline.value = '80';
     timeline.dispatchEvent(new Event('input', { bubbles: true }));
   });
-  await expect.poll(async () => (await diagnostics(page)).world.time).toBeCloseTo(80, 3);
+  await expect.poll(async () => (await diagnostics(page)).world.time).toBeGreaterThan(80);
+  const beforeMotion = await diagnostics(page);
+  await page.locator('#flight').click();
+  await page.locator('#flight').click();
+  await expect
+    .poll(async () => (await diagnostics(page)).world.time)
+    .toBeGreaterThan(beforeMotion.world.time + 0.4);
+  await expect
+    .poll(async () => {
+      const value = await diagnostics(page);
+      return value.aircraft.runtime.actuators.L_Front.rpm;
+    })
+    .toBeGreaterThan(100);
   const flying = await diagnostics(page);
+  expect(flying.aircraft.experience.playing).toBe(true);
+  expect(flying.aircraft.camera.view).toBe('follow');
+  expect(
+    Math.hypot(
+      flying.world.position.x - beforeMotion.world.position.x,
+      flying.world.position.y - beforeMotion.world.position.y,
+      flying.world.position.z - beforeMotion.world.position.z,
+    ),
+  ).toBeGreaterThan(1);
+  expect(
+    Math.hypot(
+      ...flying.aircraft.camera.position.map(
+        (value: number, index: number) => value - beforeMotion.aircraft.camera.position[index],
+      ),
+    ),
+  ).toBeGreaterThan(1);
+  const offset = flying.aircraft.camera.target.map(
+    (value: number, index: number) =>
+      value - [flying.world.position.x, flying.world.position.y, flying.world.position.z][index],
+  );
+  expect(Math.hypot(...offset)).toBeLessThan(15);
   expect(flying.scene.mode).toBe('flight');
   expect(flying.scene.terrainVisible).toBe(true);
   expect(flying.world.position.y).toBeGreaterThan(100);
@@ -506,7 +546,42 @@ test('Transwing uses the EV50 stage and world terrain route without a private ha
   await expect
     .poll(async () => (await diagnostics(page)).aircraft.camera.transitioning)
     .toBe(false);
-  await page.screenshot({ path: info.outputPath('transwing-shared-terrain-follow.png') });
+  await page.locator('#quality').selectOption('High');
+  await expect(page.locator('#quality-readout')).toHaveText('HIGH');
+  const highFrame = (await diagnostics(page)).frameNumber;
+  await expect
+    .poll(async () => (await diagnostics(page)).frameNumber)
+    .toBeGreaterThan(highFrame + 1);
+  await page.screenshot({ path: info.outputPath('transwing-live-terrain-follow-high.png') });
+  const captured = await diagnostics(page);
+  await info.attach('transwing-live-flight.json', {
+    body: JSON.stringify(
+      {
+        beforeMotion: {
+          time: beforeMotion.world.time,
+          position: beforeMotion.world.position,
+          camera: beforeMotion.aircraft.camera,
+        },
+        running: {
+          time: flying.world.time,
+          position: flying.world.position,
+          camera: flying.aircraft.camera,
+          motors: flying.aircraft.runtime.actuators,
+        },
+        captured: {
+          time: captured.world.time,
+          position: captured.world.position,
+          playing: captured.aircraft.experience.playing,
+          camera: captured.aircraft.camera,
+          motors: captured.aircraft.runtime.actuators,
+        },
+      },
+      null,
+      2,
+    ),
+    contentType: 'application/json',
+  });
+  await page.locator('#quality').selectOption('Low');
   await page.locator('#camera').selectOption('fpv');
   await expect.poll(async () => (await diagnostics(page)).aircraft.camera.view).toBe('fpv');
   await expect
@@ -515,6 +590,13 @@ test('Transwing uses the EV50 stage and world terrain route without a private ha
   await page.screenshot({ path: info.outputPath('transwing-shared-terrain-fpv.png') });
   await page.locator('#product').click();
   await expect.poll(async () => (await diagnostics(page)).scene.terrainVisible).toBe(false);
+  await expect(page.locator('#camera')).toHaveValue('free');
+  expect((await diagnostics(page)).aircraft.experience.playing).toBe(false);
+  await page.locator('#flight').click();
+  await expect(page.locator('#camera')).toHaveValue('follow');
+  await expect.poll(async () => (await diagnostics(page)).world.time).toBeGreaterThan(0);
+  await page.locator('#product').click();
+  await expect(page.locator('#camera')).toHaveValue('free');
   expect(errors).toEqual([]);
 });
 

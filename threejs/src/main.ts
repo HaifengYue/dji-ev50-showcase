@@ -350,11 +350,22 @@ function setSceneMode(mode: 'product' | 'flight') {
 }
 function setMode(mode: 'product' | 'flight') {
   if (selectedId === 'transwing') {
+    const before = selection.current?.snapshot();
+    if (!before || before.control !== 'local' || unifiedGateway?.getLease()) return;
     selection.current?.setMode(mode);
-    cameraSelect.value = 'free';
+    if (mode === 'product') cameraSelect.value = 'free';
+    else if (before.mode !== 'flight') cameraSelect.value = 'follow';
     return;
   }
   if (!ready) return;
+  if (
+    mode === 'flight' &&
+    flight.mode === 'flight' &&
+    flight.playing &&
+    !flight.manual &&
+    simulation.source === 'demo'
+  )
+    return;
   if (simulation.source !== 'demo') simulation.select('demo');
   site.clearTrail();
   flight.mode = mode;
@@ -399,8 +410,12 @@ function sourceChanged(source: SimulationSource) {
 function leaveSimulation() {
   if (simulation.source !== 'demo') simulation.select('demo');
 }
-$('#product').onclick = () => setMode('product');
-$('#flight').onclick = () => setMode('flight');
+$('#product').onclick = () => {
+  if (!unifiedGateway?.getLease()) setMode('product');
+};
+$('#flight').onclick = () => {
+  if (!unifiedGateway?.getLease()) setMode('flight');
+};
 $('#play').onclick = () => {
   if (selectedId === 'transwing') {
     selection.current?.playPause();

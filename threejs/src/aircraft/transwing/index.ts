@@ -573,12 +573,21 @@ class TranswingInstance implements AircraftInstance {
     void quality;
   }
   setMode(mode: AircraftMode) {
+    if (this.disposed || this.runtime.getSnapshot().control !== 'local' || this.unified.lease)
+      return;
+    if (mode === 'flight') {
+      const enteringFlight = this.mode !== 'flight';
+      // Repeated Flight clicks are inert. A paused mission resumes its existing
+      // time and chosen view; only an explicit scene transition initializes follow.
+      if (!enteringFlight && this.state.playing && !this.state.tiltMode) return;
+      this.startFlightAt(enteringFlight ? 0 : this.state.time);
+      if (enteringFlight) this.setView('follow');
+      return;
+    }
     if (!this.local()) return;
     this.changeMode(mode);
     this.internalDrive = false;
-    this.state = experienceReducer(this.state, {
-      type: mode === 'product' ? 'enter-tilt' : 'leave-tilt',
-    });
+    this.state = experienceReducer(this.state, { type: 'enter-tilt' });
     this.state = { ...this.state, playing: false, inspection: false, jointSide: null };
     this.syncLocal();
     this.frame(); // Explicit scene selection may initialize framing; movement never does.

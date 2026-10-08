@@ -309,6 +309,8 @@ try {
     'dispatch',
     'manual',
     'syncLocal',
+    'setMode',
+    'setView',
     'playPause',
     'restart',
     'seek',
@@ -360,7 +362,8 @@ try {
   const instance = new Instance(),
     localRuntime = new SimulationRuntime();
   localRuntime.setReady(true);
-  let frameCalls = 0;
+  let frameCalls = 0,
+    followCalls = 0;
   Object.assign(instance, {
     runtime: localRuntime,
     unified: new TranswingControlAdapter(localRuntime),
@@ -377,7 +380,19 @@ try {
     manualPaused: false,
     applyingControl: false,
     internalDrive: false,
-    frame: () => frameCalls++,
+    root: new T.Group(),
+    body: new T.Group(),
+    camera: {
+      view: 'free',
+      setFlightView(view) {
+        this.view = view;
+        followCalls++;
+      },
+    },
+    frame: () => {
+      frameCalls++;
+      instance.camera.view = instance.state.inspection ? 'inspection' : 'free';
+    },
     loadConcept: () => Promise.resolve(),
   });
   instance.syncLocal();
@@ -438,10 +453,97 @@ try {
   assert.equal(instance.state.autoRotate, false, 'explicit auto-orbit checkbox disables rotation');
   assert.equal(frameCalls, 0, 'camera orbit preferences never implicitly reframe the model');
   pass('explicit auto-orbit toggles remain effective while mechanism actions preserve them');
-  localRuntime.dispose();
   pass(
     'production local-host API changes motors/mechanisms/transport while UI is locked, releases cleanly, and never changes camera',
   );
+
+  instance.setMode('flight');
+  assert.equal(instance.mode, 'flight');
+  assert.equal(instance.state.playing, true);
+  assert.equal(instance.state.time, 0);
+  assert.equal(instance.state.tiltMode, false);
+  assert.equal(instance.camera.view, 'follow');
+  assert.equal(followCalls, 1);
+  assert.equal(frameCalls, 0);
+  assert.equal(localRuntime.getSnapshot().state.time.paused, false);
+  pass('explicit product-to-flight entry starts the mission and initializes follow once');
+
+  instance.state = { ...instance.state, time: 37.25 };
+  instance.syncLocal();
+  const runningSnapshot = localRuntime.getSnapshot();
+  instance.setMode('flight');
+  instance.setMode('flight');
+  assert.equal(
+    localRuntime.getSnapshot(),
+    runningSnapshot,
+    'repeated Flight clicks are fully inert',
+  );
+  assert.equal(instance.state.time, 37.25);
+  assert.equal(instance.state.playing, true);
+  assert.equal(followCalls, 1);
+  instance.camera.view = 'wide'; // An observer-selected view must survive pause/resume.
+  instance.playPause();
+  assert.equal(instance.state.playing, false);
+  assert.equal(instance.camera.view, 'wide');
+  instance.setMode('flight');
+  assert.equal(instance.state.time, 37.25);
+  assert.equal(instance.state.playing, true);
+  assert.equal(instance.camera.view, 'wide');
+  assert.equal(followCalls, 1);
+  assert.equal(frameCalls, 0);
+  pass(
+    'repeated Flight clicks do not reset time and paused Flight resumes without changing the chosen camera',
+  );
+
+  instance.setMode('product');
+  assert.equal(instance.mode, 'product');
+  assert.equal(instance.state.playing, false);
+  assert.equal(instance.state.tiltMode, true);
+  assert.equal(instance.state.inspection, false);
+  assert.equal(instance.camera.view, 'free');
+  assert.equal(frameCalls, 1);
+  nearVector(instance.worldState().position, new T.Vector3());
+  instance.setMode('flight');
+  assert.equal(instance.state.time, 0, 'a fresh scene entry starts a new mission');
+  assert.equal(followCalls, 2);
+  instance.setMode('product');
+  pass('returning to product restores free observation and the shared ground datum');
+
+  for (const lease of [
+    { controlMode: 'local', clock: 'host' },
+    { controlMode: 'external', clock: 'external' },
+  ]) {
+    instance.setControlLease(lease);
+    const before = localRuntime.getSnapshot(),
+      mode = instance.mode,
+      view = instance.camera.view;
+    instance.setMode(mode === 'product' ? 'flight' : 'product');
+    assert.equal(localRuntime.getSnapshot(), before, 'mode buttons cannot mutate a unified lease');
+    assert.equal(instance.mode, mode);
+    assert.equal(instance.camera.view, view);
+    instance.setControlLease(null);
+  }
+  localRuntime.connect();
+  let ownedSnapshot = localRuntime.getSnapshot();
+  instance.setMode('flight');
+  assert.equal(
+    localRuntime.getSnapshot(),
+    ownedSnapshot,
+    'mode buttons cannot seize Python ownership',
+  );
+  assert.equal(instance.mode, 'product');
+  localRuntime.resetLocal();
+  localRuntime.replay(JSON.stringify({ protocol: 'transwing.sim.v1', commands: [] }));
+  ownedSnapshot = localRuntime.getSnapshot();
+  instance.setMode('flight');
+  assert.equal(
+    localRuntime.getSnapshot(),
+    ownedSnapshot,
+    'mode buttons cannot seize JSON replay ownership',
+  );
+  assert.equal(instance.mode, 'product');
+  localRuntime.dispose();
+  pass('explicit mode changes respect local-host, external-clock, Python and JSON ownership locks');
 
   const source = fs.readFileSync('src/aircraft/transwing/index.ts', 'utf8');
   assert.ok(
