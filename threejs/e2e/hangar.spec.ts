@@ -79,6 +79,9 @@ test('Transwing integrates shared canvas, real rig, native cameras and EV50 API 
   );
   expect(response.ok).toBe(false);
   expect(response.error.code).toBe('NOT_READY');
+  await expect
+    .poll(async () => (await diagnostics(page)).aircraft.camera.transitioning)
+    .toBe(false);
   await page.screenshot({ path: info.outputPath('transwing-left-joint.png') });
   await select(page, 'ev50');
   await expect.poll(() => page.evaluate(() => (window as any).ev50API.ready)).toBe(true);
@@ -91,6 +94,7 @@ test('Repeated switches release model resources, reset state and preserve one re
   const errors = watchErrors(page);
   await page.goto('/hangar/?aircraft=ev50');
   await ready(page, 'ev50');
+  test.setTimeout(240_000); // Four cold GPU-resource rebuilds on software-rendered CI.
   const samples: { id: string; geometries: number; textures: number; sceneChildren: number }[] = [];
   for (let index = 0; index < 4; index++) {
     for (const id of ['transwing', 'ev50'] as const) {
@@ -166,26 +170,53 @@ test('Failed model load offers local retry and keeps hangar usable', async ({ pa
   expect(attempts).toBe(2);
 });
 
-test('Mobile width and Back/Forward retain selectable aircraft without horizontal overflow', async ({
-  page,
-}, info) => {
-  const errors = watchErrors(page);
-  await page.setViewportSize({ width: 390, height: 844 });
-  await page.goto('/hangar/?aircraft=unknown');
-  await ready(page, 'ev50');
-  await select(page, 'transwing');
-  await expect(page.locator('#quality-readout')).toHaveText('LOW');
-  await page.locator('#tools-toggle').click();
-  await expect(page.locator('#aircraft-panel')).toBeVisible();
-  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(
-    true,
-  );
-  await page.screenshot({ path: info.outputPath('transwing-mobile-controls.png') });
-  await page.goBack();
-  await ready(page, 'ev50');
-  await page.goForward();
-  await ready(page, 'transwing');
-  expect(errors).toEqual([]);
+test.describe('Mobile touch controls', () => {
+  test.use({ hasTouch: true, isMobile: true });
+  test('Mobile width and Back/Forward retain selectable aircraft without horizontal overflow', async ({
+    page,
+  }, info) => {
+    const errors = watchErrors(page);
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto('/hangar/?aircraft=unknown');
+    await ready(page, 'ev50');
+    await select(page, 'transwing');
+    await expect(page.locator('#quality-readout')).toHaveText('LOW');
+    await expect(page.locator('#tools-toggle')).toBeInViewport();
+    await page.locator('#tools-toggle').tap();
+    await expect(page.locator('#aircraft-panel')).toBeVisible();
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(
+      true,
+    );
+    await page.screenshot({ path: info.outputPath('transwing-mobile-controls.png') });
+    await expect(page.locator('#tools-toggle')).toBeInViewport();
+    await page.locator('#tools-toggle').tap();
+    const beforeDrag = (await diagnostics(page)).aircraft.camera.position;
+    const touch = await page.context().newCDPSession(page);
+    await touch.send('Input.dispatchTouchEvent', {
+      type: 'touchStart',
+      touchPoints: [{ x: 185, y: 390, id: 1 }],
+    });
+    await touch.send('Input.dispatchTouchEvent', {
+      type: 'touchMove',
+      touchPoints: [{ x: 250, y: 425, id: 1 }],
+    });
+    await touch.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
+    await touch.detach();
+    await expect
+      .poll(async () => {
+        const after = (await diagnostics(page)).aircraft.camera.position;
+        return Math.hypot(
+          ...after.map((value: number, index: number) => value - beforeDrag[index]),
+        );
+      })
+      .toBeGreaterThan(0.01);
+    await page.screenshot({ path: info.outputPath('transwing-mobile-aircraft.png') });
+    await page.goBack();
+    await ready(page, 'ev50');
+    await page.goForward();
+    await ready(page, 'transwing');
+    expect(errors).toEqual([]);
+  });
 });
 
 test('Full-page Back restores a usable aircraft, and persisted pageshow rebuilds disposed resources', async ({
@@ -222,4 +253,62 @@ test('Full-page Back restores a usable aircraft, and persisted pageshow rebuilds
   await ready(page, 'transwing');
   await expect(page.locator('canvas#scene')).toHaveCount(1);
   expect((await diagnostics(page)).aircraft.runtime.state.wingTilt).toBe(0);
+});
+
+test('Native Transwing panel drives independent motors, surfaces, concept and JSON replay', async ({
+  page,
+}, info) => {
+  test.setTimeout(180_000);
+  const errors = watchErrors(page);
+  await page.goto('/hangar/?aircraft=transwing');
+  await ready(page, 'transwing');
+  // Low keeps software-rendered CI responsive; geometry and mechanism controls are identical.
+  await page.locator('#quality').selectOption('Low');
+  await page.getByTestId('tw-control-manual').click();
+  await page.getByText('四台独立电机', { exact: true }).click();
+  await page.getByTestId('tw-motor-L_Front-enabled').check();
+  await expect
+    .poll(async () => (await diagnostics(page)).aircraft.runtime.actuators.L_Front.rpm)
+    .toBeGreaterThan(0);
+  expect((await diagnostics(page)).aircraft.runtime.state.motors.R_Front.enabled).toBe(false);
+  await page.getByTestId('tw-motor-L_Front-enabled').uncheck();
+  await expect
+    .poll(async () => (await diagnostics(page)).aircraft.runtime.actuators.L_Front.stage)
+    .toBe('folded');
+  await page.getByText('六片独立舵面与舱盖', { exact: true }).click();
+  await page.getByTestId('tw-surface-L_Inboard').focus();
+  await page.keyboard.press('End');
+  await expect
+    .poll(async () => (await diagnostics(page)).aircraft.runtime.state.surfaces.L_Inboard)
+    .toBe(12);
+  expect((await diagnostics(page)).aircraft.runtime.state.surfaces.R_Inboard).toBe(0);
+  await page.getByTestId('tw-hatch').focus();
+  await page.keyboard.press('End');
+  await expect.poll(async () => (await diagnostics(page)).aircraft.runtime.state.hatchDeg).toBe(55);
+  await page.getByTestId('tw-hatch').focus();
+  await page.keyboard.press('Home');
+  await page.getByText('部件细节与系统概念', { exact: true }).click();
+  await page.getByTestId('tw-detail-systems').click();
+  await expect.poll(async () => (await diagnostics(page)).aircraft.conceptLoaded).toBe(true);
+  await expect
+    .poll(async () => (await diagnostics(page)).aircraft.camera.transitioning)
+    .toBe(false);
+  await page.screenshot({ path: info.outputPath('transwing-systems-concept.png') });
+  await page.getByTestId('tw-detail-close').click();
+  await page.getByTestId('tw-internal-drive').check();
+  await expect.poll(async () => (await diagnostics(page)).aircraft.internalDrive).toBe(true);
+  await page.getByTestId('tw-internal-drive').uncheck();
+  await page.getByTestId('tw-wireframe').check();
+  await expect
+    .poll(async () => (await diagnostics(page)).aircraft.runtime.state.display.wireframe)
+    .toBe(true);
+  await page.getByTestId('tw-wireframe').uncheck();
+  await page.getByText('Python 接入与 JSON 回放', { exact: true }).click();
+  await page.getByTestId('tw-example-python').click();
+  await expect.poll(async () => (await diagnostics(page)).aircraft.runtime.control).toBe('replay');
+  expect((await diagnostics(page)).aircraft.runtime.replayCount).toBeGreaterThan(600);
+  await page.getByTestId('tw-bridge-release').click();
+  await expect.poll(async () => (await diagnostics(page)).aircraft.runtime.control).toBe('local');
+  expect((await diagnostics(page)).aircraft.runtime.state.wingTilt).toBe(0);
+  expect(errors).toEqual([]);
 });

@@ -812,3 +812,31 @@ body[data-aircraft='transwing'] .right-tools {
     top: 144px;
   }
 }
+/* Headline is normally pointer-transparent; local recovery must remain clickable. */
+.headline #load-retry {
+  pointer-events: auto;
+}
+body[data-aircraft='transwing'] .flight-info {
+  background: #14232eeb;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px 16px;
+  max-width: calc(100vw - 430px);
+}
+body[data-aircraft='transwing'] .footer-note {
+  background: #14232ecc;
+  color: #eef4f6;
+  border-radius: 4px;
+  padding: 2px 5px;
+}
+@media (max-width: 760px) {
+  body[data-aircraft='transwing'] .flight-info {
+    max-width: calc(100vw - 32px);
+    padding: 10px 12px;
+  }
+  body[data-aircraft='transwing'] .metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 18px;
+  }
+}

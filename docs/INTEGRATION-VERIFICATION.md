@@ -117,6 +117,22 @@ outputs still being generated/finalized when switching aircraft are discarded. T
 also applies to an explicitly stopped video that has not finished encoding yet.
 Save or finish a recording before switching if the output must be retained.
 
+## Real-browser CI, first pass and corrections
+
+Commit `fb2852ec9710f1b4563c3e178d2516ef0bfd90a3` completed its normal GitHub CI successfully. The separate Chromium run [37787658539](https://github.com/HaifengYue/dji-ev50-showcase/actions/runs/37787658539) executed real WebGL and passed five of seven browser cases. It produced actual EV50, Transwing and narrow-screen screenshots; these were inspected.
+
+The failed-load retry exposed a genuine UI defect: the button inherited the original headline's pointer-transparent style. It is now explicitly pointer-enabled and remains tested with a normal click, not a forced click. Screenshot review also showed low-contrast HUD/footer text over Transwing's light background; scoped dark backdrops now preserve readability.
+
+The four-round, high-quality resource test reached its 90-second whole-test deadline during the fourth Transwing load on software rendering. Three earlier rounds completed and the last error snapshot showed the model ready. Its total budget is now 240 seconds; the per-load 30-second expectation and all geometry/texture/state assertions remain unchanged. This is not evidence of a passed resource plateau until the rerun completes.
+
+The suite now also exercises the native motor/surface/hatch/concept/JSON controls. Mobile testing uses touch emulation, checks the collapse button is in the viewport and tappable, checks a touch drag changes the camera after collapsing, and saves a separate aircraft-visible screenshot.
+
+The genuine full-page return in the first pass did not use BFCache (`observedPersistedReturn=false`). Ordinary Back restored correctly, and the separate deterministic persisted-event handler test passed. These are distinct claims; this does not establish that Chromium actually chose BFCache caching.
+
+## Dependency audit
+
+The first CI install reported an inherited transitive `source-map-js` 1.2.1 advisory. The [reviewed advisory](https://github.com/advisories/GHSA-68fv-2mgg-jv7q) concerns denial of service while consuming specially crafted indexed source maps. Only the lockfile resolution for this package was patched to 1.2.2; Three, Vite and other dependency versions were retained. The subsequent `npm audit --prefix threejs` reports zero known advisories. This is a dependency audit, not a repository-wide security assessment or evidence of exploitation.
+
 ## Browser verification limit
 
 A real Chromium launch was attempted in this execution environment, including a
@@ -127,10 +143,7 @@ FATAL:chrome/browser/process_singleton_posix.cc:297
 Check failed: . socket() failed: Operation not permitted (1)
 ```
 
-No security/sandbox bypass was attempted. Therefore browser/WebGL results must not
-be inferred from the Node results above. No actual screenshots, rendered-frame
-comparison, measured GPU-resource plateau, visual picking, mobile interaction, or
-real video-encoding acceptance has been established by this verification pass.
+No security/sandbox bypass was attempted. Therefore local browser/WebGL results must not be inferred from the Node results. The separate GitHub-hosted pass above did produce real screenshots and partial browser evidence. The local environment itself has not rendered those pages; GPU plateau and final full-suite acceptance depend on the subsequent CI run. Real video encoding remains distinct from the PNG test.
 
 The repository includes a separate Playwright acceptance suite and a loopback
 production preview under a nested `/hangar/` deployment path. In an environment
