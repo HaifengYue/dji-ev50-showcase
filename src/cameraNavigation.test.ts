@@ -7,6 +7,7 @@ import {
   CAMERA_CLIP_DEFAULTS,
   getCameraDepthRange,
   syncCameraDepthRange,
+  resizeCameraProjection,
 } from "./cameraNavigation";
 import {
   applyCameraFrame,
@@ -286,5 +287,44 @@ test("极远正交视景切回透视的等效起点仍在裁面内，最终预�
           Math.abs(corner.z) < 1,
       );
     }
+  }
+});
+
+test("反复改变视景比例只更新投影，保留自由/正交镜头的位置、目标、倍率与方向", () => {
+  for (const camera of [
+    new THREE.PerspectiveCamera(39, 1.5, 0.1, 600),
+    createInspectionCamera(),
+  ]) {
+    camera.position.set(-12.7, -3.5, 18.2);
+    camera.up.set(0.1, 1, 0.2).normalize();
+    const controls = navigation(camera);
+    controls.target.set(1.23, 0.7, -0.82);
+    camera.lookAt(controls.target);
+    camera.zoom = 2.7;
+    camera.updateProjectionMatrix();
+    const position = camera.position.clone();
+    const rotation = camera.quaternion.clone();
+    const target = controls.target.clone();
+    const up = camera.up.clone();
+    for (const aspect of [0.4, 1.5, 2.8, 0.7, 1.5]) {
+      resizeCameraProjection(camera, aspect);
+      syncCameraDepthRange(camera, controls.target);
+      assert.ok(camera.position.equals(position));
+      assert.ok(camera.quaternion.equals(rotation));
+      assert.ok(camera.up.equals(up));
+      assert.ok(controls.target.equals(target));
+      assert.equal(camera.zoom, 2.7);
+      if (camera instanceof THREE.PerspectiveCamera) {
+        assert.equal(camera.aspect, aspect);
+      } else {
+        assert.ok(
+          Math.abs(
+            (camera.right - camera.left) / (camera.top - camera.bottom) -
+              aspect,
+          ) < 1e-12,
+        );
+      }
+    }
+    controls.dispose();
   }
 });

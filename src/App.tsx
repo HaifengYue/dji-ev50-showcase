@@ -212,7 +212,6 @@ export default function App() {
       // 已在播放的整翼继续使用原来的进度与速度；飞行演示切入静止机体检查。
       enterTilt();
       setJointSide(null);
-      setCameraView("perspective");
     }
     setInternalDriveRequested(!internalDriveInspection);
   };
@@ -919,6 +918,7 @@ export default function App() {
               <h2>一个机体，两种可能</h2>
               <p>
                 整翼与动力舱共同转动，定长连杆与滑架同步运动。选择形态，或用八秒连续转换看清每一次连接。
+                操作机构时保留当前观察角度与缩放。
               </p>
               <div
                 className="mechanism-presets"
@@ -1156,6 +1156,7 @@ export default function App() {
                     value={time}
                     onChange={(e) => {
                       if (!localInput()) return;
+                      if (!flightView) setCameraReset((value) => value + 1);
                       leaveTilt();
                       setInspection(false);
                       setExploded(false);
@@ -1183,6 +1184,7 @@ export default function App() {
                         }
                         onClick={() => {
                           if (!localInput()) return;
+                          if (!flightView) setCameraReset((value) => value + 1);
                           leaveTilt();
                           setTime(phaseStart(i));
                           setInspection(false);

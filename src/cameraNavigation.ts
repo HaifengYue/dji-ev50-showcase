@@ -13,6 +13,23 @@ export const CAMERA_NAVIGATION = {
 
 export const CAMERA_CLIP_DEFAULTS = { near: 0.1, far: 600 } as const;
 
+/** 视景尺寸变化只更新投影宽高比，不重新取景或改变用户的轨道状态。 */
+export function resizeCameraProjection(
+  camera: THREE.PerspectiveCamera | THREE.OrthographicCamera,
+  aspect: number,
+) {
+  if (!Number.isFinite(aspect) || aspect <= 0) return;
+  if (camera instanceof THREE.PerspectiveCamera) {
+    camera.aspect = aspect;
+  } else {
+    const center = (camera.left + camera.right) / 2;
+    const width = (camera.top - camera.bottom) * aspect;
+    camera.left = center - width / 2;
+    camera.right = center + width / 2;
+  }
+  camera.updateProjectionMatrix();
+}
+
 export function getCameraDepthRange(distance: number) {
   if (!Number.isFinite(distance) || distance < 0)
     throw new Error("镜头距离必须为非负有限数值");

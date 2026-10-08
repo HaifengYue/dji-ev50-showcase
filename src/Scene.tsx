@@ -26,20 +26,19 @@ import { MeshoptDecoder } from "three/examples/jsm/libs/meshopt_decoder.module.j
 import { SimulationRuntime } from "./simulation";
 import { modelAssetUrl } from "./modelAssetRevision";
 import { createRotorExposure } from "./rotorExposure";
-import {
-  createInternalDriveInspection,
-  getInternalDriveInspectionFrame,
-} from "./internalDriveInspection";
+import { createInternalDriveInspection } from "./internalDriveInspection";
 import { SCENE_LIGHTING, SCENE_TONE_MAPPING_EXPOSURE } from "./sceneLighting";
 import {
-  AIRCRAFT_SHADOW,
-  aircraftShadowRadius,
-  updateAircraftShadow,
-} from "./sceneShadows";
+  RENDER_QUALITY,
+  shadowMapSizeForLimit,
+  syncShadowAllocation,
+} from "./renderQuality";
+import { aircraftShadowRadius, updateAircraftShadow } from "./sceneShadows";
 import {
   CAMERA_NAVIGATION,
   CAMERA_CLIP_DEFAULTS,
   syncCameraDepthRange,
+  resizeCameraProjection,
 } from "./cameraNavigation";
 import {
   createModelRig,
@@ -379,6 +378,15 @@ function AircraftSun({
   detailView: DetailView | null;
 }) {
   const light = useRef<THREE.DirectionalLight>(null);
+  const textureLimit = useThree(
+    (state) => state.gl.capabilities.maxTextureSize,
+  );
+  const viewportWidth = useThree((state) => state.size.width);
+  const shadowSize = shadowMapSizeForLimit(textureLimit, viewportWidth);
+  useLayoutEffect(() => {
+    if (light.current)
+      syncShadowAllocation(light.current.shadow, shadowSize, !lowQuality);
+  }, [shadowSize, lowQuality]);
   const target = useMemo(() => new THREE.Object3D(), []);
   const anchor = useMemo(() => new THREE.Vector3(), []);
   const radius = useMemo(() => {
@@ -412,7 +420,7 @@ function AircraftSun({
         {...lighting.sun}
         target={target}
         castShadow={!lowQuality}
-        shadow-mapSize={[AIRCRAFT_SHADOW.mapSize, AIRCRAFT_SHADOW.mapSize]}
+        shadow-mapSize={[shadowSize, shadowSize]}
       />
     </>
   );
@@ -563,7 +571,7 @@ function Ground({
     </>
   );
 }
-function CameraRig({
+export function CameraRig({
   runtime,
   view,
   reset,
@@ -632,13 +640,11 @@ function CameraRig({
         .applyQuaternion(fromQuaternion)
         .add(fromTarget);
     }
-    const aspect = size.width / Math.max(size.height, 1);
-    const staticFolded = !flightView && tiltProgress === null;
-    const framingBounds = (
-      staticFolded && !inspection
-        ? measurements.foldedBounds
-        : measurements.bounds
-    ).clone();
+    // 当前尺寸仅供明确取景使用；尺寸变化由独立投影同步处理。
+    const viewport = get().size;
+    const aspect = viewport.width / Math.max(viewport.height, 1);
+    // 首次/复位预留全行程空间，此后展开和收拢不再替用户缩放镜头。
+    const framingBounds = measurements.bounds.clone();
     if (exploded) {
       framingBounds.min.x -= 1.4;
       framingBounds.max.x += 1.4;
@@ -650,29 +656,20 @@ function CameraRig({
         : detailView
           ? measurements.detailBounds[detailView]
           : null;
-    const driveFrame = internalDriveInspection
-      ? getInternalDriveInspectionFrame(
-          measurements.internalDriveBounds,
-          measurements.jointBounds,
-          aspect,
-        )
-      : null;
-    const frame =
-      driveFrame ??
-      (inspection
-        ? detailBounds && !detailBounds.isEmpty()
-          ? getDetailInspectionFrame(detailBounds, detailView!, aspect)
-          : joint && jointSide
-            ? getJointInspectionFrame(
-                joint.position
-                  .clone()
-                  .add(new THREE.Vector3(0, measurements.groundOffset, 0)),
-                jointSide,
-                aspect,
-                measurements.jointBounds[jointSide],
-              )
-            : getInspectionFrame(framingBounds, view, aspect)
-        : getPresentationFrame(framingBounds, aspect, flightView));
+    const frame = inspection
+      ? detailBounds && !detailBounds.isEmpty()
+        ? getDetailInspectionFrame(detailBounds, detailView!, aspect)
+        : joint && jointSide
+          ? getJointInspectionFrame(
+              joint.position
+                .clone()
+                .add(new THREE.Vector3(0, measurements.groundOffset, 0)),
+              jointSide,
+              aspect,
+              measurements.jointBounds[jointSide],
+            )
+          : getInspectionFrame(framingBounds, view, aspect)
+      : getPresentationFrame(framingBounds, aspect, flightView);
     const offset = externalControl
       ? new THREE.Vector3(...runtime.getSnapshot().state.positionM)
       : new THREE.Vector3();
@@ -706,8 +703,15 @@ function CameraRig({
     activeCamera.up.copy(previous.up);
     set({ camera: activeCamera });
     const finish = () => {
-      applyCameraFrame(activeCamera, frame, aspect);
+      const currentSize = get().size;
+      applyCameraFrame(
+        activeCamera,
+        frame,
+        currentSize.width / Math.max(currentSize.height, 1),
+      );
       target.current.copy(frame.target);
+      // reduced-motion 的同步完成可能被 React 合并；仍同步现存控制器目标。
+      orbitControls.current?.target.copy(frame.target);
       setControlsReady(true);
     };
     if (reduced) {
@@ -733,8 +737,11 @@ function CameraRig({
         activeCamera.up.set(0, 1, 0).applyQuaternion(activeCamera.quaternion);
         if (inspection) {
           const height = THREE.MathUtils.lerp(fromHeight, frame.height, t);
-          cameras.inspection.left = (-height * aspect) / 2;
-          cameras.inspection.right = (height * aspect) / 2;
+          const currentSize = get().size;
+          const currentAspect =
+            currentSize.width / Math.max(currentSize.height, 1);
+          cameras.inspection.left = (-height * currentAspect) / 2;
+          cameras.inspection.right = (height * currentAspect) / 2;
           cameras.inspection.top = height / 2;
           cameras.inspection.bottom = -height / 2;
           cameras.inspection.updateProjectionMatrix();
@@ -753,20 +760,17 @@ function CameraRig({
     externalControl,
     inspection,
     measurements,
-    exploded,
-    jointSide,
-    detailView,
+    // 机构、拆解、内部可视层和飞行进度不属于镜头指令。
+    // 特写由 reset 显式触发；异步模型/概念模块载入后可补齐取景。
     systemBounds,
-    internalDriveInspection,
-    flightView,
-    tiltProgress === null,
     activeCamera,
     cameras,
     get,
     set,
-    size.width,
-    size.height,
   ]);
+  useEffect(() => {
+    resizeCameraProjection(activeCamera, size.width / Math.max(size.height, 1));
+  }, [activeCamera, size.width, size.height]);
   // 外部位移只平移镜头和目标，保持用户选择的观察方位与缩放，不启动第二个仿真时钟。
   useFrame(() => {
     syncCameraDepthRange(activeCamera, target.current, scene.fog);
@@ -789,14 +793,12 @@ function CameraRig({
   return controlsReady ? (
     <OrbitControls
       ref={orbitControls}
-      key={`${inspection}-${view}-${reset}-${exploded}-${jointSide}-${detailView}-${internalDriveInspection}`}
+      key={`${inspection}-${view}-${reset}`}
       camera={activeCamera}
       target={target.current}
       makeDefault
       {...CAMERA_NAVIGATION}
-      maxPolarAngle={
-        inspection || internalDriveInspection ? Math.PI : Math.PI * 0.48
-      }
+      maxPolarAngle={Math.PI}
       onChange={() => {
         // 平移/光标定点缩放会改变控制器的目标，供切换视角及外部位移继续沿用。
         if (orbitControls.current)
@@ -840,7 +842,7 @@ export default function Scene(props: SceneProps) {
   return (
     <Canvas
       shadows={!props.lowQuality}
-      dpr={props.lowQuality ? [1, 1] : [1, 1.7]}
+      dpr={props.lowQuality ? RENDER_QUALITY.lowDpr : RENDER_QUALITY.highDpr}
       camera={{ position: [12, 8, 14], fov: 39, ...CAMERA_CLIP_DEFAULTS }}
       gl={{
         antialias: !props.lowQuality,
@@ -890,7 +892,7 @@ export default function Scene(props: SceneProps) {
         view={props.cameraView}
         reset={props.cameraReset}
         autoRotate={props.autoRotate}
-        inspection={props.inspection && !props.internalDriveInspection}
+        inspection={props.inspection}
         internalDriveInspection={props.internalDriveInspection}
         measurements={measurements}
         jointSide={props.jointSide}

@@ -1,0 +1,165 @@
+{
+  "schema": "transwing.native-lower-shell-reconstruction.v1",
+  "sourceSha256": "41d1d093ce4b261483ffcc845303fc1e1b8cbb211c4b75ef24663aeb46f0d116",
+  "angularSamples": 64,
+  "xExponent": 0.83,
+  "lowerZExponent": 0.65,
+  "radialWallOffset": 0.006,
+  "stations": [
+    {
+      "y": 0.30112001299858093,
+      "width": 0.34650400280952454,
+      "centerZ": 0.15144799649715424,
+      "halfHeight": 0.2569759951630844,
+      "matchingRetainedLowerSamples": 15,
+      "maximumFitResidual": 5.378808592970685e-09,
+      "excludedCutVertices": []
+    },
+    {
+      "y": 0.41999998688697815,
+      "width": 0.32600000500679016,
+      "centerZ": 0.14399999380111694,
+      "halfHeight": 0.23999999044054582,
+      "matchingRetainedLowerSamples": 14,
+      "maximumFitResidual": 5.887974191542966e-09,
+      "excludedCutVertices": []
+    },
+    {
+      "y": 0.536080002784729,
+      "width": 0.3060320019721985,
+      "centerZ": 0.13658399879932404,
+      "halfHeight": 0.22375199771078058,
+      "matchingRetainedLowerSamples": 12,
+      "maximumFitResidual": 2.727999270923931e-09,
+      "excludedCutVertices": []
+    },
+    {
+      "y": 0.6506400108337402,
+      "width": 0.2861360013484955,
+      "centerZ": 0.12907199561595917,
+      "halfHeight": 0.20805599341717151,
+      "matchingRetainedLowerSamples": 12,
+      "maximumFitResidual": 5.149684928484888e-09,
+      "excludedCutVertices": []
+    },
+    {
+      "y": 0.7641599774360657,
+      "width": 0.26662400364875793,
+      "centerZ": 0.12196800112724304,
+      "halfHeight": 0.19298400186011191,
+      "matchingRetainedLowerSamples": 11,
+      "maximumFitResidual": 3.5986640611884724e-09,
+      "excludedCutVertices": []
+    },
+    {
+      "y": 0.8771200180053711,
+      "width": 0.24780799448490143,
+      "centerZ": 0.11577600240707397,
+      "halfHeight": 0.17860800128714743,
+      "matchingRetainedLowerSamples": 3,
+      "maximumFitResidual": 2.646166230579894e-09,
+      "excludedCutVertices": []
+    },
+    {
+      "y": 0.9900000095367432,
+      "width": 0.23000000417232513,
+      "centerZ": 0.11100000143051147,
+      "halfHeight": 0.16500000045271535,
+      "matchingRetainedLowerSamples": 3,
+      "maximumFitResidual": 7.65608854091937e-10,
+      "excludedCutVertices": []
+    },
+    {
+      "y": 1.1028000116348267,
+      "width": 0.21305599808692932,
+      "centerZ": 0.10805600136518478,
+      "halfHeight": 0.15200000164006397,
+      "matchingRetainedLowerSamples": 3,
+      "maximumFitResidual": 1.7842494426378863e-09,
+      "excludedCutVertices": []
+    },
+    {
+      "y": 1.2151999473571777,
+      "width": 0.19676800072193146,
+      "centerZ": 0.10660800337791443,
+      "halfHeight": 0.13956000297423382,
+      "matchingRetainedLowerSamples": 4,
+      "maximumFitResidual": 1.408856892259891e-09,
+      "excludedCutVertices": []
+    },
+    {
+      "y": 1.3272000551223755,
+      "width": 0.18135200440883636,
+      "centerZ": 0.10603199899196625,
+      "halfHeight": 0.12791999917204844,
+      "matchingRetainedLowerSamples": 4,
+      "maximumFitResidual": 9.867866801460679e-10,
+      "excludedCutVertices": []
+    },
+    {
+      "y": 1.4387999773025513,
+      "width": 0.16702400147914886,
+      "centerZ": 0.10570400208234787,
+      "halfHeight": 0.11732000235375832,
+      "matchingRetainedLowerSamples": 5,
+      "maximumFitResidual": 3.4074235100156613e-10,
+      "excludedCutVertices": []
+    },
+    {
+      "y": 1.5499999523162842,
+      "width": 0.15399999916553497,
+      "centerZ": 0.10499999672174454,
+      "halfHeight": 0.1079999966566662,
+      "matchingRetainedLowerSamples": 5,
+      "maximumFitResidual": 1.4426201899730984e-10,
+      "excludedCutVertices": [
+        {
+          "point": [
+            0.09454837441444397,
+            1.5499999523162842,
+            0.0026623676531016827
+          ],
+          "expectedNativeLatticeZ": 0.009209176904567337,
+          "absoluteResidual": 0.0065468092514656545,
+          "reason": "Boolean intersection vertex at matching X, not original ring skin sample"
+        }
+      ]
+    },
+    {
+      "y": 1.6624000072479248,
+      "width": 0.1427920013666153,
+      "centerZ": 0.10385599732398987,
+      "halfHeight": 0.10047199719504235,
+      "matchingRetainedLowerSamples": 6,
+      "maximumFitResidual": 6.073252872829116e-10,
+      "excludedCutVertices": []
+    },
+    {
+      "y": 1.7760000228881836,
+      "width": 0.1332560032606125,
+      "centerZ": 0.10268799960613251,
+      "halfHeight": 0.09457599940719826,
+      "matchingRetainedLowerSamples": 7,
+      "maximumFitResidual": 7.691537684539895e-10,
+      "excludedCutVertices": []
+    },
+    {
+      "y": 1.8883999586105347,
+      "width": 0.12462399899959564,
+      "centerZ": 0.10159199684858322,
+      "halfHeight": 0.08954399671747412,
+      "matchingRetainedLowerSamples": 7,
+      "maximumFitResidual": 1.076891631424104e-09,
+      "excludedCutVertices": []
+    },
+    {
+      "y": 1.9972000122070312,
+      "width": 0.11612799763679504,
+      "centerZ": 0.10066399723291397,
+      "halfHeight": 0.08460799625790322,
+      "matchingRetainedLowerSamples": 8,
+      "maximumFitResidual": 8.320029526442951e-10,
+      "excludedCutVertices": []
+    }
+  ]
+}

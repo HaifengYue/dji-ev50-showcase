@@ -9,7 +9,7 @@ _BOUND_SCENE_MECHANISM = None
 
 def hydrate_final_mechanism():
     """Saved native scene is the authoritative derived mechanism on reopen."""
-    global PIVOT_X,PIVOT_Y,PIVOT_Z,WING_ANCHOR_CRUISE,_BOUND_SCENE_MECHANISM
+    global PIVOT_X,PIVOT_Y,PIVOT_Z,WING_ANCHOR_CRUISE,_BOUND_SCENE_MECHANISM,SLIDER_X,SLIDER_CRUISE_Y,SLIDER_Z
     if _AUTHORING_REFERENCE:return
     import bpy,json
     raw=bpy.context.scene.get('annotatedMechanismJSON')
@@ -18,6 +18,7 @@ def hydrate_final_mechanism():
     if record.get('schema')!='transwing.annotated-mechanism.final.v1':raise ValueError('Invalid saved mechanism contract')
     PIVOT_X,PIVOT_Y,PIVOT_Z=record['actualRightPivot']
     WING_ANCHOR_CRUISE=tuple(record['wingAnchorRightCruise'])
+    SLIDER_X,SLIDER_CRUISE_Y,SLIDER_Z=record['bodyAnchorRightCruise']
     _BOUND_SCENE_MECHANISM=raw
 _AUTHORING_REFERENCE = False
 

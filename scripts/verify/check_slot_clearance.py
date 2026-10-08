@@ -31,16 +31,16 @@ def distances(a,b):
   for j in range(3):q=np.minimum(q,seg_seg(a[:,i],a[:,(i+1)%3],b[:,j],b[:,(j+1)%3]))
  return np.sqrt(np.maximum(q,0))
 body=tris(bpy.data.objects['Fuselage']);blo=body.min(1);bhi=body.max(1);radius=.008
-# Explicit scope: all hull triangles that could be involved with forward slot
+# Explicit scope: all hull triangles that could be involved with complete current output slot
 # material, including retained skin and cut edge. AABB culls remain conservative.
-mask=(((bhi[:,0]>=.12)&(blo[:,0]<=.26))|((bhi[:,0]>=-.26)&(blo[:,0]<=-.12)))&(bhi[:,1]>=.40)&(blo[:,1]<=.85)&(bhi[:,2]>=-.10)&(blo[:,2]<=.11);ids=np.nonzero(mask)[0];bt=body[mask];bl=blo[mask];bh=bhi[mask]
+mask=(((bhi[:,0]>=.07)&(blo[:,0]<=.42))|((bhi[:,0]>=-.42)&(blo[:,0]<=-.07)))&(bhi[:,1]>=.35)&(blo[:,1]<=2.01)&(bhi[:,2]>=-.11)&(blo[:,2]<=.12);ids=np.nonzero(mask)[0];bt=body[mask];bl=blo[mask];bh=bhi[mask]
 names=[ob.name for ob in bpy.data.objects if ob.type=='MESH'and(ob.parent and ob.parent.name in ['BraceRod_R','BraceRod_L','BraceSpreader'])];rows=[];near=[];globalmin=None;newmin=None;pairs_count=0;t0=time.time()
 for i in range(round(120/o.step)+1):
  angle=i*o.step
  for s,sg in [('L',-1),('R',1)]:bpy.data.objects['WingPivot_'+s].rotation_quaternion=Quaternion(Vector((-sg,-1,1)).normalized(),sg*math.radians(angle))
  bpy.context.view_layer.update();kin.update_linkage()
  for name in names:
-  at=tris(bpy.data.objects[name]);al=at.min(1);ah=at.max(1);valid=(((ah[:,0]>=.12-radius)&(al[:,0]<=.26+radius))|((ah[:,0]>=-.26-radius)&(al[:,0]<=-.12+radius)))&(ah[:,1]>=.40-radius)&(al[:,1]<=.85+radius)&(ah[:,2]>=-.10-radius)&(al[:,2]<=.11+radius);aids=np.nonzero(valid)[0];aa=at[valid];alo=al[valid];ahi=ah[valid]
+  at=tris(bpy.data.objects[name]);al=at.min(1);ah=at.max(1);valid=(((ah[:,0]>=.07-radius)&(al[:,0]<=.42+radius))|((ah[:,0]>=-.42-radius)&(al[:,0]<=-.07+radius)))&(ah[:,1]>=.35-radius)&(al[:,1]<=2.01+radius)&(ah[:,2]>=-.11-radius)&(al[:,2]<=.12+radius);aids=np.nonzero(valid)[0];aa=at[valid];alo=al[valid];ahi=ah[valid]
   if not len(aa):continue
   delta=np.maximum(0,np.maximum(bl[None,:,:]-ahi[:,None,:],alo[:,None,:]-bh[None,:,:]));aix,bix=np.nonzero(np.einsum('ijk,ijk->ij',delta,delta)<=radius*radius)
   if not len(aix):continue
@@ -53,6 +53,6 @@ for i in range(round(120/o.step)+1):
    if newmin is None or nr['distance']<newmin['distance']:newmin=nr
   for ix in np.nonzero(ds<.004)[0]:near.append({'distance':float(ds[ix]),'angle':angle,'owner':name,'movingTriangle':int(aids[aix[ix]]),'hullTriangle':int(ids[bix[ix]]),'hullYSpan':[float(bl[bix[ix],1]),float(bh[bix[ix],1])]})
  if i%80==0:print('POSE',angle,'pairs',pairs_count,'below004',len(near),'minimum',globalmin and globalmin['distance'],'elapsed',time.time()-t0,flush=True)
-res={'sourceSha256':sha,'samples':round(120/o.step)+1,'stepDegrees':o.step,'requiredClearance':.004,'conservativeAabbDistanceRadius':radius,'exactTrianglePairChecks':pairs_count,'minimumInForwardSlotDomain':globalmin,'minimumAheadOfOriginalTip':newmin,'pairsBelow004':near,'testMethod':'Double-precision minimum of all six vertex-triangle and nine edge-edge distances for every triangle pair with Euclidean AABB separation <=.008. Full surface-intersection scan is a separate mandatory test. Omitted pairs have lower bound >.008.','domain':'Both-side hull candidate AABBs abs(X)[.12,.26],Y[.40,.85],Z[-.10,.11]; new extension defined conservatively by complete hull triangle Ymax<.7221375; preserved old-slot contacts reported separately by their explicit triangle Y spans.','notContinuousMotionProof':True,'passedAllForwardDomain004':not near,'passedForwardNewExtension004':newmin is None or newmin['distance']>=.004};o.output.parent.mkdir(parents=True,exist_ok=True);o.output.write_text(json.dumps(res,indent=2));print(json.dumps({k:v for k,v in res.items()if k!='pairsBelow004'},indent=2),flush=True)
+res={'sourceSha256':sha,'samples':round(120/o.step)+1,'stepDegrees':o.step,'requiredClearance':.004,'conservativeAabbDistanceRadius':radius,'exactTrianglePairChecks':pairs_count,'minimumInForwardSlotDomain':globalmin,'minimumAheadOfOriginalTip':newmin,'pairsBelow004':near,'testMethod':'Double-precision minimum of all six vertex-triangle and nine edge-edge distances for every triangle pair with Euclidean AABB separation <=.008. Full surface-intersection scan is a separate mandatory test. Omitted pairs have lower bound >.008.','domain':'Both-side hull candidate AABBs abs(X)[.07,.42],Y[.35,2.01],Z[-.11,.12]; new extension defined conservatively by complete hull triangle Ymax<.7221375; preserved old-slot contacts reported separately by their explicit triangle Y spans.','notContinuousMotionProof':True,'passedAllForwardDomain004':not near,'passedForwardNewExtension004':newmin is None or newmin['distance']>=.004};o.output.parent.mkdir(parents=True,exist_ok=True);o.output.write_text(json.dumps(res,indent=2));print(json.dumps({k:v for k,v in res.items()if k!='pairsBelow004'},indent=2),flush=True)
 
 if not res['passedAllForwardDomain004']:raise SystemExit('Finite forward-slot triangle clearance below .004')

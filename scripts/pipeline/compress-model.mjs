@@ -53,6 +53,24 @@ for(const n of doc.getRoot().listNodes().filter(n=>/^Fixed_root_blue_[LR]$/.test
 // 保留微米级实际配合余量，仍须两编码真实间隙/薄壁重验，V27预算待root按实际体积审定；旧V26/V25预算不自动转移。
 const regexExactNodes=doc.getRoot().listNodes().filter(n=>n.getMesh()&&/^(WingLowerClosure.*|Nacelle_[LR]_Front|Pod_wing_saddle_[LR]_Front|BraceWingSeat_[LR]|BraceRod_mesh_[LR]|BraceRod(Eye|EyeNeck|Ferrule)_[LR]_Root|Drive_.+|CargoHinge.+|ControlHinge.+|RootBearingHousing_.+|RootHingeShaft_[LR]|RootBearing(Fixed|Seal)_[LR]_(Front|Rear)|RootCarrier(Moving|Thrust|Bridge)_[LR]|RootFixedBearingPedestal_[LR]|RootFairing.+|ActuatorSideSlot_.+|Fuselage|CargoHoodShell|CargoOpeningLip|Composite_wing_[LR]|V_tail_[LR]|ControlSurface_.+|ControlFlexure.+|ControlHorn_.+|Motor_cowl_.+|Landing_wear_tip_.+|Fixed_root_[LR]|Fixed_root_blue_[LR]|Wing_blue_leading_[LR]|Blade_[LR]_(Front|Rear)_[AB]|RootHingeEndcap_.+)$/.test(n.getName()));
 const contract=JSON.parse(fs.readFileSync(path.join(root,'scripts/data/current-model-contract.json'),'utf8'));
+// Keep diagnostics in the editable native and external manifest, without
+// duplicating the complete reports in browser scene.userData. No node extras,
+// geometry, normals, material, transform or animation fields are changed.
+const metadataPruningKeys = ['transverseOutputRefinementJSON','centerWingSmoothing20261008'];
+const runtimeDiagnosticMetadataPruning=[];
+const sourceSceneExtras = doc.getRoot().listScenes().map(scene => ({scene,name:scene.getName(),extras:structuredClone(scene.getExtras())}));
+const canonical = value => JSON.stringify(value && typeof value==='object' ? (Array.isArray(value) ? value.map(x=>JSON.parse(canonical(x))) : Object.fromEntries(Object.keys(value).sort().map(k=>[k,JSON.parse(canonical(value[k]))]))) : value);
+for (const row of sourceSceneExtras) {
+ const extras=structuredClone(row.extras);
+ for(const key of metadataPruningKeys) if(key in extras) {
+  const expected=key==='transverseOutputRefinementJSON' ? contract.currentGeometry.transverseOutputRefinement?.slot : contract.currentGeometry.centerWingRefinement;
+  if(!expected || canonical(JSON.parse(extras[key]))!==canonical(expected))throw new Error('Diagnostic report not retained verbatim in independent contract: '+key);
+  runtimeDiagnosticMetadataPruning.push({scene:row.name,key,serializedValueBytes:Buffer.byteLength(JSON.stringify(extras[key])),fullReportRetainedInNativeAndExternalManifest:true});
+  delete extras[key];
+ }
+ row.scene.setExtras(extras);
+}
+
 const parentValidation={quantization:{float32PositionExceptions:contract.criticalMeshOwners}};
 const bake=JSON.parse(fs.readFileSync(path.join(stage,'BAKE_RECEIPT.json'),'utf8'));
 const allNodes=new Map(doc.getRoot().listNodes().map(n=>[n.getName(),n]));
@@ -101,6 +119,8 @@ const driveRestTransformPreservation=restoreDriveRestTransforms(input,out);
 const criticalTransformPreservation=restoreDriveRestTransforms(input,out,exactNodes.map(n=>n.getName()));
 const semanticAliasTransformPreservation=restoreDriveRestTransforms(input,out,['WingLowerClosure_L','WingLowerClosure_R'],false);
 const check=await io.read(out);
+for(const row of sourceSceneExtras){const scene=check.getRoot().listScenes().find(s=>s.getName()===row.name);if(!scene)throw new Error('Scene lost during metadata de-duplication');const expected=structuredClone(row.extras);for(const key of metadataPruningKeys)delete expected[key];if(canonical(scene.getExtras())!==canonical(expected))throw new Error('Unexpected scene-extra change beyond two approved diagnostic reports');}
+
 const clips=check.getRoot().listAnimations();
 if(clips.length!==2 || clips[0].getName()!=='TRANSWING_Hover_Cruise_Hover' || clips[0].listChannels().length!==18)throw new Error('Transition clip was lost or split during compression');
 const motorClip=clips.find(a=>a.getName()==='TRANSWING_Motors_Start_Stop');
@@ -112,7 +132,7 @@ const required=['WingPivot_L','WingPivot_R','Prop_L_Front','Prop_L_Rear','Prop_R
 const names=new Set(check.getRoot().listNodes().map(n=>n.getName()));for(const n of required)if(!names.has(n))throw new Error('Missing rig node '+n);
 const triangles=check.getRoot().listMeshes().flatMap(m=>m.listPrimitives()).reduce((n,p)=>n+(p.getIndices()?.getCount()??p.getAttribute('POSITION').getCount())/3,0);
 const renderedTriangles=check.getRoot().listNodes().reduce((sum,n)=>sum+(n.getMesh()?.listPrimitives().reduce((s,p)=>s+(p.getIndices()?.getCount()??p.getAttribute('POSITION').getCount())/3,0)??0),0);
-const report={modelVersion:27,driveRestTransformPreservation,criticalTransformPreservation,semanticAliasTransformPreservation,paintEncodingPreservation:{layeredSourceFloat32Nodes:layeredPaintFloat32,layeredSourceFloat32Vertices:layeredPaintFloat32.reduce((sum,row)=>sum+row.vertices,0),legacyMappingAppliedToChangedWing:false,restoredVertices:paintRestoredVertices,seamFloat32Vertices:seamPaintRetainedFloat32.length,seamFloat32ProfileDistanceMaximum:Math.max(0,...seamPaintRetainedFloat32.map(x=>x.profileDistance)),seamFloat32DistanceBound:.15,baselineSha256:paintEncoding.runtimeBaselineSha256,map:"scripts/data/fixed-root-paint-encoding.json"},animations:clips.map(a=>({name:a.getName(),channels:a.listChannels().length,startSeconds:0,durationSeconds:a.listSamplers().reduce((maximum,s)=>s.getInput().getArray().reduce((m,t)=>Math.max(m,t),maximum),-Infinity)})),bounds:getBounds(check.getRoot().listScenes()[0]),meshInstances:check.getRoot().listNodes().filter(n=>n.getMesh()).length,renderedTriangles,inputBytes:fs.statSync(input).size,runtimeBytes:fs.statSync(out).size,compression:'EXT_meshopt_compression',quantization:{positions:16,normals:12,level:'medium',float32PositionExceptions:exactNodes.map(n=>n.getName())},triangles,meshes:check.getRoot().listMeshes().length,nodes:check.getRoot().listNodes().length,materials:check.getRoot().listMaterials().length,rigNodesVerified:required,textures:check.getRoot().listTextures().length};
+const report={modelVersion:27,runtimeDiagnosticMetadataPruning,driveRestTransformPreservation,criticalTransformPreservation,semanticAliasTransformPreservation,paintEncodingPreservation:{layeredSourceFloat32Nodes:layeredPaintFloat32,layeredSourceFloat32Vertices:layeredPaintFloat32.reduce((sum,row)=>sum+row.vertices,0),legacyMappingAppliedToChangedWing:false,restoredVertices:paintRestoredVertices,seamFloat32Vertices:seamPaintRetainedFloat32.length,seamFloat32ProfileDistanceMaximum:Math.max(0,...seamPaintRetainedFloat32.map(x=>x.profileDistance)),seamFloat32DistanceBound:.15,baselineSha256:paintEncoding.runtimeBaselineSha256,map:"scripts/data/fixed-root-paint-encoding.json"},animations:clips.map(a=>({name:a.getName(),channels:a.listChannels().length,startSeconds:0,durationSeconds:a.listSamplers().reduce((maximum,s)=>s.getInput().getArray().reduce((m,t)=>Math.max(m,t),maximum),-Infinity)})),bounds:getBounds(check.getRoot().listScenes()[0]),meshInstances:check.getRoot().listNodes().filter(n=>n.getMesh()).length,renderedTriangles,inputBytes:fs.statSync(input).size,runtimeBytes:fs.statSync(out).size,compression:'EXT_meshopt_compression',quantization:{positions:16,normals:12,level:'medium',float32PositionExceptions:exactNodes.map(n=>n.getName())},triangles,meshes:check.getRoot().listMeshes().length,nodes:check.getRoot().listNodes().length,materials:check.getRoot().listMaterials().length,rigNodesVerified:required,textures:check.getRoot().listTextures().length};
 // V27 has no inherited runtime-size approval. Measure first; never reduce
 // protected Float32 positions or remove materials/meshes to meet a stale budget.
 const sizeReview={version:27,actualRuntimeBytes:report.runtimeBytes,approvedBudgetBytes:null,

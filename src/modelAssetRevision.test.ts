@@ -11,9 +11,9 @@ test("模型缓存键绑定当前实际文件，同版本视图复用相同地�
     ),
   );
   assert.equal(manifest.version, 27);
-  assert.match(
+  assert.equal(
     manifest.annotationRevision.id,
-    /^2026-10-07-v27-inset-integrated-b(?:-[a-z0-9]+)*$/,
+    "2026-10-08-annotated-surface-and-transverse-output",
   );
   const bytes = readFileSync(
     new URL("../public/models/xp4.glb", import.meta.url),
@@ -22,8 +22,8 @@ test("模型缓存键绑定当前实际文件，同版本视图复用相同地�
   assert.equal(manifest.assets["xp4.glb"].bytes, bytes.length);
   assert.equal(manifest.assets["xp4.glb"].sha256, digest);
   const prefix = manifest.annotationRevision.id.replace(
-    "2026-10-07",
-    "20261007",
+    "2026-10-08",
+    "20261008",
   );
   assert.equal(MODEL_ASSET_REVISION, `${prefix}-${digest.slice(0, 8)}`);
   assert.equal(

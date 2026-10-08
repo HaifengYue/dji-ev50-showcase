@@ -56,13 +56,13 @@ test("实际CSS双向约束覆盖八种屏幕与检查面板开关，并拒绝�
     assert.throws(() => checkResponsiveSource(mutation));
 });
 
-test("画布变化沿现有尺寸依赖重新取景，开关检查面板不改变模型和镜头参数", () => {
+test("画布变化只同步投影比例，开关检查面板不改变模型和镜头参数", () => {
   const scene = readFileSync(new URL("./Scene.tsx", import.meta.url), "utf8");
   assert.match(
     scene,
-    /const aspect = size\.width \/ Math\.max\(size\.height, 1\)/,
+    /resizeCameraProjection\(activeCamera, size\.width \/ Math\.max\(size\.height, 1\)\)/,
   );
-  assert.match(scene, /size\.width,\s*size\.height,/);
+  assert.match(scene, /\[activeCamera, size\.width, size\.height\]/);
   for (const row of samples()) {
     const before = row.layouts[0];
     for (let repeat = 0; repeat < 5; repeat++) {

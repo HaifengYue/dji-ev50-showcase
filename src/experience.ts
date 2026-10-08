@@ -90,7 +90,7 @@ function enterTilt(state: ExperienceState): ExperienceState {
     ...next,
     playing: false,
     tiltMode: true,
-    inspection: true,
+    // 机构输入只改变机体；沿用当前自由观察或用户明确选择的检查镜头。
     autoRotate: false,
     exploded: false,
     tilt: next.tiltMode
@@ -150,6 +150,7 @@ export function experienceReducer(
       return {
         ...next,
         tilt: tiltReducer(next.tilt, { type: "pause" }),
+        inspection: true,
         jointSide: null,
         cameraView: action.view,
         cameraReset: state.cameraReset + 1,
@@ -160,6 +161,7 @@ export function experienceReducer(
       return {
         ...next,
         tilt: tiltReducer(next.tilt, { type: "pause" }),
+        inspection: true,
         jointSide: action.side,
         cameraReset: state.cameraReset + 1,
       };
@@ -175,6 +177,11 @@ export function experienceReducer(
         exploded: false,
         time: state.tiltMode || state.time >= TOTAL ? 0 : state.time,
         playing: !state.playing,
+        // 开始完整飞行是明确的取景请求；暂停/继续不重置用户镜头。
+        cameraReset:
+          state.tiltMode || (!state.playing && state.time === 0)
+            ? state.cameraReset + 1
+            : state.cameraReset,
       };
     case "advance-flight": {
       if (!state.playing || state.tiltMode) return state;
@@ -184,6 +191,7 @@ export function experienceReducer(
     case "detail":
       return {
         ...enterTilt(state),
+        inspection: true,
         detailView: action.view,
         detailPose: NEUTRAL_DETAIL_POSE,
         detailReturnProgress: state.detailView
@@ -213,6 +221,7 @@ export function experienceReducer(
     case "detail-neutral":
       return { ...state, detailPose: NEUTRAL_DETAIL_POSE };
     case "close-detail":
+      if (!state.detailView) return state;
       return {
         ...neutralDetails(state),
         cameraView: "perspective",

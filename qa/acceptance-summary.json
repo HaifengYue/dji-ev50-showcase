@@ -1,98 +1,135 @@
 {
-  "sourceSha256": "41d1d093ce4b261483ffcc845303fc1e1b8cbb211c4b75ef24663aeb46f0d116",
+  "sourceSha256": "9cf3423f8552d9f1a8ba78204383d1423bf32dff7ab15d90c81be1e07abdb461",
   "passed": true,
   "gates": [
     {
       "gate": "wing material",
-      "samples": 661,
-      "report": "candidate-linkage-refined-dense-wing-material-vectorized-check.json",
-      "sha256": "3434895cf5c2dcd49aece6e0ea78893a56003ed647828746c9c091501f6a15b6",
-      "passed": true
+      "report": "xp4-dense-wing-material-vectorized-check.json",
+      "sha256": "8a09feb71b9ef71bd8a6378e957b1256af8ad89e6bf20c4a2b92414a52588e64",
+      "passed": true,
+      "samples": 661
     },
     {
-      "file": "candidate-linkage-refined-controls-combined-check.json",
-      "sha256": "85d207000c2074bc2101f646bcd21ea515e490745d05ef08c8af863140140156",
+      "gate": "independent controls combined",
+      "report": "xp4-controls-combined-check.json",
+      "sha256": "7644bd41ccd35900643c1d712abe79054e5633292ce9a285dc283f38ac35c97f",
       "passed": true,
       "samples": 14592
     },
     {
-      "file": "candidate-linkage-refined-controls-local-check.json",
-      "sha256": "7ed99792b0d0191db455381c455843aef365224d0cd6002695e2d4f74d963338",
+      "gate": "individual control sweep",
+      "report": "xp4-controls-local-check.json",
+      "sha256": "8ea49ca80080cb333b044f47ec08d7287083cfc38eff2effa73cd3d963db462a",
       "passed": true,
       "samples": 150
     },
     {
-      "file": "candidate-linkage-refined-rotor-fold-phase-preflight.json",
-      "sha256": "cda24468be1f6d90df8afda25e81ea0916bf82d3da5b55c803ae53a5c2b343a0",
+      "gate": "rotor/fold phase",
+      "report": "xp4-rotor-fold-phase-preflight.json",
+      "sha256": "55c40c728466edbeb8630802a4439a428d07e879395cb82278da3ebd236e79db",
       "passed": true,
       "samples": 252
     },
     {
-      "file": "native-self-intersections.json",
-      "sha256": "8f396dab3891362b72cf8142b93237c32243c3f0aaa59813084a68220ae9a58e",
+      "gate": "finite same-owner intersections",
+      "report": "native-self-intersections.json",
+      "sha256": "079fb2c324518801b5e99090a96e94cf63b6d333e0e32908424f144d0c0f0b4f",
       "passed": true,
       "samples": null
     },
     {
-      "file": "support-thread-check.json",
-      "sha256": "c57b76606365ca2a576e6f7d4e1365f4a459bd15cca10a07a9c364dbbb405bad",
+      "gate": "supports and functional threads",
+      "report": "support-and-functional-threads.json",
+      "sha256": "2f28112a543ab7b621bef6f5c69be04e4fc3d73009ad83f981fe6f95933a5afd",
       "passed": true,
       "samples": 241
     },
     {
-      "file": "slot-clearance.json",
-      "sha256": "fb5b39810a2531725c023ec7285b3d22ddb6047c8b895e127d06f7e1620f8bed",
+      "gate": "complete both-side slot clearance",
+      "report": "both-side-slot-clearance.json",
+      "sha256": "ba584fa862cfafe7e11ba45384e45df144a548caeb29111cacae0f9dc7d75e89",
       "passed": true,
       "samples": 481
     },
     {
-      "file": "candidate-linkage-refined-sweep.json",
-      "sha256": "7e21a065be2045b9535749959eb3f60ca44f722fe3e55bfb4c6c7e998435c00f",
+      "gate": "internal drive",
+      "report": "xp4-sweep.json",
+      "sha256": "6acb3efeabf86c98a6215d5a4c15a7f38a4c5036d4270d229e141ca959ad7021",
       "passed": true,
       "samples": 1201
+    },
+    {
+      "gate": "current inventory",
+      "report": "current-native-inventory.json",
+      "sha256": "718b1b38c667c63102ca27c80ad84645b289448fee24a6110790b2a6423c58e6",
+      "passed": true,
+      "samples": null
     }
   ],
-  "scope": "Finite sampled visualization-model geometry validation; no continuous-time, manufacturing, strength, flight or airtightness certification. Deliberate articulation openings and 20 role-aware open owners retained. Browser/mobile physical-device QA not run.",
+  "scope": "Finite sampled visualization-model geometry validation. Not continuous-time, manufacturing, strength, flight or airtightness certification. Deliberate articulation openings and 20 role-aware open owners retained. Browser/mobile physical-device QA not run.",
   "slotClearanceU": {
-    "distance": 0.004265125048647206,
+    "distance": 0.004862395964768279,
     "angle": 120.0,
-    "owner": "BraceRod_mesh_R",
-    "movingTriangle": 13,
-    "hullTriangle": 4242,
+    "owner": "BraceRodEye_R_Body",
+    "movingTriangle": 463,
+    "hullTriangle": 16790,
     "hullTrianglePoints": [
       [
-        0.23398616909980774,
-        0.41499999165534973,
-        -0.053910497575998306
+        0.26680830121040344,
+        0.630886971950531,
+        0.010559042915701866
       ],
       [
-        0.24421173334121704,
-        0.41499999165534973,
-        -0.0483628548681736
+        0.2647106349468231,
+        0.6475527882575989,
+        0.011680287308990955
       ],
       [
-        0.23750123381614685,
-        0.30112001299858093,
-        -0.06592872738838196
+        0.2679280936717987,
+        0.6506400108337402,
+        0.01763969659805298
       ]
     ]
   },
-  "inheritedVisualLimit": "Local hull lip shading remains; not claimed to remove all visual artifacts.",
-  "evidenceFilesInSeparateVerificationArchive": true,
+  "slotDistanceTrianglePairChecks": 3555437,
+  "knownVisualLimits": [
+    "Central trailing silhouette and tip are rounded, but the original low-angle relief above each ball seat retains discretized stair steps at absX about .78-.92,Y about -1.11 to -1.04; not fully solved.",
+    "A fine new geometric seam can remain at the bounded lower-shell patch perimeter due to its explicit 1e-5u inward setback."
+  ],
+  "evidenceRoots": [
+    "build/model",
+    "build/verification",
+    "build/refinement"
+  ],
+  "detailedEvidenceTrackedInGit": false,
   "applicationChecks": {
-    "nodeTestsPassed": 187,
+    "nodeTestsPassed": 195,
     "pythonTestsPassed": 30,
     "lightweightQATestsPassed": 5,
     "sourceRuntimeAnimationTestsPassed": 1,
     "faultInjectionsRejected": 5,
-    "shadowEnvelopeCornersChecked": 7776,
     "typescriptViteBuildPassed": true,
-    "formatPassed": true,
-    "browserOrMobileDeviceTested": false
+    "browserOrMobileDeviceTested": false,
+    "scope": "Verified in isolated validation mirror using exactly the same native/runtime SHA and latest application source; main-checkout rerun also owned by parent task."
   },
-  "runtimeSha256": "8f0840ada14d7a137d01d3c29f8053657abc88078d2fa6302b5a29f3c674440c",
-  "runtimeBytes": 4273500,
+  "runtimeSha256": "bb67af8c6db1bdb81902c0748fd1d99a21689aa5c26d769655ea08f75c13c9b5",
+  "runtimeBytes": 4296228,
   "runtimeBudgetBytes": 4300000,
   "rebuildMode": "editable-native-baseline-rebake-export",
-  "historicalProceduralReconstruction": false
+  "historicalProceduralReconstruction": false,
+  "currentRefinement": {
+    "inputNativeSha256": "41d1d093ce4b261483ffcc845303fc1e1b8cbb211c4b75ef24663aeb46f0d116",
+    "bodyAnchorAbsX": 0.28,
+    "originalCrossbeamHalfSpanRetained": 0.12,
+    "refinedConnectionCheck": "build/refinement/composed-refinement.json",
+    "preservationCheck": "build/refinement/composed-preservation.json",
+    "originalApertureProjectedArea": 0.0612528,
+    "currentApertureProjectedArea": 0.0251146,
+    "apertureProjectedAreaReductionRatio": 0.5899844578533553,
+    "finiteProjectionRaster": [
+      1000,
+      300
+    ],
+    "experimentalSidewallCandidatesIncluded": false
+  }
 }

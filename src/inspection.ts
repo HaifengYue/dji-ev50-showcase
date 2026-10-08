@@ -178,12 +178,12 @@ export function applyCameraFrame(
   camera.position.copy(frame.position);
   camera.up.copy(frame.up);
   camera.lookAt(frame.target);
+  camera.zoom = 1;
   if (camera instanceof THREE.OrthographicCamera) {
     camera.left = (-frame.height * aspect) / 2;
     camera.right = (frame.height * aspect) / 2;
     camera.top = frame.height / 2;
     camera.bottom = -frame.height / 2;
-    camera.zoom = 1;
   } else {
     camera.aspect = aspect;
   }

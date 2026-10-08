@@ -1,8 +1,9 @@
 import * as THREE from "three";
+import { RENDER_QUALITY } from "./renderQuality";
 
 /** Rendering tolerances in conceptual scene units u; never alter aircraft geometry. */
 export const AIRCRAFT_SHADOW = {
-  mapSize: 2048,
+  mapSize: RENDER_QUALITY.shadowMapSize,
   boundsPadding: 0.25,
   explodedWingOffset: 1.4,
   normalBias: 0.0005,

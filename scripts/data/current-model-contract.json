@@ -1,7 +1,7 @@
 {
   "schema": "transwing.current-native-baseline-contract.v1",
   "source": "assets/blender/xp4.blend",
-  "sourceSha256": "41d1d093ce4b261483ffcc845303fc1e1b8cbb211c4b75ef24663aeb46f0d116",
+  "sourceSha256": "9cf3423f8552d9f1a8ba78204383d1423bf32dff7ab15d90c81be1e07abdb461",
   "expectedMeshes": 285,
   "expectedNodes": 352,
   "runtimeBudgetBytes": 4300000,
@@ -24,6 +24,12 @@
     "Blade_hinge_arm_R_Front_B",
     "Blade_hinge_arm_R_Rear_A",
     "Blade_hinge_arm_R_Rear_B",
+    "BraceBallPin_L_Body",
+    "BraceBallPin_R_Body",
+    "BraceBall_L_Body",
+    "BraceBall_R_Body",
+    "BraceBodyCarriage_L",
+    "BraceBodyCarriage_R",
     "BraceRodEyeNeck_L_Root",
     "BraceRodEyeNeck_R_Root",
     "BraceRodEye_L_Root",
@@ -242,16 +248,16 @@
     },
     "actualTravel": {
       "samples": 4001,
-      "minimumY": 0.6074856565264928,
-      "maximumY": 1.900000120723452,
-      "hoverY": 0.6074856565264928,
-      "cruiseY": 1.900000120723452,
+      "minimumY": 0.6331963060694767,
+      "maximumY": 1.900000120674795,
+      "hoverY": 0.6331963060694767,
+      "cruiseY": 1.900000120674795,
       "minimumAtUnfold": 0.0,
       "maximumAtUnfold": 1.0,
       "continuousExtremaProof": false
     },
     "bodyAnchorRightCruise": [
-      0.16,
+      0.28,
       1.9,
       -0.02
     ],
@@ -288,7 +294,7 @@
       "surface_supports.py": "103e40b0aea7f5c0e164116e5a136208a5959c1a01c026a361e1e9f6c82d8925",
       "wing_surface_repair.py": "4c713427b6d995c9af46d7b861b2e10a6fcc5ecea4222d3dfdaece8d961d6cdb"
     },
-    "constructionRevision": "2026-10-07 annotation inset X.88, compact forward drive, actual swept aperture",
+    "constructionRevision": "2026-10-08 transverse output extension and bounded rounded side slot",
     "earlySlotPreparation": {
       "actualApertureXYBounds": [
         [
@@ -344,7 +350,7 @@
       -1,
       1
     ],
-    "rigidRodLength": 3.0308635317216766,
+    "rigidRodLength": 3.004618736009396,
     "rootPhase": "repair-trim-required-closing-complete",
     "schema": "transwing.annotated-mechanism.final.v1",
     "shortCapLineageSha256": "2f7cf4e5c5c0a178fb5600216ffc055934d5002654de6808525572dc2520f2e0",
@@ -476,6 +482,30 @@
       "frontSupportY": 0.5469854565264928,
       "actualSweptSlotChanged": true,
       "requiresFreshAcceptance": true
+    },
+    "transverseOutputRefinement": {
+      "previousBodyAnchorRightCruise": [
+        0.16,
+        1.9,
+        -0.02
+      ],
+      "bodyAnchorRightCruise": [
+        0.28,
+        1.9,
+        -0.02
+      ],
+      "previousOutputHalfSpan": 0.12,
+      "outputHalfSpan": 0.12,
+      "previousRodLength": 3.0308635317216766,
+      "rigidRodLength": 3.004618736009396,
+      "newDegreeOfFreedom": false,
+      "unchangedWingAnchor": [
+        0.8799999952316284,
+        -1.0399999618530273,
+        -0.17534886300563812
+      ],
+      "fixedPowertrainLayoutChanged": false,
+      "oldForwardStopRetained": true
     }
   },
   "historicalArchive": {
@@ -771,6 +801,8 @@
         "originalPhaseScatter": 5.3155934973680985e-06,
         "positiveVolume": 3.682096853640081e-05
       },
+      "fuselageMeshChanged": false,
+      "motorGearboxCoreRearSupportChanged": false,
       "geometryAccepted": false
     },
     "linkage": {
@@ -779,13 +811,13 @@
         -1.0399999618530273,
         -0.17534886300563812
       ],
-      "rigidRodLength": 3.0308635317216766,
+      "rigidRodLength": 3.004618736009396,
       "actualTravel": {
         "samples": 4001,
-        "minimumY": 0.6074856565264928,
-        "maximumY": 1.900000120723452,
-        "hoverY": 0.6074856565264928,
-        "cruiseY": 1.900000120723452,
+        "minimumY": 0.6331963060694767,
+        "maximumY": 1.900000120674795,
+        "hoverY": 0.6331963060694767,
+        "cruiseY": 1.900000120674795,
         "minimumAtUnfold": 0.0,
         "maximumAtUnfold": 1.0,
         "continuousExtremaProof": false
@@ -847,28 +879,49 @@
         "schema": "transwing.lead-screw-phase-sync.v1",
         "operation": "Rotate only male helix vertices about existing screw-rotor local Y axis",
         "node": "Drive_LeadScrewThread",
-        "rotationRadians": 1.8549048543807025,
-        "rotationDegrees": 106.27821955434281,
+        "rotationRadians": 1.2349108984111172,
+        "rotationDegrees": 70.75518255366578,
         "lead": 0.032,
-        "runtimeHoverY": 0.6074856565264928,
-        "currentSliderY": 1.9000000953674316,
-        "phaseResidualRadians": -4.80557149629135e-08,
-        "maximumHelixPhaseScatterRadians": 5.405464877039634e-06,
+        "runtimeHoverY": 0.6331963060694767,
         "maximumAxialCoordinateDelta": 0.0,
-        "maximumRadiusDelta": 1.3289979672315155e-09,
-        "maleAxialSpanRotorLocalY": [
-          0.5681854486465454,
-          1.9537999629974365
-        ],
-        "sourceGeometryOnlyCopy": true,
-        "savedScene": false
+        "sourceGeometryOnlyCopy": true
       },
       "clearedStaleRigAnimation": [],
       "savedScene": false,
       "needsFreshBakeAndManifest": true,
-      "geometryAccepted": false
+      "geometryAccepted": false,
+      "transverseOutputRefinement": {
+        "previousBodyAnchorRightCruise": [
+          0.16,
+          1.9,
+          -0.02
+        ],
+        "bodyAnchorRightCruise": [
+          0.28,
+          1.9,
+          -0.02
+        ],
+        "previousOutputHalfSpan": 0.12,
+        "outputHalfSpan": 0.12,
+        "previousRodLength": 3.0308635317216766,
+        "rigidRodLength": 3.004618736009396,
+        "newDegreeOfFreedom": false,
+        "unchangedWingAnchor": [
+          0.8799999952316284,
+          -1.0399999618530273,
+          -0.17534886300563812
+        ],
+        "fixedPowertrainLayoutChanged": false,
+        "oldForwardStopRetained": true
+      }
     },
-    "slotRelief": {
+    "geometryAccepted": false,
+    "savedScene": false,
+    "preservedMeshCount": 285,
+    "preservedNodeCount": 352,
+    "rootCarrierBridgeUnchanged": true,
+    "independentControlMechanismsUnchanged": true,
+    "historicalSlotRelief": {
       "method": "Actual 481-pose per-owner contact contour union with measured .0055 offset and rounded local joins",
       "actualCrossPointBounds": [
         [
@@ -907,6 +960,384 @@
         "maximumRetainedCornerSourceDistance": 7.484486559405923e-06,
         "method": "Face-compatible nearest original triangle barycentric split-normal transfer; new finite cut faces use geometric hard normals; no geometry movement or material change"
       },
+      "contactPoses": [
+        {
+          "angle": 96.75,
+          "crossPoints": 48
+        },
+        {
+          "angle": 97.0,
+          "crossPoints": 58
+        },
+        {
+          "angle": 97.25,
+          "crossPoints": 62
+        },
+        {
+          "angle": 97.5,
+          "crossPoints": 76
+        },
+        {
+          "angle": 97.75,
+          "crossPoints": 98
+        },
+        {
+          "angle": 98.0,
+          "crossPoints": 115
+        },
+        {
+          "angle": 98.25,
+          "crossPoints": 126
+        },
+        {
+          "angle": 98.5,
+          "crossPoints": 152
+        },
+        {
+          "angle": 98.75,
+          "crossPoints": 248
+        },
+        {
+          "angle": 99.0,
+          "crossPoints": 274
+        },
+        {
+          "angle": 99.25,
+          "crossPoints": 290
+        },
+        {
+          "angle": 99.5,
+          "crossPoints": 310
+        },
+        {
+          "angle": 99.75,
+          "crossPoints": 340
+        },
+        {
+          "angle": 100.0,
+          "crossPoints": 398
+        },
+        {
+          "angle": 100.25,
+          "crossPoints": 442
+        },
+        {
+          "angle": 100.5,
+          "crossPoints": 466
+        },
+        {
+          "angle": 100.75,
+          "crossPoints": 467
+        },
+        {
+          "angle": 101.0,
+          "crossPoints": 470
+        },
+        {
+          "angle": 101.25,
+          "crossPoints": 480
+        },
+        {
+          "angle": 101.5,
+          "crossPoints": 438
+        },
+        {
+          "angle": 101.75,
+          "crossPoints": 472
+        },
+        {
+          "angle": 102.0,
+          "crossPoints": 502
+        },
+        {
+          "angle": 102.25,
+          "crossPoints": 558
+        },
+        {
+          "angle": 102.5,
+          "crossPoints": 602
+        },
+        {
+          "angle": 102.75,
+          "crossPoints": 588
+        },
+        {
+          "angle": 103.0,
+          "crossPoints": 578
+        },
+        {
+          "angle": 103.25,
+          "crossPoints": 598
+        },
+        {
+          "angle": 103.5,
+          "crossPoints": 644
+        },
+        {
+          "angle": 103.75,
+          "crossPoints": 682
+        },
+        {
+          "angle": 104.0,
+          "crossPoints": 662
+        },
+        {
+          "angle": 104.25,
+          "crossPoints": 660
+        },
+        {
+          "angle": 104.5,
+          "crossPoints": 614
+        },
+        {
+          "angle": 104.75,
+          "crossPoints": 610
+        },
+        {
+          "angle": 105.0,
+          "crossPoints": 598
+        },
+        {
+          "angle": 105.25,
+          "crossPoints": 592
+        },
+        {
+          "angle": 105.5,
+          "crossPoints": 568
+        },
+        {
+          "angle": 105.75,
+          "crossPoints": 544
+        },
+        {
+          "angle": 106.0,
+          "crossPoints": 512
+        },
+        {
+          "angle": 106.25,
+          "crossPoints": 496
+        },
+        {
+          "angle": 106.5,
+          "crossPoints": 496
+        },
+        {
+          "angle": 106.75,
+          "crossPoints": 488
+        },
+        {
+          "angle": 107.0,
+          "crossPoints": 484
+        },
+        {
+          "angle": 107.25,
+          "crossPoints": 452
+        },
+        {
+          "angle": 107.5,
+          "crossPoints": 440
+        },
+        {
+          "angle": 107.75,
+          "crossPoints": 440
+        },
+        {
+          "angle": 108.0,
+          "crossPoints": 424
+        },
+        {
+          "angle": 108.25,
+          "crossPoints": 412
+        },
+        {
+          "angle": 108.5,
+          "crossPoints": 412
+        },
+        {
+          "angle": 108.75,
+          "crossPoints": 398
+        },
+        {
+          "angle": 109.0,
+          "crossPoints": 394
+        },
+        {
+          "angle": 109.25,
+          "crossPoints": 358
+        },
+        {
+          "angle": 109.5,
+          "crossPoints": 350
+        },
+        {
+          "angle": 109.75,
+          "crossPoints": 346
+        },
+        {
+          "angle": 110.0,
+          "crossPoints": 342
+        },
+        {
+          "angle": 110.25,
+          "crossPoints": 342
+        },
+        {
+          "angle": 110.5,
+          "crossPoints": 306
+        },
+        {
+          "angle": 110.75,
+          "crossPoints": 310
+        },
+        {
+          "angle": 111.0,
+          "crossPoints": 306
+        },
+        {
+          "angle": 111.25,
+          "crossPoints": 306
+        },
+        {
+          "angle": 111.5,
+          "crossPoints": 302
+        },
+        {
+          "angle": 111.75,
+          "crossPoints": 282
+        },
+        {
+          "angle": 112.0,
+          "crossPoints": 282
+        },
+        {
+          "angle": 112.25,
+          "crossPoints": 274
+        },
+        {
+          "angle": 112.5,
+          "crossPoints": 274
+        },
+        {
+          "angle": 112.75,
+          "crossPoints": 274
+        },
+        {
+          "angle": 113.0,
+          "crossPoints": 270
+        },
+        {
+          "angle": 113.25,
+          "crossPoints": 270
+        },
+        {
+          "angle": 113.5,
+          "crossPoints": 250
+        },
+        {
+          "angle": 113.75,
+          "crossPoints": 250
+        },
+        {
+          "angle": 114.0,
+          "crossPoints": 250
+        },
+        {
+          "angle": 114.25,
+          "crossPoints": 250
+        },
+        {
+          "angle": 114.5,
+          "crossPoints": 250
+        },
+        {
+          "angle": 114.75,
+          "crossPoints": 250
+        },
+        {
+          "angle": 115.0,
+          "crossPoints": 236
+        },
+        {
+          "angle": 115.25,
+          "crossPoints": 232
+        },
+        {
+          "angle": 115.5,
+          "crossPoints": 232
+        },
+        {
+          "angle": 115.75,
+          "crossPoints": 232
+        },
+        {
+          "angle": 116.0,
+          "crossPoints": 232
+        },
+        {
+          "angle": 116.25,
+          "crossPoints": 236
+        },
+        {
+          "angle": 116.5,
+          "crossPoints": 236
+        },
+        {
+          "angle": 116.75,
+          "crossPoints": 236
+        },
+        {
+          "angle": 117.0,
+          "crossPoints": 236
+        },
+        {
+          "angle": 117.25,
+          "crossPoints": 236
+        },
+        {
+          "angle": 117.5,
+          "crossPoints": 236
+        },
+        {
+          "angle": 117.75,
+          "crossPoints": 232
+        },
+        {
+          "angle": 118.0,
+          "crossPoints": 232
+        },
+        {
+          "angle": 118.25,
+          "crossPoints": 232
+        },
+        {
+          "angle": 118.5,
+          "crossPoints": 216
+        },
+        {
+          "angle": 118.75,
+          "crossPoints": 216
+        },
+        {
+          "angle": 119.0,
+          "crossPoints": 212
+        },
+        {
+          "angle": 119.25,
+          "crossPoints": 208
+        },
+        {
+          "angle": 119.5,
+          "crossPoints": 200
+        },
+        {
+          "angle": 119.75,
+          "crossPoints": 192
+        },
+        {
+          "angle": 120.0,
+          "crossPoints": 192
+        }
+      ],
       "roundedMargin": 0.0055,
       "minimumFacetedMargin": 0.005497055231120011,
       "outlineRightXY": [
@@ -1950,12 +2381,1112 @@
       "needsVisibleApertureReview": true,
       "noNewCollisionExemptions": true
     },
-    "geometryAccepted": false,
-    "savedScene": false,
-    "preservedMeshCount": 285,
-    "preservedNodeCount": 352,
-    "rootCarrierBridgeUnchanged": true,
-    "independentControlMechanismsUnchanged": true,
-    "sourceSha256": "2f6d6a1a5a616351643233342a1e175b2483aa3785b50185aac104799ac84f4b"
-  }
+    "transverseOutputRefinement": {
+      "schema": "transwing.annotated-refinement-20261008.v1",
+      "inputNativeSha256": "41d1d093ce4b261483ffcc845303fc1e1b8cbb211c4b75ef24663aeb46f0d116",
+      "units": "concept model units; not manufacturing dimensions",
+      "linkage": {
+        "previousBodyAnchorRightCruise": [
+          0.16,
+          1.9,
+          -0.02
+        ],
+        "bodyAnchorRightCruise": [
+          0.28,
+          1.9,
+          -0.02
+        ],
+        "previousOutputHalfSpan": 0.12,
+        "outputHalfSpan": 0.12,
+        "previousRodLength": 3.0308635317216766,
+        "rigidRodLength": 3.004618736009396,
+        "newDegreeOfFreedom": false,
+        "unchangedWingAnchor": [
+          0.8799999952316284,
+          -1.0399999618530273,
+          -0.17534886300563812
+        ],
+        "fixedPowertrainLayoutChanged": false,
+        "oldForwardStopRetained": true,
+        "actualTravel": {
+          "samples": 4001,
+          "minimumY": 0.6331963060694767,
+          "maximumY": 1.900000120674795,
+          "hoverY": 0.6331963060694767,
+          "cruiseY": 1.900000120674795,
+          "minimumAtUnfold": 0.0,
+          "maximumAtUnfold": 1.0,
+          "continuousExtremaProof": false
+        },
+        "phase": {
+          "schema": "transwing.lead-screw-phase-sync.v1",
+          "operation": "Rotate only male helix vertices about existing screw-rotor local Y axis",
+          "node": "Drive_LeadScrewThread",
+          "rotationRadians": 1.2349108984111172,
+          "rotationDegrees": 70.75518255366578,
+          "lead": 0.032,
+          "runtimeHoverY": 0.6331963060694767,
+          "maximumAxialCoordinateDelta": 0.0,
+          "sourceGeometryOnlyCopy": true
+        }
+      },
+      "slot": {
+        "reconstruction": {
+          "method": "Native retained-lattice reconstruction only within absX[.092,.408],Y[.398,1.969],Z[-.30,.106]",
+          "originalAngularSamples": 64,
+          "stationCount": 16,
+          "radialWallOffset": 0.006,
+          "overlapCoplanarProtectionInwardSetback": 1e-05,
+          "nativeSkinOverlapBand": 0.0002,
+          "oldContourRemovedBeforeJoining": true,
+          "nativeNormalDerivativeFits": [
+            {
+              "y": 0.30112001299858093,
+              "widthDerivative": -0.1738644086895787,
+              "centerDerivative": -0.06450340781075045,
+              "heightDerivative": -0.1435864549770143,
+              "samples": 30,
+              "normalEquationMaxResidual": 0.0004140884533499478
+            },
+            {
+              "y": 0.41999998688697815,
+              "widthDerivative": -0.1701623944513987,
+              "centerDerivative": -0.06181185458247693,
+              "heightDerivative": -0.14084766011689182,
+              "samples": 30,
+              "normalEquationMaxResidual": 0.0002662689569134513
+            },
+            {
+              "y": 0.536080002784729,
+              "widthDerivative": -0.17286151749146264,
+              "centerDerivative": -0.06606817567153189,
+              "heightDerivative": -0.13767065366583858,
+              "samples": 30,
+              "normalEquationMaxResidual": 0.0005931661868807669
+            },
+            {
+              "y": 0.6506400108337402,
+              "widthDerivative": -0.17313138437061604,
+              "centerDerivative": -0.06418174112716366,
+              "heightDerivative": -0.13550913291307798,
+              "samples": 30,
+              "normalEquationMaxResidual": 0.0006867565894116412
+            },
+            {
+              "y": 0.7641599774360657,
+              "widthDerivative": -0.16910257742264664,
+              "centerDerivative": -0.05981535882951161,
+              "heightDerivative": -0.12984670190127107,
+              "samples": 30,
+              "normalEquationMaxResidual": 0.0006814788790239779
+            },
+            {
+              "y": 0.8771200180053711,
+              "widthDerivative": -0.16224615104662216,
+              "centerDerivative": -0.0501439337405125,
+              "heightDerivative": -0.12314573554656819,
+              "samples": 30,
+              "normalEquationMaxResidual": 0.0006508943516064514
+            },
+            {
+              "y": 0.9900000095367432,
+              "widthDerivative": -0.15265412191468902,
+              "centerDerivative": -0.032744735165896696,
+              "heightDerivative": -0.11919271144780161,
+              "samples": 30,
+              "normalEquationMaxResidual": 0.0007172427494554767
+            },
+            {
+              "y": 1.1028000116348267,
+              "widthDerivative": -0.14767089355605317,
+              "centerDerivative": -0.019374651123067604,
+              "heightDerivative": -0.11262957802528639,
+              "samples": 30,
+              "normalEquationMaxResidual": 0.0004364953548601225
+            },
+            {
+              "y": 1.2151999473571777,
+              "widthDerivative": -0.14150095981246402,
+              "centerDerivative": -0.008122070155141214,
+              "heightDerivative": -0.10804536685373217,
+              "samples": 30,
+              "normalEquationMaxResidual": 0.00035789293269058997
+            },
+            {
+              "y": 1.3272000551223755,
+              "widthDerivative": -0.13326089372461067,
+              "centerDerivative": -0.0034698269787625385,
+              "heightDerivative": -0.09972779846121008,
+              "samples": 30,
+              "normalEquationMaxResidual": 0.0003419585632599559
+            },
+            {
+              "y": 1.4387999773025513,
+              "widthDerivative": -0.12292102995920097,
+              "centerDerivative": -0.003784130924814305,
+              "heightDerivative": -0.09006206365124071,
+              "samples": 30,
+              "normalEquationMaxResidual": 0.00044180326421883187
+            },
+            {
+              "y": 1.5499999523162842,
+              "widthDerivative": -0.11062648217108258,
+              "centerDerivative": -0.009932175443300377,
+              "heightDerivative": -0.07740941756153613,
+              "samples": 30,
+              "normalEquationMaxResidual": 0.0004414392261528344
+            },
+            {
+              "y": 1.6624000072479248,
+              "widthDerivative": -0.0905518647637655,
+              "centerDerivative": -0.010356288656141362,
+              "heightDerivative": -0.05815789174174506,
+              "samples": 30,
+              "normalEquationMaxResidual": 0.0007838663161354731
+            },
+            {
+              "y": 1.7760000228881836,
+              "widthDerivative": -0.07919378414209863,
+              "centerDerivative": -0.01021931324911099,
+              "heightDerivative": -0.04720100707325821,
+              "samples": 30,
+              "normalEquationMaxResidual": 0.001109924578528751
+            },
+            {
+              "y": 1.8883999586105347,
+              "widthDerivative": -0.0768446206069979,
+              "centerDerivative": -0.006632577756509373,
+              "heightDerivative": -0.0469861501410459,
+              "samples": 30,
+              "normalEquationMaxResidual": 0.0009629687953940508
+            },
+            {
+              "y": 1.9972000122070312,
+              "widthDerivative": -0.0823380607796495,
+              "centerDerivative": -0.007527938955626652,
+              "heightDerivative": -0.048522583081742614,
+              "samples": 30,
+              "normalEquationMaxResidual": 0.0011246184423919642
+            }
+          ],
+          "snappedRetainedVertices": 596,
+          "maximumSnapDistance": 2.98043687507743e-08,
+          "addedShellVolume": 0.001531041658166754,
+          "closedManifold": true,
+          "recoverHistoricalGeometryClaim": false,
+          "sourceOfParameters": "Current native same-file surviving ring vertices; no old model read"
+        },
+        "sweptSlot": {
+          "method": "Rounded true slanted-output segment Minkowski sweep over exact slider travel; inner crossbeam untouched",
+          "removedVolumeBothSides": 0.00039966531164381536,
+          "closedManifold": true,
+          "sides": [
+            {
+              "side": "L",
+              "straightOutputEndpointsLocal": [
+                [
+                  -0.26004189252853394,
+                  -0.009227613918483257,
+                  0.020408956333994865
+                ],
+                [
+                  -0.11999999731779099,
+                  -0.008999999612569809,
+                  0.06700000166893005
+                ]
+              ],
+              "translationYRange": [
+                0.6331963060694767,
+                1.900000120674795
+              ],
+              "sweptRoundCutterRadius": 0.0122,
+              "actualRodRadius": 0.007,
+              "nominalClearance": 0.005200000000000001,
+              "inscribedSphereSampling": [
+                16,
+                32
+              ]
+            },
+            {
+              "side": "R",
+              "straightOutputEndpointsLocal": [
+                [
+                  0.26004189252853394,
+                  -0.009227613918483257,
+                  0.020408956333994865
+                ],
+                [
+                  0.11999999731779099,
+                  -0.008999999612569809,
+                  0.06700000166893005
+                ]
+              ],
+              "translationYRange": [
+                0.6331963060694767,
+                1.900000120674795
+              ],
+              "sweptRoundCutterRadius": 0.0122,
+              "actualRodRadius": 0.007,
+              "nominalClearance": 0.005200000000000001,
+              "inscribedSphereSampling": [
+                16,
+                32
+              ]
+            },
+            {
+              "side": "Beam",
+              "straightOutputEndpointsLocal": [
+                [
+                  -0.11999999731779099,
+                  -0.008999999612569809,
+                  0.06700000166893005
+                ],
+                [
+                  0.11999999731779099,
+                  -0.008999999612569809,
+                  0.06700000166893005
+                ]
+              ],
+              "translationYRange": [
+                0.6331963060694767,
+                1.900000120674795
+              ],
+              "sweptRoundCutterRadius": 0.0122,
+              "actualRodRadius": 0.007,
+              "nominalClearance": 0.005200000000000001,
+              "inscribedSphereSampling": [
+                16,
+                32
+              ]
+            }
+          ],
+          "fixedBeamHalfSpanUnchanged": 0.12,
+          "minimumRequiredClearance": 0.004,
+          "noNewCollisionExemptions": true
+        },
+        "exactEndpointRepair": {
+          "method": "Collapse only edge endpoints with exactly identical Float32 coordinates; no distance welding",
+          "exactZeroLengthEdges": 1,
+          "positions": [
+            [
+              0.12010245025157928,
+              1.8364678621292114,
+              0.05918991193175316
+            ]
+          ],
+          "maximumCoordinateDisplacement": 0.0,
+          "absoluteVolumeDelta": 0.0,
+          "minimumTriangleArea": 5.551115123125783e-16,
+          "areaGateUnchanged": 1e-18,
+          "closedManifold": true
+        },
+        "surfaceFinish": {
+          "method": "Same-native upper-skin normal field fit for existing loft derivatives; analytic lower-skin corner interpolation only on reconstructed patch faces",
+          "patchedPolygons": 1313,
+          "patchedCorners": 4648,
+          "geometryChangedByNormalFinish": false,
+          "invalidCornerNormals": 0,
+          "skinCutWallBoundariesRemainSplit": true
+        },
+        "netVolumeDelta": 0.0011313763465229387,
+        "closedManifold": true
+      },
+      "centerWing": {
+        "schema": "transwing.center-wing-subtractive-refinement.v1",
+        "modifiedOwners": [
+          "Fuselage",
+          "Fixed_root_L",
+          "Fixed_root_R",
+          "Composite_wing_L",
+          "Composite_wing_R"
+        ],
+        "sourceOnly": "Current loaded native bpy scene, no historical geometry input",
+        "operations": "Exact Boolean DIFFERENCE only; no inflation, no sealing, no global subdivision",
+        "profile": [
+          [
+            0.535,
+            -0.8947777778,
+            -0.1555555556
+          ],
+          [
+            0.62,
+            -0.942,
+            -0.9
+          ],
+          [
+            0.7,
+            -1.022,
+            -0.88
+          ],
+          [
+            0.78,
+            -1.071,
+            -0.69
+          ],
+          [
+            0.823,
+            -1.0945,
+            -0.69
+          ]
+        ],
+        "tipCenter": [
+          0.69,
+          -1.014
+        ],
+        "tipRadius": 0.032,
+        "tipCircleSegments": 128,
+        "cutZBounds": [
+          -0.31,
+          -0.13
+        ],
+        "reports": {
+          "Fuselage": {
+            "before": {
+              "vertices": 9446,
+              "polygons": 15759,
+              "triangles": 18908,
+              "volume": 0.7194327741882507,
+              "nonmanifoldEdges": 0,
+              "inconsistentEdges": 0,
+              "degenerateTriangles": 0,
+              "minimumTriangleArea": 5.551115123125783e-16,
+              "customNormals": true,
+              "smoothFaces": 15207,
+              "flatFaces": 552,
+              "invalidOrZeroCornerNormals": 0,
+              "sharpEdges": 1143
+            },
+            "after": {
+              "vertices": 9602,
+              "polygons": 15809,
+              "triangles": 19220,
+              "volume": 0.7194266908223053,
+              "nonmanifoldEdges": 0,
+              "inconsistentEdges": 0,
+              "degenerateTriangles": 0,
+              "minimumTriangleArea": 5.551115123125783e-16,
+              "customNormals": true,
+              "smoothFaces": 15257,
+              "flatFaces": 552,
+              "invalidOrZeroCornerNormals": 0,
+              "sharpEdges": 1311
+            },
+            "removedVolume": 6.0833659454306854e-06,
+            "containment": {
+              "exactOriginalPolygonDomains": 15697,
+              "samples": 1640,
+              "maxSignedOutsideDistance": 2.9497167375325262e-08,
+              "violationsBeyond2e6": 0,
+              "firstViolations": []
+            },
+            "normals": {
+              "sliverNormalVertices": 0,
+              "sourceCornerNormalsRestored": 50240,
+              "repairedFaces": 236,
+              "analyticCutWallFaces": 68,
+              "skinFits": [
+                {
+                  "side": 1,
+                  "sampleVertices": 94,
+                  "fitRMS": 2.080085341829442e-06,
+                  "repairedCorners": 256
+                },
+                {
+                  "side": -1,
+                  "sampleVertices": 94,
+                  "fitRMS": 2.0800192426341224e-06,
+                  "repairedCorners": 256
+                }
+              ],
+              "untouchedRegionCornerNormalsCopied": true
+            }
+          },
+          "Fixed_root_L": {
+            "before": {
+              "vertices": 3262,
+              "polygons": 6520,
+              "triangles": 6520,
+              "volume": 0.005532120638198621,
+              "nonmanifoldEdges": 0,
+              "inconsistentEdges": 0,
+              "degenerateTriangles": 0,
+              "minimumTriangleArea": 1.1656813210005057e-13,
+              "customNormals": true,
+              "smoothFaces": 2469,
+              "flatFaces": 4051,
+              "invalidOrZeroCornerNormals": 0,
+              "sharpEdges": 620
+            },
+            "after": {
+              "vertices": 3397,
+              "polygons": 6370,
+              "triangles": 6790,
+              "volume": 0.0055076233512026335,
+              "nonmanifoldEdges": 0,
+              "inconsistentEdges": 0,
+              "degenerateTriangles": 0,
+              "minimumTriangleArea": 1.1656813210005057e-13,
+              "customNormals": true,
+              "smoothFaces": 2630,
+              "flatFaces": 3740,
+              "invalidOrZeroCornerNormals": 0,
+              "sharpEdges": 872
+            },
+            "removedVolume": 2.44972869959878e-05,
+            "containment": {
+              "exactOriginalPolygonDomains": 6163,
+              "samples": 2764,
+              "maxSignedOutsideDistance": 5.234372579820956e-08,
+              "violationsBeyond2e6": 0,
+              "firstViolations": []
+            },
+            "normals": {
+              "sliverNormalVertices": 0,
+              "sourceCornerNormalsRestored": 18489,
+              "repairedFaces": 557,
+              "analyticCutWallFaces": 67,
+              "skinFits": [
+                {
+                  "side": 1,
+                  "sampleVertices": 155,
+                  "fitRMS": 0.0020084556866033767,
+                  "repairedCorners": 370
+                },
+                {
+                  "side": -1,
+                  "sampleVertices": 366,
+                  "fitRMS": 0.0006134895593629924,
+                  "repairedCorners": 1229
+                }
+              ],
+              "untouchedRegionCornerNormalsCopied": true
+            }
+          },
+          "Fixed_root_R": {
+            "before": {
+              "vertices": 3240,
+              "polygons": 6476,
+              "triangles": 6476,
+              "volume": 0.005531909848192552,
+              "nonmanifoldEdges": 0,
+              "inconsistentEdges": 0,
+              "degenerateTriangles": 0,
+              "minimumTriangleArea": 5.911005734361707e-13,
+              "customNormals": true,
+              "smoothFaces": 2441,
+              "flatFaces": 4035,
+              "invalidOrZeroCornerNormals": 0,
+              "sharpEdges": 624
+            },
+            "after": {
+              "vertices": 3372,
+              "polygons": 6326,
+              "triangles": 6740,
+              "volume": 0.005507412550012996,
+              "nonmanifoldEdges": 0,
+              "inconsistentEdges": 0,
+              "degenerateTriangles": 0,
+              "minimumTriangleArea": 8.075710374944381e-14,
+              "customNormals": true,
+              "smoothFaces": 2602,
+              "flatFaces": 3724,
+              "invalidOrZeroCornerNormals": 0,
+              "sharpEdges": 874
+            },
+            "removedVolume": 2.449729817955576e-05,
+            "containment": {
+              "exactOriginalPolygonDomains": 6123,
+              "samples": 2720,
+              "maxSignedOutsideDistance": 9.56650083594468e-08,
+              "violationsBeyond2e6": 0,
+              "firstViolations": []
+            },
+            "normals": {
+              "sliverNormalVertices": 0,
+              "sourceCornerNormalsRestored": 18369,
+              "repairedFaces": 555,
+              "analyticCutWallFaces": 67,
+              "skinFits": [
+                {
+                  "side": 1,
+                  "sampleVertices": 152,
+                  "fitRMS": 0.00021862237968184924,
+                  "repairedCorners": 367
+                },
+                {
+                  "side": -1,
+                  "sampleVertices": 362,
+                  "fitRMS": 0.000608826952182319,
+                  "repairedCorners": 1223
+                }
+              ],
+              "untouchedRegionCornerNormalsCopied": true
+            }
+          },
+          "Composite_wing_L": {
+            "before": {
+              "vertices": 26066,
+              "polygons": 52010,
+              "triangles": 52132,
+              "volume": 0.1679428948303924,
+              "nonmanifoldEdges": 0,
+              "inconsistentEdges": 0,
+              "degenerateTriangles": 0,
+              "minimumTriangleArea": 2.7755575615628914e-17,
+              "customNormals": true,
+              "smoothFaces": 46295,
+              "flatFaces": 5715,
+              "invalidOrZeroCornerNormals": 5,
+              "sharpEdges": 1860
+            },
+            "after": {
+              "vertices": 25675,
+              "polygons": 50711,
+              "triangles": 51350,
+              "volume": 0.1679314774367063,
+              "nonmanifoldEdges": 0,
+              "inconsistentEdges": 0,
+              "degenerateTriangles": 0,
+              "minimumTriangleArea": 2.7755575615628914e-17,
+              "customNormals": true,
+              "smoothFaces": 45234,
+              "flatFaces": 5477,
+              "invalidOrZeroCornerNormals": 0,
+              "sharpEdges": 2593
+            },
+            "removedVolume": 1.1417393686097288e-05,
+            "containment": {
+              "exactOriginalPolygonDomains": 50421,
+              "samples": 3573,
+              "maxSignedOutsideDistance": 5.958975535236277e-08,
+              "violationsBeyond2e6": 0,
+              "firstViolations": []
+            },
+            "normals": {
+              "sliverNormalVertices": 5,
+              "sourceCornerNormalsRestored": 151385,
+              "repairedFaces": 21470,
+              "analyticCutWallFaces": 57,
+              "skinFits": [
+                {
+                  "side": 1,
+                  "sampleVertices": 5947,
+                  "fitRMS": 0.006233366175658204,
+                  "repairedCorners": 31978
+                },
+                {
+                  "side": -1,
+                  "sampleVertices": 5932,
+                  "fitRMS": 0.0055375217503477285,
+                  "repairedCorners": 32184
+                }
+              ],
+              "untouchedRegionCornerNormalsCopied": true
+            }
+          },
+          "Composite_wing_R": {
+            "before": {
+              "vertices": 26170,
+              "polygons": 52218,
+              "triangles": 52340,
+              "volume": 0.16794268436142779,
+              "nonmanifoldEdges": 0,
+              "inconsistentEdges": 0,
+              "degenerateTriangles": 0,
+              "minimumTriangleArea": 2.7755575615628914e-17,
+              "customNormals": true,
+              "smoothFaces": 46318,
+              "flatFaces": 5900,
+              "invalidOrZeroCornerNormals": 2,
+              "sharpEdges": 1927
+            },
+            "after": {
+              "vertices": 25779,
+              "polygons": 50919,
+              "triangles": 51558,
+              "volume": 0.16793126686740711,
+              "nonmanifoldEdges": 0,
+              "inconsistentEdges": 0,
+              "degenerateTriangles": 0,
+              "minimumTriangleArea": 2.7755575615628914e-17,
+              "customNormals": true,
+              "smoothFaces": 45257,
+              "flatFaces": 5662,
+              "invalidOrZeroCornerNormals": 0,
+              "sharpEdges": 2639
+            },
+            "removedVolume": 1.141749402067127e-05,
+            "containment": {
+              "exactOriginalPolygonDomains": 50629,
+              "samples": 3573,
+              "maxSignedOutsideDistance": 5.9590014700461325e-08,
+              "violationsBeyond2e6": 0,
+              "firstViolations": []
+            },
+            "normals": {
+              "sliverNormalVertices": 2,
+              "sourceCornerNormalsRestored": 152009,
+              "repairedFaces": 21473,
+              "analyticCutWallFaces": 57,
+              "skinFits": [
+                {
+                  "side": 1,
+                  "sampleVertices": 5937,
+                  "fitRMS": 0.006264844592278686,
+                  "repairedCorners": 31968
+                },
+                {
+                  "side": -1,
+                  "sampleVertices": 5930,
+                  "fitRMS": 0.005346072266840369,
+                  "repairedCorners": 32191
+                }
+              ],
+              "untouchedRegionCornerNormalsCopied": true
+            }
+          }
+        },
+        "existingLowAngleReliefPreserved": true,
+        "noPocketFloorThinned": true,
+        "residualRelief": "Native stepped low-angle clearance remains near abs(x)=0.78 to 0.92, y=-1.11 to -1.04. Deeper removal was rejected to avoid weakening the 0.01 main-wall constraint.",
+        "clearanceNote": "Removing material cannot create a new solid intersection when originals are subsets. Full composed motion checks are still required.",
+        "finiteWitnessNotContinuousProof": true
+      },
+      "connections": {
+        "schema": "transwing.refined-output-connection.v1",
+        "passed": true,
+        "sharedRigidSpreader": true,
+        "requiredBodyBallAbsX": 0.28,
+        "beamHalfSpanUnchanged": 0.12,
+        "geometricEndpointsAndRealMaterialContactsVerified": true,
+        "sides": [
+          {
+            "side": "L",
+            "worldEndpoints": [
+              [
+                -0.26004189252853394,
+                1.8907724618911743,
+                0.00040895678102970123
+              ],
+              [
+                -0.11999999731779099,
+                1.8910001516342163,
+                0.04700000211596489
+              ]
+            ],
+            "centerlineLength": 0.1475889842574877,
+            "nominalRadius": 0.007,
+            "beamEndpointError": 0.0,
+            "pinEndpointError": 0.0,
+            "actualDecodedMeshAxialBounds": [
+              -1.604803401278332e-08,
+              0.1475890022099975
+            ],
+            "actualMaximumRadius": 0.007000091443506528,
+            "actualLinkBeamTriangleContacts": 66,
+            "actualLinkPinTriangleContacts": 34,
+            "bodyBallAnchorCenterError": 0.0,
+            "bodyBallAbsX": 0.2800000011920929
+          },
+          {
+            "side": "R",
+            "worldEndpoints": [
+              [
+                0.26004189252853394,
+                1.8907724618911743,
+                0.00040895678102970123
+              ],
+              [
+                0.11999999731779099,
+                1.8910001516342163,
+                0.04700000211596489
+              ]
+            ],
+            "centerlineLength": 0.1475889842574877,
+            "nominalRadius": 0.007,
+            "beamEndpointError": 0.0,
+            "pinEndpointError": 0.0,
+            "actualDecodedMeshAxialBounds": [
+              -1.604803401278332e-08,
+              0.1475890022099975
+            ],
+            "actualMaximumRadius": 0.007000091443506528,
+            "actualLinkBeamTriangleContacts": 66,
+            "actualLinkPinTriangleContacts": 34,
+            "bodyBallAnchorCenterError": 0.0,
+            "bodyBallAbsX": 0.2800000011920929
+          }
+        ]
+      },
+      "allNamesParentsTypesPreserved": true,
+      "meshes": 285,
+      "nodes": 352,
+      "outputNativeSha256": "9cf3423f8552d9f1a8ba78204383d1423bf32dff7ab15d90c81be1e07abdb461"
+    },
+    "centerWingRefinement": {
+      "schema": "transwing.center-wing-subtractive-refinement.v1",
+      "modifiedOwners": [
+        "Fuselage",
+        "Fixed_root_L",
+        "Fixed_root_R",
+        "Composite_wing_L",
+        "Composite_wing_R"
+      ],
+      "sourceOnly": "Current loaded native bpy scene, no historical geometry input",
+      "operations": "Exact Boolean DIFFERENCE only; no inflation, no sealing, no global subdivision",
+      "profile": [
+        [
+          0.535,
+          -0.8947777778,
+          -0.1555555556
+        ],
+        [
+          0.62,
+          -0.942,
+          -0.9
+        ],
+        [
+          0.7,
+          -1.022,
+          -0.88
+        ],
+        [
+          0.78,
+          -1.071,
+          -0.69
+        ],
+        [
+          0.823,
+          -1.0945,
+          -0.69
+        ]
+      ],
+      "tipCenter": [
+        0.69,
+        -1.014
+      ],
+      "tipRadius": 0.032,
+      "tipCircleSegments": 128,
+      "cutZBounds": [
+        -0.31,
+        -0.13
+      ],
+      "reports": {
+        "Fuselage": {
+          "before": {
+            "vertices": 9446,
+            "polygons": 15759,
+            "triangles": 18908,
+            "volume": 0.7194327741882507,
+            "nonmanifoldEdges": 0,
+            "inconsistentEdges": 0,
+            "degenerateTriangles": 0,
+            "minimumTriangleArea": 5.551115123125783e-16,
+            "customNormals": true,
+            "smoothFaces": 15207,
+            "flatFaces": 552,
+            "invalidOrZeroCornerNormals": 0,
+            "sharpEdges": 1143
+          },
+          "after": {
+            "vertices": 9602,
+            "polygons": 15809,
+            "triangles": 19220,
+            "volume": 0.7194266908223053,
+            "nonmanifoldEdges": 0,
+            "inconsistentEdges": 0,
+            "degenerateTriangles": 0,
+            "minimumTriangleArea": 5.551115123125783e-16,
+            "customNormals": true,
+            "smoothFaces": 15257,
+            "flatFaces": 552,
+            "invalidOrZeroCornerNormals": 0,
+            "sharpEdges": 1311
+          },
+          "removedVolume": 6.0833659454306854e-06,
+          "containment": {
+            "exactOriginalPolygonDomains": 15697,
+            "samples": 1640,
+            "maxSignedOutsideDistance": 2.9497167375325262e-08,
+            "violationsBeyond2e6": 0,
+            "firstViolations": []
+          },
+          "normals": {
+            "sliverNormalVertices": 0,
+            "sourceCornerNormalsRestored": 50240,
+            "repairedFaces": 236,
+            "analyticCutWallFaces": 68,
+            "skinFits": [
+              {
+                "side": 1,
+                "sampleVertices": 94,
+                "fitRMS": 2.080085341829442e-06,
+                "repairedCorners": 256
+              },
+              {
+                "side": -1,
+                "sampleVertices": 94,
+                "fitRMS": 2.0800192426341224e-06,
+                "repairedCorners": 256
+              }
+            ],
+            "untouchedRegionCornerNormalsCopied": true
+          }
+        },
+        "Fixed_root_L": {
+          "before": {
+            "vertices": 3262,
+            "polygons": 6520,
+            "triangles": 6520,
+            "volume": 0.005532120638198621,
+            "nonmanifoldEdges": 0,
+            "inconsistentEdges": 0,
+            "degenerateTriangles": 0,
+            "minimumTriangleArea": 1.1656813210005057e-13,
+            "customNormals": true,
+            "smoothFaces": 2469,
+            "flatFaces": 4051,
+            "invalidOrZeroCornerNormals": 0,
+            "sharpEdges": 620
+          },
+          "after": {
+            "vertices": 3397,
+            "polygons": 6370,
+            "triangles": 6790,
+            "volume": 0.0055076233512026335,
+            "nonmanifoldEdges": 0,
+            "inconsistentEdges": 0,
+            "degenerateTriangles": 0,
+            "minimumTriangleArea": 1.1656813210005057e-13,
+            "customNormals": true,
+            "smoothFaces": 2630,
+            "flatFaces": 3740,
+            "invalidOrZeroCornerNormals": 0,
+            "sharpEdges": 872
+          },
+          "removedVolume": 2.44972869959878e-05,
+          "containment": {
+            "exactOriginalPolygonDomains": 6163,
+            "samples": 2764,
+            "maxSignedOutsideDistance": 5.234372579820956e-08,
+            "violationsBeyond2e6": 0,
+            "firstViolations": []
+          },
+          "normals": {
+            "sliverNormalVertices": 0,
+            "sourceCornerNormalsRestored": 18489,
+            "repairedFaces": 557,
+            "analyticCutWallFaces": 67,
+            "skinFits": [
+              {
+                "side": 1,
+                "sampleVertices": 155,
+                "fitRMS": 0.0020084556866033767,
+                "repairedCorners": 370
+              },
+              {
+                "side": -1,
+                "sampleVertices": 366,
+                "fitRMS": 0.0006134895593629924,
+                "repairedCorners": 1229
+              }
+            ],
+            "untouchedRegionCornerNormalsCopied": true
+          }
+        },
+        "Fixed_root_R": {
+          "before": {
+            "vertices": 3240,
+            "polygons": 6476,
+            "triangles": 6476,
+            "volume": 0.005531909848192552,
+            "nonmanifoldEdges": 0,
+            "inconsistentEdges": 0,
+            "degenerateTriangles": 0,
+            "minimumTriangleArea": 5.911005734361707e-13,
+            "customNormals": true,
+            "smoothFaces": 2441,
+            "flatFaces": 4035,
+            "invalidOrZeroCornerNormals": 0,
+            "sharpEdges": 624
+          },
+          "after": {
+            "vertices": 3372,
+            "polygons": 6326,
+            "triangles": 6740,
+            "volume": 0.005507412550012996,
+            "nonmanifoldEdges": 0,
+            "inconsistentEdges": 0,
+            "degenerateTriangles": 0,
+            "minimumTriangleArea": 8.075710374944381e-14,
+            "customNormals": true,
+            "smoothFaces": 2602,
+            "flatFaces": 3724,
+            "invalidOrZeroCornerNormals": 0,
+            "sharpEdges": 874
+          },
+          "removedVolume": 2.449729817955576e-05,
+          "containment": {
+            "exactOriginalPolygonDomains": 6123,
+            "samples": 2720,
+            "maxSignedOutsideDistance": 9.56650083594468e-08,
+            "violationsBeyond2e6": 0,
+            "firstViolations": []
+          },
+          "normals": {
+            "sliverNormalVertices": 0,
+            "sourceCornerNormalsRestored": 18369,
+            "repairedFaces": 555,
+            "analyticCutWallFaces": 67,
+            "skinFits": [
+              {
+                "side": 1,
+                "sampleVertices": 152,
+                "fitRMS": 0.00021862237968184924,
+                "repairedCorners": 367
+              },
+              {
+                "side": -1,
+                "sampleVertices": 362,
+                "fitRMS": 0.000608826952182319,
+                "repairedCorners": 1223
+              }
+            ],
+            "untouchedRegionCornerNormalsCopied": true
+          }
+        },
+        "Composite_wing_L": {
+          "before": {
+            "vertices": 26066,
+            "polygons": 52010,
+            "triangles": 52132,
+            "volume": 0.1679428948303924,
+            "nonmanifoldEdges": 0,
+            "inconsistentEdges": 0,
+            "degenerateTriangles": 0,
+            "minimumTriangleArea": 2.7755575615628914e-17,
+            "customNormals": true,
+            "smoothFaces": 46295,
+            "flatFaces": 5715,
+            "invalidOrZeroCornerNormals": 5,
+            "sharpEdges": 1860
+          },
+          "after": {
+            "vertices": 25675,
+            "polygons": 50711,
+            "triangles": 51350,
+            "volume": 0.1679314774367063,
+            "nonmanifoldEdges": 0,
+            "inconsistentEdges": 0,
+            "degenerateTriangles": 0,
+            "minimumTriangleArea": 2.7755575615628914e-17,
+            "customNormals": true,
+            "smoothFaces": 45234,
+            "flatFaces": 5477,
+            "invalidOrZeroCornerNormals": 0,
+            "sharpEdges": 2593
+          },
+          "removedVolume": 1.1417393686097288e-05,
+          "containment": {
+            "exactOriginalPolygonDomains": 50421,
+            "samples": 3573,
+            "maxSignedOutsideDistance": 5.958975535236277e-08,
+            "violationsBeyond2e6": 0,
+            "firstViolations": []
+          },
+          "normals": {
+            "sliverNormalVertices": 5,
+            "sourceCornerNormalsRestored": 151385,
+            "repairedFaces": 21470,
+            "analyticCutWallFaces": 57,
+            "skinFits": [
+              {
+                "side": 1,
+                "sampleVertices": 5947,
+                "fitRMS": 0.006233366175658204,
+                "repairedCorners": 31978
+              },
+              {
+                "side": -1,
+                "sampleVertices": 5932,
+                "fitRMS": 0.0055375217503477285,
+                "repairedCorners": 32184
+              }
+            ],
+            "untouchedRegionCornerNormalsCopied": true
+          }
+        },
+        "Composite_wing_R": {
+          "before": {
+            "vertices": 26170,
+            "polygons": 52218,
+            "triangles": 52340,
+            "volume": 0.16794268436142779,
+            "nonmanifoldEdges": 0,
+            "inconsistentEdges": 0,
+            "degenerateTriangles": 0,
+            "minimumTriangleArea": 2.7755575615628914e-17,
+            "customNormals": true,
+            "smoothFaces": 46318,
+            "flatFaces": 5900,
+            "invalidOrZeroCornerNormals": 2,
+            "sharpEdges": 1927
+          },
+          "after": {
+            "vertices": 25779,
+            "polygons": 50919,
+            "triangles": 51558,
+            "volume": 0.16793126686740711,
+            "nonmanifoldEdges": 0,
+            "inconsistentEdges": 0,
+            "degenerateTriangles": 0,
+            "minimumTriangleArea": 2.7755575615628914e-17,
+            "customNormals": true,
+            "smoothFaces": 45257,
+            "flatFaces": 5662,
+            "invalidOrZeroCornerNormals": 0,
+            "sharpEdges": 2639
+          },
+          "removedVolume": 1.141749402067127e-05,
+          "containment": {
+            "exactOriginalPolygonDomains": 50629,
+            "samples": 3573,
+            "maxSignedOutsideDistance": 5.9590014700461325e-08,
+            "violationsBeyond2e6": 0,
+            "firstViolations": []
+          },
+          "normals": {
+            "sliverNormalVertices": 2,
+            "sourceCornerNormalsRestored": 152009,
+            "repairedFaces": 21473,
+            "analyticCutWallFaces": 57,
+            "skinFits": [
+              {
+                "side": 1,
+                "sampleVertices": 5937,
+                "fitRMS": 0.006264844592278686,
+                "repairedCorners": 31968
+              },
+              {
+                "side": -1,
+                "sampleVertices": 5930,
+                "fitRMS": 0.005346072266840369,
+                "repairedCorners": 32191
+              }
+            ],
+            "untouchedRegionCornerNormalsCopied": true
+          }
+        }
+      },
+      "existingLowAngleReliefPreserved": true,
+      "noPocketFloorThinned": true,
+      "residualRelief": "Native stepped low-angle clearance remains near abs(x)=0.78 to 0.92, y=-1.11 to -1.04. Deeper removal was rejected to avoid weakening the 0.01 main-wall constraint.",
+      "clearanceNote": "Removing material cannot create a new solid intersection when originals are subsets. Full composed motion checks are still required.",
+      "finiteWitnessNotContinuousProof": true
+    },
+    "finalFuselageVolume": 0.7194266908223053,
+    "bodyAnchorAbsX": 0.28
+  },
+  "currentRefinementInputSha256": "41d1d093ce4b261483ffcc845303fc1e1b8cbb211c4b75ef24663aeb46f0d116",
+  "currentRefinementReplayScript": "scripts/refinement/refine_native_geometry.py"
 }

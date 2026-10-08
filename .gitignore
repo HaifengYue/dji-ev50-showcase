@@ -65,3 +65,17 @@ __pycache__/
 !/tools/verify_model.py
 
 !/qa/acceptance-summary.json
+
+# Only the successful 2026-10-08 native refinement replay and checks.
+!/scripts/refinement/
+/scripts/refinement/*
+!/scripts/refinement/extend_transverse_linkage.py
+!/scripts/refinement/finish_restored_shell.py
+!/scripts/refinement/lower-shell-stations.json
+!/scripts/refinement/refine_native_geometry.py
+!/scripts/refinement/render_linkage.py
+!/scripts/refinement/restore_lower_shell.py
+!/scripts/refinement/smooth_center_wing.py
+!/scripts/refinement/verify_refined_connections.py
+!/scripts/refinement/verify_refinement_preservation.py
+!/scripts/refinement/write_candidate_contract.py

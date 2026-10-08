@@ -1,0 +1,8 @@
+"""Write reviewed native expectations, independently of any exported runtime bytes."""
+import bpy,bmesh,json,hashlib,sys
+from pathlib import Path
+
+def write_contract(base_contract,out,source,refinement):
+ c=json.loads(Path(base_contract).read_text());c['sourceSha256']=hashlib.sha256(Path(source).read_bytes()).hexdigest();c['mechanism']=json.loads(bpy.context.scene['annotatedMechanismJSON']);assert abs(c['mechanism']['bodyAnchorRightCruise'][0]-.28)<1e-8 and abs(c['mechanism']['wingAnchorRightCruise'][0]-.88)<1e-7;g=json.loads(bpy.context.scene['annotationLinkageRefinementJSON']);g['historicalSlotRelief']=g.pop('slotRelief');g['transverseOutputRefinement']=refinement;g['centerWingRefinement']=json.loads(bpy.context.scene.get('centerWingSmoothing20261008','{}'));body=bpy.data.objects['Fuselage'];bm=bmesh.new();bm.from_mesh(body.data);g['finalFuselageVolume']=bm.calc_volume(signed=True);bm.free();g['bodyAnchorAbsX']=.28;c['currentGeometry']=g;c['criticalMeshOwners']=sorted(set(c['criticalMeshOwners'])|{f'{prefix}_{side}'+('_Body'if prefix in ['BraceBall','BraceBallPin']else'')for prefix in ['BraceBodyCarriage','BraceBall','BraceBallPin']for side in ['L','R']});c['currentRefinementInputSha256']='41d1d093ce4b261483ffcc845303fc1e1b8cbb211c4b75ef24663aeb46f0d116';c['currentRefinementReplayScript']='scripts/refinement/refine_native_geometry.py';Path(out).write_text(json.dumps(c,ensure_ascii=False,indent=2)+'\n');return c
+if __name__=='__main__':
+ args=sys.argv[sys.argv.index('--')+1:];src,base,out,report=args;bpy.ops.wm.open_mainfile(filepath=str(Path(src).resolve()));r=json.loads(Path(report).read_text());assert r.get('connections',{}).get('passed'),'Explicit complete refinement report with connection evidence required';write_contract(base,out,src,r)
