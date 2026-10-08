@@ -125,7 +125,7 @@ test("V27明确标识新修订；冻结V24的槽顶和十二销记录仅作历�
   assert.equal(manifest.version, 27);
   assert.equal(
     manifest.annotationRevision.id,
-    "2026-10-08-annotated-surface-and-transverse-output",
+    "2026-10-08-continuous-main-tilt-and-root-curves",
   );
   const contract = JSON.parse(
     readFileSync(
@@ -1022,4 +1022,32 @@ test("新侧槽机身以原始三角闭合，不依赖SAT丢弃零面积面", as
     loadManifest().internalDrive.currentFrontSlotRelief.exactEndpointRepair
       .closedManifold,
   );
+});
+
+test("当前曲线仅保留真实关节、活动翼根与壁面法线修复", () => {
+  const refinement = loadManifest().currentMainTiltConnectionRefinement;
+  assert.equal(
+    refinement.schema,
+    "transwing.continuous-main-tilt-root-surfaces.v1",
+  );
+  assert.equal(refinement.movingRootNotch.curveSamples, 1025);
+  assert.equal(refinement.allParentAndLocalTransformsUnchanged, true);
+  assert.equal(refinement.mainAxisMovingBearingsAndBridgePreserved, true);
+  assert.equal(
+    refinement.cameraValidation
+      .clippedReferenceNotUsedForOuterContourAcceptance,
+    true,
+  );
+  assert.equal(
+    refinement.cameraValidation.userImageCameraSettingsUnknown,
+    true,
+  );
+  assert.equal("frontReceiver" in refinement, false);
+  assert.equal(refinement.modifiedOwners.length, 8);
+  for (const side of ["L", "R"]) {
+    assert.ok(
+      refinement.modifiedOwners.includes(`RootFixedBearingPedestal_${side}`),
+    );
+    assert.ok(refinement.modifiedOwners.includes(`Composite_wing_${side}`));
+  }
 });

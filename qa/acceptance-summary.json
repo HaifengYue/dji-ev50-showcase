@@ -1,67 +1,67 @@
 {
-  "sourceSha256": "9cf3423f8552d9f1a8ba78204383d1423bf32dff7ab15d90c81be1e07abdb461",
+  "sourceSha256": "4bb048190cd9fc5009f2b4090711cae157a4df37cd056b0e32d5a2a77fca07b3",
   "passed": true,
   "gates": [
     {
       "gate": "wing material",
       "report": "xp4-dense-wing-material-vectorized-check.json",
-      "sha256": "8a09feb71b9ef71bd8a6378e957b1256af8ad89e6bf20c4a2b92414a52588e64",
+      "sha256": "0f93d419f0305659e5f93dba9062fc8e0329d791fd91b1155c37d751cc3fed55",
       "passed": true,
       "samples": 661
     },
     {
       "gate": "independent controls combined",
       "report": "xp4-controls-combined-check.json",
-      "sha256": "7644bd41ccd35900643c1d712abe79054e5633292ce9a285dc283f38ac35c97f",
+      "sha256": "a571d6a4cf909e7a0e4334a46b331c492fe7ff30733ff21bd3df1b16521156a0",
       "passed": true,
       "samples": 14592
     },
     {
       "gate": "individual control sweep",
       "report": "xp4-controls-local-check.json",
-      "sha256": "8ea49ca80080cb333b044f47ec08d7287083cfc38eff2effa73cd3d963db462a",
+      "sha256": "2c390b5121ff30271bc90ec773feeeaccccf13139268fd6d9e746996094137e1",
       "passed": true,
       "samples": 150
     },
     {
       "gate": "rotor/fold phase",
       "report": "xp4-rotor-fold-phase-preflight.json",
-      "sha256": "55c40c728466edbeb8630802a4439a428d07e879395cb82278da3ebd236e79db",
+      "sha256": "55a226982a2ea96fb9af8bbc6463ece3699c6b253bab31ce3f9f30936074b36d",
       "passed": true,
       "samples": 252
     },
     {
       "gate": "finite same-owner intersections",
       "report": "native-self-intersections.json",
-      "sha256": "079fb2c324518801b5e99090a96e94cf63b6d333e0e32908424f144d0c0f0b4f",
+      "sha256": "6d200ef6d0c53738cd5cfa8a86ea999ee3f8cf88d40b365ab5c1f6f87afa0340",
       "passed": true,
       "samples": null
     },
     {
       "gate": "supports and functional threads",
       "report": "support-and-functional-threads.json",
-      "sha256": "2f28112a543ab7b621bef6f5c69be04e4fc3d73009ad83f981fe6f95933a5afd",
+      "sha256": "c92231214cede260083e1c8a54b079af36b5c9a27d504e4f2703c03fcca906b0",
       "passed": true,
       "samples": 241
     },
     {
       "gate": "complete both-side slot clearance",
       "report": "both-side-slot-clearance.json",
-      "sha256": "ba584fa862cfafe7e11ba45384e45df144a548caeb29111cacae0f9dc7d75e89",
+      "sha256": "5deaf973ada1a775fabf2f60f6f1bd9480a6625b946d690a1e4c5a67cc9dc52d",
       "passed": true,
       "samples": 481
     },
     {
       "gate": "internal drive",
       "report": "xp4-sweep.json",
-      "sha256": "6acb3efeabf86c98a6215d5a4c15a7f38a4c5036d4270d229e141ca959ad7021",
+      "sha256": "c5ee28d45bca484fbe27e73dc8f91aff48b458ce4ffa29d3eead1b7827a277ab",
       "passed": true,
       "samples": 1201
     },
     {
       "gate": "current inventory",
       "report": "current-native-inventory.json",
-      "sha256": "718b1b38c667c63102ca27c80ad84645b289448fee24a6110790b2a6423c58e6",
+      "sha256": "bd49031200baa1c3cff8574251f8b291df57cb69b240cd173b32559af03a81e8",
       "passed": true,
       "samples": null
     }
@@ -94,7 +94,9 @@
   "slotDistanceTrianglePairChecks": 3555437,
   "knownVisualLimits": [
     "Central trailing silhouette and tip are rounded, but the original low-angle relief above each ball seat retains discretized stair steps at absX about .78-.92,Y about -1.11 to -1.04; not fully solved.",
-    "A fine new geometric seam can remain at the bounded lower-shell patch perimeter due to its explicit 1e-5u inward setback."
+    "A fine new geometric seam can remain at the bounded lower-shell patch perimeter due to its explicit 1e-5u inward setback.",
+    "Existing upper-surface light-response sawtooth marks and a fine diagonal line are present in the original model too. Unlit contour comparison does not claim to fix material-lit rendering.",
+    "Free camera movement can enter the model and create near-plane section edges; no automatic camera change or collision guard was added. The supplied user PNG does not establish its original camera settings."
   ],
   "evidenceRoots": [
     "build/model",
@@ -103,33 +105,75 @@
   ],
   "detailedEvidenceTrackedInGit": false,
   "applicationChecks": {
-    "nodeTestsPassed": 195,
+    "nodeTestsPassed": 196,
     "pythonTestsPassed": 30,
     "lightweightQATestsPassed": 5,
     "sourceRuntimeAnimationTestsPassed": 1,
     "faultInjectionsRejected": 5,
     "typescriptViteBuildPassed": true,
     "browserOrMobileDeviceTested": false,
-    "scope": "Verified in isolated validation mirror using exactly the same native/runtime SHA and latest application source; main-checkout rerun also owned by parent task."
+    "scope": "Executed on the current project with this exact native/runtime SHA. Native Blender renders and Node controls/React mounting tests passed. Real browser click/pixel QA blocked by Unix socket and local-service routing restrictions; no mobile frame-rate claim.",
+    "formatCheckPassed": true
   },
-  "runtimeSha256": "bb67af8c6db1bdb81902c0748fd1d99a21689aa5c26d769655ea08f75c13c9b5",
-  "runtimeBytes": 4296228,
-  "runtimeBudgetBytes": 4300000,
+  "runtimeSha256": "380e44e92fa9790e2e7145bded8d15b2bcab3480a147776c8246486f9bb35c4d",
+  "runtimeBytes": 4310240,
+  "runtimeBudgetBytes": 5000000,
   "rebuildMode": "editable-native-baseline-rebake-export",
   "historicalProceduralReconstruction": false,
   "currentRefinement": {
-    "inputNativeSha256": "41d1d093ce4b261483ffcc845303fc1e1b8cbb211c4b75ef24663aeb46f0d116",
+    "inputNativeSha256": "9cf3423f8552d9f1a8ba78204383d1423bf32dff7ab15d90c81be1e07abdb461",
+    "modifiedMeshOwners": [
+      "Composite_wing_L",
+      "Composite_wing_R",
+      "Nacelle_L_Front",
+      "Nacelle_R_Front",
+      "Pod_wing_saddle_L_Front",
+      "Pod_wing_saddle_R_Front",
+      "RootFixedBearingPedestal_L",
+      "RootFixedBearingPedestal_R"
+    ],
+    "movingRootCurveSamplesPerSide": 1025,
+    "mainWallSampleMinimumU": 0.010264441,
+    "movingRootFixedRoot121PoseMinimumU": 0.00952768,
+    "fixedPinSeatTargetEmbedU": 0.0006,
+    "fixedPinSeatSamplesPerSide": 12289,
+    "fixedPinSweepPoses": 1201,
+    "fixedPinOuterSkinCoverMinimumU": 0.018076,
+    "saddleAndNacelleContinuousReceivers": true,
+    "allTransformsAndMechanismAxesPreserved": true,
+    "clippedViewCompositePatchesIncluded": false,
+    "extraBracePocketRebuildIncluded": false,
+    "normalRepairNotClaimedAsContourReconstruction": true
+  },
+  "nativeBytes": 5999532,
+  "nativeCounts": {
+    "before": {
+      "meshOwners": 285,
+      "uniqueMeshDatablocks": 285,
+      "ownerVertices": 201976,
+      "uniqueVertices": 201976,
+      "ownerTriangles": 358794,
+      "uniqueTriangles": 358794
+    },
+    "after": {
+      "meshOwners": 285,
+      "uniqueMeshDatablocks": 285,
+      "ownerVertices": 202881,
+      "uniqueVertices": 202881,
+      "ownerTriangles": 360604,
+      "uniqueTriangles": 360604
+    }
+  },
+  "physicalReceiptSha256": "c3473efb1b8a200b604dbe2ff10bc748cb1cbff1bb7cf52d9a06a3d551c57b21",
+  "preservedLinkageAndLowerShell": {
     "bodyAnchorAbsX": 0.28,
     "originalCrossbeamHalfSpanRetained": 0.12,
-    "refinedConnectionCheck": "build/refinement/composed-refinement.json",
-    "preservationCheck": "build/refinement/composed-preservation.json",
     "originalApertureProjectedArea": 0.0612528,
     "currentApertureProjectedArea": 0.0251146,
     "apertureProjectedAreaReductionRatio": 0.5899844578533553,
     "finiteProjectionRaster": [
       1000,
       300
-    ],
-    "experimentalSidewallCandidatesIncluded": false
+    ]
   }
 }

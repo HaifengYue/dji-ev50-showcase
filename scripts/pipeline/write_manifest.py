@@ -47,6 +47,12 @@ if 'transverseOutputRefinement' in g:
   m['mechanism']['sides'][side]['bodyAnchorLocal']=[sign*body[0],0,0]
  m['currentAnnotationSurfaceRefinement']=g['centerWingRefinement']
 
+if g.get('centerWingRefinement',{}).get('schema')=='transwing.continuous-main-tilt-root-surfaces.v1':
+ a.update(id='2026-10-08-continuous-main-tilt-and-root-curves',scope='Continuous moving-root and main receiver contours; actual fixed-pin seating; separated receiver-wall normal fields')
+ m.pop('currentAnnotationSurfaceRefinement',None)
+ m['currentMainTiltConnectionRefinement']=g['centerWingRefinement']
+ m['internalDrive']['motionContractRevision']=a['id']
+
 m['assets'].update({name:{'bytes':p.stat().st_size,'sha256':sha(p)}for name,p in [('xp4.blend',ROOT/c['source']),('xp4-source.glb',STAGE/'xp4-source.glb'),('xp4.glb',STAGE/'xp4.glb')]})
 m['assetEncoding'].update({k:v[k]for k in ['quantization','runtimeBytes','runtimeBudgetReview','compression','paintEncodingPreservation','driveRestTransformPreservation','criticalTransformPreservation','semanticAliasTransformPreservation','runtimeDiagnosticMetadataPruning']if k in v})
 # Keep current identity/contract summaries, not embedded historical construction reports.

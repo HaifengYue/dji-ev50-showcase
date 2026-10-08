@@ -13,7 +13,7 @@ test("模型缓存键绑定当前实际文件，同版本视图复用相同地�
   assert.equal(manifest.version, 27);
   assert.equal(
     manifest.annotationRevision.id,
-    "2026-10-08-annotated-surface-and-transverse-output",
+    "2026-10-08-continuous-main-tilt-and-root-curves",
   );
   const bytes = readFileSync(
     new URL("../public/models/xp4.glb", import.meta.url),

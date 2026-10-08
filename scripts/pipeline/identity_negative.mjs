@@ -2,7 +2,8 @@
 import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';import {spawnSync} from 'node:child_process';
 import {ROOT,STAGE} from './integrated_identity_context.mjs';
 const target=path.join(STAGE,'negative-fixture');fs.mkdirSync(target,{recursive:true});
-for(const name of ['xp4-source.glb','SOURCE_GEOMETRY_REFERENCE.json']){const dest=path.join(target,name);if(!fs.existsSync(dest))fs.symlinkSync(path.join(STAGE,name),dest);}
+// Regenerate fixture links after a checkout move or a new source revision.
+for(const name of ['xp4-source.glb','SOURCE_GEOMETRY_REFERENCE.json']){const dest=path.join(target,name);try{fs.unlinkSync(dest);}catch(error){if(error.code!=='ENOENT')throw error;}fs.symlinkSync(path.join(STAGE,name),dest);}
 const original=fs.readFileSync(path.join(STAGE,'xp4.glb')),length=original.readUInt32LE(12),base=JSON.parse(original.subarray(20,20+length));
 const report=JSON.parse(fs.readFileSync(path.join(STAGE,'model-validation.json'),'utf8'));
 const receipt=JSON.parse(fs.readFileSync(path.join(STAGE,'BAKE_RECEIPT.json'),'utf8'));receipt.outputs=receipt.outputs.map(row=>({...row,path:path.relative(ROOT,path.join(target,path.basename(row.path)))}));fs.writeFileSync(path.join(target,'BAKE_RECEIPT.json'),JSON.stringify(receipt));
