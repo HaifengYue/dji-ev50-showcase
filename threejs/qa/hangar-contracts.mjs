@@ -9,6 +9,7 @@ import * as THREE from 'three';
 import { testHangarApi } from './hangar-api.mjs';
 import { testHangarState } from './hangar-state.mjs';
 import { testHangarCapture } from './hangar-capture.mjs';
+import { testHangarSnapshot } from './hangar-snapshot.mjs';
 
 function eventTarget() {
   const listeners = new Map();
@@ -150,6 +151,7 @@ export async function testHangarContracts() {
     await testHangarApi({ load, passed });
     await testHangarState({ load, passed });
     await testHangarCapture({ load, passed });
+    await testHangarSnapshot({ load, passed });
 
     const { TranswingPresentation } = await load('aircraft/transwing/presentation.ts');
     const originalBuildEnvironment = TranswingPresentation.prototype.buildEnvironment;

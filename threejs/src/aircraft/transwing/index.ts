@@ -41,6 +41,7 @@ import { loadOwnedGLTF, type OwnedResources } from './resources';
 import { TranswingCamera } from './camera';
 import { TranswingPresentation, createJointGuide } from './presentation';
 import { createTranswingPanel } from './panel';
+import { buildTranswingSnapshot } from './snapshot';
 import { prepareManualInput, cargoPresentationLift } from './localControl';
 import './panel.css';
 
@@ -529,25 +530,28 @@ class TranswingInstance implements AircraftInstance {
     if (mode === 'product') this.state = experienceReducer(this.state, { type: 'enter-tilt' });
     this.syncLocal();
   }
-  seek(seconds: number) {
-    if (!Number.isFinite(seconds)) return;
+  seek(position: number) {
+    if (!Number.isFinite(position)) return;
     const snapshot = this.runtime.getSnapshot();
     if (snapshot.control === 'replay') {
-      this.runtime.replayAt(Math.max(0, Math.min(snapshot.replayCount - 1, Math.round(seconds))));
+      this.runtime.replayAt(Math.max(0, Math.min(snapshot.replayCount - 1, Math.round(position))));
       return;
     }
     if (snapshot.control !== 'local') return;
     if (this.mode === 'product')
       this.dispatch({
         type: 'tilt',
-        action: { type: 'scrub', progress: Math.max(0, Math.min(1, seconds / 8)) },
+        action: { type: 'scrub', progress: Math.max(0, Math.min(1, position / 100)) },
       });
-    else this.dispatch({ type: 'set', key: 'time', value: Math.max(0, Math.min(TOTAL, seconds)) });
+    else this.dispatch({ type: 'set', key: 'time', value: Math.max(0, Math.min(TOTAL, position)) });
   }
   setSpeed(speed: number) {
     if (!Number.isFinite(speed) || speed <= 0) return;
-    if (this.runtime.getSnapshot().control === 'replay') {
-      this.runtime.setReplayRate(speed < 1 ? 0.1 : 1);
+    const control = this.runtime.getSnapshot().control;
+    if (control === 'external') return;
+    if (control === 'replay') {
+      if (speed !== 0.1 && speed !== 1) return;
+      this.runtime.setReplayRate(speed);
       return;
     }
     this.rate = Math.max(0.1, Math.min(4, speed));
@@ -558,12 +562,12 @@ class TranswingInstance implements AircraftInstance {
       });
   }
   setLoop(loop: boolean) {
+    if (this.runtime.getSnapshot().control !== 'local') return;
     this.loop = loop;
-    if (this.runtime.getSnapshot().control === 'local')
-      this.state = experienceReducer(this.state, {
-        type: 'tilt',
-        action: { type: 'repeat', enabled: loop },
-      });
+    this.state = experienceReducer(this.state, {
+      type: 'tilt',
+      action: { type: 'repeat', enabled: loop },
+    });
   }
   setView(view: string) {
     if (this.disposed) return;
@@ -610,50 +614,15 @@ class TranswingInstance implements AircraftInstance {
     } else this.dispatch({ type: 'inspect', view: mapped });
   }
   snapshot(): AircraftSnapshot {
-    const snapshot = this.runtime.getSnapshot(),
-      pose = this.runtime.getRenderSample().state,
-      flight = getFlight(this.state.time);
-    const external = snapshot.control !== 'local',
-      replay = snapshot.control === 'replay';
-    const duration = replay
-      ? Math.max(0, snapshot.replayCount - 1)
-      : this.mode === 'product'
-        ? 8
-        : TOTAL;
-    const time = replay
-      ? snapshot.replayIndex
-      : external
-        ? pose.time.seconds
-        : this.mode === 'product'
-          ? pose.wingTilt * 8
-          : this.state.time;
-    return {
-      ready: snapshot.ready,
-      mode: this.mode,
-      playing: replay
-        ? snapshot.replayPlaying
-        : external
-          ? !pose.time.paused
-          : this.mode === 'product'
-            ? this.state.tilt.playing
-            : this.state.playing,
-      time,
-      duration,
-      state: external ? snapshot.control : this.mode === 'product' ? 'mechanism' : flight.phase.id,
-      label: replay
-        ? 'JSON 离线回放'
-        : external
-          ? 'Python 外部控制'
-          : this.mode === 'product'
-            ? `整翼 ${Math.round(pose.wingTilt * 120)}°`
-            : flight.phase.label,
-      speedMps: external || this.mode === 'product' ? 0 : flight.speed * 20,
-      altitude: pose.positionM[1],
-      lift: `${Math.round(pose.wingTilt * 100)}% 整翼展开`,
-      cruise: `${MOTOR_IDS.filter((id) => snapshot.actuators[id].rpm > 0).length}/4 电机`,
-      externallyControlled: external,
-    };
+    return buildTranswingSnapshot(
+      this.runtime.getSnapshot(),
+      this.runtime.getRenderSample().state,
+      this.state,
+      this.mode,
+      { rate: this.rate, loop: this.loop },
+    );
   }
+
   describe() {
     return {
       id: this.id,

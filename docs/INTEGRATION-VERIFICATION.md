@@ -29,7 +29,7 @@ npm --prefix models/transwing test
 ```
 
 - **Root aggregate CI: passed**, including formatting, TypeScript/Vite build, all EV50 API/telemetry/presentation/flight/model/airframe checks, 109 Transwing mechanics tests, and 30 Python bridge/protocol tests. EV50 GLB validation reports zero errors and 36 existing warnings.
-- **Hangar suite: 47 passing checks**: 19 selection-lifecycle cases and 28 integration
+- **Hangar suite: 53 passing checks**: 19 selection-lifecycle cases and 34 integration
   contract cases.
 - **TypeScript + Vite production build: passed.** Vite reports the existing class of
   bundle-size advisory for the shared Three.js chunk (approximately 532 kB
@@ -128,6 +128,21 @@ The four-round, high-quality resource test reached its 90-second whole-test dead
 The suite now also exercises the native motor/surface/hatch/concept/JSON controls. Mobile testing uses touch emulation, checks the collapse button is in the viewport and tappable, checks a touch drag changes the camera after collapsing, and saves a separate aircraft-visible screenshot.
 
 The genuine full-page return in the first pass did not use BFCache (`observedPersistedReturn=false`). Ordinary Back restored correctly, and the separate deterministic persisted-event handler test passed. These are distinct claims; this does not establish that Chromium actually chose BFCache caching.
+
+## Second browser pass and final verification gates
+
+Commit `107ca9514cb2b365fc607ca2a7d75f37c6704ebe` passed normal CI and [all eight Chromium cases](https://github.com/HaifengYue/dji-ev50-showcase/actions/runs/37790606031). Retry now receives a real click; touch collapse/drag, independent motor and surface input, cargo hatch, systems concept and bundled JSON playback passed. Screenshot review confirmed improved HUD/footer contrast.
+
+Inspection of the resource attachment showed some EV50 counts were captured before its first full rendered frame. The final acceptance gate is stronger: it ties render completion to the current selection revision, waits at least two more completed frames, requires nonempty GPU geometry, and compares every same-aircraft sample across four rounds. The previous eight-pass result alone is not treated as sufficient resource-plateau evidence.
+
+The final shared timeline/transport matrix is:
+
+- Local mechanism: 0–100% shape progress, actual 0.25–2× tilt rate and actual repeat flag; play/pause, seek, restart and mode changes enabled.
+- Local flight demonstration: simulation seconds over the 57-second sequence, actual 0.25–4× rate and loop; all local transport enabled.
+- JSON replay: one-based frame readout with zero-based seek index, actual 0.1×/1× replay rate; play/pause, seek and restart enabled; mode changes and loop disabled.
+- Python ownership: live simulation seconds with no invented duration; mode, playback, seek, restart, rate and loop disabled; observation cameras remain usable. Explicit release restores local controls and percent units.
+
+Pure snapshot/HUD tests cover all four modes and return-to-local lock removal. Production seek/rate/loop method tests cover percentage round-trip, frame clamps, supported replay rates and external no-ops. A real loopback Python server is included in the final browser suite to verify external time remains unadvanced by RAF, commands receive applied acknowledgments only after the viewer applies them, and release restores all shared controls. That additional browser result must be read from the final CI, not inferred from its test source.
 
 ## Dependency audit
 

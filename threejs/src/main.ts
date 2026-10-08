@@ -2,6 +2,7 @@ import * as T from 'three';
 import { AIRCRAFT, aircraftDescriptor, aircraftFromUrl, isAircraftId } from './aircraft/registry';
 import { createAircraftSelection } from './aircraft/selection';
 import { disposeObjectTree } from './aircraft/resources';
+import { playbackPresentation } from './aircraft/playbackPresentation';
 import type { AircraftId, AircraftInstance, AircraftQuality } from './aircraft/types';
 import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
@@ -41,6 +42,9 @@ const canvas = $<HTMLCanvasElement>('#scene');
 let selectedId: AircraftId = aircraftFromUrl(new URL(location.href));
 let selectionRevision = 0;
 let historyRestores = 0;
+let frameNumber = 0;
+let renderedSelectionRevision = -1;
+let renderedAircraft: AircraftId | null = null;
 const assetUrl = (path: string) => new URL(path, document.baseURI).href;
 const renderer = new T.WebGLRenderer({
   canvas,
@@ -739,6 +743,8 @@ const neutralSurfaces: Surfaces = { aileron: 0, elevator: 0, rudder: 0 };
 const replayThrottle = (rpm: number, maximum: number) =>
   `${Math.round(T.MathUtils.clamp(rpm / maximum, 0, 1) * 100)}%`;
 function animate() {
+  const frameRevision = selectionRevision;
+  const frameAircraft = selection.current?.id ?? null;
   const dt = Math.min(clock.getDelta(), 0.1),
     activeDt = document.hidden ? 0 : dt,
     now = performance.now() / 1000;
@@ -963,6 +969,13 @@ function animate() {
   }
   if (postEnabled) composer.render();
   else renderer.render(scene, activeCamera);
+  frameNumber++;
+  const currentWasRendered =
+    frameAircraft !== null &&
+    frameRevision === selectionRevision &&
+    frameAircraft === selection.current?.id;
+  renderedSelectionRevision = currentWasRendered ? frameRevision : -1;
+  renderedAircraft = currentWasRendered ? frameAircraft : null;
   presentationView.afterRender();
   document.body.dataset.geometries = String(renderer.info.memory.geometries);
   document.body.dataset.textures = String(renderer.info.memory.textures);
@@ -971,6 +984,7 @@ function animate() {
 }
 function syncTranswingHud(instance: AircraftInstance) {
   const state = instance.snapshot();
+  const playback = playbackPresentation(state);
   $('#state').textContent = state.label;
   $('#state-code').textContent = state.state;
   $('#speed').textContent = state.speedMps.toFixed(1);
@@ -980,20 +994,48 @@ function syncTranswingHud(instance: AircraftInstance) {
   $('#product').classList.toggle('active', state.mode === 'product');
   $('#flight').classList.toggle('active', state.mode === 'flight');
   $('#mode-label').textContent =
-    state.mode === 'product' ? 'MECHANISM STUDY' : 'FLIGHT DEMONSTRATION';
+    state.control === 'replay'
+      ? 'JSON REPLAY'
+      : state.control === 'external'
+        ? 'PYTHON CONTROL'
+        : state.mode === 'product'
+          ? 'MECHANISM STUDY'
+          : 'FLIGHT DEMONSTRATION';
   $('#play').textContent = state.playing ? '暂停' : '播放';
   $('#timeline-wrap').classList.toggle('muted', state.mode === 'product');
   $<HTMLInputElement>('#timeline').max = String(state.duration);
   $<HTMLInputElement>('#timeline').value = String(state.time);
-  $<HTMLInputElement>('#timeline').disabled = !!state.externallyControlled;
-  for (const id of ['restart', 'playback-speed', 'loop'])
-    $<HTMLInputElement>(`#${id}`).disabled = !!state.externallyControlled;
-  $('#time').textContent = `${state.time.toFixed(1)} / ${state.duration.toFixed(1)} s`;
-  $('.timeline-head span').textContent =
-    state.mode === 'product' ? '整翼机构进度' : 'Transwing 飞行演示';
+  $<HTMLInputElement>('#timeline').disabled = playback.disableSeek;
+  $<HTMLInputElement>('#timeline').step = playback.step;
+  $<HTMLButtonElement>('#play').disabled = playback.disablePlay;
+  $<HTMLButtonElement>('#restart').disabled = playback.disableRestart;
+  $<HTMLInputElement>('#loop').disabled = playback.disableLoop;
+  $<HTMLInputElement>('#loop').checked = playback.loop;
+  $<HTMLSelectElement>('#playback-speed').disabled = playback.disableSpeed;
+  for (const id of ['product', 'flight'])
+    $<HTMLButtonElement>(`#${id}`).disabled = playback.disableMode;
+  configurePlaybackRates(playback.rateOptions, playback.rate);
+  $('#time').textContent = playback.timeLabel;
+  $('.timeline-head span').textContent = playback.timelineLabel;
   $('.phase-labels').style.visibility = 'hidden';
   document.body.dataset.state = state.state;
   document.body.dataset.source = 'transwing';
+}
+function configurePlaybackRates(rates: readonly number[], selected: number) {
+  const select = $<HTMLSelectElement>('#playback-speed');
+  const key = rates.join(',');
+  if (select.dataset.rates !== key) {
+    select.dataset.rates = key;
+    select.replaceChildren(
+      ...rates.map((rate) => {
+        const option = document.createElement('option');
+        option.value = String(rate);
+        option.textContent = `${rate}×`;
+        return option;
+      }),
+    );
+  }
+  if (select.value !== String(selected)) select.value = String(selected);
 }
 const hangarSelect = $<HTMLSelectElement>('#aircraft-select');
 const aircraftPanel = $('#aircraft-panel');
@@ -1025,7 +1067,10 @@ function configureAircraftShell(id: AircraftId) {
   labelEls.forEach((element) => {
     element.hidden = true;
   });
-  $<HTMLSelectElement>('#playback-speed').value = '1';
+  configurePlaybackRates([0.25, 0.5, 1, 1.5, 2, 4], 1);
+  $<HTMLInputElement>('#timeline').step = '0.01';
+  $('#lift-label').textContent = id === 'ev50' ? '垂起旋翼' : '整翼展开';
+  $('#cruise-label').textContent = id === 'ev50' ? '巡航推进' : '运行电机';
   $<HTMLInputElement>('#loop').checked = true;
   $<HTMLInputElement>('#annotations').checked = false;
   $<HTMLInputElement>('#auto-orbit').checked = false;
@@ -1195,6 +1240,10 @@ Object.defineProperty(window, 'hangarDiagnostics', {
     pending: selection.pendingId,
     ready: !!selection.current,
     historyRestores,
+    frameNumber,
+    selectionRevision,
+    renderedSelectionRevision,
+    renderedAircraft,
     geometries: renderer.info.memory.geometries,
     textures: renderer.info.memory.textures,
     drawCalls: renderer.info.render.calls,

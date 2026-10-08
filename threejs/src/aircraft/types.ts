@@ -15,6 +15,15 @@ export type AircraftSnapshot = {
   altitude: number;
   lift: string;
   cruise: string;
+  /** Replay owns model state while still allowing play/pause, restart and frame seeking. */
+  control?: 'local' | 'external' | 'replay';
+  /** Frame timelines use zero-based indices for both time and duration. */
+  timeUnit?: 'seconds' | 'frames' | 'percent';
+  /** Actual transport rate, omitted for a live externally owned clock. */
+  playbackRate?: number;
+  loop?: boolean;
+  timelineLabel?: string;
+  /** True only when a live external owner locks transport controls. */
   externallyControlled?: boolean;
 };
 export type AircraftHost = {
@@ -34,7 +43,8 @@ export interface AircraftInstance {
   setMode(mode: AircraftMode): void;
   playPause(): void;
   restart(): void;
-  seek(seconds: number): void;
+  /** Position uses the snapshot timeUnit (seconds by default). */
+  seek(position: number): void;
   setSpeed(speed: number): void;
   setLoop(loop: boolean): void;
   setView(view: string): void;

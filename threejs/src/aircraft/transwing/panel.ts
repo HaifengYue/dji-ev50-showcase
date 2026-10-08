@@ -342,6 +342,7 @@ export function createTranswingPanel(
       ['0.25', '0.25×'],
       ['0.5', '0.5×'],
       ['1', '1× · 8 秒'],
+      ['1.5', '1.5×'],
       ['2', '2×'],
     ],
     (selection) =>

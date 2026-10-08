@@ -840,3 +840,26 @@ body[data-aircraft='transwing'] .footer-note {
     gap: 10px 18px;
   }
 }
+@media (max-width: 760px) {
+  body[data-aircraft='transwing'] .flight-info {
+    width: calc(100vw - 32px);
+    padding: 9px 12px;
+  }
+  body[data-aircraft='transwing'] .state-code {
+    display: none;
+  }
+  body[data-aircraft='transwing'] .metrics {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 8px;
+  }
+  body[data-aircraft='transwing'] .metric span {
+    font-size: 10px;
+  }
+  body[data-aircraft='transwing'] .metric strong {
+    font-size: 16px;
+  }
+  body[data-aircraft='transwing'] .metric em {
+    font-size: 10px;
+  }
+}
