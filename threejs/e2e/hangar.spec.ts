@@ -1,4 +1,5 @@
 import { test, expect, type Page } from '@playwright/test';
+import { MOTOR_LIMITS } from '../src/aircraft/transwing/core/motors';
 
 const diagnostics = (page: Page) => page.evaluate(() => (window as any).hangarDiagnostics);
 async function ready(page: Page, aircraft: 'ev50' | 'transwing') {
@@ -64,6 +65,7 @@ test('EV50 starts alone on nested base, preserves flight controls and capture', 
 test('Transwing integrates shared canvas, real rig, native cameras and EV50 API isolation', async ({
   page,
 }, info) => {
+  test.setTimeout(180_000); // Multiple high-quality camera views plus a fully rendered EV50 return.
   const errors = watchErrors(page);
   await page.goto('/hangar/?aircraft=transwing');
   await ready(page, 'transwing');
@@ -278,7 +280,7 @@ test('Full-page Back restores a usable aircraft, and persisted pageshow rebuilds
 test('Native Transwing panel drives independent motors, surfaces, concept and JSON replay', async ({
   page,
 }, info) => {
-  test.setTimeout(180_000);
+  test.setTimeout(240_000); // Covers the bounded motor wait plus the independent UI/replay checks.
   const errors = watchErrors(page);
   await page.goto('/hangar/?aircraft=transwing');
   await ready(page, 'transwing');
@@ -292,9 +294,53 @@ test('Native Transwing panel drives independent motors, surfaces, concept and JS
     .toBeGreaterThan(0);
   expect((await diagnostics(page)).aircraft.runtime.state.motors.R_Front.enabled).toBe(false);
   await page.getByTestId('tw-motor-L_Front-enabled').uncheck();
-  await expect
-    .poll(async () => (await diagnostics(page)).aircraft.runtime.actuators.L_Front.stage)
-    .toBe('folded');
+  const startStop = (await diagnostics(page)).aircraft.runtime.state.time.seconds;
+  const stopLimit =
+    MOTOR_LIMITS.maxRpm / MOTOR_LIMITS.deceleration +
+    (2 * Math.PI) / MOTOR_LIMITS.indexSpeed +
+    MOTOR_LIMITS.foldSeconds +
+    0.2;
+  const stopWallStart = Date.now();
+  const stopSamples: object[] = [];
+  try {
+    for (;;) {
+      const sample = await page.evaluate(() => {
+        const value = (window as any).hangarDiagnostics;
+        const motor = value.aircraft.runtime.actuators.L_Front;
+        return {
+          frame: value.frameNumber,
+          simulationTime: value.aircraft.runtime.state.time.seconds,
+          stage: motor.stage,
+          rpm: motor.rpm,
+          fold: motor.fold,
+        };
+      });
+      stopSamples.push({ ...sample, wallMilliseconds: Date.now() - stopWallStart });
+      if (sample.stage === 'folded') {
+        expect(sample.rpm).toBe(0);
+        expect(sample.fold).toBe(1);
+        break;
+      }
+      if (sample.simulationTime - startStop > stopLimit)
+        throw new Error(
+          `Motor exceeded ${stopLimit.toFixed(3)} simulation seconds without folding: ${JSON.stringify(sample)}`,
+        );
+      if (Date.now() - stopWallStart > 90_000)
+        throw new Error(
+          `Motor did not finish within the bounded software-rendering wall budget: ${JSON.stringify(sample)}`,
+        );
+      await page.waitForTimeout(250);
+    }
+  } finally {
+    await info.attach('motor-stop-progress.json', {
+      body: JSON.stringify(
+        { simulationLimit: stopLimit, startSimulationTime: startStop, samples: stopSamples },
+        null,
+        2,
+      ),
+      contentType: 'application/json',
+    });
+  }
   await page.getByText('六片独立舵面与舱盖', { exact: true }).click();
   await page.getByTestId('tw-surface-L_Inboard').focus();
   await page.keyboard.press('End');

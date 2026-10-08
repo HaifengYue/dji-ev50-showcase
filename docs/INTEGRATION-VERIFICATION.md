@@ -144,6 +144,14 @@ The final shared timeline/transport matrix is:
 
 Pure snapshot/HUD tests cover all four modes and return-to-local lock removal. Production seek/rate/loop method tests cover percentage round-trip, frame clamps, supported replay rates and external no-ops. A real loopback Python server is included in the final browser suite to verify external time remains unadvanced by RAF, commands receive applied acknowledgments only after the viewer applies them, and release restores all shared controls. That additional browser result must be read from the final CI, not inferred from its test source.
 
+## Third browser pass: stricter resource and external-clock evidence
+
+Commit `50dc1b7a7967e568d3f0101dffbcbf54c2088ff3` passed normal CI; its [third browser run](https://github.com/HaifengYue/dji-ev50-showcase/actions/runs/37793804458) passed seven of nine cases. The stricter, rendered-revision-gated four-round samples were identical per aircraft: Transwing 241 geometries/16 textures/7 scene children; EV50 120/17/5. These are Three.js resource counts, not measured physical VRAM bytes or a hardware performance benchmark.
+
+The real loopback Python case passed: same-origin viewing, external clock ownership, applied acknowledgments after model updates, and release restoring all controls. The remaining failures were measured software-renderer wall timing: the multi-view case reached its whole-test 90-second limit on the final EV50 return; the motor test reached 30 wall seconds while its simulation had advanced only from 1.1 to 2.9595 seconds and was still progressing from indexing to folding.
+
+The final test instrumentation avoids continuous trace screenshots, which repeatedly read back the software-rendered canvas. DOM/network traces, explicit acceptance PNGs and failure PNGs remain. The multi-view whole-test budget is 180 seconds. Motor shutdown retains the exact folded/rpm0/fold1 terminal assertions and has two independent failure bounds: 90 wall seconds, and the modeled worst-case deceleration + full-turn indexing + folding duration with 0.2 simulation-second margin. A running simulation that exceeds that modeled bound without folding fails immediately. No product simulation time, geometry, dynamics or per-load/resource gate was relaxed.
+
 ## Dependency audit
 
 The first CI install reported an inherited transitive `source-map-js` 1.2.1 advisory. The [reviewed advisory](https://github.com/advisories/GHSA-68fv-2mgg-jv7q) concerns denial of service while consuming specially crafted indexed source maps. Only the lockfile resolution for this package was patched to 1.2.2; Three, Vite and other dependency versions were retained. The subsequent `npm audit --prefix threejs` reports zero known advisories. This is a dependency audit, not a repository-wide security assessment or evidence of exploitation.
