@@ -31,6 +31,14 @@ export class VisualSession {
   private lastError = '';
   constructor(private readonly changed: (source: SimulationSource) => void) {}
 
+  reset() {
+    this.select('demo');
+    this.replay.clear();
+    this.recording = [];
+    this.recordingFull = false;
+    this.recordingStartedAt = null;
+    this.recordingLastAt = -Infinity;
+  }
   select(source: SimulationSource) {
     if (!['demo', 'external'].includes(source))
       throw new Error('Use replay.load to select a recording');

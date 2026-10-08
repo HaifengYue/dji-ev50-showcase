@@ -714,3 +714,101 @@ body.recording #stop-recording {
     display: none;
   }
 }
+
+/* The shared hangar chrome owns selection; aircraft controls stay in this rail. */
+[hidden] {
+  display: none !important;
+}
+.hangar-choice {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.hangar-choice select {
+  min-width: 148px;
+  color: #f0f4f6;
+}
+#aircraft-panel:empty {
+  display: none;
+}
+#aircraft-panel {
+  border-top: 1px solid var(--line);
+  padding-top: 8px;
+}
+#load-status {
+  max-width: min(480px, 75vw);
+}
+#load-retry {
+  margin-top: 8px;
+}
+body[data-aircraft='transwing'] .headline h1 {
+  font-size: clamp(28px, 4vw, 52px);
+}
+@media (max-width: 850px) {
+  .topbar {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 14px 16px;
+  }
+  .brand small {
+    display: none;
+  }
+  .hangar-choice {
+    margin-left: auto;
+  }
+  .hangar-choice select {
+    min-width: 0;
+    max-width: 165px;
+    padding: 8px;
+  }
+  .topbar .modes {
+    width: 100%;
+    justify-content: center;
+  }
+  .headline {
+    top: 118px;
+  }
+}
+@media (max-width: 430px) {
+  .brand strong {
+    font-size: 19px;
+  }
+  .hangar-choice {
+    font-size: 0;
+  }
+  .hangar-choice select {
+    max-width: 146px;
+    font-size: 12px;
+  }
+}
+body[data-aircraft='transwing'] .right-tools {
+  width: min(330px, calc(100vw - 32px));
+}
+@media (max-width: 850px) and (min-width: 761px) {
+  .right-tools {
+    top: 128px;
+  }
+}
+@media (max-width: 760px) {
+  #tools-toggle {
+    top: 108px;
+  }
+  .right-tools {
+    top: 152px;
+    max-height: calc(100dvh - 335px);
+  }
+  .headline {
+    top: 150px;
+  }
+}
+@media (max-width: 760px) and (max-height: 620px) {
+  .right-tools {
+    top: 148px;
+    max-height: calc(100dvh - 290px);
+  }
+  .headline {
+    top: 144px;
+  }
+}

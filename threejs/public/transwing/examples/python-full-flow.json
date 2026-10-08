@@ -1,0 +1,1424 @@
+{
+  "protocol": "transwing.sim.v1",
+  "commands": [
+    { "op": "reset", "payload": {} },
+    {
+      "op": "set",
+      "payload": {
+        "motors": {
+          "L_Front": { "targetRpm": 1800, "enabled": true },
+          "R_Front": { "targetRpm": 1800, "enabled": true },
+          "L_Rear": { "targetRpm": 1800, "enabled": true },
+          "R_Rear": { "targetRpm": 1800, "enabled": true }
+        },
+        "display": { "environment": "sky" }
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 0.07500000000000001, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 0.15000000000000002, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 0.22499999999999998, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 0.30000000000000004, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 0.375, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 0.44999999999999996, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 0.5249999999999999, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 0.6000000000000001, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 0.675, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 0.75, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 0.8250000000000001, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 0.8999999999999999, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 0.9750000000000001, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 1.0499999999999998, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 1.125, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 1.2000000000000002, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 1.275, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 1.35, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 1.4249999999999998, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 1.5, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 1.5750000000000002, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 1.6500000000000001, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 1.7249999999999999, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 1.7999999999999998, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 1.875, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 1.9500000000000002, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 2.0250000000000004, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 2.0999999999999996, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 2.175, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 2.25, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 2.325, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 2.4000000000000004, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 2.4749999999999996, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 2.55, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 2.625, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 2.7, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 2.7750000000000004, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 2.8499999999999996, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 2.925, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3.0, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 0.1], "wingTilt": 0.016666666666666666 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 0.2], "wingTilt": 0.03333333333333333 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 0.30000000000000004], "wingTilt": 0.05 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 0.4], "wingTilt": 0.06666666666666667 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 0.5], "wingTilt": 0.08333333333333333 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 0.6000000000000001], "wingTilt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 0.7], "wingTilt": 0.11666666666666667 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 0.8], "wingTilt": 0.13333333333333333 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 0.8999999999999999], "wingTilt": 0.15 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 1.0], "wingTilt": 0.16666666666666666 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": { "positionM": [0, 3, 1.0999999999999999], "wingTilt": 0.18333333333333332 }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 1.2000000000000002], "wingTilt": 0.2 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 1.3], "wingTilt": 0.21666666666666667 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 1.4], "wingTilt": 0.23333333333333334 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 1.5], "wingTilt": 0.25 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 1.6], "wingTilt": 0.26666666666666666 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 1.7], "wingTilt": 0.2833333333333333 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 1.7999999999999998], "wingTilt": 0.3 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 1.9], "wingTilt": 0.31666666666666665 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 2.0], "wingTilt": 0.3333333333333333 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 2.0999999999999996], "wingTilt": 0.35 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": { "positionM": [0, 3, 2.1999999999999997], "wingTilt": 0.36666666666666664 }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": { "positionM": [0, 3, 2.3000000000000003], "wingTilt": 0.38333333333333336 }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 2.4000000000000004], "wingTilt": 0.4 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 2.5], "wingTilt": 0.4166666666666667 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 2.6], "wingTilt": 0.43333333333333335 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 2.7], "wingTilt": 0.45 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 2.8], "wingTilt": 0.4666666666666667 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 2.9], "wingTilt": 0.48333333333333334 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 3.0], "wingTilt": 0.5 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": { "positionM": [0, 3, 3.1000000000000005], "wingTilt": 0.5166666666666667 }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 3.2], "wingTilt": 0.5333333333333333 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 3.3000000000000003], "wingTilt": 0.55 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 3.4], "wingTilt": 0.5666666666666667 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 3.5], "wingTilt": 0.5833333333333334 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 3.5999999999999996], "wingTilt": 0.6 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 3.7], "wingTilt": 0.6166666666666667 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 3.8], "wingTilt": 0.6333333333333333 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 3.9000000000000004], "wingTilt": 0.65 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 4.0], "wingTilt": 0.6666666666666666 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 4.1], "wingTilt": 0.6833333333333333 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 4.199999999999999], "wingTilt": 0.7 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 4.3], "wingTilt": 0.7166666666666667 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": { "positionM": [0, 3, 4.3999999999999995], "wingTilt": 0.7333333333333333 }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 4.5], "wingTilt": 0.75 } },
+    {
+      "op": "set",
+      "payload": {
+        "motors": {
+          "L_Rear": { "targetRpm": 0, "enabled": false },
+          "R_Rear": { "targetRpm": 0, "enabled": false }
+        }
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": { "positionM": [0, 3, 4.6000000000000005], "wingTilt": 0.7666666666666667 }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 4.7], "wingTilt": 0.7833333333333333 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 4.800000000000001], "wingTilt": 0.8 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 4.9], "wingTilt": 0.8166666666666667 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 5.0], "wingTilt": 0.8333333333333334 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 5.1], "wingTilt": 0.85 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 5.2], "wingTilt": 0.8666666666666667 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 5.3], "wingTilt": 0.8833333333333333 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 5.4], "wingTilt": 0.9 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 5.5], "wingTilt": 0.9166666666666666 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 5.6], "wingTilt": 0.9333333333333333 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 5.699999999999999], "wingTilt": 0.95 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 5.8], "wingTilt": 0.9666666666666667 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": { "positionM": [0, 3, 5.8999999999999995], "wingTilt": 0.9833333333333333 }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 6.0], "wingTilt": 1.0 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [0.005919814715185323, 3, 6.18837155858794],
+        "attitude": [0, 0.03141075907812829, 0, 0.9995065603657316]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [0.023655896056566372, 3, 6.375999700692913],
+        "attitude": [0, 0.06279051952931337, 0, 0.9980267284282716]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [0.05313824781393384, 3, 6.562143943757174],
+        "attitude": [0, 0.09410831331851431, 0, 0.99556196460308]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [0.09425051661410677, 3, 6.746069661494564],
+        "attitude": [0, 0.12533323356430426, 0, 0.9921147013144779]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [0.1468304511145394, 3, 6.927050983124842],
+        "attitude": [0, 0.15643446504023087, 0, 0.9876883405951378]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [0.21067054233524563, 3, 7.104373658054033],
+        "attitude": [0, 0.1873813145857246, 0, 0.9822872507286887]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [0.28551884260194127, 3, 7.277337874695218],
+        "attitude": [0, 0.21814324139654254, 0, 0.9759167619387474]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [0.37107995986840925, 3, 7.4452610223051465],
+        "attitude": [0, 0.2486898871648548, 0, 0.9685831611286311]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [0.4670162234939548, 3, 7.60748038493699],
+        "attitude": [0, 0.2789911060392293, 0, 0.9602936856769431]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [0.5729490168751576, 3, 7.763355756877419],
+        "attitude": [0, 0.3090169943749474, 0, 0.9510565162951535]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [0.6884602716726322, 3, 7.912271969246069],
+        "attitude": [0, 0.33873792024529137, 0, 0.9408807689542255]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [0.8130941177357653, 3, 8.053641317786067],
+        "attitude": [0, 0.3681245526846779, 0, 0.9297764858882515]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [0.9463586822139342, 3, 8.186905882264234],
+        "attitude": [0, 0.3971478906347806, 0, 0.9177546256839811]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [1.0877280307539308, 3, 8.311539728327368],
+        "attitude": [0, 0.42577929156507266, 0, 0.9048270524660196]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [1.2366442431225804, 3, 8.427050983124841],
+        "attitude": [0, 0.45399049973954675, 0, 0.8910065241883679]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [1.3925196150630104, 3, 8.532983776506045],
+        "attitude": [0, 0.4817536741017153, 0, 0.8763066800438636]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [1.5547389776948544, 3, 8.628920040131591],
+        "attitude": [0, 0.5090414157503713, 0, 0.8607420270039436]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [1.722662125304782, 3, 8.714481157398058],
+        "attitude": [0, 0.5358267949789967, 0, 0.8443279255020151]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [1.8956263419459656, 3, 8.789329457664754],
+        "attitude": [0, 0.5620833778521306, 0, 0.8270805742745618]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [2.0729490168751576, 3, 8.853169548885461],
+        "attitude": [0, 0.5877852522924731, 0, 0.8090169943749475]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [2.2539303385054357, 3, 8.905749483385893],
+        "attitude": [0, 0.6129070536529765, 0, 0.7901550123756903]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [2.437856056242826, 3, 8.946861752186066],
+        "attitude": [0, 0.6374239897486896, 0, 0.7705132427757893]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [2.6240002993070863, 3, 8.976344103943433],
+        "attitude": [0, 0.6613118653236518, 0, 0.7501110696304596]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [2.8116284414120596, 3, 8.994080185284815],
+        "attitude": [0, 0.6845471059286886, 0, 0.7289686274214116]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [2.9999999999999996, 3, 9.0],
+        "attitude": [0, 0.7071067811865475, 0, 0.7071067811865476]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [3.1883715585879404, 3, 8.994080185284815],
+        "attitude": [0, 0.7289686274214116, 0, 0.6845471059286886]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [3.3759997006929128, 3, 8.976344103943433],
+        "attitude": [0, 0.7501110696304595, 0, 0.6613118653236519]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [3.5621439437571736, 3, 8.946861752186066],
+        "attitude": [0, 0.7705132427757893, 0, 0.6374239897486897]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [3.7460696614945643, 3, 8.905749483385893],
+        "attitude": [0, 0.7901550123756904, 0, 0.6129070536529765]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [3.927050983124841, 3, 8.853169548885461],
+        "attitude": [0, 0.8090169943749473, 0, 0.5877852522924732]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [4.104373658054033, 3, 8.789329457664754],
+        "attitude": [0, 0.8270805742745617, 0, 0.5620833778521307]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [4.277337874695218, 3, 8.714481157398058],
+        "attitude": [0, 0.8443279255020151, 0, 0.5358267949789965]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [4.4452610223051465, 3, 8.62892004013159],
+        "attitude": [0, 0.8607420270039436, 0, 0.5090414157503712]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [4.607480384936991, 3, 8.532983776506045],
+        "attitude": [0, 0.8763066800438637, 0, 0.48175367410171516]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [4.763355756877418, 3, 8.427050983124843],
+        "attitude": [0, 0.8910065241883678, 0, 0.4539904997395468]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [4.912271969246069, 3, 8.311539728327368],
+        "attitude": [0, 0.9048270524660196, 0, 0.42577929156507266]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [5.053641317786067, 3, 8.186905882264234],
+        "attitude": [0, 0.9177546256839811, 0, 0.39714789063478056]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [5.186905882264234, 3, 8.053641317786067],
+        "attitude": [0, 0.9297764858882513, 0, 0.3681245526846781]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [5.311539728327367, 3, 7.91227196924607],
+        "attitude": [0, 0.9408807689542255, 0, 0.3387379202452915]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [5.427050983124842, 3, 7.76335575687742],
+        "attitude": [0, 0.9510565162951535, 0, 0.30901699437494745]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [5.532983776506045, 3, 7.607480384936991],
+        "attitude": [0, 0.960293685676943, 0, 0.2789911060392295]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [5.62892004013159, 3, 7.445261022305146],
+        "attitude": [0, 0.9685831611286311, 0, 0.24868988716485474]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [5.714481157398058, 3, 7.277337874695219],
+        "attitude": [0, 0.9759167619387473, 0, 0.2181432413965427]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [5.7893294576647545, 3, 7.104373658054034],
+        "attitude": [0, 0.9822872507286886, 0, 0.18738131458572474]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [5.853169548885461, 3, 6.927050983124842],
+        "attitude": [0, 0.9876883405951378, 0, 0.15643446504023092]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [5.905749483385893, 3, 6.746069661494566],
+        "attitude": [0, 0.9921147013144778, 0, 0.12533323356430448]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [5.9468617521860665, 3, 6.562143943757174],
+        "attitude": [0, 0.99556196460308, 0, 0.09410831331851428]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [5.9763441039434335, 3, 6.375999700692914],
+        "attitude": [0, 0.9980267284282716, 0, 0.06279051952931353]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [5.9940801852848145, 3, 6.18837155858794],
+        "attitude": [0, 0.9995065603657316, 0, 0.031410759078128396]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": { "positionM": [6.0, 3, 6.0], "attitude": [0, 1.0, 0, 6.123233995736766e-17] }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [5.9940801852848145, 3, 5.81162844141206],
+        "attitude": [0, 0.9995065603657316, 0, -0.03141075907812828]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [5.976344103943434, 3, 5.624000299307087],
+        "attitude": [0, 0.9980267284282716, 0, -0.0627905195293134]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [5.946861752186066, 3, 5.4378560562428255],
+        "attitude": [0, 0.99556196460308, 0, -0.09410831331851438]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [5.905749483385893, 3, 5.253930338505437],
+        "attitude": [0, 0.9921147013144779, 0, -0.12533323356430415]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [5.853169548885461, 3, 5.0729490168751585],
+        "attitude": [0, 0.9876883405951378, 0, -0.1564344650402308]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [5.7893294576647545, 3, 4.895626341945967],
+        "attitude": [0, 0.9822872507286887, 0, -0.1873813145857246]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [5.714481157398058, 3, 4.722662125304783],
+        "attitude": [0, 0.9759167619387474, 0, -0.21814324139654234]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [5.62892004013159, 3, 4.5547389776948535],
+        "attitude": [0, 0.9685831611286311, 0, -0.24868988716485485]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [5.532983776506046, 3, 4.39251961506301],
+        "attitude": [0, 0.9602936856769431, 0, -0.27899110603922916]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [5.427050983124843, 3, 4.236644243122582],
+        "attitude": [0, 0.9510565162951536, 0, -0.3090169943749471]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [5.311539728327368, 3, 4.087728030753931],
+        "attitude": [0, 0.9408807689542255, 0, -0.33873792024529137]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [5.186905882264235, 3, 3.9463586822139347],
+        "attitude": [0, 0.9297764858882515, 0, -0.36812455268467775]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [5.053641317786067, 3, 3.8130941177357656],
+        "attitude": [0, 0.9177546256839811, 0, -0.3971478906347807]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [4.912271969246069, 3, 3.688460271672632],
+        "attitude": [0, 0.9048270524660195, 0, -0.4257792915650727]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [4.76335575687742, 3, 3.572949016875158],
+        "attitude": [0, 0.8910065241883679, 0, -0.4539904997395467]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [4.607480384936989, 3, 3.467016223493954],
+        "attitude": [0, 0.8763066800438635, 0, -0.48175367410171543]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [4.445261022305146, 3, 3.371079959868409],
+        "attitude": [0, 0.8607420270039436, 0, -0.5090414157503713]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [4.277337874695217, 3, 3.285518842601941],
+        "attitude": [0, 0.844327925502015, 0, -0.5358267949789969]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [4.104373658054033, 3, 3.2106705423352455],
+        "attitude": [0, 0.8270805742745617, 0, -0.5620833778521307]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [3.9270509831248424, 3, 3.1468304511145395],
+        "attitude": [0, 0.8090169943749475, 0, -0.587785252292473]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [3.7460696614945634, 3, 3.0942505166141063],
+        "attitude": [0, 0.7901550123756903, 0, -0.6129070536529766]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [3.5621439437571736, 3, 3.053138247813934],
+        "attitude": [0, 0.7705132427757893, 0, -0.6374239897486897]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [3.375999700692914, 3, 3.0236558960565665],
+        "attitude": [0, 0.7501110696304597, 0, -0.6613118653236517]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [3.1883715585879395, 3, 3.0059198147151855],
+        "attitude": [0, 0.7289686274214114, 0, -0.6845471059286887]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [3.000000000000001, 3, 3.0],
+        "attitude": [0, 0.7071067811865476, 0, -0.7071067811865475]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [2.8116284414120614, 3, 3.0059198147151855],
+        "attitude": [0, 0.6845471059286888, 0, -0.7289686274214113]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [2.6240002993070872, 3, 3.0236558960565665],
+        "attitude": [0, 0.6613118653236518, 0, -0.7501110696304596]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [2.4378560562428273, 3, 3.053138247813934],
+        "attitude": [0, 0.6374239897486899, 0, -0.7705132427757891]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [2.2539303385054352, 3, 3.0942505166141068],
+        "attitude": [0, 0.6129070536529764, 0, -0.7901550123756904]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [2.0729490168751585, 3, 3.146830451114539],
+        "attitude": [0, 0.5877852522924732, 0, -0.8090169943749473]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [1.8956263419459676, 3, 3.2106705423352455],
+        "attitude": [0, 0.5620833778521308, 0, -0.8270805742745617]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [1.7226621253047847, 3, 3.2855188426019404],
+        "attitude": [0, 0.535826794978997, 0, -0.8443279255020149]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [1.554738977694853, 3, 3.37107995986841],
+        "attitude": [0, 0.5090414157503711, 0, -0.8607420270039438]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [1.3925196150630097, 3, 3.467016223493955],
+        "attitude": [0, 0.4817536741017152, 0, -0.8763066800438636]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [1.2366442431225813, 3, 3.572949016875157],
+        "attitude": [0, 0.45399049973954686, 0, -0.8910065241883678]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [1.087728030753932, 3, 3.688460271672631],
+        "attitude": [0, 0.4257792915650729, 0, -0.9048270524660194]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [0.9463586822139362, 3, 3.813094117735764],
+        "attitude": [0, 0.39714789063478106, 0, -0.9177546256839809]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [0.8130941177357663, 3, 3.9463586822139334],
+        "attitude": [0, 0.36812455268467814, 0, -0.9297764858882513]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [0.6884602716726319, 3, 4.087728030753931],
+        "attitude": [0, 0.3387379202452913, 0, -0.9408807689542255]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [0.572949016875158, 3, 4.23664424312258],
+        "attitude": [0, 0.3090169943749475, 0, -0.9510565162951535]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [0.4670162234939558, 3, 4.392519615063009],
+        "attitude": [0, 0.27899110603922955, 0, -0.960293685676943]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [0.3710799598684106, 3, 4.554738977694852],
+        "attitude": [0, 0.24868988716485524, 0, -0.968583161128631]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [0.28551884260194194, 3, 4.722662125304781],
+        "attitude": [0, 0.21814324139654276, 0, -0.9759167619387473]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [0.21067054233524563, 3, 4.895626341945967],
+        "attitude": [0, 0.18738131458572457, 0, -0.9822872507286887]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [0.1468304511145394, 3, 5.072949016875157],
+        "attitude": [0, 0.15643446504023098, 0, -0.9876883405951377]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [0.0942505166141071, 3, 5.253930338505434],
+        "attitude": [0, 0.12533323356430454, 0, -0.9921147013144778]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [0.05313824781393384, 3, 5.4378560562428255],
+        "attitude": [0, 0.09410831331851435, 0, -0.99556196460308]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [0.023655896056566705, 3, 5.624000299307086],
+        "attitude": [0, 0.06279051952931358, 0, -0.9980267284282716]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [0.005919814715185323, 3, 5.8116284414120605],
+        "attitude": [0, 0.031410759078128236, 0, -0.9995065603657316]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "positionM": [0.0, 3, 5.999999999999999],
+        "attitude": [0, 1.2246467991473532e-16, 0, -1.0]
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "motors": {
+          "L_Front": { "targetRpm": 1800, "enabled": true },
+          "R_Front": { "targetRpm": 1800, "enabled": true },
+          "L_Rear": { "targetRpm": 1800, "enabled": true },
+          "R_Rear": { "targetRpm": 1800, "enabled": true }
+        },
+        "attitude": [0, 0, 0, 1]
+      }
+    },
+    {
+      "op": "set",
+      "payload": { "positionM": [0, 3, 5.8999999999999995], "wingTilt": 0.9833333333333333 }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 5.8], "wingTilt": 0.9666666666666667 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 5.699999999999999], "wingTilt": 0.95 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 5.6], "wingTilt": 0.9333333333333333 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 5.5], "wingTilt": 0.9166666666666666 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 5.4], "wingTilt": 0.9 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 5.3], "wingTilt": 0.8833333333333333 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 5.2], "wingTilt": 0.8666666666666667 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 5.1], "wingTilt": 0.85 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 5.0], "wingTilt": 0.8333333333333334 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 4.9], "wingTilt": 0.8166666666666667 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 4.800000000000001], "wingTilt": 0.8 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 4.7], "wingTilt": 0.7833333333333333 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 4.6], "wingTilt": 0.7666666666666666 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 4.5], "wingTilt": 0.75 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 4.4], "wingTilt": 0.7333333333333334 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 4.3], "wingTilt": 0.7166666666666667 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 4.199999999999999], "wingTilt": 0.7 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 4.1], "wingTilt": 0.6833333333333333 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 4.0], "wingTilt": 0.6666666666666667 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 3.9000000000000004], "wingTilt": 0.65 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 3.8], "wingTilt": 0.6333333333333333 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 3.7], "wingTilt": 0.6166666666666667 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 3.5999999999999996], "wingTilt": 0.6 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": { "positionM": [0, 3, 3.4999999999999996], "wingTilt": 0.5833333333333333 }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 3.4], "wingTilt": 0.5666666666666667 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 3.3000000000000003], "wingTilt": 0.55 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 3.2], "wingTilt": 0.5333333333333333 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": { "positionM": [0, 3, 3.0999999999999996], "wingTilt": 0.5166666666666666 }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 3.0], "wingTilt": 0.5 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": { "positionM": [0, 3, 2.8999999999999995], "wingTilt": 0.4833333333333333 }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 2.8], "wingTilt": 0.4666666666666667 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": { "positionM": [0, 3, 2.6999999999999997], "wingTilt": 0.44999999999999996 }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 2.6], "wingTilt": 0.43333333333333335 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 2.5], "wingTilt": 0.41666666666666663 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 2.4000000000000004], "wingTilt": 0.4 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 2.3], "wingTilt": 0.3833333333333333 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 2.2], "wingTilt": 0.3666666666666667 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 2.0999999999999996], "wingTilt": 0.35 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 2.0], "wingTilt": 0.33333333333333337 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 1.9], "wingTilt": 0.31666666666666665 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": { "positionM": [0, 3, 1.8000000000000003], "wingTilt": 0.30000000000000004 }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 1.7], "wingTilt": 0.2833333333333333 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": { "positionM": [0, 3, 1.6000000000000003], "wingTilt": 0.2666666666666667 }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 1.5], "wingTilt": 0.25 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": { "positionM": [0, 3, 1.3999999999999997], "wingTilt": 0.23333333333333328 }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 1.3], "wingTilt": 0.21666666666666667 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": { "positionM": [0, 3, 1.1999999999999997], "wingTilt": 0.19999999999999996 }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 1.1], "wingTilt": 0.18333333333333335 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": { "positionM": [0, 3, 0.9999999999999998], "wingTilt": 0.16666666666666663 }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": { "positionM": [0, 3, 0.9000000000000001], "wingTilt": 0.15000000000000002 }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": { "positionM": [0, 3, 0.7999999999999998], "wingTilt": 0.1333333333333333 }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": { "positionM": [0, 3, 0.7000000000000002], "wingTilt": 0.1166666666666667 }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": { "positionM": [0, 3, 0.5999999999999999], "wingTilt": 0.09999999999999998 }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": { "positionM": [0, 3, 0.5000000000000002], "wingTilt": 0.08333333333333337 }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": { "positionM": [0, 3, 0.3999999999999999], "wingTilt": 0.06666666666666665 }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": { "positionM": [0, 3, 0.30000000000000027], "wingTilt": 0.050000000000000044 }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": { "positionM": [0, 3, 0.19999999999999996], "wingTilt": 0.033333333333333326 }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": { "positionM": [0, 3, 0.10000000000000031], "wingTilt": 0.01666666666666672 }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 3, 0.0], "wingTilt": 0.0 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 2.925, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 2.8499999999999996, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 2.7750000000000004, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 2.7, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 2.625, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 2.55, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 2.4749999999999996, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 2.4000000000000004, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 2.325, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 2.25, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 2.175, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 2.0999999999999996, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 2.0250000000000004, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 1.9500000000000002, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 1.875, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 1.7999999999999998, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 1.7249999999999999, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 1.6500000000000001, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 1.5750000000000002, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 1.5, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 1.4249999999999998, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 1.3499999999999999, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 1.2750000000000001, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 1.2000000000000002, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 1.125, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 1.0499999999999998, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 0.9749999999999999, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 0.9000000000000001, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 0.8250000000000001, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 0.75, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 0.6749999999999999, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 0.5999999999999999, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 0.5250000000000001, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 0.45000000000000007, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 0.375, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 0.29999999999999993, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 0.22499999999999987, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 0.15000000000000013, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 0.07500000000000007, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "set", "payload": { "positionM": [0, 0.0, 0] } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "motors": {
+          "L_Front": { "targetRpm": 0, "enabled": false },
+          "R_Front": { "targetRpm": 0, "enabled": false },
+          "L_Rear": { "targetRpm": 0, "enabled": false },
+          "R_Rear": { "targetRpm": 0, "enabled": false }
+        }
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "display": { "environment": "hangar" },
+        "surfaces": {
+          "L_Inboard": 12,
+          "R_Inboard": -12,
+          "L_Outboard": -8,
+          "R_Outboard": 8,
+          "Tail_L": 6,
+          "Tail_R": -6
+        },
+        "hatchDeg": 55
+      }
+    },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    { "op": "step", "payload": { "dt": 0.1 } },
+    {
+      "op": "set",
+      "payload": {
+        "surfaces": {
+          "L_Inboard": 0,
+          "R_Inboard": 0,
+          "L_Outboard": 0,
+          "R_Outboard": 0,
+          "Tail_L": 0,
+          "Tail_R": 0
+        },
+        "hatchDeg": 0
+      }
+    }
+  ]
+}

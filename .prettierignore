@@ -7,3 +7,7 @@ models/
 previews/
 references/
 renders/
+
+threejs/playwright-report/
+threejs/test-results/
+threejs/.transwing-native-check*/

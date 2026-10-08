@@ -1,17 +1,28 @@
-# EV50 VTOL 视景演示
+# EV50 / Transwing 多机型视景机库
 
-这是一个 Blender、TypeScript 和 Three.js 构成的本地无人机视景演示。它提供产品观察、预设任务、统一 MAVLink 风格遥测可视化，以及来自本地 PX4 ULog 的只读回放。它不是飞控、物理仿真器或工程 CAD。
+这是一个 Blender、TypeScript 和 Three.js 构成的本地无人机视景演示。机库可在 EV50 与 Transwing P4 之间切换，两者使用同一个原生 Three.js 画布、渲染器和主展示框架。它提供产品观察、预设任务、统一 MAVLink 风格遥测可视化，以及来自本地 PX4 ULog 的只读回放。它不是飞控、物理仿真器或工程 CAD。
 
 ## 启动
 
 ```powershell
 npm ci
+npm ci --prefix threejs
 npm --prefix threejs run dev
 ```
 
 打开终端给出的本机地址。选择“飞行演示”，在“视景仿真”中点击“本地 ULog 回放”，即可通过 `simulation.replay.load` 播放已转换的本地记录。
 
-## 唯一资产与脚本
+## 机库与机型
+
+- 顶部“机库”切换 EV50 / TRANSWING P4，支持 `?aircraft=ev50` 和 `?aircraft=transwing` 直达及浏览器前进/后退。
+- EV50 保留原产品展示、航线、8 + 3 动力系统、MAVLink / ULog 回放、传感器相机及导出。
+- Transwing 提供连续整翼倾转、四电机折桨、六片独立舵面、舱盖、关节/部件检查、内部驱动及离线 JSON / 本机 Python 接口。
+- 机型切换清理当前播放、输入、异步导入、外控连接和专属图形资源；切回使用干净状态。切换会取消尚未完成的截图/视频输出，请先完成导出。
+- 默认自由观察。机构运动保留观察机位，明确选择检查视角时才重新取景。
+
+[集成说明](docs/INTEGRATION.md) · [验证范围与结果](docs/INTEGRATION-VERIFICATION.md) · [Transwing 本机 Python](models/transwing/PYTHON.md)
+
+## EV50 资产与脚本
 
 - `models/ev50.blend`：可编辑的飞机源工程。
 - `models/ev50.glb`：导出的通用模型。
@@ -39,3 +50,12 @@ node threejs/test-airframe.mjs
 ```
 
 接口和集成说明见 [API](docs/API.md)、[本机 HTTP 控制](docs/HTTP_CONTROL.md)、[MAVLink 风格状态通道](docs/MAVLINK_LOCAL.md) 与[使用说明](docs/USER_GUIDE.md)。
+
+## Transwing 源资产
+
+- `models/transwing/assets/blender/xp4.blend`：完整可编辑原生模型。
+- `threejs/public/transwing/models/xp4.glb`：网页使用的运行时模型。
+- `models/transwing/`：原生模型、动画参考、契约、当前重建/验证工具和 Python 桥。
+- `threejs/src/aircraft/transwing/`：原生机型适配器及可测试核心。
+
+源版本和几何哈希见 [来源记录](models/transwing/PROVENANCE.md)。

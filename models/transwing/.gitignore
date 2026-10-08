@@ -1,0 +1,7 @@
+# Reproducible local dependencies and derived evidence only.
+node_modules/
+.npm-cache/
+build/
+__pycache__/
+*.py[cod]
+*.blend1

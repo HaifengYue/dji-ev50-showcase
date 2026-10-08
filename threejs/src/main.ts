@@ -1,4 +1,8 @@
 import * as T from 'three';
+import { AIRCRAFT, aircraftDescriptor, aircraftFromUrl, isAircraftId } from './aircraft/registry';
+import { createAircraftSelection } from './aircraft/selection';
+import { disposeObjectTree } from './aircraft/resources';
+import type { AircraftId, AircraftInstance, AircraftQuality } from './aircraft/types';
 import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
@@ -34,6 +38,10 @@ import { simulationPanel } from './simulation/panel';
 import { ROTOR_NAMES, Surfaces } from './simulation/telemetry';
 const $ = <E extends HTMLElement>(s: string) => document.querySelector<E>(s)!;
 const canvas = $<HTMLCanvasElement>('#scene');
+let selectedId: AircraftId = aircraftFromUrl(new URL(location.href));
+let selectionRevision = 0;
+let historyRestores = 0;
+const assetUrl = (path: string) => new URL(path, document.baseURI).href;
 const renderer = new T.WebGLRenderer({
   canvas,
   antialias: true,
@@ -52,7 +60,13 @@ camera.position.set(8, 3.6, 10);
 const composer = new EffectComposer(renderer);
 composer.renderTarget1.samples = 4;
 composer.renderTarget2.samples = 4;
-composer.addPass(new RenderPass(scene, camera));
+let activeCamera: T.Camera = camera;
+const renderPass = new RenderPass(scene, camera);
+composer.addPass(renderPass);
+const setActiveCamera = (next: T.Camera) => {
+  activeCamera = next;
+  renderPass.camera = next;
+};
 const bloom = new UnrealBloomPass(new T.Vector2(1, 1), 0.12, 0.35, 1.3);
 composer.addPass(bloom);
 composer.addPass(new OutputPass());
@@ -109,6 +123,7 @@ const presentationView = presentation({
   sun,
   hemisphere,
   setSky: terrain.setSky,
+  aircraftName: () => aircraftDescriptor(selectedId).name,
   showProduct: () => {
     if (!ready) return;
     if (flight.mode !== 'product') setMode('product');
@@ -163,14 +178,31 @@ for (const d of labelData) {
   $('#labels').append(el);
 }
 const labelEls = Array.from(document.querySelectorAll<HTMLDivElement>('.part-label'));
-Promise.all([
-  new GLTFLoader().loadAsync(new URL('ev50.glb', document.baseURI).href),
-  fetch(new URL('flight.json', document.baseURI)).then((r) => {
-    if (!r.ok) throw Error('飞行数据读取失败');
-    return r.json();
-  }),
-])
-  .then(([gltf, data]) => {
+async function loadEv50(signal: AbortSignal): Promise<AircraftInstance> {
+  const generation = selectionRevision;
+  const [bytes, data] = await Promise.all([
+    fetch(assetUrl('ev50.glb'), { signal }).then((response) => {
+      if (!response.ok) throw new Error(`EV50 模型读取失败 (${response.status})`);
+      return response.arrayBuffer();
+    }),
+    fetch(new URL('flight.json', document.baseURI), { signal }).then((response) => {
+      if (!response.ok) throw new Error('飞行数据读取失败');
+      return response.json();
+    }),
+  ]);
+  const gltf = await new GLTFLoader().parseAsync(bytes, new URL('.', document.baseURI).href);
+  if (signal.aborted || generation !== selectionRevision) {
+    disposeObjectTree(gltf.scene);
+    throw new DOMException('Aircraft selection changed', 'AbortError');
+  }
+  const originalMaterials = new Set<T.Material>();
+  try {
+    gltf.scene.traverse((object) => {
+      if (object instanceof T.Mesh) {
+        for (const material of Array.isArray(object.material) ? object.material : [object.material])
+          originalMaterials.add(material);
+      }
+    });
     aircraft.add(gltf.scene);
     flight = new FlightController(data.frames as Frame[]);
     const pivots: T.Object3D[] = [];
@@ -221,6 +253,7 @@ Promise.all([
     if (rotors.filter((r) => r.lift).length !== 8 || rotors.filter((r) => !r.lift).length !== 3)
       throw Error('动力部件数量校验失败');
     rig = aircraftRig(aircraft);
+    const ownedChildren = [...aircraft.children];
     ready = true;
     flight.evaluate();
     missionMap.setPath(flight.getPath());
@@ -235,12 +268,64 @@ Promise.all([
       el.disabled = false;
     presentationView.setReady();
     $('#summary').textContent = '7.00 m 翼展 / 8 + 3 动力系统';
-  })
-  .catch((e: Error) => {
-    $('#loading').textContent = '加载失败：' + e.message + '。请通过本地服务打开，并检查模型文件。';
-    console.error(e);
-  });
+    let disposed = false;
+    return {
+      id: 'ev50',
+      update() {},
+      resize() {},
+      setQuality() {},
+      setMode,
+      playPause: () => $('#play').click(),
+      restart: () => $('#restart').click(),
+      seek: (time) => flight.seek(time),
+      setSpeed: (speed) => flight.setSpeed(speed),
+      setLoop: (loop) => {
+        flight.loop = loop;
+      },
+      setView: () => {},
+      snapshot: () => ({
+        ready,
+        mode: flight.mode,
+        playing: flight.playing,
+        time: flight.time,
+        duration: flight.duration,
+        state: flight.state,
+        label: labels[flight.state],
+        speedMps: flight.speedMps,
+        altitude: aircraft.position.y,
+        lift: `${Math.round(flight.lift * 100)}%`,
+        cruise: `${Math.round(flight.cruise * 100)}%`,
+      }),
+      describe: () => rig?.describe(),
+      dispose() {
+        if (disposed) return;
+        disposed = true;
+        const ownedRoot = new T.Group();
+        ownedRoot.add(...ownedChildren);
+        disposeObjectTree(ownedRoot, originalMaterials);
+        if (generation === selectionRevision) {
+          ready = false;
+          rotors.length = 0;
+          rig = undefined;
+        }
+      },
+    };
+  } catch (error) {
+    const failedRoot = new T.Group();
+    failedRoot.add(...aircraft.children);
+    if (!gltf.scene.parent) failedRoot.add(gltf.scene);
+    disposeObjectTree(failedRoot, originalMaterials);
+    rotors.length = 0;
+    rig = undefined;
+    ready = false;
+    throw error;
+  }
+}
 function setMode(mode: 'product' | 'flight') {
+  if (selectedId === 'transwing') {
+    selection.current?.setMode(mode);
+    return;
+  }
   if (!ready) return;
   if (simulation.source !== 'demo') simulation.select('demo');
   site.clearTrail();
@@ -296,6 +381,10 @@ function leaveSimulation() {
 $('#product').onclick = () => setMode('product');
 $('#flight').onclick = () => setMode('flight');
 $('#play').onclick = () => {
+  if (selectedId === 'transwing') {
+    selection.current?.playPause();
+    return;
+  }
   if (!ready) return;
   if (simulation.source !== 'demo') {
     if (simulation.source === 'replay' && simulation.replay.time >= simulation.replay.duration) {
@@ -317,6 +406,10 @@ $('#play').onclick = () => {
   flight.playing = !flight.playing;
 };
 $('#restart').onclick = () => {
+  if (selectedId === 'transwing') {
+    selection.current?.restart();
+    return;
+  }
   if (!ready) return;
   site.clearTrail();
   if (simulation.source === 'replay') {
@@ -325,9 +418,17 @@ $('#restart').onclick = () => {
   } else if (simulation.source === 'demo') flight.restart();
 };
 $<HTMLInputElement>('#loop').onchange = (e) => {
+  if (selectedId === 'transwing') {
+    selection.current?.setLoop((e.target as HTMLInputElement).checked);
+    return;
+  }
   if (ready) flight.loop = (e.target as HTMLInputElement).checked;
 };
 $<HTMLInputElement>('#timeline').oninput = (e) => {
+  if (selectedId === 'transwing') {
+    selection.current?.seek(Number((e.target as HTMLInputElement).value));
+    return;
+  }
   if (!ready) return;
   const t = Number((e.target as HTMLInputElement).value);
   site.clearTrail();
@@ -340,6 +441,10 @@ $<HTMLInputElement>('#timeline').oninput = (e) => {
   flight.seek(t);
 };
 $<HTMLSelectElement>('#camera').onchange = (e) => {
+  if (selectedId === 'transwing') {
+    selection.current?.setView((e.target as HTMLSelectElement).value);
+    return;
+  }
   cameraMode = (e.target as HTMLSelectElement).value as CameraMode;
   controls.enabled = cameraMode === 'free';
   if (cameraMode === 'free' && ready) {
@@ -361,7 +466,7 @@ routeSelect.onchange = () => {
   }
 };
 const requireReady = () => {
-  if (!ready) throw new Error('EV50 is still loading');
+  if (!ready || selectedId !== 'ev50') throw new Error('EV50 is not selected or is still loading');
 };
 const subscribers = new Set<(state: ReturnType<typeof status>) => void>();
 const status = () => {
@@ -419,7 +524,7 @@ const currentSettings = (): ApiSettings => ({
 });
 const apiGateway = new Ev50ApiGateway({
   get ready() {
-    return ready;
+    return ready && selectedId === 'ev50';
   },
   visualRequest: (operation: string, payload: unknown) => {
     requireReady();
@@ -558,14 +663,17 @@ const api = installBrowserApi(apiGateway, (callback) => {
 });
 Object.assign(window, { ev50API: api });
 const simulationTools = simulationPanel(api, simulation, site.getSettings);
-window.addEventListener('pagehide', () => simulation.disconnect());
-startHttpBridge(api);
+let stopHttpBridge: (() => void) | undefined;
 let telemetryElapsed = 0;
 $<HTMLSelectElement>('#playback-speed').onchange = (e) => {
+  if (selectedId === 'transwing') {
+    selection.current?.setSpeed(Number((e.target as HTMLSelectElement).value));
+    return;
+  }
   if (ready) flight.setSpeed(Number((e.target as HTMLSelectElement).value));
 };
 function quality(q: string) {
-  postEnabled = q === 'High';
+  postEnabled = q === 'High' && selectedId === 'ev50';
   renderer.setPixelRatio(Math.min(devicePixelRatio, q === 'Low' ? 1 : q === 'Medium' ? 1.5 : 2));
   renderer.shadowMap.enabled = q !== 'Low';
   const size = q === 'High' ? 4096 : 1024;
@@ -574,6 +682,7 @@ function quality(q: string) {
   sun.shadow.map = null;
   terrain.setQuality(q);
   $('#quality-readout').textContent = q.toUpperCase();
+  selection?.current?.setQuality(q as AircraftQuality);
   resize();
 }
 $<HTMLSelectElement>('#quality').onchange = (e) => quality((e.target as HTMLSelectElement).value);
@@ -586,7 +695,8 @@ function resize() {
   composer.setSize(w, h);
   camera.aspect = w / h;
   camera.updateProjectionMatrix();
-  if (cameraMode === 'free' && (!ready || flight.mode === 'product'))
+  selection?.current?.resize();
+  if (selectedId === 'ev50' && cameraMode === 'free' && (!ready || flight.mode === 'product'))
     presentationView.resizeProductView();
 }
 window.addEventListener('resize', resize);
@@ -607,6 +717,7 @@ canvas.addEventListener('webglcontextlost', (e) => {
   e.preventDefault();
   $('#loading').hidden = false;
   $('#loading').textContent = '图形设备连接中断，请刷新页面恢复。';
+  selection.current?.setMode('product');
   if (ready) flight.playing = false;
 });
 mapWrap.hidden = true;
@@ -615,7 +726,7 @@ scene.background = new T.Color(0x202c34);
 scene.fog = null;
 const initialQuality = innerWidth < 700 ? 'Low' : 'High';
 $<HTMLSelectElement>('#quality').value = initialQuality;
-quality(initialQuality);
+// Apply initial quality after selection controller initialization below.
 const clock = new T.Clock(),
   desired = new T.Vector3(),
   target = new T.Vector3(),
@@ -631,7 +742,11 @@ function animate() {
   const dt = Math.min(clock.getDelta(), 0.1),
     activeDt = document.hidden ? 0 : dt,
     now = performance.now() / 1000;
-  if (ready) {
+  if (selectedId === 'transwing' && selection.current) {
+    selection.current.update(activeDt, now);
+    syncTranswingHud(selection.current);
+  }
+  if (ready && selectedId === 'ev50') {
     presentationView.update(flight.mode, cameraMode === 'free');
     const frame = simulation.tick(activeDt, now),
       simState = simulation.state(now),
@@ -847,13 +962,249 @@ function animate() {
     }
   }
   if (postEnabled) composer.render();
-  else renderer.render(scene, camera);
+  else renderer.render(scene, activeCamera);
   presentationView.afterRender();
   document.body.dataset.geometries = String(renderer.info.memory.geometries);
   document.body.dataset.textures = String(renderer.info.memory.textures);
   document.body.dataset.drawCalls = String(renderer.info.render.calls);
   document.body.dataset.triangles = String(renderer.info.render.triangles);
 }
+function syncTranswingHud(instance: AircraftInstance) {
+  const state = instance.snapshot();
+  $('#state').textContent = state.label;
+  $('#state-code').textContent = state.state;
+  $('#speed').textContent = state.speedMps.toFixed(1);
+  $('#altitude').textContent = state.altitude.toFixed(1);
+  $('#lift-power').textContent = state.lift;
+  $('#cruise-power').textContent = state.cruise;
+  $('#product').classList.toggle('active', state.mode === 'product');
+  $('#flight').classList.toggle('active', state.mode === 'flight');
+  $('#mode-label').textContent =
+    state.mode === 'product' ? 'MECHANISM STUDY' : 'FLIGHT DEMONSTRATION';
+  $('#play').textContent = state.playing ? '暂停' : '播放';
+  $('#timeline-wrap').classList.toggle('muted', state.mode === 'product');
+  $<HTMLInputElement>('#timeline').max = String(state.duration);
+  $<HTMLInputElement>('#timeline').value = String(state.time);
+  $<HTMLInputElement>('#timeline').disabled = !!state.externallyControlled;
+  for (const id of ['restart', 'playback-speed', 'loop'])
+    $<HTMLInputElement>(`#${id}`).disabled = !!state.externallyControlled;
+  $('#time').textContent = `${state.time.toFixed(1)} / ${state.duration.toFixed(1)} s`;
+  $('.timeline-head span').textContent =
+    state.mode === 'product' ? '整翼机构进度' : 'Transwing 飞行演示';
+  $('.phase-labels').style.visibility = 'hidden';
+  document.body.dataset.state = state.state;
+  document.body.dataset.source = 'transwing';
+}
+const hangarSelect = $<HTMLSelectElement>('#aircraft-select');
+const aircraftPanel = $('#aircraft-panel');
+const cameraSelect = $<HTMLSelectElement>('#camera');
+function configureAircraftShell(id: AircraftId) {
+  const descriptor = aircraftDescriptor(id);
+  hangarSelect.value = id;
+  $('#aircraft-brand').textContent = descriptor.name;
+  $('#aircraft-headline').textContent = id === 'ev50' ? '跨越山海' : '看见形态转换';
+  $('#summary').textContent = descriptor.description;
+  canvas.setAttribute('aria-label', `${descriptor.name} 三维展示，可用鼠标或触控观察`);
+  document.title = `${descriptor.name} — 飞行机库`;
+  document.body.dataset.aircraft = id;
+  cameraSelect.replaceChildren(
+    ...descriptor.cameras.map(([value, text]) => {
+      const option = document.createElement('option');
+      option.value = value;
+      option.textContent = text;
+      return option;
+    }),
+  );
+  cameraSelect.value = 'free';
+  for (const element of document.querySelectorAll<HTMLElement>(
+    '[data-ev50-only],#simulation-tools,#scene-tools',
+  ))
+    element.hidden = id !== 'ev50';
+  routeLabel.hidden = id !== 'ev50';
+  mapWrap.hidden = true;
+  labelEls.forEach((element) => {
+    element.hidden = true;
+  });
+  $<HTMLSelectElement>('#playback-speed').value = '1';
+  $<HTMLInputElement>('#loop').checked = true;
+  $<HTMLInputElement>('#annotations').checked = false;
+  $<HTMLInputElement>('#auto-orbit').checked = false;
+  $<HTMLSelectElement>('#product-view').value = 'hero';
+  showLabels = false;
+  cameraMode = 'free';
+}
+function createSelection() {
+  return createAircraftSelection<AircraftInstance>({
+    async load(id, signal) {
+      if (id === 'ev50') return loadEv50(signal);
+      const module = await import('./aircraft/transwing/index');
+      signal.throwIfAborted();
+      return module.createTranswing(
+        {
+          scene,
+          renderer,
+          canvas,
+          panel: aircraftPanel,
+          assetUrl,
+          setCamera: setActiveCamera,
+          report: (message) => {
+            if (!signal.aborted) $('#load-status').textContent = message;
+          },
+        },
+        signal,
+      );
+    },
+    onPending(id) {
+      ++selectionRevision;
+      selectedId = id as AircraftId;
+      ready = false;
+      rotors.length = 0;
+      rig = undefined;
+      subscribers.clear();
+      simulationTools.deactivate();
+      simulation.reset();
+      stopHttpBridge?.();
+      stopHttpBridge = undefined;
+      site.clearTrail();
+      rotorAngles.clear();
+      presentationView.suspend();
+      aircraftPanel.replaceChildren();
+      aircraft.position.set(0, 0, 0);
+      aircraft.quaternion.identity();
+      aircraft.visible = selectedId === 'ev50';
+      controls.enabled = selectedId === 'ev50';
+      controls.autoRotate = false;
+      terrain.group.visible = false;
+      sun.visible = hemisphere.visible = selectedId === 'ev50';
+      scene.environment = envmap.texture;
+      scene.environmentIntensity = 0.45;
+      renderer.toneMappingExposure = 1;
+      scene.background = new T.Color(0x202c34);
+      scene.fog = null;
+      setActiveCamera(camera);
+      configureAircraftShell(selectedId);
+      if (selectedId === 'ev50') presentationView.resetProductView();
+      for (const control of document.querySelectorAll<
+        HTMLButtonElement | HTMLInputElement | HTMLSelectElement
+      >('.modes button,.timeline-panel button,.timeline-panel input,#camera'))
+        control.disabled = true;
+      $('#loading').hidden = false;
+      $('#loading').textContent = `正在加载 ${aircraftDescriptor(selectedId).name}…`;
+      $('#load-status').textContent = '读取三维模型…';
+      $('#load-retry').hidden = true;
+      document.body.dataset.ready = 'false';
+      document.body.dataset.state = 'LOADING';
+      $('#state').textContent = '载入中';
+      $('#state-code').textContent = 'LOADING';
+      for (const id of ['speed', 'altitude']) $(`#${id}`).textContent = '0.0';
+      for (const id of ['lift-power', 'cruise-power']) $(`#${id}`).textContent = '—';
+      $<HTMLInputElement>('#timeline').value = '0';
+      $('#time').textContent = '—';
+      quality($<HTMLSelectElement>('#quality').value);
+    },
+    onReady(id, instance) {
+      $('#loading').hidden = true;
+      $('#load-status').textContent = `模型就绪 · ${aircraftDescriptor(id as AircraftId).name}`;
+      document.body.dataset.ready = 'true';
+      for (const control of document.querySelectorAll<
+        HTMLButtonElement | HTMLInputElement | HTMLSelectElement
+      >('.modes button,.timeline-panel button,.timeline-panel input,#camera'))
+        control.disabled = false;
+      presentationView.setReady();
+      instance.setQuality($<HTMLSelectElement>('#quality').value as AircraftQuality);
+      instance.resize();
+      if (id === 'ev50') stopHttpBridge = startHttpBridge(api);
+      else syncTranswingHud(instance);
+    },
+    onError(_id, error) {
+      ready = false;
+      $('#loading').hidden = true;
+      $('#load-status').textContent =
+        `载入失败：${error instanceof Error ? error.message : String(error)}。可重试或选择其他飞机。`;
+      $('#load-retry').hidden = false;
+      console.error(error);
+    },
+  });
+}
+let selection = createSelection();
+function selectAircraft(id: AircraftId, historyMode: 'push' | 'replace' | 'none' = 'push') {
+  if (historyMode !== 'none') {
+    const url = new URL(location.href);
+    url.searchParams.set('aircraft', id);
+    if (url.href !== location.href)
+      history[historyMode === 'push' ? 'pushState' : 'replaceState']({}, '', url);
+  }
+  return selection.select(id);
+}
+hangarSelect.onchange = () => {
+  if (isAircraftId(hangarSelect.value)) void selectAircraft(hangarSelect.value);
+};
+$('#load-retry').onclick = () => {
+  void selectAircraft(selectedId, 'none');
+};
+window.addEventListener('popstate', () => {
+  void selectAircraft(aircraftFromUrl(new URL(location.href)), 'none');
+});
+window.addEventListener('pagehide', () => {
+  selection.dispose();
+  simulationTools.deactivate();
+  simulation.disconnect();
+  stopHttpBridge?.();
+  renderer.setAnimationLoop(null);
+});
+window.addEventListener('pageshow', (event) => {
+  if (!event.persisted) return;
+  // BFCache retains the host and its listeners, but pagehide disposed its aircraft.
+  // Rebuild only the selection/resources; do not duplicate a renderer or listener set.
+  if (renderer.getContext().isContextLost()) {
+    location.reload();
+    return;
+  }
+  selection.dispose();
+  selection = createSelection();
+  historyRestores++;
+  quality($<HTMLSelectElement>('#quality').value);
+  void selectAircraft(aircraftFromUrl(new URL(location.href)), 'none');
+  renderer.setAnimationLoop(animate);
+});
+Object.assign(window, {
+  hangarAPI: Object.freeze({
+    list: () =>
+      AIRCRAFT.map((entry) => ({
+        id: entry.id,
+        name: entry.name,
+        capabilities: [...entry.capabilities],
+      })),
+    state: () => ({
+      selected: selectedId,
+      current: selection.currentId,
+      pending: selection.pendingId,
+      ready: !!selection.current,
+      aircraft: selection.current?.describe(),
+    }),
+    select: (id: unknown) => {
+      if (!isAircraftId(id)) return Promise.reject(new Error('Unknown aircraft'));
+      return selectAircraft(id);
+    },
+  }),
+});
+Object.defineProperty(window, 'hangarDiagnostics', {
+  get: () => ({
+    selected: selectedId,
+    current: selection.currentId,
+    pending: selection.pendingId,
+    ready: !!selection.current,
+    historyRestores,
+    geometries: renderer.info.memory.geometries,
+    textures: renderer.info.memory.textures,
+    drawCalls: renderer.info.render.calls,
+    camera: activeCamera.type,
+    sceneChildren: scene.children.length,
+    aircraft: selection.current?.describe(),
+  }),
+});
+quality(initialQuality);
+void selectAircraft(selectedId, 'replace');
 renderer.setAnimationLoop(animate);
 Object.defineProperty(window, 'ev50Diagnostics', {
   get: () => ({

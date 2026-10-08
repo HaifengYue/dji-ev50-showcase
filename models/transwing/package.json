@@ -1,0 +1,16 @@
+{
+  "name": "transwing-native-pipeline",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "check": "python3 tools/check_pipeline.py",
+    "test": "node scripts/run-node.mjs --test scripts/pipeline/integrated_semantic_geometry.test.mts qa/pipeline-host.test.mts qa/local-presentation.test.mts",
+    "build:model": "python3 tools/rebuild_model.py",
+    "test:pipeline": "node scripts/run-node.mjs --test qa/source-runtime.test.ts && node scripts/pipeline/identity_negative.mjs",
+    "verify:model": "python3 tools/verify_model.py",
+    "test:core": "node qa/run-core-tests.mjs"
+  }
+}

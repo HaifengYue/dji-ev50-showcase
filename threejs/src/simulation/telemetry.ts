@@ -421,6 +421,12 @@ export class TelemetryReplay {
   time = 0;
   duration = 0;
   playing = false;
+  clear() {
+    this.frames = [];
+    this.time = 0;
+    this.duration = 0;
+    this.playing = false;
+  }
   load(input: unknown) {
     const frames = parseRecording(input); // No partial mutation on a bad log.
     this.frames = frames;

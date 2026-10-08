@@ -49,6 +49,13 @@ export function simulationPanel(
   const message = (text: string) => {
     element('sim-message').textContent = text;
   };
+  let importGeneration = 0;
+  let pendingImport: AbortController | undefined;
+  const cancelImport = () => {
+    ++importGeneration;
+    pendingImport?.abort();
+    pendingImport = undefined;
+  };
   const request = (operation: string, payload?: unknown) => {
     const result = api.request({ operation, payload });
     if (!result.ok) throw new Error(result.error.message);
@@ -81,13 +88,24 @@ export function simulationPanel(
       request('simulation.replay.sample');
     });
   element('sim-ulog').onclick = async () => {
+    cancelImport();
+    const generation = importGeneration;
+    const controller = new AbortController();
+    pendingImport = controller;
     try {
-      const response = await fetch(new URL('flight-replay.json', document.baseURI));
+      const response = await fetch(new URL('flight-replay.json', document.baseURI), {
+        signal: controller.signal,
+      });
       if (!response.ok) throw new Error('本地 ULog 回放文件不可用');
-      request('simulation.replay.load', await response.text());
+      const text = await response.text();
+      if (generation !== importGeneration || controller.signal.aborted) return;
+      request('simulation.replay.load', text);
       message('已通过视景回放接口加载本地 ULog');
     } catch (error) {
-      message(error instanceof Error ? error.message : String(error));
+      if (generation === importGeneration && !controller.signal.aborted)
+        message(error instanceof Error ? error.message : String(error));
+    } finally {
+      if (generation === importGeneration) pendingImport = undefined;
     }
   };
   element('sim-import').onclick = () => element<HTMLInputElement>('sim-file').click();
@@ -96,12 +114,17 @@ export function simulationPanel(
       file = input.files?.[0];
     input.value = '';
     if (!file) return;
+    cancelImport();
+    const generation = importGeneration;
     try {
       if (file.size > 16 * 1024 * 1024) throw new Error('记录文件不能超过 16 MiB');
-      request('simulation.replay.load', await file.text());
+      const text = await file.text();
+      if (generation !== importGeneration) return;
+      request('simulation.replay.load', text);
       message(`已加载 ${file.name}`);
     } catch (error) {
-      message(error instanceof Error ? error.message : String(error));
+      if (generation === importGeneration)
+        message(error instanceof Error ? error.message : String(error));
     }
   };
   element('sim-record').onclick = () =>
@@ -156,6 +179,14 @@ export function simulationPanel(
       request('scene.configure', { trail: (e.target as HTMLInputElement).checked });
     });
   return {
+    deactivate() {
+      cancelImport();
+      message('');
+      for (const element of panel.querySelectorAll<
+        HTMLInputElement | HTMLButtonElement | HTMLSelectElement
+      >('input,button,select'))
+        element.disabled = true;
+    },
     update(ready: boolean, clearance: number) {
       if (!ready) return;
       const state = session.state(),

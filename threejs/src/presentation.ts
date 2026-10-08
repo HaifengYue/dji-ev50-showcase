@@ -10,6 +10,7 @@ type Options = {
   hemisphere: T.HemisphereLight;
   setSky: (golden: boolean) => void;
   showProduct: () => void;
+  aircraftName?: () => string;
 };
 
 const views = {
@@ -42,6 +43,9 @@ export function presentation(options: Options) {
   const fogColor = new T.Color();
   let ready = false;
   let pendingImage = false;
+  let captureGeneration = 0;
+  let imageGeneration = 0;
+  let imageAircraftName = 'EV50';
   let aspectScale = 1;
   let appliedLighting = '';
   let mode: 'product' | 'flight' = 'product';
@@ -55,6 +59,8 @@ export function presentation(options: Options) {
     startedAt: number;
     reason: string;
     error: boolean;
+    generation: number;
+    aircraftName: string;
   };
   let activeRecording: Recording | undefined;
 
@@ -62,12 +68,12 @@ export function presentation(options: Options) {
     captureStatus.textContent = message;
   }
 
-  function download(blob: Blob, extension: string) {
+  function download(blob: Blob, extension: string, aircraftName: string) {
     if (lastDownloadUrl) URL.revokeObjectURL(lastDownloadUrl);
     const stamp = new Date().toISOString().replace(/[:.]/g, '-');
     lastDownloadUrl = URL.createObjectURL(blob);
     captureDownload.href = lastDownloadUrl;
-    captureDownload.download = `EV50_${stamp}.${extension}`;
+    captureDownload.download = `${aircraftName}_${stamp}.${extension}`;
     captureDownload.hidden = false;
     captureDownload.textContent = `下载 ${extension.toUpperCase()} 文件`;
     captureDownload.click();
@@ -132,6 +138,8 @@ export function presentation(options: Options) {
   save.onclick = () => {
     if (!ready || pendingImage) return;
     pendingImage = true;
+    imageGeneration = captureGeneration;
+    imageAircraftName = options.aircraftName?.() ?? 'EV50';
     save.disabled = true;
     report('正在生成当前画面…');
   };
@@ -191,6 +199,8 @@ export function presentation(options: Options) {
         startedAt: performance.now(),
         reason: '',
         error: false,
+        generation: captureGeneration,
+        aircraftName: options.aircraftName?.() ?? 'EV50',
       };
       activeRecording = session;
       recorder.ondataavailable = (event) => {
@@ -202,13 +212,13 @@ export function presentation(options: Options) {
       };
       recorder.onstop = () => {
         try {
-          if (!leaving) {
+          if (!leaving && session.generation === captureGeneration) {
             if (session.error) report('视频编码失败，请降低画质后重试。');
             else if (!session.chunks.length) report('未生成视频帧，请重新录制。');
             else {
               const blob = new Blob(session.chunks, { type: recorder.mimeType || mimeType });
               const extension = blob.type.includes('mp4') ? 'mp4' : 'webm';
-              download(blob, extension);
+              download(blob, extension, session.aircraftName);
               const seconds = ((performance.now() - session.startedAt) / 1000).toFixed(1);
               report(
                 `${session.reason ? session.reason + '；' : ''}已生成 ${seconds} 秒 ${extension.toUpperCase()}，可再次下载。`,
@@ -253,8 +263,19 @@ export function presentation(options: Options) {
 
   return {
     sunOffset,
+    suspend() {
+      captureGeneration++;
+      const interrupted = pendingImage || !!activeRecording;
+      ready = false;
+      pendingImage = false;
+      save.disabled = record.disabled = true;
+      disableOrbit();
+      stopRecording('切换飞机，录制已停止');
+      if (interrupted) report('切换飞机，未完成的截图或录制已取消。');
+    },
     setReady() {
       ready = true;
+      save.disabled = false;
       record.disabled = !canRecord;
       if (!canRecord) report('当前浏览器不支持画面录制，仍可保存 PNG。');
     },
@@ -296,13 +317,16 @@ export function presentation(options: Options) {
     afterRender() {
       if (!pendingImage) return;
       pendingImage = false;
+      const generation = imageGeneration;
+      const aircraftName = imageAircraftName;
       // Snapshot immediately after the render; preserveDrawingBuffer stays off.
       try {
         canvas.toBlob((blob) => {
+          if (generation !== captureGeneration) return;
           try {
             if (!blob) throw new Error('浏览器未生成图像');
             if (!leaving) {
-              download(blob, 'png');
+              download(blob, 'png', aircraftName);
               report(`已生成 ${canvas.width} × ${canvas.height} PNG，包含三维画面。`);
             }
           } catch (error) {

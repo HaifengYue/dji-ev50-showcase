@@ -3,17 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="description" content="EV50 复合翼运载无人机非官方三维外观研究与完整飞行演示" />
-    <title>EV50 — 3D Flight Study</title>
+    <meta name="description" content="EV50 与 Transwing 单画布交互机库、机构研究和飞行演示" />
+    <title>飞行机库 — EV50 / Transwing</title>
   </head>
   <body>
     <canvas id="scene" aria-label="EV50 三维展示，可用鼠标拖动观察"></canvas>
     <div id="labels"></div>
     <header class="topbar">
       <div class="brand">
-        <strong>EV50<span style="color: #d4fa79"> /</span></strong
+        <strong><span id="aircraft-brand">EV50</span><span style="color: #d4fa79"> /</span></strong
         ><small>3D FLIGHT STUDY</small>
       </div>
+      <label class="hangar-choice"
+        >机库<select id="aircraft-select" aria-label="选择展示飞机">
+          <option value="ev50">EV50</option>
+          <option value="transwing">TRANSWING P4</option>
+        </select></label
+      >
       <nav class="modes" aria-label="展示模式">
         <button id="product" class="active" disabled>产品展示</button
         ><button id="flight" disabled>飞行演示</button>
@@ -21,9 +27,10 @@
     </header>
     <section class="headline">
       <div class="eyebrow" id="mode-label">PRODUCT STUDY</div>
-      <h1>跨越山海</h1>
+      <h1 id="aircraft-headline">跨越山海</h1>
       <p id="summary">复合翼运载无人机 · 外观研究</p>
-      <p id="load-status">读取三维模型…</p>
+      <p id="load-status" role="status" aria-live="polite">读取三维模型…</p>
+      <button id="load-retry" hidden>重试载入</button>
     </section>
     <button id="tools-toggle" aria-expanded="false" aria-controls="display-tools">展示设置</button>
     <aside id="display-tools" class="right-tools" aria-label="展示设置">
@@ -55,8 +62,11 @@
           <option>High</option>
         </select></label
       >
-      <label class="toggle"><input id="annotations" type="checkbox" disabled />部件说明</label>
-      <details class="tool-section">
+      <label class="toggle" data-ev50-only
+        ><input id="annotations" type="checkbox" disabled />部件说明</label
+      >
+      <div id="aircraft-panel" aria-label="机型控制"></div>
+      <details class="tool-section" data-ev50-only>
         <summary>产品视角</summary>
         <label class="field"
           >固定视角<select id="product-view" disabled>
@@ -70,7 +80,7 @@
       </details>
       <details class="tool-section">
         <summary>光线与导出</summary>
-        <label class="field"
+        <label class="field" data-ev50-only
           >户外光线<select id="lighting" title="在飞行演示中生效，产品模式使用摄影棚光线" disabled>
             <option value="daylight">日光</option>
             <option value="golden">金色时刻</option>
