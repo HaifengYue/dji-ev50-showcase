@@ -10,7 +10,7 @@ export function playbackPresentation(state: AircraftSnapshot) {
     ? [0.1, 1]
     : state.mode === 'product'
       ? [0.25, 0.5, 1, 1.5, 2]
-      : [0.25, 0.5, 1, 1.5, 2, 4];
+      : [0.1, 0.25, 0.5, 1, 1.5, 2, 4];
   const timeLabel =
     timeUnit === 'frames'
       ? `${Math.round(state.time) + 1} / ${Math.round(state.duration) + 1} 帧`

@@ -197,7 +197,7 @@ export async function testHangarSnapshot({ load, passed }) {
     timeLabel: `26.5 / ${TOTAL.toFixed(1)} s`,
     timelineLabel: 'Transwing 飞行演示',
     step: '0.01',
-    rateOptions: [0.25, 0.5, 1, 1.5, 2, 4],
+    rateOptions: [0.1, 0.25, 0.5, 1, 1.5, 2, 4],
     rate: 4,
     loop: false,
   });
