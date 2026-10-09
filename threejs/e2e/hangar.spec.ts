@@ -1,5 +1,6 @@
 import { test, expect, type Page } from '@playwright/test';
 import { MOTOR_LIMITS } from '../src/aircraft/transwing/core/motors';
+import { DEMO_DURATION, DEMO_TIMES } from '../src/aircraft/transwing/demoProfile';
 
 const diagnostics = (page: Page) => page.evaluate(() => (window as any).hangarDiagnostics);
 async function ready(page: Page, aircraft: 'ev50' | 'transwing') {
@@ -497,10 +498,10 @@ test('Transwing uses the EV50 stage and world terrain route without a private ha
   await expect.poll(async () => (await diagnostics(page)).world.time).toBeGreaterThan(0);
   await page.evaluate(() => {
     const timeline = document.querySelector<HTMLInputElement>('#timeline')!;
-    timeline.value = '80';
+    timeline.value = '132';
     timeline.dispatchEvent(new Event('input', { bubbles: true }));
   });
-  await expect.poll(async () => (await diagnostics(page)).world.time).toBeGreaterThan(80);
+  await expect.poll(async () => (await diagnostics(page)).world.time).toBeGreaterThan(132);
   const beforeMotion = await diagnostics(page);
   await page.locator('#flight').click();
   await page.locator('#flight').click();
@@ -542,7 +543,7 @@ test('Transwing uses the EV50 stage and world terrain route without a private ha
   expect(flying.world.speedMps).toBeGreaterThan(5);
   expect(flying.aircraft.runtime.state.wingTilt).toBeCloseTo(1, 5);
   expect(flying.aircraft.coordinates.bodyAlignment).toEqual([0, 0, 0, 1]);
-  await expect(page.locator('#timeline')).toHaveAttribute('max', '180');
+  await expect(page.locator('#timeline')).toHaveAttribute('max', String(DEMO_DURATION));
   await expect
     .poll(async () => (await diagnostics(page)).aircraft.camera.transitioning)
     .toBe(false);
@@ -849,4 +850,85 @@ test('One local HTTP endpoint dispatches both aircraft and retries the original 
     body: JSON.stringify({ applied, late, ev50, reset, renewedEpoch }, null, 2),
     contentType: 'application/json',
   });
+});
+
+test('Transwing demo vertical rates and rotor phase survive seek, pause, playback rate and shutdown', async ({
+  page,
+}, info) => {
+  test.setTimeout(240_000);
+  const errors = watchErrors(page);
+  await page.goto('/hangar/?aircraft=transwing');
+  await ready(page, 'transwing');
+  await page.locator('#quality').selectOption('Low');
+  await page.locator('#flight').click();
+  await page.locator('#play').click();
+  const seek = async (time: number) => {
+    await page.locator('#timeline').evaluate((element, value) => {
+      (element as HTMLInputElement).value = String(value);
+      element.dispatchEvent(new Event('input', { bubbles: true }));
+    }, time);
+    await expect.poll(async () => (await diagnostics(page)).world.time).toBeCloseTo(time, 5);
+  };
+  await seek(30);
+  await expect(page.locator('#vertical-speed')).toHaveText('3.0');
+  await expect(page.locator('#speed')).toHaveText('3.0');
+  const paused = await diagnostics(page);
+  expect(paused.aircraft.runtime.actuators.L_Front.rpm).toBe(1800);
+  expect(paused.aircraft.runtime.actuators.L_Front.fold).toBe(0);
+  await page.waitForTimeout(250);
+  expect((await diagnostics(page)).aircraft.runtime.actuators).toEqual(
+    paused.aircraft.runtime.actuators,
+  );
+  await page.screenshot({ path: info.outputPath('transwing-bounded-climb.png') });
+  await page.locator('#playback-speed').selectOption('0.1');
+  await page.locator('#play').click();
+  const first = await diagnostics(page);
+  await expect
+    .poll(async () => (await diagnostics(page)).world.time)
+    .toBeGreaterThan(first.world.time + 0.02);
+  const second = await diagnostics(page);
+  const dt = second.world.time - first.world.time;
+  expect((second.world.position.y - first.world.position.y) / dt).toBeCloseTo(3, 5);
+  const phaseDelta =
+    (second.aircraft.runtime.actuators.L_Front.phase -
+      first.aircraft.runtime.actuators.L_Front.phase +
+      2 * Math.PI) %
+    (2 * Math.PI);
+  expect(phaseDelta).toBeCloseTo((((dt * 1800) / 60) * 2 * Math.PI) % (2 * Math.PI), 4);
+  expect(second.aircraft.rotorExposureIds).toEqual([]);
+  await page.locator('#playback-speed').selectOption('4');
+  await expect.poll(async () => (await diagnostics(page)).aircraft.rotorExposureIds.length).toBe(4);
+  await page.locator('#play').click();
+  const stopped = (await diagnostics(page)).aircraft.runtime.actuators;
+  await page.waitForTimeout(200);
+  expect((await diagnostics(page)).aircraft.runtime.actuators).toEqual(stopped);
+  await seek(DEMO_TIMES.cruise + 10);
+  let sample = await diagnostics(page);
+  expect(sample.aircraft.runtime.actuators.L_Rear.fold).toBe(1);
+  expect(sample.aircraft.runtime.actuators.L_Rear.rpm).toBe(0);
+  expect(sample.aircraft.runtime.actuators.L_Front.rpm).toBe(1800);
+  await seek(DEMO_TIMES.return);
+  expect((await diagnostics(page)).aircraft.runtime.actuators.L_Rear.rpm).toBe(1600);
+  await seek(DEMO_TIMES.landing + 20);
+  await expect(page.locator('#vertical-speed')).toHaveText('-2.0');
+  await expect(page.locator('#speed')).toHaveText('2.0');
+  await page.locator('#loop').uncheck();
+  await seek(DEMO_DURATION - 0.2);
+  await page.locator('#play').click();
+  await expect.poll(async () => (await diagnostics(page)).aircraft.experience.playing).toBe(false);
+  sample = await diagnostics(page);
+  expect(sample.world.time).toBe(DEMO_DURATION);
+  for (const motor of Object.values(sample.aircraft.runtime.actuators) as any[]) {
+    expect(motor.rpm).toBe(0);
+    expect(motor.fold).toBe(1);
+    expect(motor.stage).toBe('folded');
+  }
+  await seek(30);
+  await page.locator('#product').click();
+  expect((await diagnostics(page)).aircraft.runtime.actuators.L_Front.fold).toBe(1);
+  await info.attach('transwing-rates.json', {
+    body: JSON.stringify({ paused, first, second, shutdown: sample }, null, 2),
+    contentType: 'application/json',
+  });
+  expect(errors).toEqual([]);
 });

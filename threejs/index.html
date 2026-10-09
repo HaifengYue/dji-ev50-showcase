@@ -105,7 +105,12 @@
       <div class="status-row"><span class="dot"></span><span id="state">地面待命</span></div>
       <div id="state-code" class="state-code">IDLE</div>
       <div class="metrics">
-        <div class="metric"><span>飞行速度</span><strong id="speed">0.0</strong> <em>m/s</em></div>
+        <div class="metric">
+          <span id="speed-label">飞行速度</span><strong id="speed">0.0</strong> <em>m/s</em>
+        </div>
+        <div class="metric" id="vertical-speed-metric" hidden>
+          <span>垂直速度</span><strong id="vertical-speed">0.0</strong> <em>m/s</em>
+        </div>
         <div class="metric"><span>相对高度</span><strong id="altitude">0.0</strong> <em>m</em></div>
         <div class="metric">
           <span id="lift-label">垂起旋翼</span><strong id="lift-power">0%</strong>

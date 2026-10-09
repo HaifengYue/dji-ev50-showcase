@@ -262,6 +262,7 @@ export class SimulationRuntime {
   private replayFrames: ReturnType<typeof parseRecording>['frames'] = [];
   private replayElapsed = 0;
   private motorStep: MotorStep | null = null;
+  private localDemoExposure: MotorExposure | null = null;
   private exposureRemaining = 0;
   /** 仅快门显示寿命；绝不积分或修改外部仿真时间/电机状态。 */
   advancePresentation(dt: number) {
@@ -281,6 +282,7 @@ export class SimulationRuntime {
     this.exposureRemaining = dt > 0 ? Math.min(1, Math.max(0.15, dt * 2)) : 0;
   }
   private clearMotorExposure() {
+    this.localDemoExposure = null;
     this.motorStep = null;
     this.exposureRemaining = 0;
   }
@@ -312,8 +314,15 @@ export class SimulationRuntime {
       state,
       actuators,
       exposure:
-        !snapshot.disposed && snapshot.rotorShutter && active && step
-          ? sampleMotorExposure(step, actuators, rate)
+        !snapshot.disposed && snapshot.rotorShutter
+          ? snapshot.control === 'local' &&
+            snapshot.driver === 'demo' &&
+            !state.time.paused &&
+            this.localDemoExposure
+            ? this.localDemoExposure
+            : active && step
+              ? sampleMotorExposure(step, actuators, rate)
+              : null
           : null,
     };
   }
@@ -419,6 +428,14 @@ export class SimulationRuntime {
       driver,
       actuators: state.display.exploded ? newMotorStates() : this.snapshot.actuators,
     });
+    return true;
+  }
+  /** Known local demonstration samples only. Never writes an external/replay or manual owner. */
+  setLocalDemoMotors(actuators: MotorStates, exposure: MotorExposure | null) {
+    if (this.snapshot.control !== 'local' || this.snapshot.driver !== 'demo') return false;
+    this.clearMotorExposure();
+    this.localDemoExposure = this.snapshot.state.time.paused ? null : exposure;
+    this.publish({ actuators });
     return true;
   }
   stepLocal(dt: number) {

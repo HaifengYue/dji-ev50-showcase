@@ -8,6 +8,7 @@ import { SURFACE_IDS, type SurfaceId } from './core/surfaces';
 import { DETAIL_VIEWS } from './core/details';
 import { INSPECTION_VIEWS } from './core/inspection';
 import { WORLD_FLIGHT_PHASES, worldFlightPhase } from './worldFlight';
+import { DEMO_DURATION, TRANSWING_DEMO_PROFILE } from './demoProfile';
 import type { TiltAction } from './core/tilt';
 import './panel.css';
 
@@ -286,7 +287,7 @@ export function createTranswingPanel(
   }));
   note(
     flight,
-    '使用 EV50 同一条 180 秒航线、地形与高度。整翼按航线转换阶段展开/收拢；仅为视觉演示，非物理飞控。',
+    `复用共享水平航线与地形；演示 ${DEMO_DURATION} 秒，上升 ≤${TRANSWING_DEMO_PROFILE.climbMps} m/s、下降 ≤${TRANSWING_DEMO_PROFILE.descentMps} m/s（按仿真秒）。数值为演示配置，非厂家性能或物理飞控。`,
   );
 
   const mechanism = section('连续整翼倾转', true);

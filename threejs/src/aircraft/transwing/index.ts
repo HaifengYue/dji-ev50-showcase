@@ -34,7 +34,7 @@ import {
   worldToLegacyPosition,
   legacyToWorldPosition,
 } from './worldFlight';
-import { newMotorCommands, type MotorCommands } from './core/motors';
+import { newMotorCommands, newMotorStates, type MotorCommands } from './core/motors';
 import { detailSurfaces, NEUTRAL_DETAIL_POSE } from './core/details';
 import {
   getInspectionFrame,
@@ -240,7 +240,8 @@ class TranswingInstance implements AircraftInstance {
     if (action.type === 'play-flight') {
       const playing = !this.state.playing;
       const time = this.state.time >= WORLD_FLIGHT_DURATION ? 0 : this.state.time;
-      this.startFlightAt(time);
+      if (this.mode !== 'flight' || this.state.tiltMode || time !== this.state.time)
+        this.startFlightAt(time);
       this.state = { ...this.state, playing };
     } else {
       if (
@@ -374,8 +375,16 @@ class TranswingInstance implements AircraftInstance {
         ? { surfaces: detailSurfaces(details), hatchDeg: details.hatch }
         : {}),
       display: { wireframe: this.wireframe, exploded: state.exploded },
-      time: { paused: snapshot.driver === 'manual' ? this.manualPaused : !state.playing },
+      time: {
+        ...(moving && snapshot.driver === 'demo' ? { seconds: state.time } : {}),
+        paused: snapshot.driver === 'manual' ? this.manualPaused : !state.playing,
+      },
     });
+    if (snapshot.driver === 'demo')
+      this.runtime.setLocalDemoMotors(
+        moving ? this.flight.motors.sample(state.time) : newMotorStates(),
+        moving && state.playing ? this.flight.motors.exposure(state.time, this.rate) : null,
+      );
   }
   private frame(immediate = false) {
     if (this.disposed) return;
@@ -550,7 +559,9 @@ class TranswingInstance implements AircraftInstance {
         this.state = { ...this.state, time, playing: this.loop || time < WORLD_FLIGHT_DURATION };
       }
       this.syncLocal();
-      if (this.state.playing || (before.driver === 'manual' && !this.manualPaused))
+      // Flight demo motors are sampled from the same absolute mission time as the pose.
+      // Manual/API and replay keep their existing authoritative integration paths.
+      if (before.driver === 'manual' && !this.manualPaused)
         this.runtime.stepLocal(dt * (this.state.playing ? this.rate : 1));
     } else if (before.control === 'replay') this.runtime.advanceReplay(dt);
     this.paint();
@@ -908,6 +919,12 @@ class TranswingInstance implements AircraftInstance {
           : this.unified.velocity && !pose.time.paused
             ? Math.hypot(...this.unified.velocity)
             : 0,
+      verticalSpeedMps:
+        demo && this.mode === 'flight' && !this.state.tiltMode
+          ? this.flight.verticalSpeedMps
+          : this.unified.velocity && !pose.time.paused
+            ? this.unified.velocity[1]
+            : 0,
       time: demo ? this.state.time : pose.time.seconds,
       mode: this.mode,
       routeProgress: demo && this.mode === 'flight' ? this.flight.controller.routeProgress : 0,
@@ -937,6 +954,7 @@ class TranswingInstance implements AircraftInstance {
       camera: this.camera.describe(),
       modelBounds: this.measurements.bounds.clone(),
       internalDrive: this.internalDrive,
+      rotorExposureIds: this.runtime.getRenderSample().exposure?.activeIds ?? [],
       conceptLoaded: !!this.concept,
       resources: this.resources.describe(),
       disposed: this.disposed,

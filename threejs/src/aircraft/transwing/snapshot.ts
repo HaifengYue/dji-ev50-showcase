@@ -79,6 +79,7 @@ export function buildTranswingSnapshot(
             ? labels[flightState]
             : phase.label,
     speedMps: mode === 'product' ? 0 : (world?.speedMps ?? 0),
+    verticalSpeedMps: mode === 'product' ? 0 : (world?.verticalSpeedMps ?? 0),
     altitude: world?.position.y ?? pose.positionM[1],
     lift: `${Math.round(pose.wingTilt * 100)}%`,
     cruise: `${MOTOR_IDS.filter((id) => snapshot.actuators[id].rpm > 0).length}/4`,

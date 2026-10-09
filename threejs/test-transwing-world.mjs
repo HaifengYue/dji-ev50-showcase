@@ -52,13 +52,15 @@ try {
     TRANSWING_COORDINATES,
   } = await load('aircraft/transwing/worldFlight.ts');
   const { FlightController } = await load('flight.ts');
+  const { DEMO_TIMES, TRANSWING_DEMO_PROFILE, sharedDemoTime, demoVertical, DemoMotorTimeline } =
+    await load('aircraft/transwing/demoProfile.ts');
   const { obstacleCeiling, AIRCRAFT_RADIUS } = await load('terrain.ts');
   const frames = JSON.parse(fs.readFileSync('public/flight.json', 'utf8')).frames;
   const adapter = new TranswingWorldFlight(frames),
     reference = new FlightController(frames);
   reference.mode = 'flight';
-  assert.equal(WORLD_FLIGHT_DURATION, reference.duration);
-  assert.equal(WORLD_FLIGHT_DURATION, 180);
+  assert.equal(reference.duration, 180, 'EV50 clock is unchanged');
+  assert.equal(WORLD_FLIGHT_DURATION, 316);
   for (const route of ['valley', 'plateau', 'ridge']) {
     adapter.setRoute(route);
     reference.setRoute(route);
@@ -70,10 +72,11 @@ try {
       previousQuaternion = adapter.sample(0).quaternion.clone();
     for (let time = 0; time <= WORLD_FLIGHT_DURATION; time += 0.1) {
       const sample = adapter.sample(time);
-      reference.seek(time);
-      nearVector(sample.position, reference.position);
+      reference.seek(sharedDemoTime(time).time);
+      near(sample.position.x, reference.position.x);
+      near(sample.position.z, reference.position.z);
+      near(sample.position.y, demoVertical(time).altitude);
       near(sample.quaternion.angleTo(reference.quaternion), 0);
-      near(sample.speedMps, reference.speedMps);
       near(sample.quaternion.length(), 1);
       assert.ok(previousQuaternion.angleTo(sample.quaternion) < 0.2, 'continuous quaternion');
       distance += sample.position.distanceTo(previous);
@@ -92,36 +95,116 @@ try {
     assert.ok(maxAltitude > 150, `altitude ${maxAltitude}`);
     assert.ok(maxSpeed > 15 && maxSpeed < 100, `visual speed ${maxSpeed}`);
     assert.equal(adapter.path, cachedPath, 'cache path between route changes');
-    nearVector(adapter.sample(180).position, new T.Vector3());
+    nearVector(adapter.sample(WORLD_FLIGHT_DURATION).position, new T.Vector3());
     pass(
-      `${route}: exact shared trajectory, kilometre travel, terrain clearance, continuous quaternion and cached path`,
+      `${route}: retimed shared horizontal trajectory, kilometre travel, terrain clearance, continuous quaternion and cached path`,
     );
   }
   for (const phase of WORLD_FLIGHT_PHASES)
     assert.equal(adapter.sample(phase.start + 0.001).state, phase.state, phase.id);
   for (const [time, expected] of [
     [0, 0],
-    [16, 0],
-    [18, 0],
-    [42, 1],
-    [100, 1],
-    [138, 1],
-    [162, 0],
-    [180, 0],
+    [DEMO_TIMES.hover, 0],
+    [DEMO_TIMES.transition, 0],
+    [DEMO_TIMES.cruise, 1],
+    [DEMO_TIMES.return, 1],
+    [DEMO_TIMES.hoverReturn, 0],
+    [WORLD_FLIGHT_DURATION, 0],
   ])
     near(adapter.sample(time).wingTilt, expected);
-  for (const boundary of [18, 42, 138, 162])
+  for (const boundary of [
+    DEMO_TIMES.transition,
+    DEMO_TIMES.cruise,
+    DEMO_TIMES.return,
+    DEMO_TIMES.hoverReturn,
+  ])
     assert.ok(
       Math.abs(
         adapter.sample(boundary - 1e-4).wingTilt - adapter.sample(boundary + 1e-4).wingTilt,
       ) < 1e-5,
     );
-  const cruise = adapter.sample(90);
+  const cruise = adapter.sample(DEMO_TIMES.cruise + 10);
   assert.equal(cruise.motors.L_Rear.enabled, false);
   assert.equal(cruise.motors.R_Rear.enabled, false);
   assert.equal(cruise.motors.L_Front.enabled, true);
   assert.ok(Object.values(adapter.sample(17).motors).every((motor) => motor.enabled));
   pass('wing/motor schedule follows shared route phases and continuous conversion endpoints');
+
+  let climbPeak = 0,
+    descentPeak = 0,
+    accelerationPeak = 0;
+  for (let t = 0.01; t < WORLD_FLIGHT_DURATION; t += 0.01) {
+    const current = demoVertical(t),
+      before = demoVertical(t - 1e-4),
+      after = demoVertical(t + 1e-4);
+    near((after.altitude - before.altitude) / 2e-4, current.velocity, 1e-7);
+    near((after.velocity - before.velocity) / 2e-4, current.acceleration, 3e-5);
+    climbPeak = Math.max(climbPeak, current.velocity);
+    descentPeak = Math.max(descentPeak, -current.velocity);
+    accelerationPeak = Math.max(accelerationPeak, Math.abs(current.acceleration));
+  }
+  near(climbPeak, 3);
+  near(descentPeak, 2);
+  near(accelerationPeak, 1.125, 1e-5);
+  for (const boundary of [0, ...Object.values(DEMO_TIMES), WORLD_FLIGHT_DURATION]) {
+    const before = demoVertical(boundary - 1e-5),
+      after = demoVertical(boundary + 1e-5);
+    assert.ok(Math.abs(before.altitude - after.altitude) < 0.0001);
+    assert.ok(Math.abs(before.velocity - after.velocity) < 0.0001);
+    assert.ok(Math.abs(before.acceleration - after.acceleration) < 0.0001);
+  }
+  // Sample the real adapter around each point, not only a standalone profile/display formula.
+  for (const t of [6, 8, 34, 66, 68, 70, 100.123, 140.321, 216, 220, 265, 308, 310]) {
+    const a = adapter.sample(t - 1e-5).position.clone(),
+      b = adapter.sample(t + 1e-5).position.clone(),
+      sampled = adapter.sample(t);
+    near((b.y - a.y) / 2e-5, sampled.verticalSpeedMps, 1e-6);
+    near(b.distanceTo(a) / 2e-5, sampled.speedMps, 0.02);
+  }
+  pass(
+    'actual route dy/dt matches HUD data; climb 3m/s, descent 2m/s, acceleration and seams bounded',
+  );
+  const motorTimeline = new DemoMotorTimeline();
+  const { MOTOR_IDS, stepMotor, newMotorState } = await load('aircraft/transwing/core/motors.ts');
+  for (const t of [
+    4,
+    34.123,
+    DEMO_TIMES.cruise,
+    DEMO_TIMES.return,
+    DEMO_TIMES.shutdown,
+    WORLD_FLIGHT_DURATION,
+  ]) {
+    const direct = new DemoMotorTimeline().sample(t);
+    assert.deepEqual(motorTimeline.sample(t), direct, 'seek is identical to cached progression');
+  }
+  const parked = motorTimeline.sample(WORLD_FLIGHT_DURATION);
+  for (const id of MOTOR_IDS) assert.deepEqual(parked[id], newMotorState());
+  for (const id of ['L_Rear', 'R_Rear']) {
+    assert.equal(motorTimeline.sample(DEMO_TIMES.cruise)[id].fold, 1);
+    assert.equal(motorTimeline.sample(DEMO_TIMES.return)[id].rpm, TRANSWING_DEMO_PROFILE.hoverRpm);
+    assert.equal(motorTimeline.sample(DEMO_TIMES.return)[id].fold, 0);
+  }
+  for (let t = 0; t <= WORLD_FLIGHT_DURATION; t += 0.1) {
+    for (const motor of Object.values(motorTimeline.sample(t))) {
+      if (motor.fold > 0) {
+        near(motor.rpm, 0);
+        near(motor.phase, 0);
+      }
+    }
+  }
+  const phaseA = motorTimeline.sample(30).L_Front.phase,
+    phaseB = motorTimeline.sample(30 + 1 / 120).L_Front.phase;
+  near(
+    (phaseB - phaseA + Math.PI * 2) % (Math.PI * 2),
+    ((TRANSWING_DEMO_PROFILE.takeoffRpm / 60) * Math.PI * 2) / 120,
+    1e-6,
+  );
+  assert.equal(motorTimeline.exposure(30, 0.1), null);
+  assert.equal(motorTimeline.exposure(30, 1).samples.length, 16);
+  assert.equal(motorTimeline.exposure(WORLD_FLIGHT_DURATION, 4), null);
+  pass(
+    'RPM phase is exact, seeking is deterministic, slow playback is crisp, rear and final stop/fold order is complete',
+  );
 
   // Decode actual mesh data; texture decoding needs a browser and is outside these geometry checks.
   const loader = new GLTFLoader().setMeshoptDecoder(MeshoptDecoder).register(() => ({
@@ -309,6 +392,7 @@ try {
     'dispatch',
     'manual',
     'syncLocal',
+    'update',
     'setMode',
     'setView',
     'playPause',
@@ -345,6 +429,7 @@ try {
     worldToLegacyPosition,
     legacyToWorldPosition,
     newMotorCommands,
+    newMotorStates: () => Object.fromEntries(MOTOR_IDS.map((id) => [id, newMotorState()])),
     detailSurfaces,
     NEUTRAL_DETAIL_POSE,
     prepareManualInput,
@@ -380,10 +465,16 @@ try {
     manualPaused: false,
     applyingControl: false,
     internalDrive: false,
+    lastControl: 'local',
+    panel: null,
+    paint() {},
     root: new T.Group(),
     body: new T.Group(),
     camera: {
       view: 'free',
+      setAutoRotate() {},
+      setInternal() {},
+      update() {},
       setFlightView(view) {
         this.view = view;
         followCalls++;
@@ -495,7 +586,57 @@ try {
     'repeated Flight clicks do not reset time and paused Flight resumes without changing the chosen camera',
   );
 
+  // Exercise production RAF update, with rendering endpoints stubbed only.
+  instance.seek(30);
+  instance.setSpeed(1);
+  instance.state = { ...instance.state, playing: true };
+  instance.syncLocal();
+  const runningMotors = structuredClone(localRuntime.getSnapshot().actuators);
+  instance.playPause();
+  assert.deepEqual(
+    localRuntime.getSnapshot().actuators,
+    runningMotors,
+    'pause never parks running rotors',
+  );
+  instance.update(0.1, 0);
+  assert.deepEqual(localRuntime.getSnapshot().actuators, runningMotors);
+  instance.playPause();
+  assert.deepEqual(localRuntime.getSnapshot().actuators, runningMotors, 'resume preserves phase');
+  for (const rate of [0.1, 0.25, 0.5, 1, 2, 4]) {
+    instance.seek(30);
+    instance.setSpeed(rate);
+    instance.state = { ...instance.state, playing: true };
+    for (let i = 0; i < 10; i++) instance.update(0.025, 0);
+    near(localRuntime.getSnapshot().state.time.seconds, 30 + rate * 0.25);
+    const expected = motorTimeline.sample(instance.state.time);
+    assert.deepEqual(localRuntime.getSnapshot().actuators, expected);
+    assert.equal(!!localRuntime.getRenderSample().exposure, rate >= 0.5);
+  }
+  instance.setSpeed(1);
+  instance.setLoop(false);
+  instance.seek(WORLD_FLIGHT_DURATION - 0.05);
+  instance.update(0.1, 0);
+  assert.equal(instance.state.playing, false);
+  near(localRuntime.getSnapshot().state.time.seconds, WORLD_FLIGHT_DURATION);
+  assert.deepEqual(localRuntime.getSnapshot().actuators, parked);
+  instance.setLoop(true);
+  instance.seek(WORLD_FLIGHT_DURATION - 0.05);
+  instance.state = { ...instance.state, playing: true };
+  instance.update(0.1, 0);
+  near(instance.state.time, 0.05);
+  assert.deepEqual(localRuntime.getSnapshot().actuators, motorTimeline.sample(0));
+  pass(
+    'production pause/resume, all playback rates, final clamped update and loop seam preserve authoritative motors',
+  );
+
+  instance.seek(30);
+  assert.ok(localRuntime.getSnapshot().actuators.L_Front.rpm > 0);
   instance.setMode('product');
+  assert.ok(
+    Object.values(localRuntime.getSnapshot().actuators).every(
+      (motor) => motor.rpm === 0 && motor.fold === 1,
+    ),
+  );
   assert.equal(instance.mode, 'product');
   assert.equal(instance.state.playing, false);
   assert.equal(instance.state.tiltMode, true);

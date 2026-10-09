@@ -1085,6 +1085,12 @@ function syncTranswingHud(instance: AircraftInstance) {
   $('#state').textContent = state.label;
   $('#state-code').textContent = state.state;
   $('#speed').textContent = state.speedMps.toFixed(1);
+  $('#vertical-speed').textContent = (state.verticalSpeedMps ?? 0).toFixed(1);
+  $('#speed-label').textContent = state.control === 'local' ? '轨迹速度（仿真秒）' : '飞行速度';
+  $('#vertical-speed-metric').title =
+    state.control === 'local'
+      ? `按仿真秒计量；${state.playbackRate ?? 1}× 播放会同比改变画面速度。演示参数，非实机性能。`
+      : '世界 +Y 方向速度';
   $('#altitude').textContent = state.altitude.toFixed(1);
   $('#lift-power').textContent = state.lift;
   $('#cruise-power').textContent = state.cruise;
@@ -1142,6 +1148,8 @@ const cameraSelect = $<HTMLSelectElement>('#camera');
 function configureAircraftShell(id: AircraftId) {
   const descriptor = aircraftDescriptor(id);
   hangarSelect.value = id;
+  $('#vertical-speed-metric').hidden = id !== 'transwing';
+  $('#speed-label').textContent = '飞行速度';
   $('#aircraft-brand').textContent = descriptor.name;
   $('#aircraft-headline').textContent = id === 'ev50' ? '跨越山海' : '看见形态转换';
   $('#summary').textContent = descriptor.description;

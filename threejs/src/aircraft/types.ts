@@ -18,6 +18,8 @@ export type AircraftSnapshot = {
   state: string;
   label: string;
   speedMps: number;
+  /** Signed +Y rate in metres per simulation second, when available. */
+  verticalSpeedMps?: number;
   altitude: number;
   lift: string;
   cruise: string;
@@ -38,6 +40,8 @@ export type AircraftWorldState = {
   position: T.Vector3;
   quaternion: T.Quaternion;
   speedMps: number;
+  /** Signed +Y rate in metres per simulation second, when available. */
+  verticalSpeedMps?: number;
   time: number;
   mode: AircraftMode;
   routeProgress: number;
