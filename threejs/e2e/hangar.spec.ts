@@ -175,7 +175,10 @@ test('Running SkyTrans rotor exposure stays thin across angles, slow playback an
 test('Local continuous SkyTrans flight shows lakes, villages and an aging white trail', async ({
   page,
 }, info) => {
-  test.setTimeout(180_000);
+  // The original wide capture took 132s in SwiftShader. Add up to 90s of
+  // continuous warm-up and one <=60s screenshot for the requested longer trail.
+  // Individual readiness/behavior waits remain 30s; this is not an FPS target.
+  test.setTimeout(300_000);
   const errors = watchErrors(page);
   await page.goto('/hangar/?aircraft=skytrans');
   await ready(page, 'skytrans');
@@ -214,6 +217,10 @@ test('Local continuous SkyTrans flight shows lakes, villages and an aging white 
   await page.locator('#play').click();
   await expect.poll(async () => (await diagnostics(page)).world.time).toBeGreaterThan(173.1);
   await page.locator('#playback-speed').selectOption('1');
+  const firstNormalFrame = (await diagnostics(page)).frameNumber;
+  await expect
+    .poll(async () => (await diagnostics(page)).frameNumber)
+    .toBeGreaterThan(firstNormalFrame);
   await expect.poll(async () => (await diagnostics(page)).trail.pointCount).toBeGreaterThan(8);
   const capture = await diagnostics(page);
   expect(capture.aircraft.experience.playing).toBe(true);
@@ -238,12 +245,48 @@ test('Local continuous SkyTrans flight shows lakes, villages and an aging white 
   expect(afterCapture.trail.generation).toBe(capture.trail.generation);
   await page.locator('#exit-immersive').click();
   await expect(page.locator('#flight')).toBeVisible();
+  // Keep the same real flight and existing trail; do not seek or synthesize old
+  // samples. Each short checkpoint retains the original 30s behavior deadline.
+  await page.locator('#playback-speed').selectOption('4');
+  for (const checkpoint of [176, 179, 181.1])
+    await expect.poll(async () => (await diagnostics(page)).world.time).toBeGreaterThan(checkpoint);
+  await page.locator('#playback-speed').selectOption('1');
+  const beforeNormalFrame = (await diagnostics(page)).frameNumber;
+  await expect
+    .poll(async () => (await diagnostics(page)).frameNumber)
+    .toBeGreaterThan(beforeNormalFrame);
+  const longCapture = await diagnostics(page);
+  expect(longCapture.world.time - beforeView.world.time).toBeGreaterThan(11);
+  expect(longCapture.world.source).toBe('demo');
+  expect(longCapture.aircraft.experience.playing).toBe(true);
+  expect(longCapture.aircraft.camera.view).toBe('wide');
+  expect(longCapture.trail.generation).toBe(capture.trail.generation);
+  expect(longCapture.trail.resetCount).toBe(capture.trail.resetCount);
+  expect(longCapture.trail.historySeconds).toBeGreaterThan(8);
+  expect(longCapture.trail.drawCalls).toBe(1);
+  expect(longCapture.landscape.quality).toBe('High');
+  expect(await page.evaluate(() => (window as any).hangarAPI.controlState().lease)).toBeNull();
+  await expect(page.locator('#playback-speed')).toHaveValue('1');
+  await page.locator('#immersive').click();
+  await expect(page.locator('body')).toHaveClass(/immersive/);
+  await page.screenshot({
+    path: info.outputPath('skytrans-long-continuous-white-trail-1x.png'),
+    timeout: 60_000,
+  });
+  const afterLongCapture = await diagnostics(page);
+  expect(afterLongCapture.aircraft.experience.playing).toBe(true);
+  expect(afterLongCapture.trail.generation).toBe(longCapture.trail.generation);
+  expect(afterLongCapture.trail.resetCount).toBe(longCapture.trail.resetCount);
+  await page.locator('#exit-immersive').click();
+  await expect(page.locator('#flight')).toBeVisible();
   await info.attach('skytrans-landscape-continuous-flight.json', {
     body: JSON.stringify({
       beforeView,
       afterView,
       capture,
       afterCapture,
+      longCapture,
+      afterLongCapture,
       warmupRate: 4,
       captureRate: 1,
     }),

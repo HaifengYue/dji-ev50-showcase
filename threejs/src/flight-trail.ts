@@ -13,12 +13,22 @@ export interface FlightTrailFrame {
   discontinuity?: boolean;
 }
 export const TRAIL_PROFILES = {
-  Low: { points: 128, lifetime: 7, interval: 1 / 15 },
-  Medium: { points: 256, lifetime: 10, interval: 1 / 20 },
-  High: { points: 384, lifetime: 12, interval: 1 / 25 },
+  Low: { points: 128, lifetime: 14, interval: 1 / 8 },
+  Medium: { points: 256, lifetime: 20, interval: 1 / 12 },
+  High: { points: 384, lifetime: 24, interval: 1 / 16 },
 } as const;
 const CAPACITY = TRAIL_PROFILES.High.points;
-const MIN_CLEARANCE = 2;
+export const TRAIL_STYLE = Object.freeze({
+  initialHalfWidth: 0.6,
+  maxHalfWidth: 3.2,
+  spreadPerSecond: 0.35,
+  hazeAlpha: 0.45,
+  coreAlpha: 0.45,
+  fadePower: 1.25,
+  headFadeStart: 0.04,
+  headFadeEnd: 0.18,
+});
+const MIN_CLEARANCE = TRAIL_STYLE.maxHalfWidth + 0.5;
 const MAX_STEP = 48;
 const MAX_SPEED = 160;
 
@@ -106,7 +116,7 @@ export class FlightTrail {
           float sideLength = length(side);
           side = sideLength > 0.0001 ? side / sideLength : vec3(1.0, 0.0, 0.0);
           float age = clamp(vAge / uLifetime, 0.0, 1.0);
-          float width = mix(0.13, 1.05, sqrt(age));
+          float width = mix(${TRAIL_STYLE.initialHalfWidth.toFixed(2)}, ${TRAIL_STYLE.maxHalfWidth.toFixed(2)}, 1.0 - exp(-vAge * ${TRAIL_STYLE.spreadPerSecond.toFixed(2)}));
           mvPosition.xyz += side * aSide * width;
           gl_Position = projectionMatrix * mvPosition;
           #include <fog_vertex>
@@ -123,10 +133,10 @@ export class FlightTrail {
           // A narrow core and soft white haze share one transparent draw call.
           float edge = 1.0 - smoothstep(0.1, 1.0, abs(vSide));
           float core = exp(-vSide * vSide * 18.0);
-          float fade = pow(1.0 - age, 1.65) * smoothstep(0.1, 0.55, vAge);
-          float alpha = (0.24 * edge + 0.3 * core) * fade;
+          float fade = pow(1.0 - age, ${TRAIL_STYLE.fadePower.toFixed(2)}) * smoothstep(${TRAIL_STYLE.headFadeStart.toFixed(2)}, ${TRAIL_STYLE.headFadeEnd.toFixed(2)}, vAge);
+          float alpha = (${TRAIL_STYLE.hazeAlpha.toFixed(2)} * edge + ${TRAIL_STYLE.coreAlpha.toFixed(2)} * core) * fade;
           if (alpha < 0.003) discard;
-          gl_FragColor = vec4(0.95, 0.98, 1.0, alpha);
+          gl_FragColor = vec4(1.35, 1.4, 1.45, alpha);
           #include <fog_fragment>
           #include <tonemapping_fragment>
           #include <colorspace_fragment>
@@ -164,6 +174,33 @@ export class FlightTrail {
     this.material.uniforms.uLifetime.value = TRAIL_PROFILES[quality].lifetime;
     while (this.count > TRAIL_PROFILES[quality].points) this.dropOldest();
     if (this.lastTime !== null) this.expire(this.lastTime);
+    for (let i = 0; i < this.count; i++) {
+      const offset = ((this.head + i) % CAPACITY) * 3;
+      if (
+        !this.hasClearance(this.samples[offset], this.samples[offset + 1], this.samples[offset + 2])
+      ) {
+        this.reset('quality-clearance');
+        return;
+      }
+      if (i > 0) {
+        const previous = ((this.head + i - 1) % CAPACITY) * 3;
+        for (let step = 1; step < 4; step++) {
+          const t = step / 4;
+          if (
+            !this.hasClearance(
+              this.samples[previous] + (this.samples[offset] - this.samples[previous]) * t,
+              this.samples[previous + 1] +
+                (this.samples[offset + 1] - this.samples[previous + 1]) * t,
+              this.samples[previous + 2] +
+                (this.samples[offset + 2] - this.samples[previous + 2]) * t,
+            )
+          ) {
+            this.reset('quality-clearance');
+            return;
+          }
+        }
+      }
+    }
     this.rebuild();
   }
 
@@ -208,7 +245,7 @@ export class FlightTrail {
     // Upload local ages, never large absolute timestamps, to GLSL float uniforms.
     this.material.uniforms.uTime.value = 0;
     this.expire(frame.time);
-    if (y < this.surfaceHeight(x, z) + MIN_CLEARANCE) {
+    if (!this.hasClearance(x, y, z)) {
       if (this.count) this.reset('ground-clearance');
       return;
     }
@@ -230,7 +267,7 @@ export class FlightTrail {
           const sx = this.samples[offset] + (x - this.samples[offset]) * t;
           const sy = this.samples[offset + 1] + (y - this.samples[offset + 1]) * t;
           const sz = this.samples[offset + 2] + (z - this.samples[offset + 2]) * t;
-          if (sy < this.surfaceHeight(sx, sz) + MIN_CLEARANCE) {
+          if (!this.hasClearance(sx, sy, sz)) {
             this.reset('segment-clearance');
             this.lastTime = frame.time;
             break;
@@ -248,6 +285,18 @@ export class FlightTrail {
       this.count++;
     }
     this.rebuild();
+  }
+
+  /** Cover the whole maximum-width ribbon footprint, including steep lateral banks.
+   * Nine fixed queries per check; no camera, pose, clock or resource ownership changes. */
+  private hasClearance(x: number, y: number, z: number) {
+    const radius = TRAIL_STYLE.maxHalfWidth;
+    for (let ix = -1; ix <= 1; ix++)
+      for (let iz = -1; iz <= 1; iz++) {
+        const height = this.surfaceHeight(x + ix * radius, z + iz * radius);
+        if (!Number.isFinite(height) || y < height + MIN_CLEARANCE) return false;
+      }
+    return true;
   }
 
   private dropOldest() {
@@ -280,7 +329,24 @@ export class FlightTrail {
   }
 
   get diagnostics() {
+    let lengthM = 0;
+    for (let i = 1; i < this.count; i++) {
+      const a = ((this.head + i - 1) % CAPACITY) * 3,
+        b = ((this.head + i) % CAPACITY) * 3;
+      lengthM += Math.hypot(
+        this.samples[b] - this.samples[a],
+        this.samples[b + 1] - this.samples[a + 1],
+        this.samples[b + 2] - this.samples[a + 2],
+      );
+    }
     return {
+      lifetime: TRAIL_PROFILES[this.quality].lifetime,
+      sampleInterval: TRAIL_PROFILES[this.quality].interval,
+      historySeconds:
+        this.count && this.lastTime !== null ? this.lastTime - this.births[this.head] : 0,
+      oldestAge: this.count && this.lastTime !== null ? this.lastTime - this.births[this.head] : 0,
+      lengthM,
+
       pointCount: this.count,
       capacity: CAPACITY,
       activeLimit: TRAIL_PROFILES[this.quality].points,

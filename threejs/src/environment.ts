@@ -4,6 +4,7 @@ import { Sky } from 'three/addons/objects/Sky.js';
 import {
   groundHeight,
   terrainNoise,
+  forestCover,
   riverX,
   riverWidth,
   arterialX,
@@ -17,11 +18,11 @@ import {
 
 export type LandscapeQuality = 'Low' | 'Medium' | 'High';
 export const LANDSCAPE_PROFILES = {
-  Low: { rows: 64, sideColumns: 32, trees: 260, rocks: 60, grass: 180, houses: 110, blocks: 20 },
+  Low: { rows: 64, sideColumns: 32, trees: 850, rocks: 60, grass: 180, houses: 110, blocks: 20 },
   Medium: {
     rows: 112,
     sideColumns: 56,
-    trees: 720,
+    trees: 2650,
     rocks: 150,
     grass: 600,
     houses: 240,
@@ -30,7 +31,7 @@ export const LANDSCAPE_PROFILES = {
   High: {
     rows: 176,
     sideColumns: 88,
-    trees: 1300,
+    trees: 4500,
     rocks: 320,
     grass: 1300,
     houses: 400,
@@ -64,10 +65,10 @@ function makeTerrain(quality: LandscapeQuality) {
   const colors = new Float32Array(positions.length);
   const uv = new Float32Array((rows + 1) * columns * 2);
   const indices = new Uint32Array(rows * (columns - 1) * 6);
-  const meadow = new T.Color(0x78876a),
-    dry = new T.Color(0xb4ad81),
-    rock = new T.Color(0x8a9189),
-    snow = new T.Color(0xd3d8d3),
+  const meadow = new T.Color(0x27592e),
+    dry = new T.Color(0x56803b),
+    rock = new T.Color(0x657064),
+    woodland = new T.Color(0x173d25),
     bank = new T.Color(0xb8ab8c),
     color = new T.Color();
   const bankOffsets = [-1.8, -1.25, -1, -0.6, 0, 0.6, 1, 1.25, 1.8];
@@ -124,12 +125,10 @@ function makeTerrain(quality: LandscapeQuality) {
           groundHeight(x + 3, z) - groundHeight(x - 3, z),
           groundHeight(x, z + 3) - groundHeight(x, z - 3),
         ) / 6;
-      color.copy(meadow).lerp(dry, 0.2 + terrainNoise(x * 0.009, z * 0.009) * 0.48);
-      color.lerp(rock, Math.min(0.8, slope * 0.62 + T.MathUtils.smoothstep(h, 55, 110) * 0.42));
-      color.lerp(
-        snow,
-        T.MathUtils.smoothstep(h + terrainNoise(x * 0.04, z * 0.04) * 8, 96, 118) * 0.48,
-      );
+      color.copy(meadow).lerp(dry, 0.12 + terrainNoise(x * 0.009, z * 0.009) * 0.35);
+      color.lerp(woodland, forestCover(x, z) * 0.78);
+      // Green low mountains, with restrained rock only along the steeper ridges.
+      color.lerp(rock, Math.min(0.48, slope * 0.3 + T.MathUtils.smoothstep(h, 75, 112) * 0.12));
       const riverDistance = Math.abs(x - center) / width;
       let shore = 1 - T.MathUtils.smoothstep(riverDistance, 1.25, 2.25);
       for (const lake of LAKES)
@@ -540,7 +539,7 @@ export function environment(scene: T.Scene) {
         [x - w, z + h],
         [x + w, z + h],
       ];
-    tempColor.setHSL(0.16 + rand() * 0.09, 0.23 + rand() * 0.15, 0.36 + rand() * 0.16);
+    tempColor.setHSL(0.2 + rand() * 0.11, 0.36 + rand() * 0.16, 0.12 + rand() * 0.09);
     for (const [px, pz] of coordinates) {
       fieldPositions.push(px, groundHeight(px, pz) + 0.06, pz);
       tempColor.toArray(fieldColors, fieldColors.length);
@@ -568,42 +567,85 @@ export function environment(scene: T.Scene) {
     LAKES.some((lake) => lakeRadius(x, z, lake) < 1.24) ||
     SETTLEMENTS.some((site) => settlementDistance(x, z, site) < 1.42) ||
     [-1, 1].some((side) => Math.abs(x - arterialX(z, side)) < 5);
-  const trunks = new T.InstancedMesh(new T.CylinderGeometry(0.13, 0.21, 4, 5), mat(0x6c6150), 1300);
+  const trunks = new T.InstancedMesh(
+    new T.CylinderGeometry(0.16, 0.25, 4, 3, 1, true),
+    mat(0x524a39),
+    4500,
+  );
   const crownParts = [
-    new T.ConeGeometry(1.6, 3.5, 5).translate(0, 0.1, 0),
-    new T.ConeGeometry(1.1, 2.8, 5).translate(0, 1.8, 0),
+    new T.ConeGeometry(1.6, 3.5, 4, 1, true).translate(0, 0.1, 0),
+    new T.ConeGeometry(1.1, 2.8, 4, 1, true).translate(0, 1.8, 0),
   ];
-  const conifers = new T.InstancedMesh(mergeGeometries(crownParts), mat(0x58745b), 975);
+  const conifers = new T.InstancedMesh(mergeGeometries(crownParts), mat(0x386d32), 3375);
   crownParts.forEach((part) => part.dispose());
-  const deciduous = new T.InstancedMesh(new T.IcosahedronGeometry(1, 0), mat(0x809058), 325);
+  const deciduous = new T.InstancedMesh(new T.OctahedronGeometry(1, 0), mat(0x4c7832), 1425);
   let coniferCount = 0,
-    deciduousCount = 0;
-  for (let i = 0; i < 1300; i++) {
+    deciduousCount = 0,
+    secondaryCrowns = 0;
+  for (let i = 0; i < 4500; i++) {
     let x = 0,
       z = 0;
-    for (let attempt = 0; attempt < 100; attempt++) {
-      const near = i % 3 === 0,
-        radius = near ? 35 + rand() * 220 : 300 + rand() * 2950,
+    for (let attempt = 0; attempt < 160; attempt++) {
+      const near = i % 7 === 0,
+        radius = near ? 35 + rand() * 240 : 240 + rand() * 1660,
         angle = rand() * Math.PI * 2;
       x = Math.cos(angle) * radius;
       z = Math.sin(angle) * radius;
-      if (!excluded(x, z) && Math.abs(groundHeight(x + 3, z) - groundHeight(x - 3, z)) < 6) break;
+      if (
+        !excluded(x, z) &&
+        rand() < 0.06 + 0.94 * forestCover(x, z) ** 2 &&
+        Math.abs(groundHeight(x + 3, z) - groundHeight(x - 3, z)) < 6
+      )
+        break;
     }
-    const s = 0.75 + rand() * 0.45,
-      y = groundHeight(x, z),
+    const y = groundHeight(x, z),
+      nearPadLimit =
+        Math.hypot(x, z) < 235
+          ? Math.max(0.7, (18 - Math.max(y, terrainSurface(ground.geometry, x, z)) - 2) / 8)
+          : 1.75,
+      s = Math.min(1.1 + rand() * 0.65, nearPadLimit),
       yaw = rand() * Math.PI * 2;
     put(trunks, i, x, y + 2 * s, z, s, s, s, yaw);
     if (i % 4 === 0) {
-      put(deciduous, deciduousCount, x, y + 4.4 * s, z, 2.1 * s, 2.4 * s, 1.8 * s, yaw);
+      const spread = 1.5 + rand() * 0.5;
+      put(
+        deciduous,
+        deciduousCount,
+        x,
+        y + 4.4 * s,
+        z,
+        2.1 * s * spread,
+        2.4 * s,
+        1.8 * s * spread,
+        yaw,
+      );
       deciduous.setColorAt(
         deciduousCount++,
-        tempColor.setHSL(0.19 + rand() * 0.07, 0.28, 0.58 + rand() * 0.2),
+        tempColor.setHSL(0.23 + rand() * 0.09, 0.3, 0.38 + rand() * 0.27),
       );
+      if (secondaryCrowns < 300) {
+        put(
+          deciduous,
+          1125 + secondaryCrowns,
+          x + Math.cos(yaw) * 2.2,
+          y + 3.6 * s,
+          z + Math.sin(yaw) * 2.2,
+          2.2 * s,
+          2.0 * s,
+          2.0 * s,
+          yaw + 0.7,
+        );
+        deciduous.setColorAt(
+          1125 + secondaryCrowns++,
+          tempColor.setHSL(0.25 + rand() * 0.06, 0.32, 0.4 + rand() * 0.18),
+        );
+      }
     } else {
-      put(conifers, coniferCount, x, y + 3.3 * s, z, s, s, s, yaw);
+      const spread = 1.7 + rand() * 0.65;
+      put(conifers, coniferCount, x, y + 3.3 * s, z, s * spread, s, s * spread, yaw);
       conifers.setColorAt(
         coniferCount++,
-        tempColor.setHSL(0.27 + rand() * 0.06, 0.16, 0.61 + rand() * 0.25),
+        tempColor.setHSL(0.27 + rand() * 0.07, 0.25, 0.38 + rand() * 0.28),
       );
     }
   }
@@ -723,8 +765,8 @@ export function environment(scene: T.Scene) {
       quality = q;
     }
     trunks.count = profile.trees;
-    deciduous.count = Math.ceil(profile.trees / 4);
-    conifers.count = profile.trees - deciduous.count;
+    deciduous.count = Math.ceil(profile.trees / 4) + (q === 'High' ? secondaryCrowns : 0);
+    conifers.count = profile.trees - Math.ceil(profile.trees / 4);
     walls.count = roofs.count = Math.min(profile.houses, houseCount);
     blocks.count = Math.min(profile.blocks, blockCount);
     rocks.count = profile.rocks;

@@ -38,10 +38,11 @@ const pass = (name) => {
   console.log('PASS landscape/trail:', name);
 };
 try {
-  const { FlightTrail, TRAIL_PROFILES } = await load('flight-trail.ts');
+  const { FlightTrail, TRAIL_PROFILES, TRAIL_STYLE } = await load('flight-trail.ts');
   const { environment, LANDSCAPE_PROFILES } = await load('environment.ts');
   const {
     groundHeight,
+    forestCover,
     riverX,
     riverWidth,
     arterialX,
@@ -209,11 +210,61 @@ try {
   assert.ok(
     largeTime.geometry.attributes.aBirth.array
       .slice(0, largeTime.diagnostics.pointCount * 2)
-      .every((age) => age > -10 && age <= 0),
+      .every((age) => age > -TRAIL_PROFILES.Medium.lifetime && age <= 0),
   );
   smallTime.dispose();
   largeTime.dispose();
   pass('large external timestamps retain identical Float32 fade ages through local rebasing');
+  const longerTrail = new FlightTrail(parent, { quality: 'High', surfaceHeight: () => 0 });
+  for (let i = 0; i <= 40 * 64; i++) {
+    const time = i / 64,
+      angle = time / 4;
+    longerTrail.update({
+      ...frame(time),
+      position: new T.Vector3(Math.cos(angle) * 180, 100, Math.sin(angle) * 180),
+    });
+  }
+  assert.ok(
+    longerTrail.diagnostics.historySeconds >= 23.8 && longerTrail.diagnostics.historySeconds <= 24,
+  );
+  assert.ok(longerTrail.diagnostics.lengthM > 1050 && longerTrail.diagnostics.lengthM < 1081);
+  assert.ok(longerTrail.diagnostics.pointCount <= 384);
+  const curve = longerTrail.geometry.attributes.position;
+  for (let i = 1; i < longerTrail.diagnostics.pointCount; i++) {
+    const distance = Math.hypot(
+      curve.getX(i * 2) - curve.getX((i - 1) * 2),
+      curve.getY(i * 2) - curve.getY((i - 1) * 2),
+      curve.getZ(i * 2) - curve.getZ((i - 1) * 2),
+    );
+    assert.ok(distance < 3.0, '24-second curved history keeps short edges, not giant triangles');
+  }
+  const width = (age) =>
+    TRAIL_STYLE.initialHalfWidth +
+    (TRAIL_STYLE.maxHalfWidth - TRAIL_STYLE.initialHalfWidth) *
+      (1 - Math.exp(-age * TRAIL_STYLE.spreadPerSecond));
+  for (const age of [0.2, 0.5, 1]) {
+    const oldWidth = 0.13 + (1.05 - 0.13) * Math.sqrt(age / 12);
+    assert.ok(width(age) >= oldWidth * 3, 'young visible trail remains at least three times wider');
+    for (const distance of [20, 65, 200])
+      assert.ok(
+        width(age) / distance > (oldWidth / distance) * 3,
+        'near/far projection preserves the width improvement',
+      );
+  }
+  assert.ok(TRAIL_STYLE.hazeAlpha + TRAIL_STYLE.coreAlpha <= 0.9);
+  const fading = (age) => (1 - age / 24) ** TRAIL_STYLE.fadePower;
+  assert.ok(fading(8) > fading(16) && fading(16) > fading(23) && fading(24) === 0);
+  assert.match(longerTrail.material.vertexShader, /1.0 - exp\(-vAge/);
+  const bufferIdentity = longerTrail.geometry.attributes.position.array;
+  longerTrail.setQuality('Low');
+  assert.ok(
+    longerTrail.diagnostics.historySeconds <= 14 && longerTrail.diagnostics.pointCount <= 128,
+  );
+  assert.equal(longerTrail.geometry.attributes.position.array, bufferIdentity);
+  longerTrail.dispose();
+  pass(
+    '24-second curved history remains bounded; wider young band is lifetime-independent with soft opacity and downstream fading',
+  );
 
   const { SimulationRuntime, defaultSimulationState, PROTOCOL } = await load(
     'aircraft/skytrans/core/simulation.ts',
@@ -389,6 +440,7 @@ try {
 
   const world = environment(parent),
     resourceReports = [];
+  let slopeRegressionChecked = false;
   const ownedGeometries = new Set(),
     ownedMaterials = new Set(),
     disposedGeometries = new Set();
@@ -414,6 +466,66 @@ try {
     world.setQuality(q);
     watch();
     if (oldQuality !== q) assert.equal(replaced, true);
+    if (q === 'High' && !slopeRegressionChecked) {
+      slopeRegressionChecked = true;
+      const slopeTrail = new FlightTrail(parent, {
+        quality: 'High',
+        surfaceHeight: world.surfaceHeight,
+      });
+      for (let i = 0; i <= 200; i++) {
+        const time = i / 10,
+          x = 140,
+          z = -484 + (i - 100) * 0.1;
+        const position = new T.Vector3(x, world.surfaceHeight(x, z) + 3.8, z);
+        const original = position.clone();
+        slopeTrail.update({ time, position, generation: 'bank', enabled: true });
+        assert.ok(position.equals(original), 'wide trail clearance never raises the actual pose');
+      }
+      assert.equal(
+        slopeTrail.diagnostics.pointCount,
+        0,
+        'real High LOD bank clears the widened trail whose centre alone was safe',
+      );
+      slopeTrail.reset();
+      for (let i = 0; i <= 200; i++) {
+        const time = i / 10,
+          x = 140,
+          z = -484 + (i - 100) * 0.1;
+        slopeTrail.update({
+          time,
+          position: new T.Vector3(x, world.surfaceHeight(x, z) + 20, z),
+          generation: 'bank',
+          enabled: true,
+        });
+      }
+      assert.ok(
+        slopeTrail.diagnostics.pointCount > 10,
+        'a genuinely clear path still leaves a visible trail',
+      );
+      const points = slopeTrail.geometry.attributes.position;
+      for (let point = 0, count = slopeTrail.diagnostics.pointCount; point < count; point++) {
+        for (const dx of [-TRAIL_STYLE.maxHalfWidth, 0, TRAIL_STYLE.maxHalfWidth])
+          assert.ok(
+            points.getY(point * 2) - TRAIL_STYLE.maxHalfWidth >
+              world.surfaceHeight(points.getX(point * 2) + dx, points.getZ(point * 2)),
+          );
+      }
+      slopeTrail.dispose();
+      let changingSurface = 0;
+      const qualityTrail = new FlightTrail(parent, {
+        surfaceHeight: (x) => (x > 1.5 && x < 2.5 ? changingSurface : 0),
+      });
+      qualityTrail.update(frame(0));
+      qualityTrail.update(frame(0.2));
+      changingSurface = 100;
+      qualityTrail.setQuality('High');
+      assert.equal(qualityTrail.diagnostics.pointCount, 0);
+      assert.equal(qualityTrail.diagnostics.resetReason, 'quality-clearance');
+      qualityTrail.dispose();
+      pass(
+        'maximum-width footprint rejects the real High LOD bank, preserves poses, and rechecks historical clearance on quality changes',
+      );
+    }
     const report = world.diagnostics;
     // Interpolate the actual LOD triangles, not only the analytical heightfield.
     const groundPositions = world.ground.geometry.attributes.position;
@@ -521,6 +633,19 @@ try {
     const water = world.group.getObjectByName('Connected_River_And_Two_Lakes').geometry.attributes
       .position;
     for (let i = 0; i < water.count; i++) assert.equal(water.getY(i), WATER_LEVEL);
+    const groundColors = world.ground.geometry.attributes.color;
+    let greenVertices = 0;
+    for (let i = 0; i < groundColors.count; i++)
+      if (
+        groundColors.getY(i) > groundColors.getX(i) * 1.2 &&
+        groundColors.getY(i) > groundColors.getZ(i) * 1.2
+      )
+        greenVertices++;
+    assert.ok(
+      greenVertices / groundColors.count > 0.7,
+      'green vegetation dominates the actual surface vertex palette',
+    );
+    report.greenSurfaceFraction = greenVertices / groundColors.count;
     const vertices = world.ground.geometry.attributes.position;
     for (let i = 0; i < vertices.count; i++)
       assert.ok(
@@ -537,18 +662,24 @@ try {
     p = new T.Vector3(),
     scale = new T.Vector3(),
     rotation = new T.Quaternion();
+  let woodlandCoverSum = 0;
   for (let i = 0; i < instance.instanceMatrix.count; i++) {
     instance.getMatrixAt(i, matrix);
     matrix.decompose(p, rotation, scale);
+    woodlandCoverSum += forestCover(p.x, p.z);
     assert.ok(Math.hypot(p.x, p.z) >= 29);
     assert.ok(Math.abs(p.x - riverX(p.z)) >= riverWidth(p.z) * 1.8);
     assert.ok(LAKES.every((lake) => lakeRadius(p.x, p.z, lake) >= 1.23));
     assert.ok(SETTLEMENTS.every((site) => settlementDistance(p.x, p.z, site) >= 1.4));
     assert.ok(
       p.y + 6 * scale.y < obstacleCeiling(p.x, p.z),
-      'vegetation inside clearance envelope',
+      `vegetation inside clearance envelope ${[p.x, p.y, p.z, scale.y, obstacleCeiling(p.x, p.z)]}`,
     );
   }
+  assert.ok(
+    woodlandCoverSum / instance.instanceMatrix.count > 0.45,
+    'trees cluster on the same woodland patches used by the ground palette',
+  );
   const another = environment(parent);
   assert.deepEqual(
     another.group.getObjectByName('Forest_Trunks').instanceMatrix.array,
@@ -631,7 +762,8 @@ try {
         }
         sampledTrail.update({ time, position, generation: `${aircraft}:${route}`, enabled: true });
         const vertices = sampledTrail.geometry.attributes.position;
-        for (let point = 0; point < sampledTrail.diagnostics.pointCount; point++)
+        const pointCount = sampledTrail.diagnostics.pointCount;
+        for (let point = 0; point < pointCount; point++)
           assert.ok(
             vertices.getY(point * 2) >
               groundHeight(vertices.getX(point * 2), vertices.getZ(point * 2)) + 1.9,

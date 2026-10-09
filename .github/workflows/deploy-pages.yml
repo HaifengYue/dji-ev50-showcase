@@ -35,3 +35,16 @@ jobs:
           path: threejs/dist
       - id: deployment
         uses: actions/deploy-pages@v4
+      - name: Install Chromium for public deployment verification
+        run: npx --prefix threejs playwright install --with-deps chromium
+      - name: Verify actual public Pages resources and rendered aircraft
+        timeout-minutes: 8
+        env:
+          PUBLIC_PAGES_URL: ${{ steps.deployment.outputs.page_url }}
+        run: node scripts/verify-public-pages.mjs "$PUBLIC_PAGES_URL"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: public-pages-evidence
+          path: threejs/test-results/public-pages/
+          retention-days: 14

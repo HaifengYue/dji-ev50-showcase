@@ -22,6 +22,12 @@ export function terrainNoise(x: number, z: number) {
     (hash(ix, iz + 1) * (1 - u) + hash(ix + 1, iz + 1) * u) * v
   );
 }
+/** Shared woodland patches for green ground cover and clustered tree placement. */
+export function forestCover(x: number, z: number) {
+  const density =
+    0.65 * terrainNoise(x * 0.005 + 31, z * 0.005 - 17) + 0.35 * terrainNoise(x * 0.011, z * 0.011);
+  return smooth(0.4, 0.7, density);
+}
 export function riverX(z: number) {
   return -105 + 72 * Math.sin(z * 0.00135) + 28 * Math.sin(z * 0.0042);
 }
@@ -120,7 +126,7 @@ export const VISUAL_OBSTACLES = [
 ];
 /**
  * Conservative rendering envelope, including mesh chords and foliage. Terrain
- * is capped at 112 m; the tallest crown adds < 10 m, town roofs stay below 36 m.
+ * is capped at 112 m; the tallest crown adds < 15 m, town roofs stay below 36 m.
  * This is visual clearance, not a surveyed terrain/obstacle database.
  */
 export function obstacleCeiling(x: number, z: number) {
