@@ -19,7 +19,7 @@
     "test:control": "node test-control-contract.mjs && node test-hangar-server.mjs",
     "test:world": "node test-skytrans-world.mjs",
     "test:branding": "node test-branding.mjs",
-    "test:landscape": "node test-landscape-trail.mjs"
+    "test:landscape": "node test-landscape-trail.mjs && node test-landscape-settings.mjs && node test-landscape-scenes.mjs"
   },
   "dependencies": {
     "three": "^0.170.0",

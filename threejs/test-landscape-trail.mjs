@@ -626,7 +626,7 @@ try {
     );
     assert.ok(report.bufferBytes < 8000000, JSON.stringify(report));
     assert.ok(report.geometries <= 20);
-    assert.equal(report.textures, 1);
+    assert.equal(report.textures, 2);
     assert.equal(report.lakes, 2);
     assert.equal(report.settlements, 8);
     assert.equal(report.trees, LANDSCAPE_PROFILES[q].trees);

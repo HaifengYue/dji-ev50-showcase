@@ -2,6 +2,21 @@
 export const LANDSCAPE_EXTENT = 4000;
 export const WATER_LEVEL = -0.75;
 export const MAX_TERRAIN_HEIGHT = 112;
+export type LandscapeProfile = 'mountains' | 'islands';
+/** Fictional archipelago. Every quality samples these same islands and water datum. */
+export const ISLANDS = [
+  { x: 0, z: 0, rx: 310, rz: 280, height: 36, phase: 0.3 },
+  { x: -460, z: -1060, rx: 390, rz: 290, height: 72, phase: 1.2 },
+  { x: -1060, z: -1570, rx: 290, rz: 380, height: 62, phase: 2.5 },
+  { x: 340, z: -1660, rx: 245, rz: 335, height: 53, phase: 4.2 },
+  { x: 710, z: 610, rx: 420, rz: 340, height: 78, phase: 2.1 },
+  { x: -690, z: 970, rx: 370, rz: 430, height: 68, phase: 3.7 },
+  { x: 250, z: 1730, rx: 320, rz: 270, height: 59, phase: 5.3 },
+  { x: -1700, z: 250, rx: 380, rz: 510, height: 73, phase: 1.7 },
+  { x: 1780, z: -850, rx: 450, rz: 350, height: 76, phase: 0.8 },
+  { x: -420, z: -2810, rx: 550, rz: 390, height: 74, phase: 4.6 },
+  { x: 980, z: 2830, rx: 520, rz: 440, height: 70, phase: 3.2 },
+] as const;
 const smooth = (a: number, b: number, value: number) => {
   const t = Math.max(0, Math.min(1, (value - a) / (b - a)));
   return t * t * (3 - 2 * t);
@@ -27,6 +42,34 @@ export function forestCover(x: number, z: number) {
   const density =
     0.65 * terrainNoise(x * 0.005 + 31, z * 0.005 - 17) + 0.35 * terrainNoise(x * 0.011, z * 0.011);
   return smooth(0.4, 0.7, density);
+}
+export function islandRadius(x: number, z: number, island: (typeof ISLANDS)[number]) {
+  const dx = (x - island.x) / island.rx,
+    dz = (z - island.z) / island.rz,
+    angle = Math.atan2(dz, dx);
+  return (
+    Math.hypot(dx, dz) /
+    (1 + 0.09 * Math.sin(angle * 3 + island.phase) + 0.045 * Math.cos(angle * 5))
+  );
+}
+export function islandHeight(x: number, z: number) {
+  let height = -16;
+  for (const island of ISLANDS) {
+    const radius = islandRadius(x, z, island);
+    if (radius > 1.3) continue;
+    // Low sand shelf and irregular, wooded interior; sea clips the same mesh at -0.75 m.
+    const shelf = -16 + 19 * (1 - smooth(0.86, 1.27, radius));
+    const interior =
+      island.height *
+      (1 - smooth(0.05, 0.88, radius)) *
+      (0.68 + 0.32 * terrainNoise(x * 0.008 + island.phase, z * 0.008));
+    height = Math.max(height, shelf + interior);
+  }
+  const r = Math.hypot(x, z);
+  // Original origin and near-pad airspace survive scene changes exactly.
+  if (r <= 12) return 0;
+  if (r < 235) height = Math.min(height, 3.5 + 9 * smooth(190, 235, r));
+  return Math.min(81, height) * smooth(12, 28, r);
 }
 export function riverX(z: number) {
   return -105 + 72 * Math.sin(z * 0.00135) + 28 * Math.sin(z * 0.0042);

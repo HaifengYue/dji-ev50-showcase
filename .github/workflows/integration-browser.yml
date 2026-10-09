@@ -23,11 +23,34 @@ jobs:
       - run: npm ci --prefix threejs
       - run: npx --prefix threejs playwright install --with-deps chromium
       - run: npm --prefix threejs run build
-      - run: npm --prefix threejs run test:browser
+      - run: npm --prefix threejs run test:browser -- e2e/hangar.spec.ts
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: hangar-browser-evidence
+          path: |
+            threejs/playwright-report/
+            threejs/test-results/
+          retention-days: 14
+  landscapes:
+    name: Chromium landscape switching
+    runs-on: ubuntu-latest
+    timeout-minutes: 20 # Separate visual coverage; the original 16-case matrix keeps its own budget
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+          cache-dependency-path: threejs/package-lock.json
+      - run: npm ci --prefix threejs
+      - run: npx --prefix threejs playwright install --with-deps chromium
+      - run: npm --prefix threejs run build
+      - run: npm --prefix threejs run test:browser -- e2e/landscapes.spec.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: landscape-browser-evidence
           path: |
             threejs/playwright-report/
             threejs/test-results/

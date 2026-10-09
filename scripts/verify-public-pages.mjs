@@ -226,11 +226,46 @@ try {
   report.scenes.push({ query: 'transwing-compatibility', state: await diagnostics() });
   await page.locator('#aircraft-select').selectOption('ev50');
   report.scenes.push({ query: 'switch-back-ev50', state: await ready('ev50') });
+  // The active public build must also render the second visual preset, with
+  // the other airframe. Only normal UI events select the scene and timeline.
+  await page.locator('#quality').selectOption('Low');
+  await page.locator('#landscape').selectOption('islands');
+  await page.locator('#flight').click();
+  await expect(page.locator('#timeline')).toHaveAttribute('max', '180');
+  const islandFrame = await page.locator('#timeline').evaluate((element) => {
+    element.value = '120';
+    element.dispatchEvent(new Event('input', { bubbles: true }));
+    return window.hangarDiagnostics.frameNumber;
+  });
+  await expect.poll(async () => (await diagnostics()).frameNumber).toBeGreaterThan(islandFrame);
+  // EV50's follow camera eases after a seek. Capture only once the actual
+  // rendered camera is near the aircraft, instead of a distant transit frame.
+  await expect
+    .poll(async () => {
+      const state = await diagnostics();
+      const camera = state.renderCamera.worldMatrix.slice(12, 15);
+      return Math.hypot(
+        ...camera.map((value, index) => value - state.control.state.pose.positionM[index]),
+      );
+    })
+    .toBeLessThan(80);
+  const island = await diagnostics();
+  assert.equal(island.current, 'ev50');
+  assert.equal(island.scene.mode, 'flight');
+  assert.equal(island.scene.terrainVisible, true);
+  assert.equal(island.landscape.profile, 'islands');
+  assert.equal(island.landscape.sky, 'blue-clouds');
+  assert.equal(island.landscape.quality, 'Low');
+  assert.ok(island.landscape.drawCalls > 0);
+  assert.equal(island.control.lease, null);
+  assert.equal(island.control.state.transport.playing, true);
+  report.scenes.push({ query: 'ev50-islands-ui', state: island });
+  await page.screenshot({ path: resolve(output, 'public-ev50-islands.png'), timeout: 60_000 });
   assert.deepEqual(report.errors, [], 'Browser/GLSL/network errors');
   report.completedAt = new Date().toISOString();
   report.passed = true;
   console.log(
-    'Public EV50, canonical SkyTrans flight, legacy query alias and switch-back rendered successfully',
+    'Public EV50, SkyTrans flight, legacy alias, switch-back and blue-sky islands rendered successfully',
   );
 } catch (error) {
   report.failure = String(error?.stack ?? error);

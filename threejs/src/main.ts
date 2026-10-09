@@ -25,6 +25,14 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import { FlightController, labels, Frame, routes, FlightCommand } from './flight';
 import { environment } from './environment';
+import {
+  LANDSCAPE_STORAGE_KEY,
+  isLandscapePreset,
+  readLandscapePreset,
+  rememberLandscapePreset,
+  landscapeUrl,
+  type LandscapePreset,
+} from './landscape-settings';
 import { FlightTrail } from './flight-trail';
 import './style.css';
 import {
@@ -115,6 +123,10 @@ room.dispose();
 pmrem.dispose();
 const terrain = environment(scene),
   aircraft = new T.Group();
+let landscapePreset = readLandscapePreset(new URL(location.href), () =>
+  localStorage.getItem(LANDSCAPE_STORAGE_KEY),
+);
+terrain.setLandscape(landscapePreset);
 aircraft.name = 'Flight_Pose';
 scene.add(aircraft);
 let flight: FlightController,
@@ -131,6 +143,26 @@ function clearFlightTrail(reason = 'source-change') {
   flightTrail.reset(reason);
   trailGeneration++;
 }
+const landscapeSelect = $<HTMLSelectElement>('#landscape');
+landscapeSelect.value = landscapePreset;
+function selectLandscape(next: LandscapePreset, persist = false) {
+  if (next !== landscapePreset) {
+    terrain.setLandscape(next);
+    landscapePreset = next;
+    // A new visual surface invalidates the old ribbon, never the flight pose.
+    clearFlightTrail('landscape');
+  }
+  landscapeSelect.value = landscapePreset;
+  if (persist) {
+    rememberLandscapePreset(next, (value) => localStorage.setItem(LANDSCAPE_STORAGE_KEY, value));
+    const url = landscapeUrl(new URL(location.href), next);
+    if (url.href !== location.href) history.replaceState(history.state, '', url);
+  }
+}
+landscapeSelect.onchange = () => {
+  if (isLandscapePreset(landscapeSelect.value)) selectLandscape(landscapeSelect.value, true);
+  else landscapeSelect.value = landscapePreset;
+};
 let rig: ReturnType<typeof aircraftRig> | undefined;
 const visual = {
   position: new T.Vector3(),
@@ -1517,6 +1549,9 @@ $('#load-retry').onclick = () => {
   void selectAircraft(selectedId, 'none');
 };
 window.addEventListener('popstate', () => {
+  selectLandscape(
+    readLandscapePreset(new URL(location.href), () => localStorage.getItem(LANDSCAPE_STORAGE_KEY)),
+  );
   void selectAircraft(aircraftFromUrl(new URL(location.href)), 'none');
 });
 window.addEventListener('pagehide', () => {
@@ -1587,6 +1622,12 @@ Object.defineProperty(window, 'hangarDiagnostics', {
     drawCalls: renderer.info.render.calls,
     triangles: renderer.info.render.triangles,
     camera: activeCamera.type,
+    renderCamera: {
+      position: activeCamera.position.toArray(),
+      quaternion: activeCamera.quaternion.toArray(),
+      projection: activeCamera.projectionMatrix.elements.slice(),
+      worldMatrix: activeCamera.matrixWorld.elements.slice(),
+    },
     sceneChildren: scene.children.length,
     scene: {
       mode: sharedSceneMode,

@@ -1,6 +1,8 @@
 import * as T from 'three';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
-import { Sky } from 'three/addons/objects/Sky.js';
+import { landscapeSky } from './landscape-sky';
+import { islandLandscape } from './island-landscape';
+import type { LandscapeProfile } from './terrain';
 import {
   groundHeight,
   terrainNoise,
@@ -236,7 +238,7 @@ function makeWater(quality: LandscapeQuality) {
 }
 
 /** Discrete quality geometry is rebuilt only on a quality change; all placements use seed 50. */
-export function environment(scene: T.Scene) {
+function mountainLandscape(scene: T.Group) {
   const group = new T.Group();
   group.name = 'Procedural_Valley_Landscape';
   scene.add(group);
@@ -690,17 +692,6 @@ export function environment(scene: T.Scene) {
   grass.name = 'Near_Field_Grass';
   group.add(rocks, grass);
 
-  const sky = new Sky();
-  sky.name = 'Atmospheric_Sky';
-  sky.scale.setScalar(9000);
-  const uniforms = sky.material.uniforms;
-  uniforms.turbidity.value = 3.0;
-  uniforms.rayleigh.value = 1.65;
-  uniforms.mieCoefficient.value = 0.004;
-  uniforms.mieDirectionalG.value = 0.82;
-  uniforms.sunPosition.value.set(-0.42, 0.64, 0.34);
-  group.add(sky);
-
   // Capture only resources created here. sceneDetails may later attach its own children.
   const geometries = new Set<T.BufferGeometry>(),
     materials = new Set<T.Material>(),
@@ -781,13 +772,6 @@ export function environment(scene: T.Scene) {
     group,
     mountains,
     ground,
-    setSky(golden: boolean) {
-      uniforms.sunPosition.value
-        .set(...((golden ? [-65, 30, 25] : [-35, 65, 25]) as [number, number, number]))
-        .normalize();
-      uniforms.turbidity.value = golden ? 4.1 : 3.0;
-      uniforms.rayleigh.value = golden ? 1.9 : 1.65;
-    },
     setQuality,
     /** Conservative displayed surface for visual effects; never modifies a flight pose. */
     surfaceHeight(x: number, z: number) {
@@ -850,6 +834,68 @@ export function environment(scene: T.Scene) {
       for (const geometry of geometries) geometry.dispose();
       for (const material of materials) material.dispose();
       detail.dispose();
+      disposed = true;
+    },
+  };
+}
+
+/** Stable host group and query closures: switching scenery cannot change flight state. */
+export function environment(scene: T.Scene) {
+  const group = new T.Group();
+  group.name = 'Selectable_Procedural_Landscape';
+  scene.add(group);
+  const sky = landscapeSky();
+  group.add(sky.mesh);
+  let profile: LandscapeProfile = 'mountains',
+    quality: LandscapeQuality = 'Medium',
+    disposed = false;
+  let active: ReturnType<typeof mountainLandscape> | ReturnType<typeof islandLandscape> =
+    mountainLandscape(group);
+  return {
+    group,
+    get mountains() {
+      return active.mountains;
+    },
+    get ground() {
+      return active.ground;
+    },
+    setSky: sky.setSky,
+    setQuality(next: string) {
+      if (disposed || !Object.hasOwn(LANDSCAPE_PROFILES, next)) return;
+      quality = next as LandscapeQuality;
+      active.setQuality(quality);
+    },
+    setLandscape(next: string) {
+      if (disposed || (next !== 'mountains' && next !== 'islands') || next === profile) return;
+      active.dispose();
+      profile = next;
+      active = profile === 'islands' ? islandLandscape(group) : mountainLandscape(group);
+      active.setQuality(quality);
+    },
+    surfaceHeight(x: number, z: number) {
+      return active.surfaceHeight(x, z);
+    },
+    get diagnostics() {
+      const report = active.diagnostics,
+        visible = group.visible && !disposed;
+      return {
+        ...report,
+        profile,
+        sky: 'blue-clouds',
+        drawCalls: visible ? report.drawCalls + 1 : 0,
+        triangles: visible ? report.triangles + 2 : 0,
+        geometries: report.geometries + 1,
+        materials: report.materials + 1,
+        textures: report.textures + 1,
+        bufferBytes: report.bufferBytes + sky.bufferBytes,
+        disposed,
+      };
+    },
+    dispose() {
+      if (disposed) return;
+      active.dispose();
+      sky.dispose();
+      group.removeFromParent();
       disposed = true;
     },
   };

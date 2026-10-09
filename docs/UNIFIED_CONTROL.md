@@ -4,6 +4,12 @@
 
 This is a visualization interface, not a vehicle flight controller. Remote HTTP, WebSocket, authentication, and public Internet exposure are not implemented. The local companion service is restricted to an explicitly configured same-origin loopback deployment. Lease tokens coordinate browser clients; they are not authentication credentials or a security boundary against scripts already running in the page.
 
+## Presentation landscape selection
+
+The UI's `mountains` / `islands` landscape choice is a presentation preference, not a new gateway configuration or `scene.configure` key. Changing it on an active page preserves the selected aircraft, generation, lease, control source, pose, simulation clock and camera. Only landscape-owned render resources and the visual trail are reset. Ordinary page teardown still releases control according to the lifecycle below.
+
+Legacy scene metadata/query interfaces retain their existing `nominalGroundHeight` and `obstacleCeiling` semantics. They are not the active island terrain, rendered depth or a collision map. `hangarDiagnostics.landscape.profile` identifies the visual preset; the environment's current `surfaceHeight` is used only for visual trail clearance, never to rewrite authoritative positions or the legacy manual-control guard.
+
 ## One configuration source
 
 The gateway owns one validated configuration, read with `config.get` and changed atomically with `config.update`. Every write requires an id, owner, selected aircraft, selection generation and current command epoch (the initial epoch 0 may be omitted). Configuration can be changed only while no lease is held. Unknown properties and invalid combinations are rejected without partial mutation.

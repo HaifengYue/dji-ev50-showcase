@@ -930,7 +930,7 @@ test('SkyTrans uses the EV50 stage and world terrain route without a private han
     expect(d.aircraft.experience.playing).toBe(true);
     expect(d.aircraft.rotorExposureLayers.visibleLayerDrawsPerMainPass).toBe(2);
     expect(d.aircraft.rotorExposureLayers.visibleTriangles).toBeLessThanOrEqual(20000);
-    expect(d.landscape.textures).toBe(1);
+    expect(d.landscape.textures).toBe(2); // Mountain ground detail + bounded cloud texture.
     expect(d.landscape.triangles).toBeLessThanOrEqual(quality === 'Low' ? 45000 : 100000);
     qualitySamples.push({
       quality,
