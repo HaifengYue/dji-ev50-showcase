@@ -42,6 +42,216 @@ function watchErrors(page: Page) {
   return errors;
 }
 
+test('Running SkyTrans rotor exposure stays thin across angles, slow playback and pause', async ({
+  page,
+}, info) => {
+  // d50301d trace: three screenshots + transitions take 162s; isolate them from
+  // the shared-stage matrix rather than consuming its whole-test timeout.
+  test.setTimeout(240_000);
+  const errors = watchErrors(page);
+  await page.goto('/hangar/?aircraft=skytrans');
+  await ready(page, 'skytrans');
+  await page.locator('#quality').selectOption('Low');
+  await page.locator('#flight').click();
+  await expect(page.locator('#timeline')).toHaveAttribute('max', String(DEMO_DURATION));
+  const seekFrame = await page.locator('#timeline').evaluate((element) => {
+    (element as HTMLInputElement).value = '132';
+    element.dispatchEvent(new Event('input', { bubbles: true }));
+    return (window as any).hangarDiagnostics.frameNumber;
+  });
+  await expect.poll(async () => (await diagnostics(page)).frameNumber).toBeGreaterThan(seekFrame);
+  await expect.poll(async () => (await diagnostics(page)).world.time).toBeGreaterThan(132);
+  await expect
+    .poll(async () => (await diagnostics(page)).aircraft.camera.transitioning)
+    .toBe(false);
+  const state = await page.evaluate(() => (window as any).hangarAPI.controlState());
+  const invoke = (request: any) =>
+    page.evaluate((request) => (window as any).hangarAPI.request(request), request);
+  const owner: any = {
+    aircraft: 'skytrans',
+    generation: state.generation,
+    epoch: state.commandEpoch,
+    owner: 'rotor-angle-acceptance',
+  };
+  const lease = await invoke({
+    ...owner,
+    id: 'rotor-angles-acquire',
+    operation: 'control.acquire',
+    payload: { controlMode: 'local', clock: 'host', ttlMs: 120000 },
+  });
+  expect(lease.ok).toBe(true);
+  owner.leaseId = lease.data.leaseId;
+  for (const view of ['front', 'side']) {
+    expect(
+      (
+        await invoke({
+          ...owner,
+          id: `rotor-renew-${view}`,
+          operation: 'control.renew',
+          payload: { ttlMs: 120000 },
+        })
+      ).ok,
+    ).toBe(true);
+    await page.locator('#camera').selectOption(view);
+    await expect
+      .poll(async () => (await diagnostics(page)).aircraft.camera.transitioning)
+      .toBe(false);
+    const d = await diagnostics(page);
+    expect(d.aircraft.experience.playing).toBe(true);
+    expect(d.aircraft.runtime.state.wingTilt).toBeCloseTo(1, 5);
+    expect(d.aircraft.runtime.actuators.L_Front.rpm).toBe(1800);
+    expect(d.aircraft.runtime.actuators.L_Rear.rpm).toBe(0);
+    expect(d.aircraft.runtime.actuators.L_Rear.fold).toBe(1);
+    expect(d.aircraft.rotorExposureLayers.activeIds).toEqual(['L_Front', 'R_Front']);
+    await page.screenshot({ path: info.outputPath(`skytrans-cruise-running-${view}.png`) });
+  }
+  expect(
+    (
+      await invoke({
+        ...owner,
+        id: 'rotor-slow',
+        operation: 'transport.speed',
+        payload: { speed: 0.1 },
+      })
+    ).ok,
+  ).toBe(true);
+  expect(
+    (
+      await invoke({
+        ...owner,
+        id: 'rotor-renew-slow',
+        operation: 'control.renew',
+        payload: { ttlMs: 120000 },
+      })
+    ).ok,
+  ).toBe(true);
+  await page.locator('#camera').selectOption('follow');
+  await expect
+    .poll(async () => (await diagnostics(page)).aircraft.camera.transitioning)
+    .toBe(false);
+  await expect
+    .poll(async () => (await diagnostics(page)).aircraft.rotorExposureLayers.activeIds)
+    .toEqual([]);
+  expect((await diagnostics(page)).aircraft.experience.playing).toBe(true);
+  await page.screenshot({ path: info.outputPath('skytrans-cruise-0.1x-solid-blades.png') });
+  expect(
+    (
+      await invoke({
+        ...owner,
+        id: 'rotor-normal',
+        operation: 'transport.speed',
+        payload: { speed: 1 },
+      })
+    ).ok,
+  ).toBe(true);
+  await expect
+    .poll(async () => (await diagnostics(page)).aircraft.rotorExposureLayers.activeIds)
+    .toEqual(['L_Front', 'R_Front']);
+  expect(
+    (await invoke({ ...owner, id: 'rotor-paused', operation: 'transport.pause', payload: {} })).ok,
+  ).toBe(true);
+  await expect
+    .poll(async () => (await diagnostics(page)).aircraft.rotorExposureLayers.activeIds)
+    .toEqual([]);
+  expect(
+    (await invoke({ ...owner, id: 'rotor-resumed', operation: 'transport.play', payload: {} })).ok,
+  ).toBe(true);
+  expect(
+    (
+      await invoke({
+        ...owner,
+        id: 'rotor-angles-release',
+        operation: 'control.release',
+        payload: {},
+      })
+    ).ok,
+  ).toBe(true);
+  expect(await page.evaluate(() => (window as any).hangarAPI.controlState().lease)).toBeNull();
+  await expect(page.locator('#flight')).toBeEnabled();
+  await expect(page.locator('#product')).toBeEnabled();
+  expect(errors).toEqual([]);
+});
+
+test('Local continuous SkyTrans flight shows lakes, villages and an aging white trail', async ({
+  page,
+}, info) => {
+  test.setTimeout(180_000);
+  const errors = watchErrors(page);
+  await page.goto('/hangar/?aircraft=skytrans');
+  await ready(page, 'skytrans');
+  await page.locator('#quality').selectOption('Low');
+  await page.locator('#route').selectOption('valley');
+  await page.locator('#flight').click();
+  await page.locator('#play').click();
+  await expect.poll(async () => (await diagnostics(page)).aircraft.experience.playing).toBe(false);
+  await expect(page.locator('#timeline')).toHaveAttribute('max', String(DEMO_DURATION));
+  const seekFrame = await page.locator('#timeline').evaluate((element) => {
+    (element as HTMLInputElement).value = '170';
+    element.dispatchEvent(new Event('input', { bubbles: true }));
+    return (window as any).hangarDiagnostics.frameNumber;
+  });
+  await expect.poll(async () => (await diagnostics(page)).frameNumber).toBeGreaterThan(seekFrame);
+  await expect.poll(async () => (await diagnostics(page)).world.time).toBeCloseTo(170, 5);
+  const beforeView = await diagnostics(page);
+  expect(beforeView.trail.lastTime).toBeCloseTo(beforeView.world.time, 6);
+  expect(beforeView.trail.generation).toMatch(
+    new RegExp(`:demo:${beforeView.world.presentationRevision}$`),
+  );
+  await page.locator('#camera').selectOption('wide');
+  await expect
+    .poll(async () => (await diagnostics(page)).aircraft.camera.transitioning)
+    .toBe(false);
+  const afterView = await diagnostics(page);
+  expect(afterView.trail.generation).toBe(beforeView.trail.generation);
+  expect(afterView.trail.resetCount).toBe(beforeView.trail.resetCount);
+  expect(afterView.world.time).toBeCloseTo(170, 5);
+  expect(afterView.world.source).toBe('demo');
+  await page.locator('#quality').selectOption('High');
+  await page.getByText('光线与导出', { exact: true }).click();
+  // Accumulate real, continuous simulation-time samples through normal UI playback.
+  // Warm up at 4x, then capture playing at 1x; no synthetic poses or lease takeover.
+  await page.locator('#playback-speed').selectOption('4');
+  await page.locator('#play').click();
+  await expect.poll(async () => (await diagnostics(page)).world.time).toBeGreaterThan(173.1);
+  await page.locator('#playback-speed').selectOption('1');
+  await expect.poll(async () => (await diagnostics(page)).trail.pointCount).toBeGreaterThan(8);
+  const capture = await diagnostics(page);
+  expect(capture.aircraft.experience.playing).toBe(true);
+  expect(capture.world.source).toBe('demo');
+  expect(capture.aircraft.camera.view).toBe('wide');
+  expect(capture.trail.generation).toBe(afterView.trail.generation);
+  expect(capture.trail.resetCount).toBe(afterView.trail.resetCount);
+  expect(capture.trail.drawCalls).toBe(1);
+  expect(capture.landscape.quality).toBe('High');
+  await expect(page.locator('#quality-readout')).toHaveText('HIGH');
+  expect(capture.landscape.settlements).toBe(8);
+  expect(capture.landscape.lakes).toBe(2);
+  expect(await page.evaluate(() => (window as any).hangarAPI.controlState().lease)).toBeNull();
+  await page.locator('#immersive').click();
+  await expect(page.locator('body')).toHaveClass(/immersive/);
+  await page.screenshot({
+    path: info.outputPath('skytrans-valley-lake-village-white-trail-1x.png'),
+  });
+  const afterCapture = await diagnostics(page);
+  expect(afterCapture.aircraft.experience.playing).toBe(true);
+  expect(afterCapture.world.source).toBe('demo');
+  expect(afterCapture.trail.generation).toBe(capture.trail.generation);
+  await page.locator('#exit-immersive').click();
+  await expect(page.locator('#flight')).toBeVisible();
+  await info.attach('skytrans-landscape-continuous-flight.json', {
+    body: JSON.stringify({
+      beforeView,
+      afterView,
+      capture,
+      afterCapture,
+      warmupRate: 4,
+      captureRate: 1,
+    }),
+    contentType: 'application/json',
+  });
+  expect(errors).toEqual([]);
+});
+
 test('SkyTrans demo vertical rates and rotor phase survive seek, pause, playback rate and shutdown', async ({
   page,
 }, info) => {
@@ -751,207 +961,6 @@ test('SkyTrans uses the EV50 stage and world terrain route without a private han
   await expect.poll(async () => (await diagnostics(page)).world.time).toBeGreaterThan(0);
   await page.locator('#product').click();
   await expect(page.locator('#camera')).toHaveValue('free');
-  expect(errors).toEqual([]);
-});
-
-test('Running SkyTrans rotor exposure stays thin across angles, slow playback and pause', async ({
-  page,
-}, info) => {
-  // d50301d trace: three screenshots + transitions take 162s; isolate them from
-  // the shared-stage matrix rather than consuming its whole-test timeout.
-  test.setTimeout(240_000);
-  const errors = watchErrors(page);
-  await page.goto('/hangar/?aircraft=skytrans');
-  await ready(page, 'skytrans');
-  await page.locator('#quality').selectOption('Low');
-  await page.locator('#flight').click();
-  await page.evaluate(() => {
-    const timeline = document.querySelector<HTMLInputElement>('#timeline')!;
-    timeline.value = '132';
-    timeline.dispatchEvent(new Event('input', { bubbles: true }));
-  });
-  await expect.poll(async () => (await diagnostics(page)).world.time).toBeGreaterThan(132);
-  await expect
-    .poll(async () => (await diagnostics(page)).aircraft.camera.transitioning)
-    .toBe(false);
-  const state = await page.evaluate(() => (window as any).hangarAPI.controlState());
-  const invoke = (request: any) =>
-    page.evaluate((request) => (window as any).hangarAPI.request(request), request);
-  const owner: any = {
-    aircraft: 'skytrans',
-    generation: state.generation,
-    epoch: state.commandEpoch,
-    owner: 'rotor-angle-acceptance',
-  };
-  const lease = await invoke({
-    ...owner,
-    id: 'rotor-angles-acquire',
-    operation: 'control.acquire',
-    payload: { controlMode: 'local', clock: 'host', ttlMs: 120000 },
-  });
-  expect(lease.ok).toBe(true);
-  owner.leaseId = lease.data.leaseId;
-  for (const view of ['front', 'side']) {
-    expect(
-      (
-        await invoke({
-          ...owner,
-          id: `rotor-renew-${view}`,
-          operation: 'control.renew',
-          payload: { ttlMs: 120000 },
-        })
-      ).ok,
-    ).toBe(true);
-    await page.locator('#camera').selectOption(view);
-    await expect
-      .poll(async () => (await diagnostics(page)).aircraft.camera.transitioning)
-      .toBe(false);
-    const d = await diagnostics(page);
-    expect(d.aircraft.experience.playing).toBe(true);
-    expect(d.aircraft.runtime.state.wingTilt).toBeCloseTo(1, 5);
-    expect(d.aircraft.runtime.actuators.L_Front.rpm).toBe(1800);
-    expect(d.aircraft.runtime.actuators.L_Rear.rpm).toBe(0);
-    expect(d.aircraft.runtime.actuators.L_Rear.fold).toBe(1);
-    expect(d.aircraft.rotorExposureLayers.activeIds).toEqual(['L_Front', 'R_Front']);
-    await page.screenshot({ path: info.outputPath(`skytrans-cruise-running-${view}.png`) });
-  }
-  expect(
-    (
-      await invoke({
-        ...owner,
-        id: 'rotor-slow',
-        operation: 'transport.speed',
-        payload: { speed: 0.1 },
-      })
-    ).ok,
-  ).toBe(true);
-  expect(
-    (
-      await invoke({
-        ...owner,
-        id: 'rotor-renew-slow',
-        operation: 'control.renew',
-        payload: { ttlMs: 120000 },
-      })
-    ).ok,
-  ).toBe(true);
-  await page.locator('#camera').selectOption('follow');
-  await expect
-    .poll(async () => (await diagnostics(page)).aircraft.camera.transitioning)
-    .toBe(false);
-  await expect
-    .poll(async () => (await diagnostics(page)).aircraft.rotorExposureLayers.activeIds)
-    .toEqual([]);
-  expect((await diagnostics(page)).aircraft.experience.playing).toBe(true);
-  await page.screenshot({ path: info.outputPath('skytrans-cruise-0.1x-solid-blades.png') });
-  expect(
-    (
-      await invoke({
-        ...owner,
-        id: 'rotor-normal',
-        operation: 'transport.speed',
-        payload: { speed: 1 },
-      })
-    ).ok,
-  ).toBe(true);
-  await expect
-    .poll(async () => (await diagnostics(page)).aircraft.rotorExposureLayers.activeIds)
-    .toEqual(['L_Front', 'R_Front']);
-  expect(
-    (await invoke({ ...owner, id: 'rotor-paused', operation: 'transport.pause', payload: {} })).ok,
-  ).toBe(true);
-  await expect
-    .poll(async () => (await diagnostics(page)).aircraft.rotorExposureLayers.activeIds)
-    .toEqual([]);
-  expect(
-    (await invoke({ ...owner, id: 'rotor-resumed', operation: 'transport.play', payload: {} })).ok,
-  ).toBe(true);
-  expect(
-    (
-      await invoke({
-        ...owner,
-        id: 'rotor-angles-release',
-        operation: 'control.release',
-        payload: {},
-      })
-    ).ok,
-  ).toBe(true);
-  expect(await page.evaluate(() => (window as any).hangarAPI.controlState().lease)).toBeNull();
-  await expect(page.locator('#flight')).toBeEnabled();
-  await expect(page.locator('#product')).toBeEnabled();
-  expect(errors).toEqual([]);
-});
-
-test('Local continuous SkyTrans flight shows lakes, villages and an aging white trail', async ({
-  page,
-}, info) => {
-  test.setTimeout(180_000);
-  const errors = watchErrors(page);
-  await page.goto('/hangar/?aircraft=skytrans');
-  await ready(page, 'skytrans');
-  await page.locator('#quality').selectOption('Low');
-  await page.locator('#route').selectOption('valley');
-  await page.locator('#flight').click();
-  await page.locator('#play').click();
-  await expect.poll(async () => (await diagnostics(page)).aircraft.experience.playing).toBe(false);
-  await page.locator('#timeline').evaluate((element) => {
-    (element as HTMLInputElement).value = '170';
-    element.dispatchEvent(new Event('input', { bubbles: true }));
-  });
-  await expect.poll(async () => (await diagnostics(page)).world.time).toBeCloseTo(170, 5);
-  const beforeView = await diagnostics(page);
-  await page.locator('#camera').selectOption('wide');
-  await expect
-    .poll(async () => (await diagnostics(page)).aircraft.camera.transitioning)
-    .toBe(false);
-  const afterView = await diagnostics(page);
-  expect(afterView.trail.generation).toBe(beforeView.trail.generation);
-  expect(afterView.trail.resetCount).toBe(beforeView.trail.resetCount);
-  expect(afterView.world.time).toBeCloseTo(170, 5);
-  expect(afterView.world.source).toBe('demo');
-  await page.locator('#quality').selectOption('High');
-  await page.getByText('光线与导出', { exact: true }).click();
-  // Accumulate real, continuous simulation-time samples through normal UI playback.
-  // Warm up at 4x, then capture playing at 1x; no synthetic poses or lease takeover.
-  await page.locator('#playback-speed').selectOption('4');
-  await page.locator('#play').click();
-  await expect.poll(async () => (await diagnostics(page)).world.time).toBeGreaterThan(173.1);
-  await page.locator('#playback-speed').selectOption('1');
-  await expect.poll(async () => (await diagnostics(page)).trail.pointCount).toBeGreaterThan(8);
-  const capture = await diagnostics(page);
-  expect(capture.aircraft.experience.playing).toBe(true);
-  expect(capture.world.source).toBe('demo');
-  expect(capture.aircraft.camera.view).toBe('wide');
-  expect(capture.trail.generation).toBe(afterView.trail.generation);
-  expect(capture.trail.resetCount).toBe(afterView.trail.resetCount);
-  expect(capture.trail.drawCalls).toBe(1);
-  expect(capture.landscape.quality).toBe('High');
-  await expect(page.locator('#quality-readout')).toHaveText('HIGH');
-  expect(capture.landscape.settlements).toBe(8);
-  expect(capture.landscape.lakes).toBe(2);
-  expect(await page.evaluate(() => (window as any).hangarAPI.controlState().lease)).toBeNull();
-  await page.locator('#immersive').click();
-  await expect(page.locator('body')).toHaveClass(/immersive/);
-  await page.screenshot({
-    path: info.outputPath('skytrans-valley-lake-village-white-trail-1x.png'),
-  });
-  const afterCapture = await diagnostics(page);
-  expect(afterCapture.aircraft.experience.playing).toBe(true);
-  expect(afterCapture.world.source).toBe('demo');
-  expect(afterCapture.trail.generation).toBe(capture.trail.generation);
-  await page.locator('#exit-immersive').click();
-  await expect(page.locator('#flight')).toBeVisible();
-  await info.attach('skytrans-landscape-continuous-flight.json', {
-    body: JSON.stringify({
-      beforeView,
-      afterView,
-      capture,
-      afterCapture,
-      warmupRate: 4,
-      captureRate: 1,
-    }),
-    contentType: 'application/json',
-  });
   expect(errors).toEqual([]);
 });
 
