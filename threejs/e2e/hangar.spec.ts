@@ -172,10 +172,14 @@ test('EV50 starts alone on nested base, preserves flight controls and capture', 
 test('Transwing integrates shared canvas, real rig, native cameras and EV50 API isolation', async ({
   page,
 }, info) => {
-  test.setTimeout(180_000); // Multiple high-quality camera views plus a fully rendered EV50 return.
+  test.setTimeout(180_000); // Multiple native camera views plus a fully rendered EV50 return.
   const errors = watchErrors(page);
   await page.goto('/hangar/?aircraft=transwing');
   await ready(page, 'transwing');
+  // This case checks mechanisms, camera ownership and API isolation. Keep GPU
+  // postprocessing out of its timing; the shared-terrain case explicitly verifies High.
+  await page.locator('#quality').selectOption('Low');
+  await expect(page.locator('#quality-readout')).toHaveText('LOW');
   await expect(page.locator('canvas#scene')).toHaveCount(1);
   await expect(page.locator('#aircraft-panel')).toBeVisible();
   await expect(page.locator('#simulation-tools')).toBeHidden();
