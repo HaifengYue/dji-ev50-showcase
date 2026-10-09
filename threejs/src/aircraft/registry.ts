@@ -1,4 +1,5 @@
 import type { AircraftId } from './types';
+import { normalizeAircraftId } from './identity';
 
 /** Aircraft capabilities are explicit: incompatible telemetry never crosses airframes. */
 export const AIRCRAFT = [
@@ -19,8 +20,8 @@ export const AIRCRAFT = [
     ],
   },
   {
-    id: 'transwing',
-    name: 'TRANSWING P4',
+    id: 'skytrans',
+    name: 'SkyTrans',
     description: '整翼倾转 · 四电机折桨 · 六路独立舵面',
     sourceCommit: '2ecb723d46b90fe509ae5c2ff7c1735a7b66b7b3',
     capabilities: [
@@ -58,5 +59,5 @@ export function aircraftDescriptor(id: AircraftId) {
 }
 export function aircraftFromUrl(url: URL): AircraftId {
   const value = url.searchParams.get('aircraft');
-  return isAircraftId(value) ? value : 'ev50';
+  return normalizeAircraftId(value) ?? 'ev50';
 }

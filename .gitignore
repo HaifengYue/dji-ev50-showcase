@@ -27,4 +27,4 @@ previews/**/*.log
 # Local browser acceptance outputs
 threejs/playwright-report/
 threejs/test-results/
-threejs/.transwing-native-check*/
+threejs/.skytrans-native-check*/

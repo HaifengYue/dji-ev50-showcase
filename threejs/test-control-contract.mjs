@@ -13,9 +13,17 @@ for (const name of ['contracts', 'config', 'validation', 'gateway']) {
     .transpileModule(source, {
       compilerOptions: { target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.ES2022 },
     })
-    .outputText.replace(/from '(\.\/[^']+)'/g, "from '$1.mjs'");
+    .outputText.replace(/from '(\.\/[^']+)'/g, "from '$1.mjs'")
+    .replace('../aircraft/identity', './identity.mjs');
   fs.writeFileSync(path.join(temporary, name + '.mjs'), compiled);
 }
+fs.writeFileSync(
+  path.join(temporary, 'identity.mjs'),
+  ts.transpileModule(
+    fs.readFileSync(new URL('./src/aircraft/identity.ts', import.meta.url), 'utf8'),
+    { compilerOptions: { target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.ES2022 } },
+  ).outputText,
+);
 fs.writeFileSync(
   path.join(temporary, 'ev50Control.mjs'),
   ts.transpileModule(
@@ -193,7 +201,7 @@ test('mutations require identity, current aircraft/generation, ready host and le
   const h = harness();
   await error(h.gateway.request({ operation: 'transport.play' }), 'INVALID_REQUEST');
   await error(h.send('transport.play'), 'LEASE_REQUIRED');
-  await error(h.send('control.acquire', {}, { aircraft: 'transwing' }), 'AIRCRAFT_MISMATCH');
+  await error(h.send('control.acquire', {}, { aircraft: 'skytrans' }), 'AIRCRAFT_MISMATCH');
   await error(h.send('control.acquire', {}, { generation: 0 }), 'STALE_SELECTION');
   h.context.ready = false;
   await error(h.send('control.acquire'), 'NOT_READY');
@@ -421,7 +429,7 @@ test('model namespaces cannot cross aircraft and unsupported capabilities do not
   const h = harness();
   await h.acquire();
   await error(
-    h.send('transwing.motors', { motors: { L_Front: { targetRpm: 100 } } }),
+    h.send('skytrans.motors', { motors: { L_Front: { targetRpm: 100 } } }),
     'AIRCRAFT_MISMATCH',
   );
   h.capabilities.operations = h.capabilities.operations.filter((op) => op !== 'ev50.motors');
@@ -441,22 +449,22 @@ test('numeric, quaternion, unknown-field, unit and clock inputs reject atomicall
   await error(h.send('aircraft.pose', { timeSeconds: Infinity }), 'INVALID_REQUEST');
   assert.equal(h.calls.length, 0);
 });
-test('Transwing motor/surface/geometry schemas are strict and rotor arrays cannot leak in', async () => {
+test('SkyTrans motor/surface/geometry schemas are strict and rotor arrays cannot leak in', async () => {
   const h = harness();
-  h.context.aircraft = h.capabilities.aircraft = h.state.model.aircraft = 'transwing';
+  h.context.aircraft = h.capabilities.aircraft = h.state.model.aircraft = 'skytrans';
   h.capabilities.rotorCount = h.state.model.rotorCount = 4;
-  h.capabilities.operations = ['transwing.mechanism', 'transwing.motors', 'transwing.surfaces'];
+  h.capabilities.operations = ['skytrans.mechanism', 'skytrans.motors', 'skytrans.surfaces'];
   await h.acquire(true);
   for (const payload of [
     { motors: new Array(11).fill(0) },
     { motors: { WRONG: { targetRpm: 1 } } },
     { motors: { L_Front: { targetRpm: 12001 } } },
   ])
-    await error(h.send('transwing.motors', payload), 'VALIDATION_FAILED');
-  await error(h.send('transwing.mechanism', { surfaces: { elevator: 5 } }), 'VALIDATION_FAILED');
-  await error(h.send('transwing.mechanism', { hatchDeg: 56 }), 'VALIDATION_FAILED');
-  await applied(h, 'transwing.mechanism', { wingTilt: 0.5, surfaces: { Tail_L: 4 }, hatchDeg: 55 });
-  await applied(h, 'transwing.motors', { motors: { L_Front: { targetRpm: 100, enabled: true } } });
+    await error(h.send('skytrans.motors', payload), 'VALIDATION_FAILED');
+  await error(h.send('skytrans.mechanism', { surfaces: { elevator: 5 } }), 'VALIDATION_FAILED');
+  await error(h.send('skytrans.mechanism', { hatchDeg: 56 }), 'VALIDATION_FAILED');
+  await applied(h, 'skytrans.mechanism', { wingTilt: 0.5, surfaces: { Tail_L: 4 }, hatchDeg: 55 });
+  await applied(h, 'skytrans.motors', { motors: { L_Front: { targetRpm: 100, enabled: true } } });
 });
 test('config changes atomically validate same-origin loopback, explicit enable, fixed units and clock', async () => {
   const h = harness();
@@ -817,7 +825,7 @@ test('EV50 grouped actuation keeps eight lift and three cruise rotors, never fou
   assert.throws(
     () =>
       external.apply({
-        operation: 'transwing.motors',
+        operation: 'skytrans.motors',
         payload: { motors: { L_Front: { enabled: true } } },
       }),
     /Unsupported/,
@@ -836,6 +844,52 @@ test('EV50 step overflow rejects before changing position, time, sequence or rot
   assert.throws(() => external.apply({ operation: 'clock.step', payload: { dt: 1 } }));
   assert.deepEqual(external.snapshot(), before);
   assert.equal(external.angle(0), angle);
+});
+
+test('legacy aircraft and operation aliases share one lease, command and immutable ACK', async () => {
+  const h = harness();
+  h.context.aircraft = h.capabilities.aircraft = h.state.model.aircraft = 'skytrans';
+  h.capabilities.rotorCount = h.state.model.rotorCount = 4;
+  h.capabilities.operations = ['skytrans.mechanism', 'skytrans.motors', 'skytrans.surfaces'];
+  const acquired = await h.send('control.acquire', {}, { aircraft: 'transwing' });
+  assert.equal(acquired.ok, true, JSON.stringify(acquired));
+  assert.equal(acquired.data.aircraft, 'skytrans');
+  await error(h.send('control.acquire', {}, { owner: 'second-owner' }), 'CONTROL_BUSY');
+  const old = h.envelope(
+    'transwing.motors',
+    { motors: { L_Front: { targetRpm: 900 } } },
+    { aircraft: 'transwing', leaseId: acquired.data.leaseId },
+  );
+  const legacy = h.gateway.request(old);
+  assert.equal(h.gateway.request(old), legacy);
+  const canonical = h.gateway.request({
+    ...old,
+    aircraft: 'skytrans',
+    operation: 'skytrans.motors',
+  });
+  h.render();
+  const [a, b] = await Promise.all([legacy, canonical]);
+  assert.equal(a.ok, true, JSON.stringify(a));
+  assert.equal(a.operation, 'transwing.motors');
+  assert.equal(b.operation, 'skytrans.motors');
+  assert.deepEqual(a.ack, b.ack);
+  assert.equal(h.calls.length, 1);
+  assert.equal(h.calls[0].operation, 'skytrans.motors');
+  assert.equal(Object.isFrozen(a), true);
+  await error(
+    h.gateway.request({ ...old, payload: { motors: { L_Front: { targetRpm: 901 } } } }),
+    'ID_CONFLICT',
+  );
+  await error(
+    h.send(
+      'skytrans.motors',
+      {},
+      { aircraft: 'transwing', generation: 0, leaseId: acquired.data.leaseId },
+    ),
+    'STALE_SELECTION',
+  );
+  assert.equal(h.gateway.getState().aircraft, 'skytrans');
+  assert.equal(h.gateway.getLease().leaseId, acquired.data.leaseId);
 });
 
 let passed = 0;

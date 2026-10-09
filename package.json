@@ -1,5 +1,5 @@
 {
-  "name": "dji-ev50-vtol",
+  "name": "sky-captain",
   "private": true,
   "engines": {
     "node": ">=24"
@@ -11,9 +11,9 @@
     "typecheck": "npm --prefix threejs run build",
     "replay:inspect": "python scripts/replay_log.py models/SITL_optimal.ulg --inspect",
     "replay:build": "python scripts/replay_log.py models/SITL_optimal.ulg threejs/public/flight-replay.json",
-    "test": "npm --prefix threejs run test:api && npm --prefix threejs run test:presentation && npm --prefix threejs run test:flight && npm --prefix threejs run test:model && npm --prefix threejs run test:airframe && npm --prefix threejs run test:hangar && npm run test:transwing && npm run test:python && npm --prefix threejs run test:control && npm --prefix threejs run test:world",
+    "test": "npm --prefix threejs run test:api && npm --prefix threejs run test:presentation && npm --prefix threejs run test:flight && npm --prefix threejs run test:model && npm --prefix threejs run test:airframe && npm --prefix threejs run test:hangar && npm run test:skytrans && npm run test:python && npm --prefix threejs run test:control && npm --prefix threejs run test:world && npm --prefix threejs run test:branding && npm --prefix threejs run test:landscape",
     "ci": "npm run format:check && npm run typecheck && npm run test",
-    "test:transwing": "npm --prefix models/transwing run test:core",
+    "test:skytrans": "npm --prefix models/skytrans run test:core",
     "test:python": "node threejs/qa/python-tests.mjs"
   },
   "devDependencies": {

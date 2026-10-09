@@ -16,6 +16,18 @@ const canonical = (value) =>
           .join(',') +
         '}'
       : JSON.stringify(value);
+// Match the browser gateway's bounded compatibility aliases before deduplication.
+const aircraftId = (value) => (value === 'transwing' ? 'skytrans' : value);
+const operationAliases = new Map([
+  ['transwing.mechanism', 'skytrans.mechanism'],
+  ['transwing.motors', 'skytrans.motors'],
+  ['transwing.surfaces', 'skytrans.surfaces'],
+]);
+const normalizedRequest = (request) => ({
+  ...request,
+  ...(request.aircraft === undefined ? {} : { aircraft: aircraftId(request.aircraft) }),
+  operation: operationAliases.get(request.operation) ?? request.operation,
+});
 const prefix = '/api/hangar/v1';
 const mime = {
   '.html': 'text/html',
@@ -74,7 +86,7 @@ export function createHangarServer({
       sequence: entry?.sequence ?? ++sequence,
       request,
       response,
-      body: canonical(request),
+      body: canonical(normalizedRequest(request)),
       epoch: oldEpoch,
     };
     commands.clear();
@@ -200,7 +212,7 @@ export function createHangarServer({
           const epoch = request.epoch === undefined ? 0 : request.epoch;
           if (!Number.isSafeInteger(epoch) || epoch < 0)
             return fail(res, 400, 'INVALID_REQUEST', 'epoch must be a nonnegative integer');
-          const body = canonical(request);
+          const body = canonical(normalizedRequest(request));
           const existing =
             lastReset?.epoch === epoch && lastReset.request.id === request.id
               ? lastReset
@@ -234,7 +246,7 @@ export function createHangarServer({
             lease &&
             lease.owner === request.owner &&
             lease.leaseId === request.leaseId &&
-            lease.aircraft === request.aircraft &&
+            lease.aircraft === aircraftId(request.aircraft) &&
             lease.generation === request.generation;
           const reset =
             plainPayload &&
@@ -244,7 +256,7 @@ export function createHangarServer({
             request.owner.length <= 128 &&
             request.operation === 'control.resetSession' &&
             request.payload?.acknowledgeCompletedResults === true &&
-            request.aircraft === snapshot?.state?.aircraft &&
+            aircraftId(request.aircraft) === snapshot?.state?.aircraft &&
             request.generation === snapshot?.state?.generation &&
             serviceState().canResetSession;
           const escape =

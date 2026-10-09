@@ -9,6 +9,7 @@ import type {
   AdapterAircraftState,
 } from './control/contracts';
 import { AIRCRAFT, aircraftDescriptor, aircraftFromUrl, isAircraftId } from './aircraft/registry';
+import { normalizeAircraftId } from './aircraft/identity';
 import { createAircraftSelection } from './aircraft/selection';
 import { disposeObjectTree } from './aircraft/resources';
 import { playbackPresentation } from './aircraft/playbackPresentation';
@@ -24,6 +25,7 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import { FlightController, labels, Frame, routes, FlightCommand } from './flight';
 import { environment } from './environment';
+import { FlightTrail } from './flight-trail';
 import './style.css';
 import {
   API_VERSION,
@@ -121,7 +123,14 @@ let flight: FlightController,
   showLabels = false;
 let sharedSceneMode: 'product' | 'flight' = 'product';
 let assetVersion = 'EV50';
-const site = sceneDetails(terrain.group);
+const site = sceneDetails(terrain.group, { externalTrail: true });
+let flightTrail = new FlightTrail(scene, { surfaceHeight: terrain.surfaceHeight });
+let trailGeneration = 0;
+function clearFlightTrail(reason = 'source-change') {
+  site.clearTrail();
+  flightTrail.reset(reason);
+  trailGeneration++;
+}
 let rig: ReturnType<typeof aircraftRig> | undefined;
 const visual = {
   position: new T.Vector3(),
@@ -342,14 +351,14 @@ async function loadEv50(signal: AbortSignal): Promise<AircraftInstance> {
 }
 /** The host alone owns the stage, lighting, fog and terrain for every airframe. */
 function setSceneMode(mode: 'product' | 'flight') {
-  if (sharedSceneMode !== mode) site.clearTrail();
+  if (sharedSceneMode !== mode) clearFlightTrail();
   sharedSceneMode = mode;
   terrain.group.visible = mode === 'flight';
   scene.background = new T.Color(mode === 'product' ? 0x202c34 : 0xa4becb);
   scene.fog = mode === 'product' ? null : new T.Fog(0xa4becb, 1800, 7200);
 }
 function setMode(mode: 'product' | 'flight') {
-  if (selectedId === 'transwing') {
+  if (selectedId === 'skytrans') {
     const before = selection.current?.snapshot();
     if (!before || before.control !== 'local' || unifiedGateway?.getLease()) return;
     selection.current?.setMode(mode);
@@ -367,7 +376,7 @@ function setMode(mode: 'product' | 'flight') {
   )
     return;
   if (simulation.source !== 'demo') simulation.select('demo');
-  site.clearTrail();
+  clearFlightTrail();
   flight.mode = mode;
   flight.restart();
   mapWrap.hidden = mode === 'product';
@@ -389,7 +398,7 @@ function setMode(mode: 'product' | 'flight') {
 }
 function sourceChanged(source: SimulationSource) {
   if (!ready) return;
-  site.clearTrail();
+  clearFlightTrail();
   rotorAngles.clear();
   if (source === 'demo') {
     setMode('flight');
@@ -417,7 +426,7 @@ $('#flight').onclick = () => {
   if (!unifiedGateway?.getLease()) setMode('flight');
 };
 $('#play').onclick = () => {
-  if (selectedId === 'transwing') {
+  if (selectedId === 'skytrans') {
     selection.current?.playPause();
     return;
   }
@@ -425,7 +434,7 @@ $('#play').onclick = () => {
   if (simulation.source !== 'demo') {
     if (simulation.source === 'replay' && simulation.replay.time >= simulation.replay.duration) {
       simulation.replay.seek(0);
-      site.clearTrail();
+      clearFlightTrail();
       simulation.pause(false);
     } else simulation.pause(!simulation.state().paused);
     return;
@@ -442,32 +451,34 @@ $('#play').onclick = () => {
   flight.playing = !flight.playing;
 };
 $('#restart').onclick = () => {
-  if (selectedId === 'transwing') {
+  clearFlightTrail('restart');
+  if (selectedId === 'skytrans') {
     selection.current?.restart();
     return;
   }
   if (!ready) return;
-  site.clearTrail();
+  clearFlightTrail();
   if (simulation.source === 'replay') {
     simulation.replay.seek(0);
     simulation.pause(false);
   } else if (simulation.source === 'demo') flight.restart();
 };
 $<HTMLInputElement>('#loop').onchange = (e) => {
-  if (selectedId === 'transwing') {
+  if (selectedId === 'skytrans') {
     selection.current?.setLoop((e.target as HTMLInputElement).checked);
     return;
   }
   if (ready) flight.loop = (e.target as HTMLInputElement).checked;
 };
 $<HTMLInputElement>('#timeline').oninput = (e) => {
-  if (selectedId === 'transwing') {
+  clearFlightTrail('seek');
+  if (selectedId === 'skytrans') {
     selection.current?.seek(Number((e.target as HTMLInputElement).value));
     return;
   }
   if (!ready) return;
   const t = Number((e.target as HTMLInputElement).value);
-  site.clearTrail();
+  clearFlightTrail();
   if (simulation.source === 'replay') {
     simulation.replay.seek(t);
     return;
@@ -477,7 +488,7 @@ $<HTMLInputElement>('#timeline').oninput = (e) => {
   flight.seek(t);
 };
 $<HTMLSelectElement>('#camera').onchange = (e) => {
-  if (selectedId === 'transwing') {
+  if (selectedId === 'skytrans') {
     selection.current?.setView((e.target as HTMLSelectElement).value);
     return;
   }
@@ -494,13 +505,13 @@ $<HTMLInputElement>('#annotations').onchange = (e) => {
   showLabels = (e.target as HTMLInputElement).checked;
 };
 routeSelect.onchange = () => {
-  if (selectedId === 'transwing') {
+  if (selectedId === 'skytrans') {
     selection.current?.setRoute?.(routeSelect.value as keyof typeof routes);
     return;
   }
   if (ready) {
     leaveSimulation();
-    site.clearTrail();
+    clearFlightTrail();
     flight.setRoute(routeSelect.value as keyof typeof routes);
     missionMap.setPath(flight.getPath());
   }
@@ -573,7 +584,7 @@ const apiGateway = new Ev50ApiGateway({
     if (operation === 'scene.describe') return site.describe();
     if (operation === 'scene.configure') return site.configure(payload);
     if (operation === 'scene.query') return site.query(payload);
-    if (operation === 'simulation.replay.seek') site.clearTrail();
+    if (operation === 'simulation.replay.seek') clearFlightTrail();
     return simulation.request(operation, payload);
   },
   getState: status,
@@ -619,7 +630,7 @@ const apiGateway = new Ev50ApiGateway({
   reset: () => {
     requireReady();
     leaveSimulation();
-    site.clearTrail();
+    clearFlightTrail();
     flight.pause();
     flight.restart();
   },
@@ -627,7 +638,7 @@ const apiGateway = new Ev50ApiGateway({
     requireReady();
     if (simulation.source !== 'demo') throw new Error('Use simulation.replay.seek for recordings');
     if (seconds < 0 || seconds > flight.duration) throw new Error('Invalid time');
-    site.clearTrail();
+    clearFlightTrail();
     flight.clearCommand();
     flight.seek(seconds);
   },
@@ -640,7 +651,7 @@ const apiGateway = new Ev50ApiGateway({
     requireReady();
     if (!Object.hasOwn(routes, route)) throw new Error('Unknown route');
     leaveSimulation();
-    site.clearTrail();
+    clearFlightTrail();
     routeSelect.value = route;
     flight.setRoute(route as keyof typeof routes);
     missionMap.setPath(flight.getPath());
@@ -704,7 +715,7 @@ const api = installBrowserApi(apiGateway, (callback) => {
 Object.assign(window, { ev50API: api });
 const scenePanelApi = {
   request(request: { operation: string; payload?: unknown }) {
-    if (selectedId !== 'transwing') return api.request(request);
+    if (selectedId !== 'skytrans') return api.request(request);
     try {
       let data: unknown;
       if (request.operation === 'scene.configure') data = site.configure(request.payload);
@@ -733,7 +744,7 @@ const simulationTools = simulationPanel(scenePanelApi, simulation, site.getSetti
 let stopHttpBridge: (() => void) | undefined;
 let telemetryElapsed = 0;
 $<HTMLSelectElement>('#playback-speed').onchange = (e) => {
-  if (selectedId === 'transwing') {
+  if (selectedId === 'skytrans') {
     selection.current?.setSpeed(Number((e.target as HTMLSelectElement).value));
     return;
   }
@@ -748,6 +759,7 @@ function quality(q: string) {
   sun.shadow.map?.dispose();
   sun.shadow.map = null;
   terrain.setQuality(q);
+  flightTrail.setQuality(q as RenderQuality);
   $('#quality-readout').textContent = q.toUpperCase();
   selection?.current?.setQuality(q as AircraftQuality);
   resize();
@@ -814,9 +826,9 @@ function animate() {
   const dt = Math.min(clock.getDelta(), 0.1),
     activeDt = document.hidden ? 0 : dt,
     now = performance.now() / 1000;
-  if (selectedId === 'transwing' && selection.current) {
+  if (selectedId === 'skytrans' && selection.current) {
     selection.current.update(activeDt, now);
-    syncTranswingHud(selection.current);
+    syncSkyTransHud(selection.current);
     const world = selection.current.worldState?.();
     if (world) {
       presentationView.update(world.mode, false);
@@ -827,6 +839,12 @@ function animate() {
         world.mode === 'flight',
         scene.fog instanceof T.Fog ? scene.fog : null,
       );
+      flightTrail.update({
+        time: world.time,
+        position: world.position,
+        generation: `${selectedId}:${selectionRevision}:${trailGeneration}:${world.source}:${world.presentationRevision ?? 0}`,
+        enabled: world.mode === 'flight' && site.getSettings().trail,
+      });
       sun.position.copy(world.position).add(presentationView.sunOffset);
       sun.target.position.copy(world.position);
       mapWrap.hidden = world.mode !== 'flight' || world.source !== 'demo';
@@ -883,6 +901,12 @@ function animate() {
       );
     aircraft.position.copy(visual.position);
     aircraft.quaternion.copy(visual.quaternion);
+    flightTrail.update({
+      time: visual.time,
+      position: visual.position,
+      generation: `${selectedId}:${selectionRevision}:${trailGeneration}:${ev50External.active ? 'unified' : simulation.source}`,
+      enabled: flight.mode === 'flight' && site.getSettings().trail && (!simulated || !!frame),
+    });
     for (const r of rotors) {
       let power = r.lift ? flight.lift : flight.cruise,
         raw = r.lift ? flight.liftAngle : flight.cruiseAngle;
@@ -1079,7 +1103,7 @@ function animate() {
   document.body.dataset.drawCalls = String(renderer.info.render.calls);
   document.body.dataset.triangles = String(renderer.info.render.triangles);
 }
-function syncTranswingHud(instance: AircraftInstance) {
+function syncSkyTransHud(instance: AircraftInstance) {
   const state = instance.snapshot();
   const playback = playbackPresentation(state);
   $('#state').textContent = state.label;
@@ -1124,7 +1148,7 @@ function syncTranswingHud(instance: AircraftInstance) {
   $('.timeline-head span').textContent = playback.timelineLabel;
   $('.phase-labels').style.visibility = 'hidden';
   document.body.dataset.state = state.state;
-  document.body.dataset.source = 'transwing';
+  document.body.dataset.source = 'skytrans';
 }
 function configurePlaybackRates(rates: readonly number[], selected: number) {
   const select = $<HTMLSelectElement>('#playback-speed');
@@ -1148,13 +1172,13 @@ const cameraSelect = $<HTMLSelectElement>('#camera');
 function configureAircraftShell(id: AircraftId) {
   const descriptor = aircraftDescriptor(id);
   hangarSelect.value = id;
-  $('#vertical-speed-metric').hidden = id !== 'transwing';
+  $('#vertical-speed-metric').hidden = id !== 'skytrans';
   $('#speed-label').textContent = '飞行速度';
   $('#aircraft-brand').textContent = descriptor.name;
-  $('#aircraft-headline').textContent = id === 'ev50' ? '跨越山海' : '看见形态转换';
+  $('#aircraft-headline').textContent = id === 'ev50' ? '跨越山海' : 'Skytrans';
   $('#summary').textContent = descriptor.description;
   canvas.setAttribute('aria-label', `${descriptor.name} 三维展示，可用鼠标或触控观察`);
-  document.title = `${descriptor.name} — 飞行机库`;
+  document.title = `SkyCaptain · ${descriptor.name} — 交互飞行机库`;
   document.body.dataset.aircraft = id;
   cameraSelect.replaceChildren(
     ...descriptor.cameras.map(([value, text]) => {
@@ -1189,17 +1213,17 @@ function createSelection() {
   return createAircraftSelection<AircraftInstance>({
     async load(id, signal) {
       if (id === 'ev50') return loadEv50(signal);
-      const module = await import('./aircraft/transwing/index');
+      const module = await import('./aircraft/skytrans/index');
       signal.throwIfAborted();
       const response = await fetch(assetUrl('flight.json'), { signal });
       if (!response.ok) throw new Error('共享航线数据读取失败');
       const data = await response.json();
       signal.throwIfAborted();
-      return module.createTranswing(
+      return module.createSkyTrans(
         {
           flightFrames: data.frames as Frame[],
           setSceneMode,
-          clearTrail: () => site.clearTrail(),
+          clearTrail: () => clearFlightTrail(),
           scene,
           renderer,
           canvas,
@@ -1226,7 +1250,7 @@ function createSelection() {
       simulation.reset();
       stopHttpBridge?.();
       stopHttpBridge = undefined;
-      site.clearTrail();
+      clearFlightTrail();
       rotorAngles.clear();
       presentationView.suspend();
       aircraftPanel.replaceChildren();
@@ -1282,7 +1306,7 @@ function createSelection() {
       instance.setQuality($<HTMLSelectElement>('#quality').value as AircraftQuality);
       instance.resize();
       if (id === 'ev50') stopHttpBridge = startHttpBridge(api);
-      else syncTranswingHud(instance);
+      else syncSkyTransHud(instance);
     },
     onError(_id, error) {
       ready = false;
@@ -1307,11 +1331,7 @@ function unifiedCapabilities(): AircraftControlCapabilities {
     'transport.loop',
     ...(selectedId === 'ev50'
       ? ['ev50.motors' as const]
-      : [
-          'transwing.mechanism' as const,
-          'transwing.motors' as const,
-          'transwing.surfaces' as const,
-        ]),
+      : ['skytrans.mechanism' as const, 'skytrans.motors' as const, 'skytrans.surfaces' as const]),
   ];
   return {
     aircraft: selectedId,
@@ -1327,12 +1347,12 @@ function unifiedCapabilities(): AircraftControlCapabilities {
     },
     notes:
       selectedId === 'ev50'
-        ? ['Eleven rotors, grouped lift/cruise power control; no Transwing motor names']
+        ? ['Eleven rotors, grouped lift/cruise power control; no SkyTrans motor names']
         : ['Four named motors; six independent surfaces; unchanged native mechanism rig'],
   };
 }
 function normalizedState(): AdapterAircraftState {
-  if (selectedId === 'transwing') return selection.current!.normalizedState!();
+  if (selectedId === 'skytrans') return selection.current!.normalizedState!();
   const external = ev50External.snapshot();
   const state = status();
   const frame = external ?? simulation.frame;
@@ -1368,14 +1388,17 @@ function normalizedState(): AdapterAircraftState {
   };
 }
 function applyUnifiedCommand(command: AircraftControlCommand) {
-  if (selectedId === 'transwing') {
+  if (selectedId === 'skytrans') {
     if (!selection.current?.applyControl)
-      throw new Error('Transwing control adapter is unavailable');
+      throw new Error('SkyTrans control adapter is unavailable');
     selection.current.applyControl(command);
+    if (command.operation === 'transport.seek' || command.operation === 'transport.reset')
+      clearFlightTrail(command.operation);
     return;
   }
   if (ev50External.active) {
     ev50External.apply(command);
+    if (command.operation === 'transport.reset') clearFlightTrail(command.operation);
     return;
   }
   switch (command.operation) {
@@ -1387,12 +1410,12 @@ function applyUnifiedCommand(command: AircraftControlCommand) {
       flight.pause();
       break;
     case 'transport.reset':
-      site.clearTrail();
+      clearFlightTrail();
       flight.pause();
       flight.restart();
       break;
     case 'transport.seek':
-      site.clearTrail();
+      clearFlightTrail();
       flight.seek(command.payload.position);
       break;
     case 'transport.speed':
@@ -1427,8 +1450,9 @@ function initializeUnifiedControl() {
       getCapabilities: unifiedCapabilities,
       apply: applyUnifiedCommand,
       leaseChanged(lease, reason) {
-        if (selectedId === 'transwing') {
+        if (selectedId === 'skytrans') {
           selection.current?.setControlLease?.(lease, reason);
+          clearFlightTrail('control-lease');
           return;
         }
         if (!ready) return;
@@ -1436,7 +1460,7 @@ function initializeUnifiedControl() {
           ev50External.acquire(flight);
           flight.mode = 'flight';
           setSceneMode('flight');
-          site.clearTrail();
+          clearFlightTrail();
         } else if (!lease) {
           const hadExternal = ev50External.active;
           ev50External.release();
@@ -1502,6 +1526,7 @@ window.addEventListener('pagehide', () => {
   simulationTools.deactivate();
   simulation.disconnect();
   stopHttpBridge?.();
+  flightTrail.dispose();
   renderer.setAnimationLoop(null);
 });
 window.addEventListener('pageshow', (event) => {
@@ -1513,6 +1538,8 @@ window.addEventListener('pageshow', (event) => {
     return;
   }
   selection.dispose();
+  flightTrail.dispose();
+  flightTrail = new FlightTrail(scene, { surfaceHeight: terrain.surfaceHeight });
   selection = createSelection();
   historyRestores++;
   quality($<HTMLSelectElement>('#quality').value);
@@ -1538,8 +1565,9 @@ Object.assign(window, {
       aircraft: selection.current?.describe(),
     }),
     select: (id: unknown) => {
-      if (!isAircraftId(id)) return Promise.reject(new Error('Unknown aircraft'));
-      return selectAircraft(id);
+      const canonicalId = normalizeAircraftId(id);
+      if (!canonicalId) return Promise.reject(new Error('Unknown aircraft'));
+      return selectAircraft(canonicalId);
     },
   }),
 });
@@ -1557,6 +1585,7 @@ Object.defineProperty(window, 'hangarDiagnostics', {
     geometries: renderer.info.memory.geometries,
     textures: renderer.info.memory.textures,
     drawCalls: renderer.info.render.calls,
+    triangles: renderer.info.render.triangles,
     camera: activeCamera.type,
     sceneChildren: scene.children.length,
     scene: {
@@ -1572,6 +1601,8 @@ Object.defineProperty(window, 'hangarDiagnostics', {
     aircraft: selection.current?.describe(),
     control: unifiedGateway?.getState(),
     localBridge: unifiedBridge?.describe(),
+    trail: flightTrail.diagnostics,
+    landscape: terrain.diagnostics,
   }),
 });
 initializeUnifiedControl();
@@ -1586,6 +1617,8 @@ Object.defineProperty(window, 'ev50Diagnostics', {
     simulation: simulation.state(),
     rig: rig?.describe(),
     scene: site.describe(),
+    trail: flightTrail.diagnostics,
+    landscape: terrain.diagnostics,
     time: flight?.time,
     duration: flight?.duration,
     route: flight?.route,

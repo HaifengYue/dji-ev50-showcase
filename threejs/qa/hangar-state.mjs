@@ -73,11 +73,11 @@ export async function testHangarState({ load, passed }) {
     assert.equal(session.frame, null);
     passed('EV50 reset closes transport and rejects an already-queued old socket callback');
 
-    const { SimulationRuntime } = await load('aircraft/transwing/core/simulation.ts');
-    const { INITIAL_EXPERIENCE } = await load('aircraft/transwing/core/experience.ts');
-    const { NEUTRAL_DETAIL_POSE } = await load('aircraft/transwing/core/details.ts');
-    const { prepareManualInput } = await load('aircraft/transwing/localControl.ts');
-    const { SURFACE_IDS } = await load('aircraft/transwing/core/surfaces.ts');
+    const { SimulationRuntime } = await load('aircraft/skytrans/core/simulation.ts');
+    const { INITIAL_EXPERIENCE } = await load('aircraft/skytrans/core/experience.ts');
+    const { NEUTRAL_DETAIL_POSE } = await load('aircraft/skytrans/core/details.ts');
+    const { prepareManualInput } = await load('aircraft/skytrans/localControl.ts');
+    const { SURFACE_IDS } = await load('aircraft/skytrans/core/surfaces.ts');
     const runtime = new SimulationRuntime();
     const otherRuntime = new SimulationRuntime();
     runtime.setReady(true);
@@ -106,7 +106,7 @@ export async function testHangarState({ load, passed }) {
       assert.equal(manual.state[key], detailState[key]);
     assert.deepEqual(detailState, beforeDetail);
     passed(
-      'entering Transwing motor control neutralizes detail actuators without moving the camera',
+      'entering SkyTrans motor control neutralizes detail actuators without moving the camera',
     );
 
     const independent = prepareManualInput(detailState, runtime.getSnapshot(), {
@@ -132,7 +132,7 @@ export async function testHangarState({ load, passed }) {
     assert.equal(otherRuntime.getSnapshot().ready, true);
     otherRuntime.dispose();
     passed(
-      'Transwing surfaces remain independent and separate runtime instances share no mutable state',
+      'SkyTrans surfaces remain independent and separate runtime instances share no mutable state',
     );
 
     const elements = new Map();

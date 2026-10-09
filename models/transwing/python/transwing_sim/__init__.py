@@ -1,7 +1,8 @@
-"""Transwing 纯本地视景仿真 SDK，不是飞行控制接口。"""
-from .protocol import MOTOR_IDS, PROTOCOL, SURFACE_IDS, ProtocolError
-from .client import Client, RemoteError, ApplicationTimeout
-
-__all__ = ["Client", "RemoteError", "ApplicationTimeout", "ProtocolError", "PROTOCOL", "MOTOR_IDS", "SURFACE_IDS"]
-from .recording import Recording, snapshot_to_patch
-__all__ += ["Recording", "snapshot_to_patch"]
+"""Compatibility for the original PYTHONPATH=models/transwing/python."""
+from pathlib import Path
+import sys
+_root = Path(__file__).resolve().parents[3] / "skytrans" / "python"
+sys.path.insert(0, str(_root))
+__path__ = [str(_root / "transwing_sim")]
+from skytrans_sim import *
+from skytrans_sim import __all__

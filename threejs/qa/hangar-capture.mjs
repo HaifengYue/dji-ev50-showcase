@@ -112,23 +112,23 @@ export async function testHangarCapture({ load, passed }) {
     ui.afterRender();
     assert.equal(captures.length, 1);
     ui.suspend();
-    aircraftName = 'TRANSWING P4';
+    aircraftName = 'SKYTRANS P4';
     ui.setReady();
-    element('capture-status').textContent = 'Current Transwing status';
+    element('capture-status').textContent = 'Current SkyTrans status';
     captures.shift()(new Blob(['old synthetic PNG'], { type: 'image/png' }));
     assert.equal(
       downloads.length,
       0,
       'old PNG callback must not publish into another aircraft selection',
     );
-    assert.equal(element('capture-status').textContent, 'Current Transwing status');
+    assert.equal(element('capture-status').textContent, 'Current SkyTrans status');
     passed('late screenshot callback cannot publish or overwrite status after an aircraft switch');
 
     element('save-image').onclick();
     ui.afterRender();
     captures.shift()(new Blob(['current synthetic PNG'], { type: 'image/png' }));
     assert.equal(downloads.length, 1);
-    assert.ok(element('capture-download').download.startsWith('TRANSWING P4_'));
+    assert.ok(element('capture-download').download.startsWith('SKYTRANS P4_'));
     passed('new selection can immediately save its own correctly labeled screenshot');
 
     element('record-video').onclick();

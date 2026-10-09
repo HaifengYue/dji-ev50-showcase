@@ -1,5 +1,13 @@
 # EV50 使用说明
 
+## SkyCaptain 双机型入口
+
+顶部机库可切换 EV50 与 SkyTrans；`?aircraft=skytrans` 直达 SkyTrans，旧 `?aircraft=transwing` 会规范到同一机型。SkyTrans 的主标题按当前展示设计为 “Skytrans”，机库、API 和 SDK 的规范产品名为 “SkyTrans”。
+
+产品模式默认自由观察；进入飞行演示自动播放并跟随，再选自由观察可保持手动机位。机构控制不会自动抢占视角。SkyTrans 使用独立 316 秒演示时间表，0.1× 至 4× 播放倍率只改变播放快慢。外控、录制和机型切换的具体限制见 [README](../README.md)、[统一接口](UNIFIED_CONTROL.md) 和 [品牌兼容说明](BRAND-MIGRATION.md)。
+
+以下保留 EV50 原有操作说明。
+
 ## 页面模式
 
 “产品展示”用于自由观察机体、自动环绕、截图与录制；“飞行演示”显示连续河谷、山地、村镇与飞行轨迹。右侧分组默认收起，按需展开“视景仿真”或“场景与传感器”。

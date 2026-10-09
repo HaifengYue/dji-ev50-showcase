@@ -1,5 +1,8 @@
-"""不安装依赖也可直接 python models/transwing/python/run_server.py 启动本地服务。"""
-from transwing_sim.server import main
+"""Compatibility launcher for the renamed SkyTrans local visual bridge."""
+from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "skytrans" / "python"))
+from skytrans_sim.server import main
 
 if __name__ == "__main__":
     main()

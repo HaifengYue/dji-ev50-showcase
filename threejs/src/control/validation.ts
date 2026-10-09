@@ -13,9 +13,9 @@ export const COMMON_OPERATIONS: readonly AircraftOperation[] = [
 ];
 export const MODEL_OPERATIONS: readonly AircraftOperation[] = [
   'ev50.motors',
-  'transwing.mechanism',
-  'transwing.motors',
-  'transwing.surfaces',
+  'skytrans.mechanism',
+  'skytrans.motors',
+  'skytrans.surfaces',
 ];
 const MOTOR_IDS = ['L_Front', 'R_Front', 'L_Rear', 'R_Rear'];
 const SURFACE_IDS = ['L_Inboard', 'R_Inboard', 'L_Outboard', 'R_Outboard', 'Tail_L', 'Tail_R'];
@@ -85,18 +85,18 @@ export function validateAircraftCommand(
       finite(p.lift, 0, 1, 'lift');
       finite(p.cruise, 0, 1, 'cruise');
       break;
-    case 'transwing.mechanism':
+    case 'skytrans.mechanism':
       onlyKeys(p, ['wingTilt', 'hatchDeg', 'surfaces'], operation);
       nonempty(p, operation);
       if ('wingTilt' in p) finite(p.wingTilt, 0, 1, 'wingTilt');
       if ('hatchDeg' in p) finite(p.hatchDeg, 0, 55, 'hatchDeg');
       if ('surfaces' in p) surfaces(p.surfaces);
       break;
-    case 'transwing.surfaces':
+    case 'skytrans.surfaces':
       onlyKeys(p, ['surfaces'], operation);
       surfaces(p.surfaces);
       break;
-    case 'transwing.motors': {
+    case 'skytrans.motors': {
       onlyKeys(p, ['motors'], operation);
       const motors = plainRecord(p.motors, 'motors');
       onlyKeys(motors, MOTOR_IDS, 'motors');

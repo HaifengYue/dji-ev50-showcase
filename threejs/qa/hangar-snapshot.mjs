@@ -12,14 +12,14 @@ function freeze(value) {
 }
 
 export async function testHangarSnapshot({ load, passed }) {
-  const { buildTranswingSnapshot } = await load('aircraft/transwing/snapshot.ts');
-  const { SimulationRuntime } = await load('aircraft/transwing/core/simulation.ts');
+  const { buildSkyTransSnapshot } = await load('aircraft/skytrans/snapshot.ts');
+  const { SimulationRuntime } = await load('aircraft/skytrans/core/simulation.ts');
   const { INITIAL_EXPERIENCE, experienceReducer } = await load(
-    'aircraft/transwing/core/experience.ts',
+    'aircraft/skytrans/core/experience.ts',
   );
   const { playbackPresentation } = await load('aircraft/playbackPresentation.ts');
   const { WORLD_FLIGHT_DURATION: TOTAL, worldFlightPhase } = await load(
-    'aircraft/transwing/worldFlight.ts',
+    'aircraft/skytrans/worldFlight.ts',
   );
   const runtime = new SimulationRuntime();
   runtime.setReady(true);
@@ -40,7 +40,7 @@ export async function testHangarSnapshot({ load, passed }) {
   };
   const inputs = freeze({ base, experience, pose });
 
-  const product = buildTranswingSnapshot(inputs.base, inputs.pose, inputs.experience, 'product');
+  const product = buildSkyTransSnapshot(inputs.base, inputs.pose, inputs.experience, 'product');
   assert.equal(product.ready, true);
   assert.equal(product.mode, 'product');
   assert.equal(product.control, 'local');
@@ -61,16 +61,16 @@ export async function testHangarSnapshot({ load, passed }) {
   assert.equal(product.speedMps, 0);
   assert.equal(product.altitude, 7.25);
   assert.equal(product.timelineLabel, '整翼机构进度');
-  passed('Transwing local mechanism snapshot uses rendered tilt progress and local playback state');
+  passed('SkyTrans local mechanism snapshot uses rendered tilt progress and local playback state');
 
-  const flight = buildTranswingSnapshot(inputs.base, inputs.pose, inputs.experience, 'flight', {
+  const flight = buildSkyTransSnapshot(inputs.base, inputs.pose, inputs.experience, 'flight', {
     rate: 4,
     loop: false,
   });
   const sample = worldFlightPhase(inputs.experience.time);
   assert.equal(flight.playbackRate, 4);
   assert.equal(flight.loop, false);
-  const defaultFlight = buildTranswingSnapshot(
+  const defaultFlight = buildSkyTransSnapshot(
     inputs.base,
     inputs.pose,
     inputs.experience,
@@ -88,9 +88,9 @@ export async function testHangarSnapshot({ load, passed }) {
   assert.equal(flight.label, sample.label);
   assert.equal(flight.speedMps, 0);
   assert.equal(flight.altitude, inputs.pose.positionM[1]);
-  assert.equal(flight.timelineLabel, 'Transwing 飞行演示');
+  assert.equal(flight.timelineLabel, 'SkyTrans 飞行演示');
   passed(
-    'Transwing local flight snapshot uses flight time and phase rather than replay or mechanism units',
+    'SkyTrans local flight snapshot uses flight time and phase rather than replay or mechanism units',
   );
 
   const replayRuntime = freeze({
@@ -102,7 +102,7 @@ export async function testHangarSnapshot({ load, passed }) {
     replayRate: 0.1,
   });
   const replayPose = freeze({ ...structuredClone(pose), time: { ...pose.time, paused: true } });
-  const replay = buildTranswingSnapshot(replayRuntime, replayPose, inputs.experience, 'product');
+  const replay = buildSkyTransSnapshot(replayRuntime, replayPose, inputs.experience, 'product');
   assert.equal(replay.playbackRate, 0.1);
   assert.equal(replay.loop, false);
   assert.equal(replay.control, 'replay');
@@ -118,7 +118,7 @@ export async function testHangarSnapshot({ load, passed }) {
   assert.equal(replay.state, 'replay');
   assert.equal(replay.speedMps, 0);
   assert.equal(replay.timelineLabel, 'JSON 回放帧');
-  const pausedReplay = buildTranswingSnapshot(
+  const pausedReplay = buildSkyTransSnapshot(
     freeze({ ...replayRuntime, replayPlaying: false }),
     inputs.pose,
     inputs.experience,
@@ -132,7 +132,7 @@ export async function testHangarSnapshot({ load, passed }) {
   assert.equal(pausedReplay.time, 7);
   assert.equal(pausedReplay.duration, 11);
   assert.equal(pausedReplay.timeUnit, 'frames');
-  const emptyReplay = buildTranswingSnapshot(
+  const emptyReplay = buildSkyTransSnapshot(
     freeze({ ...replayRuntime, replayCount: 0, replayIndex: 0 }),
     replayPose,
     inputs.experience,
@@ -140,11 +140,11 @@ export async function testHangarSnapshot({ load, passed }) {
   );
   assert.equal(emptyReplay.duration, 0);
   passed(
-    'Transwing replay snapshot exposes frame indexes and replay play state without Python control lock',
+    'SkyTrans replay snapshot exposes frame indexes and replay play state without Python control lock',
   );
 
   const externalRuntime = freeze({ ...structuredClone(base), control: 'external', ready: false });
-  const external = buildTranswingSnapshot(
+  const external = buildSkyTransSnapshot(
     externalRuntime,
     inputs.pose,
     inputs.experience,
@@ -162,7 +162,7 @@ export async function testHangarSnapshot({ load, passed }) {
   assert.equal(external.speedMps, 0);
   assert.equal(external.timelineLabel, 'Python 仿真时间');
   assert.equal(external.duration, 0, 'live external time has no finite seek span');
-  const pausedExternal = buildTranswingSnapshot(
+  const pausedExternal = buildSkyTransSnapshot(
     externalRuntime,
     replayPose,
     inputs.experience,
@@ -171,7 +171,7 @@ export async function testHangarSnapshot({ load, passed }) {
   assert.equal(pausedExternal.playing, false);
   assert.equal(pausedExternal.time, 987.5);
   assert.equal(pausedExternal.externallyControlled, true);
-  passed('Transwing Python snapshot uses external seconds/paused state and explicit control lock');
+  passed('SkyTrans Python snapshot uses external seconds/paused state and explicit control lock');
 
   const unlocked = {
     disableMode: false,
@@ -195,7 +195,7 @@ export async function testHangarSnapshot({ load, passed }) {
   assert.deepEqual(flightHud, {
     ...unlocked,
     timeLabel: `26.5 / ${TOTAL.toFixed(1)} s`,
-    timelineLabel: 'Transwing 飞行演示',
+    timelineLabel: 'SkyTrans 飞行演示',
     step: '0.01',
     rateOptions: [0.1, 0.25, 0.5, 1, 1.5, 2, 4],
     rate: 4,
@@ -228,12 +228,12 @@ export async function testHangarSnapshot({ load, passed }) {
 
   // Exercise the production adapter's actual transport methods without instantiating WebGL/DOM.
   // TypeScript AST extraction is restricted to these three methods; their bodies are unchanged.
-  const source = fs.readFileSync('src/aircraft/transwing/index.ts', 'utf8');
+  const source = fs.readFileSync('src/aircraft/skytrans/index.ts', 'utf8');
   const parsed = ts.createSourceFile('index.ts', source, ts.ScriptTarget.ES2022, true);
   const adapter = parsed.statements.find(
-    (node) => ts.isClassDeclaration(node) && node.name?.text === 'TranswingInstance',
+    (node) => ts.isClassDeclaration(node) && node.name?.text === 'SkyTransInstance',
   );
-  assert.ok(adapter, 'Transwing adapter class must exist');
+  assert.ok(adapter, 'SkyTrans adapter class must exist');
   const methods = ['seek', 'setSpeed', 'setLoop'].map((name) => {
     const method = adapter.members.find(
       (node) => ts.isMethodDeclaration(node) && node.name.getText(parsed) === name,
@@ -316,6 +316,6 @@ export async function testHangarSnapshot({ load, passed }) {
   transport.seek(Infinity);
   assert.equal(actions.length, 0);
   passed(
-    'production Transwing transport methods round-trip percentage seeks and respect replay/Python ownership',
+    'production SkyTrans transport methods round-trip percentage seeks and respect replay/Python ownership',
   );
 }

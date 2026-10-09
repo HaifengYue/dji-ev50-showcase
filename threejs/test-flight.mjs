@@ -49,6 +49,70 @@ try {
         assert(mountainHeight(a, r, k) <= 127);
         vertices++;
       }
+  // Frozen b6736a9 legacy flight.command guard. New scenery is not a control collision map.
+  const originalObstacles = [
+    { x: 10, z: -10, radius: 1.8, height: 4.9 },
+    ...[-1, 1].flatMap((x) =>
+      [-1, 1].map((z) => ({ x: x * 7.2, z: z * 7.2, radius: 0.25, height: 0.65 })),
+    ),
+  ];
+  const baselineManualPose = (position) => {
+    const [x, y, z] = position;
+    const r = Math.hypot(x, z);
+    let ceiling = r < 18 ? 0 : r >= 217 && r <= 1450 ? 127 : 10;
+    for (const obstacle of originalObstacles)
+      if (Math.hypot(x - obstacle.x, z - obstacle.z) <= obstacle.radius)
+        ceiling = Math.max(ceiling, obstacle.height);
+    return [x, Math.max(y, ceiling + (r < 6 ? 0 : AIRCRAFT_RADIUS)), z];
+  };
+  let legacySamples = 0;
+  for (const start of [
+    [0, 0, 0],
+    [5.9, -2, 0],
+    [6, 0, 0],
+    [17.99, 5, 0],
+    [18, 5, 0],
+    [100, 15, 0],
+    [216.9, 20, 0],
+    [217, 20, 0],
+    [1450, 20, 0],
+    [1450.1, 20, 0],
+    [2000, 20, 0],
+    [-2000, 20, 0],
+    [100, 200, -100],
+    [10, 0, -10],
+    [7.2, 0, 7.2],
+  ]) {
+    const manual = new FlightController(frames);
+    manual.mode = 'flight';
+    manual.applyCommand({ type: 'position', position: [...start] });
+    let expected = baselineManualPose(start);
+    assert.deepEqual(manual.position.toArray(), expected, `legacy position ${start}`);
+    legacySamples++;
+    for (const velocity of [
+      [2, -3, 1],
+      [-15, 4, 2],
+      [0, -20, 0],
+    ]) {
+      manual.applyCommand({ type: 'velocity', velocity: [...velocity] });
+      for (const dt of [0, 0.1, 0.5, 1, 2]) {
+        expected = baselineManualPose(expected.map((value, axis) => value + velocity[axis] * dt));
+        manual.tick(dt);
+        const actual = manual.position.toArray();
+        actual.forEach((value, axis) =>
+          assert(
+            Math.abs(value - expected[axis]) < 1e-9,
+            `legacy velocity ${start}/${velocity}/${dt}`,
+          ),
+        );
+        legacySamples++;
+      }
+    }
+  }
+  console.log(
+    `PASS legacy EV50 manual position/velocity: ${legacySamples} samples match the b6736a9 guard without scenery-driven pose changes`,
+  );
+
   const report = [];
   for (const route of Object.keys(routes)) {
     c.setRoute(route);

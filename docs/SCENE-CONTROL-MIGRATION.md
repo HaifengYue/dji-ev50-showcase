@@ -1,3 +1,5 @@
+> Historical integration record: Transwing is now named SkyTrans in the current application. Historical names, commits and measurements below are retained as evidence. See [brand migration](BRAND-MIGRATION.md) for the current contract.
+
 # Shared scene and control migration
 
 Baseline: integrated branch `main-copy-transwing`, verified commit `ec6852a4e145258c429888c10b1609079b07eef6`. The accepted private preview remains version 1 until the next verified build is explicitly published. The original EV50 and standalone Transwing sources and assets are unchanged.

@@ -1,0 +1,535 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SkyTrans视景仿真命令和记录",
+  "description": "结构约束；额外状态语义由protocol.py与前端生产validator执行，包括有限数、四元数模长、合并补丁后拆解安全约束、time累计上限、seq连续性与UTF-8正文1MiB限制。",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/command"
+    },
+    {
+      "$ref": "#/$defs/recording"
+    }
+  ],
+  "$defs": {
+    "motorPatch": {
+      "type": "object",
+      "properties": {
+        "targetRpm": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 12000
+        },
+        "enabled": {
+          "type": "boolean"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "statePatch": {
+      "type": "object",
+      "properties": {
+        "positionM": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "minimum": -100000,
+            "maximum": 100000
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "attitude": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "minimum": -1.001,
+            "maximum": 1.001
+          },
+          "minItems": 4,
+          "maxItems": 4,
+          "description": "[x,y,z,w]，额外语义校验要求单位模长容差0.001"
+        },
+        "motors": {
+          "type": "object",
+          "properties": {
+            "L_Front": {
+              "$ref": "#/$defs/motorPatch"
+            },
+            "R_Front": {
+              "$ref": "#/$defs/motorPatch"
+            },
+            "L_Rear": {
+              "$ref": "#/$defs/motorPatch"
+            },
+            "R_Rear": {
+              "$ref": "#/$defs/motorPatch"
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        },
+        "wingTilt": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "surfaces": {
+          "type": "object",
+          "properties": {
+            "L_Inboard": {
+              "type": "number",
+              "minimum": -12,
+              "maximum": 12
+            },
+            "R_Inboard": {
+              "type": "number",
+              "minimum": -12,
+              "maximum": 12
+            },
+            "L_Outboard": {
+              "type": "number",
+              "minimum": -12,
+              "maximum": 12
+            },
+            "R_Outboard": {
+              "type": "number",
+              "minimum": -12,
+              "maximum": 12
+            },
+            "Tail_L": {
+              "type": "number",
+              "minimum": -12,
+              "maximum": 12
+            },
+            "Tail_R": {
+              "type": "number",
+              "minimum": -12,
+              "maximum": 12
+            },
+            "inboard": {
+              "type": "number",
+              "minimum": -12,
+              "maximum": 12
+            },
+            "outboard": {
+              "type": "number",
+              "minimum": -12,
+              "maximum": 12
+            },
+            "tail": {
+              "type": "number",
+              "minimum": -12,
+              "maximum": 12
+            },
+            "inboard_L": {
+              "type": "number",
+              "minimum": -12,
+              "maximum": 12
+            },
+            "inboard_R": {
+              "type": "number",
+              "minimum": -12,
+              "maximum": 12
+            },
+            "outboard_L": {
+              "type": "number",
+              "minimum": -12,
+              "maximum": 12
+            },
+            "outboard_R": {
+              "type": "number",
+              "minimum": -12,
+              "maximum": 12
+            },
+            "tail_L": {
+              "type": "number",
+              "minimum": -12,
+              "maximum": 12
+            },
+            "tail_R": {
+              "type": "number",
+              "minimum": -12,
+              "maximum": 12
+            }
+          },
+          "required": [],
+          "additionalProperties": false,
+          "description": "独立舵面补丁：单项覆盖分组，既有规范ID覆盖UI别名；未指定项保持。快照仍使用六个规范ID。"
+        },
+        "hatchDeg": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 55
+        },
+        "display": {
+          "type": "object",
+          "properties": {
+            "wireframe": {
+              "type": "boolean"
+            },
+            "exploded": {
+              "type": "boolean"
+            },
+            "environment": {
+              "enum": [
+                "hangar",
+                "sky"
+              ]
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        },
+        "time": {
+          "type": "object",
+          "properties": {
+            "paused": {
+              "type": "boolean"
+            },
+            "mode": {
+              "const": "deterministic"
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "command": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "protocol": {
+              "const": "transwing.sim.v1"
+            },
+            "sessionId": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_-]{1,100}$"
+            },
+            "seq": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 9007199254740991
+            },
+            "op": {
+              "const": "set"
+            },
+            "payload": {
+              "$ref": "#/$defs/statePatch"
+            }
+          },
+          "required": [
+            "protocol",
+            "sessionId",
+            "seq",
+            "op",
+            "payload"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "protocol": {
+              "const": "transwing.sim.v1"
+            },
+            "sessionId": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_-]{1,100}$"
+            },
+            "seq": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 9007199254740991
+            },
+            "op": {
+              "const": "step"
+            },
+            "payload": {
+              "type": "object",
+              "properties": {
+                "dt": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 60
+                }
+              },
+              "required": [
+                "dt"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "protocol",
+            "sessionId",
+            "seq",
+            "op",
+            "payload"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "protocol": {
+              "const": "transwing.sim.v1"
+            },
+            "sessionId": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_-]{1,100}$"
+            },
+            "seq": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 9007199254740991
+            },
+            "op": {
+              "const": "seek"
+            },
+            "payload": {
+              "type": "object",
+              "properties": {
+                "seconds": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 86400
+                },
+                "state": {
+                  "$ref": "#/$defs/statePatch"
+                }
+              },
+              "required": [
+                "seconds"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "protocol",
+            "sessionId",
+            "seq",
+            "op",
+            "payload"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "protocol": {
+              "const": "transwing.sim.v1"
+            },
+            "sessionId": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_-]{1,100}$"
+            },
+            "seq": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 9007199254740991
+            },
+            "op": {
+              "const": "pause"
+            },
+            "payload": {
+              "type": "object",
+              "properties": {
+                "paused": {
+                  "type": "boolean"
+                }
+              },
+              "required": [],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "protocol",
+            "sessionId",
+            "seq",
+            "op",
+            "payload"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "protocol": {
+              "const": "transwing.sim.v1"
+            },
+            "sessionId": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_-]{1,100}$"
+            },
+            "seq": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 9007199254740991
+            },
+            "op": {
+              "const": "reset"
+            },
+            "payload": {
+              "type": "object",
+              "properties": {},
+              "required": [],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "protocol",
+            "sessionId",
+            "seq",
+            "op",
+            "payload"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "recordingCommand": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "const": "set"
+            },
+            "payload": {
+              "$ref": "#/$defs/statePatch"
+            }
+          },
+          "required": [
+            "op",
+            "payload"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "const": "step"
+            },
+            "payload": {
+              "type": "object",
+              "properties": {
+                "dt": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 60
+                }
+              },
+              "required": [
+                "dt"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "op",
+            "payload"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "const": "seek"
+            },
+            "payload": {
+              "type": "object",
+              "properties": {
+                "seconds": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 86400
+                },
+                "state": {
+                  "$ref": "#/$defs/statePatch"
+                }
+              },
+              "required": [
+                "seconds"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "op",
+            "payload"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "const": "pause"
+            },
+            "payload": {
+              "type": "object",
+              "properties": {
+                "paused": {
+                  "type": "boolean"
+                }
+              },
+              "required": [],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "op",
+            "payload"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "op": {
+              "const": "reset"
+            },
+            "payload": {
+              "type": "object",
+              "properties": {},
+              "required": [],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "op",
+            "payload"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "recording": {
+      "type": "object",
+      "properties": {
+        "protocol": {
+          "const": "transwing.sim.v1"
+        },
+        "commands": {
+          "type": "array",
+          "maxItems": 10000,
+          "items": {
+            "$ref": "#/$defs/recordingCommand"
+          }
+        }
+      },
+      "required": [
+        "protocol",
+        "commands"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

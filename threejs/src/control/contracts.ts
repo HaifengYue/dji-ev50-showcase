@@ -1,6 +1,7 @@
 /** Browser control contract. HTTP/WebSocket exposure is explicitly not implied. */
 export const CONTROL_PROTOCOL = 'hangar.control.v1' as const;
-export type AircraftId = 'ev50' | 'transwing';
+import type { AircraftId } from '../aircraft/identity';
+export type { AircraftId } from '../aircraft/identity';
 export type Vector3 = [number, number, number];
 export type Quaternion = [number, number, number, number];
 export type TimeUnit = 'seconds' | 'frames' | 'percent';
@@ -39,14 +40,14 @@ export type AircraftControlCommand =
   | { operation: 'clock.step'; payload: { dt: number } }
   | { operation: 'ev50.motors'; payload: { lift: number; cruise: number } }
   | {
-      operation: 'transwing.mechanism';
+      operation: 'skytrans.mechanism';
       payload: { wingTilt?: number; hatchDeg?: number; surfaces?: Record<string, number> };
     }
   | {
-      operation: 'transwing.motors';
+      operation: 'skytrans.motors';
       payload: { motors: Record<string, { targetRpm?: number; enabled?: boolean }> };
     }
-  | { operation: 'transwing.surfaces'; payload: { surfaces: Record<string, number> } };
+  | { operation: 'skytrans.surfaces'; payload: { surfaces: Record<string, number> } };
 export type AircraftOperation = AircraftControlCommand['operation'];
 export type AircraftControlCapabilities = {
   aircraft: AircraftId;
@@ -71,7 +72,7 @@ export type AdapterAircraftState = {
   model:
     | { aircraft: 'ev50'; rotorCount: 11; rotorsRpm?: number[] }
     | {
-        aircraft: 'transwing';
+        aircraft: 'skytrans';
         rotorCount: 4;
         wingTilt?: number;
         hatchDeg?: number;

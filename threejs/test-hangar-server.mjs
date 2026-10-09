@@ -377,3 +377,111 @@ async function lifecycleReserveRace() {
   }
 }
 await lifecycleReserveRace();
+
+// Legacy spelling cannot create a second mailbox identity or strand a saturated lease.
+const aliases = createHangarServer({ capacity: 1 });
+await new Promise((resolve) => aliases.listen(0, '127.0.0.1', resolve));
+try {
+  const base = `http://127.0.0.1:${aliases.address().port}/api/hangar/v1`;
+  const call = async (route, data) => {
+    const response = await fetch(base + route, {
+      method: data ? 'POST' : 'GET',
+      ...(data
+        ? { headers: { 'content-type': 'application/json' }, body: JSON.stringify(data) }
+        : {}),
+    });
+    return { status: response.status, body: await response.json() };
+  };
+  const lease = {
+    aircraft: 'skytrans',
+    generation: 1,
+    owner: 'alias-client',
+    leaseId: 'single-lease',
+  };
+  await call('/viewer', { viewerId: 'alias-viewer' });
+  await call('/state?viewerId=alias-viewer', { state: { ...lease, commandEpoch: 0, lease } });
+  const old = {
+    ...lease,
+    aircraft: 'transwing',
+    id: 'same',
+    operation: 'transwing.motors',
+    payload: { motors: { L_Front: { targetRpm: 100 } } },
+  };
+  const first = await call('/commands', old);
+  assert.equal(first.status, 202);
+  const duplicate = await call('/commands', {
+    ...old,
+    aircraft: 'skytrans',
+    operation: 'skytrans.motors',
+  });
+  assert.equal(duplicate.status, 202);
+  assert.equal(duplicate.body.data.sequence, first.body.data.sequence);
+  assert.equal(duplicate.body.data.duplicate, true);
+  const changed = await call('/commands', {
+    ...old,
+    payload: { motors: { L_Front: { targetRpm: 101 } } },
+  });
+  assert.equal(changed.status, 409);
+  assert.equal(changed.body.error.code, 'ID_CONFLICT');
+  const release = await call('/commands', {
+    ...lease,
+    aircraft: 'transwing',
+    id: 'legacy-release',
+    operation: 'control.release',
+    payload: {},
+  });
+  assert.equal(release.status, 202, JSON.stringify(release));
+  const queued = await call('/commands?viewerId=alias-viewer&after=0');
+  assert.equal(queued.body.data.commands.length, 2);
+  const complete = async (request, sequence, data = {}) => {
+    const response = {
+      protocol: 'hangar.control.v1',
+      id: request.id,
+      operation: request.operation,
+      ok: true,
+      ack: { status: 'completed' },
+      data,
+    };
+    const result = await call('/results?viewerId=alias-viewer', {
+      id: request.id,
+      epoch: request.epoch ?? 0,
+      sequence,
+      response,
+    });
+    assert.equal(result.status, 200, JSON.stringify(result));
+    return response;
+  };
+  await complete(old, first.body.data.sequence);
+  assert.equal((await call('/results/same')).body.data.response.operation, 'transwing.motors');
+  const releaseRequest = queued.body.data.commands.find(
+    (entry) => entry.request.id === 'legacy-release',
+  ).request;
+  await complete(releaseRequest, release.body.data.sequence);
+  await call('/state?viewerId=alias-viewer', {
+    state: { aircraft: 'skytrans', generation: 1, commandEpoch: 0, lease: null },
+  });
+  const resetRequest = {
+    aircraft: 'transwing',
+    generation: 1,
+    owner: 'alias-client',
+    id: 'alias-reset',
+    operation: 'control.resetSession',
+    payload: { acknowledgeCompletedResults: true },
+  };
+  const resetting = await call('/commands', resetRequest);
+  assert.equal(resetting.status, 202, JSON.stringify(resetting));
+  await complete(resetRequest, resetting.body.data.sequence, { commandEpoch: 1 });
+  const retryReset = await call('/commands', { ...resetRequest, aircraft: 'skytrans' });
+  assert.equal(retryReset.status, 202);
+  assert.equal(retryReset.body.data.duplicate, true);
+  assert.equal(retryReset.body.data.sequence, resetting.body.data.sequence);
+  assert.equal((await call('/health')).body.history.commandEpoch, 1);
+  const stale = await call('/commands', old);
+  assert.equal(stale.status, 409);
+  assert.equal(stale.body.error.code, 'STALE_SESSION');
+  console.log(
+    'PASS HTTP legacy aliases: single identity, immutable first receipt, saturated release, canonical reset retry and stale-epoch rejection',
+  );
+} finally {
+  await new Promise((resolve) => aliases.close(resolve));
+}

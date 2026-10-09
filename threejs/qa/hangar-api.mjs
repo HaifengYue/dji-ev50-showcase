@@ -298,7 +298,7 @@ export async function testHangarApi({ load, passed }) {
       }).ok,
       true,
     );
-    selected = 'transwing';
+    selected = 'skytrans';
     assert.equal(gateway.request({ operation: 'system.health' }).data.ready, false);
     for (const operation of [
       'flight.command',

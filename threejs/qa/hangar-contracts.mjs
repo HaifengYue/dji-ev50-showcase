@@ -75,10 +75,10 @@ export async function testHangarContracts() {
       await load('aircraft/registry.ts');
     assert.deepEqual(
       AIRCRAFT.map((entry) => entry.id),
-      ['ev50', 'transwing'],
+      ['ev50', 'skytrans'],
     );
     assert.equal(new Set(AIRCRAFT.map((entry) => entry.id)).size, AIRCRAFT.length);
-    for (const id of ['ev50', 'transwing']) {
+    for (const id of ['ev50', 'skytrans']) {
       assert.equal(isAircraftId(id), true);
       assert.equal(aircraftFromUrl(new URL(`https://example.test/hangar/?aircraft=${id}`)), id);
       assert.equal(aircraftDescriptor(id).id, id);
@@ -87,12 +87,17 @@ export async function testHangarContracts() {
       assert.equal(isAircraftId(value), false);
     assert.equal(aircraftFromUrl(new URL('https://example.test/hangar/')), 'ev50');
     assert.equal(aircraftFromUrl(new URL('https://example.test/hangar/?aircraft=unknown')), 'ev50');
-    assert.ok(!aircraftDescriptor('transwing').capabilities.includes('ev50-telemetry'));
+    assert.equal(
+      aircraftFromUrl(new URL('https://example.test/hangar/?aircraft=transwing')),
+      'skytrans',
+    );
+    assert.equal(isAircraftId('transwing'), false);
+    assert.ok(!aircraftDescriptor('skytrans').capabilities.includes('ev50-telemetry'));
     assert.ok(aircraftDescriptor('ev50').capabilities.includes('ev50-telemetry'));
     passed('registry has stable IDs, validated URL fallback, isolated capabilities');
 
     const { disposeObjectTree } = await load('aircraft/resources.ts');
-    const { OwnedResources } = await load('aircraft/transwing/resources.ts');
+    const { OwnedResources } = await load('aircraft/skytrans/resources.ts');
     function resourceTree() {
       const geometry = new THREE.BoxGeometry();
       const texture = new THREE.Texture();
@@ -115,25 +120,25 @@ export async function testHangarContracts() {
     assert.equal(tree.root.children.length, 0);
     passed('EV50 object cleanup deduplicates geometry/material/texture and detaches root');
 
-    const transwingTree = resourceTree(),
+    const skytransTree = resourceTree(),
       otherTree = resourceTree();
     const owner = new OwnedResources(),
       otherOwner = new OwnedResources();
-    owner.capture(transwingTree.root);
-    owner.capture(transwingTree.root);
+    owner.capture(skytransTree.root);
+    owner.capture(skytransTree.root);
     otherOwner.capture(otherTree.root);
     owner.dispose();
     owner.dispose();
-    assert.deepEqual(transwingTree.disposals, {
+    assert.deepEqual(skytransTree.disposals, {
       geometry: 1,
       texture: 1,
       material: 1,
       material2: 1,
     });
     assert.deepEqual(otherTree.disposals, { geometry: 0, texture: 0, material: 0, material2: 0 });
-    assert.throws(() => owner.capture(transwingTree.root), /already disposed/);
+    assert.throws(() => owner.capture(skytransTree.root), /already disposed/);
     otherOwner.dispose();
-    passed('Transwing resource owners deduplicate disposal without touching another aircraft');
+    passed('SkyTrans resource owners deduplicate disposal without touching another aircraft');
 
     const abandonedTexture = new THREE.Texture();
     const abandonedMaterial = new THREE.MeshBasicMaterial({ map: abandonedTexture });
@@ -153,22 +158,22 @@ export async function testHangarContracts() {
     await testHangarCapture({ load, passed });
     await testHangarSnapshot({ load, passed });
 
-    const guideOnly = await load('aircraft/transwing/presentation.ts');
-    assert.equal(guideOnly.TranswingPresentation, undefined);
+    const guideOnly = await load('aircraft/skytrans/presentation.ts');
+    assert.equal(guideOnly.SkyTransPresentation, undefined);
     assert.equal(typeof guideOnly.createJointGuide, 'function');
-    const presentationSource = fs.readFileSync('src/aircraft/transwing/presentation.ts', 'utf8');
+    const presentationSource = fs.readFileSync('src/aircraft/skytrans/presentation.ts', 'utf8');
     assert.ok(
       !/PMREMGenerator|GridHelper|DirectionalLight|toneMappingExposure|scene\.background|scene\.environment/.test(
         presentationSource,
       ),
     );
     passed(
-      'Transwing presentation contains only rig guides and cannot replace the shared environment',
+      'SkyTrans presentation contains only rig guides and cannot replace the shared environment',
     );
 
-    const { TranswingCamera } = await load('aircraft/transwing/camera.ts');
+    const { SkyTransCamera } = await load('aircraft/skytrans/camera.ts');
     const { getPresentationFrame, getInspectionFrame } = await load(
-      'aircraft/transwing/core/inspection.ts',
+      'aircraft/skytrans/core/inspection.ts',
     );
     const rootEvents = eventTarget();
     const canvas = {
@@ -183,7 +188,7 @@ export async function testHangarContracts() {
     globalThis.window = { matchMedia: () => ({ matches: reducedMotion }) };
     const host = { canvas, scene: new THREE.Scene(), setCamera: (value) => cameras.push(value) };
     host.scene.fog = new THREE.Fog(0xffffff, 30, 78);
-    const camera = new TranswingCamera(host);
+    const camera = new SkyTransCamera(host);
     const bounds = new THREE.Box3(new THREE.Vector3(-3, -1, -2), new THREE.Vector3(3, 1, 2));
     const presentation = getPresentationFrame(bounds, camera.aspect);
     camera.frame(presentation, false, true);

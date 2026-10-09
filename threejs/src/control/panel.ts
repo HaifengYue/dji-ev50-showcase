@@ -13,7 +13,7 @@ export function controlPanel(gateway: UnifiedControlGateway, bridge: LocalHttpBr
     <button id="control-reset-session" disabled>轮换命令会话</button>
     <output id="control-capacity" class="sim-status"></output>
     <output id="control-status" class="sim-status" role="status"></output>
-    <p class="sim-hint">同一端点服务 EV50 / Transwing。外部控制独占位姿与时钟；仅用于本机视觉开发，不连接实体飞行器。</p>`;
+    <p class="sim-hint">同一端点服务 EV50 / SkyTrans。外部控制独占位姿与时钟；仅用于本机视觉开发，不连接实体飞行器。</p>`;
   document.querySelector('.right-tools')!.prepend(panel);
   const base = panel.querySelector<HTMLInputElement>('#control-base')!;
   const status = panel.querySelector<HTMLOutputElement>('#control-status')!;

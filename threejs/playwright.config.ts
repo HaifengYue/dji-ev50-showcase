@@ -33,7 +33,7 @@ export default defineConfig({
       timeout: 20_000,
     },
     {
-      command: 'python3 ../models/transwing/python/run_server.py --dist dist --port 8765',
+      command: 'python3 ../models/skytrans/python/run_server.py --dist dist --port 8765',
       url: 'http://127.0.0.1:8765/api/v1/health',
       reuseExistingServer: false,
       timeout: 20_000,

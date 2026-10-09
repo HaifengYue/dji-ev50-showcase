@@ -1,3 +1,5 @@
+> Historical integration record: Transwing is now named SkyTrans in the current application. Historical names, commits and measurements below are retained as evidence. See [brand migration](BRAND-MIGRATION.md) for the current contract.
+
 # Native aircraft hangar integration verification
 
 Verification date: 2026-10-08. Integration branch: `main-copy-transwing`.
@@ -11,7 +13,7 @@ loaded as a native adapter, not as an iframe or second React/rendering applicati
 - EV50 base: `3b1887e23465824d3452eb4052e793e1f55b3469`.
 - Transwing source: `2ecb723d46b90fe509ae5c2ff7c1735a7b66b7b3`.
 - Transwing's mechanism/runtime modules live under
-  `threejs/src/aircraft/transwing/core/`; its native host, camera, panel, presentation,
+  `threejs/src/aircraft/skytrans/core/`; its native host, camera, panel, presentation,
   and cleanup code surround that core.
 - `threejs/src/aircraft/selection.ts` owns asynchronous selection and disposal.
 - EV50 telemetry/API operations remain EV50-specific. Selecting Transwing makes
@@ -119,7 +121,7 @@ Save or finish a recording before switching if the output must be retained.
 
 ## Real-browser CI, first pass and corrections
 
-Commit `fb2852ec9710f1b4563c3e178d2516ef0bfd90a3` completed its normal GitHub CI successfully. The separate Chromium run [37787658539](https://github.com/HaifengYue/dji-ev50-showcase/actions/runs/37787658539) executed real WebGL and passed five of seven browser cases. It produced actual EV50, Transwing and narrow-screen screenshots; these were inspected.
+Commit `fb2852ec9710f1b4563c3e178d2516ef0bfd90a3` completed its normal GitHub CI successfully. The separate Chromium run [37787658539](https://github.com/HaifengYue/sky-captain/actions/runs/37787658539) executed real WebGL and passed five of seven browser cases. It produced actual EV50, Transwing and narrow-screen screenshots; these were inspected.
 
 The failed-load retry exposed a genuine UI defect: the button inherited the original headline's pointer-transparent style. It is now explicitly pointer-enabled and remains tested with a normal click, not a forced click. Screenshot review also showed low-contrast HUD/footer text over Transwing's light background; scoped dark backdrops now preserve readability.
 
@@ -131,7 +133,7 @@ The genuine full-page return in the first pass did not use BFCache (`observedPer
 
 ## Second browser pass and final verification gates
 
-Commit `107ca9514cb2b365fc607ca2a7d75f37c6704ebe` passed normal CI and [all eight Chromium cases](https://github.com/HaifengYue/dji-ev50-showcase/actions/runs/37790606031). Retry now receives a real click; touch collapse/drag, independent motor and surface input, cargo hatch, systems concept and bundled JSON playback passed. Screenshot review confirmed improved HUD/footer contrast.
+Commit `107ca9514cb2b365fc607ca2a7d75f37c6704ebe` passed normal CI and [all eight Chromium cases](https://github.com/HaifengYue/sky-captain/actions/runs/37790606031). Retry now receives a real click; touch collapse/drag, independent motor and surface input, cargo hatch, systems concept and bundled JSON playback passed. Screenshot review confirmed improved HUD/footer contrast.
 
 Inspection of the resource attachment showed some EV50 counts were captured before its first full rendered frame. The final acceptance gate is stronger: it ties render completion to the current selection revision, waits at least two more completed frames, requires nonempty GPU geometry, and compares every same-aircraft sample across four rounds. The previous eight-pass result alone is not treated as sufficient resource-plateau evidence.
 
@@ -146,7 +148,7 @@ Pure snapshot/HUD tests cover all four modes and return-to-local lock removal. P
 
 ## Third browser pass: stricter resource and external-clock evidence
 
-Commit `50dc1b7a7967e568d3f0101dffbcbf54c2088ff3` passed normal CI; its [third browser run](https://github.com/HaifengYue/dji-ev50-showcase/actions/runs/37793804458) passed seven of nine cases. The stricter, rendered-revision-gated four-round samples were identical per aircraft: Transwing 241 geometries/16 textures/7 scene children; EV50 120/17/5. These are Three.js resource counts, not measured physical VRAM bytes or a hardware performance benchmark.
+Commit `50dc1b7a7967e568d3f0101dffbcbf54c2088ff3` passed normal CI; its [third browser run](https://github.com/HaifengYue/sky-captain/actions/runs/37793804458) passed seven of nine cases. The stricter, rendered-revision-gated four-round samples were identical per aircraft: Transwing 241 geometries/16 textures/7 scene children; EV50 120/17/5. These are Three.js resource counts, not measured physical VRAM bytes or a hardware performance benchmark.
 
 The real loopback Python case passed: same-origin viewing, external clock ownership, applied acknowledgments after model updates, and release restoring all controls. The remaining failures were measured software-renderer wall timing: the multi-view case reached its whole-test 90-second limit on the final EV50 return; the motor test reached 30 wall seconds while its simulation had advanced only from 1.1 to 2.9595 seconds and was still progressing from indexing to folding.
 

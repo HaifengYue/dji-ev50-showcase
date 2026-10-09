@@ -1,4 +1,4 @@
-name: Verify EV50 showcase
+name: Verify SkyCaptain hangar
 
 on:
   push:

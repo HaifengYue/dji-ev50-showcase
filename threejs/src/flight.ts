@@ -1,6 +1,6 @@
 import { Euler, Quaternion, Vector3 } from 'three';
 import { sourceTime, MISSION_DURATION } from './timing';
-import { CRUISE_ALTITUDE, obstacleCeiling, AIRCRAFT_RADIUS } from './terrain';
+import { CRUISE_ALTITUDE, legacyControlCeiling, AIRCRAFT_RADIUS } from './terrain';
 export type State =
   | 'IDLE'
   | 'STARTING'
@@ -254,7 +254,7 @@ export class FlightController {
     if (this.command) {
       this.manualPosition.y = Math.max(
         this.manualPosition.y,
-        obstacleCeiling(this.manualPosition.x, this.manualPosition.z) +
+        legacyControlCeiling(this.manualPosition.x, this.manualPosition.z) +
           (Math.hypot(this.manualPosition.x, this.manualPosition.z) < 6 ? 0 : AIRCRAFT_RADIUS),
       );
       this.speedMps = this.velocityActive ? this.velocity.length() : 0;

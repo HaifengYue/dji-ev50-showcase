@@ -6,7 +6,8 @@ import type {
   AdapterAircraftState,
 } from '../control/contracts';
 
-export type AircraftId = 'ev50' | 'transwing';
+import type { AircraftId } from './identity';
+export type { AircraftId } from './identity';
 export type AircraftMode = 'product' | 'flight';
 export type AircraftQuality = 'Low' | 'Medium' | 'High';
 export type AircraftSnapshot = {
@@ -48,6 +49,8 @@ export type AircraftWorldState = {
   path: T.Vector3[];
   route: keyof typeof routes;
   source: 'demo' | 'external' | 'replay';
+  /** Local presentation revision; not a command epoch or a wire-protocol field. */
+  presentationRevision?: number;
 };
 export type AircraftHost = {
   flightFrames: Frame[];

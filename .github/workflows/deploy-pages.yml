@@ -1,4 +1,4 @@
-name: Deploy EV50 showcase
+name: Deploy SkyCaptain hangar
 on:
   push:
     branches: [main]

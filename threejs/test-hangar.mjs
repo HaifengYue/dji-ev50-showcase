@@ -84,12 +84,12 @@ try {
 
   test('duplicate pending selections share one promise and load', async () => {
     const { selection, loads } = harness();
-    const first = selection.select('transwing');
-    assert.equal(selection.select('transwing'), first);
+    const first = selection.select('skytrans');
+    assert.equal(selection.select('skytrans'), first);
     assert.equal(loads.length, 1);
-    loads[0].resolve(aircraft('transwing'));
+    loads[0].resolve(aircraft('skytrans'));
     await first;
-    await selection.select('transwing');
+    await selection.select('skytrans');
     assert.equal(loads.length, 1);
     assert.equal(selection.current.disposeCount, 0);
     selection.dispose();
@@ -110,13 +110,13 @@ try {
       onPending: (id) => order.push(`pending:${id}`),
     });
     await selection.select('ev50');
-    await selection.select('transwing');
+    await selection.select('skytrans');
     assert.deepEqual(order, [
       'pending:ev50',
       'load:ev50',
       'dispose',
-      'pending:transwing',
-      'load:transwing',
+      'pending:skytrans',
+      'load:skytrans',
     ]);
     assert.equal(first.disposeCount, 1);
     selection.dispose();
@@ -125,7 +125,7 @@ try {
   test('rapid swaps are latest-wins even when old loaders ignore abort', async () => {
     const { selection, loads, events } = harness();
     const first = selection.select('ev50');
-    const second = selection.select('transwing');
+    const second = selection.select('skytrans');
     const third = selection.select('ev50');
     assert.equal(loads[0].signal.aborted, true);
     assert.equal(loads[1].signal.aborted, true);
@@ -154,9 +154,9 @@ try {
     const { selection, loads, events } = harness();
     const first = selection.select('ev50');
     loads[0].signal.addEventListener('abort', () => loads[0].reject(new Error('abort')));
-    const second = selection.select('transwing');
+    const second = selection.select('skytrans');
     await first;
-    const value = aircraft('transwing');
+    const value = aircraft('skytrans');
     loads[1].resolve(value);
     await second;
     await flush();
@@ -172,14 +172,14 @@ try {
   test('failed load preserves error, retry clears it and can succeed', async () => {
     const { selection, loads, events } = harness();
     const failure = new Error('missing asset');
-    const first = selection.select('transwing');
+    const first = selection.select('skytrans');
     loads[0].reject(failure);
     await first;
     assert.equal(selection.error, failure);
     assert.equal(selection.pendingId, null);
     assert.equal(selection.currentId, null);
-    assert.deepEqual(events.at(-1), ['error', 'transwing', failure]);
-    const retry = selection.select('transwing');
+    assert.deepEqual(events.at(-1), ['error', 'skytrans', failure]);
+    const retry = selection.select('skytrans');
     assert.equal(selection.error, null);
     const value = aircraft('retried');
     loads[1].resolve(value);
@@ -212,7 +212,7 @@ try {
     selection.dispose();
     assert.equal(loads[0].signal.aborted, true);
     await pending;
-    await selection.select('transwing');
+    await selection.select('skytrans');
     assert.equal(loads.length, 1);
     const late = aircraft('late');
     loads[0].resolve(late);
@@ -241,18 +241,18 @@ try {
     const { selection, loads, events } = harness({
       onPending(id) {
         events.push(['pending', id]);
-        if (id === 'ev50') void selection.select('transwing');
+        if (id === 'ev50') void selection.select('skytrans');
       },
     });
     await selection.select('ev50');
     assert.deepEqual(
       loads.map((l) => l.id),
-      ['transwing'],
+      ['skytrans'],
     );
-    const ready = selection.select('transwing');
-    loads[0].resolve(aircraft('transwing'));
+    const ready = selection.select('skytrans');
+    loads[0].resolve(aircraft('skytrans'));
     await ready;
-    assert.equal(selection.currentId, 'transwing');
+    assert.equal(selection.currentId, 'skytrans');
     selection.dispose();
   });
 
@@ -271,7 +271,7 @@ try {
     const { selection, loads } = harness();
     const first = selection.select('ev50');
     loads[0].signal.addEventListener('abort', () => void selection.select('replacement'));
-    const second = selection.select('transwing');
+    const second = selection.select('skytrans');
     await Promise.all([first, second]);
     assert.deepEqual(
       loads.map((l) => l.id),
@@ -292,7 +292,7 @@ try {
     const value = aircraft('ev50', () => void selection.select('replacement'));
     loads[0].resolve(value);
     await first;
-    await selection.select('transwing');
+    await selection.select('skytrans');
     assert.deepEqual(
       loads.map((l) => l.id),
       ['ev50', 'replacement'],
@@ -313,7 +313,7 @@ try {
         assert.equal(selection.currentId, id);
         assert.equal(selection.pendingId, null);
         if (id === 'ev50') {
-          void selection.select('transwing');
+          void selection.select('skytrans');
           throw new Error('obsolete ready callback failure');
         }
       },
@@ -322,14 +322,14 @@ try {
     const ev50 = aircraft('ev50');
     loads[0].resolve(ev50);
     await first;
-    assert.equal(selection.pendingId, 'transwing');
+    assert.equal(selection.pendingId, 'skytrans');
     assert.equal(ev50.disposeCount, 1);
     assert.equal(
       events.some((e) => e[0] === 'error'),
       false,
     );
-    const ready = selection.select('transwing');
-    loads[1].resolve(aircraft('transwing'));
+    const ready = selection.select('skytrans');
+    loads[1].resolve(aircraft('skytrans'));
     await ready;
     selection.dispose();
   });
@@ -392,8 +392,8 @@ try {
     });
     loads[0].resolve(value);
     await pending;
-    const replacement = selection.select('transwing');
-    loads[1].resolve(aircraft('transwing'));
+    const replacement = selection.select('skytrans');
+    loads[1].resolve(aircraft('skytrans'));
     await replacement;
     assert.equal(value.disposeCount, 1);
     selection.dispose();
@@ -406,16 +406,16 @@ try {
     selection = createAircraftSelection({
       load(id) {
         if (id === 'ev50') {
-          void selection.select('transwing');
+          void selection.select('skytrans');
           return Promise.resolve(old);
         }
-        return Promise.resolve(aircraft('transwing'));
+        return Promise.resolve(aircraft('skytrans'));
       },
     });
     await selection.select('ev50');
     await flush();
     assert.equal(old.disposeCount, 1);
-    assert.equal(selection.currentId, 'transwing');
+    assert.equal(selection.currentId, 'skytrans');
     selection.dispose();
   });
 
@@ -424,7 +424,7 @@ try {
     const callers = [];
     const values = [];
     for (let index = 0; index < 100; index++) {
-      callers.push(selection.select(index % 2 === 0 ? 'ev50' : 'transwing'));
+      callers.push(selection.select(index % 2 === 0 ? 'ev50' : 'skytrans'));
       values.push(aircraft(`aircraft-${index}`));
     }
     for (let index = 99; index >= 0; index--) loads[index].resolve(values[index]);

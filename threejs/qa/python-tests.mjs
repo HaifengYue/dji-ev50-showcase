@@ -3,7 +3,7 @@ import { spawnSync } from 'node:child_process';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 const root = fileURLToPath(new URL('../../', import.meta.url));
-const pythonRoot = path.join(root, 'models/transwing/python');
+const pythonRoot = path.join(root, 'models/skytrans/python');
 const result = spawnSync(
   process.platform === 'win32' ? 'python' : 'python3',
   ['-m', 'unittest', 'discover', '-s', path.join(pythonRoot, 'tests'), '-v'],

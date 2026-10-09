@@ -1,6 +1,6 @@
 # Unified aircraft control
 
-`window.hangarAPI.request(request)` is the versioned asynchronous control entry point for the selected aircraft. Existing `hangarAPI.list()`, `state()`, `select()`, `window.ev50API`, EV50 command/result events and `transwing.sim.v1` remain separate compatibility interfaces. New unified commands do not reinterpret legacy payloads or change the EV50 HTTP result outbox or Transwing Python/replay clock.
+`window.hangarAPI.request(request)` is the versioned asynchronous control entry point for the selected aircraft. Existing `hangarAPI.list()`, `state()`, `select()`, `window.ev50API`, EV50 command/result events and `transwing.sim.v1` remain separate compatibility interfaces. New unified commands do not reinterpret legacy payloads or change the EV50 HTTP result outbox or SkyTrans Python/replay clock.
 
 This is a visualization interface, not a vehicle flight controller. Remote HTTP, WebSocket, authentication, and public Internet exposure are not implemented. The local companion service is restricted to an explicitly configured same-origin loopback deployment. Lease tokens coordinate browser clients; they are not authentication credentials or a security boundary against scripts already running in the page.
 
@@ -46,7 +46,7 @@ The lease's `expiresAt` is in epoch milliseconds. A real timer releases expired 
 
 Transport time is not always seconds. `transport.unit` is `seconds`, `frames` (zero-based integer index) or `percent` (0–100 mechanism progress). Seek requests must provide that same unit. Quaternion inputs must be unit length within 0.001. Position and velocity components must be finite and within ±100,000.
 
-The model union keeps EV50's 11 rotors distinct from Transwing's four motor ids. Capabilities are authoritative: inspect `system.capabilities` for the operations the current adapter actually implements. EV50 group control does not imply individual rotor control. A missing model-specific field is not invented telemetry.
+The model union keeps EV50's 11 rotors distinct from SkyTrans's four motor ids. Capabilities are authoritative: inspect `system.capabilities` for the operations the current adapter actually implements. EV50 group control does not imply individual rotor control. A missing model-specific field is not invented telemetry.
 
 ## Operations and mode matrix
 
@@ -75,12 +75,12 @@ External pose/time and step commands require an external lease so a demonstratio
 Model-specific operations:
 
 - `ev50.motors`: `{ lift, cruise }`, normalized group controls 0–1. This is 8+3 group actuation, not 11 independent motor commands.
-- `transwing.mechanism`: nonempty `{ wingTilt?, hatchDeg?, surfaces? }`; wing tilt 0–1, hatch 0–55 degrees.
-- `transwing.motors`: `{ motors: { [motorId]: { targetRpm?, enabled? } } }`. Allowed ids: `L_Front`, `R_Front`, `L_Rear`, `R_Rear`; rpm 0–12,000; enabled boolean. At least one motor and one field per motor are required.
-- `transwing.surfaces`: `{ surfaces: { [surfaceId]: degrees } }`, when advertised. The same canonical surface mapping can occur within `transwing.mechanism`.
+- `skytrans.mechanism`: nonempty `{ wingTilt?, hatchDeg?, surfaces? }`; wing tilt 0–1, hatch 0–55 degrees.
+- `skytrans.motors`: `{ motors: { [motorId]: { targetRpm?, enabled? } } }`. Allowed ids: `L_Front`, `R_Front`, `L_Rear`, `R_Rear`; rpm 0–12,000; enabled boolean. At least one motor and one field per motor are required.
+- `skytrans.surfaces`: `{ surfaces: { [surfaceId]: degrees } }`, when advertised. The same canonical surface mapping can occur within `skytrans.mechanism`.
 - Canonical surface ids: `L_Inboard`, `R_Inboard`, `L_Outboard`, `R_Outboard`, `Tail_L`, `Tail_R`; deflections −12 to +12 degrees. Unknown aliases or fields are rejected.
 
-Namespaced commands require both the matching selected aircraft and its advertised capability. An EV50 rotor array can never become Transwing commands.
+Namespaced commands require both the matching selected aircraft and its advertised capability. An EV50 rotor array can never become SkyTrans commands.
 
 ## Applied ACK and duplicate ids
 
@@ -230,7 +230,7 @@ finally:
     command("control.release", {}, lease)
 ```
 
-A client retry must reuse the original request/id if its delivery outcome is unknown. Do not invent a new id merely because the HTTP response was lost. A new page or aircraft selection requires fresh selection state and a new lease. For a subsequent batch, after consuming results and releasing ownership, use `control.resetSession` with `acknowledgeCompletedResults: true` and update `target["epoch"]` from its result before acquiring again. The existing EV50 and Transwing local services remain compatibility options; they are not aliases for these new unified paths.
+A client retry must reuse the original request/id if its delivery outcome is unknown. Do not invent a new id merely because the HTTP response was lost. A new page or aircraft selection requires fresh selection state and a new lease. For a subsequent batch, after consuming results and releasing ownership, use `control.resetSession` with `acknowledgeCompletedResults: true` and update `target["epoch"]` from its result before acquiring again. The existing EV50 and SkyTrans local services remain compatibility options; they are not aliases for these new unified paths.
 
 ## Host adapter integration
 
@@ -247,3 +247,7 @@ The single animation loop calls `gateway.beforeFrame()` before aircraft update a
 ## Verification
 
 Run `node test-control-contract.mjs` from `threejs/`. Tests cover immutable snapshots/results, readiness and selection targeting, competing owners, id conflicts/deduplication including original failures, one-application-per-render timing, no pre-render ACK, release/disconnect/expiry, a real timer with no RAF, renewal, stale selection, external clock regression, explicit timeline units, model namespace/schema isolation, strict and atomic config, same-origin loopback restriction, adapter failures, bounded queues/history, actual 10,000-entry saturation and safe release, explicit epoch rotation, stale-command rejection, and lost reset-ACK retry with one bounded receipt. Direct EV50 checks verify deterministic position/time/rotor phases, paused stepping, 8+3 group separation, release/reacquisition, and atomic position-overflow rejection. These are contract tests; browser/WebGL and local-server integration require their separate suites.
+
+## SkyTrans naming compatibility
+
+The canonical aircraft ID is `skytrans`; reads, capabilities and leases return that ID. Legacy input `transwing` and operations `transwing.mechanism`, `transwing.motors`, `transwing.surfaces` normalize into the same instance, lease and idempotency cache. Browser responses echo the current request’s operation spelling; HTTP `/results/{id}` retains the immutable first queued request’s operation and receipt, including cross-alias retries. Existing clients that hard-code the former output ID must update that check. The separate Python/JSON interface deliberately keeps its `transwing.sim.v1` wire contract even when imported as `skytrans_sim`. See [brand migration](BRAND-MIGRATION.md).

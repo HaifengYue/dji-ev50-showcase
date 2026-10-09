@@ -22,7 +22,7 @@ export function playbackPresentation(state: AircraftSnapshot) {
   return {
     timeLabel,
     timelineLabel:
-      state.timelineLabel ?? (state.mode === 'product' ? '整翼展开进度' : 'Transwing 飞行演示'),
+      state.timelineLabel ?? (state.mode === 'product' ? '整翼展开进度' : 'SkyTrans 飞行演示'),
     step: timeUnit === 'frames' ? '1' : timeUnit === 'percent' ? '0.1' : '0.01',
     rateOptions,
     rate: state.playbackRate ?? 1,

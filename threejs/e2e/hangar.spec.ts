@@ -1,9 +1,9 @@
 import { test, expect, type Page } from '@playwright/test';
-import { MOTOR_LIMITS } from '../src/aircraft/transwing/core/motors';
-import { DEMO_DURATION, DEMO_TIMES } from '../src/aircraft/transwing/demoProfile';
+import { MOTOR_LIMITS } from '../src/aircraft/skytrans/core/motors';
+import { DEMO_DURATION, DEMO_TIMES } from '../src/aircraft/skytrans/demoProfile';
 
 const diagnostics = (page: Page) => page.evaluate(() => (window as any).hangarDiagnostics);
-async function ready(page: Page, aircraft: 'ev50' | 'transwing') {
+async function ready(page: Page, aircraft: 'ev50' | 'skytrans') {
   await expect
     .poll(async () => {
       const state = await diagnostics(page);
@@ -28,23 +28,27 @@ async function ready(page: Page, aircraft: 'ev50' | 'transwing') {
   await expect.poll(async () => (await diagnostics(page)).geometries).toBeGreaterThan(10);
   await expect.poll(async () => (await diagnostics(page)).drawCalls).toBeGreaterThan(0);
 }
-async function select(page: Page, aircraft: 'ev50' | 'transwing') {
+async function select(page: Page, aircraft: 'ev50' | 'skytrans') {
   await page.locator('#aircraft-select').selectOption(aircraft);
   await ready(page, aircraft);
 }
 function watchErrors(page: Page) {
   const errors: string[] = [];
   page.on('pageerror', (error) => errors.push(error.message));
+  page.on('console', (message) => {
+    if (/THREE\.WebGLProgram|Shader Error|VALIDATE_STATUS/.test(message.text()))
+      errors.push(message.text());
+  });
   return errors;
 }
 
-test('Transwing demo vertical rates and rotor phase survive seek, pause, playback rate and shutdown', async ({
+test('SkyTrans demo vertical rates and rotor phase survive seek, pause, playback rate and shutdown', async ({
   page,
 }, info) => {
   test.setTimeout(240_000);
   const errors = watchErrors(page);
-  await page.goto('/hangar/?aircraft=transwing');
-  await ready(page, 'transwing');
+  await page.goto('/hangar/?aircraft=skytrans');
+  await ready(page, 'skytrans');
   await page.locator('#quality').selectOption('Low');
   await page.locator('#flight').click();
   await page.locator('#play').click();
@@ -100,7 +104,7 @@ test('Transwing demo vertical rates and rotor phase survive seek, pause, playbac
       return Math.abs(d.aircraft.camera.target[1] - d.world.position.y);
     })
     .toBeLessThan(5);
-  await page.screenshot({ path: info.outputPath('transwing-bounded-climb-running.png') });
+  await page.screenshot({ path: info.outputPath('skytrans-bounded-climb-running.png') });
   await page.locator('#playback-speed').selectOption('4');
   await expect.poll(async () => (await diagnostics(page)).aircraft.rotorExposureIds.length).toBe(4);
   await page.locator('#play').click();
@@ -123,6 +127,9 @@ test('Transwing demo vertical rates and rotor phase survive seek, pause, playbac
   await expect.poll(async () => (await diagnostics(page)).aircraft.experience.playing).toBe(false);
   sample = await diagnostics(page);
   expect(sample.world.time).toBe(DEMO_DURATION);
+  expect(sample.aircraft.rotorExposureLayers.activeIds).toEqual([]);
+  expect(sample.aircraft.rotorExposureLayers.visibleTriangles).toBe(0);
+  await page.screenshot({ path: info.outputPath('skytrans-parked-no-disc.png') });
   for (const motor of Object.values(sample.aircraft.runtime.actuators) as any[]) {
     expect(motor.rpm).toBe(0);
     expect(motor.fold).toBe(1);
@@ -131,7 +138,7 @@ test('Transwing demo vertical rates and rotor phase survive seek, pause, playbac
   await seek(30);
   await page.locator('#product').click();
   expect((await diagnostics(page)).aircraft.runtime.actuators.L_Front.fold).toBe(1);
-  await info.attach('transwing-rates.json', {
+  await info.attach('skytrans-rates.json', {
     body: JSON.stringify({ paused, first, second, shutdown: sample }, null, 2),
     contentType: 'application/json',
   });
@@ -147,7 +154,7 @@ test('EV50 starts alone on nested base, preserves flight controls and capture', 
   page.on('request', (request) => requests.push(request.url()));
   await page.goto('/hangar/?aircraft=ev50');
   await ready(page, 'ev50');
-  expect(requests.some((url) => url.includes('/transwing/models/'))).toBe(false);
+  expect(requests.some((url) => url.includes('/skytrans/models/'))).toBe(false);
   await expect(page.locator('canvas#scene')).toHaveCount(1);
   await page.locator('#flight').click();
   await expect
@@ -169,13 +176,13 @@ test('EV50 starts alone on nested base, preserves flight controls and capture', 
   expect(errors).toEqual([]);
 });
 
-test('Transwing integrates shared canvas, real rig, native cameras and EV50 API isolation', async ({
+test('SkyTrans integrates shared canvas, real rig, native cameras and EV50 API isolation', async ({
   page,
 }, info) => {
   test.setTimeout(180_000); // Multiple native camera views plus a fully rendered EV50 return.
   const errors = watchErrors(page);
-  await page.goto('/hangar/?aircraft=transwing');
-  await ready(page, 'transwing');
+  await page.goto('/hangar/?aircraft=skytrans');
+  await ready(page, 'skytrans');
   // This case checks mechanisms, camera ownership and API isolation. Keep GPU
   // postprocessing out of its timing; the shared-terrain case explicitly verifies High.
   await page.locator('#quality').selectOption('Low');
@@ -209,7 +216,7 @@ test('Transwing integrates shared canvas, real rig, native cameras and EV50 API 
   await expect
     .poll(async () => (await diagnostics(page)).aircraft.camera.transitioning)
     .toBe(false);
-  await page.screenshot({ path: info.outputPath('transwing-left-joint.png') });
+  await page.screenshot({ path: info.outputPath('skytrans-left-joint.png') });
   await select(page, 'ev50');
   await expect.poll(() => page.evaluate(() => (window as any).ev50API.ready)).toBe(true);
   expect(errors).toEqual([]);
@@ -224,7 +231,7 @@ test('Repeated switches release model resources, reset state and preserve one re
   test.setTimeout(240_000); // Four cold GPU-resource rebuilds on software-rendered CI.
   const samples: { id: string; geometries: number; textures: number; sceneChildren: number }[] = [];
   for (let index = 0; index < 4; index++) {
-    for (const id of ['transwing', 'ev50'] as const) {
+    for (const id of ['skytrans', 'ev50'] as const) {
       await select(page, id);
       await page.waitForTimeout(250);
       const value = await diagnostics(page);
@@ -235,7 +242,7 @@ test('Repeated switches release model resources, reset state and preserve one re
         sceneChildren: value.sceneChildren,
       });
       console.log('RESOURCE_SAMPLE', JSON.stringify(samples.at(-1)));
-      if (id === 'transwing') {
+      if (id === 'skytrans') {
         expect(value.aircraft.runtime.state.wingTilt).toBe(0);
         expect(value.aircraft.experience.tilt.playing).toBe(false);
         await page.locator('#play').click();
@@ -245,7 +252,7 @@ test('Repeated switches release model resources, reset state and preserve one re
       }
     }
   }
-  for (const id of ['ev50', 'transwing']) {
+  for (const id of ['ev50', 'skytrans']) {
     const rows = samples.filter((row) => row.id === id);
     expect(
       Math.max(...rows.map((row) => row.geometries)) -
@@ -263,7 +270,7 @@ test('Repeated switches release model resources, reset state and preserve one re
   expect(errors).toEqual([]);
 });
 
-test('Late Transwing loading cannot replace newer EV50 selection', async ({ page }) => {
+test('Late SkyTrans loading cannot replace newer EV50 selection', async ({ page }) => {
   let requested!: () => void;
   const reached = new Promise<void>((resolve) => {
     requested = resolve;
@@ -272,14 +279,14 @@ test('Late Transwing loading cannot replace newer EV50 selection', async ({ page
   const gate = new Promise<void>((resolve) => {
     release = resolve;
   });
-  await page.route('**/transwing/models/xp4.glb*', async (route) => {
+  await page.route('**/skytrans/models/xp4.glb*', async (route) => {
     requested();
     await gate;
     await route.continue().catch(() => {});
   });
   await page.goto('/hangar/?aircraft=ev50');
   await ready(page, 'ev50');
-  await page.locator('#aircraft-select').selectOption('transwing');
+  await page.locator('#aircraft-select').selectOption('skytrans');
   await reached;
   await page.locator('#aircraft-select').selectOption('ev50');
   release();
@@ -291,15 +298,15 @@ test('Late Transwing loading cannot replace newer EV50 selection', async ({ page
 
 test('Failed model load offers local retry and keeps hangar usable', async ({ page }) => {
   let attempts = 0;
-  await page.route('**/transwing/models/xp4.glb*', async (route) => {
+  await page.route('**/skytrans/models/xp4.glb*', async (route) => {
     if (++attempts === 1) await route.fulfill({ status: 503, body: 'QA unavailable' });
     else await route.continue();
   });
-  await page.goto('/hangar/?aircraft=transwing');
+  await page.goto('/hangar/?aircraft=skytrans');
   await expect(page.locator('#load-retry')).toBeVisible();
   await expect(page.locator('#load-status')).toContainText('载入失败');
   await page.locator('#load-retry').click();
-  await ready(page, 'transwing');
+  await ready(page, 'skytrans');
   expect(attempts).toBe(2);
 });
 
@@ -312,7 +319,7 @@ test.describe('Mobile touch controls', () => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto('/hangar/?aircraft=unknown');
     await ready(page, 'ev50');
-    await select(page, 'transwing');
+    await select(page, 'skytrans');
     await expect(page.locator('#quality-readout')).toHaveText('LOW');
     await expect(page.locator('#tools-toggle')).toBeInViewport();
     await page.locator('#tools-toggle').tap();
@@ -320,7 +327,7 @@ test.describe('Mobile touch controls', () => {
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(
       true,
     );
-    await page.screenshot({ path: info.outputPath('transwing-mobile-controls.png') });
+    await page.screenshot({ path: info.outputPath('skytrans-mobile-controls.png') });
     await expect(page.locator('#tools-toggle')).toBeInViewport();
     await page.locator('#tools-toggle').tap();
     const beforeDrag = (await diagnostics(page)).aircraft.camera.position;
@@ -343,11 +350,11 @@ test.describe('Mobile touch controls', () => {
         );
       })
       .toBeGreaterThan(0.01);
-    await page.screenshot({ path: info.outputPath('transwing-mobile-aircraft.png') });
+    await page.screenshot({ path: info.outputPath('skytrans-mobile-aircraft.png') });
     await page.goBack();
     await ready(page, 'ev50');
     await page.goForward();
-    await ready(page, 'transwing');
+    await ready(page, 'skytrans');
     expect(errors).toEqual([]);
   });
 });
@@ -366,11 +373,11 @@ test('Full-page Back restores a usable aircraft, and persisted pageshow rebuilds
       console.info(`HANGAR_PAGESHOW:${event.persisted}`),
     );
   });
-  await page.goto('/hangar/?aircraft=transwing');
-  await ready(page, 'transwing');
+  await page.goto('/hangar/?aircraft=skytrans');
+  await ready(page, 'skytrans');
   await page.goto('/hangar/qa-away');
   await page.goBack();
-  await ready(page, 'transwing');
+  await ready(page, 'skytrans');
   await expect(page.locator('canvas#scene')).toHaveCount(1);
   await info.attach('page-return.json', {
     body: JSON.stringify({ observedPersistedReturn: pageshows.includes(true), pageshows }),
@@ -384,18 +391,18 @@ test('Full-page Back restores a usable aircraft, and persisted pageshow rebuilds
     window.dispatchEvent(new PageTransitionEvent('pageshow', { persisted: true }));
   });
   await expect.poll(async () => (await diagnostics(page)).historyRestores).toBe(beforeRestore + 1);
-  await ready(page, 'transwing');
+  await ready(page, 'skytrans');
   await expect(page.locator('canvas#scene')).toHaveCount(1);
   expect((await diagnostics(page)).aircraft.runtime.state.wingTilt).toBe(0);
 });
 
-test('Native Transwing panel drives independent motors, surfaces, concept and JSON replay', async ({
+test('Native SkyTrans panel drives independent motors, surfaces, concept and JSON replay', async ({
   page,
 }, info) => {
   test.setTimeout(240_000); // Covers the bounded motor wait plus the independent UI/replay checks.
   const errors = watchErrors(page);
-  await page.goto('/hangar/?aircraft=transwing');
-  await ready(page, 'transwing');
+  await page.goto('/hangar/?aircraft=skytrans');
+  await ready(page, 'skytrans');
   // Low keeps software-rendered CI responsive; geometry and mechanism controls are identical.
   await page.locator('#quality').selectOption('Low');
   await page.getByTestId('tw-control-manual').click();
@@ -471,7 +478,7 @@ test('Native Transwing panel drives independent motors, surfaces, concept and JS
   await expect
     .poll(async () => (await diagnostics(page)).aircraft.camera.transitioning)
     .toBe(false);
-  await page.screenshot({ path: info.outputPath('transwing-systems-concept.png') });
+  await page.screenshot({ path: info.outputPath('skytrans-systems-concept.png') });
   await page.getByTestId('tw-detail-close').click();
   await page.getByTestId('tw-internal-drive').check();
   await expect.poll(async () => (await diagnostics(page)).aircraft.internalDrive).toBe(true);
@@ -522,8 +529,8 @@ test('Real Python bridge owns time, receives applied ACKs and releases every sha
   const errors = watchErrors(page);
   const base = 'http://127.0.0.1:8765';
   const protocol = 'transwing.sim.v1';
-  await page.goto(`${base}/?aircraft=transwing`);
-  await ready(page, 'transwing');
+  await page.goto(`${base}/?aircraft=skytrans`);
+  await ready(page, 'skytrans');
   await page.locator('#quality').selectOption('Low');
   await page.getByText('Python 接入与 JSON 回放', { exact: true }).click();
   await page.getByTestId('tw-bridge-connect').click();
@@ -579,25 +586,25 @@ test('Real Python bridge owns time, receives applied ACKs and releases every sha
   }
 });
 
-test('Transwing uses the EV50 stage and world terrain route without a private hangar', async ({
+test('SkyTrans uses the EV50 stage and world terrain route without a private hangar', async ({
   page,
 }, info) => {
-  test.setTimeout(240_000); // Adds live-flight progression and one high-quality capture.
+  test.setTimeout(300_000); // Adds three quality profiles and running rotor angle/slow-play captures; individual waits stay bounded.
   const errors = watchErrors(page);
-  await page.goto('/hangar/?aircraft=transwing');
-  await ready(page, 'transwing');
+  await page.goto('/hangar/?aircraft=skytrans');
+  await ready(page, 'skytrans');
   await page.locator('#quality').selectOption('Low');
   const initial = await diagnostics(page);
   expect(initial.scene.mode).toBe('product');
   expect(initial.scene.background).toBe('202c34');
   expect(initial.scene.exposure).toBe(1);
   expect(initial.scene.environmentIntensity).toBe(0.45);
-  expect(initial.scene.ownedGroups).not.toContain('Transwing_Presentation');
+  expect(initial.scene.ownedGroups).not.toContain('SkyTrans_Presentation');
   expect(initial.world.position.y).toBeCloseTo(0, 6);
   await expect(page.getByTestId('tw-environment')).toHaveCount(0);
   await expect(page.locator('#scene-tools')).toBeVisible();
   await expect(page.locator('#immersive')).toBeEnabled();
-  await page.screenshot({ path: info.outputPath('transwing-shared-product-stage.png') });
+  await page.screenshot({ path: info.outputPath('skytrans-shared-product-stage.png') });
   await page.locator('#flight').click();
   await expect(page.locator('#camera')).toHaveValue('follow');
   await expect.poll(async () => (await diagnostics(page)).aircraft.experience.playing).toBe(true);
@@ -658,17 +665,53 @@ test('Transwing uses the EV50 stage and world terrain route without a private ha
   await expect
     .poll(async () => (await diagnostics(page)).aircraft.camera.transitioning)
     .toBe(false);
+  const qualitySamples: any[] = [];
+  for (const quality of ['Low', 'Medium'] as const) {
+    await page.locator('#quality').selectOption(quality);
+    const frame = (await diagnostics(page)).frameNumber;
+    await expect.poll(async () => (await diagnostics(page)).frameNumber).toBeGreaterThan(frame + 1);
+    await expect
+      .poll(async () => (await diagnostics(page)).aircraft.rotorExposureLayers.activeIds)
+      .toEqual(['L_Front', 'R_Front']);
+    const d = await diagnostics(page);
+    expect(d.aircraft.experience.playing).toBe(true);
+    expect(d.aircraft.rotorExposureLayers.visibleLayerDrawsPerMainPass).toBe(2);
+    expect(d.aircraft.rotorExposureLayers.visibleTriangles).toBeLessThanOrEqual(20000);
+    expect(d.landscape.textures).toBe(1);
+    expect(d.landscape.triangles).toBeLessThanOrEqual(quality === 'Low' ? 45000 : 100000);
+    qualitySamples.push({
+      quality,
+      frame: d.frameNumber,
+      drawCalls: d.drawCalls,
+      triangles: d.triangles,
+      landscape: d.landscape,
+      rotor: d.aircraft.rotorExposureLayers,
+    });
+  }
   await page.locator('#quality').selectOption('High');
   await expect(page.locator('#quality-readout')).toHaveText('HIGH');
   const highFrame = (await diagnostics(page)).frameNumber;
   await expect
     .poll(async () => (await diagnostics(page)).frameNumber)
     .toBeGreaterThan(highFrame + 1);
-  await page.screenshot({ path: info.outputPath('transwing-live-terrain-follow-high.png') });
+  await expect.poll(async () => (await diagnostics(page)).trail.pointCount).toBeGreaterThan(8);
+  await page.screenshot({ path: info.outputPath('skytrans-live-terrain-follow-high.png') });
   const captured = await diagnostics(page);
-  await info.attach('transwing-live-flight.json', {
+  expect(captured.aircraft.experience.playing).toBe(true);
+  expect(captured.aircraft.rotorExposureLayers.activeIds).toEqual(['L_Front', 'R_Front']);
+  expect(captured.landscape.triangles).toBeLessThanOrEqual(180000);
+  qualitySamples.push({
+    quality: 'High',
+    frame: captured.frameNumber,
+    drawCalls: captured.drawCalls,
+    triangles: captured.triangles,
+    landscape: captured.landscape,
+    rotor: captured.aircraft.rotorExposureLayers,
+  });
+  await info.attach('skytrans-live-flight.json', {
     body: JSON.stringify(
       {
+        qualitySamples,
         beforeMotion: {
           time: beforeMotion.world.time,
           position: beforeMotion.world.position,
@@ -694,12 +737,115 @@ test('Transwing uses the EV50 stage and world terrain route without a private ha
     contentType: 'application/json',
   });
   await page.locator('#quality').selectOption('Low');
+  const state = await page.evaluate(() => (window as any).hangarAPI.controlState());
+  const invoke = (request: any) =>
+    page.evaluate((request) => (window as any).hangarAPI.request(request), request);
+  const owner: any = {
+    aircraft: 'skytrans',
+    generation: state.generation,
+    epoch: state.commandEpoch,
+    owner: 'rotor-angle-acceptance',
+  };
+  const lease = await invoke({
+    ...owner,
+    id: 'rotor-angles-acquire',
+    operation: 'control.acquire',
+    payload: { controlMode: 'local', clock: 'host', ttlMs: 120000 },
+  });
+  expect(lease.ok).toBe(true);
+  owner.leaseId = lease.data.leaseId;
+  for (const view of ['front', 'side']) {
+    expect(
+      (
+        await invoke({
+          ...owner,
+          id: `rotor-renew-${view}`,
+          operation: 'control.renew',
+          payload: { ttlMs: 120000 },
+        })
+      ).ok,
+    ).toBe(true);
+    await page.locator('#camera').selectOption(view);
+    await expect
+      .poll(async () => (await diagnostics(page)).aircraft.camera.transitioning)
+      .toBe(false);
+    const d = await diagnostics(page);
+    expect(d.aircraft.experience.playing).toBe(true);
+    expect(d.aircraft.runtime.state.wingTilt).toBeCloseTo(1, 5);
+    expect(d.aircraft.runtime.actuators.L_Front.rpm).toBe(1800);
+    expect(d.aircraft.runtime.actuators.L_Rear.rpm).toBe(0);
+    expect(d.aircraft.runtime.actuators.L_Rear.fold).toBe(1);
+    expect(d.aircraft.rotorExposureLayers.activeIds).toEqual(['L_Front', 'R_Front']);
+    await page.screenshot({ path: info.outputPath(`skytrans-cruise-running-${view}.png`) });
+  }
+  expect(
+    (
+      await invoke({
+        ...owner,
+        id: 'rotor-slow',
+        operation: 'transport.speed',
+        payload: { speed: 0.1 },
+      })
+    ).ok,
+  ).toBe(true);
+  expect(
+    (
+      await invoke({
+        ...owner,
+        id: 'rotor-renew-slow',
+        operation: 'control.renew',
+        payload: { ttlMs: 120000 },
+      })
+    ).ok,
+  ).toBe(true);
+  await page.locator('#camera').selectOption('follow');
+  await expect
+    .poll(async () => (await diagnostics(page)).aircraft.camera.transitioning)
+    .toBe(false);
+  await expect
+    .poll(async () => (await diagnostics(page)).aircraft.rotorExposureLayers.activeIds)
+    .toEqual([]);
+  expect((await diagnostics(page)).aircraft.experience.playing).toBe(true);
+  await page.screenshot({ path: info.outputPath('skytrans-cruise-0.1x-solid-blades.png') });
+  expect(
+    (
+      await invoke({
+        ...owner,
+        id: 'rotor-normal',
+        operation: 'transport.speed',
+        payload: { speed: 1 },
+      })
+    ).ok,
+  ).toBe(true);
+  await expect
+    .poll(async () => (await diagnostics(page)).aircraft.rotorExposureLayers.activeIds)
+    .toEqual(['L_Front', 'R_Front']);
+  expect(
+    (await invoke({ ...owner, id: 'rotor-paused', operation: 'transport.pause', payload: {} })).ok,
+  ).toBe(true);
+  await expect
+    .poll(async () => (await diagnostics(page)).aircraft.rotorExposureLayers.activeIds)
+    .toEqual([]);
+  expect(
+    (await invoke({ ...owner, id: 'rotor-resumed', operation: 'transport.play', payload: {} })).ok,
+  ).toBe(true);
+  expect(
+    (
+      await invoke({
+        ...owner,
+        id: 'rotor-angles-release',
+        operation: 'control.release',
+        payload: {},
+      })
+    ).ok,
+  ).toBe(true);
+  await page.locator('#flight').click();
   await page.locator('#camera').selectOption('fpv');
   await expect.poll(async () => (await diagnostics(page)).aircraft.camera.view).toBe('fpv');
   await expect
     .poll(async () => (await diagnostics(page)).aircraft.camera.transitioning)
     .toBe(false);
-  await page.screenshot({ path: info.outputPath('transwing-shared-terrain-fpv.png') });
+  await page.screenshot({ path: info.outputPath('skytrans-shared-terrain-fpv.png') });
   await page.locator('#product').click();
   await expect.poll(async () => (await diagnostics(page)).scene.terrainVisible).toBe(false);
   await expect(page.locator('#camera')).toHaveValue('free');
@@ -720,8 +866,8 @@ test('Unified browser control isolates models, applies once after render and pre
   await page.goto('/hangar/?aircraft=ev50');
   await ready(page, 'ev50');
   await page.locator('#quality').selectOption('Low');
-  for (const aircraft of ['ev50', 'transwing'] as const) {
-    if (aircraft === 'transwing') await select(page, aircraft);
+  for (const aircraft of ['ev50', 'skytrans'] as const) {
+    if (aircraft === 'skytrans') await select(page, aircraft);
     const state = await page.evaluate(() => (window as any).hangarAPI.controlState());
     const invoke = (request: any) =>
       page.evaluate((request) => (window as any).hangarAPI.request(request), request);
@@ -762,7 +908,7 @@ test('Unified browser control isolates models, applies once after render and pre
     const wrongModel = await invoke({
       ...owner,
       id: `${aircraft}-wrong-motor`,
-      operation: aircraft === 'ev50' ? 'transwing.motors' : 'ev50.motors',
+      operation: aircraft === 'ev50' ? 'skytrans.motors' : 'ev50.motors',
       payload:
         aircraft === 'ev50' ? { motors: { L_Front: { enabled: true } } } : { lift: 1, cruise: 1 },
     });
@@ -828,8 +974,8 @@ test('One local HTTP endpoint dispatches both aircraft and retries the original 
       await route.abort();
     } else await route.continue();
   });
-  await page.goto(`${base}/?aircraft=transwing&control=local`);
-  await ready(page, 'transwing');
+  await page.goto(`${base}/?aircraft=skytrans&control=local`);
+  await ready(page, 'skytrans');
   await page.locator('#quality').selectOption('Low');
   await expect
     .poll(async () => (await (await page.request.get(`${prefix}/health`)).json()).ready)
@@ -838,7 +984,7 @@ test('One local HTTP endpoint dispatches both aircraft and retries the original 
   await expect.poll(async () => (await serverState())?.state?.ready).toBe(true);
   const initial = (await serverState()).state;
   const context = {
-    aircraft: 'transwing',
+    aircraft: 'skytrans',
     generation: initial.generation,
     owner: 'http-acceptance',
   };
@@ -959,6 +1105,78 @@ test('One local HTTP endpoint dispatches both aircraft and retries the original 
     .toBe(false);
   await info.attach('unified-http-applied-retry.json', {
     body: JSON.stringify({ applied, late, ev50, reset, renewedEpoch }, null, 2),
+    contentType: 'application/json',
+  });
+});
+
+test('SkyTrans canonical brand and old links resolve to the same aircraft without duplicate ownership', async ({
+  page,
+}, info) => {
+  test.setTimeout(180_000);
+  const errors = watchErrors(page);
+  await page.goto('/hangar/?aircraft=transwing');
+  await ready(page, 'skytrans');
+  await page.locator('#quality').selectOption('Low');
+  await expect(page).toHaveURL(/aircraft=skytrans/);
+  await expect(page).toHaveTitle(/SkyCaptain/);
+  await expect(page.locator('#aircraft-select option:checked')).toHaveText('SkyTrans');
+  await expect(page.locator('[data-testid="tw-panel"]')).toHaveAttribute(
+    'aria-label',
+    'SkyTrans 原生控制台',
+  );
+  const listed = await page.evaluate(() => (window as any).hangarAPI.list());
+  expect(listed.map((entry: any) => entry.id)).toEqual(['ev50', 'skytrans']);
+  const legacyAsset = await page.request.get('/hangar/transwing/models/xp4.glb');
+  const canonicalAsset = await page.request.get('/hangar/skytrans/models/xp4.glb');
+  expect(legacyAsset.ok()).toBe(true);
+  expect(canonicalAsset.ok()).toBe(true);
+  expect(await legacyAsset.body()).toEqual(await canonicalAsset.body());
+  await page.evaluate(() => (window as any).hangarAPI.select('ev50'));
+  await ready(page, 'ev50');
+  await page.locator('#flight').click();
+  await page.locator('#play').click();
+  await page.locator('#timeline').evaluate((element) => {
+    (element as HTMLInputElement).value = '65';
+    element.dispatchEvent(new Event('input', { bubbles: true }));
+  });
+  await page.locator('#playback-speed').selectOption('4');
+  await page.locator('#play').click();
+  await expect.poll(async () => (await diagnostics(page)).trail.pointCount).toBeGreaterThan(4);
+  await page.locator('#play').click();
+  const ev50Trail = (await diagnostics(page)).trail;
+  expect(ev50Trail.generation).toContain('ev50:');
+  await page.evaluate(() => (window as any).hangarAPI.select('transwing'));
+  await ready(page, 'skytrans');
+  await expect(page).toHaveURL(/aircraft=skytrans/);
+  await expect(page.locator('#aircraft-headline')).toHaveText('Skytrans');
+  await page.locator('#flight').click();
+  await page.locator('#play').click();
+  const seekTrail = async (time: number) => {
+    await page.locator('#timeline').evaluate((element, value) => {
+      (element as HTMLInputElement).value = String(value);
+      element.dispatchEvent(new Event('input', { bubbles: true }));
+    }, time);
+    await expect.poll(async () => (await diagnostics(page)).world.time).toBeCloseTo(time, 5);
+  };
+  await seekTrail(125);
+  await page.locator('#playback-speed').selectOption('4');
+  await page.locator('#play').click();
+  await expect.poll(async () => (await diagnostics(page)).trail.pointCount).toBeGreaterThan(4);
+  await page.locator('#play').click();
+  const pausedTrail = (await diagnostics(page)).trail;
+  await page.waitForTimeout(250);
+  expect((await diagnostics(page)).trail.pointCount).toBe(pausedTrail.pointCount);
+  expect((await diagnostics(page)).trail.lastTime).toBe(pausedTrail.lastTime);
+  const beforeSeek = pausedTrail.resetCount;
+  await seekTrail(126);
+  expect((await diagnostics(page)).trail.resetCount).toBeGreaterThan(beforeSeek);
+  expect((await diagnostics(page)).trail.pointCount).toBeLessThanOrEqual(1);
+  await page.locator('#product').click();
+  await expect.poll(async () => (await diagnostics(page)).trail.pointCount).toBe(0);
+  expect((await diagnostics(page)).trail.bufferBytes).toBeLessThan(64 * 1024);
+  expect(errors).toEqual([]);
+  await info.attach('skytrans-trail-lifecycle.json', {
+    body: JSON.stringify({ ev50Trail, pausedTrail, afterProduct: (await diagnostics(page)).trail }),
     contentType: 'application/json',
   });
 });

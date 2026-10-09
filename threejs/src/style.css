@@ -743,7 +743,7 @@ body.recording #stop-recording {
 #load-retry {
   margin-top: 8px;
 }
-body[data-aircraft='transwing'] .headline h1 {
+body[data-aircraft='skytrans'] .headline h1 {
   font-size: clamp(28px, 4vw, 52px);
 }
 @media (max-width: 850px) {
@@ -783,7 +783,7 @@ body[data-aircraft='transwing'] .headline h1 {
     font-size: 12px;
   }
 }
-body[data-aircraft='transwing'] .right-tools {
+body[data-aircraft='skytrans'] .right-tools {
   width: min(330px, calc(100vw - 32px));
 }
 @media (max-width: 850px) and (min-width: 761px) {
@@ -816,50 +816,50 @@ body[data-aircraft='transwing'] .right-tools {
 .headline #load-retry {
   pointer-events: auto;
 }
-body[data-aircraft='transwing'] .flight-info {
+body[data-aircraft='skytrans'] .flight-info {
   background: #14232eeb;
   border: 1px solid var(--line);
   border-radius: 10px;
   padding: 12px 16px;
   max-width: calc(100vw - 430px);
 }
-body[data-aircraft='transwing'] .footer-note {
+body[data-aircraft='skytrans'] .footer-note {
   background: #14232ecc;
   color: #eef4f6;
   border-radius: 4px;
   padding: 2px 5px;
 }
 @media (max-width: 760px) {
-  body[data-aircraft='transwing'] .flight-info {
+  body[data-aircraft='skytrans'] .flight-info {
     max-width: calc(100vw - 32px);
     padding: 10px 12px;
   }
-  body[data-aircraft='transwing'] .metrics {
+  body[data-aircraft='skytrans'] .metrics {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px 18px;
   }
 }
 @media (max-width: 760px) {
-  body[data-aircraft='transwing'] .flight-info {
+  body[data-aircraft='skytrans'] .flight-info {
     width: calc(100vw - 32px);
     padding: 9px 12px;
   }
-  body[data-aircraft='transwing'] .state-code {
+  body[data-aircraft='skytrans'] .state-code {
     display: none;
   }
-  body[data-aircraft='transwing'] .metrics {
+  body[data-aircraft='skytrans'] .metrics {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 8px;
     margin-top: 8px;
   }
-  body[data-aircraft='transwing'] .metric span {
+  body[data-aircraft='skytrans'] .metric span {
     font-size: 10px;
   }
-  body[data-aircraft='transwing'] .metric strong {
+  body[data-aircraft='skytrans'] .metric strong {
     font-size: 16px;
   }
-  body[data-aircraft='transwing'] .metric em {
+  body[data-aircraft='skytrans'] .metric em {
     font-size: 10px;
   }
 }

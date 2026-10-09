@@ -20,6 +20,7 @@ import {
   validateControlConfig,
 } from './config';
 import { COMMON_OPERATIONS, MODEL_OPERATIONS, validateAircraftCommand } from './validation';
+import { normalizeAircraftId, normalizeAircraftOperation } from '../aircraft/identity';
 
 export class ControlError extends Error {
   constructor(
@@ -97,6 +98,10 @@ export class UnifiedControlGateway {
   private queue: Pending[] = [];
   private applying: Pending | null = null;
   private remembered = new Map<string, Remembered>();
+  private aliasResponses = new WeakMap<
+    Promise<ControlResponse>,
+    Map<string, Promise<ControlResponse>>
+  >();
   private commandEpoch = 0;
   private lastReset: {
     fingerprint: string;
@@ -152,6 +157,33 @@ export class UnifiedControlGateway {
     });
   }
   request(input: unknown): Promise<ControlResponse> {
+    let requestedOperation: unknown;
+    try {
+      requestedOperation = plainRecord(input, 'request').operation;
+    } catch {
+      // The validated path below produces the original structured error.
+    }
+    const pending = this.requestNormalized(input);
+    if (
+      typeof requestedOperation !== 'string' ||
+      normalizeAircraftOperation(requestedOperation) === requestedOperation
+    )
+      return pending;
+    // Only response spelling differs; repeated aliases still return the same promise.
+    let responses = this.aliasResponses.get(pending);
+    if (!responses) {
+      responses = new Map();
+      this.aliasResponses.set(pending, responses);
+    }
+    let response = responses.get(requestedOperation);
+    if (!response) {
+      const operation = requestedOperation;
+      response = pending.then((value) => snapshot({ ...value, operation }));
+      responses.set(operation, response);
+    }
+    return response;
+  }
+  private requestNormalized(input: unknown): Promise<ControlResponse> {
     let request: ControlRequest = { operation: 'unknown' };
     try {
       const object = plainRecord(input, 'request');
@@ -162,8 +194,15 @@ export class UnifiedControlGateway {
       );
       request = { ...object, operation: token(object.operation, 'operation') } as ControlRequest;
       // Canonicalize before copying so undefined, nonfinite numbers and exotic objects are rejected.
-      const fingerprint = canonical(object);
-      if (fingerprint.length > 65536) throw new Error('Request exceeds 64 KiB');
+      const rawFingerprint = canonical(object);
+      if (rawFingerprint.length > 65536) throw new Error('Request exceeds 64 KiB');
+      if (request.aircraft !== undefined) {
+        const aircraft = normalizeAircraftId(request.aircraft);
+        if (aircraft) request.aircraft = aircraft;
+      }
+      request.operation = normalizeAircraftOperation(request.operation);
+      // Equivalent old/new spellings share the same idempotency record.
+      const fingerprint = canonical(request);
       request = snapshot(request);
       const epoch = request.epoch === undefined ? 0 : request.epoch;
       if (!Number.isSafeInteger(epoch) || epoch < 0)
@@ -372,7 +411,7 @@ export class UnifiedControlGateway {
       fail('STALE_SELECTION', 'Selection generation changed');
   }
   private requiredTarget(request: ControlRequest) {
-    if (request.aircraft !== 'ev50' && request.aircraft !== 'transwing')
+    if (request.aircraft !== 'ev50' && request.aircraft !== 'skytrans')
       throw new Error('aircraft is required');
     if (!Number.isSafeInteger(request.generation) || request.generation! < 0)
       throw new Error('generation must be a nonnegative safe integer');
@@ -398,7 +437,7 @@ export class UnifiedControlGateway {
       op = request.operation as AircraftOperation;
     if (
       (op.startsWith('ev50.') && context.aircraft !== 'ev50') ||
-      (op.startsWith('transwing.') && context.aircraft !== 'transwing')
+      (op.startsWith('skytrans.') && context.aircraft !== 'skytrans')
     )
       fail('AIRCRAFT_MISMATCH', 'Model-specific commands cannot cross aircraft types');
     if (

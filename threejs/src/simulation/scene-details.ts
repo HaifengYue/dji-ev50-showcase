@@ -21,7 +21,7 @@ export type SceneSettings = {
 };
 
 /** Deterministic, lightweight references shared by the scene and metadata API. */
-export function sceneDetails(parent: T.Group) {
+export function sceneDetails(parent: T.Group, options: { externalTrail?: boolean } = {}) {
   const group = new T.Group();
   group.name = 'Simulation_Site';
   parent.add(group);
@@ -138,7 +138,7 @@ export function sceneDetails(parent: T.Group) {
     },
     update(dt: number, seconds: number, position: T.Vector3, enabled: boolean, fog: T.Fog | null) {
       references.visible = settings.references;
-      trail.visible = settings.trail && enabled;
+      trail.visible = settings.trail && enabled && !options.externalTrail;
       sock.rotation.set(
         Math.max(0.08, Math.PI / 2 - settings.windSpeed * 0.16) + Math.sin(seconds * 3) * 0.035,
         -T.MathUtils.degToRad(settings.windFromDegrees),
@@ -150,7 +150,7 @@ export function sceneDetails(parent: T.Group) {
         fog.far = settings.visibility;
       }
       elapsed += dt;
-      if (enabled && settings.trail && elapsed >= 0.1) {
+      if (enabled && settings.trail && !options.externalTrail && elapsed >= 0.1) {
         elapsed = 0;
         const index = Math.max(0, count - 1) * 3;
         if (

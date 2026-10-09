@@ -1,10 +1,10 @@
 {
-  "name": "dji-ev50-showcase",
+  "name": "sky-captain-web",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite --host 127.0.0.1",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build && node qa/copy-legacy-assets.mjs",
     "preview": "vite preview --host 127.0.0.1",
     "control-server": "node control-server.mjs",
     "mavlink-server": "node mavlink-visual-server.mjs",
@@ -17,7 +17,9 @@
     "test:browser": "playwright test",
     "control:hangar": "node hangar-server.mjs",
     "test:control": "node test-control-contract.mjs && node test-hangar-server.mjs",
-    "test:world": "node test-transwing-world.mjs"
+    "test:world": "node test-skytrans-world.mjs",
+    "test:branding": "node test-branding.mjs",
+    "test:landscape": "node test-landscape-trail.mjs"
   },
   "dependencies": {
     "three": "^0.170.0",
