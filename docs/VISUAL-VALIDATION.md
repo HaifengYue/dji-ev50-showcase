@@ -67,3 +67,9 @@ front 正交图还暴露了白带视线方向使用透视公式的问题。修�
 `Deploy SkyCaptain hangar` 部署成功后运行 `scripts/verify-public-pages.mjs`，严格限定到 `https://haifengyue.github.io/sky-captain/`。先逐文件比较实际公共资源与上传构建的 SHA-256（含新旧模型路径），再用 Chromium 在该公共子路径加载 EV50、播放 SkyTrans、访问旧 query 别名并切回 EV50，检查新渲染帧、模型几何、控制源与 shader/HTTP/网络错误，上传 `public-pages-evidence`。这一检查不把本地服务或 HTTP 200 代替公共三维验收。
 
 dot 云浏览器在本次检查时没有可用的 WebGL 上下文，因此它只验证了公开站点入口和 UI；实际公共 GPU 渲染结论以该后部署 Chromium 结果和截图为准。原私有预览保留相同项目与 owner-only 访问，公开 Pages 是单独的已授权发布目标。
+
+`71986de6fddf17b6261b9338f407883fa98923bc` 的开发分支 Chromium run `37899228454` 完整 16/16 通过（25.6 分钟），新绿色山地及加宽白带的正常飞行截图已检查。近镜头的白色核心偏实，正交近轴视角仍有轻微折扇叠影；两张 wide 图的较老尾端在画面之外，不能单靠截图宣称完整消散尾端可见。
+
+该版本 main 的首个公开部署 run `37904447913` 已成功部署，19 个公共文件 SHA-256 相等，公共 EV50 和运行中的 SkyTrans 均实际渲染并留下截图；最后同页导航到 `?aircraft=transwing` 等待 DOMContentLoaded 时达到 30 秒，整项 smoke 因此失败。失败截图已是新文档的 SkyTrans 加载界面，错误列表为空，但当时没有 trace，不能由此断言网络或卸载延迟的具体原因，也不能算旧入口验收通过。
+
+后续仅对此次旧 query 同页导航设置 60 秒有界诊断预算，并收集完整 Playwright trace、主文档响应/主 frame 导航/DOMContentLoaded 时间和实际 URL；不跳过或捕获超时后放行，不改成隔离页面。型号就绪、新渲染帧及所有行为条件仍为 30 秒，普通截图 60 秒、整项公开检查 8 分钟不变。该调整是软件渲染慢启动容差与取证改进，是否通过以新 run 终态为准。

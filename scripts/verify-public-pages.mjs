@@ -19,6 +19,8 @@ const report = {
   assets: [],
   scenes: [],
   errors: [],
+  navigations: [],
+  navigationEvents: [],
 };
 const hash = (bytes) => createHash('sha256').update(bytes).digest('hex');
 
@@ -68,13 +70,22 @@ if (process.argv.includes('--assets-only')) {
 }
 
 let browser;
+let context;
 let page;
 try {
   browser = await chromium.launch({ args: ['--use-gl=angle', '--use-angle=swiftshader'] });
-  const context = await browser.newContext({ viewport: { width: 1440, height: 1000 } });
+  context = await browser.newContext({ viewport: { width: 1440, height: 1000 } });
   context.setDefaultTimeout(30_000);
   context.setDefaultNavigationTimeout(30_000);
+  await context.tracing.start({ screenshots: false, snapshots: true, sources: true });
   page = await context.newPage();
+  const navigationEvent = (event, url, details = {}) =>
+    report.navigationEvents.push({ at: new Date().toISOString(), event, url, ...details });
+  page.on('framenavigated', (frame) => {
+    if (frame === page.mainFrame()) navigationEvent('main-frame-navigated', frame.url());
+  });
+  page.on('domcontentloaded', () => navigationEvent('domcontentloaded', page.url()));
+  page.on('load', () => navigationEvent('load', page.url()));
   page.on('pageerror', (error) => report.errors.push(error.message));
   page.on('console', (message) => {
     if (
@@ -88,9 +99,27 @@ try {
     report.errors.push(`${request.url()}: ${request.failure()?.errorText}`),
   );
   page.on('response', (response) => {
+    if (response.request().resourceType() === 'document')
+      navigationEvent('document-response', response.url(), { status: response.status() });
     if (response.status() >= 400)
       report.errors.push(`HTTP ${response.status()}: ${response.url()}`);
   });
+  async function navigate(url, timeout = 30_000) {
+    const started = Date.now();
+    const navigation = { url, timeout, startedAt: new Date(started).toISOString() };
+    report.navigations.push(navigation);
+    try {
+      const response = await page.goto(url, { waitUntil: 'domcontentloaded', timeout });
+      navigation.status = response?.status();
+      navigation.completed = true;
+    } catch (error) {
+      navigation.failure = String(error);
+      throw error;
+    } finally {
+      navigation.elapsedMs = Date.now() - started;
+      navigation.actualUrl = page.url();
+    }
+  }
   const diagnostics = () => page.evaluate(() => window.hangarDiagnostics);
   async function ready(aircraft) {
     const actual = new URL(page.url());
@@ -127,13 +156,13 @@ try {
     await expect(page).toHaveTitle(/SkyCaptain/);
     return state;
   }
-  await page.goto(base.href, { waitUntil: 'domcontentloaded' });
+  await navigate(base.href);
   await ready('ev50');
   await page.locator('#quality').selectOption('Low');
   report.scenes.push({ query: 'default', state: await ready('ev50') });
   await page.screenshot({ path: resolve(output, 'public-ev50-product.png'), timeout: 60_000 });
 
-  await page.goto(new URL('?aircraft=skytrans', base).href, { waitUntil: 'domcontentloaded' });
+  await navigate(new URL('?aircraft=skytrans', base).href);
   await ready('skytrans');
   await expect(page.locator('#aircraft-headline')).toHaveText('Skytrans');
   await page.locator('#quality').selectOption('Low');
@@ -187,7 +216,10 @@ try {
     .poll(async () => (await diagnostics()).aircraft.experience.playing, { timeout: 30_000 })
     .toBe(false);
 
-  await page.goto(new URL('?aircraft=transwing', base).href, { waitUntil: 'domcontentloaded' });
+  // The first public run reached the new document but hit the 30 s DCL budget.
+  // Preserve same-page navigation; give this one software-rendered reload a
+  // bounded 60 s diagnostic allowance. Model readiness stays at 30 s below.
+  await navigate(new URL('?aircraft=transwing', base).href, 60_000);
   await ready('skytrans');
   await expect(page.locator('#aircraft-select')).toHaveValue('skytrans');
   await expect(page.locator('#aircraft-headline')).toHaveText('Skytrans');
@@ -208,6 +240,14 @@ try {
       .catch(() => {});
   throw error;
 } finally {
+  if (context)
+    await context.tracing
+      .stop({ path: resolve(output, 'public-pages-trace.zip') })
+      .catch((error) => {
+        report.traceFailure = String(error);
+      });
+  await browser?.close().catch((error) => {
+    report.closeFailure = String(error);
+  });
   await writeFile(resolve(output, 'public-pages.json'), JSON.stringify(report, null, 2));
-  await browser?.close();
 }
