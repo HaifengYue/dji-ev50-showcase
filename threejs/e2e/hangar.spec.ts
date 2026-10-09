@@ -179,6 +179,9 @@ test('Local continuous SkyTrans flight shows lakes, villages and an aging white 
   // continuous warm-up and one <=60s screenshot for the requested longer trail.
   // Individual readiness/behavior waits remain 30s; this is not an FPS target.
   test.setTimeout(300_000);
+  // Keep the full High scene and 1.44 aspect ratio while bounding SwiftShader
+  // raster/readback work; both continuous-flight captures use the same viewport.
+  await page.setViewportSize({ width: 1152, height: 800 });
   const errors = watchErrors(page);
   await page.goto('/hangar/?aircraft=skytrans');
   await ready(page, 'skytrans');
@@ -443,7 +446,11 @@ test('SkyTrans integrates shared canvas, real rig, native cameras and EV50 API i
   await expect(page.locator('canvas#scene')).toHaveCount(1);
   await expect(page.locator('#aircraft-panel')).toBeVisible();
   await expect(page.locator('#simulation-tools')).toBeHidden();
+  // The product tilt demo caps each rendered update at 0.1 s. Use its normal
+  // 2x UI rate for this response/ownership test, not a wall-clock FPS assertion.
+  await page.locator('#playback-speed').selectOption('2');
   const before = (await diagnostics(page)).aircraft;
+  expect(before.experience.tilt.rate).toBe(2);
   expect(before.experience.cameraView).toBe('perspective');
   expect(before.camera.type).toBe('PerspectiveCamera');
   await page.locator('#play').click();
@@ -451,7 +458,17 @@ test('SkyTrans integrates shared canvas, real rig, native cameras and EV50 API i
     .poll(async () => (await diagnostics(page)).aircraft.runtime.state.wingTilt)
     .toBeGreaterThan(0.05);
   await page.locator('#play').click();
-  const after = (await diagnostics(page)).aircraft;
+  await page.locator('#playback-speed').selectOption('1');
+  const paused = await diagnostics(page);
+  const after = paused.aircraft;
+  expect(after.experience.tilt.playing).toBe(false);
+  expect(after.experience.tilt.rate).toBe(1);
+  await expect
+    .poll(async () => (await diagnostics(page)).frameNumber)
+    .toBeGreaterThan(paused.frameNumber);
+  expect((await diagnostics(page)).aircraft.runtime.state.wingTilt).toBe(
+    after.runtime.state.wingTilt,
+  );
   expect(after.camera.position).toEqual(before.camera.position);
   expect(after.camera.target).toEqual(before.camera.target);
   await page.locator('#camera').selectOption('top');

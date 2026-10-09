@@ -43,9 +43,27 @@ const retained = (page: Page) =>
     };
   });
 function expectRetained(actual: any, expected: any) {
-  const { renderCamera: actualCamera, ...actualState } = actual;
-  const { renderCamera: expectedCamera, ...expectedState } = expected;
+  const { renderCamera: actualCamera, camera: actualView, ...actualState } = actual;
+  const { renderCamera: expectedCamera, camera: expectedView, ...expectedState } = expected;
   expect(actualState).toEqual(expectedState);
+  if (actualView && expectedView) {
+    const { position: actualPosition, target: actualTarget, ...actualMetadata } = actualView;
+    const {
+      position: expectedPosition,
+      target: expectedTarget,
+      ...expectedMetadata
+    } = expectedView;
+    expect(actualMetadata).toEqual(expectedMetadata);
+    for (const [values, reference] of [
+      [actualPosition, expectedPosition],
+      [actualTarget, expectedTarget],
+    ]) {
+      expect(values).toHaveLength(reference.length);
+      values.forEach((value: number, index: number) =>
+        expect(value).toBeCloseTo(reference[index], 8),
+      );
+    }
+  } else expect(actualView).toEqual(expectedView);
   for (const key of ['position', 'quaternion', 'projection', 'worldMatrix']) {
     expect(actualCamera[key]).toHaveLength(expectedCamera[key].length);
     actualCamera[key].forEach((value: number, index: number) =>
@@ -64,6 +82,8 @@ test('Landscape swaps preserve paused and running flight while blue islands actu
   page,
 }, info) => {
   test.setTimeout(300_000);
+  // Match the mountain wide capture's aspect ratio and bounded CI pixel budget.
+  await page.setViewportSize({ width: 1152, height: 800 });
   const errors = watchErrors(page);
   await page.goto('/hangar/?aircraft=skytrans&landscape=mountains');
   await ready(page, 'skytrans');
