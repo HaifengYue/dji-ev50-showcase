@@ -141,6 +141,7 @@ test('Transwing demo vertical rates and rotor phase survive seek, pause, playbac
 test('EV50 starts alone on nested base, preserves flight controls and capture', async ({
   page,
 }, info) => {
+  test.setTimeout(180_000); // Cold load plus screenshot and exported-image readbacks on software GPU.
   const errors = watchErrors(page);
   const requests: string[] = [];
   page.on('request', (request) => requests.push(request.url()));
@@ -350,6 +351,7 @@ test.describe('Mobile touch controls', () => {
 test('Full-page Back restores a usable aircraft, and persisted pageshow rebuilds disposed resources', async ({
   page,
 }, info) => {
+  test.setTimeout(180_000); // Three full renderer/resource readiness gates plus actual history navigation.
   const pageshows: boolean[] = [];
   page.on('console', (message) => {
     if (message.text().startsWith('HANGAR_PAGESHOW:'))
@@ -614,6 +616,11 @@ test('Transwing uses the EV50 stage and world terrain route without a private ha
       return value.aircraft.runtime.actuators.L_Front.rpm;
     })
     .toBeGreaterThan(100);
+  // Follow has an intentional 1.05-second camera transition. Mission motion alone
+  // does not imply that transition has completed, especially on a software renderer.
+  await expect
+    .poll(async () => (await diagnostics(page)).aircraft.camera.transitioning)
+    .toBe(false);
   const flying = await diagnostics(page);
   expect(flying.aircraft.experience.playing).toBe(true);
   expect(flying.aircraft.camera.view).toBe('follow');

@@ -222,3 +222,11 @@ is not evidence of successful execution.
 For complete non-browser repository validation, run `npm run ci` at the repository
 root after all edits. Keep that aggregate result distinct from these focused checks
 and from browser acceptance.
+
+## Transwing demo-rate regression and browser timing (2026-10-09)
+
+The demo-rate patch adds a 316-second local Transwing profile (3 m/s climb, 2 m/s descent, four-second velocity ramps, six-second shutdown). These are visual-demo choices, not aircraft performance claims. Node coverage checks the actual adapter derivative, acceleration, phase continuity, rate-independent motor samples, seek/pause behavior and ownership isolation. The new Chromium regression exercises every exposed playback rate, reads actual position/time derivatives and rotor phases, checks rear-motor conversion and complete shutdown, and captures the aircraft while playing.
+
+At `c585086`, that new browser regression passed twice. The two runs exposed pre-existing whole-test budget assumptions: the EV50 cold-load/screenshot/export case and the three-readiness history-return case exhausted 90 seconds. The captured trace includes a 35.1-second screenshot, a 41.6-second navigation to the simple away page, and 3–11-second diagnostic reads. Their overall budgets are now 180 seconds; per-readiness assertions and all behavior, geometry, download and resource checks remain unchanged. This is not a claim of real-time GPU performance.
+
+The shared-terrain test also read the follow-camera offset before its intentional 1.05-second transition completed. It now waits for the actual transition state before applying the same `<15 m` offset assertion; no camera behavior or distance threshold is changed. Failed runs and artifacts are retained in Actions rather than hidden by automatic retries. Final acceptance requires a complete successful run for the final commit.
