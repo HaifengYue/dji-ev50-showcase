@@ -100,7 +100,9 @@ export class FlightTrail {
           vSide = aSide;
           vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
           vec3 tangent = mat3(modelViewMatrix) * aTangent;
-          vec3 side = cross(tangent, -mvPosition.xyz);
+          // Orthographic rays stay parallel when the trail moves across the view.
+          vec3 viewRay = isOrthographic ? vec3(0.0, 0.0, 1.0) : -mvPosition.xyz;
+          vec3 side = cross(tangent, viewRay);
           float sideLength = length(side);
           side = sideLength > 0.0001 ? side / sideLength : vec3(1.0, 0.0, 0.0);
           float age = clamp(vAge / uLifetime, 0.0, 1.0);

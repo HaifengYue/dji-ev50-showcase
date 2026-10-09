@@ -93,6 +93,45 @@ try {
   assert.equal(trail.material.uniforms.uTime.value, stableUniform);
   assert.deepEqual(trail.geometry.attributes.position.array, stablePositions);
   pass('fixed buffers, one draw call, simulation-time pause and external step(0) freeze');
+  assert.match(
+    trail.material.vertexShader,
+    /viewRay\s*=\s*isOrthographic\s*\?\s*vec3\(0\.0, 0\.0, 1\.0\)\s*:\s*-mvPosition\.xyz/,
+  );
+  assert.match(trail.material.vertexShader, /cross\(tangent, viewRay\)/);
+  // CPU mirror of the shader expression, including the existing axial fallback.
+  const ribbonSide = (tangent, viewPosition, orthographic) => {
+    const ray = orthographic ? new T.Vector3(0, 0, 1) : viewPosition.clone().negate();
+    const side = new T.Vector3().crossVectors(tangent, ray);
+    return side.length() > 0.0001 ? side.normalize() : new T.Vector3(1, 0, 0);
+  };
+  for (const tangent of [
+    new T.Vector3(0.05, 0, -1),
+    new T.Vector3(2, -1, -4),
+    new T.Vector3(0, 0, -1),
+  ]) {
+    const reference = ribbonSide(tangent, new T.Vector3(0, 0, -50), true);
+    for (const position of [
+      new T.Vector3(-80, 25, -50),
+      new T.Vector3(200, -100, -1500),
+      new T.Vector3(1, 7, -2),
+    ]) {
+      assert.ok(
+        ribbonSide(tangent, position, true).distanceTo(reference) < 1e-12,
+        'orthographic side and width are invariant under screen/depth translation',
+      );
+      const oldPerspectiveSide = new T.Vector3().crossVectors(tangent, position.clone().negate());
+      if (oldPerspectiveSide.length() > 0.0001) oldPerspectiveSide.normalize();
+      else oldPerspectiveSide.set(1, 0, 0);
+      assert.ok(
+        ribbonSide(tangent, position, false).distanceTo(oldPerspectiveSide) < 1e-12,
+        'perspective extrusion retains the prior behavior',
+      );
+    }
+  }
+  pass(
+    'orthographic billboard stays translation-invariant, including head-on fallback; perspective is unchanged',
+  );
+
   trail.update(frame(1));
   assert.equal(trail.diagnostics.resetReason, 'time-reversed');
   assert.equal(trail.diagnostics.pointCount, 1);
