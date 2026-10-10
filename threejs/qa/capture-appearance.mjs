@@ -10,7 +10,13 @@ const baseline = process.argv.includes('--baseline');
 await mkdir(output, { recursive: true });
 const browser = await chromium.launch({ args: ['--use-gl=angle', '--use-angle=swiftshader'] });
 let page;
-const report = { revision: process.env.APPEARANCE_SHA ?? null, baseline, scenes: [], errors: [] };
+const report = {
+  revision: process.env.APPEARANCE_SHA ?? null,
+  baseline,
+  scenes: [],
+  cameraSettling: [],
+  errors: [],
+};
 async function openPage() {
   const next = await browser.newPage({ viewport: { width: 1152, height: 800 } });
   next.setDefaultTimeout(30_000);
@@ -106,6 +112,7 @@ try {
     await page.locator('#camera').selectOption(aircraft === 'skytrans' ? 'wide' : 'follow');
     // Wait for both adapters' normal camera easing to settle, without writing camera state.
     let previous;
+    let movement;
     let previousFrame = (await diagnostics()).frameNumber;
     await expect
       .poll(
@@ -114,15 +121,29 @@ try {
           const state = await diagnostics();
           previousFrame = state.frameNumber;
           const matrix = state.renderCamera.worldMatrix;
-          const delta = previous
-            ? Math.max(...matrix.map((value, i) => Math.abs(value - previous[i])))
-            : Infinity;
+          movement = previous
+            ? {
+                translationM: Math.hypot(
+                  ...matrix.slice(12, 15).map((value, i) => value - previous[i + 12]),
+                ),
+                orientation: Math.max(
+                  ...matrix.slice(0, 12).map((value, i) => Math.abs(value - previous[i])),
+                ),
+              }
+            : { translationM: Infinity, orientation: Infinity };
           previous = matrix;
-          return state.aircraft?.camera?.transitioning ? Infinity : delta;
+          // This is screenshot settling, not the separate 1e-8 camera-retention contract.
+          // Millimetre translation and 1e-5 orientation keep these views subpixel-stable.
+          return (
+            state.aircraft?.camera?.transitioning !== true &&
+            movement.translationM < 0.001 &&
+            movement.orientation < 0.00001
+          );
         },
         { timeout: 30_000 },
       )
-      .toBeLessThan(1e-6);
+      .toBe(true);
+    report.cameraSettling.push({ aircraft, ...movement, frame: previousFrame });
     await page.locator('#quality').selectOption('High');
     await frameAfter((await diagnostics()).frameNumber);
     await page.getByText('光线与导出', { exact: true }).click();
