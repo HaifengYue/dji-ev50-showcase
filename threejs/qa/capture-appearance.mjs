@@ -89,7 +89,9 @@ try {
       )
       .toBe(aircraft);
     await expect(page.locator('#loading')).toBeHidden();
-    await page.locator('#quality').selectOption('High');
+    // Settle the unmodified follow camera with a bounded software-rendering load.
+    // High is restored before every reference/current desktop screenshot.
+    await page.locator('#quality').selectOption('Low');
     assert.equal((await diagnostics()).scene.exposure, 1, 'Product exposure stays accepted');
     assert.equal((await diagnostics()).scene.background, '202c34');
     await page.locator('#flight').click();
@@ -121,6 +123,8 @@ try {
         { timeout: 30_000 },
       )
       .toBeLessThan(1e-6);
+    await page.locator('#quality').selectOption('High');
+    await frameAfter((await diagnostics()).frameNumber);
     await page.getByText('光线与导出', { exact: true }).click();
     await page.locator('#immersive').click();
     const landscapes = baseline
@@ -160,6 +164,7 @@ try {
   report.passed = true;
 } catch (error) {
   report.failure = String(error?.stack ?? error);
+  if (page) report.failureState = await diagnostics().catch(() => null);
   if (page)
     await page
       .screenshot({ path: resolve(output, 'failure.png'), timeout: 30_000 })
