@@ -55,3 +55,53 @@ jobs:
             threejs/playwright-report/
             threejs/test-results/
           retention-days: 14
+  appearance:
+    name: Chromium scene appearance
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+          cache-dependency-path: threejs/package-lock.json
+      - run: npm ci --prefix threejs
+      - run: npx --prefix threejs playwright install --with-deps chromium
+      - name: Capture accepted visual reference
+        env:
+          # Last user-accepted visual baseline; keep this immutable across candidate retries.
+          APPEARANCE_SHA: 5ca848ea00f57d846eb33d6a239cf2c6948acc6c
+        run: |
+          if ! git cat-file -e "${APPEARANCE_SHA}^{commit}" 2>/dev/null; then
+            git fetch --depth=1 origin "$APPEARANCE_SHA"
+          fi
+          export APPEARANCE_SHA
+          git worktree add --detach ../appearance-baseline "$APPEARANCE_SHA"
+          cp threejs/qa/capture-appearance.mjs ../appearance-baseline/threejs/qa/
+          npm ci --prefix ../appearance-baseline/threejs
+          npm --prefix ../appearance-baseline/threejs run build
+          output="$GITHUB_WORKSPACE/threejs/test-results/appearance/before"
+          cd ../appearance-baseline/threejs
+          node qa/serve-built.mjs &
+          server=$!
+          trap 'kill "$server"' EXIT
+          node qa/capture-appearance.mjs "$output" --baseline
+      - run: npm --prefix threejs run build
+      - name: Capture and verify current scene appearance
+        env:
+          APPEARANCE_SHA: ${{ github.sha }}
+        run: |
+          cd threejs
+          node qa/serve-built.mjs &
+          server=$!
+          trap 'kill "$server"' EXIT
+          node qa/capture-appearance.mjs test-results/appearance/after
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: scene-appearance-evidence
+          path: threejs/test-results/appearance/
+          retention-days: 14

@@ -6,6 +6,7 @@ import ts from 'typescript';
 import * as T from 'three';
 
 const temporary = '.presentation-test-tmp.mjs';
+const appearanceTemporary = '.scene-appearance-test-tmp.mjs';
 const passed = [];
 const original = {
   document: globalThis.document,
@@ -16,7 +17,16 @@ const original = {
 };
 fs.writeFileSync(
   temporary,
-  ts.transpileModule(fs.readFileSync('src/presentation.ts', 'utf8'), {
+  ts
+    .transpileModule(fs.readFileSync('src/presentation.ts', 'utf8'), {
+      compilerOptions: { target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.ES2022 },
+    })
+    .outputText.replace("'./scene-appearance'", `"./${appearanceTemporary}"`),
+);
+
+fs.writeFileSync(
+  appearanceTemporary,
+  ts.transpileModule(fs.readFileSync('src/scene-appearance.ts', 'utf8'), {
     compilerOptions: { target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.ES2022 },
   }).outputText,
 );
@@ -220,6 +230,10 @@ try {
   h.options.scene.fog = new T.Fog(0, 650, 3200);
   ui.update('flight', true);
   assert.equal(h.options.scene.fog.color.getHex(), 0xd3baa2);
+  el('lighting').value = 'daylight';
+  ui.update('flight', true);
+  assert.equal(h.options.scene.fog.color.getHex(), 0x93bed7);
+  assert.deepEqual(h.options.camera.position.toArray(), cameraBefore);
   ui.update('product', true);
   assert.equal(h.options.golden, false);
   h.options.controls.emit('start');
@@ -303,6 +317,7 @@ try {
   console.log('PASS presentation logic:', passed.length, 'groups');
 } finally {
   fs.rmSync(temporary, { force: true });
+  fs.rmSync(appearanceTemporary, { force: true });
   for (const key of ['document', 'window', 'MediaRecorder']) {
     if (original[key] === undefined) delete globalThis[key];
     else globalThis[key] = original[key];

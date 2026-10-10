@@ -2,13 +2,15 @@
 
 `window.hangarAPI.request(request)` is the versioned asynchronous control entry point for the selected aircraft. Existing `hangarAPI.list()`, `state()`, `select()`, `window.ev50API`, EV50 command/result events and `transwing.sim.v1` remain separate compatibility interfaces. New unified commands do not reinterpret legacy payloads or change the EV50 HTTP result outbox or SkyTrans Python/replay clock.
 
-This is a visualization interface, not a vehicle flight controller. Remote HTTP, WebSocket, authentication, and public Internet exposure are not implemented. The local companion service is restricted to an explicitly configured same-origin loopback deployment. Lease tokens coordinate browser clients; they are not authentication credentials or a security boundary against scripts already running in the page.
+This is a visualization interface, not a vehicle flight controller. The unified gateway does not implement remote HTTP, WebSocket transport, authentication, or public Internet exposure. EV50 has a separate legacy MAVLink-style WebSocket visualization channel; it is not a transport for this protocol. The local companion service is restricted to an explicitly configured same-origin loopback deployment. Lease tokens coordinate browser clients; they are not authentication credentials or a security boundary against scripts already running in the page.
 
 ## Presentation landscape selection
 
 The UI's `mountains` / `islands` landscape choice is a presentation preference, not a new gateway configuration or `scene.configure` key. Changing it on an active page preserves the selected aircraft, generation, lease, control source, pose, simulation clock and camera. Only landscape-owned render resources and the visual trail are reset. Ordinary page teardown still releases control according to the lifecycle below.
 
 Legacy scene metadata/query interfaces retain their existing `nominalGroundHeight` and `obstacleCeiling` semantics. They are not the active island terrain, rendered depth or a collision map. `hangarDiagnostics.landscape.profile` identifies the visual preset; the environment's current `surfaceHeight` is used only for visual trail clearance, never to rewrite authoritative positions or the legacy manual-control guard.
+
+Shared visual grading lives in `threejs/src/scene-appearance.ts`, outside gateway configuration. Product exposure remains 1; flight exposure is 0.96 and default fog near/far is 2000/7400 m. Legacy explicit `scene.configure` visibility still overrides the default. None of these settings changes authoritative pose, simulation time or lease identity.
 
 ## One configuration source
 

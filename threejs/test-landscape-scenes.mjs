@@ -35,7 +35,9 @@ const load = (relative) => import(pathToFileURL(compile(relative)).href);
 const reports = [];
 try {
   const { environment } = await load('environment.ts');
+  const { SCENE_APPEARANCE } = await load('scene-appearance.ts');
   const { islandSurface, ISLAND_PROFILES } = await load('island-landscape.ts');
+  const { sceneDetails } = await load('simulation/scene-details.ts');
   const { islandHeight, ISLANDS, WATER_LEVEL, obstacleCeiling } = await load('terrain.ts');
   const scene = new T.Scene(),
     world = environment(scene),
@@ -52,6 +54,59 @@ try {
   assert.equal(sky.material.fog, false);
   assert.equal(sky.frustumCulled, false);
   assert.ok(sky.renderOrder < 0);
+  assert.deepEqual(
+    SCENE_APPEARANCE.product,
+    {
+      background: 0x202c34,
+      exposure: 1,
+      environmentIntensity: 0.45,
+    },
+    'accepted product stage must not inherit flight grading',
+  );
+  assert.equal(SCENE_APPEARANCE.flight.exposure, 0.96);
+  assert.deepEqual(SCENE_APPEARANCE.flight.fog, {
+    daylight: 0x93bed7,
+    golden: 0xd3baa2,
+    near: 2000,
+    far: 7400,
+  });
+  assert.equal(sky.material.uniforms.uZenith.value.getHex(), SCENE_APPEARANCE.sky.zenith);
+  assert.equal(sky.material.uniforms.uHorizon.value.getHex(), SCENE_APPEARANCE.sky.horizon);
+  assert.deepEqual(sky.material.uniforms.uCloudShadow.value.toArray(), [0.68, 0.78, 0.87]);
+  assert.deepEqual(sky.material.uniforms.uCloudHighlight.value.toArray(), [1, 1, 1]);
+  assert.equal(sky.material.uniforms.uCloudOpacity.value, 0.9);
+  world.setSky(true);
+  assert.equal(sky.material.uniforms.uGolden.value, 1);
+  world.setSky(false);
+  assert.equal(sky.material.uniforms.uGolden.value, 0);
+  const originalDocument = globalThis.document;
+  let details;
+  try {
+    // Canvas drawing is irrelevant to this fog update; actual pixels are checked in Chromium.
+    globalThis.document = {
+      createElement: () => ({ getContext: () => ({ fillRect() {}, fillText() {} }) }),
+    };
+    details = sceneDetails(new T.Group(), { externalTrail: true });
+  } finally {
+    if (originalDocument === undefined) delete globalThis.document;
+    else globalThis.document = originalDocument;
+  }
+  const fog = new T.Fog(SCENE_APPEARANCE.flight.fog.daylight, 0, 1);
+  assert.deepEqual(
+    details.configure(details.getSettings()),
+    details.getSettings(),
+    'defaults remain valid API input',
+  );
+  details.update(0, 0, new T.Vector3(), true, fog);
+  assert.equal(fog.near, SCENE_APPEARANCE.flight.fog.near);
+  assert.equal(fog.far, SCENE_APPEARANCE.flight.fog.far);
+  details.configure({ visibility: 3000 });
+  details.update(0, 0, new T.Vector3(), true, fog);
+  assert.equal(fog.near, 900, 'explicit scene visibility still controls near haze');
+  assert.equal(fog.far, 3000, 'explicit scene visibility overrides the visual default');
+  console.log(
+    'PASS scenes: shared conservative appearance, unchanged product stage and valid visibility overrides',
+  );
   const cloud = sky.material.uniforms.uCloud.value;
   assert.equal(cloud.image.width, 256);
   assert.equal(cloud.image.height, 128);

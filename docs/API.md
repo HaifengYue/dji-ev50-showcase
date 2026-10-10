@@ -1,6 +1,8 @@
-# EV50 浏览器 API
+# EV50 兼容浏览器 API
 
 EV50 是部署到 GitHub Pages 的静态 Three.js 应用，没有常驻服务端。因此 API 在当前页面上下文执行：入口为 `window.ev50API`，而不是一个可从其他设备访问的 HTTP 服务。基础控制操作映射到 `/api/v1/...` 资源路径；视景仿真操作仅在页面内公开，并在能力响应的 `browserOperations` 字段列出，不能假定存在同名 HTTP 路由。
+
+新接入双机型时优先使用 [统一控制接口](UNIFIED_CONTROL.md)。本页描述保留的 EV50 API 3.3.0；`request()` 是同步结构化结果，与 `hangarAPI.request()` 的 Promise、租约和渲染后 ACK 不同。SkyTrans 被选中或统一控制租约占用时，EV50 操作会报告 `NOT_READY`。
 
 ## 快速开始
 
@@ -18,9 +20,9 @@ ev50.play();
 
 直接方法 `motor`、`position`、`velocity`、`attitude`、`euler`、`setRoute`、`play`、`pause`、`resume`、`reset`、`seek`、`setSpeed`、`getState` 和 `subscribe` 均保留。验证失败时会抛出 `Error`。
 
-## 统一请求接口
+## EV50 结构化请求接口
 
-新集成推荐使用 `request`。它始终返回结构化结果，不会抛出，因此适合消息桥、自动化与未来网络适配器：
+EV50 兼容客户端可使用 `request`。它始终返回结构化结果，不会抛出，因此适合消息桥、自动化与未来网络适配器：
 
 ```js
 const result = ev50.request({
@@ -76,16 +78,17 @@ ev50.request({
 
 这些操作只更新 Three.js 视景，**不会向无人机发送控制指令**。遥测帧为 JSON，必须包含 `version: 1`、单调递增的 `sequence` 与 `time`、`frame`（`SCENE`、`NED` 或 `ENU`）、位置/速度/四元数、11 路 `rotorRpm` 及 `aileron`、`elevator`、`rudder`。
 
-| 操作名                                        | 负载                      | 返回                            |
-| --------------------------------------------- | ------------------------- | ------------------------------- |
-| `simulation.state`                            | —                         | 来源、传输、丢帧与记录状态      |
-| `simulation.frame`                            | 一个遥测帧                | 校验后的实时视景状态            |
-| `simulation.connect` / `disconnect`           | `{ url }` / —             | WebSocket 连接状态              |
-| `simulation.replay.load` / `sample` / `seek`  | 记录对象 / — / `{ time }` | 回放状态                        |
-| `simulation.pause` / `resume`                 | —                         | 回放或实时视景状态              |
-| `simulation.record.start` / `stop` / `export` | 导出可选 `{ format }`     | 记录状态或标准化记录            |
-| `aircraft.describe` / `camera.describe`       | —                         | 机体挂点、相机内外参            |
-| `scene.describe` / `configure` / `query`      | — / 局部设置 / `{ x, z }` | 场景元数据、设置或地面/障碍查询 |
+| 操作名                                        | 负载                                             | 返回                                              |
+| --------------------------------------------- | ------------------------------------------------ | ------------------------------------------------- |
+| `simulation.source`                           | `{ source: 'demo' }` 或 `{ source: 'external' }` | 切换状态来源；回放必须用 `simulation.replay.load` |
+| `simulation.state`                            | —                                                | 来源、传输、丢帧与记录状态                        |
+| `simulation.frame`                            | 一个遥测帧                                       | 校验后的实时视景状态                              |
+| `simulation.connect` / `disconnect`           | `{ url }` / —                                    | WebSocket 连接状态                                |
+| `simulation.replay.load` / `sample` / `seek`  | 记录对象 / — / `{ time }`                        | 回放状态                                          |
+| `simulation.pause` / `resume`                 | —                                                | 回放或实时视景状态                                |
+| `simulation.record.start` / `stop` / `export` | 导出可选 `{ format }`                            | 记录状态或标准化记录                              |
+| `aircraft.describe` / `camera.describe`       | —                                                | 机体挂点、相机内外参                              |
+| `scene.describe` / `configure` / `query`      | — / 局部设置 / `{ x, z }`                        | 场景元数据、设置或地面/障碍查询                   |
 
 ```js
 ev50.request({
@@ -103,6 +106,8 @@ ev50.request({
   },
 });
 ```
+
+场景接口保留名义地面与障碍包络，不提供当前岛岸/山地渲染面的碰撞查询；`scene.configure` 不接受景观选择键。默认 `visibility` 为 7400 m，显式配置可覆盖它。统一接口的 [景观边界](UNIFIED_CONTROL.md#presentation-landscape-selection) 同样适用。
 
 ### 日志交换
 
@@ -139,6 +144,6 @@ unsubscribe();
 
 `aircraft`、`camera`、`scene` 与 `simulation` 已有浏览器端实现；`assets`、`telemetry` 仍为预留命名空间。新增操作必须同时更新本文件、`contracts.ts`、`gateway.ts` 以及回归测试；若要通过本机 HTTP 桥调用，也必须新增明确的路由和 Python 客户端支持，避免把仅页面内的操作误报为 HTTP 能力。
 
-若以后部署一个真实服务端，可让 HTTP 路由按上表把请求转换为 `{ id, operation, payload }` 并复用相同的响应结构。不要将浏览器 API 用作真实飞控或安全关键控制系统。
+已有本机 HTTP 桥将上表中已实现的 REST 路由转换为 `{ id, operation, payload }`。仅浏览器操作不会因命名类似 REST 就自动成为 HTTP 能力。不要将浏览器 API 用作真实飞控或安全关键控制系统。
 
-仓库现已提供用于本机开发的 HTTP 轮询桥和 Python 控制脚本，启动与端点说明见 [HTTP_CONTROL.md](HTTP_CONTROL.md)。另提供统一的 MAVLink 风格 WebSocket 状态通道和本机控制脚本，见 [MAVLINK_LOCAL.md](MAVLINK_LOCAL.md)。它们保持浏览器页面为渲染与控制所有者；生产级跨设备控制仍需补充认证、授权、加密传输、限流和 WebSocket 等能力。
+仓库现已提供用于本机开发的 HTTP 轮询桥和 Python 控制脚本，启动与端点说明见 [HTTP_CONTROL.md](HTTP_CONTROL.md)。另提供统一的 MAVLink 风格 WebSocket 状态通道和本机控制脚本，见 [MAVLINK_LOCAL.md](MAVLINK_LOCAL.md)。它们保持浏览器页面为渲染与控制所有者；生产级跨设备控制仍需独立设计认证、授权、加密传输、限流与传输保障；现有开发桥不能直接作为公网服务。

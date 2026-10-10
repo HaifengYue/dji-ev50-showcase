@@ -1,6 +1,8 @@
-# 本地 MAVLink 风格视景控制
+# EV50 本地 MAVLink 风格视景控制
 
-这是用于浏览器三维视景的**本机测试通道**，不接串口、不发送 MAVLink 二进制包，也不能控制真实飞行器。服务只绑定 `127.0.0.1`，消息为一行一个 JSON 的 MAVLink 命名结构；其目的在于让控制器、记录和可视化在开发环境中可以联调。
+这是用于浏览器三维视景的**本机测试通道**，不接串口、不发送 MAVLink 二进制包，也不能控制真实飞行器。服务只绑定 `127.0.0.1`，消息为 WebSocket 文本帧中的 MAVLink 命名 JSON 结构；其目的在于让控制器、记录和可视化在开发环境中可以联调。
+
+该通道只适用于 EV50，不是 MAVLink 二进制桥、SkyTrans Python 协议或统一控制服务。接口选择见 [文档导航](README.md#接入方式与端口)。
 
 ## 启动与连接
 
@@ -12,11 +14,13 @@ npm run mavlink-server
 npm run dev
 ```
 
-页面加载后，展开 **视景仿真**，保持“本地 MAVLink 测试服务”，点击“连接”。外部集成只需切换为“外部 MAVLink WebSocket”，填写使用相同消息协议的 `ws://` 或 `wss://` 地址。
+打开 Vite 打印的本机页面，确认选择 EV50 后，展开 **视景仿真**，保持“本地 MAVLink 测试服务”，点击“连接”。外部集成只需切换为“外部 MAVLink WebSocket”，填写使用相同消息协议的 `ws://` 或 `wss://` 地址。
+
+默认地址 `ws://127.0.0.1:8765` 与 SkyTrans Python 桥的默认端口冲突。如需同时运行，从根目录执行 `npm --prefix threejs run mavlink-server -- 8766`，页面选“外部 MAVLink WebSocket”并填写 `ws://127.0.0.1:8766`。下列客户端命令相应加上 `--url "ws://127.0.0.1:8766/?role=controller"`（放在子命令之前）。HTTPS 页面要求 `wss://`；本机明文 `ws://` 使用本机 HTTP 页面。
 
 ## 本地控制脚本
 
-`scripts/mavlink_visual_control.py` 只使用 Python 标准库，默认只允许连接环回地址。每个命令会返回 `EV50_COMMAND_ACK` 及完整状态快照：
+`scripts/mavlink_visual_control.py` 只使用 Python 标准库，默认只允许连接环回地址。每个命令会返回测试服务的 `EV50_COMMAND_ACK` 及完整状态快照；它不表示浏览器已经完成渲染，也不是 `hangar.control.v1` 的 applied ACK。以下命令均从 `threejs/` 执行：
 
 ```powershell
 python scripts/mavlink_visual_control.py arm
@@ -60,4 +64,4 @@ python scripts/mavlink_visual_control.py control --position-ned 10 0 -25 --surfa
 npm run test:api
 ```
 
-其中包含本地 WebSocket 服务的端到端测试：验证状态流、解锁、起飞和执行器控制输入。完整仓库验证使用 `npm run ci`。
+其中包含本地 WebSocket 服务的端到端测试：验证状态流、解锁、起飞和执行器控制输入。完整仓库验证回到仓库根目录运行 `npm run ci`。

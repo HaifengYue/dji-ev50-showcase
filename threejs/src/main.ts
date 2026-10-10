@@ -46,6 +46,7 @@ import { Ev50ApiGateway } from './api/gateway';
 import { installBrowserApi } from './api/browser-api';
 import { startHttpBridge } from './api/http-bridge';
 import { presentation } from './presentation';
+import { SCENE_APPEARANCE } from './scene-appearance';
 import {
   aircraftRig,
   CAMERA_MOUNTS,
@@ -76,12 +77,11 @@ const renderer = new T.WebGLRenderer({
 });
 renderer.outputColorSpace = T.SRGBColorSpace;
 renderer.toneMapping = T.ACESFilmicToneMapping;
-renderer.toneMappingExposure = 1.0;
+renderer.toneMappingExposure = SCENE_APPEARANCE.product.exposure;
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = T.PCFSoftShadowMap;
 const scene = new T.Scene();
-scene.background = new T.Color(0xa4becb);
-scene.fog = new T.Fog(0xa4becb, 1800, 7200);
+scene.background = new T.Color(SCENE_APPEARANCE.product.background);
 const camera = new T.PerspectiveCamera(42, 1, 0.1, 9000);
 camera.position.set(8, 3.6, 10);
 const composer = new EffectComposer(renderer);
@@ -118,7 +118,7 @@ const pmrem = new T.PMREMGenerator(renderer),
   room = new RoomEnvironment(),
   envmap = pmrem.fromScene(room, 0.025);
 scene.environment = envmap.texture;
-scene.environmentIntensity = 0.45;
+scene.environmentIntensity = SCENE_APPEARANCE.product.environmentIntensity;
 room.dispose();
 pmrem.dispose();
 const terrain = environment(scene),
@@ -386,8 +386,14 @@ function setSceneMode(mode: 'product' | 'flight') {
   if (sharedSceneMode !== mode) clearFlightTrail();
   sharedSceneMode = mode;
   terrain.group.visible = mode === 'flight';
-  scene.background = new T.Color(mode === 'product' ? 0x202c34 : 0xa4becb);
-  scene.fog = mode === 'product' ? null : new T.Fog(0xa4becb, 1800, 7200);
+  const appearance = SCENE_APPEARANCE[mode];
+  const fog = SCENE_APPEARANCE.flight.fog;
+  renderer.toneMappingExposure = appearance.exposure;
+  scene.environmentIntensity = appearance.environmentIntensity;
+  scene.background = new T.Color(
+    mode === 'product' ? SCENE_APPEARANCE.product.background : fog.daylight,
+  );
+  scene.fog = mode === 'product' ? null : new T.Fog(fog.daylight, fog.near, fog.far);
 }
 function setMode(mode: 'product' | 'flight') {
   if (selectedId === 'skytrans') {
@@ -628,10 +634,8 @@ const apiGateway = new Ev50ApiGateway({
     const mode = flight.mode;
     flight.applyCommand(command as FlightCommand);
     if (mode === 'product') {
-      terrain.group.visible = true;
+      setSceneMode('flight');
       mapWrap.hidden = false;
-      scene.background = new T.Color(0xa4becb);
-      scene.fog = new T.Fog(0xa4becb, 1800, 7200);
       cameraMode = 'follow';
       controls.enabled = false;
       $<HTMLSelectElement>('#camera').value = 'follow';
@@ -833,9 +837,7 @@ canvas.addEventListener('webglcontextlost', (e) => {
   if (ready) flight.playing = false;
 });
 mapWrap.hidden = true;
-terrain.group.visible = false;
-scene.background = new T.Color(0x202c34);
-scene.fog = null;
+setSceneMode('product');
 const initialQuality = innerWidth < 700 ? 'Low' : 'High';
 $<HTMLSelectElement>('#quality').value = initialQuality;
 // Apply initial quality after selection controller initialization below.
@@ -1297,10 +1299,6 @@ function createSelection() {
       sun.target.position.set(0, 0, 0);
       missionPath = null;
       scene.environment = envmap.texture;
-      scene.environmentIntensity = 0.45;
-      renderer.toneMappingExposure = 1;
-      scene.background = new T.Color(0x202c34);
-      scene.fog = null;
       setActiveCamera(camera);
       configureAircraftShell(selectedId);
       if (selectedId === 'ev50') presentationView.resetProductView();
@@ -1634,6 +1632,10 @@ Object.defineProperty(window, 'hangarDiagnostics', {
       terrainVisible: terrain.group.visible,
       background: scene.background instanceof T.Color ? scene.background.getHexString() : null,
       exposure: renderer.toneMappingExposure,
+      fog:
+        scene.fog instanceof T.Fog
+          ? { color: scene.fog.color.getHexString(), near: scene.fog.near, far: scene.fog.far }
+          : null,
       environmentIntensity: scene.environmentIntensity,
       ownedGroups: scene.children.map((child) => child.name),
       settings: site.describe(),

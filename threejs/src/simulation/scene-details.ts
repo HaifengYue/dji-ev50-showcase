@@ -1,4 +1,5 @@
 import * as T from 'three';
+import { SCENE_APPEARANCE } from '../scene-appearance';
 import { groundHeight, obstacleCeiling, VISUAL_OBSTACLES } from '../terrain';
 
 export const SCENE_ANCHORS = [
@@ -26,7 +27,7 @@ export function sceneDetails(parent: T.Group, options: { externalTrail?: boolean
   group.name = 'Simulation_Site';
   parent.add(group);
   let settings: SceneSettings = {
-    visibility: 7200,
+    visibility: SCENE_APPEARANCE.flight.fog.far,
     windSpeed: 4,
     windFromDegrees: 30,
     references: false,
@@ -146,7 +147,7 @@ export function sceneDetails(parent: T.Group, options: { externalTrail?: boolean
         'YXZ',
       );
       if (fog) {
-        fog.near = Math.min(1800, settings.visibility * 0.3);
+        fog.near = Math.min(SCENE_APPEARANCE.flight.fog.near, settings.visibility * 0.3);
         fog.far = settings.visibility;
       }
       elapsed += dt;

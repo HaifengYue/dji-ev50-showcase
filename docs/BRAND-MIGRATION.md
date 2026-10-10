@@ -2,6 +2,8 @@
 
 SkyCaptain 是整合机库的项目名称；SkyTrans 是原整合机型 Transwing 的新项目内名称。它不改变参考机型的真实名称、厂商、几何来源或许可。
 
+这是当前仍需遵守的兼容契约，不是待清理的旧名称清单。使用/端口入口见 [文档导航](README.md)，原迁移过程见 [历史集成记录](INTEGRATION-VERIFICATION.md)。
+
 ## 规范入口
 
 - 仓库：`HaifengYue/sky-captain`；默认主线：`main`。

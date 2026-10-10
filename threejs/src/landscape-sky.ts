@@ -1,4 +1,5 @@
 import * as T from 'three';
+import { SCENE_APPEARANCE } from './scene-appearance';
 
 /** One distant background pass. Clouds are baked once and sampled in world directions. */
 export function landscapeSky() {
@@ -46,8 +47,11 @@ export function landscapeSky() {
       uCameraWorld: { value: new T.Matrix4() },
       uOrthographic: { value: false },
       uGolden: { value: 0 },
-      uZenith: { value: new T.Color(0x328bd7) },
-      uHorizon: { value: new T.Color(0x95cce9) },
+      uZenith: { value: new T.Color(SCENE_APPEARANCE.sky.zenith) },
+      uHorizon: { value: new T.Color(SCENE_APPEARANCE.sky.horizon) },
+      uCloudShadow: { value: new T.Vector3(...SCENE_APPEARANCE.sky.cloudShadow) },
+      uCloudHighlight: { value: new T.Vector3(...SCENE_APPEARANCE.sky.cloudHighlight) },
+      uCloudOpacity: { value: SCENE_APPEARANCE.sky.cloudOpacity },
     },
     vertexShader: `varying vec2 vScreen;
       void main() { vScreen = position.xy; gl_Position = vec4(position.xy, 1.0, 1.0); }`,
@@ -55,8 +59,8 @@ export function landscapeSky() {
       uniform sampler2D uCloud;
       uniform mat4 uInverseProjection, uCameraWorld;
       uniform bool uOrthographic;
-      uniform float uGolden;
-      uniform vec3 uZenith, uHorizon;
+      uniform float uGolden, uCloudOpacity;
+      uniform vec3 uZenith, uHorizon, uCloudShadow, uCloudHighlight;
       varying vec2 vScreen;
       void main() {
         vec4 farPoint = uInverseProjection * vec4(vScreen, 1.0, 1.0);
@@ -70,8 +74,8 @@ export function landscapeSky() {
         float density = texture2D(uCloud, uv).r;
         float clouds = smoothstep(0.48, 0.65, density) * smoothstep(0.008, 0.07, elevation);
         float light = smoothstep(0.45, 0.66, texture2D(uCloud, uv + vec2(0.0, 0.012)).r);
-        vec3 cloudColor = mix(vec3(0.73, 0.81, 0.88), vec3(1.0), light);
-        sky = mix(sky, cloudColor, clouds * 0.94);
+        vec3 cloudColor = mix(uCloudShadow, uCloudHighlight, light);
+        sky = mix(sky, cloudColor, clouds * uCloudOpacity);
         sky = mix(sky, sky * vec3(1.03, 0.99, 0.94), uGolden * 0.35);
         gl_FragColor = vec4(sky, 1.0);
         #include <colorspace_fragment>

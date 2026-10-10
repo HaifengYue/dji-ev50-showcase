@@ -1,4 +1,5 @@
 import * as T from 'three';
+import { SCENE_APPEARANCE } from './scene-appearance';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 type Options = {
@@ -305,7 +306,7 @@ export function presentation(options: Options) {
         hemisphere.color.setHex(golden ? 0xc6d5ec : 0xd6e9ff);
         hemisphere.groundColor.setHex(golden ? 0x786052 : 0x58624a);
         hemisphere.intensity = golden ? 1.1 : 1.3;
-        fogColor.setHex(golden ? 0xd3baa2 : 0xa4becb);
+        fogColor.setHex(SCENE_APPEARANCE.flight.fog[golden ? 'golden' : 'daylight']);
         options.setSky(golden);
       }
       // Mode buttons can replace the fog object even when its preset is unchanged.

@@ -5,13 +5,11 @@ The bridge is optional. The integrated website, mechanism controls and JSON repl
 From the repository root:
 
 ```sh
-cd threejs
-npm run build -- --base=/
-cd ..
+npm --prefix threejs run build
 python3 models/skytrans/python/run_server.py
 ```
 
-Open the printed `http://127.0.0.1:8765/?aircraft=skytrans` URL and choose “连接本机 Python 桥”. The launcher defaults to this repository's `threejs/dist`. The explicit equivalent is `python3 models/skytrans/python/run_server.py --dist threejs/dist --port 8765`. Build with `/` as the Vite base for loopback; the normal Pages build may use a repository prefix.
+Open the printed `http://127.0.0.1:8765/?aircraft=skytrans` URL and choose “连接本机 Python 桥”. The launcher defaults to this repository's `threejs/dist`. The explicit equivalent is `python3 models/skytrans/python/run_server.py --dist threejs/dist --port 8765`. The normal build uses relative asset paths (`base: './'`) and works both at this loopback root and under the Pages repository subpath; no base override is needed. Rebuild after source changes because the bridge serves `dist/`, not the Vite development server.
 
 The server binds only 127.0.0.1. It accepts the existing `transwing.sim.v1` protocol on `/api/v1/*`, never starts an automatic simulation clock, and checks same-origin HTTP requests. Remote static pages cannot probe localhost or initiate a cross-origin bridge. Switching aircraft closes its event stream, aborts imports/requests, unregisters its viewer and attempts to release its session. Release failures are reported and the lease remains the server's final safety boundary.
 

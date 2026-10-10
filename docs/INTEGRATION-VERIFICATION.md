@@ -1,8 +1,10 @@
-> Historical integration record: Transwing is now named SkyTrans in the current application. Historical names, commits and measurements below are retained as evidence. See [brand migration](BRAND-MIGRATION.md) for the current contract.
+> Historical integration record (not a current acceptance report): Transwing is now named SkyTrans in the current application. Historical names, commits and measurements below are retained as evidence. See [brand migration](BRAND-MIGRATION.md) for the current contract.
 
-# Native aircraft hangar integration verification
+# Native aircraft hangar integration verification — historical record
 
-Verification date: 2026-10-08. Integration branch: `main-copy-transwing`.
+Verification date: 2026-10-08, with later notes dated in their sections. Integration branch: `main-copy-transwing`.
+
+Commands, paths, durations, counts and pending items below describe those revisions, including pre-brand `models/transwing` commands and the former 57-second demonstration. For current commands use [CONTRIBUTING](../CONTRIBUTING.md); for current architecture and 316-second SkyTrans behavior use [INTEGRATION](INTEGRATION.md). Do not rerun historical commands blindly or treat an old “remaining” item as a current failure.
 
 The deployment remains the single Vite application in `threejs/`. EV50 and Transwing
 share its renderer, scene, canvas, animation loop, and outer navigation. Transwing is
