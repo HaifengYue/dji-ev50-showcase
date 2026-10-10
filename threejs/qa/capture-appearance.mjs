@@ -9,21 +9,25 @@ const output = resolve(process.argv[2] ?? 'test-results/appearance');
 const baseline = process.argv.includes('--baseline');
 await mkdir(output, { recursive: true });
 const browser = await chromium.launch({ args: ['--use-gl=angle', '--use-angle=swiftshader'] });
-const page = await browser.newPage({ viewport: { width: 1152, height: 800 } });
-page.setDefaultTimeout(30_000);
+let page;
 const report = { revision: process.env.APPEARANCE_SHA ?? null, baseline, scenes: [], errors: [] };
-page.on('pageerror', (error) => report.errors.push(error.message));
-page.on('console', (message) => {
-  if (
-    /THREE\.WebGLProgram|Shader Error|VALIDATE_STATUS|Error creating WebGL context/.test(
-      message.text(),
+async function openPage() {
+  const next = await browser.newPage({ viewport: { width: 1152, height: 800 } });
+  next.setDefaultTimeout(30_000);
+  next.on('pageerror', (error) => report.errors.push(error.message));
+  next.on('console', (message) => {
+    if (
+      /THREE\.WebGLProgram|Shader Error|VALIDATE_STATUS|Error creating WebGL context/.test(
+        message.text(),
+      )
     )
-  )
-    report.errors.push(message.text());
-});
-page.on('requestfailed', (request) =>
-  report.errors.push(`${request.url()}: ${request.failure()?.errorText}`),
-);
+      report.errors.push(message.text());
+  });
+  next.on('requestfailed', (request) =>
+    report.errors.push(`${request.url()}: ${request.failure()?.errorText}`),
+  );
+  return next;
+}
 const diagnostics = () => page.evaluate(() => window.hangarDiagnostics);
 async function frameAfter(frame) {
   await expect
@@ -67,7 +71,12 @@ try {
     )
     .toBe(true);
   for (const aircraft of ['skytrans', 'ev50']) {
-    await page.goto(`http://127.0.0.1:4174/hangar/?aircraft=${aircraft}&landscape=mountains`);
+    // Isolated captures do not share a live High-quality renderer across document navigations.
+    // The separate browser suites retain the real repeated-navigation coverage.
+    page = await openPage();
+    await page.goto(`http://127.0.0.1:4174/hangar/?aircraft=${aircraft}&landscape=mountains`, {
+      waitUntil: 'domcontentloaded',
+    });
     await expect
       .poll(
         async () => {
@@ -144,9 +153,18 @@ try {
     await frameAfter((await diagnostics()).frameNumber);
     assert.equal((await diagnostics()).scene.exposure, 1, 'Returning to product restores exposure');
     assert.equal((await diagnostics()).scene.background, '202c34');
+    await page.close();
+    page = undefined;
   }
   assert.deepEqual(report.errors, []);
   report.passed = true;
+} catch (error) {
+  report.failure = String(error?.stack ?? error);
+  if (page)
+    await page
+      .screenshot({ path: resolve(output, 'failure.png'), timeout: 30_000 })
+      .catch(() => {});
+  throw error;
 } finally {
   await writeFile(resolve(output, 'appearance.json'), JSON.stringify(report, null, 2));
   await browser.close();
